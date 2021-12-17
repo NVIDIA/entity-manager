@@ -1,8 +1,11 @@
 cpp_args = boost_args + ['-DPACKAGE_DIR="' + packagedir + '/"']
+cpp_args += ['-DSYSCONF_DIR="' + sysconfdir + '/"' ]
 
 executable(
     'entity-manager',
     'EntityManager.cpp',
+    'PerformScan.cpp',
+    'PerformProbe.cpp',
     'Overlay.cpp',
     'Utils.cpp',
     cpp_args: cpp_args + ['-DBOOST_ASIO_DISABLE_THREADS'],
