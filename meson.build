@@ -60,6 +60,11 @@ packagedir = join_paths(
     get_option('datadir'),
     meson.project_name(),
 )
+sysconfdir = join_paths(
+    get_option('prefix'),
+    get_option('sysconfdir'),
+    meson.project_name(),
+)
 threads = dependency('threads')
 if cpp.has_header('valijson/validator.hpp')
     valijson = declare_dependency()
@@ -126,6 +131,7 @@ configs = [
     'R2000 Chassis.json',
     'SAS Module.json',
     'SOLUM_PSSF162202_PSU.json',
+    'Storm King.json',
     'STP Baseboard.json',
     'STP P4000 Chassis.json',
     'Tyan_S7106_Baseboard.json',
