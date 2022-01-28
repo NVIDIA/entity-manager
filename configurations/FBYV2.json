@@ -254,8 +254,8 @@
             "Thresholds": [
                 {
                     "Direction": "less than",
-                    "Name": "lower critical",
-                    "Severity": 1,
+                    "Name": "lower hardshutdown",
+                    "Severity": 4,
                     "Value": 500
                 },
                 {
@@ -287,8 +287,8 @@
             "Thresholds": [
                 {
                     "Direction": "less than",
-                    "Name": "lower critical",
-                    "Severity": 1,
+                    "Name": "lower hardshutdown",
+                    "Severity": 4,
                     "Value": 500
                 },
                 {
@@ -481,7 +481,7 @@
                 {
                     "Direction": "greater than",
                     "Name": "upper non recoverable",
-                    "Severity": 3,
+                    "Severity": 4,
                     "Value": 120
                 }
             ],
