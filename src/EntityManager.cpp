@@ -38,6 +38,7 @@
 #include <charconv>
 #include <filesystem>
 #include <fstream>
+#include <functional>
 #include <iostream>
 #include <map>
 #include <regex>
@@ -280,20 +281,20 @@ void populateInterfaceFromJson(
     sdbusplus::asio::PropertyPermission permission =
         sdbusplus::asio::PropertyPermission::readOnly)
 {
-    for (auto& dictPair : dict.items())
+    for (auto& [key, value] : dict.items())
     {
-        auto type = dictPair.value().type();
+        auto type = value.type();
         bool array = false;
-        if (dictPair.value().type() == nlohmann::json::value_t::array)
+        if (value.type() == nlohmann::json::value_t::array)
         {
             array = true;
-            if (!dictPair.value().size())
+            if (!value.size())
             {
                 continue;
             }
-            type = dictPair.value()[0].type();
+            type = value[0].type();
             bool isLegal = true;
-            for (const auto& arrayItem : dictPair.value())
+            for (const auto& arrayItem : value)
             {
                 if (arrayItem.type() != type)
                 {
@@ -303,7 +304,7 @@ void populateInterfaceFromJson(
             }
             if (!isLegal)
             {
-                std::cerr << "dbus format error" << dictPair.value() << "\n";
+                std::cerr << "dbus format error" << value << "\n";
                 continue;
             }
         }
@@ -311,7 +312,9 @@ void populateInterfaceFromJson(
         {
             continue; // handled elsewhere
         }
-        std::string key = jsonPointerPath + "/" + dictPair.key();
+
+        std::string path = jsonPointerPath;
+        path.append("/").append(key);
         if (permission == sdbusplus::asio::PropertyPermission::readWrite)
         {
             // all setable numbers are doubles as it is difficult to always
@@ -319,12 +322,12 @@ void populateInterfaceFromJson(
             // i.e. 1.0
             if (array)
             {
-                if (dictPair.value()[0].is_number())
+                if (value[0].is_number())
                 {
                     type = nlohmann::json::value_t::number_float;
                 }
             }
-            else if (dictPair.value().is_number())
+            else if (value.is_number())
             {
                 type = nlohmann::json::value_t::number_float;
             }
@@ -338,16 +341,15 @@ void populateInterfaceFromJson(
                 {
                     // todo: array of bool isn't detected correctly by
                     // sdbusplus, change it to numbers
-                    addArrayToDbus<uint64_t>(dictPair.key(), dictPair.value(),
-                                             iface.get(), permission,
-                                             systemConfiguration, key);
+                    addArrayToDbus<uint64_t>(key, value, iface.get(),
+                                             permission, systemConfiguration,
+                                             path);
                 }
 
                 else
                 {
-                    addProperty(dictPair.key(), dictPair.value().get<bool>(),
-                                iface.get(), systemConfiguration, key,
-                                permission);
+                    addProperty(key, value.get<bool>(), iface.get(),
+                                systemConfiguration, path, permission);
                 }
                 break;
             }
@@ -355,14 +357,13 @@ void populateInterfaceFromJson(
             {
                 if (array)
                 {
-                    addArrayToDbus<int64_t>(dictPair.key(), dictPair.value(),
-                                            iface.get(), permission,
-                                            systemConfiguration, key);
+                    addArrayToDbus<int64_t>(key, value, iface.get(), permission,
+                                            systemConfiguration, path);
                 }
                 else
                 {
-                    addProperty(dictPair.key(), dictPair.value().get<int64_t>(),
-                                iface.get(), systemConfiguration, key,
+                    addProperty(key, value.get<int64_t>(), iface.get(),
+                                systemConfiguration, path,
                                 sdbusplus::asio::PropertyPermission::readOnly);
                 }
                 break;
@@ -371,15 +372,14 @@ void populateInterfaceFromJson(
             {
                 if (array)
                 {
-                    addArrayToDbus<uint64_t>(dictPair.key(), dictPair.value(),
-                                             iface.get(), permission,
-                                             systemConfiguration, key);
+                    addArrayToDbus<uint64_t>(key, value, iface.get(),
+                                             permission, systemConfiguration,
+                                             path);
                 }
                 else
                 {
-                    addProperty(dictPair.key(),
-                                dictPair.value().get<uint64_t>(), iface.get(),
-                                systemConfiguration, key,
+                    addProperty(key, value.get<uint64_t>(), iface.get(),
+                                systemConfiguration, path,
                                 sdbusplus::asio::PropertyPermission::readOnly);
                 }
                 break;
@@ -388,16 +388,14 @@ void populateInterfaceFromJson(
             {
                 if (array)
                 {
-                    addArrayToDbus<double>(dictPair.key(), dictPair.value(),
-                                           iface.get(), permission,
-                                           systemConfiguration, key);
+                    addArrayToDbus<double>(key, value, iface.get(), permission,
+                                           systemConfiguration, path);
                 }
 
                 else
                 {
-                    addProperty(dictPair.key(), dictPair.value().get<double>(),
-                                iface.get(), systemConfiguration, key,
-                                permission);
+                    addProperty(key, value.get<double>(), iface.get(),
+                                systemConfiguration, path, permission);
                 }
                 break;
             }
@@ -405,23 +403,21 @@ void populateInterfaceFromJson(
             {
                 if (array)
                 {
-                    addArrayToDbus<std::string>(
-                        dictPair.key(), dictPair.value(), iface.get(),
-                        permission, systemConfiguration, key);
+                    addArrayToDbus<std::string>(key, value, iface.get(),
+                                                permission, systemConfiguration,
+                                                path);
                 }
                 else
                 {
-                    addProperty(
-                        dictPair.key(), dictPair.value().get<std::string>(),
-                        iface.get(), systemConfiguration, key, permission);
+                    addProperty(key, value.get<std::string>(), iface.get(),
+                                systemConfiguration, path, permission);
                 }
                 break;
             }
             default:
             {
                 std::cerr << "Unexpected json type in system configuration "
-                          << dictPair.key() << ": "
-                          << dictPair.value().type_name() << "\n";
+                          << key << ": " << value.type_name() << "\n";
                 break;
             }
         }
@@ -573,14 +569,14 @@ void postToDbus(const nlohmann::json& newConfiguration,
 
 {
     // iterate through boards
-    for (auto& boardPair : newConfiguration.items())
+    for (auto& [boardId, boardConfig] : newConfiguration.items())
     {
-        std::string boardKey = boardPair.value()["Name"];
-        std::string boardKeyOrig = boardPair.value()["Name"];
-        std::string jsonPointerPath = "/" + boardPair.key();
+        std::string boardKey = boardConfig["Name"];
+        std::string boardKeyOrig = boardConfig["Name"];
+        std::string jsonPointerPath = "/" + boardId;
         // loop through newConfiguration, but use values from system
         // configuration to be able to modify via dbus later
-        auto boardValues = systemConfiguration[boardPair.key()];
+        auto boardValues = systemConfiguration[boardId];
         auto findBoardType = boardValues.find("Type");
         std::string boardType;
         if (findBoardType != boardValues.end() &&
@@ -621,17 +617,17 @@ void postToDbus(const nlohmann::json& newConfiguration,
                                   boardIface, boardValues, objServer);
         jsonPointerPath += "/";
         // iterate through board properties
-        for (auto& boardField : boardValues.items())
+        for (auto& [propName, propValue] : boardValues.items())
         {
-            if (boardField.value().type() == nlohmann::json::value_t::object)
+            if (propValue.type() == nlohmann::json::value_t::object)
             {
                 std::shared_ptr<sdbusplus::asio::dbus_interface> iface =
-                    createInterface(objServer, boardName, boardField.key(),
+                    createInterface(objServer, boardName, propName,
                                     boardKeyOrig);
 
                 populateInterfaceFromJson(systemConfiguration,
-                                          jsonPointerPath + boardField.key(),
-                                          iface, boardField.value(), objServer);
+                                          jsonPointerPath + propName, iface,
+                                          propValue, objServer);
             }
         }
 
@@ -695,43 +691,42 @@ void postToDbus(const nlohmann::json& newConfiguration,
                                       itemIface, item, objServer,
                                       getPermission(itemType));
 
-            for (auto& objectPair : item.items())
+            for (auto& [name, config] : item.items())
             {
-                jsonPointerPath = jsonPointerPathBoard +
-                                  std::to_string(exposesIndex) + "/" +
-                                  objectPair.key();
-                if (objectPair.value().type() ==
-                    nlohmann::json::value_t::object)
+                jsonPointerPath = jsonPointerPathBoard;
+                jsonPointerPath.append(std::to_string(exposesIndex))
+                    .append("/")
+                    .append(name);
+                if (config.type() == nlohmann::json::value_t::object)
                 {
-                    std::shared_ptr<sdbusplus::asio::dbus_interface>
-                        objectIface = createInterface(
-                            objServer, ifacePath,
-                            "xyz.openbmc_project.Configuration." + itemType +
-                                "." + objectPair.key(),
-                            boardKeyOrig);
+                    std::string ifaceName =
+                        "xyz.openbmc_project.Configuration.";
+                    ifaceName.append(itemType).append(".").append(name);
 
-                    populateInterfaceFromJson(systemConfiguration,
-                                              jsonPointerPath, objectIface,
-                                              objectPair.value(), objServer,
-                                              getPermission(objectPair.key()));
+                    std::shared_ptr<sdbusplus::asio::dbus_interface>
+                        objectIface = createInterface(objServer, ifacePath,
+                                                      ifaceName, boardKeyOrig);
+
+                    populateInterfaceFromJson(
+                        systemConfiguration, jsonPointerPath, objectIface,
+                        config, objServer, getPermission(name));
                 }
-                else if (objectPair.value().type() ==
-                         nlohmann::json::value_t::array)
+                else if (config.type() == nlohmann::json::value_t::array)
                 {
                     size_t index = 0;
-                    if (!objectPair.value().size())
+                    if (!config.size())
                     {
                         continue;
                     }
                     bool isLegal = true;
-                    auto type = objectPair.value()[0].type();
+                    auto type = config[0].type();
                     if (type != nlohmann::json::value_t::object)
                     {
                         continue;
                     }
 
                     // verify legal json
-                    for (const auto& arrayItem : objectPair.value())
+                    for (const auto& arrayItem : config)
                     {
                         if (arrayItem.type() != type)
                         {
@@ -741,27 +736,26 @@ void postToDbus(const nlohmann::json& newConfiguration,
                     }
                     if (!isLegal)
                     {
-                        std::cerr << "dbus format error" << objectPair.value()
-                                  << "\n";
+                        std::cerr << "dbus format error" << config << "\n";
                         break;
                     }
 
-                    for (auto& arrayItem : objectPair.value())
+                    for (auto& arrayItem : config)
                     {
+                        std::string ifaceName =
+                            "xyz.openbmc_project.Configuration.";
+                        ifaceName.append(itemType).append(".").append(name);
+                        ifaceName.append(std::to_string(index));
 
                         std::shared_ptr<sdbusplus::asio::dbus_interface>
                             objectIface = createInterface(
-                                objServer, ifacePath,
-                                "xyz.openbmc_project.Configuration." +
-                                    itemType + "." + objectPair.key() +
-                                    std::to_string(index),
-                                boardKeyOrig);
+                                objServer, ifacePath, ifaceName, boardKeyOrig);
 
                         populateInterfaceFromJson(
                             systemConfiguration,
                             jsonPointerPath + "/" + std::to_string(index),
                             objectIface, arrayItem, objServer,
-                            getPermission(objectPair.key()));
+                            getPermission(name));
                         index++;
                     }
                 }
@@ -842,6 +836,40 @@ bool findJsonFiles(std::list<nlohmann::json>& configurations)
     return true;
 }
 
+static bool deviceRequiresPowerOn(const nlohmann::json& entity)
+{
+    auto powerState = entity.find("PowerState");
+    if (powerState == entity.end())
+    {
+        return false;
+    }
+
+    auto ptr = powerState->get_ptr<const std::string*>();
+    if (!ptr)
+    {
+        return false;
+    }
+
+    return *ptr == "On" || *ptr == "BiosPost";
+}
+
+static void pruneDevice(const nlohmann::json& systemConfiguration,
+                        const bool powerOff, const bool scannedPowerOff,
+                        const std::string& name, const nlohmann::json& device)
+{
+    if (systemConfiguration.contains(name))
+    {
+        return;
+    }
+
+    if (deviceRequiresPowerOn(device) && (powerOff || scannedPowerOff))
+    {
+        return;
+    }
+
+    logDeviceRemoved(device);
+}
+
 void startRemovedTimer(boost::asio::steady_timer& timer,
                        nlohmann::json& systemConfiguration)
 {
@@ -867,49 +895,103 @@ void startRemovedTimer(boost::asio::steady_timer& timer,
         [&systemConfiguration](const boost::system::error_code& ec) {
             if (ec == boost::asio::error::operation_aborted)
             {
-                // we were cancelled
                 return;
             }
 
             bool powerOff = !isPowerOn();
-            for (const auto& item : lastJson.items())
+            for (const auto& [name, device] : lastJson.items())
             {
-                if (systemConfiguration.find(item.key()) ==
-                    systemConfiguration.end())
-                {
-                    bool isDetectedPowerOn = false;
-                    auto powerState = item.value().find("PowerState");
-                    if (powerState != item.value().end())
-                    {
-                        auto ptr = powerState->get_ptr<const std::string*>();
-                        if (ptr)
-                        {
-                            if (*ptr == "On" || *ptr == "BiosPost")
-                            {
-                                isDetectedPowerOn = true;
-                            }
-                        }
-                    }
-                    if (powerOff && isDetectedPowerOn)
-                    {
-                        // power not on yet, don't know if it's there or not
-                        continue;
-                    }
-                    if (!powerOff && scannedPowerOff && isDetectedPowerOn)
-                    {
-                        // already logged it when power was off
-                        continue;
-                    }
-
-                    logDeviceRemoved(item.value());
-                }
+                pruneDevice(systemConfiguration, powerOff, scannedPowerOff,
+                            name, device);
             }
+
             scannedPowerOff = true;
             if (!powerOff)
             {
                 scannedPowerOn = true;
             }
         });
+}
+
+static std::vector<std::weak_ptr<sdbusplus::asio::dbus_interface>>&
+    getDeviceInterfaces(const nlohmann::json& device)
+{
+    return inventory[device["Name"].get<std::string>()];
+}
+
+static void pruneConfiguration(nlohmann::json& systemConfiguration,
+                               sdbusplus::asio::object_server& objServer,
+                               bool powerOff, const std::string& name,
+                               const nlohmann::json& device)
+{
+    if (powerOff && deviceRequiresPowerOn(device))
+    {
+        // power not on yet, don't know if it's there or not
+        return;
+    }
+
+    auto& ifaces = getDeviceInterfaces(device);
+    for (auto& iface : ifaces)
+    {
+        auto sharedPtr = iface.lock();
+        if (!!sharedPtr)
+        {
+            objServer.remove_interface(sharedPtr);
+        }
+    }
+
+    ifaces.clear();
+    systemConfiguration.erase(name);
+    logDeviceRemoved(device);
+}
+
+static void deriveNewConfiguration(const nlohmann::json& oldConfiguration,
+                                   nlohmann::json& newConfiguration)
+{
+    for (auto it = newConfiguration.begin(); it != newConfiguration.end();)
+    {
+        auto findKey = oldConfiguration.find(it.key());
+        if (findKey != oldConfiguration.end())
+        {
+            it = newConfiguration.erase(it);
+        }
+        else
+        {
+            it++;
+        }
+    }
+}
+
+static void publishNewConfiguration(
+    const size_t& instance, const size_t count,
+    boost::asio::steady_timer& timer, nlohmann::json& systemConfiguration,
+    // Gerrit discussion:
+    // https://gerrit.openbmc-project.xyz/c/openbmc/entity-manager/+/52316/6
+    //
+    // Discord discussion:
+    // https://discord.com/channels/775381525260664832/867820390406422538/958048437729910854
+    //
+    // NOLINTNEXTLINE(performance-unnecessary-value-param)
+    const nlohmann::json newConfiguration,
+    sdbusplus::asio::object_server& objServer)
+{
+    loadOverlays(newConfiguration);
+
+    io.post([systemConfiguration]() {
+        if (!writeJsonFiles(systemConfiguration))
+        {
+            std::cerr << "Error writing json files\n";
+        }
+    });
+
+    io.post([&instance, count, &timer, newConfiguration, &systemConfiguration,
+             &objServer]() {
+        postToDbus(newConfiguration, systemConfiguration, objServer);
+        if (count == instance)
+        {
+            startRemovedTimer(timer, systemConfiguration);
+        }
+    });
 }
 
 // main properties changed entry
@@ -965,85 +1047,28 @@ void propertiesChangedCallback(nlohmann::json& systemConfiguration,
                 // this is something that since ac has been applied to the bmc
                 // we saw, and we no longer see it
                 bool powerOff = !isPowerOn();
-                for (const auto& item : missingConfigurations->items())
+                for (const auto& [name, device] :
+                     missingConfigurations->items())
                 {
-                    bool isDetectedPowerOn = false;
-                    auto powerState = item.value().find("PowerState");
-                    if (powerState != item.value().end())
-                    {
-                        auto ptr = powerState->get_ptr<const std::string*>();
-                        if (ptr)
-                        {
-                            if (*ptr == "On" || *ptr == "BiosPost")
-                            {
-                                isDetectedPowerOn = true;
-                            }
-                        }
-                    }
-                    if (powerOff && isDetectedPowerOn)
-                    {
-                        // power not on yet, don't know if it's there or not
-                        continue;
-                    }
-                    std::string name = item.value()["Name"].get<std::string>();
-                    std::vector<std::weak_ptr<sdbusplus::asio::dbus_interface>>&
-                        ifaces = inventory[name];
-                    for (auto& iface : ifaces)
-                    {
-                        auto sharedPtr = iface.lock();
-                        if (!sharedPtr)
-                        {
-                            continue; // was already deleted elsewhere
-                        }
-                        objServer.remove_interface(sharedPtr);
-                    }
-                    ifaces.clear();
-                    systemConfiguration.erase(item.key());
-                    logDeviceRemoved(item.value());
+                    pruneConfiguration(systemConfiguration, objServer, powerOff,
+                                       name, device);
                 }
 
                 nlohmann::json newConfiguration = systemConfiguration;
-                for (auto it = newConfiguration.begin();
-                     it != newConfiguration.end();)
+
+                deriveNewConfiguration(oldConfiguration, newConfiguration);
+
+                for (const auto& [_, device] : newConfiguration.items())
                 {
-                    auto findKey = oldConfiguration.find(it.key());
-                    if (findKey != oldConfiguration.end())
-                    {
-                        it = newConfiguration.erase(it);
-                    }
-                    else
-                    {
-                        it++;
-                    }
-                }
-                for (const auto& item : newConfiguration.items())
-                {
-                    logDeviceAdded(item.value());
+                    logDeviceAdded(device);
                 }
 
                 inProgress = false;
 
-                io.post([count, newConfiguration, &systemConfiguration,
-                         &objServer]() {
-                    loadOverlays(newConfiguration);
-
-                    io.post([&systemConfiguration]() {
-                        if (!writeJsonFiles(systemConfiguration))
-                        {
-                            std::cerr << "Error writing json files\n";
-                        }
-                    });
-                    io.post([count, newConfiguration, &systemConfiguration,
-                             &objServer]() {
-                        postToDbus(newConfiguration, systemConfiguration,
-                                   objServer);
-                        if (count != instance)
-                        {
-                            return;
-                        }
-                        startRemovedTimer(timer, systemConfiguration);
-                    });
-                });
+                io.post(std::bind_front(
+                    publishNewConfiguration, std::ref(instance), count,
+                    std::ref(timer), std::ref(systemConfiguration),
+                    newConfiguration, std::ref(objServer)));
             });
         perfScan->run();
     });
