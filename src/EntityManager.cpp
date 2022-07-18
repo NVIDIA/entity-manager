@@ -59,8 +59,8 @@ const boost::container::flat_map<const char*, probe_type_codes, CmpStr>
                 {"FOUND", probe_type_codes::FOUND},
                 {"MATCH_ONE", probe_type_codes::MATCH_ONE}}};
 
-static constexpr std::array<const char*, 6> settableInterfaces = {
-    "FanProfile", "Pid", "Pid.Zone", "Stepwise", "Thresholds", "Polling"};
+static constexpr std::array<const char*, 7> settableInterfaces = {
+    "FanProfile", "Pid", "Pid.Zone", "Stepwise", "Thresholds", "Polling","xyz.openbmc_project.Inventory.Decorator.AssetTag"};
 using JsonVariantType =
     std::variant<std::vector<std::string>, std::vector<double>, std::string,
                  int64_t, uint64_t, double, int32_t, uint32_t, int16_t,
@@ -627,7 +627,7 @@ void postToDbus(const nlohmann::json& newConfiguration,
 
                 populateInterfaceFromJson(systemConfiguration,
                                           jsonPointerPath + propName, iface,
-                                          propValue, objServer);
+                                          propValue, objServer,getPermission(propName));
             }
         }
 
