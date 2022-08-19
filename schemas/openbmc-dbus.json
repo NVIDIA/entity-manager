@@ -20,6 +20,9 @@
                                 },
                                 "SerialNumber": {
                                     "type": "string"
+                                },
+                                "SKU": {
+                                    "type": "string"
                                 }
                             },
                             "required": [
@@ -41,7 +44,19 @@
                                 "AssetTag"
                             ],
                             "type": "object"
-                        }
+                        },
+                        "Location": {
+                            "additionalProperties": false,
+                            "properties": {
+                                "LocationType": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "LocationType"
+                            ],
+                            "type": "object"
+                        }                        
                     },
                     "Item": {
                         "Board": {
