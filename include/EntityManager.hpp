@@ -40,7 +40,12 @@ using DBusProbeObjectT = boost::container::flat_map<
 // vector of tuple<map<propertyName, variant>, D-Bus path>>
 using FoundDeviceT = std::vector<std::tuple<
     boost::container::flat_map<std::string, BasicVariantType>, std::string>>;
+namespace association
+{
+constexpr auto interface = "xyz.openbmc_project.Association.Definitions";
+} // namespace association
 
+using Association = std::tuple<std::string, std::string, std::string>;
 struct CmpStr
 {
     bool operator()(const char* a, const char* b) const
