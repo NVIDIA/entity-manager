@@ -35,7 +35,6 @@ using GetSubTreeType = std::vector<
               std::vector<std::pair<std::string, std::vector<std::string>>>>>;
 
 constexpr const int32_t maxMapperDepth = 0;
-constexpr auto probePath = "ProbePath";
 
 constexpr const bool debug = false;
 
@@ -444,8 +443,7 @@ void PerformScan::run()
                                   << " with found device index.\n Consider "
                                      "fixing template to not have duplicates\n";
                     }
-                    // Add fru object path to the record
-                    record[probePath] = path;
+
                     for (auto keyPair = record.begin(); keyPair != record.end();
                          keyPair++)
                     {
