@@ -449,6 +449,12 @@ void populateInterfaceFromJson(
     {
         auto type = value.type();
         bool array = false;
+
+        if (key == "Parent_Chassis")
+        {
+            continue;
+        }
+
         if (value.type() == nlohmann::json::value_t::array)
         {
             array = true;
@@ -799,6 +805,8 @@ void scanUpdatableData()
     }
 }
 
+using Association = std::tuple<std::string, std::string, std::string>;
+
 void postToDbus(const nlohmann::json& newConfiguration,
                 nlohmann::json& systemConfiguration,
                 sdbusplus::asio::object_server& objServer)
@@ -836,6 +844,7 @@ void postToDbus(const nlohmann::json& newConfiguration,
         // configuration to be able to modify via dbus later
         auto boardValues = systemConfiguration[boardId];
         auto findBoardType = boardValues.find("Type");
+        auto findBoardParent = boardValues.find("Parent_Chassis");
         std::string boardType;
         if (findBoardType != boardValues.end() &&
             findBoardType->type() == nlohmann::json::value_t::string)
@@ -873,6 +882,23 @@ void postToDbus(const nlohmann::json& newConfiguration,
 
         populateInterfaceFromJson(systemConfiguration, jsonPointerPath,
                                   boardIface, boardValues, objServer);
+        if (findBoardParent != boardValues.end() &&
+            findBoardParent->type() == nlohmann::json::value_t::string)
+        {
+            std::vector<Association> associations;
+            std::string boardParent = findBoardParent->get<std::string>();
+            std::shared_ptr<sdbusplus::asio::dbus_interface> parentIface =
+                objServer.add_interface(
+                    boardName, "xyz.openbmc_project.Association.Definitions");
+            associations.emplace_back(
+                Association("parent_chassis", "all_chassis", boardParent));
+            parentIface->register_property(
+                "Associations", associations,
+                sdbusplus::asio::PropertyPermission::readWrite);
+
+            parentIface->initialize();
+        }
+
         jsonPointerPath += "/";
         // iterate through board properties
         for (auto& [propName, propValue] : boardValues.items())
