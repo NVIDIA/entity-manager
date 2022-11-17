@@ -151,21 +151,6 @@ static std::shared_ptr<sdbusplus::asio::dbus_interface>
     dataVector.emplace_back(ptr);
     return ptr;
 }
-void createAssociation(
-    std::shared_ptr<sdbusplus::asio::dbus_interface>& association,
-    const std::string& path, const std::string& fwdPathKey,
-    const std::string& revPathKey)
-{
-    if (!association)
-    {
-        std::cerr << "Association failed for path : " << path << "\n";
-        return;
-    }
-    std::vector<Association> associations;
-    associations.emplace_back(fwdPathKey, revPathKey, path);
-    association->register_property("Associations", associations);
-    association->initialize();
-}
 
 // writes output files to persist data
 bool writeJsonFiles(const nlohmann::json& systemConfiguration)
@@ -882,21 +867,14 @@ void postToDbus(const nlohmann::json& newConfiguration,
 
         populateInterfaceFromJson(systemConfiguration, jsonPointerPath,
                                   boardIface, boardValues, objServer);
+        std::vector<Association> associations;
         if (findBoardParent != boardValues.end() &&
             findBoardParent->type() == nlohmann::json::value_t::string)
         {
-            std::vector<Association> associations;
+
             std::string boardParent = findBoardParent->get<std::string>();
-            std::shared_ptr<sdbusplus::asio::dbus_interface> parentIface =
-                objServer.add_interface(
-                    boardName, "xyz.openbmc_project.Association.Definitions");
             associations.emplace_back(
                 Association("parent_chassis", "all_chassis", boardParent));
-            parentIface->register_property(
-                "Associations", associations,
-                sdbusplus::asio::PropertyPermission::readWrite);
-
-            parentIface->initialize();
         }
 
         jsonPointerPath += "/";
@@ -918,12 +896,20 @@ void postToDbus(const nlohmann::json& newConfiguration,
             {
                 // Creating association between the entity manager object
                 // path and probe Path(FRU Path)
-                std::shared_ptr<sdbusplus::asio::dbus_interface> association =
-                    createInterface(objServer, boardName,
-                                    association::interface, boardKeyOrig);
-
-                createAssociation(association, propValue, fwdPath, revPath);
+                associations.emplace_back(
+                    Association(fwdPath, revPath, propValue));
             }
+        }
+
+        if (!associations.empty())
+        {
+            std::shared_ptr<sdbusplus::asio::dbus_interface> parentIface =
+                objServer.add_interface(
+                    boardName, "xyz.openbmc_project.Association.Definitions");
+            parentIface->register_property(
+                "Associations", associations,
+                sdbusplus::asio::PropertyPermission::readWrite);
+            parentIface->initialize();
         }
 
         auto exposes = boardValues.find("Exposes");
