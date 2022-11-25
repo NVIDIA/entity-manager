@@ -904,8 +904,8 @@ void postToDbus(const nlohmann::json& newConfiguration,
         if (!associations.empty())
         {
             std::shared_ptr<sdbusplus::asio::dbus_interface> parentIface =
-                objServer.add_interface(
-                    boardName, "xyz.openbmc_project.Association.Definitions");
+                createInterface(objServer, boardName, association::interface,
+                                boardKeyOrig);
             parentIface->register_property(
                 "Associations", associations,
                 sdbusplus::asio::PropertyPermission::readWrite);
