@@ -66,13 +66,14 @@ const boost::container::flat_map<const char*, probe_type_codes, CmpStr>
                 {"FOUND", probe_type_codes::FOUND},
                 {"MATCH_ONE", probe_type_codes::MATCH_ONE}}};
 
-static constexpr std::array<const char*, 7> settableInterfaces = {
+static constexpr std::array<const char*, 8> settableInterfaces = {
     "FanProfile",
     "Pid",
     "Pid.Zone",
     "Stepwise",
     "Thresholds",
     "Polling",
+    "xyz.openbmc_project.Inventory.Decorator.AssetTag",
     "xyz.openbmc_project.Inventory.Decorator.Asset"};
 
 using JsonVariantType =
@@ -251,20 +252,8 @@ bool updatePropertyValue(const std::string& service, const std::string& path,
     return true;
 }
 
-sdbusplus::asio::PropertyPermission getPermission(const std::string& interface,
-                                                  const std::string& name = "")
+sdbusplus::asio::PropertyPermission getPermission(const std::string& interface)
 {
-    if (!name.empty())
-    {
-        if (auto itr{probeDetails.find(name)}; itr != probeDetails.end())
-        {
-            auto listIfaces{itr->second};
-            if (auto it{listIfaces.find(interface)}; it != listIfaces.end())
-            {
-                return sdbusplus::asio::PropertyPermission::readWrite;
-            }
-        }
-    }
     return std::find(settableInterfaces.begin(), settableInterfaces.end(),
                      interface) != settableInterfaces.end()
                ? sdbusplus::asio::PropertyPermission::readWrite
@@ -889,8 +878,7 @@ void postToDbus(const nlohmann::json& newConfiguration,
 
                 populateInterfaceFromJson(
                     systemConfiguration, jsonPointerPath + propName, iface,
-                    propValue, objServer,
-                    getPermission(propName, boardKeyOrig));
+                    propValue, objServer, getPermission(propName));
             }
             if (propName.compare(probePath) == 0)
             {
