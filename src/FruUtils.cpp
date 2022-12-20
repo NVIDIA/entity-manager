@@ -306,6 +306,11 @@ resCodes
         }
 
         size_t fruAreaSize = *fruBytesIter * fruBlockSize;
+        if (fruAreaSize == 0)
+        {
+            return resCodes::resErr;
+        }
+
         std::vector<uint8_t>::const_iterator fruBytesIterEndArea =
             fruBytes.begin() + offset + fruAreaSize - 1;
         ++fruBytesIter;
