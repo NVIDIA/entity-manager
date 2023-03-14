@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "PidZone": {
+            "type": "object",
+            "properties": {
+                "AccumulateSetPoint": {
+                    "type": "boolean"
+                },
+                "CycleIntervalTimeMS": {
+                    "type": "number"
+                },
+                "FailSafePercent": {
+                    "type": "number"
+                },
+                "MinThermalOutput": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "UpdateThermalsTimeMS": {
+                    "type": "number"
+                }
+            },
+            "required": ["FailSafePercent", "MinThermalOutput", "Name", "Type"]
+        }
+    }
+}

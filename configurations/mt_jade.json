@@ -1,0 +1,2058 @@
+[
+    {
+        "Exposes": [
+            {
+                "Index": 28,
+                "Name": "3V3_SB",
+                "PollRate": 1,
+                "ScaleFactor": 0.3333,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 3.96
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 2.32
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "BridgeGpio": [
+                    {
+                        "Name": "rtc-battery-voltage-read-enable",
+                        "Polarity": "High"
+                    }
+                ],
+                "Index": 29,
+                "Name": "VBAT_RTC",
+                "PollRate": 86400,
+                "ScaleFactor": 0.3333,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 3.564
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 2.106
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 1,
+                "Index": 0,
+                "Name": "S0_0V8_VDDC_SOC",
+                "PollRate": 1,
+                "PowerState": "ChassisOn",
+                "ScaleFactor": 1,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 0.96
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0.56
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 2,
+                "Index": 1,
+                "Name": "S1_0V8_VDDC_SOC",
+                "PollRate": 1,
+                "PowerState": "ChassisOn",
+                "ScaleFactor": 1,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 0.96
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0.56
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 1,
+                "Index": 2,
+                "Name": "S0_0V75_PCP",
+                "PollRate": 1,
+                "PowerState": "On",
+                "ScaleFactor": 1,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 1.323
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0.504
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 2,
+                "Index": 3,
+                "Name": "S1_0V75_PCP",
+                "PollRate": 1,
+                "PowerState": "On",
+                "ScaleFactor": 1,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 1.323
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0.504
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 1,
+                "Index": 4,
+                "Name": "S0_1V2_VDDQ0123",
+                "PollRate": 1,
+                "PowerState": "ChassisOn",
+                "ScaleFactor": 1,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 1.442
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0.84
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 2,
+                "Index": 5,
+                "Name": "S1_1V2_VDDQ0123",
+                "PollRate": 1,
+                "PowerState": "ChassisOn",
+                "ScaleFactor": 1,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 1.442
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0.84
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 1,
+                "Index": 6,
+                "Name": "S0_0V6_VTT0123",
+                "PollRate": 1,
+                "PowerState": "ChassisOn",
+                "ScaleFactor": 1,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 0.72
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0.42
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 2,
+                "Index": 7,
+                "Name": "S1_0V6_VTT0123",
+                "PollRate": 1,
+                "PowerState": "ChassisOn",
+                "ScaleFactor": 1,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 0.72
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0.42
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 1,
+                "Index": 8,
+                "Name": "S0_2V5_VPP0123",
+                "PollRate": 1,
+                "PowerState": "ChassisOn",
+                "ScaleFactor": 0.5,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 3.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 1.755
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 2,
+                "Index": 9,
+                "Name": "S1_2V5_VPP0123",
+                "PollRate": 1,
+                "PowerState": "ChassisOn",
+                "ScaleFactor": 0.5,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 3.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 1.755
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 1,
+                "Index": 10,
+                "Name": "S0_1V2_VDDQ4567",
+                "PollRate": 1,
+                "PowerState": "ChassisOn",
+                "ScaleFactor": 1,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 1.442
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0.84
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 2,
+                "Index": 11,
+                "Name": "S1_1V2_VDDQ4567",
+                "PollRate": 1,
+                "PowerState": "ChassisOn",
+                "ScaleFactor": 1,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 1.442
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0.84
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 1,
+                "Index": 12,
+                "Name": "S0_0V6_VTT4567",
+                "PollRate": 1,
+                "PowerState": "ChassisOn",
+                "ScaleFactor": 1,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 0.72
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0.42
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 2,
+                "Index": 13,
+                "Name": "S1_0V6_VTT4567",
+                "PollRate": 1,
+                "PowerState": "ChassisOn",
+                "ScaleFactor": 1,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 0.72
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0.42
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 1,
+                "Index": 14,
+                "Name": "S0_2V5_VPP4567",
+                "PollRate": 1,
+                "PowerState": "ChassisOn",
+                "ScaleFactor": 0.5,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 3.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 1.755
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 2,
+                "Index": 15,
+                "Name": "S1_2V5_VPP4567",
+                "PollRate": 1,
+                "PowerState": "ChassisOn",
+                "ScaleFactor": 0.5,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 3.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 1.755
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 1,
+                "Index": 16,
+                "Name": "S0_0V85_RCA",
+                "PollRate": 1,
+                "PowerState": "ChassisOn",
+                "ScaleFactor": 1,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 1.08
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0.63
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 2,
+                "Index": 17,
+                "Name": "S1_0V85_RCA",
+                "PollRate": 1,
+                "PowerState": "ChassisOn",
+                "ScaleFactor": 1,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 1.08
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0.63
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 1,
+                "Index": 18,
+                "Name": "S0_1V8_VDDH",
+                "PollRate": 1,
+                "PowerState": "ChassisOn",
+                "ScaleFactor": 0.5,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 2.156
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 1.265
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 2,
+                "Index": 19,
+                "Name": "S1_1V8_VDDH",
+                "PollRate": 1,
+                "PowerState": "ChassisOn",
+                "ScaleFactor": 0.5,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 2.156
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 1.265
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 1,
+                "Index": 20,
+                "Name": "S0_1V5_VDDH",
+                "PollRate": 1,
+                "PowerState": "ChassisOn",
+                "ScaleFactor": 1,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 1.8
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 1.053
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 2,
+                "Index": 21,
+                "Name": "S1_1V5_VDDH",
+                "PollRate": 1,
+                "PowerState": "ChassisOn",
+                "ScaleFactor": 1,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 1.8
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 1.053
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 1,
+                "Index": 22,
+                "Name": "S0_1V8_SOC",
+                "PollRate": 1,
+                "PowerState": "ChassisOn",
+                "ScaleFactor": 0.5,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 2.156
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 1.265
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 2,
+                "Index": 23,
+                "Name": "S1_1V8_SOC",
+                "PollRate": 1,
+                "PowerState": "ChassisOn",
+                "ScaleFactor": 0.5,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 2.156
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 1.265
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 1,
+                "Index": 24,
+                "Name": "S0_1V8_PCP",
+                "PollRate": 1,
+                "PowerState": "On",
+                "ScaleFactor": 0.5,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 2.156
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 1.265
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 2,
+                "Index": 25,
+                "Name": "S1_1V8_PCP",
+                "PollRate": 1,
+                "PowerState": "On",
+                "ScaleFactor": 0.5,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 2.156
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 1.265
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 1,
+                "Index": 26,
+                "Name": "S0_3V3_SOC",
+                "PollRate": 1,
+                "PowerState": "ChassisOn",
+                "ScaleFactor": 0.3333,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 3.96
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 2.32
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "CPURequired": 2,
+                "Index": 27,
+                "Name": "S1_3V3_SOC",
+                "PollRate": 1,
+                "PowerState": "ChassisOn",
+                "ScaleFactor": 0.3333,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 3.96
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 2.32
+                    }
+                ],
+                "Type": "ADC"
+            },
+            {
+                "Connector": {
+                    "Name": "Fan Connector 1",
+                    "Pwm": 2,
+                    "PwmName": "PWM3",
+                    "Tachs": [
+                        4
+                    ]
+                },
+                "Index": 4,
+                "MaxReading": 23100,
+                "Name": "FAN3_1",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 500
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 23100
+                    }
+                ],
+                "Type": "AspeedFan"
+            },
+            {
+                "Connector": {
+                    "Name": "Fan Connector 2",
+                    "Pwm": 2,
+                    "PwmName": "PWM3",
+                    "Tachs": [
+                        5
+                    ]
+                },
+                "Index": 5,
+                "MaxReading": 23100,
+                "Name": "FAN3_2",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 500
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 23100
+                    }
+                ],
+                "Type": "AspeedFan"
+            },
+            {
+                "Connector": {
+                    "Name": "Fan Connector 3",
+                    "Pwm": 3,
+                    "PwmName": "PWM4",
+                    "Tachs": [
+                        6
+                    ]
+                },
+                "Index": 6,
+                "MaxReading": 23100,
+                "Name": "FAN4_1",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 500
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 23100
+                    }
+                ],
+                "Type": "AspeedFan"
+            },
+            {
+                "Connector": {
+                    "Name": "Fan Connector 4",
+                    "Pwm": 3,
+                    "PwmName": "PWM4",
+                    "Tachs": [
+                        7
+                    ]
+                },
+                "Index": 7,
+                "MaxReading": 23100,
+                "Name": "FAN4_2",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 500
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 23100
+                    }
+                ],
+                "Type": "AspeedFan"
+            },
+            {
+                "Connector": {
+                    "Name": "Fan Connector 5",
+                    "Pwm": 4,
+                    "PwmName": "PWM5",
+                    "Tachs": [
+                        8
+                    ]
+                },
+                "Index": 8,
+                "MaxReading": 23100,
+                "Name": "FAN5_1",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 500
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 23100
+                    }
+                ],
+                "Type": "AspeedFan"
+            },
+            {
+                "Connector": {
+                    "Name": "Fan Connector 6",
+                    "Pwm": 4,
+                    "PwmName": "PWM5",
+                    "Tachs": [
+                        9
+                    ]
+                },
+                "Index": 9,
+                "MaxReading": 23100,
+                "Name": "FAN5_2",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 500
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 23100
+                    }
+                ],
+                "Type": "AspeedFan"
+            },
+            {
+                "Connector": {
+                    "Name": "Fan Connector 7",
+                    "Pwm": 5,
+                    "PwmName": "PWM6",
+                    "Tachs": [
+                        10
+                    ]
+                },
+                "Index": 10,
+                "MaxReading": 23100,
+                "Name": "FAN6_1",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 500
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 23100
+                    }
+                ],
+                "Type": "AspeedFan"
+            },
+            {
+                "Connector": {
+                    "Name": "Fan Connector 8",
+                    "Pwm": 5,
+                    "PwmName": "PWM6",
+                    "Tachs": [
+                        11
+                    ]
+                },
+                "Index": 11,
+                "MaxReading": 23100,
+                "Name": "FAN6_2",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 500
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 23100
+                    }
+                ],
+                "Type": "AspeedFan"
+            },
+            {
+                "Connector": {
+                    "Name": "Fan Connector 9",
+                    "Pwm": 6,
+                    "PwmName": "PWM7",
+                    "Tachs": [
+                        12
+                    ]
+                },
+                "Index": 12,
+                "MaxReading": 23100,
+                "Name": "FAN7_1",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 500
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 23100
+                    }
+                ],
+                "Type": "AspeedFan"
+            },
+            {
+                "Connector": {
+                    "Name": "Fan Connector 10",
+                    "Pwm": 6,
+                    "PwmName": "PWM7",
+                    "Tachs": [
+                        13
+                    ]
+                },
+                "Index": 13,
+                "MaxReading": 23100,
+                "Name": "FAN7_2",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 500
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 23100
+                    }
+                ],
+                "Type": "AspeedFan"
+            },
+            {
+                "Connector": {
+                    "Name": "Fan Connector 11",
+                    "Pwm": 7,
+                    "PwmName": "PWM8",
+                    "Tachs": [
+                        14
+                    ]
+                },
+                "Index": 14,
+                "MaxReading": 23100,
+                "Name": "FAN8_1",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 500
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 23100
+                    }
+                ],
+                "Type": "AspeedFan"
+            },
+            {
+                "Connector": {
+                    "Name": "Fan Connector 12",
+                    "Pwm": 7,
+                    "PwmName": "PWM8",
+                    "Tachs": [
+                        15
+                    ]
+                },
+                "Index": 15,
+                "MaxReading": 23100,
+                "Name": "FAN8_2",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 500
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 23100
+                    }
+                ],
+                "Type": "AspeedFan"
+            },
+            {
+                "Name": "BMC",
+                "Type": "BMC"
+            },
+            {
+                "Address": "$address",
+                "Bus": "$bus",
+                "Name": "MB FRU",
+                "Type": "EEPROM"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "50",
+                "Name": "nvme0",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 80
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 70
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0
+                    }
+                ],
+                "Type": "NVME1000"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "51",
+                "Name": "nvme1",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 80
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 70
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0
+                    }
+                ],
+                "Type": "NVME1000"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "52",
+                "Name": "nvme2",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 80
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 70
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0
+                    }
+                ],
+                "Type": "NVME1000"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "53",
+                "Name": "nvme3",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 80
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 70
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0
+                    }
+                ],
+                "Type": "NVME1000"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "54",
+                "Name": "nvme4",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 80
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 70
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0
+                    }
+                ],
+                "Type": "NVME1000"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "55",
+                "Name": "nvme5",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 80
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 70
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0
+                    }
+                ],
+                "Type": "NVME1000"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "56",
+                "Name": "nvme6",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 80
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 70
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0
+                    }
+                ],
+                "Type": "NVME1000"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "57",
+                "Name": "nvme7",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 80
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 70
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0
+                    }
+                ],
+                "Type": "NVME1000"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "60",
+                "Name": "nvme8",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 80
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 70
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0
+                    }
+                ],
+                "Type": "NVME1000"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "61",
+                "Name": "nvme9",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 80
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 70
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0
+                    }
+                ],
+                "Type": "NVME1000"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "62",
+                "Name": "nvme10",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 80
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 70
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0
+                    }
+                ],
+                "Type": "NVME1000"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "63",
+                "Name": "nvme11",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 80
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 70
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0
+                    }
+                ],
+                "Type": "NVME1000"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "64",
+                "Name": "nvme12",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 80
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 70
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0
+                    }
+                ],
+                "Type": "NVME1000"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "65",
+                "Name": "nvme13",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 80
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 70
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0
+                    }
+                ],
+                "Type": "NVME1000"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "66",
+                "Name": "nvme14",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 80
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 70
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0
+                    }
+                ],
+                "Type": "NVME1000"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "67",
+                "Name": "nvme15",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 80
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 70
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0
+                    }
+                ],
+                "Type": "NVME1000"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "70",
+                "Name": "nvme16",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 80
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 70
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0
+                    }
+                ],
+                "Type": "NVME1000"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "71",
+                "Name": "nvme17",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 80
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 70
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0
+                    }
+                ],
+                "Type": "NVME1000"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "72",
+                "Name": "nvme18",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 80
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 70
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0
+                    }
+                ],
+                "Type": "NVME1000"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "73",
+                "Name": "nvme19",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 80
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 70
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0
+                    }
+                ],
+                "Type": "NVME1000"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "74",
+                "Name": "nvme20",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 80
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 70
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0
+                    }
+                ],
+                "Type": "NVME1000"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "75",
+                "Name": "nvme21",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 80
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 70
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0
+                    }
+                ],
+                "Type": "NVME1000"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "76",
+                "Name": "nvme22",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 80
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 70
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0
+                    }
+                ],
+                "Type": "NVME1000"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "77",
+                "Name": "nvme23",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 80
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 70
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0
+                    }
+                ],
+                "Type": "NVME1000"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "80",
+                "Name": "nvme24",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 80
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 70
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0
+                    }
+                ],
+                "Type": "NVME1000"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "81",
+                "Name": "nvme25",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 80
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 70
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 0
+                    }
+                ],
+                "Type": "NVME1000"
+            },
+            {
+                "Address": "0x28",
+                "Bus": 3,
+                "Name": "TS1_Temp",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 65
+                    }
+                ],
+                "Type": "TMP175"
+            },
+            {
+                "Address": "0x29",
+                "Bus": 3,
+                "Name": "TS2_Temp",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 65
+                    }
+                ],
+                "Type": "TMP175"
+            },
+            {
+                "Address": "0x2a",
+                "Bus": 3,
+                "Name": "TS3_Temp",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 65
+                    }
+                ],
+                "Type": "TMP175"
+            },
+            {
+                "Address": "0x2b",
+                "Bus": 3,
+                "Name": "TS4_Temp",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 50
+                    }
+                ],
+                "Type": "TMP175"
+            },
+            {
+                "Address": "0x2c",
+                "Bus": 3,
+                "Name": "TS5_Temp",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 65
+                    }
+                ],
+                "Type": "TMP175"
+            },
+            {
+                "Address": "0x2d",
+                "Bus": 3,
+                "Name": "TS6_Temp",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 65
+                    }
+                ],
+                "Type": "TMP175"
+            },
+            {
+                "Address": "0x1f",
+                "Bus": 82,
+                "Name": "OCP_Local_Temp",
+                "Name1": "OCP_Temp",
+                "Type": "TMP421"
+            },
+            {
+                "Address": "0x58",
+                "Bus": 6,
+                "Labels": [
+                    "temp1",
+                    "fan1",
+                    "pin",
+                    "pout1",
+                    "vin",
+                    "vout1",
+                    "iin",
+                    "iout1"
+                ],
+                "Name": "PSU0",
+                "PollRate": 10,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Label": "temp1",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 64
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Label": "fan1",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 20300
+                    }
+                ],
+                "Type": "pmbus"
+            },
+            {
+                "Address": "0x59",
+                "Bus": 6,
+                "Labels": [
+                    "temp1",
+                    "fan1",
+                    "pin",
+                    "pout1",
+                    "vin",
+                    "vout1",
+                    "iin",
+                    "iout1"
+                ],
+                "Name": "PSU1",
+                "PollRate": 10,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Label": "temp1",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 64
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Label": "fan1",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 20300
+                    }
+                ],
+                "Type": "pmbus"
+            }
+        ],
+        "Name": "Mt.Jade",
+        "Probe": "xyz.openbmc_project.FruDevice({'PRODUCT_PRODUCT_NAME': '.*Mt.Jade'})",
+        "Type": "Chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$PRODUCT_MANUFACTURER",
+            "Model": "$PRODUCT_PRODUCT_NAME $PRODUCT_VERSION",
+            "PartNumber": "$CHASSIS_PART_NUMBER",
+            "SerialNumber": "$CHASSIS_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.AssetTag": {
+            "AssetTag": "$PRODUCT_ASSET_TAG"
+        },
+        "xyz.openbmc_project.Inventory.Item.System": {}
+    }
+]

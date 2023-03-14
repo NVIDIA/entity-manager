@@ -20,7 +20,7 @@
 #   * reviewers: A list of individuals who have requested review notification
 #     on the repository.
 #
-#   * matches: A list of specific file/path matches for granular 'owners' and
+#   * matchers: A list of specific file/path matchers for granular 'owners' and
 #     'reviewers'.  See 'owners' plugin documentation.
 #
 #   * openbmc: A list of openbmc-specific meta-data about owners and reviewers.
@@ -33,20 +33,20 @@
 
 owners:
 - ed@tanous.net
-- jae.hyun.yoo@linux.intel.com
 - vernon.mauery@linux.intel.com
+- zhikui.ren@intel.com
 
 reviewers:
 
-matches:
+matchers:
 
 openbmc:
 - name: Ed Tanous
   email: ed@tanous.net
   discord: edtanous
-- name: Jae Hyun Yoo
-  email: jae.hyun.yoo@linux.intel.com
-  discord: yoojae
 - name: Vernon Mauery
   email: vernon.mauery@linux.intel.com
   discord: vmauery
+- name: Zhikui Ren
+  email: zhikui.ren@intel.com
+  discord: Zhikui

@@ -40,9 +40,20 @@
                                     "type": "string"
                                 }
                             },
-                            "required": [
-                                "AssetTag"
-                            ],
+                            "required": ["AssetTag"],
+                            "type": "object"
+                        },
+                        "Replaceable": {
+                            "additionalProperties": false,
+                            "properties": {
+                                "FieldReplaceable": {
+                                    "type": "boolean"
+                                },
+                                "HotPluggable": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": ["FieldReplaceable", "HotPluggable"],
                             "type": "object"
                         },
                         "Location": {
@@ -67,9 +78,7 @@
                                         "type": "number"
                                     }
                                 },
-                                "required": [
-                                    "ProductId"
-                                ],
+                                "required": ["ProductId"],
                                 "type": "object"
                             }
                         },

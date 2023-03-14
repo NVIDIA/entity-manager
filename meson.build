@@ -33,18 +33,10 @@ endif
 if get_option('fru-device')
     i2c = cpp.find_library('i2c')
 endif
-if cpp.has_header('nlohmann/json.hpp')
-    nlohmann_json = declare_dependency()
-else
-    subproject('nlohmann', required: false)
-    nlohmann_json = declare_dependency(
-        include_directories: [
-            'subprojects/nlohmann/single_include',
-            'subprojects/nlohmann/single_include/nlohmann',
-        ]
-    )
-    nlohmann_json = nlohmann_json.as_system('system')
-endif
+
+nlohmann_json_dep = dependency('nlohmann_json',
+                               fallback: [ 'nlohmann_json', 'nlohmann_json_dep'])
+
 sdbusplus = dependency('sdbusplus', required: false)
 if not sdbusplus.found()
     sdbusplus_proj = subproject('sdbusplus', required: true)
@@ -79,67 +71,79 @@ endif
 install_data('blacklist.json')
 
 configs = [
-    '1Ux16 Riser.json',
-    '2Ux8 Riser.json',
-    '8X25 HSBP.json',
-    'A2UL16RISER.json',
-    'A2UX8X4RISER.json',
-    'ACBELL_RICA_PSU.json',
-    'ASRock_E3C246D4I.json',
-    'Bletchley_Baseboard.json',
-    'Bletchley_Chassis.json',
-    'Blyth.json',
-    'AHW1UM2RISER.json',
-    'ASPOWER_U1A-D10550_PSU.json',
-    'ASPOWER_U1A-D10800_PSU.json',
-    'ASPOWER_U1A-D11200_PSU.json',
-    'ASPOWER_U1A-D11600_PSU.json',
-    'ASPOWER_U1D-D10800_PSU.json',
-    'AXX1P100HSSI_AIC.json',
-    'AXX2PRTHDHD.json',
-    'BNP Baseboard.json',
-    'Bellavista.json',
-    'Delta_AWF2DC3200W_PSU.json',
-    'Delta DPS-750XB PSU.json',
-    'Delta_DPS-1600AB_PSU.json',
-    'Delta_DPS-2000AB_PSU.json',
-    'Everest.json',
-    'F1U12X25 HSBP.json',
-    'F1U4X25 HSBP.json',
-    'F2U12X35 HSBP.json',
-    'F2U8X25 HSBP.json',
-    'FBTP.json',
-    'FBYV2.json',
-    'Flextronics S-1100ADU00-201 PSU.json',
-    'IBM 1000W CFFPS.json',
-    'IBM 1400W CFFPS.json',
-    'IBM 1600W CFFPS.json',
-    'IBM 2000W CFFPS.json',
-    'IBM 2300W CFFPS.json',
-    'Intel Front Panel.json',
-    'Kudo_BMC.json',
-    'Kudo_Motherboard.json',
-    'Mt_Jade.json',
-    'Nisqually.json',
-    'NVME P4000.json',
-    'PCIE SSD Retimer.json',
-    'PSSF132202A.json',
-    'PSSF162205A.json',
-    'PSSF212201A.json',
-    'PSSF222201A.json',
-    'Rainier 2U Chassis.json',
-    'Rainier 4U Chassis.json',
-    'Rainier 1S4U Chassis.json',
-    'R1000 Chassis.json',
-    'R2000 Chassis.json',
-    'SAS Module.json',
-    'SOLUM_PSSF162202_PSU.json',
-    'Storm King.json',
-    'STP Baseboard.json',
-    'STP P4000 Chassis.json',
-    'Tyan_S7106_Baseboard.json',
-    'Tyan_S8036_Baseboard.json',
-    'WFT Baseboard.json',
+    '1ux16_riser.json',
+    '2ux8_riser.json',
+    '8x25_hsbp.json',
+    'a2ul16riser.json',
+    'a2ux8x4riser.json',
+    'acbell_rica_psu.json',
+    'asrock_e3c246d4i.json',
+    'asrock_romed8hm3.json',
+    'bletchley_baseboard.json',
+    'bletchley_chassis.json',
+    'bletchley_frontpanel.json',
+    'blyth.json',
+    'ahw1um2riser.json',
+    'aspower_u1a-d10550_psu.json',
+    'aspower_u1a-d10800_psu.json',
+    'aspower_u1a-d11200_psu.json',
+    'aspower_u1a-d11600_psu.json',
+    'aspower_u1d-d10800_psu.json',
+    'axx1p100hssi_aic.json',
+    'axx2prthdhd.json',
+    'bnp_baseboard.json',
+    'bellavista.json',
+    'bonnell.json',
+    'delta_awf2dc3200w_psu.json',
+    'delta_dps-750xb_psu.json',
+    'delta_dps-1600ab_psu.json',
+    'delta_dps-2000ab_psu.json',
+    'everest.json',
+    'f1u12x25_hsbp.json',
+    'f1u4x25_hsbp.json',
+    'f2u12x35_hsbp.json',
+    'f2u8x25_hsbp.json',
+    'fbtp.json',
+    'fbyv2.json',
+    'fbyv35.json',
+    'fbyv35_nic_mellanox.json',
+    'flextronics_s-1100adu00-201_psu.json',
+    'greatlakes.json',
+    'greatlakes_nic_mellanox.json',
+    'ibm_1000w_cffps.json',
+    'ibm_1400w_cffps.json',
+    'ibm_1600w_cffps.json',
+    'ibm_2000w_cffps.json',
+    'ibm_2300w_cffps.json',
+    'intel_front_panel.json',
+    'kudo_bmc.json',
+    'kudo_motherboard.json',
+    'mt_jade.json',
+    'nisqually.json',
+    'nvme_p4000.json',
+    'pcie_ssd_retimer.json',
+    'pennybacker.json',
+    'pssf132202a.json',
+    'pssf162205a.json',
+    'pssf212201a.json',
+    'pssf222201a.json',
+    'rainier_2u_chassis.json',
+    'rainier_4u_chassis.json',
+    'rainier_1s4u_chassis.json',
+    'r1000_chassis.json',
+    'r2000_chassis.json',
+    'sas_module.json',
+    'solum_pssf162202_psu.json',
+    'storm_king.json',
+    'stp_baseboard.json',
+    'stp_p4000_chassis.json',
+    'twinlake.json',
+    'tyan_s7106_baseboard.json',
+    'tyan_s8036_baseboard.json',
+    'vegman_n110_baseboard.json',
+    'vegman_rx20_baseboard.json',
+    'vegman_sx20_baseboard.json',
+    'wft_baseboard.json',
 ]
 filepaths = []
 foreach c : configs
@@ -154,7 +158,7 @@ foreach c : configs
     filepaths += [file]
 endforeach
 
-validate_script = files('scripts/validate-configs.py')
+validate_script = files('scripts/validate_configs.py')
 autojson = custom_target(
   'check_syntax',
   command: [
@@ -172,12 +176,12 @@ schemas = [
     'global.json',
     'legacy.json',
     'openbmc-dbus.json',
-    'IBM.json',
-    'Intel.json',
-    'Pid.json',
-    'Pid.Zone.json',
-    'Stepwise.json',
-    'VirtualSensor.json',
+    'ibm.json',
+    'intel.json',
+    'pid.json',
+    'pid_zone.json',
+    'stepwise.json',
+    'virtual_sensor.json',
 ]
 
 foreach s : schemas
@@ -197,12 +201,15 @@ subdir('src')
 if not build_tests.disabled()
     test_boost_args = boost_args + ['-DBOOST_ASIO_DISABLE_THREADS']
     gtest = dependency('gtest', main: true, disabler: true, required: false)
-    if not gtest.found() and build_tests.enabled()
+    gmock = dependency('gmock', disabler: true, required: false)
+    if not (gtest.found() and gmock.found()) and build_tests.enabled()
         cmake = import('cmake')
         gtest_subproject = cmake.subproject('gtest')
         cm_gtest = gtest_subproject.dependency('gtest')
         cm_gtest_main = gtest_subproject.dependency('gtest_main')
         gtest = declare_dependency(dependencies: [cm_gtest, cm_gtest_main, threads])
+        gmock = gtest_subproject.dependency('gmock')
+
     endif
 
     test(
@@ -210,17 +217,17 @@ if not build_tests.disabled()
         executable(
             'test_entity_manager',
             'test/test_entity-manager.cpp',
-            'src/Utils.cpp',
+            'src/expression.cpp',
+            'src/utils.cpp',
             cpp_args: test_boost_args,
             dependencies: [
                 boost,
                 gtest,
-                nlohmann_json,
+                nlohmann_json_dep,
                 sdbusplus,
                 valijson,
             ],
-            implicit_include_directories: false,
-            include_directories: 'include',
+            include_directories: 'src',
         )
     )
 
@@ -229,14 +236,30 @@ if not build_tests.disabled()
         executable(
             'test_fru_utils',
             'test/test_fru-utils.cpp',
-            'src/FruUtils.cpp',
+            'src/fru_utils.cpp',
+            'src/fru_reader.cpp',
             cpp_args: test_boost_args,
             dependencies: [
                 boost,
                 gtest,
+                sdbusplus,
             ],
-            implicit_include_directories: false,
-            include_directories: 'include',
+            include_directories: 'src',
+        )
+    )
+
+    test(
+        'test_topology',
+        executable(
+            'test_topology',
+            'test/test_topology.cpp',
+            'src/topology.cpp',
+            cpp_args: test_boost_args,
+            dependencies: [
+                gtest,
+                gmock,
+            ],
+            include_directories: 'src',
         )
     )
 endif
