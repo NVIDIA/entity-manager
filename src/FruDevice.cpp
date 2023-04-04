@@ -392,8 +392,11 @@ int getBusFRUs(int file, int first, int last, int bus,
             // Set slave address
             if (ioctl(file, I2C_SLAVE, ii) < 0)
             {
-                std::cerr << "device at bus " << bus << " address " << ii
-                          << " busy\n";
+                if (debug)
+                {
+                    std::cerr << "device at bus " << bus << " address " << ii
+                            << " busy\n";
+                }
                 continue;
             }
             // probe
