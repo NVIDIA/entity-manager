@@ -73,6 +73,7 @@ const static constexpr char* baseboardFruLocation =
 const static constexpr char* i2CDevLocation = "/dev";
 
 static std::set<size_t> busBlacklist;
+static std::set<std::pair<int, int>> addressBlacklist;
 struct FindDevicesWithCallback;
 
 static boost::container::flat_map<
@@ -370,6 +371,16 @@ int getBusFRUs(int file, int first, int last, int bus,
         std::set<size_t>* rootFailures = nullptr;
         int rootBus = getRootBus(bus);
 
+        for (const auto &pair : addressBlacklist)
+        {
+            int busP = pair.first;
+            int addressP = pair.second;
+            if (busP == bus) {
+                int address7bit = addressP>>1;
+                skipList.insert(address7bit);
+            }
+        }
+
         if (rootBus >= 0)
         {
             rootFailures = &(failedAddresses[rootBus]);
@@ -382,6 +393,10 @@ int getBusFRUs(int file, int first, int last, int bus,
         {
             if (skipList.find(ii) != skipList.end())
             {
+                if (debug)
+                {
+                    std::cerr << "skipping bus:" << bus << " address:0x" << std::hex << ii << "\n";
+                }
                 continue;
             }
             // skipping since no device is present in this range
@@ -524,6 +539,25 @@ void loadBlacklist(const char* path)
             // Type mis-match is a critical error.
             std::cerr << "Invalid bus type: " << e.what() << "\n";
             std::exit(EXIT_FAILURE);
+        }
+    }
+
+    if (data.count("addresses") == 1)
+    {
+        for (const auto &addressInfo : data.at("addresses"))
+        {
+            try
+            {
+                int busN = addressInfo["bus"].get<int>();
+                int addressN = addressInfo["address"].get<int>();
+                addressBlacklist.insert(std::make_pair(busN, addressN));
+            }
+            catch (const nlohmann::detail::type_error& e)
+            {
+                // Type mis-match is a critical error.
+                std::cerr << "Invalid individual address type: " << e.what() << "\n";
+                std::exit(EXIT_FAILURE);
+            }
         }
     }
 
