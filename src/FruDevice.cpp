@@ -773,12 +773,15 @@ void addFruObjectToDbus(
         }
         std::string key =
             std::regex_replace(property.first, nonAsciiRegex, "_");
-
+        std::string value = property.second;
+        // Remove the spaces from the end of the key string
+        value.erase(std::find_if(value.rbegin(), value.rend(), 
+            [](unsigned char ch) {return !std::isspace(ch);}).base(), value.end());
         if (property.first == "PRODUCT_ASSET_TAG")
         {
             std::string propertyName = property.first;
             iface->register_property(
-                key, property.second + '\0',
+                key, value + '\0',
                 [bus, address, propertyName, &dbusInterfaceMap,
                  &unknownBusObjectCount, &powerIsOn, &objServer,
                  &systemBus](const std::string& req, std::string& resp) {
@@ -801,13 +804,13 @@ void addFruObjectToDbus(
                     return 1;
                 });
         }
-        else if (!iface->register_property(key, property.second + '\0'))
+        else if (!iface->register_property(key, value + '\0'))
         {
             std::cerr << "illegal key: " << key << "\n";
         }
         if (debug)
         {
-            std::cout << property.first << ": " << property.second << "\n";
+            std::cout << property.first << ": " << value << "\n";
         }
     }
 
