@@ -21,9 +21,11 @@
 #include <cstddef>
 #include <cstdint>
 #include <filesystem>
+#include <iomanip>
 #include <iostream>
 #include <numeric>
 #include <set>
+#include <sstream>
 #include <string>
 #include <vector>
 
@@ -61,6 +63,32 @@ enum FRUDataEncoding
     bcdPlus = 0x1,
     sixBitASCII = 0x2,
     languageDependent = 0x3,
+};
+
+enum MultiRecordType : uint8_t
+{
+    powerSupplyInfo = 0x00,
+    dcOutput = 0x01,
+    dcLoad = 0x02,
+    managementAccessRecord = 0x03,
+    baseCompatibilityRecord = 0x04,
+    extendedCompatibilityRecord = 0x05,
+    resvASFSMBusDeviceRecord = 0x06,
+    resvASFLegacyDeviceAlerts = 0x07,
+    resvASFRemoteControl = 0x08,
+    extendedDCOutput = 0x09,
+    extendedDCLoad = 0x0A
+};
+
+enum SubManagementAccessRecord : uint8_t
+{
+    systemManagementURL = 0x01,
+    systemName = 0x02,
+    systemPingAddress = 0x03,
+    componentManagementURL = 0x04,
+    componentName = 0x05,
+    componentPingAddress = 0x06,
+    systemUniqueID = 0x07
 };
 
 /* Decode FRU data into a std::string, given an input iterator and end. If the
@@ -194,7 +222,6 @@ bool checkLangEng(uint8_t lang)
 bool verifyOffset(const std::vector<uint8_t>& fruBytes, fruAreas currentArea,
                   uint8_t len)
 {
-
     unsigned int fruBytesSize = fruBytes.size();
 
     // check if Fru data has at least 8 byte header
@@ -257,6 +284,86 @@ bool verifyOffset(const std::vector<uint8_t>& fruBytes, fruAreas currentArea,
     return true;
 }
 
+static void parseMultirecordUUID(
+    const std::vector<uint8_t>& device,
+    boost::container::flat_map<std::string, std::string>& result)
+{
+    constexpr size_t uuidDataLen = 16;
+    constexpr size_t multiRecordHeaderLen = 5;
+    /* UUID record data, plus one to skip past the sub-record type byte */
+    constexpr size_t uuidRecordData = multiRecordHeaderLen + 1;
+    constexpr size_t multiRecordEndOfListMask = 0x80;
+    /* The UUID {00112233-4455-6677-8899-AABBCCDDEEFF} would thus be represented
+     * as: 0x33 0x22 0x11 0x00 0x55 0x44 0x77 0x66 0x88 0x99 0xAA 0xBB 0xCC 0xDD
+     * 0xEE 0xFF
+     */
+    const std::array<uint8_t, uuidDataLen> uuidCharOrder = {
+        3, 2, 1, 0, 5, 4, 7, 6, 8, 9, 10, 11, 12, 13, 14, 15};
+    uint32_t areaOffset =
+        device.at(getHeaderAreaFieldOffset(fruAreas::fruAreaMultirecord));
+
+    if (areaOffset == 0)
+    {
+        return;
+    }
+
+    areaOffset *= fruBlockSize;
+    std::vector<uint8_t>::const_iterator fruBytesIter = device.begin() +
+                                                        areaOffset;
+
+    /* Verify area offset */
+    if (!verifyOffset(device, fruAreas::fruAreaMultirecord, *fruBytesIter))
+    {
+        return;
+    }
+    while (areaOffset + uuidRecordData + uuidDataLen <= device.size())
+    {
+        if ((areaOffset < device.size()) &&
+            (device[areaOffset] ==
+             (uint8_t)MultiRecordType::managementAccessRecord))
+        {
+            if ((areaOffset + multiRecordHeaderLen < device.size()) &&
+                (device[areaOffset + multiRecordHeaderLen] ==
+                 (uint8_t)SubManagementAccessRecord::systemUniqueID))
+            {
+                /* Layout of UUID:
+                 * source: https://www.ietf.org/rfc/rfc4122.txt
+                 *
+                 * UUID binary format (16 bytes):
+                 * 4B-2B-2B-2B-6B (big endian)
+                 *
+                 * UUID string is 36 length of characters (36 bytes):
+                 * 0        9    14   19   24
+                 * xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+                 *    be     be   be   be       be
+                 * be means it should be converted to big endian.
+                 */
+                /* Get UUID bytes to UUID string */
+                std::stringstream tmp;
+                tmp << std::hex << std::setfill('0');
+                for (size_t i = 0; i < uuidDataLen; i++)
+                {
+                    tmp << std::setw(2)
+                        << static_cast<uint16_t>(
+                               device[areaOffset + uuidRecordData +
+                                      uuidCharOrder[i]]);
+                }
+                std::string uuidStr = tmp.str();
+                result["MULTIRECORD_UUID"] =
+                    uuidStr.substr(0, 8) + '-' + uuidStr.substr(8, 4) + '-' +
+                    uuidStr.substr(12, 4) + '-' + uuidStr.substr(16, 4) + '-' +
+                    uuidStr.substr(20, 12);
+                break;
+            }
+        }
+        if ((device[areaOffset + 1] & multiRecordEndOfListMask) != 0)
+        {
+            break;
+        }
+        areaOffset = areaOffset + device[areaOffset + 2] + multiRecordHeaderLen;
+    }
+}
+
 resCodes
     formatIPMIFRU(const std::vector<uint8_t>& fruBytes,
                   boost::container::flat_map<std::string, std::string>& result)
@@ -276,15 +383,14 @@ resCodes
     for (fruAreas area = fruAreas::fruAreaChassis;
          area <= fruAreas::fruAreaProduct; ++area)
     {
-
         size_t offset = *(fruBytes.begin() + getHeaderAreaFieldOffset(area));
         if (offset == 0)
         {
             continue;
         }
         offset *= fruBlockSize;
-        std::vector<uint8_t>::const_iterator fruBytesIter =
-            fruBytes.begin() + offset;
+        std::vector<uint8_t>::const_iterator fruBytesIter = fruBytes.begin() +
+                                                            offset;
         if (fruBytesIter + fruBlockSize >= fruBytes.end())
         {
             std::cerr << "Not enough data to parse \n";
@@ -358,14 +464,14 @@ resCodes
                                        *(fruBytesIter + 1) << 8 |
                                        *(fruBytesIter + 2) << 16;
                 std::tm fruTime = intelEpoch();
-                std::time_t timeValue = std::mktime(&fruTime);
+                std::time_t timeValue = timegm(&fruTime);
                 timeValue += static_cast<long>(minutes) * 60;
                 fruTime = *std::gmtime(&timeValue);
 
                 // Tue Nov 20 23:08:00 2018
                 std::array<char, 32> timeString = {};
                 auto bytes = std::strftime(timeString.data(), timeString.size(),
-                                           "%Y-%m-%d - %H:%M:%S", &fruTime);
+                                           "%Y-%m-%d - %H:%M:%S UTC", &fruTime);
                 if (bytes == 0)
                 {
                     std::cerr << "invalid time string encountered\n";
@@ -399,8 +505,8 @@ resCodes
         DecodeState state = DecodeState::ok;
         do
         {
-            auto res =
-                decodeFRUData(fruBytesIter, fruBytesIterEndArea, isLangEng);
+            auto res = decodeFRUData(fruBytesIter, fruBytesIterEndArea,
+                                     isLangEng);
             state = res.first;
             std::string value = res.second;
             std::string name;
@@ -421,8 +527,9 @@ resCodes
             {
                 // Strip non null characters from the end
                 value.erase(std::find_if(value.rbegin(), value.rend(),
-                                         [](char ch) { return ch != 0; })
-                                .base(),
+                                         [](char ch) {
+                    return ch != 0;
+                }).base(),
                             value.end());
 
                 result[name] = std::move(value);
@@ -463,6 +570,9 @@ resCodes
             }
         }
     }
+
+    /* Parsing the Multirecord UUID */
+    parseMultirecordUUID(fruBytes, result);
 
     return ret;
 }
@@ -639,15 +749,15 @@ bool findFRUHeader(FRUReader& reader, const std::string& errorHelp,
     return false;
 }
 
-std::vector<uint8_t> readFRUContents(FRUReader& reader,
-                                     const std::string& errorHelp)
+std::pair<std::vector<uint8_t>, bool>
+    readFRUContents(FRUReader& reader, const std::string& errorHelp)
 {
     std::array<uint8_t, I2C_SMBUS_BLOCK_MAX> blockData{};
     off_t baseOffset = 0x0;
 
     if (!findFRUHeader(reader, errorHelp, blockData, baseOffset))
     {
-        return {};
+        return {{}, false};
     }
 
     std::vector<uint8_t> device;
@@ -675,7 +785,7 @@ std::vector<uint8_t> readFRUContents(FRUReader& reader,
         {
             std::cerr << "Fru area offsets are not in required order as per "
                          "Section 17 of Fru specification\n";
-            return {};
+            return {{}, true};
         }
         prevOffset = areaOffset;
 
@@ -693,7 +803,7 @@ std::vector<uint8_t> readFRUContents(FRUReader& reader,
         {
             std::cerr << "failed to read " << errorHelp << " base offset "
                       << baseOffset << "\n";
-            return {};
+            return {{}, true};
         }
 
         // Ignore data type (blockData is already unsigned).
@@ -723,7 +833,7 @@ std::vector<uint8_t> readFRUContents(FRUReader& reader,
             {
                 std::cerr << "failed to read " << errorHelp << " base offset "
                           << baseOffset << "\n";
-                return {};
+                return {{}, true};
             }
 
             // Ok, let's check the record length, which is in bytes (unsigned,
@@ -755,7 +865,7 @@ std::vector<uint8_t> readFRUContents(FRUReader& reader,
         {
             std::cerr << "failed to read " << errorHelp << " base offset "
                       << baseOffset << "\n";
-            return {};
+            return {{}, true};
         }
 
         device.insert(device.end(), blockData.begin(),
@@ -765,7 +875,7 @@ std::vector<uint8_t> readFRUContents(FRUReader& reader,
         fruLength -= std::min(requestLength, fruLength);
     }
 
-    return device;
+    return {device, true};
 }
 
 unsigned int getHeaderAreaFieldOffset(fruAreas area)
@@ -956,16 +1066,14 @@ std::optional<int> findIndexForFRU(
         std::shared_ptr<sdbusplus::asio::dbus_interface>>& dbusInterfaceMap,
     std::string& productName)
 {
-
     int highest = -1;
     bool found = false;
 
-    for (auto const& busIface : dbusInterfaceMap)
+    for (const auto& busIface : dbusInterfaceMap)
     {
         std::string path = busIface.second->get_object_path();
         if (std::regex_match(path, std::regex(productName + "(_\\d+|)$")))
         {
-
             // Check if the match named has extra information.
             found = true;
             std::smatch baseMatch;

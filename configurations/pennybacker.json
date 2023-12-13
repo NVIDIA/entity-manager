@@ -1,14 +1,35 @@
 {
     "Exposes": [
         {
-            "I2CAddress": 88,
+            "BridgeGpio": [
+                {
+                    "Name": "rtc-battery-voltage-read-enable",
+                    "Polarity": "High"
+                }
+            ],
+            "Index": 0,
+            "Name": "Battery Voltage",
+            "PollRate": 86400,
+            "ScaleFactor": 0.4348,
+            "Thresholds": [
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 2.45
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "I2CAddress": 91,
             "I2CBus": 3,
             "Name": "Power Supply Slot 0",
             "NamedPresenceGpio": "presence-ps0",
             "Type": "IBMCFFPSConnector"
         },
         {
-            "I2CAddress": 89,
+            "I2CAddress": 90,
             "I2CBus": 3,
             "Name": "Power Supply Slot 1",
             "NamedPresenceGpio": "presence-ps1",

@@ -9,6 +9,9 @@
             ],
             "oneOf": [
                 {
+                    "$ref": "ibm.json#/definitions/PowerModeProperties"
+                },
+                {
                     "$ref": "ibm.json#/definitions/IBMCompatibleSystem"
                 },
                 {
@@ -22,6 +25,9 @@
                 },
                 {
                     "$ref": "pid_zone.json#/definitions/PidZone"
+                },
+                {
+                    "$ref": "satellite_controller.json#/definitions/SatelliteController"
                 },
                 {
                     "$ref": "stepwise.json#/definitions/Stepwise"

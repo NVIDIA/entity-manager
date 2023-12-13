@@ -69,7 +69,6 @@ FoundProbeTypeT findProbeType(const std::string& probe);
 
 struct PerformScan : std::enable_shared_from_this<PerformScan>
 {
-
     PerformScan(nlohmann::json& systemConfiguration,
                 nlohmann::json& missingConfigurations,
                 std::list<nlohmann::json>& configurations,
@@ -106,7 +105,6 @@ struct PerformProbe : std::enable_shared_from_this<PerformProbe>
 
 inline void logDeviceAdded(const nlohmann::json& record)
 {
-
     if (!deviceHasLogging(record))
     {
         return;

@@ -8,7 +8,7 @@ project(
     ],
     license: 'Apache-2.0',
     version: '0.1',
-    meson_version: '>=0.57.0',
+    meson_version: '>=0.58.0',
 )
 add_project_arguments('-Wno-psabi', language: 'cpp')
 
@@ -44,9 +44,9 @@ if not sdbusplus.found()
     sdbusplus = sdbusplus.as_system('system')
 endif
 systemd = dependency('systemd')
-systemd_system_unit_dir = systemd.get_pkgconfig_variable(
+systemd_system_unit_dir = systemd.get_variable(
     'systemdsystemunitdir',
-    define_variable: ['prefix', get_option('prefix')])
+    pkgconfig_define: ['prefix', get_option('prefix')])
 packagedir = join_paths(
     get_option('prefix'),
     get_option('datadir'),
@@ -73,10 +73,12 @@ install_data('blacklist.json')
 configs = [
     '1ux16_riser.json',
     '2ux8_riser.json',
+    '3ypower_vast2112_psu.json',
     '8x25_hsbp.json',
     'a2ul16riser.json',
     'a2ux8x4riser.json',
     'acbell_rica_psu.json',
+    'acbel_r1ca2122a_psu.json',
     'asrock_e3c246d4i.json',
     'asrock_romed8hm3.json',
     'bletchley_baseboard.json',
@@ -98,6 +100,7 @@ configs = [
     'delta_dps-750xb_psu.json',
     'delta_dps-1600ab_psu.json',
     'delta_dps-2000ab_psu.json',
+    'supermicro-pws-920p-sq_psu.json',
     'everest.json',
     'f1u12x25_hsbp.json',
     'f1u4x25_hsbp.json',
@@ -108,17 +111,23 @@ configs = [
     'fbyv35.json',
     'fbyv35_nic_mellanox.json',
     'flextronics_s-1100adu00-201_psu.json',
+    'genesis3_psu.json',
+    'genesis3_baseboard.json',
+    'genesis3_chassis.json',
+    'gospower_g1136-1300wna_psu.json',
     'greatlakes.json',
     'greatlakes_nic_mellanox.json',
-    'ibm_1000w_cffps.json',
-    'ibm_1400w_cffps.json',
-    'ibm_1600w_cffps.json',
-    'ibm_2000w_cffps.json',
-    'ibm_2300w_cffps.json',
+    'ibm_tacoma_rack_controller.json',
     'intel_front_panel.json',
     'kudo_bmc.json',
     'kudo_motherboard.json',
-    'mt_jade.json',
+    'micron_7450.json',
+    'mori_bmc.json',
+    'mori_motherboard.json',
+    'mtjade.json',
+    'mtmitchell_bmc.json',
+    'mtmitchell_mb.json',
+    'mudflap.json',
     'nisqually.json',
     'nvme_p4000.json',
     'pcie_ssd_retimer.json',
@@ -133,6 +142,12 @@ configs = [
     'r1000_chassis.json',
     'r2000_chassis.json',
     'sas_module.json',
+    'sbp1_baseboard.json',
+    'sbp1_chassis.json',
+    'sbp1_nvme.json',
+    'sbp1_psu.json',
+    'sbp1_rssd.json',
+    'system1_baseboard.json',
     'solum_pssf162202_psu.json',
     'storm_king.json',
     'stp_baseboard.json',
@@ -144,6 +159,10 @@ configs = [
     'vegman_rx20_baseboard.json',
     'vegman_sx20_baseboard.json',
     'wft_baseboard.json',
+    'yosemite4_fanboard.json',
+    'yosemite4_sentineldome.json',
+    'yosemite4_floatingfalls.json',
+    'yosemite4_wailuafalls.json',
 ]
 filepaths = []
 foreach c : configs
@@ -182,6 +201,7 @@ schemas = [
     'pid_zone.json',
     'stepwise.json',
     'virtual_sensor.json',
+    'satellite_controller.json',
 ]
 
 foreach s : schemas
@@ -258,6 +278,7 @@ if not build_tests.disabled()
             dependencies: [
                 gtest,
                 gmock,
+                nlohmann_json_dep,
             ],
             include_directories: 'src',
         )
