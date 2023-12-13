@@ -291,5 +291,18 @@ const boost::container::flat_map<const char*, ExportTemplate, CmpStr>
          {"MP2973",
           ExportTemplate("mp2973 $Address", "/sys/bus/i2c/devices/i2c-$Bus",
                          "new_device", "delete_device",
-                         createsHWMon::hasHWMonDir)}}};
+                         createsHWMon::hasHWMonDir)},
+         {"JC42", ExportTemplate("jc42 $Address",
+                                 "/sys/bus/i2c/devices/i2c-$Bus", "new_device",
+                                 "delete_device", createsHWMon::hasHWMonDir)},
+         {"TCA9539",
+          ExportTemplate("tca9539 $Address", "/sys/bus/i2c/devices/i2c-$Bus",
+                         "new_device", "delete_device",
+                         createsHWMon::noHWMonDir)},
+         {"QUANTA_CPLD", ExportTemplate("quanta_cg1_cpld $Address",
+                                        "/sys/bus/i2c/devices/i2c-$Bus",
+                                        "new_device", "delete_device", true)},
+         {"SMC_CPLD", ExportTemplate("smc_c2_cpld $Address",
+                                     "/sys/bus/i2c/devices/i2c-$Bus",
+                                     "new_device", "delete_device", true)}}};
 } // namespace devices
