@@ -879,6 +879,8 @@ void addFruObjectToDbus(
     if (i2cPcieMappings.contains(bus))
     {
         std::string prunedProductName = productName.substr(productName.rfind('/')+1);
+        std::regex suffixPattern("_[0-9]+$");
+        prunedProductName = std::regex_replace(prunedProductName, suffixPattern, "_");
         size_t findLastUndercore = prunedProductName.find_last_not_of('_');
         // there should be at least one underscore in productName
         if (findLastUndercore != std::string::npos)
