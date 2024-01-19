@@ -1073,14 +1073,12 @@ void rescanOneBus(
                         {
                             objServer.remove_interface(busIface->second);
                             dbusInterfaceMap.erase(busIface->first);
+                            continue;
                         }
                     }
                 }
             }
-            else
-            {
-                busIface++;
-            }
+            busIface++;
         }
         auto found = busmap.find(busNum);
         if (found == busmap.end() || found->second == nullptr)
