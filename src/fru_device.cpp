@@ -66,7 +66,7 @@ constexpr size_t maxEepromPageIndex = 255;
 constexpr size_t busTimeoutSeconds = 10;
 
 constexpr const char* blocklistPath = PACKAGE_DIR "blacklist.json";
-
+constexpr const char* i2cPcieMappingPath = PACKAGE_DIR "i2cPcieMapping.json";
 const static constexpr char* baseboardFruLocation =
     "/etc/fru/baseboard.fru.bin";
 
@@ -74,6 +74,8 @@ const static constexpr char* i2CDevLocation = "/dev";
 
 static boost::container::flat_map<size_t, std::optional<std::set<size_t>>>
     busBlocklist;
+using VariantType = std::variant<uint32_t, std::string>;
+std::unordered_map<uint32_t, VariantType> i2cPcieMappings;    
 static std::set<std::pair<int, int>> addressBlacklist;
 struct FindDevicesWithCallback;
 
@@ -585,6 +587,63 @@ int getBusFRUs(int file, int first, int last, int bus,
     return future.get();
 }
 
+void loadI2cPcieMappingTable(const char* path)
+{
+    std::ifstream i2cPcieMappingStream(path);
+    if (!i2cPcieMappingStream.good())
+    {
+        // File is optional.
+        std::cerr << "Cannot open i2cPcieMapping.json file.\n\n";
+        return;
+    }
+
+    nlohmann::json data =
+        nlohmann::json::parse(i2cPcieMappingStream, nullptr, false);
+    if (data.is_discarded())
+    {
+        std::cerr << "Illegal i2cPcieMapping.json file detected, cannot validate JSON, "
+                     "exiting\n";
+        std::exit(EXIT_FAILURE);
+    }
+
+    auto i2cPcieMappingTableItr = data.find("i2cPcieMapping");
+    if (i2cPcieMappingTableItr == data.end())
+    {
+        std::cerr << "cannot find i2cPcieMapping array\n";
+        std::exit(EXIT_FAILURE);
+    }
+
+    if (data["i2cPcieMapping"].is_array() == false || \
+        data["i2cPcieMapping"].empty() == true )
+    {
+        std::cerr << "i2cPcieMapping must be an array and has data\n";
+        std::exit(EXIT_FAILURE);
+    }
+
+    for (const auto& mappingNode : data["i2cPcieMapping"])
+    {
+        uint32_t i2cBusNum = static_cast<uint32_t>(mappingNode[0]);
+        VariantType pcieLabel;
+        if (mappingNode[1].is_number() == true)
+        {
+            pcieLabel = static_cast<uint32_t>(mappingNode[1]);
+        }
+        else if (mappingNode[1].is_string() == true)
+        {
+            pcieLabel = std::string(mappingNode[1]);
+        }
+        else
+        {
+            std::cerr << "Cannot recognize the data " << mappingNode[1] << std::endl;
+            continue;
+        }
+
+        i2cPcieMappings[i2cBusNum] = pcieLabel;
+    }
+
+    return;
+}
+
 void loadBlocklist(const char* path)
 {
     std::ifstream blocklistStream(path);
@@ -830,14 +889,17 @@ void addFruObjectToDbus(
         {
             continue;
         }
-        std::string key = std::regex_replace(property.first, nonAsciiRegex,
-                                             "_");
-
+        std::string key =
+            std::regex_replace(property.first, nonAsciiRegex, "_");
+        std::string value = property.second;
+        // Remove the spaces from the end of the key string
+        value.erase(std::find_if(value.rbegin(), value.rend(), 
+            [](unsigned char ch) {return !std::isspace(ch);}).base(), value.end());
         if (property.first == "PRODUCT_ASSET_TAG")
         {
             std::string propertyName = property.first;
             iface->register_property(
-                key, property.second + '\0',
+                key, value + '\0',
                 [bus, address, propertyName, &dbusInterfaceMap,
                  &unknownBusObjectCount, &powerIsOn, &objServer,
                  &systemBus](const std::string& req, std::string& resp) {
@@ -860,14 +922,34 @@ void addFruObjectToDbus(
                 return 1;
             });
         }
-        else if (!iface->register_property(key, property.second + '\0'))
+        else if (!iface->register_property(key, value + '\0'))
         {
             std::cerr << "illegal key: " << key << "\n";
         }
         if (debug)
         {
-            std::cout << property.first << ": " << property.second << "\n";
+            std::cout << property.first << ": " << value << "\n";
         }
+    }
+
+    // only check PCIe devices when i2cPcieMapping contains data
+    if (i2cPcieMappings.contains(bus))
+    {
+        std::string prunedProductName = productName.substr(productName.rfind('/')+1);
+        std::regex suffixPattern("_[0-9]+$");
+        prunedProductName = std::regex_replace(prunedProductName, suffixPattern, "_");
+        size_t findLastUndercore = prunedProductName.find_last_not_of('_');
+        // there should be at least one underscore in productName
+        if (findLastUndercore != std::string::npos)
+        {
+            prunedProductName = prunedProductName.substr(0, findLastUndercore + 1);
+        }
+
+        iface->register_property("DEVICE_DBUS_NAME", prunedProductName);
+
+        std::visit([&iface](const auto& val) {
+            iface->register_property("PCIE_LABEL", val);
+        }, i2cPcieMappings[bus]);
     }
 
     // baseboard will be 0, 0
@@ -1376,6 +1458,9 @@ int main()
 
     // check for and load blocklist with initial buses.
     loadBlocklist(blocklistPath);
+
+    // load I2C to PCIe mapping table
+    loadI2cPcieMappingTable(i2cPcieMappingPath);
 
     systemBus->request_name("xyz.openbmc_project.FruDevice");
 
