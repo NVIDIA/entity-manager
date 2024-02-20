@@ -17,6 +17,12 @@
                     "$ref": "intel.json#/$defs/IntelFanConnector"
                 },
                 {
+                    "$ref": "mctp.json#/$defs/MCTPI2CTarget"
+                },
+                {
+                    "$ref": "mctp.json#/$defs/MCTPUSBTarget"
+                },
+                {
                     "$ref": "pid.json#/$defs/Pid"
                 },
                 {
