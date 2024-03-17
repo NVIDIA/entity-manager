@@ -613,8 +613,7 @@ void loadI2cPcieMappingTable(const char* path)
         std::exit(EXIT_FAILURE);
     }
 
-    if (data["i2cPcieMapping"].is_array() == false || \
-        data["i2cPcieMapping"].empty() == true )
+    if (!data["i2cPcieMapping"].is_array() || data["i2cPcieMapping"].empty())
     {
         std::cerr << "i2cPcieMapping must be an array and has data\n";
         std::exit(EXIT_FAILURE);
@@ -624,11 +623,11 @@ void loadI2cPcieMappingTable(const char* path)
     {
         uint32_t i2cBusNum = static_cast<uint32_t>(mappingNode[0]);
         VariantType pcieLabel;
-        if (mappingNode[1].is_number() == true)
+        if (mappingNode[1].is_number())
         {
             pcieLabel = static_cast<uint32_t>(mappingNode[1]);
         }
-        else if (mappingNode[1].is_string() == true)
+        else if (mappingNode[1].is_string())
         {
             pcieLabel = std::string(mappingNode[1]);
         }
@@ -640,8 +639,6 @@ void loadI2cPcieMappingTable(const char* path)
 
         i2cPcieMappings[i2cBusNum] = pcieLabel;
     }
-
-    return;
 }
 
 void loadBlocklist(const char* path)
@@ -893,8 +890,11 @@ void addFruObjectToDbus(
             std::regex_replace(property.first, nonAsciiRegex, "_");
         std::string value = property.second;
         // Remove the spaces from the end of the key string
-        value.erase(std::find_if(value.rbegin(), value.rend(), 
-            [](unsigned char ch) {return !std::isspace(ch);}).base(), value.end());
+        value.erase(std::find_if(value.rbegin(), value.rend(),
+                                 [](unsigned char ch) {
+            return (0 == std::isspace(ch));
+        }).base(),
+                    value.end());
         if (property.first == "PRODUCT_ASSET_TAG")
         {
             std::string propertyName = property.first;
