@@ -433,7 +433,8 @@ void populateInterfaceFromJson(
         auto type = value.type();
         bool array = false;
 
-        if (key == "Parent_Chassis")
+        if (key == "Parent_Chassis" ||
+            key == "xyz.openbmc_project.Association.Definitions")
         {
             continue;
         }
@@ -886,13 +887,41 @@ void postToDbus(const nlohmann::json& newConfiguration,
         {
             if (propValue.type() == nlohmann::json::value_t::object)
             {
-                std::shared_ptr<sdbusplus::asio::dbus_interface> iface =
-                    createInterface(objServer, boardPath, propName,
-                                    boardNameOrig);
+                if (propName == "xyz.openbmc_project.Association.Definitions")
+                {
+                    for (const auto& [key, value] : propValue.items())
+                    {
+                        if (key == "Associations" &&
+                            value.type() == nlohmann::json::value_t::array)
+                        {
+                            for (const auto& arr : value)
+                            {
+                                if (arr.is_array() && arr.size() == 3)
+                                {
+                                    associations.emplace_back(
+                                        arr[0].get<std::string>(),
+                                        arr[1].get<std::string>(),
+                                        arr[2].get<std::string>());
+                                }
+                                else
+                                {
+                                    std::cerr
+                                        << "Error: Association requires {forward, backward and path} \n";
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    std::shared_ptr<sdbusplus::asio::dbus_interface> iface =
+                        createInterface(objServer, boardPath, propName,
+                                        boardNameOrig);
 
-                populateInterfaceFromJson(
-                    systemConfiguration, jsonPointerPath + propName, iface,
-                    propValue, objServer, getPermission(propName));
+                    populateInterfaceFromJson(
+                        systemConfiguration, jsonPointerPath + propName, iface,
+                        propValue, objServer, getPermission(propName));
+                }
             }
             if (propName == probePath)
             {
