@@ -6,11 +6,27 @@ A tool for validating entity manager configurations.
 import argparse
 import json
 import os
+import re
 import sys
 
 import jsonschema.validators
 
 DEFAULT_SCHEMA_FILENAME = "global.json"
+
+
+def remove_c_comments(string):
+    # first group captures quoted strings (double or single)
+    # second group captures comments (//single-line or /* multi-line */)
+    pattern = r"(\".*?(?<!\\)\"|\'.*?(?<!\\)\')|(/\*.*?\*/|//[^\r\n]*$)"
+    regex = re.compile(pattern, re.MULTILINE | re.DOTALL)
+
+    def _replacer(match):
+        if match.group(2) is not None:
+            return ""
+        else:
+            return match.group(1)
+
+    return regex.sub(_replacer, string)
 
 
 def main():
@@ -97,7 +113,7 @@ def main():
     for config_file in config_files:
         try:
             with open(config_file) as fd:
-                configs.append(json.load(fd))
+                configs.append(json.loads(remove_c_comments(fd.read())))
         except FileNotFoundError:
             sys.stderr.write(
                 "Could not parse config file '{}'\n".format(config_file)
@@ -118,11 +134,13 @@ def main():
             )
             sys.exit(2)
 
+    spec = jsonschema.Draft7Validator
+    spec.check_schema(schema)
     base_uri = "file://{}/".format(
         os.path.split(os.path.realpath(schema_file))[0]
     )
     resolver = jsonschema.RefResolver(base_uri, schema)
-    validator = jsonschema.Draft7Validator(schema, resolver=resolver)
+    validator = spec(schema, resolver=resolver)
 
     results = {
         "invalid": [],

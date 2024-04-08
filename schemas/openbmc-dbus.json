@@ -43,6 +43,19 @@
                             "required": ["AssetTag"],
                             "type": "object"
                         },
+                        "Compatible": {
+                            "additionalProperties": false,
+                            "properties": {
+                                "Names": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "required": ["Names"],
+                            "type": "object"
+                        },
                         "Replaceable": {
                             "additionalProperties": false,
                             "properties": {
@@ -67,7 +80,17 @@
                                 "LocationType"
                             ],
                             "type": "object"
-                        }                        
+                        },
+                        "Slot": {
+                            "additionalProperties": false,
+                            "properties": {
+                                "SlotNumber": {
+                                    "type": ["string", "number"]
+                                }
+                            },
+                            "required": ["SlotNumber"],
+                            "type": "object"
+                        }
                     },
                     "Item": {
                         "Board": {
@@ -94,6 +117,18 @@
                             "additionalProperties": false,
                             "type": "object"
                         }
+                    }
+                },
+                "Common": {
+                    "UUID": {
+                        "additionalProperties": false,
+                        "properties": {
+                            "UUID": {
+                                "type": "string"
+                            }
+                        },
+                        "required": ["UUID"],
+                        "type": "object"
                     }
                 }
             }
