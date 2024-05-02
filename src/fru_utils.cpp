@@ -284,6 +284,16 @@ bool verifyOffset(const std::vector<uint8_t>& fruBytes, fruAreas currentArea,
     return true;
 }
 
+bool isMuxBus(size_t bus)
+{
+    auto ec = std::error_code();
+    auto isSymlink =
+        is_symlink(std::filesystem::path("/sys/bus/i2c/devices/i2c-" +
+                                         std::to_string(bus) + "/mux_device"),
+                   ec);
+    return (!ec && isSymlink);
+}
+
 static void parseMultirecordUUID(
     const std::vector<uint8_t>& device,
     boost::container::flat_map<std::string, std::string>& result)
@@ -1064,7 +1074,7 @@ std::optional<int> findIndexForFRU(
     boost::container::flat_map<
         std::pair<size_t, size_t>,
         std::shared_ptr<sdbusplus::asio::dbus_interface>>& dbusInterfaceMap,
-    std::string& productName)
+    std::string& productName, uint32_t bus, uint32_t address)
 {
     int highest = -1;
     bool found = false;
@@ -1074,6 +1084,18 @@ std::optional<int> findIndexForFRU(
         std::string path = busIface.second->get_object_path();
         if (std::regex_match(path, std::regex(productName + "(_\\d+|)$")))
         {
+            if (isMuxBus(bus) && bus != busIface.first.first &&
+                address == busIface.first.second &&
+                (getFRUInfo(static_cast<uint8_t>(busIface.first.first),
+                            static_cast<uint8_t>(busIface.first.second)) ==
+                 getFRUInfo(static_cast<uint8_t>(bus),
+                            static_cast<uint8_t>(address))))
+            {
+                // This device is already added to the lower numbered bus,
+                // do not replicate it.
+                return std::nullopt;
+            }
+
             // Check if the match named has extra information.
             found = true;
             std::smatch baseMatch;

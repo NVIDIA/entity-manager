@@ -202,13 +202,15 @@ bool copyRestFRUArea(std::vector<uint8_t>& fruData,
 /// regular expression and find the device index for all devices.
 /// \param dbusInterfaceMap - Map to store fru device dbus path and interface
 /// \param productName - fru device product name.
+//  \param bus - bus number of the device
+//  \param address - address of the device
 /// \return optional<int> highest index for fru device on success, return
 /// nullopt on failure.
 std::optional<int> findIndexForFRU(
     boost::container::flat_map<
         std::pair<size_t, size_t>,
         std::shared_ptr<sdbusplus::asio::dbus_interface>>& dbusInterfaceMap,
-    std::string& productName);
+    std::string& productName, uint32_t bus, uint32_t address);
 
 /// \brief It does format fru data and find productName in the formatted
 /// fru data and return productName.
@@ -225,3 +227,8 @@ std::optional<std::string> getProductName(
     uint32_t bus, uint32_t address, size_t& unknownBusObjectCount);
 
 bool getFruData(std::vector<uint8_t>& fruData, uint32_t bus, uint32_t address);
+
+/// \brief Check if there is a MUX on this bus
+/// \param bus - bus number of the device
+/// \return true if there is a MUX on the bus
+bool isMuxBus(size_t bus);
