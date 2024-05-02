@@ -16,6 +16,7 @@
 /// \file fru_device.cpp
 
 #include "fru_utils.hpp"
+#include "nvme_utils.hpp"
 #include "utils.hpp"
 
 #include <fcntl.h>
@@ -321,6 +322,13 @@ static std::vector<uint8_t> processEeprom(int bus, int address)
     FRUReader reader(std::move(readFunc));
     std::pair<std::vector<uint8_t>, bool> pair = readFRUContents(reader,
                                                                  errorMessage);
+    if (pair.first.empty())
+    {
+        if (address == nvme::address)  // Check for NVMe drive
+        {
+            pair = readNvmeContents(bus, file, errorMessage);
+        }
+    }
 
     close(file);
     return pair.first;
@@ -562,7 +570,14 @@ int getBusFRUs(int file, int first, int last, int bus,
 
             if (pair.first.empty())
             {
-                continue;
+                if (ii == nvme::address)  // Check for NVMe drive
+                {
+                    pair = readNvmeContents(bus, file, errorMessage);
+                    if (pair.first.empty())
+                    {
+                        continue;
+                    }
+                }
             }
 
             devices->emplace(ii, pair.first);
@@ -862,6 +877,13 @@ void addFruObjectToDbus(
     if (!optionalProductName)
     {
         std::cerr << "getProductName failed. product name is empty.\n";
+        if (address == nvme::address)
+        {
+            // If fail on IPMI FRU detection, check NVMe drive vendor ID
+            addNvmeObjectToDbus(device, dbusInterfaceMap, bus, address,
+                                unknownBusObjectCount, objServer);
+        }
+
         return;
     }
 
