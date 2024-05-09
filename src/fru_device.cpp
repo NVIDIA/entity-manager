@@ -75,7 +75,7 @@ const static constexpr char* i2CDevLocation = "/dev";
 static boost::container::flat_map<size_t, std::optional<std::set<size_t>>>
     busBlocklist;
 using VariantType = std::variant<uint32_t, std::string>;
-std::unordered_map<uint32_t, VariantType> i2cPcieMappings;    
+std::unordered_map<uint32_t, VariantType> i2cPcieMappings;
 static std::set<std::pair<int, int>> addressBlacklist;
 struct FindDevicesWithCallback;
 
@@ -597,12 +597,13 @@ void loadI2cPcieMappingTable(const char* path)
         return;
     }
 
-    nlohmann::json data =
-        nlohmann::json::parse(i2cPcieMappingStream, nullptr, false);
+    nlohmann::json data = nlohmann::json::parse(i2cPcieMappingStream, nullptr,
+                                                false);
     if (data.is_discarded())
     {
-        std::cerr << "Illegal i2cPcieMapping.json file detected, cannot validate JSON, "
-                     "exiting\n";
+        std::cerr
+            << "Illegal i2cPcieMapping.json file detected, cannot validate JSON, "
+               "exiting\n";
         std::exit(EXIT_FAILURE);
     }
 
@@ -633,7 +634,8 @@ void loadI2cPcieMappingTable(const char* path)
         }
         else
         {
-            std::cerr << "Cannot recognize the data " << mappingNode[1] << std::endl;
+            std::cerr << "Cannot recognize the data " << mappingNode[1]
+                      << std::endl;
             continue;
         }
 
@@ -825,9 +827,8 @@ struct FindDevicesWithCallback :
                             BusMap& busmap, const bool& powerIsOn,
                             sdbusplus::asio::object_server& objServer,
                             std::function<void(void)>&& callback) :
-        _i2cBuses(i2cBuses),
-        _busMap(busmap), _powerIsOn(powerIsOn), _objServer(objServer),
-        _callback(std::move(callback))
+        _i2cBuses(i2cBuses), _busMap(busmap), _powerIsOn(powerIsOn),
+        _objServer(objServer), _callback(std::move(callback))
     {}
     ~FindDevicesWithCallback()
     {
@@ -886,8 +887,8 @@ void addFruObjectToDbus(
         {
             continue;
         }
-        std::string key =
-            std::regex_replace(property.first, nonAsciiRegex, "_");
+        std::string key = std::regex_replace(property.first, nonAsciiRegex,
+                                             "_");
         std::string value = property.second;
         // Remove the spaces from the end of the key string
         value.erase(std::find_if(value.rbegin(), value.rend(),
@@ -935,14 +936,17 @@ void addFruObjectToDbus(
     // only check PCIe devices when i2cPcieMapping contains data
     if (i2cPcieMappings.contains(bus))
     {
-        std::string prunedProductName = productName.substr(productName.rfind('/')+1);
+        std::string prunedProductName =
+            productName.substr(productName.rfind('/') + 1);
         std::regex suffixPattern("_[0-9]+$");
-        prunedProductName = std::regex_replace(prunedProductName, suffixPattern, "_");
+        prunedProductName = std::regex_replace(prunedProductName, suffixPattern,
+                                               "_");
         size_t findLastUndercore = prunedProductName.find_last_not_of('_');
         // there should be at least one underscore in productName
         if (findLastUndercore != std::string::npos)
         {
-            prunedProductName = prunedProductName.substr(0, findLastUndercore + 1);
+            prunedProductName = prunedProductName.substr(0,
+                                                         findLastUndercore + 1);
         }
 
         iface->register_property("DEVICE_DBUS_NAME", prunedProductName);
