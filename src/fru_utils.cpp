@@ -38,7 +38,7 @@ extern "C"
 static constexpr bool debug = false;
 constexpr size_t fruVersion = 1; // Current FRU spec version number is 1
 
-std::tm intelEpoch(void)
+std::tm intelEpoch()
 {
     std::tm val = {};
     val.tm_year = 1996 - 1900;
@@ -191,6 +191,11 @@ std::pair<DecodeState, std::string>
             }
         }
         break;
+
+        default:
+        {
+            return make_pair(DecodeState::err, value);
+        }
     }
 
     return make_pair(DecodeState::ok, value);

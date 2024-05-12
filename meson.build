@@ -101,6 +101,8 @@ configs = [
     'bnp_baseboard.json',
     'bellavista.json',
     'bonnell.json',
+    'brcm_100g_1p_ocp_mezz.json',
+    'brcm_200g_1p_ocp_mezz.json',
     'cx7_ocp.json',
     'delta_awf2dc3200w_psu.json',
     'delta_dps-750xb_psu.json',
@@ -149,7 +151,9 @@ configs = [
     'mtmitchell_mb.json',
     'mudflap.json',
     'nisqually.json',
-    'nvme_p4000.json',
+    'nuvoton_npcm8xx_evb.json',
+    'nvme_intel_p_series.json',
+    'nvme_p4500_p5500.json',
     'pcie_ssd_retimer.json',
     'pennybacker.json',
     'pssf132202a.json',
@@ -167,6 +171,7 @@ configs = [
     'sbp1_nvme.json',
     'sbp1_psu.json',
     'sbp1_rssd.json',
+    'sbp1_hbm.json',
     'system1_baseboard.json',
     'system1_chassis.json',
     'solum_pssf162202_psu.json',
@@ -202,19 +207,21 @@ foreach c : configs
     filepaths += [file]
 endforeach
 
-validate_script = files('scripts/validate_configs.py')
-autojson = custom_target(
-  'check_syntax',
-  command: [
-    validate_script,
-    '-v',
-    '-k',
-  ],
-  depend_files: files(filepaths),
-  build_by_default: true,
-  capture: true,
-  output: 'validate_configs.log',
-)
+if get_option('validate-json')
+    validate_script = files('scripts/validate_configs.py')
+    autojson = custom_target(
+      'check_syntax',
+      command: [
+        validate_script,
+        '-v',
+        '-k',
+      ],
+      depend_files: files(filepaths),
+      build_by_default: true,
+      capture: true,
+      output: 'validate_configs.log',
+    )
+endif
 
 schemas = [
     'global.json',

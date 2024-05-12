@@ -90,6 +90,16 @@
                             },
                             "required": ["SlotNumber"],
                             "type": "object"
+                        },
+                        "Revision": {
+                            "additionalProperties": false,
+                            "properties": {
+                                "Version": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": ["Version"],
+                            "type": "object"
                         }
                     },
                     "Item": {
@@ -107,6 +117,16 @@
                         },
                         "Chassis": {
                             "additionalProperties": false,
+                            "type": "object"
+                        },
+                        "NetworkInterface": {
+                            "additionalProperties": false,
+                            "properties": {
+                                "MACAddress": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": ["MACAddress"],
                             "type": "object"
                         },
                         "Panel": {

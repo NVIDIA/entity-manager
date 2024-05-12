@@ -354,7 +354,7 @@
             "MaxValue": 3.57,
             "MinValue": 0,
             "Name": "VBAT_RTC",
-            "PollRate": 86400,
+            "PollRate": 900,
             "ScaleFactor": 1.0,
             "Thresholds": [
                 {
@@ -394,8 +394,8 @@
             "Labels": [
                 "temp2"
             ],
-            "Name": "NIC1_0",
-            "Name1": "NIC1",
+            "Name": "NIC2_0",
+            "Name1": "NIC2",
             "PowerState": "On",
             "Type": "ADM1021"
         },
@@ -405,8 +405,8 @@
             "Labels": [
                 "temp2"
             ],
-            "Name": "NIC2_0",
-            "Name1": "NIC2",
+            "Name": "NIC1_0",
+            "Name1": "NIC1",
             "PowerState": "On",
             "Type": "ADM1021"
         },
@@ -3521,272 +3521,9 @@
             "Type": "MAX6639"
         },
         {
-            "Address": "0x2e",
-            "Bus": "105",
-            "Labels": [
-                "temp1"
-            ],
-            "Name": "Fan01 Temperature",
-            "PollRate": 5.0,
-            "PowerState": "Always",
-            "Type": "MAX6639"
-        },
-        {
-            "Address": "0x2e",
-            "Bus": "118",
-            "Labels": [
-                "temp1"
-            ],
-            "Name": "Fan02 Temperature",
-            "PollRate": 5.0,
-            "PowerState": "Always",
-            "Type": "MAX6639"
-        },
-        {
-            "Address": "0x2e",
-            "Bus": "106",
-            "Labels": [
-                "temp1"
-            ],
-            "Name": "Fan03 Temperature",
-            "PollRate": 5.0,
-            "PowerState": "Always",
-            "Type": "MAX6639"
-        },
-        {
-            "Address": "0x2e",
-            "Bus": "119",
-            "Labels": [
-                "temp1"
-            ],
-            "Name": "Fan04 Temperature",
-            "PollRate": 5.0,
-            "PowerState": "Always",
-            "Type": "MAX6639"
-        },
-        {
-            "Address": "0x2e",
-            "Bus": "107",
-            "Labels": [
-                "temp1"
-            ],
-            "Name": "Fan05 Temperature",
-            "PollRate": 5.0,
-            "PowerState": "Always",
-            "Type": "MAX6639"
-        },
-        {
-            "Address": "0x2e",
-            "Bus": "120",
-            "Labels": [
-                "temp1"
-            ],
-            "Name": "Fan06 Temperature",
-            "PollRate": 5.0,
-            "PowerState": "Always",
-            "Type": "MAX6639"
-        },
-        {
-            "Address": "0x2e",
-            "Bus": "108",
-            "Labels": [
-                "temp1"
-            ],
-            "Name": "Fan07 Temperature",
-            "PollRate": 5.0,
-            "PowerState": "Always",
-            "Type": "MAX6639"
-        },
-        {
-            "Address": "0x2e",
-            "Bus": "121",
-            "Labels": [
-                "temp1"
-            ],
-            "Name": "Fan08 Temperature",
-            "PollRate": 5.0,
-            "PowerState": "Always",
-            "Type": "MAX6639"
-        },
-        {
-            "Address": "0x2e",
-            "Bus": "109",
-            "Labels": [
-                "temp1"
-            ],
-            "Name": "Fan09 Temperature",
-            "PollRate": 5.0,
-            "PowerState": "Always",
-            "Type": "MAX6639"
-        },
-        {
-            "Address": "0x2e",
-            "Bus": "123",
-            "Labels": [
-                "temp1"
-            ],
-            "Name": "Fan10 Temperature",
-            "PollRate": 5.0,
-            "PowerState": "Always",
-            "Type": "MAX6639"
-        },
-        {
-            "Address": "0x2e",
-            "Bus": "110",
-            "Labels": [
-                "temp1"
-            ],
-            "Name": "Fan11 Temperature",
-            "PollRate": 5.0,
-            "PowerState": "Always",
-            "Type": "MAX6639"
-        },
-        {
-            "Address": "0x2e",
-            "Bus": "124",
-            "Labels": [
-                "temp1"
-            ],
-            "Name": "Fan12 Temperature",
-            "PollRate": 5.0,
-            "PowerState": "Always",
-            "Type": "MAX6639"
-        },
-        {
-            "Address": "0x2e",
-            "Bus": "111",
-            "Labels": [
-                "temp1"
-            ],
-            "Name": "Fan13 Temperature",
-            "PollRate": 5.0,
-            "PowerState": "Always",
-            "Type": "MAX6639"
-        },
-        {
-            "Address": "0x2e",
-            "Bus": "125",
-            "Labels": [
-                "temp1"
-            ],
-            "Name": "Fan14 Temperature",
-            "PollRate": 5.0,
-            "PowerState": "Always",
-            "Type": "MAX6639"
-        },
-        {
-            "Address": "0x2e",
-            "Bus": "112",
-            "Labels": [
-                "temp1"
-            ],
-            "Name": "Fan15 Temperature",
-            "PollRate": 5.0,
-            "PowerState": "Always",
-            "Type": "MAX6639"
-        },
-        {
-            "Address": "0x2e",
-            "Bus": "126",
-            "Labels": [
-                "temp1"
-            ],
-            "Name": "Fan16 Temperature",
-            "PollRate": 5.0,
-            "PowerState": "Always",
-            "Type": "MAX6639"
-        },
-        {
-            "Address": "0x2e",
-            "Bus": "114",
-            "Labels": [
-                "temp1"
-            ],
-            "Name": "Fan17 Temperature",
-            "PollRate": 5.0,
-            "PowerState": "Always",
-            "Type": "MAX6639"
-        },
-        {
-            "Address": "0x2e",
-            "Bus": "127",
-            "Labels": [
-                "temp1"
-            ],
-            "Name": "Fan18 Temperature",
-            "PollRate": 5.0,
-            "PowerState": "Always",
-            "Type": "MAX6639"
-        },
-        {
-            "Address": "0x2e",
-            "Bus": "115",
-            "Labels": [
-                "temp1"
-            ],
-            "Name": "Fan19 Temperature",
-            "PollRate": 5.0,
-            "PowerState": "Always",
-            "Type": "MAX6639"
-        },
-        {
-            "Address": "0x2e",
-            "Bus": "128",
-            "Labels": [
-                "temp1"
-            ],
-            "Name": "Fan20 Temperature",
-            "PollRate": 5.0,
-            "PowerState": "Always",
-            "Type": "MAX6639"
-        },
-        {
-            "Address": "0x2e",
-            "Bus": "116",
-            "Labels": [
-                "temp1"
-            ],
-            "Name": "Fan21 Temperature",
-            "PollRate": 5.0,
-            "PowerState": "Always",
-            "Type": "MAX6639"
-        },
-        {
-            "Address": "0x2e",
-            "Bus": "129",
-            "Labels": [
-                "temp1"
-            ],
-            "Name": "Fan22 Temperature",
-            "PollRate": 5.0,
-            "PowerState": "Always",
-            "Type": "MAX6639"
-        },
-        {
-            "Address": "0x2e",
-            "Bus": "117",
-            "Labels": [
-                "temp1"
-            ],
-            "Name": "Fan23 Temperature",
-            "PollRate": 5.0,
-            "PowerState": "Always",
-            "Type": "MAX6639"
-        },
-        {
-            "Address": "0x2e",
-            "Bus": "130",
-            "Labels": [
-                "temp1"
-            ],
-            "Name": "Fan24 Temperature",
-            "PollRate": 5.0,
-            "PowerState": "Always",
-            "Type": "MAX6639"
-        },
-        {
             "Address": "0x58",
             "Bus": "98",
+            "CPURequired": 0,
             "Labels": [
                 "iin",
                 "iout1",
@@ -3946,6 +3683,7 @@
         {
             "Address": "0x58",
             "Bus": "74",
+            "CPURequired": 1,
             "Labels": [
                 "iin",
                 "iout1",
@@ -4105,6 +3843,7 @@
         {
             "Address": "0x58",
             "Bus": "66",
+            "CPURequired": 2,
             "Labels": [
                 "iin",
                 "iout1",
@@ -4264,6 +4003,7 @@
         {
             "Address": "0x58",
             "Bus": "90",
+            "CPURequired": 3,
             "Labels": [
                 "iin",
                 "iout1",
@@ -4423,6 +4163,7 @@
         {
             "Address": "0x58",
             "Bus": "99",
+            "CPURequired": 0,
             "Labels": [
                 "iin",
                 "iout1",
@@ -4582,6 +4323,7 @@
         {
             "Address": "0x58",
             "Bus": "75",
+            "CPURequired": 1,
             "Labels": [
                 "iin",
                 "iout1",
@@ -4741,6 +4483,7 @@
         {
             "Address": "0x58",
             "Bus": "67",
+            "CPURequired": 2,
             "Labels": [
                 "iin",
                 "iout1",
@@ -4900,6 +4643,7 @@
         {
             "Address": "0x58",
             "Bus": "91",
+            "CPURequired": 3,
             "Labels": [
                 "iin",
                 "iout1",
@@ -5059,6 +4803,7 @@
         {
             "Address": "0x40",
             "Bus": "98",
+            "CPURequired": 0,
             "Labels": [
                 "iout1",
                 "iin",
@@ -5174,6 +4919,7 @@
         {
             "Address": "0x40",
             "Bus": "90",
+            "CPURequired": 3,
             "Labels": [
                 "iout1",
                 "iin",
@@ -5289,6 +5035,7 @@
         {
             "Address": "0x40",
             "Bus": "74",
+            "CPURequired": 1,
             "Labels": [
                 "iout1",
                 "iin",
@@ -5404,6 +5151,7 @@
         {
             "Address": "0x40",
             "Bus": "66",
+            "CPURequired": 2,
             "Labels": [
                 "iout1",
                 "iin",
@@ -5518,467 +5266,8 @@
         },
         {
             "Address": "0x40",
-            "Bus": "93",
-            "Labels": [
-                "iout1",
-                "iin",
-                "vin",
-                "pin",
-                "vout1",
-                "pout1",
-                "temp1"
-            ],
-            "Name": "PVPP_HBM_CPU3",
-            "PollRate": 5.0,
-            "PowerState": "On",
-            "Thresholds": [
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.08,
-                    "Label": "iout1",
-                    "Name": "upper critical",
-                    "Severity": 1,
-                    "Value": 8.0
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.0275,
-                    "Label": "vout1",
-                    "Name": "upper critical",
-                    "Severity": 1,
-                    "Value": 2.75
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.133,
-                    "Label": "vin",
-                    "Name": "upper critical",
-                    "Severity": 1,
-                    "Value": 13.3
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.128,
-                    "Label": "vin",
-                    "Name": "upper non critical",
-                    "Severity": 0,
-                    "Value": 12.8
-                },
-                {
-                    "Direction": "less than",
-                    "Hysteresis": 0.1168,
-                    "Label": "vin",
-                    "Name": "lower non critical",
-                    "Severity": 0,
-                    "Value": 11.68
-                },
-                {
-                    "Direction": "less than",
-                    "Hysteresis": 0.11080000000000001,
-                    "Label": "vin",
-                    "Name": "lower critical",
-                    "Severity": 1,
-                    "Value": 11.08
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 1.2,
-                    "Label": "temp1",
-                    "Name": "upper non critical",
-                    "Severity": 0,
-                    "Value": 120.0
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 1.4000000000000001,
-                    "Label": "temp1",
-                    "Name": "upper critical",
-                    "Severity": 1,
-                    "Value": 140.0
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.04,
-                    "Label": "iout1",
-                    "Name": "upper non critical",
-                    "Severity": 0,
-                    "Value": 4.0
-                },
-                {
-                    "Direction": "less than",
-                    "Hysteresis": 0.023799999999999998,
-                    "Label": "vout1",
-                    "Name": "lower non critical",
-                    "Severity": 0,
-                    "Value": 2.38
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.0263,
-                    "Label": "vout1",
-                    "Name": "upper non critical",
-                    "Severity": 0,
-                    "Value": 2.63
-                },
-                {
-                    "Direction": "less than",
-                    "Hysteresis": 0.0225,
-                    "Label": "vout1",
-                    "Name": "lower critical",
-                    "Severity": 1,
-                    "Value": 2.25
-                }
-            ],
-            "Type": "TDA38640"
-        },
-        {
-            "Address": "0x40",
-            "Bus": "77",
-            "Labels": [
-                "iout1",
-                "iin",
-                "vin",
-                "pin",
-                "vout1",
-                "pout1",
-                "temp1"
-            ],
-            "Name": "PVPP_HBM_CPU1",
-            "PollRate": 5.0,
-            "PowerState": "On",
-            "Thresholds": [
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.08,
-                    "Label": "iout1",
-                    "Name": "upper critical",
-                    "Severity": 1,
-                    "Value": 8.0
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.0275,
-                    "Label": "vout1",
-                    "Name": "upper critical",
-                    "Severity": 1,
-                    "Value": 2.75
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.133,
-                    "Label": "vin",
-                    "Name": "upper critical",
-                    "Severity": 1,
-                    "Value": 13.3
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.128,
-                    "Label": "vin",
-                    "Name": "upper non critical",
-                    "Severity": 0,
-                    "Value": 12.8
-                },
-                {
-                    "Direction": "less than",
-                    "Hysteresis": 0.1168,
-                    "Label": "vin",
-                    "Name": "lower non critical",
-                    "Severity": 0,
-                    "Value": 11.68
-                },
-                {
-                    "Direction": "less than",
-                    "Hysteresis": 0.11080000000000001,
-                    "Label": "vin",
-                    "Name": "lower critical",
-                    "Severity": 1,
-                    "Value": 11.08
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 1.2,
-                    "Label": "temp1",
-                    "Name": "upper non critical",
-                    "Severity": 0,
-                    "Value": 120.0
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 1.4000000000000001,
-                    "Label": "temp1",
-                    "Name": "upper critical",
-                    "Severity": 1,
-                    "Value": 140.0
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.04,
-                    "Label": "iout1",
-                    "Name": "upper non critical",
-                    "Severity": 0,
-                    "Value": 4.0
-                },
-                {
-                    "Direction": "less than",
-                    "Hysteresis": 0.023799999999999998,
-                    "Label": "vout1",
-                    "Name": "lower non critical",
-                    "Severity": 0,
-                    "Value": 2.38
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.0263,
-                    "Label": "vout1",
-                    "Name": "upper non critical",
-                    "Severity": 0,
-                    "Value": 2.63
-                },
-                {
-                    "Direction": "less than",
-                    "Hysteresis": 0.0225,
-                    "Label": "vout1",
-                    "Name": "lower critical",
-                    "Severity": 1,
-                    "Value": 2.25
-                }
-            ],
-            "Type": "TDA38640"
-        },
-        {
-            "Address": "0x40",
-            "Bus": "69",
-            "Labels": [
-                "iout1",
-                "iin",
-                "vin",
-                "pin",
-                "vout1",
-                "pout1",
-                "temp1"
-            ],
-            "Name": "PVPP_HBM_CPU2",
-            "PollRate": 5.0,
-            "PowerState": "On",
-            "Thresholds": [
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.08,
-                    "Label": "iout1",
-                    "Name": "upper critical",
-                    "Severity": 1,
-                    "Value": 8.0
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.0275,
-                    "Label": "vout1",
-                    "Name": "upper critical",
-                    "Severity": 1,
-                    "Value": 2.75
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.133,
-                    "Label": "vin",
-                    "Name": "upper critical",
-                    "Severity": 1,
-                    "Value": 13.3
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.128,
-                    "Label": "vin",
-                    "Name": "upper non critical",
-                    "Severity": 0,
-                    "Value": 12.8
-                },
-                {
-                    "Direction": "less than",
-                    "Hysteresis": 0.1168,
-                    "Label": "vin",
-                    "Name": "lower non critical",
-                    "Severity": 0,
-                    "Value": 11.68
-                },
-                {
-                    "Direction": "less than",
-                    "Hysteresis": 0.11080000000000001,
-                    "Label": "vin",
-                    "Name": "lower critical",
-                    "Severity": 1,
-                    "Value": 11.08
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 1.2,
-                    "Label": "temp1",
-                    "Name": "upper non critical",
-                    "Severity": 0,
-                    "Value": 120.0
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 1.4000000000000001,
-                    "Label": "temp1",
-                    "Name": "upper critical",
-                    "Severity": 1,
-                    "Value": 140.0
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.04,
-                    "Label": "iout1",
-                    "Name": "upper non critical",
-                    "Severity": 0,
-                    "Value": 4.0
-                },
-                {
-                    "Direction": "less than",
-                    "Hysteresis": 0.023799999999999998,
-                    "Label": "vout1",
-                    "Name": "lower non critical",
-                    "Severity": 0,
-                    "Value": 2.38
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.0263,
-                    "Label": "vout1",
-                    "Name": "upper non critical",
-                    "Severity": 0,
-                    "Value": 2.63
-                },
-                {
-                    "Direction": "less than",
-                    "Hysteresis": 0.0225,
-                    "Label": "vout1",
-                    "Name": "lower critical",
-                    "Severity": 1,
-                    "Value": 2.25
-                }
-            ],
-            "Type": "TDA38640"
-        },
-        {
-            "Address": "0x40",
-            "Bus": "101",
-            "Labels": [
-                "iout1",
-                "iin",
-                "vin",
-                "pin",
-                "vout1",
-                "pout1",
-                "temp1"
-            ],
-            "Name": "PVPP_HBM_CPU0",
-            "PollRate": 5.0,
-            "PowerState": "On",
-            "Thresholds": [
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.08,
-                    "Label": "iout1",
-                    "Name": "upper critical",
-                    "Severity": 1,
-                    "Value": 8.0
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.0275,
-                    "Label": "vout1",
-                    "Name": "upper critical",
-                    "Severity": 1,
-                    "Value": 2.75
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.133,
-                    "Label": "vin",
-                    "Name": "upper critical",
-                    "Severity": 1,
-                    "Value": 13.3
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.128,
-                    "Label": "vin",
-                    "Name": "upper non critical",
-                    "Severity": 0,
-                    "Value": 12.8
-                },
-                {
-                    "Direction": "less than",
-                    "Hysteresis": 0.1168,
-                    "Label": "vin",
-                    "Name": "lower non critical",
-                    "Severity": 0,
-                    "Value": 11.68
-                },
-                {
-                    "Direction": "less than",
-                    "Hysteresis": 0.11080000000000001,
-                    "Label": "vin",
-                    "Name": "lower critical",
-                    "Severity": 1,
-                    "Value": 11.08
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 1.2,
-                    "Label": "temp1",
-                    "Name": "upper non critical",
-                    "Severity": 0,
-                    "Value": 120.0
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 1.4000000000000001,
-                    "Label": "temp1",
-                    "Name": "upper critical",
-                    "Severity": 1,
-                    "Value": 140.0
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.04,
-                    "Label": "iout1",
-                    "Name": "upper non critical",
-                    "Severity": 0,
-                    "Value": 4.0
-                },
-                {
-                    "Direction": "less than",
-                    "Hysteresis": 0.023799999999999998,
-                    "Label": "vout1",
-                    "Name": "lower non critical",
-                    "Severity": 0,
-                    "Value": 2.38
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.0263,
-                    "Label": "vout1",
-                    "Name": "upper non critical",
-                    "Severity": 0,
-                    "Value": 2.63
-                },
-                {
-                    "Direction": "less than",
-                    "Hysteresis": 0.0225,
-                    "Label": "vout1",
-                    "Name": "lower critical",
-                    "Severity": 1,
-                    "Value": 2.25
-                }
-            ],
-            "Type": "TDA38640"
-        },
-        {
-            "Address": "0x40",
             "Bus": "92",
+            "CPURequired": 3,
             "Labels": [
                 "iout1",
                 "iin",
@@ -6096,6 +5385,7 @@
         {
             "Address": "0x40",
             "Bus": "76",
+            "CPURequired": 1,
             "Labels": [
                 "iout1",
                 "iin",
@@ -6213,6 +5503,7 @@
         {
             "Address": "0x40",
             "Bus": "68",
+            "CPURequired": 2,
             "Labels": [
                 "iout1",
                 "iin",
@@ -6330,6 +5621,7 @@
         {
             "Address": "0x40",
             "Bus": "100",
+            "CPURequired": 0,
             "Labels": [
                 "iout1",
                 "iin",

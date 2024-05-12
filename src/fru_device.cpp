@@ -72,6 +72,8 @@ const static constexpr char* baseboardFruLocation =
 
 const static constexpr char* i2CDevLocation = "/dev";
 
+// TODO Refactor these to not be globals
+// NOLINTBEGIN(cppcoreguidelines-avoid-non-const-global-variables)
 static boost::container::flat_map<size_t, std::optional<std::set<size_t>>>
     busBlocklist;
 using VariantType = std::variant<uint32_t, std::string>;
@@ -87,6 +89,7 @@ static boost::container::flat_map<size_t, std::set<size_t>> failedAddresses;
 static boost::container::flat_map<size_t, std::set<size_t>> fruAddresses;
 
 boost::asio::io_context io;
+// NOLINTEND(cppcoreguidelines-avoid-non-const-global-variables)
 
 bool updateFRUProperty(
     const std::string& updatePropertyReq, uint32_t bus, uint32_t address,
@@ -697,13 +700,13 @@ void loadBlocklist(const char* path)
                     auto addresses =
                         addressData.get<std::set<std::string_view>>();
 
-                    busBlocklist[bus].emplace();
+                    auto& block = busBlocklist[bus].emplace();
                     for (const auto& address : addresses)
                     {
                         size_t addressInt = 0;
                         std::from_chars(address.begin() + 2, address.end(),
                                         addressInt, 16);
-                        busBlocklist[bus]->insert(addressInt);
+                        block.insert(addressInt);
                     }
                 }
                 else
@@ -824,7 +827,7 @@ struct FindDevicesWithCallback :
     FindDevicesWithCallback(const std::vector<fs::path>& i2cBuses,
                             BusMap& busmap, const bool& powerIsOn,
                             sdbusplus::asio::object_server& objServer,
-                            std::function<void(void)>&& callback) :
+                            std::function<void()>&& callback) :
         _i2cBuses(i2cBuses),
         _busMap(busmap), _powerIsOn(powerIsOn), _objServer(objServer),
         _callback(std::move(callback))
@@ -842,7 +845,7 @@ struct FindDevicesWithCallback :
     BusMap& _busMap;
     const bool& _powerIsOn;
     sdbusplus::asio::object_server& _objServer;
-    std::function<void(void)> _callback;
+    std::function<void()> _callback;
 };
 
 void addFruObjectToDbus(
@@ -1556,6 +1559,7 @@ int main()
                 case IN_CREATE:
                 case IN_MOVED_TO:
                 case IN_DELETE:
+                {
                     std::string_view name(&iEvent->name[0], iEvent->len);
                     if (boost::starts_with(name, "i2c"))
                     {
@@ -1578,6 +1582,10 @@ int main()
                                      unknownBusObjectCount, powerIsOn,
                                      objServer, systemBus);
                     }
+                }
+                break;
+                default:
+                    break;
             }
             index += sizeof(inotify_event) + iEvent->len;
         }

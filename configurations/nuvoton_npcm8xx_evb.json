@@ -1,472 +1,476 @@
 {
     "Exposes": [
         {
+            "EntityId": 23,
+            "EntityInstance": 1,
             "Index": 0,
-            "Name": "P12V",
+            "Name": "ADC1",
             "PowerState": "Always",
-            "ScaleFactor": 1.0,
+            "ScaleFactor": 0.045,
             "Thresholds": [
                 {
                     "Direction": "greater than",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 13.0
+                    "Value": 1.5
                 },
                 {
                     "Direction": "greater than",
                     "Name": "upper non critical",
                     "Severity": 0,
-                    "Value": 12.8
+                    "Value": 1.3
                 },
                 {
                     "Direction": "less than",
                     "Name": "lower non critical",
                     "Severity": 0,
-                    "Value": 11.2
+                    "Value": 1.1
                 },
                 {
                     "Direction": "less than",
                     "Name": "lower critical",
                     "Severity": 1,
-                    "Value": 11.0
+                    "Value": 1.0
                 }
             ],
             "Type": "ADC"
         },
         {
+            "EntityId": 23,
+            "EntityInstance": 2,
             "Index": 1,
-            "Name": "P5V_AUX_ADC",
+            "Name": "ADC2",
             "PowerState": "Always",
-            "ScaleFactor": 1.0,
+            "ScaleFactor": 0.092,
             "Thresholds": [
                 {
                     "Direction": "greater than",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 5.25
+                    "Value": 1.5
                 },
                 {
                     "Direction": "greater than",
                     "Name": "upper non critical",
                     "Severity": 0,
-                    "Value": 5.15
+                    "Value": 1.3
                 },
                 {
                     "Direction": "less than",
                     "Name": "lower non critical",
                     "Severity": 0,
-                    "Value": 4.85
+                    "Value": 1.1
                 },
                 {
                     "Direction": "less than",
                     "Name": "lower critical",
                     "Severity": 1,
-                    "Value": 4.75
+                    "Value": 1.0
                 }
             ],
             "Type": "ADC"
         },
         {
+            "EntityId": 23,
+            "EntityInstance": 3,
             "Index": 2,
-            "Name": "P5V_BMC_AUX_ADC",
+            "Name": "ADC3",
             "PowerState": "Always",
-            "ScaleFactor": 1.0,
+            "ScaleFactor": 0.166,
             "Thresholds": [
                 {
                     "Direction": "greater than",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 5.25
+                    "Value": 1.5
                 },
                 {
                     "Direction": "greater than",
                     "Name": "upper non critical",
                     "Severity": 0,
-                    "Value": 5.15
+                    "Value": 1.3
                 },
                 {
                     "Direction": "less than",
                     "Name": "lower non critical",
                     "Severity": 0,
-                    "Value": 4.85
+                    "Value": 1.1
                 },
                 {
                     "Direction": "less than",
                     "Name": "lower critical",
                     "Severity": 1,
-                    "Value": 4.75
+                    "Value": 1.0
                 }
             ],
             "Type": "ADC"
         },
         {
+            "EntityId": 23,
+            "EntityInstance": 4,
             "Index": 3,
-            "Name": "P3V3_AUX_ADC",
+            "Name": "ADC4",
             "PowerState": "Always",
-            "ScaleFactor": 1.0,
+            "ScaleFactor": 0.32,
             "Thresholds": [
                 {
                     "Direction": "greater than",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 3.465
+                    "Value": 1.5
                 },
                 {
                     "Direction": "greater than",
                     "Name": "upper non critical",
                     "Severity": 0,
-                    "Value": 3.399
+                    "Value": 1.3
                 },
                 {
                     "Direction": "less than",
                     "Name": "lower non critical",
                     "Severity": 0,
-                    "Value": 3.201
+                    "Value": 1.1
                 },
                 {
                     "Direction": "less than",
                     "Name": "lower critical",
                     "Severity": 1,
-                    "Value": 3.135
+                    "Value": 1.0
                 }
             ],
             "Type": "ADC"
         },
         {
+            "EntityId": 23,
+            "EntityInstance": 5,
             "Index": 4,
-            "Name": "P3V3_BMC_AUX",
+            "Name": "ADC5",
             "PowerState": "Always",
-            "ScaleFactor": 1.0,
+            "ScaleFactor": 0.68,
             "Thresholds": [
                 {
                     "Direction": "greater than",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 3.465
+                    "Value": 1.5
                 },
                 {
                     "Direction": "greater than",
                     "Name": "upper non critical",
                     "Severity": 0,
-                    "Value": 3.399
+                    "Value": 1.3
                 },
                 {
                     "Direction": "less than",
                     "Name": "lower non critical",
                     "Severity": 0,
-                    "Value": 3.201
+                    "Value": 1.1
                 },
                 {
                     "Direction": "less than",
                     "Name": "lower critical",
                     "Severity": 1,
-                    "Value": 3.135
+                    "Value": 1.0
                 }
             ],
             "Type": "ADC"
         },
         {
+            "EntityId": 23,
+            "EntityInstance": 6,
             "Index": 5,
-            "Name": "P1V8_BMC_AUX",
+            "Name": "ADC6",
             "PowerState": "Always",
-            "ScaleFactor": 1.0,
+            "ScaleFactor": 0.833,
             "Thresholds": [
                 {
                     "Direction": "greater than",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 1.89
+                    "Value": 1.5
                 },
                 {
                     "Direction": "greater than",
                     "Name": "upper non critical",
                     "Severity": 0,
-                    "Value": 1.854
+                    "Value": 1.3
                 },
                 {
                     "Direction": "less than",
                     "Name": "lower non critical",
                     "Severity": 0,
-                    "Value": 1.746
+                    "Value": 1.1
                 },
                 {
                     "Direction": "less than",
                     "Name": "lower critical",
                     "Severity": 1,
-                    "Value": 1.71
+                    "Value": 1.0
                 }
             ],
             "Type": "ADC"
         },
         {
+            "EntityId": 23,
+            "EntityInstance": 7,
             "Index": 6,
-            "Name": "P1V2_BMC_AUX",
+            "Name": "ADC7",
             "PowerState": "Always",
-            "ScaleFactor": 1.0,
+            "ScaleFactor": 0.91,
             "Thresholds": [
                 {
                     "Direction": "greater than",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 1.26
+                    "Value": 1.5
                 },
                 {
                     "Direction": "greater than",
                     "Name": "upper non critical",
                     "Severity": 0,
-                    "Value": 1.236
+                    "Value": 1.3
                 },
                 {
                     "Direction": "less than",
                     "Name": "lower non critical",
                     "Severity": 0,
-                    "Value": 1.164
+                    "Value": 0.9
                 },
                 {
                     "Direction": "less than",
                     "Name": "lower critical",
                     "Severity": 1,
-                    "Value": 1.14
+                    "Value": 0.8
                 }
             ],
             "Type": "ADC"
         },
         {
+            "EntityId": 23,
+            "EntityInstance": 8,
             "Index": 7,
-            "Name": "P1V2_PHY1_LDO",
+            "Name": "ADC8",
             "PowerState": "Always",
-            "ScaleFactor": 1.0,
+            "ScaleFactor": 0.955,
             "Thresholds": [
                 {
                     "Direction": "greater than",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 1.26
+                    "Value": 1.5
                 },
                 {
                     "Direction": "greater than",
                     "Name": "upper non critical",
                     "Severity": 0,
-                    "Value": 1.236
+                    "Value": 1.3
                 },
                 {
                     "Direction": "less than",
                     "Name": "lower non critical",
                     "Severity": 0,
-                    "Value": 1.164
+                    "Value": 1.1
                 },
                 {
                     "Direction": "less than",
                     "Name": "lower critical",
                     "Severity": 1,
-                    "Value": 1.14
+                    "Value": 1.0
                 }
             ],
             "Type": "ADC"
         },
         {
-            "Index": 8,
-            "Name": "P1V2_PHY2_LDO",
+            "Name": "evb_emmc",
+            "Type": "EmmcDevice"
+        },
+        {
+            "Connector": {
+                "Name": "BMC Fan connector 1",
+                "Pwm": 0,
+                "Tachs": [
+                    0
+                ]
+            },
+            "EntityId": 29,
+            "EntityInstance": 1,
+            "Index": 0,
+            "MaxReading": 14000,
+            "Name": "Fan1",
             "PowerState": "Always",
-            "ScaleFactor": 1.0,
+            "Thresholds": [
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 500
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 8500
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 11500
+                }
+            ],
+            "Type": "NuvotonFan"
+        },
+        {
+            "Connector": {
+                "Name": "BMC Fan connector 2",
+                "Pwm": 1,
+                "Tachs": [
+                    1
+                ]
+            },
+            "EntityId": 29,
+            "EntityInstance": 2,
+            "Index": 1,
+            "MaxReading": 14000,
+            "Name": "Fan2",
+            "PowerState": "Always",
+            "Thresholds": [
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 500
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 8500
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 11500
+                }
+            ],
+            "Type": "NuvotonFan"
+        },
+        {
+            "Connector": {
+                "Name": "BMC Fan connector 3",
+                "Pwm": 2,
+                "Tachs": [
+                    2
+                ]
+            },
+            "EntityId": 29,
+            "EntityInstance": 3,
+            "Index": 2,
+            "MaxReading": 14000,
+            "Name": "Fan3",
+            "PowerState": "Always",
+            "Thresholds": [
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 500
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 8500
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 11500
+                }
+            ],
+            "Type": "NuvotonFan"
+        },
+        {
+            "Connector": {
+                "Name": "BMC Fan connector 4",
+                "Pwm": 3,
+                "Tachs": [
+                    3
+                ]
+            },
+            "EntityId": 29,
+            "EntityInstance": 4,
+            "Index": 3,
+            "MaxReading": 14000,
+            "Name": "Fan4",
+            "PowerState": "Always",
+            "Thresholds": [
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 500
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 8500
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 11500
+                }
+            ],
+            "Type": "NuvotonFan"
+        },
+        {
+            "Address": "0x48",
+            "Bus": 6,
+            "EntityId": 7,
+            "EntityInstance": 3,
+            "Name": "EVB_Temp",
             "Thresholds": [
                 {
                     "Direction": "greater than",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 1.26
+                    "Value": 65.0
                 },
                 {
                     "Direction": "greater than",
                     "Name": "upper non critical",
                     "Severity": 0,
-                    "Value": 1.236
+                    "Value": 50.0
                 },
                 {
                     "Direction": "less than",
                     "Name": "lower non critical",
                     "Severity": 0,
-                    "Value": 1.164
+                    "Value": 15.0
                 },
                 {
                     "Direction": "less than",
                     "Name": "lower critical",
                     "Severity": 1,
-                    "Value": 1.14
+                    "Value": 0
                 }
             ],
-            "Type": "ADC"
-        },
-        {
-            "Index": 9,
-            "Name": "P2V5_AUX",
-            "PowerState": "Always",
-            "ScaleFactor": 1.0,
-            "Thresholds": [
-                {
-                    "Direction": "greater than",
-                    "Name": "upper critical",
-                    "Severity": 1,
-                    "Value": 2.625
-                },
-                {
-                    "Direction": "greater than",
-                    "Name": "upper non critical",
-                    "Severity": 0,
-                    "Value": 2.575
-                },
-                {
-                    "Direction": "less than",
-                    "Name": "lower non critical",
-                    "Severity": 0,
-                    "Value": 2.425
-                },
-                {
-                    "Direction": "less than",
-                    "Name": "lower critical",
-                    "Severity": 1,
-                    "Value": 2.375
-                }
-            ],
-            "Type": "ADC"
-        },
-        {
-            "BridgeGpio": [
-                {
-                    "Name": "rtc-battery-voltage-read-enable",
-                    "Polarity": "High"
-                }
-            ],
-            "Index": 10,
-            "Name": "Battery Voltage",
-            "PollRate": 86400,
-            "ScaleFactor": 0.4348,
-            "Thresholds": [
-                {
-                    "Direction": "less than",
-                    "Name": "lower critical",
-                    "Severity": 1,
-                    "Value": 2.45
-                }
-            ],
-            "Type": "ADC"
-        },
-        {
-            "I2CAddress": 88,
-            "I2CBus": 2,
-            "Name": "Power Supply Slot 0",
-            "NamedPresenceGpio": "presence-ps0",
-            "Type": "IBMCFFPSConnector"
-        },
-        {
-            "I2CAddress": 89,
-            "I2CBus": 2,
-            "Name": "Power Supply Slot 1",
-            "NamedPresenceGpio": "presence-ps1",
-            "Type": "IBMCFFPSConnector"
-        },
-        {
-            "I2CAddress": 90,
-            "I2CBus": 2,
-            "Name": "Power Supply Slot 2",
-            "NamedPresenceGpio": "presence-ps2",
-            "Type": "IBMCFFPSConnector"
-        },
-        {
-            "I2CAddress": 91,
-            "I2CBus": 2,
-            "Name": "Power Supply Slot 3",
-            "NamedPresenceGpio": "presence-ps3",
-            "Type": "IBMCFFPSConnector"
-        },
-        {
-            "Name": "Fan1 connector",
-            "Pwm": 0,
-            "PwmName": "Fan1_Pwm",
-            "Status": "disabled",
-            "Tachs": [
-                0,
-                1
-            ],
-            "Type": "IntelFanConnector"
-        },
-        {
-            "Name": "Fan2 connector",
-            "Pwm": 1,
-            "PwmName": "Fan2_Pwm",
-            "Status": "disabled",
-            "Tachs": [
-                2,
-                3
-            ],
-            "Type": "IntelFanConnector"
-        },
-        {
-            "Name": "Fan3 connector",
-            "Pwm": 2,
-            "PwmName": "Fan3_Pwm",
-            "Status": "disabled",
-            "Tachs": [
-                4,
-                5
-            ],
-            "Type": "IntelFanConnector"
-        },
-        {
-            "Name": "Fan4 connector",
-            "Pwm": 3,
-            "PwmName": "Fan4_Pwm",
-            "Status": "disabled",
-            "Tachs": [
-                6,
-                7
-            ],
-            "Type": "IntelFanConnector"
-        },
-        {
-            "Name": "Fan5 connector",
-            "Pwm": 4,
-            "PwmName": "Fan5_Pwm",
-            "Status": "disabled",
-            "Tachs": [
-                8,
-                9
-            ],
-            "Type": "IntelFanConnector"
-        },
-        {
-            "Name": "Fan6 connector",
-            "Pwm": 0,
-            "PwmName": "Fan6_Pwm",
-            "Status": "disabled",
-            "Tachs": [
-                0
-            ],
-            "Type": "IntelFanConnector"
-        },
-        {
-            "Name": "Fan7 connector",
-            "Pwm": 1,
-            "PwmName": "Fan7_Pwm",
-            "Status": "disabled",
-            "Tachs": [
-                1
-            ],
-            "Type": "IntelFanConnector"
+            "Type": "TMP100"
         }
     ],
-    "Name": "IBM System1 Baseboard",
-    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': '.*SYS1', 'BOARD_MANUFACTURER': 'IBM'})",
-    "ProductId": 0,
+    "Name": "EVB_ARBEL_NUVOTON",
+    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': 'NUVOTON-ARBEL-EVB'})",
     "Type": "Board",
     "xyz.openbmc_project.Inventory.Decorator.Asset": {
         "Manufacturer": "$BOARD_MANUFACTURER",
         "Model": "$BOARD_PRODUCT_NAME",
         "PartNumber": "$BOARD_PART_NUMBER",
         "SerialNumber": "$BOARD_SERIAL_NUMBER"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.AssetTag": {
-        "AssetTag": "$PRODUCT_ASSET_TAG"
     },
     "xyz.openbmc_project.Inventory.Item.System": {}
 }
