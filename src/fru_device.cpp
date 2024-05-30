@@ -16,6 +16,7 @@
 /// \file fru_device.cpp
 
 #include "fru_utils.hpp"
+#include "nvme_utils.hpp"
 #include "utils.hpp"
 
 #include <fcntl.h>
@@ -77,7 +78,7 @@ const static constexpr char* i2CDevLocation = "/dev";
 static boost::container::flat_map<size_t, std::optional<std::set<size_t>>>
     busBlocklist;
 using VariantType = std::variant<uint32_t, std::string>;
-std::unordered_map<uint32_t, VariantType> i2cPcieMappings;    
+std::unordered_map<uint32_t, VariantType> i2cPcieMappings;
 static std::set<std::pair<int, int>> addressBlacklist;
 struct FindDevicesWithCallback;
 
@@ -86,7 +87,6 @@ static boost::container::flat_map<
     foundDevices;
 
 static boost::container::flat_map<size_t, std::set<size_t>> failedAddresses;
-static boost::container::flat_map<size_t, std::set<size_t>> fruAddresses;
 
 boost::asio::io_context io;
 // NOLINTEND(cppcoreguidelines-avoid-non-const-global-variables)
@@ -168,16 +168,6 @@ static int getRootBus(size_t bus)
         return -1;
     }
     return std::stoi(filename.substr(0, findBus));
-}
-
-static bool isMuxBus(size_t bus)
-{
-    auto ec = std::error_code();
-    auto isSymlink =
-        is_symlink(std::filesystem::path("/sys/bus/i2c/devices/i2c-" +
-                                         std::to_string(bus) + "/mux_device"),
-                   ec);
-    return (!ec && isSymlink);
 }
 
 static void makeProbeInterface(size_t bus, size_t address,
@@ -324,6 +314,13 @@ static std::vector<uint8_t> processEeprom(int bus, int address)
     FRUReader reader(std::move(readFunc));
     std::pair<std::vector<uint8_t>, bool> pair = readFRUContents(reader,
                                                                  errorMessage);
+    if (pair.first.empty())
+    {
+        if (address == nvme::address)  // Check for NVMe drive
+        {
+            pair = readNvmeContents(bus, file, errorMessage);
+        }
+    }
 
     close(file);
     return pair.first;
@@ -415,8 +412,6 @@ int getBusFRUs(int file, int first, int last, int bus,
         // Scan for i2c eeproms loaded on this bus.
         std::set<size_t> skipList = findI2CEeproms(bus, devices);
         std::set<size_t>& failedItems = failedAddresses[bus];
-        std::set<size_t>& foundItems = fruAddresses[bus];
-        foundItems.clear();
 
         auto busFind = busBlocklist.find(bus);
         if (busFind != busBlocklist.end())
@@ -458,7 +453,6 @@ int getBusFRUs(int file, int first, int last, int bus,
                 }
             }
             rootFailures = &(failedAddresses[rootBus]);
-            foundItems = fruAddresses[rootBus];
         }
 
         constexpr int startSkipTargetAddr = 0;
@@ -466,10 +460,6 @@ int getBusFRUs(int file, int first, int last, int bus,
 
         for (int ii = first; ii <= last; ii++)
         {
-            if (foundItems.find(ii) != foundItems.end())
-            {
-                continue;
-            }
             if (skipList.find(ii) != skipList.end())
             {
                 if (debug)
@@ -565,11 +555,17 @@ int getBusFRUs(int file, int first, int last, int bus,
 
             if (pair.first.empty())
             {
-                continue;
+                if (ii == nvme::address)  // Check for NVMe drive
+                {
+                    pair = readNvmeContents(bus, file, errorMessage);
+                    if (pair.first.empty())
+                    {
+                        continue;
+                    }
+                }
             }
 
             devices->emplace(ii, pair.first);
-            fruAddresses[bus].insert(ii);
         }
         return 1;
     });
@@ -600,12 +596,13 @@ void loadI2cPcieMappingTable(const char* path)
         return;
     }
 
-    nlohmann::json data =
-        nlohmann::json::parse(i2cPcieMappingStream, nullptr, false);
+    nlohmann::json data = nlohmann::json::parse(i2cPcieMappingStream, nullptr,
+                                                false);
     if (data.is_discarded())
     {
-        std::cerr << "Illegal i2cPcieMapping.json file detected, cannot validate JSON, "
-                     "exiting\n";
+        std::cerr
+            << "Illegal i2cPcieMapping.json file detected, cannot validate JSON, "
+               "exiting\n";
         std::exit(EXIT_FAILURE);
     }
 
@@ -636,7 +633,8 @@ void loadI2cPcieMappingTable(const char* path)
         }
         else
         {
-            std::cerr << "Cannot recognize the data " << mappingNode[1] << std::endl;
+            std::cerr << "Cannot recognize the data " << mappingNode[1]
+                      << std::endl;
             continue;
         }
 
@@ -827,10 +825,9 @@ struct FindDevicesWithCallback :
     FindDevicesWithCallback(const std::vector<fs::path>& i2cBuses,
                             BusMap& busmap, const bool& powerIsOn,
                             sdbusplus::asio::object_server& objServer,
-                            std::function<void()>&& callback) :
-        _i2cBuses(i2cBuses),
-        _busMap(busmap), _powerIsOn(powerIsOn), _objServer(objServer),
-        _callback(std::move(callback))
+                            std::function<void(void)>&& callback) :
+        _i2cBuses(i2cBuses), _busMap(busmap), _powerIsOn(powerIsOn),
+        _objServer(objServer), _callback(std::move(callback))
     {}
     ~FindDevicesWithCallback()
     {
@@ -864,13 +861,20 @@ void addFruObjectToDbus(
     if (!optionalProductName)
     {
         std::cerr << "getProductName failed. product name is empty.\n";
+        if (address == nvme::address)
+        {
+            // If fail on IPMI FRU detection, check NVMe drive vendor ID
+            addNvmeObjectToDbus(device, dbusInterfaceMap, bus, address,
+                                unknownBusObjectCount, objServer);
+        }
+
         return;
     }
 
     std::string productName = "/xyz/openbmc_project/FruDevice/" +
                               optionalProductName.value();
 
-    std::optional<int> index = findIndexForFRU(dbusInterfaceMap, productName);
+    std::optional<int> index = findIndexForFRU(dbusInterfaceMap, productName, bus, address);
     if (index.has_value())
     {
         productName += "_";
@@ -889,8 +893,8 @@ void addFruObjectToDbus(
         {
             continue;
         }
-        std::string key =
-            std::regex_replace(property.first, nonAsciiRegex, "_");
+        std::string key = std::regex_replace(property.first, nonAsciiRegex,
+                                             "_");
         std::string value = property.second;
         // Remove the spaces from the end of the key string
         value.erase(std::find_if(value.rbegin(), value.rend(),
@@ -938,14 +942,17 @@ void addFruObjectToDbus(
     // only check PCIe devices when i2cPcieMapping contains data
     if (i2cPcieMappings.contains(bus))
     {
-        std::string prunedProductName = productName.substr(productName.rfind('/')+1);
+        std::string prunedProductName =
+            productName.substr(productName.rfind('/') + 1);
         std::regex suffixPattern("_[0-9]+$");
-        prunedProductName = std::regex_replace(prunedProductName, suffixPattern, "_");
+        prunedProductName = std::regex_replace(prunedProductName, suffixPattern,
+                                               "_");
         size_t findLastUndercore = prunedProductName.find_last_not_of('_');
         // there should be at least one underscore in productName
         if (findLastUndercore != std::string::npos)
         {
-            prunedProductName = prunedProductName.substr(0, findLastUndercore + 1);
+            prunedProductName = prunedProductName.substr(0,
+                                                         findLastUndercore + 1);
         }
 
         iface->register_property("DEVICE_DBUS_NAME", prunedProductName);
@@ -1301,8 +1308,7 @@ bool updateFRUProperty(
         return false;
     }
 
-    struct FruArea fruAreaParams
-    {};
+    struct FruArea fruAreaParams{};
 
     if (!findFruAreaLocationAndField(fruData, propertyName, fruAreaParams))
     {

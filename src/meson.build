@@ -32,6 +32,7 @@ if get_option('fru-device')
         'utils.cpp',
         'fru_utils.cpp',
         'fru_reader.cpp',
+        'nvme_utils.cpp',
         cpp_args: cpp_args_fd,
         dependencies: [
             boost,
