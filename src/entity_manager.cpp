@@ -54,7 +54,9 @@ constexpr const char* currentConfiguration = "/var/configuration/system.json";
 constexpr const char* globalSchema = "global.json";
 constexpr auto probePath = "ProbePath";
 
+// NOLINTBEGIN(cppcoreguidelines-avoid-non-const-global-variables)
 bool dataUpdated = false;
+// NOLINTEND(cppcoreguidelines-avoid-non-const-global-variables)
 
 constexpr auto fruIface = "xyz.openbmc_project.FruDevice";
 constexpr auto fruService = "xyz.openbmc_project.FruDevice";
