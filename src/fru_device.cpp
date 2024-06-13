@@ -382,6 +382,17 @@ std::set<size_t> findI2CEeproms(int i2cBus,
         // contents, but we found it.
         foundList.insert(address);
 
+        auto busFind = busBlocklist.find(i2cBus);
+        if (busFind != busBlocklist.end() && busFind->second)
+        {
+            auto& addresses = *(busFind->second);
+            if (addresses.find(address) != addresses.end())
+            {
+                continue;
+            }
+        }
+
+
         std::vector<uint8_t> device = processEeprom(i2cBus, address);
         if (!device.empty())
         {
