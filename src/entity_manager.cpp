@@ -836,6 +836,7 @@ void postToDbus(const nlohmann::json& newConfiguration,
         auto boardValues = systemConfiguration[boardId];
         auto findBoardType = boardValues.find("Type");
         auto findBoardParent = boardValues.find("Parent_Chassis");
+        auto findCustomNameEnabled = boardValues.find("Custom_Name");
         std::string boardType;
         if (findBoardType != boardValues.end() &&
             findBoardType->type() == nlohmann::json::value_t::string)
@@ -852,8 +853,20 @@ void postToDbus(const nlohmann::json& newConfiguration,
         }
         std::string boardtypeLower = boost::algorithm::to_lower_copy(boardType);
 
-        std::regex_replace(boardName.begin(), boardName.begin(),
-                           boardName.end(), illegalDbusMemberRegex, "_");
+        bool customNameEnabled = false;
+        if (findCustomNameEnabled != boardValues.end() &&
+            findCustomNameEnabled->type() == nlohmann::json::value_t::boolean)
+        {
+            customNameEnabled = findCustomNameEnabled->get<bool>();
+            std::clog << "Using custom name  " << boardName
+                      << " for dbus object.\n";
+        }
+
+        if (!customNameEnabled)
+        {
+            std::regex_replace(boardName.begin(), boardName.begin(),
+                               boardName.end(), illegalDbusMemberRegex, "_");
+        }
         std::string boardPath = "/xyz/openbmc_project/inventory/system/";
         boardPath += boardtypeLower;
         boardPath += "/";
