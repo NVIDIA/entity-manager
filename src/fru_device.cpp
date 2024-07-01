@@ -388,7 +388,9 @@ std::set<size_t> findI2CEeproms(int i2cBus,
         auto busFind = busBlocklist.find(i2cBus);
         if (busFind != busBlocklist.end() && busFind->second)
         {
+            // NOLINTBEGIN(bugprone-unchecked-optional-access)
             auto& addresses = *(busFind->second);
+            // NOLINTEND(bugprone-unchecked-optional-access)
             if (addresses.find(address) != addresses.end())
             {
                 continue;
