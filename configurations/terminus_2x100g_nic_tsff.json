@@ -3,25 +3,17 @@
         {
             "Address": "$address",
             "Bus": "$bus",
-            "Name": "BRCM OCP NIC FRU $bus",
+            "Name": "TERMINUS NIC FRU $bus",
             "Type": "EEPROM"
         },
         {
-            "Address": "0x1f",
+            "Address": "0x3c",
             "Bus": "$bus",
             "Labels": [
-                "temp2"
+                "temp1"
             ],
-            "Name": "NIC Temp $bus",
-            "Name1": "NIC Temp $bus",
+            "Name": "NIC TEMP $bus",
             "Thresholds": [
-                {
-                    "Direction": "less than",
-                    "Index": 2,
-                    "Name": "lower critical",
-                    "Severity": 1,
-                    "Value": 5
-                },
                 {
                     "Direction": "greater than",
                     "Index": 2,
@@ -30,11 +22,11 @@
                     "Value": 105
                 }
             ],
-            "Type": "TMP421"
+            "Type": "EMC1403"
         }
     ],
-    "Name": "BRCM OCP NIC FRU $bus",
-    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': 'BRCM 100G 1P.*57504 OCP Mezz'})",
+    "Name": "TERMINUS NIC FRU $bus",
+    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': 'Terminus 2x100G NIC TSFF'})",
     "Type": "Board",
     "xyz.openbmc_project.Inventory.Decorator.Asset": {
         "Manufacturer": "$BOARD_MANUFACTURER",
