@@ -85,6 +85,7 @@ static boost::container::flat_map<
     foundDevices;
 
 static boost::container::flat_map<size_t, std::set<size_t>> failedAddresses;
+static boost::container::flat_map<size_t, std::set<size_t>> fruAddresses;
 
 boost::asio::io_context io;
 
@@ -165,6 +166,16 @@ static int getRootBus(size_t bus)
         return -1;
     }
     return std::stoi(filename.substr(0, findBus));
+}
+
+static bool isMuxBus(size_t bus)
+{
+    auto ec = std::error_code();
+    auto isSymlink =
+        is_symlink(std::filesystem::path("/sys/bus/i2c/devices/i2c-" +
+                                         std::to_string(bus) + "/mux_device"),
+                   ec);
+    return (!ec && isSymlink);
 }
 
 static void makeProbeInterface(size_t bus, size_t address,
@@ -420,6 +431,8 @@ int getBusFRUs(int file, int first, int last, int bus,
         // Scan for i2c eeproms loaded on this bus.
         std::set<size_t> skipList = findI2CEeproms(bus, devices);
         std::set<size_t>& failedItems = failedAddresses[bus];
+        std::set<size_t>& foundItems = fruAddresses[bus];
+        foundItems.clear();
 
         auto busFind = busBlocklist.find(bus);
         if (busFind != busBlocklist.end())
@@ -461,6 +474,7 @@ int getBusFRUs(int file, int first, int last, int bus,
                 }
             }
             rootFailures = &(failedAddresses[rootBus]);
+            foundItems = fruAddresses[rootBus];
         }
 
         constexpr int startSkipTargetAddr = 0;
@@ -468,6 +482,10 @@ int getBusFRUs(int file, int first, int last, int bus,
 
         for (int ii = first; ii <= last; ii++)
         {
+            if (foundItems.find(ii) != foundItems.end())
+            {
+                continue;
+            }
             if (skipList.find(ii) != skipList.end())
             {
                 if (debug)
@@ -574,6 +592,7 @@ int getBusFRUs(int file, int first, int last, int bus,
             }
 
             devices->emplace(ii, pair.first);
+            fruAddresses[bus].insert(ii);
         }
         return 1;
     });
@@ -882,7 +901,7 @@ void addFruObjectToDbus(
     std::string productName = "/xyz/openbmc_project/FruDevice/" +
                               optionalProductName.value();
 
-    std::optional<int> index = findIndexForFRU(dbusInterfaceMap, productName, bus, address);
+    std::optional<int> index = findIndexForFRU(dbusInterfaceMap, productName);
     if (index.has_value())
     {
         productName += "_";
@@ -1316,7 +1335,8 @@ bool updateFRUProperty(
         return false;
     }
 
-    struct FruArea fruAreaParams{};
+    struct FruArea fruAreaParams
+    {};
 
     if (!findFruAreaLocationAndField(fruData, propertyName, fruAreaParams))
     {
