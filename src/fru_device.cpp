@@ -87,6 +87,7 @@ static boost::container::flat_map<
     foundDevices;
 
 static boost::container::flat_map<size_t, std::set<size_t>> failedAddresses;
+static boost::container::flat_map<size_t, std::set<size_t>> fruAddresses;
 
 boost::asio::io_context io;
 // NOLINTEND(cppcoreguidelines-avoid-non-const-global-variables)
@@ -170,6 +171,16 @@ static int getRootBus(size_t bus)
     return std::stoi(filename.substr(0, findBus));
 }
 
+static bool isMuxBus(size_t bus)
+{
+    auto ec = std::error_code();
+    auto isSymlink =
+        is_symlink(std::filesystem::path("/sys/bus/i2c/devices/i2c-" +
+                                         std::to_string(bus) + "/mux_device"),
+                   ec);
+    return (!ec && isSymlink);
+}
+
 static void makeProbeInterface(size_t bus, size_t address,
                                sdbusplus::asio::object_server& objServer)
 {
@@ -190,40 +201,6 @@ static void makeProbeInterface(size_t bus, size_t address,
     it->second->register_property("Bus", bus);
     it->second->register_property("Address", address);
     it->second->initialize();
-}
-
-static std::optional<bool> isDevice16Bit(int file)
-{
-    // Set the higher data word address bits to 0. It's safe on 8-bit addressing
-    // EEPROMs because it doesn't write any actual data.
-    int ret = i2c_smbus_write_byte(file, 0);
-    if (ret < 0)
-    {
-        return std::nullopt;
-    }
-
-    /* Get first byte */
-    int byte1 = i2c_smbus_read_byte_data(file, 0);
-    if (byte1 < 0)
-    {
-        return std::nullopt;
-    }
-    /* Read 7 more bytes, it will read same first byte in case of
-     * 8 bit but it will read next byte in case of 16 bit
-     */
-    for (int i = 0; i < 7; i++)
-    {
-        int byte2 = i2c_smbus_read_byte_data(file, 0);
-        if (byte2 < 0)
-        {
-            return std::nullopt;
-        }
-        if (byte2 != byte1)
-        {
-            return true;
-        }
-    }
-    return false;
 }
 
 // Issue an I2C transaction to first write to_target_buf_len bytes,then read
@@ -291,6 +268,37 @@ static int64_t readData(bool is16bit, bool isBytewise, int file,
     // NOLINTNEXTLINE(cppcoreguidelines-pro-type-reinterpret-cast)
     uint8_t* u8Offset = reinterpret_cast<uint8_t*>(&offset);
     return i2cSmbusWriteThenRead(file, address, u8Offset, 2, buf, len);
+}
+
+static std::optional<bool> isDevice16Bit(int file, uint16_t address)
+{
+    uint8_t first = 0;
+    uint8_t cur = 0;
+    uint16_t v = 0;
+    // NOLINTNEXTLINE(cppcoreguidelines-pro-type-reinterpret-cast)
+    uint8_t* p = reinterpret_cast<uint8_t*>(&v);
+
+    /*
+     * Write 2 bytes byte0 = 0, byte1 = {0..7} and then subsequent read byte
+     * It will read same first byte in case of 8 bit but
+     * it will read next byte in case of 16 bit
+     */
+    for (int i = 0; i < 8; i++)
+    {
+        v = htobe16(i);
+
+        i2cSmbusWriteThenRead(file, address, p, 2, &cur, 1);
+        if (i == 0)
+        {
+            first = cur;
+        }
+
+        if (first != cur)
+        {
+            return true;
+        }
+    }
+    return false;
 }
 
 // TODO: This code is very similar to the non-eeprom version and can be merged
@@ -425,6 +433,8 @@ int getBusFRUs(int file, int first, int last, int bus,
         // Scan for i2c eeproms loaded on this bus.
         std::set<size_t> skipList = findI2CEeproms(bus, devices);
         std::set<size_t>& failedItems = failedAddresses[bus];
+        std::set<size_t>& foundItems = fruAddresses[bus];
+        foundItems.clear();
 
         auto busFind = busBlocklist.find(bus);
         if (busFind != busBlocklist.end())
@@ -466,6 +476,7 @@ int getBusFRUs(int file, int first, int last, int bus,
                 }
             }
             rootFailures = &(failedAddresses[rootBus]);
+            foundItems = fruAddresses[rootBus];
         }
 
         constexpr int startSkipTargetAddr = 0;
@@ -473,6 +484,10 @@ int getBusFRUs(int file, int first, int last, int bus,
 
         for (int ii = first; ii <= last; ii++)
         {
+            if (foundItems.find(ii) != foundItems.end())
+            {
+                continue;
+            }
             if (skipList.find(ii) != skipList.end())
             {
                 if (debug)
@@ -526,7 +541,7 @@ int getBusFRUs(int file, int first, int last, int bus,
             }
 
             /* Check for Device type if it is 8 bit or 16 bit */
-            std::optional<bool> is16Bit = isDevice16Bit(file);
+            std::optional<bool> is16Bit = isDevice16Bit(file, ii);
             if (!is16Bit.has_value())
             {
                 std::cerr << "failed to read bus " << bus << " address " << ii
@@ -579,6 +594,7 @@ int getBusFRUs(int file, int first, int last, int bus,
             }
 
             devices->emplace(ii, pair.first);
+            fruAddresses[bus].insert(ii);
         }
         return 1;
     });
@@ -887,7 +903,7 @@ void addFruObjectToDbus(
     std::string productName = "/xyz/openbmc_project/FruDevice/" +
                               optionalProductName.value();
 
-    std::optional<int> index = findIndexForFRU(dbusInterfaceMap, productName, bus, address);
+    std::optional<int> index = findIndexForFRU(dbusInterfaceMap, productName);
     if (index.has_value())
     {
         productName += "_";
@@ -1321,7 +1337,8 @@ bool updateFRUProperty(
         return false;
     }
 
-    struct FruArea fruAreaParams{};
+    struct FruArea fruAreaParams
+    {};
 
     if (!findFruAreaLocationAndField(fruData, propertyName, fruAreaParams))
     {
