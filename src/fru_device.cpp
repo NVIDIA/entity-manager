@@ -405,6 +405,11 @@ std::set<size_t> findI2CEeproms(int i2cBus,
             }
         }
 
+        if (addressBlacklist.count(std::make_pair(i2cBus,
+                                                  static_cast<int>(address << 1))) > 0)
+        {
+            continue;
+        }
 
         std::vector<uint8_t> device = processEeprom(i2cBus, address);
         if (!device.empty())
