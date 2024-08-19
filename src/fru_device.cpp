@@ -405,8 +405,8 @@ std::set<size_t> findI2CEeproms(int i2cBus,
             }
         }
 
-        if (addressBlacklist.count(std::make_pair(i2cBus,
-                                                  static_cast<int>(address << 1))) > 0)
+        if (static_cast<int>(addressBlacklist.contains(
+                std::make_pair(i2cBus, static_cast<int>(address << 1)))) > 0)
         {
             continue;
         }
