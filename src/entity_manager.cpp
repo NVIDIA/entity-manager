@@ -262,7 +262,8 @@ bool updatePropertyValue(const std::string& service, const std::string& path,
             return false;
         }
         return true;
-    }, service, path, "org.freedesktop.DBus.Properties", "Set", interface,
+    },
+        service, path, "org.freedesktop.DBus.Properties", "Set", interface,
         property,
         std::variant<std::decay_t<decltype(propertyValue)>>(propertyValue));
 
@@ -617,9 +618,11 @@ void createAddObjectMethod(const std::string& jsonPointerPath,
         for (const auto& item : data)
         {
             nlohmann::json& newJson = newData[item.first];
-            std::visit([&newJson](auto&& val) {
+            std::visit(
+                [&newJson](auto&& val) {
                 newJson = std::forward<decltype(val)>(val);
-            }, item.second);
+            },
+                item.second);
         }
 
         auto findName = newData.find("Name");

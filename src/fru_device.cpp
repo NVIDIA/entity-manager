@@ -324,7 +324,7 @@ static std::vector<uint8_t> processEeprom(int bus, int address)
                                                                  errorMessage);
     if (pair.first.empty())
     {
-        if (address == nvme::address)  // Check for NVMe drive
+        if (address == nvme::address) // Check for NVMe drive
         {
             pair = readNvmeContents(bus, file, errorMessage);
         }
@@ -588,7 +588,7 @@ int getBusFRUs(int file, int first, int last, int bus,
 
             if (pair.first.empty())
             {
-                if (ii == nvme::address)  // Check for NVMe drive
+                if (ii == nvme::address) // Check for NVMe drive
                 {
                     pair = readNvmeContents(bus, file, errorMessage);
                     if (pair.first.empty())
@@ -860,8 +860,9 @@ struct FindDevicesWithCallback :
                             BusMap& busmap, const bool& powerIsOn,
                             sdbusplus::asio::object_server& objServer,
                             std::function<void(void)>&& callback) :
-        _i2cBuses(i2cBuses), _busMap(busmap), _powerIsOn(powerIsOn),
-        _objServer(objServer), _callback(std::move(callback))
+        _i2cBuses(i2cBuses),
+        _busMap(busmap), _powerIsOn(powerIsOn), _objServer(objServer),
+        _callback(std::move(callback))
     {}
     ~FindDevicesWithCallback()
     {
@@ -991,9 +992,11 @@ void addFruObjectToDbus(
 
         iface->register_property("DEVICE_DBUS_NAME", prunedProductName);
 
-        std::visit([&iface](const auto& val) {
+        std::visit(
+            [&iface](const auto& val) {
             iface->register_property("PCIE_LABEL", val);
-        }, i2cPcieMappings[bus]);
+        },
+            i2cPcieMappings[bus]);
     }
 
     // baseboard will be 0, 0

@@ -1,5 +1,6 @@
-#include "fru_utils.hpp"
 #include "nvme_utils.hpp"
+
+#include "fru_utils.hpp"
 #include "utils.hpp"
 
 #include <array>
@@ -44,8 +45,7 @@ void addNvmeObjectToDbus(
     std::string vendorId;
 
     // Found under Vendor ID section and not an empty string.
-    if (vendorIdFind != formattedNvme.end() &&
-        !vendorIdFind->second.empty())
+    if (vendorIdFind != formattedNvme.end() && !vendorIdFind->second.empty())
     {
         vendorId = vendorIdFind->second;
     }
@@ -55,18 +55,19 @@ void addNvmeObjectToDbus(
         unknownBusObjectCount++;
     }
 
-    vendorId = "/xyz/openbmc_project/FruDevice/" + vendorId + "_" + std::to_string(bus);
+    vendorId = "/xyz/openbmc_project/FruDevice/" + vendorId + "_" +
+               std::to_string(bus);
     std::shared_ptr<sdbusplus::asio::dbus_interface> iface =
-        objServer.add_interface(vendorId, "xyz.openbmc_project.Inventory.Item.I2CDevice");
+        objServer.add_interface(vendorId,
+                                "xyz.openbmc_project.Inventory.Item.I2CDevice");
     dbusInterfaceMap[std::pair<size_t, size_t>(bus, address)] = iface;
 
     for (auto& property : formattedNvme)
     {
-
         std::regex_replace(property.second.begin(), property.second.begin(),
                            property.second.end(), nonAsciiRegex, "_");
-        std::string key =
-            std::regex_replace(property.first, nonAsciiRegex, "_");
+        std::string key = std::regex_replace(property.first, nonAsciiRegex,
+                                             "_");
         std::string value = property.second;
         // Remove the spaces from the end of the key string
         value.erase(std::find_if(value.rbegin(), value.rend(),
@@ -75,7 +76,7 @@ void addNvmeObjectToDbus(
         }).base(),
                     value.end());
 
-	if (!iface->register_property(key, value + '\0'))
+        if (!iface->register_property(key, value + '\0'))
         {
             std::cerr << "Illegal key: " << key << "\n";
         }
@@ -92,8 +93,8 @@ void addNvmeObjectToDbus(
 }
 
 bool findNvmeVendorId(int file, const std::string& errorHelp,
-                   std::array<uint8_t, I2C_SMBUS_BLOCK_MAX>& blockData,
-                   uint8_t& baseOffset)
+                      std::array<uint8_t, I2C_SMBUS_BLOCK_MAX>& blockData,
+                      uint8_t& baseOffset)
 {
     std::vector<uint16_t> invalidVid = {0x0000, 0xffff};
 
@@ -110,7 +111,8 @@ bool findNvmeVendorId(int file, const std::string& errorHelp,
     blockData[1] = (wordData >> 8) & 0x00ff;
 
     uint16_t vendorId = __builtin_bswap16(wordData);
-    std::vector<uint16_t>::iterator it = std::find(invalidVid.begin(), invalidVid.end(), vendorId);
+    std::vector<uint16_t>::iterator it = std::find(invalidVid.begin(),
+                                                   invalidVid.end(), vendorId);
     if (it != invalidVid.end())
     {
         if (debug)
@@ -124,30 +126,35 @@ bool findNvmeVendorId(int file, const std::string& errorHelp,
     return true;
 }
 
-std::pair<std::vector<uint8_t>, bool> readNvmeContents(int bus, int file, const std::string& errorHelp)
+std::pair<std::vector<uint8_t>, bool>
+    readNvmeContents(int bus, int file, const std::string& errorHelp)
 {
     std::array<uint8_t, I2C_SMBUS_BLOCK_MAX> blockData{};
     uint8_t baseOffset = nvme::baseOffsetVendorId;
     int retry = 0;
 
-    // Give the tolerance for NVMe drive access because sometimes we need to wait for device ready if switch MUX
+    // Give the tolerance for NVMe drive access because sometimes we need to
+    // wait for device ready if switch MUX
     for (retry = 0; retry < 3; retry++)
     {
         blockData.fill(0);
         if (findNvmeVendorId(file, errorHelp, blockData, baseOffset))
         {
             std::vector<uint8_t> device;
-            device.insert(device.end(), blockData.begin(), blockData.begin() + nvme::vendorIdSize);
-            std::cout << "Success in reading NVMe Drive on I2C Bus " << std::to_string(bus) << \
-                ". Retry = " << std::to_string(retry) << "\n";
+            device.insert(device.end(), blockData.begin(),
+                          blockData.begin() + nvme::vendorIdSize);
+            std::cout << "Success in reading NVMe Drive on I2C Bus "
+                      << std::to_string(bus)
+                      << ". Retry = " << std::to_string(retry) << "\n";
             return {device, true};
         }
 
         usleep(1000);
     }
 
-    std::cerr << "Failed to get the correct Vendor ID of NVMe Drive on I2C Bus " << std::to_string(bus) << \
-        ". Retry = " << std::to_string(retry) << "\n";
+    std::cerr << "Failed to get the correct Vendor ID of NVMe Drive on I2C Bus "
+              << std::to_string(bus) << ". Retry = " << std::to_string(retry)
+              << "\n";
 
     return {{}, false};
 }
