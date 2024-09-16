@@ -1,7 +1,7 @@
 #pragma once
+#include <boost/container/flat_map.hpp>
 #include <sdbusplus/asio/connection.hpp>
 #include <sdbusplus/asio/object_server.hpp>
-#include <boost/container/flat_map.hpp>
 
 #include <regex>
 #include <string>
