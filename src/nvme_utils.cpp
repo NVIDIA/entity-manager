@@ -1,6 +1,6 @@
-#include "fru_utils.hpp"
 #include "nvme_utils.hpp"
 
+#include "fru_utils.hpp"
 #include "utils.hpp"
 
 #include <array>
