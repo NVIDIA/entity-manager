@@ -217,5 +217,9 @@ const boost::container::flat_map<const char*, ExportTemplate, CmpStr>
          {"SMC_CPLD",
           ExportTemplate("smc_c2_cpld $Address",
                          "/sys/bus/i2c/devices/i2c-$Bus", "new_device",
-                         "delete_device", createsHWMon::hasHWMonDir)}}};
+                         "delete_device", createsHWMon::hasHWMonDir)},
+         {"LTC4287",
+          ExportTemplate("ltc4287 $Address", "/sys/bus/i2c/devices/i2c-$Bus",
+                         "new_device", "delete_device",
+                         createsHWMon::hasHWMonDir)}}};
 } // namespace devices
