@@ -860,9 +860,8 @@ struct FindDevicesWithCallback :
                             BusMap& busmap, const bool& powerIsOn,
                             sdbusplus::asio::object_server& objServer,
                             std::function<void(void)>&& callback) :
-        _i2cBuses(i2cBuses),
-        _busMap(busmap), _powerIsOn(powerIsOn), _objServer(objServer),
-        _callback(std::move(callback))
+        _i2cBuses(i2cBuses), _busMap(busmap), _powerIsOn(powerIsOn),
+        _objServer(objServer), _callback(std::move(callback))
     {}
     ~FindDevicesWithCallback()
     {
@@ -992,11 +991,9 @@ void addFruObjectToDbus(
 
         iface->register_property("DEVICE_DBUS_NAME", prunedProductName);
 
-        std::visit(
-            [&iface](const auto& val) {
+        std::visit([&iface](const auto& val) {
             iface->register_property("PCIE_LABEL", val);
-        },
-            i2cPcieMappings[bus]);
+        }, i2cPcieMappings[bus]);
     }
 
     // baseboard will be 0, 0
