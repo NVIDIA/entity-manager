@@ -28,43 +28,43 @@
                     },
                     {
                         "Direction": "less than",
-                        "Hysteresis": 3.7,
+                        "Hysteresis": 3.65,
                         "Label": "vin2",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 370
+                        "Value": 365
                     },
                     {
                         "Direction": "greater than",
-                        "Hysteresis": 3.95,
+                        "Hysteresis": 4,
                         "Label": "vin2",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 395
+                        "Value": 400
                     },
                     {
                         "Direction": "less than",
-                        "Hysteresis": 3.85,
+                        "Hysteresis": 3.8,
                         "Label": "vin2",
                         "Name": "lower non critical",
                         "Severity": 0,
-                        "Value": 385
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Hysteresis": 0.055,
-                        "Label": "iin2",
-                        "Name": "upper critical",
-                        "Severity": 1,
-                        "Value": 5.5
+                        "Value": 380
                     },
                     {
                         "Direction": "greater than",
                         "Hysteresis": 0.05,
                         "Label": "iin2",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 5.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Hysteresis": 0.04,
+                        "Label": "iin2",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 5
+                        "Value": 4
                     },
                     {
                         "Direction": "greater than",
@@ -76,11 +76,27 @@
                     },
                     {
                         "Direction": "greater than",
-                        "Hysteresis": 0.68,
+                        "Hysteresis": 1.1,
+                        "Label": "temp1",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 110.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Hysteresis": 1.45,
                         "Label": "iout2",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 68
+                        "Value": 145
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Hysteresis": 1.25,
+                        "Label": "iout2",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 125
                     },
                     {
                         "Direction": "greater than",
@@ -150,7 +166,7 @@
                 "Name": "BCM1_TEMP",
                 "Name1": "BCM1",
                 "PollRate": 5.0,
-                "PowerState": "On",
+                "PowerState": "Always",
                 "Thresholds": [
                     {
                         "Direction": "greater than",
@@ -162,43 +178,43 @@
                     },
                     {
                         "Direction": "less than",
-                        "Hysteresis": 3.7,
+                        "Hysteresis": 3.65,
                         "Label": "vin2",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 370
+                        "Value": 365
                     },
                     {
                         "Direction": "greater than",
-                        "Hysteresis": 3.95,
+                        "Hysteresis": 4,
                         "Label": "vin2",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 395
+                        "Value": 400
                     },
                     {
                         "Direction": "less than",
-                        "Hysteresis": 3.85,
+                        "Hysteresis": 3.8,
                         "Label": "vin2",
                         "Name": "lower non critical",
                         "Severity": 0,
-                        "Value": 385
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Hysteresis": 0.055,
-                        "Label": "iin2",
-                        "Name": "upper critical",
-                        "Severity": 1,
-                        "Value": 5.5
+                        "Value": 380
                     },
                     {
                         "Direction": "greater than",
                         "Hysteresis": 0.05,
                         "Label": "iin2",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Hysteresis": 0.04,
+                        "Label": "iin2",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 5
+                        "Value": 4
                     },
                     {
                         "Direction": "greater than",
@@ -210,11 +226,27 @@
                     },
                     {
                         "Direction": "greater than",
-                        "Hysteresis": 0.68,
+                        "Hysteresis": 1.1,
+                        "Label": "temp1",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 110.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Hysteresis": 1.45,
                         "Label": "iout2",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 68
+                        "Value": 145
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Hysteresis": 1.25,
+                        "Label": "iout2",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 125
                     },
                     {
                         "Direction": "greater than",
@@ -284,7 +316,7 @@
                 "Name": "BCM2_TEMP",
                 "Name1": "BCM2",
                 "PollRate": 5.0,
-                "PowerState": "On",
+                "PowerState": "Always",
                 "Thresholds": [
                     {
                         "Direction": "greater than",
@@ -296,43 +328,43 @@
                     },
                     {
                         "Direction": "less than",
-                        "Hysteresis": 3.7,
+                        "Hysteresis": 3.65,
                         "Label": "vin2",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 370
+                        "Value": 365
                     },
                     {
                         "Direction": "greater than",
-                        "Hysteresis": 3.95,
+                        "Hysteresis": 4,
                         "Label": "vin2",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 395
+                        "Value": 400
                     },
                     {
                         "Direction": "less than",
-                        "Hysteresis": 3.85,
+                        "Hysteresis": 3.8,
                         "Label": "vin2",
                         "Name": "lower non critical",
                         "Severity": 0,
-                        "Value": 385
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Hysteresis": 0.055,
-                        "Label": "iin2",
-                        "Name": "upper critical",
-                        "Severity": 1,
-                        "Value": 5.5
+                        "Value": 380
                     },
                     {
                         "Direction": "greater than",
                         "Hysteresis": 0.05,
                         "Label": "iin2",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Hysteresis": 0.04,
+                        "Label": "iin2",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 5
+                        "Value": 4
                     },
                     {
                         "Direction": "greater than",
@@ -344,11 +376,27 @@
                     },
                     {
                         "Direction": "greater than",
-                        "Hysteresis": 0.68,
+                        "Hysteresis": 1.1,
+                        "Label": "temp1",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 110.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Hysteresis": 1.45,
                         "Label": "iout2",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 68
+                        "Value": 145
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Hysteresis": 1.25,
+                        "Label": "iout2",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 125
                     },
                     {
                         "Direction": "greater than",
@@ -418,7 +466,7 @@
                 "Name": "BCM3_TEMP",
                 "Name1": "BCM3",
                 "PollRate": 5.0,
-                "PowerState": "On",
+                "PowerState": "Always",
                 "Thresholds": [
                     {
                         "Direction": "greater than",
@@ -430,43 +478,43 @@
                     },
                     {
                         "Direction": "less than",
-                        "Hysteresis": 3.7,
+                        "Hysteresis": 3.65,
                         "Label": "vin2",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 370
+                        "Value": 365
                     },
                     {
                         "Direction": "greater than",
-                        "Hysteresis": 3.95,
+                        "Hysteresis": 4,
                         "Label": "vin2",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 395
+                        "Value": 400
                     },
                     {
                         "Direction": "less than",
-                        "Hysteresis": 3.85,
+                        "Hysteresis": 3.8,
                         "Label": "vin2",
                         "Name": "lower non critical",
                         "Severity": 0,
-                        "Value": 385
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Hysteresis": 0.055,
-                        "Label": "iin2",
-                        "Name": "upper critical",
-                        "Severity": 1,
-                        "Value": 5.5
+                        "Value": 380
                     },
                     {
                         "Direction": "greater than",
                         "Hysteresis": 0.05,
                         "Label": "iin2",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 5
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Hysteresis": 0.04,
+                        "Label": "iin2",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 5
+                        "Value": 4
                     },
                     {
                         "Direction": "greater than",
@@ -478,11 +526,27 @@
                     },
                     {
                         "Direction": "greater than",
-                        "Hysteresis": 0.68,
+                        "Hysteresis": 1.1,
+                        "Label": "temp1",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 110.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Hysteresis": 1.45,
                         "Label": "iout2",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 68
+                        "Value": 145
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Hysteresis": 1.25,
+                        "Label": "iout2",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 125
                     },
                     {
                         "Direction": "greater than",

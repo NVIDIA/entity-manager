@@ -20,13 +20,13 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 3016.0
+                        "Value": 800.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 13294.0
+                        "Value": 20000.0
                     }
                 ],
                 "Type": "I2CFan"
@@ -50,13 +50,13 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 2816.0
+                        "Value": 800.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 12288.0
+                        "Value": 20000.0
                     }
                 ],
                 "Type": "I2CFan"
@@ -80,13 +80,13 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 3016.0
+                        "Value": 800.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 13294.0
+                        "Value": 20000.0
                     }
                 ],
                 "Type": "I2CFan"
@@ -110,13 +110,13 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 2816.0
+                        "Value": 800.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 12288.0
+                        "Value": 20000.0
                     }
                 ],
                 "Type": "I2CFan"
@@ -140,13 +140,13 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 3016.0
+                        "Value": 800.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 13294.0
+                        "Value": 20000.0
                     }
                 ],
                 "Type": "I2CFan"
@@ -170,13 +170,13 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 2816.0
+                        "Value": 800.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 12288.0
+                        "Value": 20000.0
                     }
                 ],
                 "Type": "I2CFan"
@@ -200,13 +200,13 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 3016.0
+                        "Value": 800.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 13294.0
+                        "Value": 20000.0
                     }
                 ],
                 "Type": "I2CFan"
@@ -230,13 +230,13 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 2816.0
+                        "Value": 800.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 12288.0
+                        "Value": 20000.0
                     }
                 ],
                 "Type": "I2CFan"
@@ -269,7 +269,7 @@
                         "Label": "curr1",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 2.88
+                        "Value": 7.0
                     }
                 ],
                 "Type": "INA238",
@@ -304,7 +304,7 @@
                         "Label": "curr1",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 2.88
+                        "Value": 7.0
                     }
                 ],
                 "Type": "INA238",
@@ -339,7 +339,7 @@
                         "Label": "curr1",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 2.88
+                        "Value": 7.0
                     }
                 ],
                 "Type": "INA238",
@@ -374,7 +374,7 @@
                         "Label": "curr1",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 2.88
+                        "Value": 7.0
                     }
                 ],
                 "Type": "INA238",
@@ -413,13 +413,13 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 3016.0
+                        "Value": 800.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 13294.0
+                        "Value": 20000.0
                     }
                 ],
                 "Type": "I2CFan"
@@ -443,13 +443,13 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 2816.0
+                        "Value": 800.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 12288.0
+                        "Value": 20000.0
                     }
                 ],
                 "Type": "I2CFan"
@@ -473,13 +473,13 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 3016.0
+                        "Value": 800.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 13294.0
+                        "Value": 20000.0
                     }
                 ],
                 "Type": "I2CFan"
@@ -503,13 +503,13 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 2816.0
+                        "Value": 800.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 12288.0
+                        "Value": 20000.0
                     }
                 ],
                 "Type": "I2CFan"
@@ -533,13 +533,13 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 3016.0
+                        "Value": 800.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 13294.0
+                        "Value": 20000.0
                     }
                 ],
                 "Type": "I2CFan"
@@ -563,13 +563,13 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 2816.0
+                        "Value": 800.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 12288.0
+                        "Value": 20000.0
                     }
                 ],
                 "Type": "I2CFan"
@@ -593,13 +593,13 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 3016.0
+                        "Value": 800.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 13294.0
+                        "Value": 20000.0
                     }
                 ],
                 "Type": "I2CFan"
@@ -623,13 +623,13 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 2816.0
+                        "Value": 800.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 12288.0
+                        "Value": 20000.0
                     }
                 ],
                 "Type": "I2CFan"
@@ -662,7 +662,7 @@
                         "Label": "curr1",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 2.88
+                        "Value": 7.0
                     }
                 ],
                 "Type": "INA238",
@@ -697,7 +697,7 @@
                         "Label": "curr1",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 2.88
+                        "Value": 7.0
                     }
                 ],
                 "Type": "INA238",
@@ -732,7 +732,7 @@
                         "Label": "curr1",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 2.88
+                        "Value": 7.0
                     }
                 ],
                 "Type": "INA238",
@@ -767,7 +767,7 @@
                         "Label": "curr1",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 2.88
+                        "Value": 7.0
                     }
                 ],
                 "Type": "INA238",

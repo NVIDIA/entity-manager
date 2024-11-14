@@ -15,6 +15,7 @@ executable(
     dependencies: [
         boost,
         nlohmann_json_dep,
+        phosphor_logging_dep,
         sdbusplus,
         valijson,
     ],
@@ -40,6 +41,7 @@ if get_option('fru-device')
             boost,
             i2c,
             nlohmann_json_dep,
+            phosphor_logging_dep,
             sdbusplus,
             threads,
             valijson,

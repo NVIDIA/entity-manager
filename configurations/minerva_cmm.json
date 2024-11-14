@@ -214,7 +214,11 @@
             ],
             "Type": "LTC4287",
             "iout1_Name": "CMM_HSC_CURR_A",
+            "iout1_Offset": -0.315,
+            "iout1_Scale": 1010,
             "pin_Name": "CMM_HSC_PWR_W",
+            "pin_Offset": -16.8408,
+            "pin_Scale": 1010101,
             "vin_Name": "CMM_HSC_VIN_VOLT_V",
             "vout1_Name": "CMM_HSC_VOUT_VOLT_V"
         },
@@ -230,18 +234,6 @@
                     "Value": 80
                 },
                 {
-                    "Direction": "greater than",
-                    "Name": "upper non critical",
-                    "Severity": 0,
-                    "Value": 75
-                },
-                {
-                    "Direction": "less than",
-                    "Name": "lower non critical",
-                    "Severity": 0,
-                    "Value": 5
-                },
-                {
                     "Direction": "less than",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -252,7 +244,11 @@
         }
     ],
     "Name": "Minerva CMM",
-    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': 'Minerva CMM.*'})",
+    "Probe": [
+        "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': 'Minerva CMM EVT', 'BOARD_PART_NUMBER': '3IF0MMA0000'})",
+        "OR",
+        "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': 'Minerva CMM ', 'BOARD_INFO_AM4': 'hsc-ltc'})"
+    ],
     "Type": "Board",
     "xyz.openbmc_project.Inventory.Decorator.Asset": {
         "BuildDate": "$BOARD_MANUFACTURE_DATE",
@@ -261,6 +257,9 @@
         "PartNumber": "$BOARD_PART_NUMBER",
         "SerialNumber": "$BOARD_SERIAL_NUMBER",
         "SparePartNumber": "$BOARD_INFO_AM1"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.AssetTag": {
+        "AssetTag": "$PRODUCT_ASSET_TAG"
     },
     "xyz.openbmc_project.Inventory.Item.NetworkInterface": {
         "MACAddress": "$CHASSIS_INFO_AM2"

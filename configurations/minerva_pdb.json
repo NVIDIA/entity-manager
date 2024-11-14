@@ -17,14 +17,21 @@
                     "Label": "iout1",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 30.0
+                    "Value": 37.5
                 },
                 {
                     "Direction": "greater than",
                     "Label": "pin",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 1440.0
+                    "Value": 1910.0
+                },
+                {
+                    "Direction": "less than",
+                    "Label": "temp1",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 5.0
                 },
                 {
                     "Direction": "greater than",
@@ -64,7 +71,11 @@
             ],
             "Type": "LTC4287",
             "iout1_Name": "PDB_HSC_CURR_A",
+            "iout1_Offset": -0.5496,
+            "iout1_Scale": 1070,
             "pin_Name": "PDB_HSC_PWR_W",
+            "pin_Offset": -16,
+            "pin_Scale": 1073883,
             "temp1_Name": "PDB_HSC_TEMP_C",
             "vin_Name": "PDB_HSC_VIN_VOLT_V",
             "vout1_Name": "PDB_HSC_VOUT_VOLT_V"
@@ -73,6 +84,20 @@
             "Address": "0x49",
             "Bus": 4,
             "Name": "PDB_TEMP_C",
+            "Thresholds": [
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 5.0
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 80.0
+                }
+            ],
             "Type": "TMP75"
         },
         {
@@ -108,6 +133,13 @@
                     "Name": "upper critical",
                     "Severity": 1,
                     "Value": 860.0
+                },
+                {
+                    "Direction": "less than",
+                    "Label": "temp1",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 5.0
                 },
                 {
                     "Direction": "greater than",
@@ -155,7 +187,11 @@
         }
     ],
     "Name": "Minerva PDB",
-    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': 'Minerva PDB '})",
+    "Probe": [
+        "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': 'Minerva PDB EVT'})",
+        "OR",
+        "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': 'Minerva PDB', 'BOARD_INFO_AM4': 'hsc-ltc'})"
+    ],
     "Type": "Board",
     "xyz.openbmc_project.Inventory.Decorator.Asset": {
         "BuildDate": "$BOARD_MANUFACTURE_DATE",
@@ -164,5 +200,8 @@
         "PartNumber": "$BOARD_PART_NUMBER",
         "SerialNumber": "$BOARD_SERIAL_NUMBER",
         "SparePartNumber": "$BOARD_INFO_AM1"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.AssetTag": {
+        "AssetTag": "$PRODUCT_ASSET_TAG"
     }
 }

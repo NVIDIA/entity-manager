@@ -28,6 +28,7 @@
 #include <boost/asio/steady_timer.hpp>
 #include <boost/container/flat_map.hpp>
 #include <nlohmann/json.hpp>
+#include <phosphor-logging/lg2.hpp>
 #include <sdbusplus/asio/connection.hpp>
 #include <sdbusplus/asio/object_server.hpp>
 
@@ -61,7 +62,6 @@ extern "C"
 }
 
 namespace fs = std::filesystem;
-static constexpr bool debug = false;
 constexpr size_t maxFruSize = 512;
 constexpr size_t maxEepromPageIndex = 255;
 constexpr size_t busTimeoutSeconds = 10;
@@ -154,8 +154,8 @@ static int getRootBus(size_t bus)
 {
     auto ec = std::error_code();
     auto path = std::filesystem::read_symlink(
-        std::filesystem::path("/sys/bus/i2c/devices/i2c-" +
-                              std::to_string(bus) + "/mux_device"),
+        std::filesystem::path(
+            "/sys/bus/i2c/devices/i2c-" + std::to_string(bus) + "/mux_device"),
         ec);
     if (ec)
     {
@@ -205,10 +205,9 @@ static void makeProbeInterface(size_t bus, size_t address,
 
 // Issue an I2C transaction to first write to_target_buf_len bytes,then read
 // from_target_buf_len bytes.
-static int i2cSmbusWriteThenRead(int file, uint16_t address,
-                                 uint8_t* toTargetBuf, uint8_t toTargetBufLen,
-                                 uint8_t* fromTargetBuf,
-                                 uint8_t fromTargetBufLen)
+static int i2cSmbusWriteThenRead(
+    int file, uint16_t address, uint8_t* toTargetBuf, uint8_t toTargetBufLen,
+    uint8_t* fromTargetBuf, uint8_t fromTargetBufLen)
 {
     if (toTargetBuf == nullptr || toTargetBufLen == 0 ||
         fromTargetBuf == nullptr || fromTargetBufLen == 0)
@@ -320,8 +319,8 @@ static std::vector<uint8_t> processEeprom(int bus, int address)
         return readFromEeprom(file, offset, length, outbuf);
     };
     FRUReader reader(std::move(readFunc));
-    std::pair<std::vector<uint8_t>, bool> pair = readFRUContents(reader,
-                                                                 errorMessage);
+    std::pair<std::vector<uint8_t>, bool> pair =
+        readFRUContents(reader, errorMessage);
     if (pair.first.empty())
     {
         if (address == nvme::address) // Check for NVMe drive
@@ -354,8 +353,8 @@ std::set<size_t> findI2CEeproms(int i2cBus,
         }
         const std::string node = p.path().string();
         std::smatch m;
-        bool found = std::regex_match(node, m,
-                                      std::regex(".+\\d+-([0-9abcdef]+$)"));
+        bool found =
+            std::regex_match(node, m, std::regex(".+\\d+-([0-9abcdef]+$)"));
 
         if (!found)
         {
@@ -495,11 +494,8 @@ int getBusFRUs(int file, int first, int last, int bus,
             }
             if (skipList.find(ii) != skipList.end())
             {
-                if (debug)
-                {
-                    std::cerr << "skipping bus:" << bus << " address:0x"
-                              << std::hex << ii << "\n";
-                }
+                lg2::debug("skipping bus: {BUS} address: 0x{ADDR}", "BUS", bus,
+                           "ADDR", ii);
                 continue;
             }
             // skipping since no device is present in this range
@@ -510,11 +506,8 @@ int getBusFRUs(int file, int first, int last, int bus,
             // Set target address
             if (ioctl(file, I2C_SLAVE, ii) < 0)
             {
-                if (debug)
-                {
-                    std::cerr << "device at bus " << bus << " address " << ii
-                              << " busy\n";
-                }
+                lg2::debug("device at bus {BUS} address {ADDR} busy", "BUS",
+                           bus, "ADDR", ii);
                 continue;
             }
             // probe
@@ -523,11 +516,8 @@ int getBusFRUs(int file, int first, int last, int bus,
                 continue;
             }
 
-            if (debug)
-            {
-                std::cout << "something at bus " << bus << " addr " << ii
-                          << "\n";
-            }
+            lg2::debug("something at bus {BUS}, addr {ADDR}", "BUS", bus,
+                       "ADDR", ii);
 
             makeProbeInterface(bus, ii, objServer);
 
@@ -559,14 +549,14 @@ int getBusFRUs(int file, int first, int last, int bus,
             }
             bool is16BitBool{*is16Bit};
 
-            auto readFunc = [is16BitBool, file, ii](off_t offset, size_t length,
-                                                    uint8_t* outbuf) {
+            auto readFunc = [is16BitBool, file,
+                             ii](off_t offset, size_t length, uint8_t* outbuf) {
                 return readData(is16BitBool, false, file, ii, offset, length,
                                 outbuf);
             };
             FRUReader reader(std::move(readFunc));
-            std::string errorMessage = "bus " + std::to_string(bus) +
-                                       " address " + std::to_string(ii);
+            std::string errorMessage =
+                "bus " + std::to_string(bus) + " address " + std::to_string(ii);
             std::pair<std::vector<uint8_t>, bool> pair =
                 readFRUContents(reader, errorMessage);
             const bool foundHeader = pair.second;
@@ -576,12 +566,12 @@ int getBusFRUs(int file, int first, int last, int bus,
                 // certain FRU eeproms require bytewise reading.
                 // otherwise garbage is read. e.g. SuperMicro PWS 920P-SQ
 
-                auto readFunc = [is16BitBool, file, ii](off_t offset,
-                                                        size_t length,
-                                                        uint8_t* outbuf) {
-                    return readData(is16BitBool, true, file, ii, offset, length,
-                                    outbuf);
-                };
+                auto readFunc =
+                    [is16BitBool, file,
+                     ii](off_t offset, size_t length, uint8_t* outbuf) {
+                        return readData(is16BitBool, true, file, ii, offset,
+                                        length, outbuf);
+                    };
                 FRUReader readerBytewise(std::move(readFunc));
                 pair = readFRUContents(readerBytewise, errorMessage);
             }
@@ -630,8 +620,8 @@ void loadI2cPcieMappingTable(const char* path)
         return;
     }
 
-    nlohmann::json data = nlohmann::json::parse(i2cPcieMappingStream, nullptr,
-                                                false);
+    nlohmann::json data =
+        nlohmann::json::parse(i2cPcieMappingStream, nullptr, false);
     if (data.is_discarded())
     {
         std::cerr
@@ -686,8 +676,8 @@ void loadBlocklist(const char* path)
         return;
     }
 
-    nlohmann::json data = nlohmann::json::parse(blocklistStream, nullptr,
-                                                false);
+    nlohmann::json data =
+        nlohmann::json::parse(blocklistStream, nullptr, false);
     if (data.is_discarded())
     {
         std::cerr << "Illegal blocklist file detected, cannot validate JSON, "
@@ -837,18 +827,12 @@ static void findI2CDevices(const std::vector<fs::path>& i2cBuses,
         //  i2cdetect by default uses the range 0x03 to 0x77, as
         //  this is  what we have tested with, use this range. Could be
         //  changed in future.
-        if (debug)
-        {
-            std::cerr << "Scanning bus " << bus << "\n";
-        }
+        lg2::debug("Scanning bus {BUS}", "BUS", bus);
 
         // fd is closed in this function in case the bus locks up
         getBusFRUs(file, 0x03, 0x77, bus, device, powerIsOn, objServer);
 
-        if (debug)
-        {
-            std::cerr << "Done scanning bus " << bus << "\n";
-        }
+        lg2::debug("Done scanning bus {BUS}", "BUS", bus);
     }
 }
 
@@ -859,7 +843,7 @@ struct FindDevicesWithCallback :
     FindDevicesWithCallback(const std::vector<fs::path>& i2cBuses,
                             BusMap& busmap, const bool& powerIsOn,
                             sdbusplus::asio::object_server& objServer,
-                            std::function<void(void)>&& callback) :
+                            std::function<void()>&& callback) :
         _i2cBuses(i2cBuses), _busMap(busmap), _powerIsOn(powerIsOn),
         _objServer(objServer), _callback(std::move(callback))
     {}
@@ -905,8 +889,8 @@ void addFruObjectToDbus(
         return;
     }
 
-    std::string productName = "/xyz/openbmc_project/FruDevice/" +
-                              optionalProductName.value();
+    std::string productName =
+        "/xyz/openbmc_project/FruDevice/" + optionalProductName.value();
 
     std::optional<int> index = findIndexForFRU(dbusInterfaceMap, productName);
     if (index.has_value())
@@ -927,15 +911,17 @@ void addFruObjectToDbus(
         {
             continue;
         }
-        std::string key = std::regex_replace(property.first, nonAsciiRegex,
-                                             "_");
+        std::string key =
+            std::regex_replace(property.first, nonAsciiRegex, "_");
         std::string value = property.second;
         // Remove the spaces from the end of the key string
         value.erase(std::find_if(value.rbegin(), value.rend(),
                                  [](unsigned char ch) {
-            return (0 == std::isspace(ch));
-        }).base(),
+                                     return (0 == std::isspace(ch));
+                                 })
+                        .base(),
                     value.end());
+
         if (property.first == "PRODUCT_ASSET_TAG")
         {
             std::string propertyName = property.first;
@@ -944,33 +930,31 @@ void addFruObjectToDbus(
                 [bus, address, propertyName, &dbusInterfaceMap,
                  &unknownBusObjectCount, &powerIsOn, &objServer,
                  &systemBus](const std::string& req, std::string& resp) {
-                if (strcmp(req.c_str(), resp.c_str()) != 0)
-                {
-                    // call the method which will update
-                    if (updateFRUProperty(req, bus, address, propertyName,
-                                          dbusInterfaceMap,
-                                          unknownBusObjectCount, powerIsOn,
-                                          objServer, systemBus))
+                    if (strcmp(req.c_str(), resp.c_str()) != 0)
                     {
-                        resp = req;
+                        // call the method which will update
+                        if (updateFRUProperty(req, bus, address, propertyName,
+                                              dbusInterfaceMap,
+                                              unknownBusObjectCount, powerIsOn,
+                                              objServer, systemBus))
+                        {
+                            resp = req;
+                        }
+                        else
+                        {
+                            throw std::invalid_argument(
+                                "FRU property update failed.");
+                        }
                     }
-                    else
-                    {
-                        throw std::invalid_argument(
-                            "FRU property update failed.");
-                    }
-                }
-                return 1;
-            });
+                    return 1;
+                });
         }
         else if (!iface->register_property(key, value + '\0'))
         {
             std::cerr << "illegal key: " << key << "\n";
         }
-        if (debug)
-        {
-            std::cout << property.first << ": " << value << "\n";
-        }
+        lg2::debug("parsed FRU property: {FIRST}: {SECOND}", "FIRST",
+                   property.first, "SECOND", value);
     }
 
     // only check PCIe devices when i2cPcieMapping contains data
@@ -979,21 +963,23 @@ void addFruObjectToDbus(
         std::string prunedProductName =
             productName.substr(productName.rfind('/') + 1);
         std::regex suffixPattern("_[0-9]+$");
-        prunedProductName = std::regex_replace(prunedProductName, suffixPattern,
-                                               "_");
+        prunedProductName =
+            std::regex_replace(prunedProductName, suffixPattern, "_");
         size_t findLastUndercore = prunedProductName.find_last_not_of('_');
         // there should be at least one underscore in productName
         if (findLastUndercore != std::string::npos)
         {
-            prunedProductName = prunedProductName.substr(0,
-                                                         findLastUndercore + 1);
+            prunedProductName =
+                prunedProductName.substr(0, findLastUndercore + 1);
         }
 
         iface->register_property("DEVICE_DBUS_NAME", prunedProductName);
 
-        std::visit([&iface](const auto& val) {
-            iface->register_property("PCIE_LABEL", val);
-        }, i2cPcieMappings[bus]);
+        std::visit(
+            [&iface](const auto& val) {
+                iface->register_property("PCIE_LABEL", val);
+            },
+            i2cPcieMappings[bus]);
     }
 
     // baseboard will be 0, 0
@@ -1178,47 +1164,48 @@ void rescanOneBus(
         i2cBuses, busmap, powerIsOn, objServer,
         [busNum, &busmap, &dbusInterfaceMap, &unknownBusObjectCount, &powerIsOn,
          &objServer, &systemBus]() {
-        int rootBus = getRootBus(busNum);
-        for (auto busIface = dbusInterfaceMap.begin();
-             busIface != dbusInterfaceMap.end();)
-        {
-            if (busIface->first.first == static_cast<size_t>(busNum))
+            for (auto busIface = dbusInterfaceMap.begin();
+                 busIface != dbusInterfaceMap.end();)
             {
-                objServer.remove_interface(busIface->second);
-                // In case device under mux not detected in root bus
-                // while rescanOneBus, updating dbusInterfaceMap along
-                // with busMap to avoid getFRUInfo of not available device
-                // and throw
-                if (busIface->first.first == static_cast<size_t>(rootBus))
+                int rootBus = getRootBus(busNum);
+                if (busIface->first.first == static_cast<size_t>(busNum))
                 {
-                    auto deviceMap = busmap.find(rootBus);
-                    if (deviceMap != busMap.end())
+                    objServer.remove_interface(busIface->second);
+                    // In case device under mux not detected in root bus
+                    // while rescanOneBus, updating dbusInterfaceMap along
+                    // with busMap to avoid getFRUInfo of not available device
+                    // and throw
+                    if (busIface->first.first == static_cast<size_t>(rootBus))
                     {
-                        if (deviceMap->second->find(busIface->first.second) ==
-                            deviceMap->second->end())
+                        auto deviceMap = busmap.find(rootBus);
+                        if (deviceMap != busMap.end())
                         {
-                            objServer.remove_interface(busIface->second);
-                            dbusInterfaceMap.erase(busIface->first);
-                            continue;
+                            if (deviceMap->second->find(
+                                    busIface->first.second) ==
+                                deviceMap->second->end())
+                            {
+                                objServer.remove_interface(busIface->second);
+                                dbusInterfaceMap.erase(busIface->first);
+                                continue;
+                            }
                         }
                     }
                 }
+                busIface++;
             }
-            busIface++;
-        }
-        auto found = busmap.find(busNum);
-        if (found == busmap.end() || found->second == nullptr)
-        {
-            return;
-        }
-        for (auto& device : *(found->second))
-        {
-            addFruObjectToDbus(device.second, dbusInterfaceMap,
-                               static_cast<uint32_t>(busNum), device.first,
-                               unknownBusObjectCount, powerIsOn, objServer,
-                               systemBus);
-        }
-    });
+            auto found = busmap.find(busNum);
+            if (found == busmap.end() || found->second == nullptr)
+            {
+                return;
+            }
+            for (auto& device : *(found->second))
+            {
+                addFruObjectToDbus(device.second, dbusInterfaceMap,
+                                   static_cast<uint32_t>(busNum), device.first,
+                                   unknownBusObjectCount, powerIsOn, objServer,
+                                   systemBus);
+            }
+        });
     scan->run();
 }
 
@@ -1271,34 +1258,34 @@ void rescanBusses(
 
         auto scan = std::make_shared<FindDevicesWithCallback>(
             i2cBuses, busmap, powerIsOn, objServer, [&]() {
-            for (auto& busIface : dbusInterfaceMap)
-            {
-                objServer.remove_interface(busIface.second);
-            }
-
-            dbusInterfaceMap.clear();
-            unknownBusObjectCount = 0;
-
-            // todo, get this from a more sensable place
-            std::vector<uint8_t> baseboardFRU;
-            if (readBaseboardFRU(baseboardFRU))
-            {
-                // If no device on i2c bus 0, the insertion will happen.
-                auto bus0 = busmap.try_emplace(0,
-                                               std::make_shared<DeviceMap>());
-                bus0.first->second->emplace(0, baseboardFRU);
-            }
-            for (auto& devicemap : busmap)
-            {
-                for (auto& device : *devicemap.second)
+                for (auto& busIface : dbusInterfaceMap)
                 {
-                    addFruObjectToDbus(device.second, dbusInterfaceMap,
-                                       devicemap.first, device.first,
-                                       unknownBusObjectCount, powerIsOn,
-                                       objServer, systemBus);
+                    objServer.remove_interface(busIface.second);
                 }
-            }
-        });
+
+                dbusInterfaceMap.clear();
+                unknownBusObjectCount = 0;
+
+                // todo, get this from a more sensable place
+                std::vector<uint8_t> baseboardFRU;
+                if (readBaseboardFRU(baseboardFRU))
+                {
+                    // If no device on i2c bus 0, the insertion will happen.
+                    auto bus0 =
+                        busmap.try_emplace(0, std::make_shared<DeviceMap>());
+                    bus0.first->second->emplace(0, baseboardFRU);
+                }
+                for (auto& devicemap : busmap)
+                {
+                    for (auto& device : *devicemap.second)
+                    {
+                        addFruObjectToDbus(device.second, dbusInterfaceMap,
+                                           devicemap.first, device.first,
+                                           unknownBusObjectCount, powerIsOn,
+                                           objServer, systemBus);
+                    }
+                }
+            });
         scan->run();
     });
 }
@@ -1390,10 +1377,10 @@ bool updateFRUProperty(
 #ifdef ENABLE_FRU_AREA_RESIZE
         size_t newFRUAreaSize = fruAreaDataSize + updatePropertyReqLen + 1;
         // round size to 8-byte blocks
-        newFRUAreaSize = ((newFRUAreaSize - 1) / fruBlockSize + 1) *
-                         fruBlockSize;
-        size_t newFRUDataSize = fruData.size() + newFRUAreaSize -
-                                fruAreaParams.size;
+        newFRUAreaSize =
+            ((newFRUAreaSize - 1) / fruBlockSize + 1) * fruBlockSize;
+        size_t newFRUDataSize =
+            fruData.size() + newFRUAreaSize - fruAreaParams.size;
         fruData.resize(newFRUDataSize);
         fruAreaParams.size = newFRUAreaSize;
         fruAreaParams.end = fruAreaParams.start + fruAreaParams.size;
@@ -1414,10 +1401,10 @@ bool updateFRUProperty(
               fruData.begin() + fruAreaParams.updateFieldLoc);
 
     // Copy remaining data to main fru area - post updated fru field vector
-    fruAreaParams.restFieldsLoc = fruAreaParams.updateFieldLoc +
-                                  updatePropertyReqLen;
-    size_t fruAreaDataEnd = fruAreaParams.restFieldsLoc +
-                            restFRUAreaFieldsData.size();
+    fruAreaParams.restFieldsLoc =
+        fruAreaParams.updateFieldLoc + updatePropertyReqLen;
+    size_t fruAreaDataEnd =
+        fruAreaParams.restFieldsLoc + restFRUAreaFieldsData.size();
 
     std::copy(restFRUAreaFieldsData.begin(), restFRUAreaFieldsData.end(),
               fruData.begin() + fruAreaParams.restFieldsLoc);
@@ -1428,8 +1415,8 @@ bool updateFRUProperty(
 
 #ifdef ENABLE_FRU_AREA_RESIZE
     ++nextFRUAreaNewLoc;
-    ssize_t nextFRUAreaOffsetDiff = (nextFRUAreaNewLoc - nextFRUAreaLoc) /
-                                    fruBlockSize;
+    ssize_t nextFRUAreaOffsetDiff =
+        (nextFRUAreaNewLoc - nextFRUAreaLoc) / fruBlockSize;
     // Append rest FRU Areas if size changed and there were other sections after
     // updated one
     if (nextFRUAreaOffsetDiff && nextFRUAreaLoc)
@@ -1530,44 +1517,44 @@ int main()
 
     iface->register_method("GetRawFru", getFRUInfo);
 
-    iface->register_method("WriteFru",
-                           [&](const uint16_t bus, const uint8_t address,
-                               const std::vector<uint8_t>& data) {
-        if (!writeFRU(bus, address, data))
-        {
-            throw std::invalid_argument("Invalid Arguments.");
-            return;
-        }
-        // schedule rescan on success
-        rescanBusses(busMap, dbusInterfaceMap, unknownBusObjectCount, powerIsOn,
-                     objServer, systemBus);
-    });
+    iface->register_method(
+        "WriteFru", [&](const uint16_t bus, const uint8_t address,
+                        const std::vector<uint8_t>& data) {
+            if (!writeFRU(bus, address, data))
+            {
+                throw std::invalid_argument("Invalid Arguments.");
+                return;
+            }
+            // schedule rescan on success
+            rescanBusses(busMap, dbusInterfaceMap, unknownBusObjectCount,
+                         powerIsOn, objServer, systemBus);
+        });
     iface->initialize();
 
     std::function<void(sdbusplus::message_t & message)> eventHandler =
         [&](sdbusplus::message_t& message) {
-        std::string objectName;
-        boost::container::flat_map<
-            std::string,
-            std::variant<std::string, bool, int64_t, uint64_t, double>>
-            values;
-        message.read(objectName, values);
-        auto findState = values.find("CurrentHostState");
-        if (findState != values.end())
-        {
-            if (std::get<std::string>(findState->second) ==
-                "xyz.openbmc_project.State.Host.HostState.Running")
+            std::string objectName;
+            boost::container::flat_map<
+                std::string,
+                std::variant<std::string, bool, int64_t, uint64_t, double>>
+                values;
+            message.read(objectName, values);
+            auto findState = values.find("CurrentHostState");
+            if (findState != values.end())
             {
-                powerIsOn = true;
+                if (std::get<std::string>(findState->second) ==
+                    "xyz.openbmc_project.State.Host.HostState.Running")
+                {
+                    powerIsOn = true;
+                }
             }
-        }
 
-        if (powerIsOn)
-        {
-            rescanBusses(busMap, dbusInterfaceMap, unknownBusObjectCount,
-                         powerIsOn, objServer, systemBus);
-        }
-    };
+            if (powerIsOn)
+            {
+                rescanBusses(busMap, dbusInterfaceMap, unknownBusObjectCount,
+                             powerIsOn, objServer, systemBus);
+            }
+        };
 
     sdbusplus::bus::match_t powerMatch = sdbusplus::bus::match_t(
         static_cast<sdbusplus::bus_t&>(*systemBus),
@@ -1584,56 +1571,58 @@ int main()
     std::function<void(const boost::system::error_code, std::size_t)>
         watchI2cBusses = [&](const boost::system::error_code& ec,
                              std::size_t bytesTransferred) {
-        if (ec)
-        {
-            std::cout << "Callback Error " << ec << "\n";
-            return;
-        }
-        size_t index = 0;
-        while ((index + sizeof(inotify_event)) <= bytesTransferred)
-        {
-            const char* p = &readBuffer[index];
-            // NOLINTNEXTLINE(cppcoreguidelines-pro-type-reinterpret-cast)
-            const auto* iEvent = reinterpret_cast<const inotify_event*>(p);
-            switch (iEvent->mask)
+            if (ec)
             {
-                case IN_CREATE:
-                case IN_MOVED_TO:
-                case IN_DELETE:
+                std::cout << "Callback Error " << ec << "\n";
+                return;
+            }
+            size_t index = 0;
+            while ((index + sizeof(inotify_event)) <= bytesTransferred)
+            {
+                const char* p = &readBuffer[index];
+                // NOLINTNEXTLINE(cppcoreguidelines-pro-type-reinterpret-cast)
+                const auto* iEvent = reinterpret_cast<const inotify_event*>(p);
+                switch (iEvent->mask)
                 {
-                    std::string_view name(&iEvent->name[0], iEvent->len);
-                    if (boost::starts_with(name, "i2c"))
+                    case IN_CREATE:
+                    case IN_MOVED_TO:
+                    case IN_DELETE:
                     {
-                        int bus = busStrToInt(name);
-                        if (bus < 0)
+                        std::string_view name(&iEvent->name[0], iEvent->len);
+                        if (boost::starts_with(name, "i2c"))
                         {
-                            std::cerr << "Could not parse bus " << name << "\n";
-                            continue;
-                        }
-                        int rootBus = getRootBus(bus);
-                        if (rootBus >= 0)
-                        {
-                            rescanOneBus(busMap, static_cast<uint16_t>(rootBus),
+                            int bus = busStrToInt(name);
+                            if (bus < 0)
+                            {
+                                std::cerr
+                                    << "Could not parse bus " << name << "\n";
+                                continue;
+                            }
+                            int rootBus = getRootBus(bus);
+                            if (rootBus >= 0)
+                            {
+                                rescanOneBus(busMap,
+                                             static_cast<uint16_t>(rootBus),
+                                             dbusInterfaceMap, false,
+                                             unknownBusObjectCount, powerIsOn,
+                                             objServer, systemBus);
+                            }
+                            rescanOneBus(busMap, static_cast<uint16_t>(bus),
                                          dbusInterfaceMap, false,
                                          unknownBusObjectCount, powerIsOn,
                                          objServer, systemBus);
                         }
-                        rescanOneBus(busMap, static_cast<uint16_t>(bus),
-                                     dbusInterfaceMap, false,
-                                     unknownBusObjectCount, powerIsOn,
-                                     objServer, systemBus);
                     }
-                }
-                break;
-                default:
                     break;
+                    default:
+                        break;
+                }
+                index += sizeof(inotify_event) + iEvent->len;
             }
-            index += sizeof(inotify_event) + iEvent->len;
-        }
 
-        dirWatch.async_read_some(boost::asio::buffer(readBuffer),
-                                 watchI2cBusses);
-    };
+            dirWatch.async_read_some(boost::asio::buffer(readBuffer),
+                                     watchI2cBusses);
+        };
 
     dirWatch.async_read_some(boost::asio::buffer(readBuffer), watchI2cBusses);
     // run the initial scan
