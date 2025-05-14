@@ -23,6 +23,9 @@
                     "$ref": "mctp.json#/$defs/MCTPUSBTarget"
                 },
                 {
+                    "$ref": "mctp.json#/$defs/MCTPSPIDevice"
+                },
+                {
                     "$ref": "pid.json#/$defs/Pid"
                 },
                 {

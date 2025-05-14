@@ -60,6 +60,32 @@
             },
             "required": ["Name", "Type", "Interface", "USBPath"],
             "type": "object"
+        },
+        "MCTPSPIDevice": {
+            "properties": {
+                "Name": {
+                    "description": "A recognisable name for SPI device",
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "enum": ["MCTPSPIDevice"]
+                },
+                "Bus": {
+                    "description": "A recognisable bus number on which SPI device is attached",
+                    "type": "string"
+                },
+                "ChipSelect": {
+                    "description": "A recognisable chip selecet pin where SPI device is attached",
+                    "type": "string"
+                },
+                "StaticEndpointID": {
+                    "description": "Assign the provided endpoint ID to the peripheral device and exclude the EID from the dynamic pool allocation. If StaticEndpointID is not defined then the device will be allocated an endpoint ID from the dynamic pool.",
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type", "Bus", "ChipSelect"],
+            "type": "object"
         }
     }
 }
