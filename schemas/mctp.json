@@ -56,7 +56,11 @@
               "BridgePoolStartEID": {
                    "description": "Assigns the endpoint ID for the bridge pool to start with. If BridgePoolStartEID is set to 0, it will be disabled automatically.",
                    "type": "string"
-               }
+               },
+               "IgnoreEIDs": {
+                    "description": "A comma separated list of endpoint IDs to be ignored by BusOwner.",
+                    "type": "string"
+                }
             },
             "required": ["Name", "Type", "Interface", "USBPath"],
             "type": "object"
