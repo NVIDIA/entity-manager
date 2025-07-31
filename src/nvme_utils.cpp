@@ -66,14 +66,15 @@ void addNvmeObjectToDbus(
     {
         std::regex_replace(property.second.begin(), property.second.begin(),
                            property.second.end(), nonAsciiRegex, "_");
-        std::string key = std::regex_replace(property.first, nonAsciiRegex,
-                                             "_");
+        std::string key =
+            std::regex_replace(property.first, nonAsciiRegex, "_");
         std::string value = property.second;
         // Remove the spaces from the end of the key string
         value.erase(std::find_if(value.rbegin(), value.rend(),
                                  [](unsigned char ch) {
-            return (0 == std::isspace(ch));
-        }).base(),
+                                     return (0 == std::isspace(ch));
+                                 })
+                        .base(),
                     value.end());
 
         if (!iface->register_property(key, value + '\0'))
@@ -111,8 +112,8 @@ bool findNvmeVendorId(int file, const std::string& errorHelp,
     blockData[1] = (wordData >> 8) & 0x00ff;
 
     uint16_t vendorId = __builtin_bswap16(wordData);
-    std::vector<uint16_t>::iterator it = std::find(invalidVid.begin(),
-                                                   invalidVid.end(), vendorId);
+    std::vector<uint16_t>::iterator it =
+        std::find(invalidVid.begin(), invalidVid.end(), vendorId);
     if (it != invalidVid.end())
     {
         if (debug)

@@ -1,5 +1,5 @@
 cpp_args = boost_args + ['-DPACKAGE_DIR="' + packagedir + '/"']
-cpp_args += ['-DSYSCONF_DIR="' + sysconfdir + '/"' ]
+cpp_args += ['-DSYSCONF_DIR="' + sysconfdir + '/"']
 installdir = join_paths(get_option('libexecdir'), 'entity-manager')
 
 executable(

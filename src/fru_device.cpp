@@ -217,8 +217,7 @@ static int i2cSmbusWriteThenRead(
 
     constexpr size_t smbusWriteThenReadMsgCount = 2;
     std::array<struct i2c_msg, smbusWriteThenReadMsgCount> msgs{};
-    struct i2c_rdwr_ioctl_data rdwr
-    {};
+    struct i2c_rdwr_ioctl_data rdwr{};
 
     msgs[0].addr = address;
     msgs[0].flags = 0;
@@ -1329,8 +1328,7 @@ bool updateFRUProperty(
         return false;
     }
 
-    struct FruArea fruAreaParams
-    {};
+    struct FruArea fruAreaParams{};
 
     if (!findFruAreaLocationAndField(fruData, propertyName, fruAreaParams))
     {
