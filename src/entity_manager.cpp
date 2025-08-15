@@ -978,7 +978,26 @@ void postToDbus(const nlohmann::json& newConfiguration,
             parentIface->register_property(
                 "Associations", associations,
                 sdbusplus::asio::PropertyPermission::readWrite);
-            parentIface->initialize();
+
+            try
+            {
+                parentIface->initialize();
+            }
+            catch (const std::exception& e)
+            {
+                // Ignore duplicate export attempts which cause "File exists"
+                const std::string what = e.what();
+                if (what.find("File exists") == std::string::npos)
+                {
+                    std::cerr
+                        << "Unable to initialize dbus interface : " << e.what()
+                        << "\n"
+                        << "object Path : " << parentIface->get_object_path()
+                        << "\n"
+                        << "interface name : "
+                        << parentIface->get_interface_name() << "\n";
+                }
+            }
         }
 
         auto exposes = boardValues.find("Exposes");
