@@ -142,6 +142,24 @@
             },
             "required": ["Address", "Bus", "Name", "Type"],
             "type": "object"
+        },
+        "MCTPXROTTarget": {
+            "properties": {
+                "Name": {
+                    "description": "A recognisable name for IRoT/VRoT device",
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "enum": ["MCTPXROTTarget"]
+                },
+                "Interface": {
+                    "description": "A recognisable interface name for the device",
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type", "Interface"],
+            "type": "object"
         }
     }
 }
