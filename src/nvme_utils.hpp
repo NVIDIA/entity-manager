@@ -56,5 +56,5 @@ bool findNvmeVendorId(int file, const std::string& errorHelp,
 /// \return the NVMe contents from the file and bool indicating if the NVMe
 /// Vendor ID
 ///         was found
-std::pair<std::vector<uint8_t>, bool>
-    readNvmeContents(int bus, int file, const std::string& errorHelp);
+std::pair<std::vector<uint8_t>, bool> readNvmeContents(
+    int bus, int file, const std::string& errorHelp);

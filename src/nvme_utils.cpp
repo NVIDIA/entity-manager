@@ -8,9 +8,9 @@
 
 static constexpr bool debug = false;
 
-resCodes
-    formatNvmeVid(const std::vector<uint8_t>& nvmeBytes,
-                  boost::container::flat_map<std::string, std::string>& result)
+resCodes formatNvmeVid(
+    const std::vector<uint8_t>& nvmeBytes,
+    boost::container::flat_map<std::string, std::string>& result)
 {
     if (nvmeBytes.size() < nvme::vendorIdSize)
     {
@@ -127,8 +127,8 @@ bool findNvmeVendorId(int file, const std::string& errorHelp,
     return true;
 }
 
-std::pair<std::vector<uint8_t>, bool>
-    readNvmeContents(int bus, int file, const std::string& errorHelp)
+std::pair<std::vector<uint8_t>, bool> readNvmeContents(
+    int bus, int file, const std::string& errorHelp)
 {
     std::array<uint8_t, I2C_SMBUS_BLOCK_MAX> blockData{};
     uint8_t baseOffset = nvme::baseOffsetVendorId;

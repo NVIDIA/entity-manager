@@ -105,9 +105,7 @@
                                     "type": "string"
                                 }
                             },
-                            "required": [
-                                "LocationType"
-                            ],
+                            "required": ["LocationType"],
                             "type": "object"
                         },
                         "Slot": {
