@@ -459,7 +459,7 @@ std::set<size_t> findI2CEeproms(int i2cBus,
             // NOLINTBEGIN(bugprone-unchecked-optional-access)
             auto& addresses = *(busFind->second);
             // NOLINTEND(bugprone-unchecked-optional-access)
-            if (addresses.find(address) != addresses.end())
+            if (addresses.contains(address))
             {
                 continue;
             }
@@ -549,11 +549,11 @@ int getBusFRUs(int file, int first, int last, int bus,
 
         for (int ii = first; ii <= last; ii++)
         {
-            if (foundItems.find(ii) != foundItems.end())
+            if (foundItems.contains(ii))
             {
                 continue;
             }
-            if (skipList.find(ii) != skipList.end())
+            if (skipList.contains(ii))
             {
                 lg2::debug("skipping bus: {BUS} address: 0x{ADDR}", "BUS", bus,
                            "ADDR", ii);
@@ -582,7 +582,7 @@ int getBusFRUs(int file, int first, int last, int bus,
 
             makeProbeInterface(bus, ii, objServer);
 
-            if (failedItems.find(ii) != failedItems.end())
+            if (failedItems.contains(ii))
             {
                 // if we failed to read it once, unlikely we can read it later
                 continue;
@@ -590,7 +590,7 @@ int getBusFRUs(int file, int first, int last, int bus,
 
             if (rootFailures != nullptr)
             {
-                if (rootFailures->find(ii) != rootFailures->end())
+                if (rootFailures->contains(ii))
                 {
                     continue;
                 }
