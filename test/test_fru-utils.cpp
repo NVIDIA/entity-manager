@@ -422,7 +422,7 @@ TEST(formatIPMIFRU, FullDecode)
             Pair("BOARD_INFO_AM2", "MAC: 3C:6D:66:14:C8:7A"),
             Pair("BOARD_LANGUAGE_CODE", "25"),
             Pair("BOARD_MANUFACTURER", "NVIDIA"),
-            Pair("BOARD_MANUFACTURE_DATE", "20240831T055100Z"),
+            Pair("BOARD_MANUFACTURE_DATE", "2024-08-31T05:51:00Z"),
             Pair("BOARD_PART_NUMBER", "699-13809-0404-600"),
             Pair("BOARD_PRODUCT_NAME", "P3809"),
             Pair("BOARD_SERIAL_NUMBER", "1583324800150"),
