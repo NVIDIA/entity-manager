@@ -38,8 +38,25 @@ owners:
 - zhikui.ren@intel.com
 
 reviewers:
+- christopher.sides@hpe.com
 
 matchers:
+- partial_regex: configurations/meta
+  owners:
+    - patrick@stwcx.xyz
+- partial_regex: configurations/tyan
+  owners:
+    - alexander.hansen@9elements.com
+    - marvin.drees@9elements.com
+- partial_regex: src
+  reviewers:
+    - alexander.hansen@9elements.com
+- partial_regex: test
+  reviewers:
+    - alexander.hansen@9elements.com
+- partial_regex: schemas
+  reviewers:
+    - alexander.hansen@9elements.com
 
 openbmc:
 - name: Ed Tanous
@@ -54,3 +71,15 @@ openbmc:
 - name: Zhikui Ren
   email: zhikui.ren@intel.com
   discord: Zhikui
+- name: Christopher Sides
+  email: christopher.sides@hpe.com
+  discord: citysides
+- name: Patrick Williams
+  email: patrick@stwcx.xyz
+  discord: stwcx
+- name: Alexander Hansen
+  email: alexander.hansen@9elements.com
+  discord: Alexander
+- name: Marvin Drees
+  email: marvin.drees@9elements.com
+  discord: mdr164

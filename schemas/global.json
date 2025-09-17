@@ -1,6 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$defs": {
+<<<<<<< HEAD
         "EMExposesElement": {
             "description": "The exposes property element schema.  An element of the exposes property is always an array where elements are of type exposes entry.",
             "anyOf": [
@@ -60,6 +61,8 @@
             ],
             "title": "Exposes Property Element"
         },
+=======
+>>>>>>> 7f2db484ca0d4caaee6542f653030b3a766a075d
         "EMConfig": {
             "title": "Entity Manager Configuration",
             "description": "The schema for an entity manager configuration. An entity manager configuration describes an association between a match condition, also known as a probe, and an array of heterogeneous configuration data.  When a probe match occurs, the configuration data is exported to DBus.",
@@ -73,7 +76,7 @@
                     "description": "The schema for the exposes property. The exposes property must be an array where elements are of type EMExposesElement.  The exposes property is the heterogeneous configuration data exported to DBus upon a probe match.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/$defs/EMExposesElement"
+                        "$ref": "exposes_record.json#/$defs/EMExposesElement"
                     }
                 },
                 "Logging": {
@@ -100,7 +103,14 @@
                 "Type": {
                     "title": "Configuration Type",
                     "description": "The schema for the type property. The type property identifies the type of the configuration.  When exported, configurations will be instantiated as children of: /xyz/openbmc_project/configuration/<Type>",
-                    "enum": ["Board", "Chassis", "NVMe", "PowerSupply"]
+                    "enum": [
+                        "Board",
+                        "Chassis",
+                        "NVMe",
+                        "PowerSupply",
+                        "CPU",
+                        "Cable"
+                    ]
                 },
                 "xyz.openbmc_project.Common.UUID": {
                     "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Common/UUID"
@@ -108,14 +118,17 @@
                 "xyz.openbmc_project.Inventory.Decorator.Asset": {
                     "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Decorator/Asset"
                 },
-                "ProductId": {
-                    "type": "number"
-                },
                 "xyz.openbmc_project.Inventory.Decorator.AssetTag": {
                     "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Decorator/AssetTag"
                 },
+                "xyz.openbmc_project.Inventory.Decorator.Cable": {
+                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Decorator/Cable"
+                },
                 "xyz.openbmc_project.Inventory.Decorator.Compatible": {
                     "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Decorator/Compatible"
+                },
+                "xyz.openbmc_project.Inventory.Decorator.ManagedHost": {
+                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Decorator/ManagedHost"
                 },
                 "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
                     "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Decorator/Replaceable"
@@ -141,11 +154,17 @@
                 "xyz.openbmc_project.Inventory.Item.System": {
                     "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/System"
                 },
-                "xyz.openbmc_project.Inventory.Item.BMC": {
-                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/BMC"
+                "xyz.openbmc_project.Inventory.Item.Bmc": {
+                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/Bmc"
                 },
                 "xyz.openbmc_project.Inventory.Item.Storage": {
                     "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/Storage"
+                },
+                "xyz.openbmc_project.Inventory.Item.Accelerator": {
+                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/Accelerator"
+                },
+                "xyz.openbmc_project.Inventory.Item.Dimm": {
+                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/Dimm"
                 }
             },
             "required": ["Exposes", "Name", "Probe", "Type"]
@@ -153,7 +172,7 @@
     },
     "title": "Entity Manager Configuration File",
     "description": "The schema for an entity manager configuration file. An entity mananger configuration file can consist of a single object, or an array of objects. Objects must be of type EMConfig.",
-    "anyOf": [
+    "oneOf": [
         {
             "type": "array",
             "items": {

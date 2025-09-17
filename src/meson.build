@@ -28,6 +28,8 @@ if get_option('fru-device')
     if get_option('fru-device-resizefru')
         cpp_args_fd = cpp_args_fd + ['-DENABLE_FRU_AREA_RESIZE']
     endif
+    detect_mode = get_option('fru-device-16bitdetectmode')
+    cpp_args_fd += ['-DFRU_DEVICE_16BITDETECTMODE="' + detect_mode + '"']
     executable(
         'fru-device',
         'expression.cpp',
@@ -46,6 +48,19 @@ if get_option('fru-device')
             threads,
             valijson,
         ],
+        install: true,
+        install_dir: installdir,
+    )
+endif
+
+if get_option('devicetree-vpd')
+    cpp_args_fd = cpp_args
+    executable(
+        'devicetree-vpd-parser',
+        'machine_context.cpp',
+        'devicetree_vpd_parser.cpp',
+        cpp_args: cpp_args_fd,
+        dependencies: [sdbusplus, phosphor_dbus_interfaces_dep],
         install: true,
         install_dir: installdir,
     )

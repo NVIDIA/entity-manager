@@ -1,177 +1,18 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$defs": {
-        "Aggregate": {
-            "description": "Don't add additional properties to this schema. Consult README.schema for instructions on adding new Exposes element sub-schema.",
+        "ExitAirTempSensor": {
+            "description": "implemented in dbus-sensors: ExitAirTempSensor",
             "additionalProperties": false,
             "properties": {
-                "Address": {
-                    "$ref": "#/$defs/Types/Address"
-                },
-                "AllowedFailures": {
-                    "$ref": "#/$defs/Types/AllowedFailures"
-                },
                 "AlphaF": {
-                    "$ref": "#/$defs/Types/AlphaF"
+                    "type": "number"
                 },
                 "AlphaS": {
-                    "$ref": "#/$defs/Types/AlphaS"
-                },
-                "BindConnector": {
-                    "$ref": "#/$defs/Types/BindConnector"
-                },
-                "BindPresence": {
-                    "$ref": "#/$defs/Types/BindPresence"
-                },
-                "BridgeGpio": {
-                    "$ref": "#/$defs/Types/BridgeGpio"
-                },
-                "Bus": {
-                    "$ref": "#/$defs/Types/Bus"
-                },
-                "C1": {
-                    "$ref": "#/$defs/Types/C1"
-                },
-                "C2": {
-                    "$ref": "#/$defs/Types/C2"
-                },
-                "CPURequired": {
-                    "$ref": "#/$defs/Types/CPURequired"
-                },
-                "ChannelNames": {
-                    "$ref": "#/$defs/Types/ChannelNames"
-                },
-                "Class": {
-                    "$ref": "#/$defs/Types/Class"
-                },
-                "Connector": {
-                    "$ref": "#/$defs/Types/Connector"
-                },
-                "ConnectsToType": {
-                    "$ref": "#/$defs/Types/ConnectsToType"
-                },
-                "CpuID": {
-                    "$ref": "#/$defs/Types/CpuID"
-                },
-                "CurrScaleFactor": {
-                    "$ref": "#/$defs/Types/CurrScaleFactor"
-                },
-                "Direction": {
-                    "$ref": "#/$defs/Types/Direction"
-                },
-                "DtsCritOffset": {
-                    "$ref": "#/$defs/Types/DtsCritOffset"
-                },
-                "EntityId": {
-                    "$ref": "#/$defs/Types/EntityId"
-                },
-                "EntityInstance": {
-                    "$ref": "#/$defs/Types/EntityInstance"
-                },
-                "FaultIndex": {
-                    "$ref": "#/$defs/Types/FaultIndex"
-                },
-                "FaultType": {
-                    "$ref": "#/$defs/Types/FaultType"
-                },
-                "GpioPins": {
-                    "$ref": "#/$defs/Types/GpioPins"
-                },
-                "GpioPolarity": {
-                    "$ref": "#/$defs/Types/GpioPolarity"
-                },
-                "Index": {
-                    "$ref": "#/$defs/Types/Index"
-                },
-                "InScaleFactor": {
-                    "$ref": "#/$defs/Types/InScaleFactor"
-                },
-                "Labels": {
-                    "$ref": "#/$defs/Types/Labels"
-                },
-                "LedGpioPins": {
-                    "$ref": "#/$defs/Types/LedGpioPins"
-                },
-                "MaxCFM": {
-                    "$ref": "#/$defs/Types/MaxCFM"
-                },
-                "MaxReading": {
-                    "$ref": "#/$defs/Types/MaxReading"
-                },
-                "MaxValue": {
-                    "$ref": "#/$defs/Types/MaxValue"
-                },
-                "Units": {
-                    "$ref": "#/$defs/Types/Units"
-                },
-                "MinReading": {
-                    "$ref": "#/$defs/Types/MinReading"
-                },
-                "MinValue": {
-                    "$ref": "#/$defs/Types/MinValue"
+                    "type": "number"
                 },
                 "Name": {
                     "$ref": "#/$defs/Types/Name"
-                },
-                "Name1": {
-                    "$ref": "#/$defs/Types/Name1"
-                },
-                "Name2": {
-                    "$ref": "#/$defs/Types/Name2"
-                },
-                "Name3": {
-                    "$ref": "#/$defs/Types/Name3"
-                },
-                "Name4": {
-                    "$ref": "#/$defs/Types/Name4"
-                },
-                "Name5": {
-                    "$ref": "#/$defs/Types/Name5"
-                },
-                "Name6": {
-                    "$ref": "#/$defs/Types/Name6"
-                },
-                "Name7": {
-                    "$ref": "#/$defs/Types/Name7"
-                },
-                "Name8": {
-                    "$ref": "#/$defs/Types/Name8"
-                },
-                "Name9": {
-                    "$ref": "#/$defs/Types/Name9"
-                },
-                "Name10": {
-                    "$ref": "#/$defs/Types/Name10"
-                },
-                "Name11": {
-                    "$ref": "#/$defs/Types/Name11"
-                },
-                "Name12": {
-                    "$ref": "#/$defs/Types/Name12"
-                },
-                "Name13": {
-                    "$ref": "#/$defs/Types/Name13"
-                },
-                "Name14": {
-                    "$ref": "#/$defs/Types/Name14"
-                },
-                "Name15": {
-                    "$ref": "#/$defs/Types/Name15"
-                },
-                "Name16": {
-                    "$ref": "#/$defs/Types/Name16"
-                },
-                "Name17": {
-                    "$ref": "#/$defs/Types/Name17"
-                },
-                "OffsetValue": {
-                    "$ref": "#/$defs/Types/OffsetValue"
-                },
-                "Polarity": {
-                    "$ref": "#/$defs/Types/Polarity"
-                },
-                "Polling": {
-                    "$ref": "#/$defs/Types/Polling"
                 },
                 "PowerFactorMax": {
                     "$ref": "#/$defs/Types/PowerFactorMax"
@@ -179,11 +20,189 @@
                 "PowerFactorMin": {
                     "$ref": "#/$defs/Types/PowerFactorMin"
                 },
-                "PowerPort": {
-                    "$ref": "#/$defs/Types/PowerPort"
+                "QMax": {
+                    "type": "number"
                 },
-                "PowerScaleFactor": {
-                    "$ref": "#/$defs/Types/PowerScaleFactor"
+                "QMin": {
+                    "type": "number"
+                },
+                "Thresholds": {
+                    "$ref": "#/$defs/Types/Thresholds"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "ExitAirTempSensor"
+                }
+            },
+            "required": [
+                "Name",
+                "Type",
+                "AlphaF",
+                "AlphaS",
+                "PowerFactorMax",
+                "PowerFactorMin",
+                "QMax",
+                "QMin"
+            ],
+            "type": "object"
+        },
+        "CFMSensor": {
+            "additionalProperties": false,
+            "properties": {
+                "C1": {
+                    "type": "number"
+                },
+                "C2": {
+                    "type": "number"
+                },
+                "MaxCFM": {
+                    "type": "number"
+                },
+                "TachMaxPercent": {
+                    "type": "number"
+                },
+                "TachMinPercent": {
+                    "type": "number"
+                },
+                "Tachs": {
+                    "$ref": "#/$defs/Types/Tachs"
+                },
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "CFMSensor"
+                }
+            },
+            "required": ["Name", "Type"],
+            "type": "object"
+        },
+        "FanRedundancy": {
+            "additionalProperties": false,
+            "properties": {
+                "AllowedFailures": {
+                    "$ref": "#/$defs/Types/AllowedFailures"
+                },
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "FanRedundancy"
+                }
+            },
+            "required": ["Name", "Type"],
+            "type": "object"
+        },
+        "PURedundancy": {
+            "additionalProperties": false,
+            "properties": {
+                "RedundantCount": {
+                    "$ref": "#/$defs/Types/RedundantCount"
+                },
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "PURedundancy"
+                }
+            },
+            "required": ["RedundantCount", "Name", "Type"],
+            "type": "object"
+        },
+        "ChassisIntrusionSensor": {
+            "description": "implemented in dbus-sensors: ChassisIntrusionSensor",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "$ref": "#/$defs/Types/Address"
+                },
+                "Bus": {
+                    "$ref": "#/$defs/Types/Bus"
+                },
+                "Class": {
+                    "$ref": "#/$defs/Types/Class"
+                },
+                "GpioPolarity": {
+                    "$ref": "#/$defs/Types/GpioPolarity"
+                },
+                "Rearm": {
+                    "enum": ["Automatic", "Manual"]
+                },
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "ChassisIntrusionSensor"
+                }
+            },
+            "required": ["Name", "Type", "Class"],
+            "type": "object"
+        },
+        "AspeedFan": {
+            "additionalProperties": false,
+            "properties": {
+                "BindConnector": {
+                    "$ref": "#/$defs/Types/BindConnector"
+                },
+                "Index": {
+                    "$ref": "#/$defs/Types/Index"
+                },
+                "PowerState": {
+                    "$ref": "#/$defs/Types/PowerState"
+                },
+                "Connector": {
+                    "$ref": "#/$defs/Types/Connector"
+                },
+                "EntityId": {
+                    "$ref": "#/$defs/Types/EntityId"
+                },
+                "EntityInstance": {
+                    "$ref": "#/$defs/Types/EntityInstance"
+                },
+                "Presence": {
+                    "$ref": "#/$defs/Types/Presence"
+                },
+                "MaxReading": {
+                    "$ref": "#/$defs/Types/MaxReading"
+                },
+                "Thresholds": {
+                    "$ref": "#/$defs/Types/Thresholds"
+                },
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "AspeedFan"
+                }
+            },
+            "required": ["Name", "Type"],
+            "type": "object"
+        },
+        "I2CFan": {
+            "additionalProperties": false,
+            "properties": {
+                "BindConnector": {
+                    "$ref": "#/$defs/Types/BindConnector"
+                },
+                "Address": {
+                    "$ref": "#/$defs/Types/Address"
+                },
+                "Bus": {
+                    "$ref": "#/$defs/Types/Bus"
+                },
+                "EntityId": {
+                    "$ref": "#/$defs/Types/EntityId"
+                },
+                "EntityInstance": {
+                    "$ref": "#/$defs/Types/EntityInstance"
+                },
+                "Index": {
+                    "$ref": "#/$defs/Types/Index"
                 },
                 "PowerState": {
                     "$ref": "#/$defs/Types/PowerState"
@@ -191,784 +210,920 @@
                 "Presence": {
                     "$ref": "#/$defs/Types/Presence"
                 },
-                "PresenceGpio": {
-                    "$ref": "#/$defs/Types/PresenceGpio"
+                "MaxReading": {
+                    "$ref": "#/$defs/Types/MaxReading"
                 },
-                "Pwm": {
-                    "$ref": "#/$defs/Types/Pwm"
-                },
-                "QMax": {
-                    "$ref": "#/$defs/Types/QMax"
-                },
-                "QMin": {
-                    "$ref": "#/$defs/Types/QMin"
-                },
-                "Rearm": {
-                    "$ref": "#/$defs/Types/Rearm"
-                },
-                "RedundantCount": {
-                    "$ref": "#/$defs/Types/RedundantCount"
-                },
-                "ScaleFactor": {
-                    "$ref": "#/$defs/Types/ScaleFactor"
-                },
-                "ScaleValue": {
-                    "$ref": "#/$defs/Types/ScaleValue"
-                },
-                "SensorType": {
-                    "$ref": "#/$defs/Types/SensorType"
-                },
-                "SlotId": {
-                    "$ref": "#/$defs/Types/SlotId"
-                },
-                "TachMaxPercent": {
-                    "$ref": "#/$defs/Types/TachMaxPercent"
-                },
-                "TachMinPercent": {
-                    "$ref": "#/$defs/Types/TachMinPercent"
-                },
-                "Tachs": {
-                    "$ref": "#/$defs/Types/Tachs"
+                "Connector": {
+                    "$ref": "#/$defs/Types/Connector"
                 },
                 "Thresholds": {
                     "$ref": "#/$defs/Types/Thresholds"
                 },
-                "Timeout": {
-                    "$ref": "#/$defs/Types/Timeout"
-                },
-                "HostSMbusIndex": {
-                    "$ref": "#/$defs/Types/HostSMbusIndex"
-                },
-                "pin_Max": {
-                    "$ref": "#/$defs/Types/pin_Max"
-                },
-                "pin_Min": {
-                    "$ref": "#/$defs/Types/pin_Min"
-                },
-                "pin_Name": {
-                    "$ref": "#/$defs/Types/pin_Name"
-                },
-                "maxpin_Name": {
-                    "$ref": "#/$defs/Types/maxpin_Name"
-                },
-                "vin_Max": {
-                    "$ref": "#/$defs/Types/vin_Max"
-                },
-                "vin_Min": {
-                    "$ref": "#/$defs/Types/vin_Min"
-                },
-                "vin_Name": {
-                    "$ref": "#/$defs/Types/vin_Name"
-                },
-                "iin_Name": {
-                    "$ref": "#/$defs/Types/iin_Name"
-                },
-                "in0_Max": {
-                    "$ref": "#/$defs/Types/in0_Max"
-                },
-                "in0_Min": {
-                    "$ref": "#/$defs/Types/in0_Min"
-                },
-                "in0_Name": {
-                    "$ref": "#/$defs/Types/in0_Name"
-                },
-                "in1_Max": {
-                    "$ref": "#/$defs/Types/in1_Max"
-                },
-                "in1_Name": {
-                    "$ref": "#/$defs/Types/in1_Name"
-                },
-                "in2_Max": {
-                    "$ref": "#/$defs/Types/in2_Max"
-                },
-                "in2_Name": {
-                    "$ref": "#/$defs/Types/in2_Name"
-                },
-                "in3_Max": {
-                    "$ref": "#/$defs/Types/in3_Max"
-                },
-                "in3_Name": {
-                    "$ref": "#/$defs/Types/in3_Name"
-                },
-                "in4_Max": {
-                    "$ref": "#/$defs/Types/in4_Max"
-                },
-                "in4_Name": {
-                    "$ref": "#/$defs/Types/in4_Name"
-                },
-                "in5_Max": {
-                    "$ref": "#/$defs/Types/in5_Max"
-                },
-                "in5_Name": {
-                    "$ref": "#/$defs/Types/in5_Name"
-                },
-                "in6_Name": {
-                    "$ref": "#/$defs/Types/in6_Name"
-                },
-                "in7_Name": {
-                    "$ref": "#/$defs/Types/in7_Name"
-                },
-                "in_voltage0_Max": {
-                    "$ref": "#/$defs/Types/in_voltage0_Max"
-                },
-                "in_voltage0_Name": {
-                    "$ref": "#/$defs/Types/in_voltage0_Name"
-                },
-                "in_voltage1_Max": {
-                    "$ref": "#/$defs/Types/in_voltage1_Max"
-                },
-                "in_voltage1_Name": {
-                    "$ref": "#/$defs/Types/in_voltage1_Name"
-                },
-                "in_voltage2_Max": {
-                    "$ref": "#/$defs/Types/in_voltage2_Max"
-                },
-                "in_voltage2_Name": {
-                    "$ref": "#/$defs/Types/in_voltage2_Name"
-                },
-                "in_voltage3_Max": {
-                    "$ref": "#/$defs/Types/in_voltage3_Max"
-                },
-                "in_voltage3_Name": {
-                    "$ref": "#/$defs/Types/in_voltage3_Name"
-                },
-                "in_voltage4_Max": {
-                    "$ref": "#/$defs/Types/in_voltage4_Max"
-                },
-                "in_voltage4_Name": {
-                    "$ref": "#/$defs/Types/in_voltage4_Name"
-                },
-                "in_voltage5_Max": {
-                    "$ref": "#/$defs/Types/in_voltage5_Max"
-                },
-                "in_voltage5_Name": {
-                    "$ref": "#/$defs/Types/in_voltage5_Name"
-                },
-                "in_voltage6_Name": {
-                    "$ref": "#/$defs/Types/in_voltage6_Name"
-                },
-                "in_voltage7_Name": {
-                    "$ref": "#/$defs/Types/in_voltage7_Name"
-                },
-                "in_voltage8_Name": {
-                    "$ref": "#/$defs/Types/in_voltage8_Name"
-                },
-                "in_voltage9_Name": {
-                    "$ref": "#/$defs/Types/in_voltage9_Name"
-                },
-                "in0_PowerState": {
-                    "$ref": "#/$defs/Types/in0_PowerState"
-                },
-                "in1_PowerState": {
-                    "$ref": "#/$defs/Types/in1_PowerState"
-                },
-                "in2_PowerState": {
-                    "$ref": "#/$defs/Types/in2_PowerState"
-                },
-                "in3_PowerState": {
-                    "$ref": "#/$defs/Types/in3_PowerState"
-                },
-                "in4_PowerState": {
-                    "$ref": "#/$defs/Types/in4_PowerState"
-                },
-                "in5_PowerState": {
-                    "$ref": "#/$defs/Types/in5_PowerState"
-                },
-                "in6_PowerState": {
-                    "$ref": "#/$defs/Types/in6_PowerState"
-                },
-                "in7_PowerState": {
-                    "$ref": "#/$defs/Types/in7_PowerState"
-                },
-                "curr1_Name": {
-                    "$ref": "#/$defs/Types/curr1_Name"
-                },
-                "curr2_Name": {
-                    "$ref": "#/$defs/Types/curr2_Name"
-                },
-                "curr3_Name": {
-                    "$ref": "#/$defs/Types/curr3_Name"
-                },
-                "curr4_Name": {
-                    "$ref": "#/$defs/Types/curr4_Name"
-                },
-                "iin1_Max": {
-                    "$ref": "#/$defs/Types/iin1_Max"
-                },
-                "iin1_Min": {
-                    "$ref": "#/$defs/Types/iin1_Min"
-                },
-                "iin1_Name": {
-                    "$ref": "#/$defs/Types/iin1_Name"
-                },
-                "iin2_Max": {
-                    "$ref": "#/$defs/Types/iin2_Max"
-                },
-                "iin2_Min": {
-                    "$ref": "#/$defs/Types/iin2_Min"
-                },
-                "iin2_Name": {
-                    "$ref": "#/$defs/Types/iin2_Name"
-                },
-                "iin3_Max": {
-                    "$ref": "#/$defs/Types/iin3_Max"
-                },
-                "iin3_Min": {
-                    "$ref": "#/$defs/Types/iin3_Min"
-                },
-                "iin3_Name": {
-                    "$ref": "#/$defs/Types/iin3_Name"
-                },
-                "iout1_Max": {
-                    "$ref": "#/$defs/Types/iout1_Max"
-                },
-                "iout1_Min": {
-                    "$ref": "#/$defs/Types/iout1_Min"
-                },
-                "iout1_Name": {
-                    "$ref": "#/$defs/Types/iout1_Name"
-                },
-                "maxiout1_Name": {
-                    "$ref": "#/$defs/Types/maxiout1_Name"
-                },
-                "iout2_Max": {
-                    "$ref": "#/$defs/Types/iout2_Max"
-                },
-                "iout2_Min": {
-                    "$ref": "#/$defs/Types/iout2_Min"
-                },
-                "iout2_Name": {
-                    "$ref": "#/$defs/Types/iout2_Name"
-                },
-                "iout3_Max": {
-                    "$ref": "#/$defs/Types/iout3_Max"
-                },
-                "iout3_Min": {
-                    "$ref": "#/$defs/Types/iout3_Min"
-                },
-                "iout3_Name": {
-                    "$ref": "#/$defs/Types/iout3_Name"
-                },
-                "iout4_Max": {
-                    "$ref": "#/$defs/Types/iout4_Max"
-                },
-                "iout4_Min": {
-                    "$ref": "#/$defs/Types/iout4_Min"
-                },
-                "iout4_Name": {
-                    "$ref": "#/$defs/Types/iout4_Name"
-                },
-                "iout5_Max": {
-                    "$ref": "#/$defs/Types/iout5_Max"
-                },
-                "iout5_Min": {
-                    "$ref": "#/$defs/Types/iout5_Min"
-                },
-                "iout5_Name": {
-                    "$ref": "#/$defs/Types/iout5_Name"
-                },
-                "pin1_Max": {
-                    "$ref": "#/$defs/Types/pin1_Max"
-                },
-                "pin1_Min": {
-                    "$ref": "#/$defs/Types/pin1_Min"
-                },
-                "pin1_Name": {
-                    "$ref": "#/$defs/Types/pin1_Name"
-                },
-                "pin2_Max": {
-                    "$ref": "#/$defs/Types/pin2_Max"
-                },
-                "pin2_Min": {
-                    "$ref": "#/$defs/Types/pin2_Min"
-                },
-                "pin2_Name": {
-                    "$ref": "#/$defs/Types/pin2_Name"
-                },
-                "pin3_Max": {
-                    "$ref": "#/$defs/Types/pin3_Max"
-                },
-                "pin3_Min": {
-                    "$ref": "#/$defs/Types/pin3_Min"
-                },
-                "pin3_Name": {
-                    "$ref": "#/$defs/Types/pin3_Name"
-                },
-                "pout1_Max": {
-                    "$ref": "#/$defs/Types/pout1_Max"
-                },
-                "pout1_Min": {
-                    "$ref": "#/$defs/Types/pout1_Min"
-                },
-                "pout1_Name": {
-                    "$ref": "#/$defs/Types/pout1_Name"
-                },
-                "pout2_Max": {
-                    "$ref": "#/$defs/Types/pout2_Max"
-                },
-                "pout2_Min": {
-                    "$ref": "#/$defs/Types/pout2_Min"
-                },
-                "pout2_Name": {
-                    "$ref": "#/$defs/Types/pout2_Name"
-                },
-                "pout3_Max": {
-                    "$ref": "#/$defs/Types/pout3_Max"
-                },
-                "pout3_Min": {
-                    "$ref": "#/$defs/Types/pout3_Min"
-                },
-                "pout3_Name": {
-                    "$ref": "#/$defs/Types/pout3_Name"
-                },
-                "power1_Max": {
-                    "$ref": "#/$defs/Types/power1_Max"
-                },
-                "power1_Name": {
-                    "$ref": "#/$defs/Types/power1_Name"
-                },
-                "power2_Max": {
-                    "$ref": "#/$defs/Types/power2_Max"
-                },
-                "power2_Name": {
-                    "$ref": "#/$defs/Types/power2_Name"
-                },
-                "power3_Max": {
-                    "$ref": "#/$defs/Types/power3_Max"
-                },
-                "power3_Name": {
-                    "$ref": "#/$defs/Types/power3_Name"
-                },
-                "power4_Max": {
-                    "$ref": "#/$defs/Types/power4_Max"
-                },
-                "power4_Name": {
-                    "$ref": "#/$defs/Types/power4_Name"
-                },
-                "power5_Max": {
-                    "$ref": "#/$defs/Types/power5_Max"
-                },
-                "power5_Name": {
-                    "$ref": "#/$defs/Types/power5_Name"
-                },
-                "power6_Name": {
-                    "$ref": "#/$defs/Types/power6_Name"
-                },
-                "power7_Name": {
-                    "$ref": "#/$defs/Types/power7_Name"
-                },
-                "power8_Name": {
-                    "$ref": "#/$defs/Types/power8_Name"
-                },
-                "power9_Name": {
-                    "$ref": "#/$defs/Types/power9_Name"
-                },
-                "temp1_Max": {
-                    "$ref": "#/$defs/Types/temp1_Max"
-                },
-                "temp1_Min": {
-                    "$ref": "#/$defs/Types/temp1_Min"
-                },
-                "temp1_Name": {
-                    "$ref": "#/$defs/Types/temp1_Name"
-                },
-                "temp2_Max": {
-                    "$ref": "#/$defs/Types/temp2_Max"
-                },
-                "temp2_Min": {
-                    "$ref": "#/$defs/Types/temp2_Min"
-                },
-                "temp2_Name": {
-                    "$ref": "#/$defs/Types/temp2_Name"
-                },
-                "temp3_Max": {
-                    "$ref": "#/$defs/Types/temp1_Max"
-                },
-                "temp3_Min": {
-                    "$ref": "#/$defs/Types/temp1_Min"
-                },
-                "temp3_Name": {
-                    "$ref": "#/$defs/Types/temp3_Name"
-                },
-                "temp4_Max": {
-                    "$ref": "#/$defs/Types/temp4_Max"
-                },
-                "temp4_Min": {
-                    "$ref": "#/$defs/Types/temp4_Min"
-                },
-                "temp4_Name": {
-                    "$ref": "#/$defs/Types/temp4_Name"
-                },
-                "temp5_Max": {
-                    "$ref": "#/$defs/Types/temp5_Max"
-                },
-                "temp5_Min": {
-                    "$ref": "#/$defs/Types/temp5_Min"
-                },
-                "temp5_Name": {
-                    "$ref": "#/$defs/Types/temp5_Name"
-                },
-                "temp6_Max": {
-                    "$ref": "#/$defs/Types/temp6_Max"
-                },
-                "temp6_Min": {
-                    "$ref": "#/$defs/Types/temp6_Min"
-                },
-                "temp6_Name": {
-                    "$ref": "#/$defs/Types/temp6_Name"
-                },
-                "temp7_Max": {
-                    "$ref": "#/$defs/Types/temp7_Max"
-                },
-                "temp7_Min": {
-                    "$ref": "#/$defs/Types/temp7_Min"
-                },
-                "temp7_Name": {
-                    "$ref": "#/$defs/Types/temp7_Name"
-                },
-                "temp8_Max": {
-                    "$ref": "#/$defs/Types/temp8_Max"
-                },
-                "temp8_Min": {
-                    "$ref": "#/$defs/Types/temp8_Min"
-                },
-                "temp8_Name": {
-                    "$ref": "#/$defs/Types/temp8_Name"
-                },
-                "temp9_Max": {
-                    "$ref": "#/$defs/Types/temp9_Max"
-                },
-                "temp9_Min": {
-                    "$ref": "#/$defs/Types/temp9_Min"
-                },
-                "temp9_Name": {
-                    "$ref": "#/$defs/Types/temp9_Name"
-                },
-                "temp10_Max": {
-                    "$ref": "#/$defs/Types/temp10_Max"
-                },
-                "temp10_Min": {
-                    "$ref": "#/$defs/Types/temp10_Min"
-                },
-                "temp10_Name": {
-                    "$ref": "#/$defs/Types/temp10_Name"
-                },
-                "temp11_Max": {
-                    "$ref": "#/$defs/Types/temp11_Max"
-                },
-                "temp11_Min": {
-                    "$ref": "#/$defs/Types/temp11_Min"
-                },
-                "temp11_Name": {
-                    "$ref": "#/$defs/Types/temp11_Name"
-                },
-                "temp12_Max": {
-                    "$ref": "#/$defs/Types/temp12_Max"
-                },
-                "temp12_Min": {
-                    "$ref": "#/$defs/Types/temp12_Min"
-                },
-                "temp12_Name": {
-                    "$ref": "#/$defs/Types/temp12_Name"
-                },
-                "temp13_Max": {
-                    "$ref": "#/$defs/Types/temp13_Max"
-                },
-                "temp13_Min": {
-                    "$ref": "#/$defs/Types/temp13_Min"
-                },
-                "temp13_Name": {
-                    "$ref": "#/$defs/Types/temp13_Name"
-                },
-                "vout0_Max": {
-                    "$ref": "#/$defs/Types/vout0_Max"
-                },
-                "vout0_Min": {
-                    "$ref": "#/$defs/Types/vout0_Min"
-                },
-                "vout0_Name": {
-                    "$ref": "#/$defs/Types/vout0_Name"
-                },
-                "vout1_Max": {
-                    "$ref": "#/$defs/Types/vout1_Max"
-                },
-                "vout1_Min": {
-                    "$ref": "#/$defs/Types/vout1_Min"
-                },
-                "vout1_Name": {
-                    "$ref": "#/$defs/Types/vout1_Name"
-                },
-                "vout2_Max": {
-                    "$ref": "#/$defs/Types/vout2_Max"
-                },
-                "vout2_Min": {
-                    "$ref": "#/$defs/Types/vout2_Min"
-                },
-                "vout2_Name": {
-                    "$ref": "#/$defs/Types/vout2_Name"
-                },
-                "vout3_Max": {
-                    "$ref": "#/$defs/Types/vout3_Max"
-                },
-                "vout3_Min": {
-                    "$ref": "#/$defs/Types/vout3_Min"
-                },
-                "vout3_Name": {
-                    "$ref": "#/$defs/Types/vout3_Name"
-                },
-                "vout4_Max": {
-                    "$ref": "#/$defs/Types/vout4_Max"
-                },
-                "vout4_Min": {
-                    "$ref": "#/$defs/Types/vout4_Min"
-                },
-                "vout4_Name": {
-                    "$ref": "#/$defs/Types/vout4_Name"
-                },
-                "vout5_Max": {
-                    "$ref": "#/$defs/Types/vout5_Max"
-                },
-                "vout5_Min": {
-                    "$ref": "#/$defs/Types/vout5_Min"
-                },
-                "vout5_Name": {
-                    "$ref": "#/$defs/Types/vout5_Name"
-                },
-                "vout6_Max": {
-                    "$ref": "#/$defs/Types/vout6_Max"
-                },
-                "vout6_Min": {
-                    "$ref": "#/$defs/Types/vout6_Min"
-                },
-                "vout6_Name": {
-                    "$ref": "#/$defs/Types/vout6_Name"
-                },
-                "vout7_Max": {
-                    "$ref": "#/$defs/Types/vout7_Max"
-                },
-                "vout7_Min": {
-                    "$ref": "#/$defs/Types/vout7_Min"
-                },
-                "vout7_Name": {
-                    "$ref": "#/$defs/Types/vout7_Name"
-                },
-                "vout8_Max": {
-                    "$ref": "#/$defs/Types/vout8_Max"
-                },
-                "vout8_Min": {
-                    "$ref": "#/$defs/Types/vout8_Min"
-                },
-                "vout8_Name": {
-                    "$ref": "#/$defs/Types/vout8_Name"
-                },
-                "vout9_Max": {
-                    "$ref": "#/$defs/Types/vout9_Max"
-                },
-                "vout9_Min": {
-                    "$ref": "#/$defs/Types/vout9_Min"
-                },
-                "vout9_Name": {
-                    "$ref": "#/$defs/Types/vout9_Name"
-                },
-                "vout10_Max": {
-                    "$ref": "#/$defs/Types/vout10_Max"
-                },
-                "vout10_Min": {
-                    "$ref": "#/$defs/Types/vout10_Min"
-                },
-                "vout10_Name": {
-                    "$ref": "#/$defs/Types/vout10_Name"
-                },
-                "vout11_Max": {
-                    "$ref": "#/$defs/Types/vout11_Max"
-                },
-                "vout11_Min": {
-                    "$ref": "#/$defs/Types/vout11_Min"
-                },
-                "vout11_Name": {
-                    "$ref": "#/$defs/Types/vout11_Name"
-                },
-                "vout12_Max": {
-                    "$ref": "#/$defs/Types/vout12_Max"
-                },
-                "vout12_Min": {
-                    "$ref": "#/$defs/Types/vout12_Min"
-                },
-                "vout12_Name": {
-                    "$ref": "#/$defs/Types/vout12_Name"
-                },
-                "vout13_Max": {
-                    "$ref": "#/$defs/Types/vout13_Max"
-                },
-                "vout13_Min": {
-                    "$ref": "#/$defs/Types/vout13_Min"
-                },
-                "vout13_Name": {
-                    "$ref": "#/$defs/Types/vout13_Name"
-                },
-                "vout14_Max": {
-                    "$ref": "#/$defs/Types/vout14_Max"
-                },
-                "vout14_Min": {
-                    "$ref": "#/$defs/Types/vout14_Min"
-                },
-                "vout14_Name": {
-                    "$ref": "#/$defs/Types/vout14_Name"
-                },
-                "vout15_Max": {
-                    "$ref": "#/$defs/Types/vout15_Max"
-                },
-                "vout15_Min": {
-                    "$ref": "#/$defs/Types/vout15_Min"
-                },
-                "vout15_Name": {
-                    "$ref": "#/$defs/Types/vout15_Name"
-                },
-                "vout16_Max": {
-                    "$ref": "#/$defs/Types/vout16_Max"
-                },
-                "vout16_Min": {
-                    "$ref": "#/$defs/Types/vout16_Min"
-                },
-                "vout16_Name": {
-                    "$ref": "#/$defs/Types/vout16_Name"
-                },
-                "vout17_Max": {
-                    "$ref": "#/$defs/Types/vout17_Max"
-                },
-                "vout17_Min": {
-                    "$ref": "#/$defs/Types/vout17_Min"
-                },
-                "vout17_Name": {
-                    "$ref": "#/$defs/Types/vout17_Name"
-                },
-                "fan1_Name": {
-                    "$ref": "#/$defs/Types/fan1_Name"
-                },
-                "iout1_Offset": {
-                    "$ref": "#/$defs/Types/iout1_Offset"
-                },
-                "pout1_Offset": {
-                    "$ref": "#/$defs/Types/pout1_Offset"
-                },
-                "pin_Offset": {
-                    "$ref": "#/$defs/Types/pin_Offset"
-                },
-                "iout1_Scale": {
-                    "$ref": "#/$defs/Types/iout1_Scale"
-                },
-                "iout2_Scale": {
-                    "$ref": "#/$defs/Types/iout2_Scale"
-                },
-                "iout3_Scale": {
-                    "$ref": "#/$defs/Types/iout3_Scale"
-                },
-                "iout4_Scale": {
-                    "$ref": "#/$defs/Types/iout4_Scale"
-                },
-                "iout5_Scale": {
-                    "$ref": "#/$defs/Types/iout5_Scale"
-                },
-                "pin_Scale": {
-                    "$ref": "#/$defs/Types/pin_Scale"
-                },
-                "in0_Scale": {
-                    "$ref": "#/$defs/Types/in0_Scale"
-                },
-                "in1_Scale": {
-                    "$ref": "#/$defs/Types/in1_Scale"
-                },
-                "in2_Scale": {
-                    "$ref": "#/$defs/Types/in2_Scale"
-                },
-                "in3_Scale": {
-                    "$ref": "#/$defs/Types/in3_Scale"
-                },
-                "in4_Scale": {
-                    "$ref": "#/$defs/Types/in4_Scale"
-                },
-                "in5_Scale": {
-                    "$ref": "#/$defs/Types/in5_Scale"
-                },
-                "in6_Scale": {
-                    "$ref": "#/$defs/Types/in6_Scale"
-                },
-                "in7_Scale": {
-                    "$ref": "#/$defs/Types/in7_Scale"
-                },
-                "in_voltage0_Scale": {
-                    "$ref": "#/$defs/Types/in_voltage0_Scale"
-                },
-                "in_voltage1_Scale": {
-                    "$ref": "#/$defs/Types/in_voltage1_Scale"
-                },
-                "in_voltage2_Scale": {
-                    "$ref": "#/$defs/Types/in_voltage2_Scale"
-                },
-                "in_voltage3_Scale": {
-                    "$ref": "#/$defs/Types/in_voltage3_Scale"
-                },
-                "in_voltage4_Scale": {
-                    "$ref": "#/$defs/Types/in_voltage4_Scale"
-                },
-                "in_voltage5_Scale": {
-                    "$ref": "#/$defs/Types/in_voltage5_Scale"
-                },
-                "in_voltage6_Scale": {
-                    "$ref": "#/$defs/Types/in_voltage6_Scale"
-                },
-                "in_voltage7_Scale": {
-                    "$ref": "#/$defs/Types/in_voltage7_Scale"
-                },
-                "in_voltage8_Scale": {
-                    "$ref": "#/$defs/Types/in_voltage8_Scale"
-                },
-                "in_voltage9_Scale": {
-                    "$ref": "#/$defs/Types/in_voltage9_Scale"
-                },
-                "PollRate": {
-                    "$ref": "#/$defs/Types/PollRate"
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
                 },
                 "Type": {
-                    "$ref": "#/$defs/Types/Type"
+                    "type": "string",
+                    "const": "I2CFan"
                 }
             },
             "required": ["Name", "Type"],
             "type": "object"
         },
+        "NuvotonFan": {
+            "additionalProperties": false,
+            "properties": {
+                "EntityId": {
+                    "$ref": "#/$defs/Types/EntityId"
+                },
+                "EntityInstance": {
+                    "$ref": "#/$defs/Types/EntityInstance"
+                },
+                "Index": {
+                    "$ref": "#/$defs/Types/Index"
+                },
+                "PowerState": {
+                    "$ref": "#/$defs/Types/PowerState"
+                },
+                "MaxReading": {
+                    "$ref": "#/$defs/Types/MaxReading"
+                },
+                "Connector": {
+                    "$ref": "#/$defs/Types/Connector"
+                },
+                "Thresholds": {
+                    "$ref": "#/$defs/Types/Thresholds"
+                },
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NuvotonFan"
+                }
+            },
+            "required": ["Name", "Type", "Connector"],
+            "type": "object"
+        },
+        "XeonCPU": {
+            "description": "implemented in dbus-sensors: IntelCPUSensor",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Address": {
+                    "$ref": "#/$defs/Types/Address"
+                },
+                "Bus": {
+                    "$ref": "#/$defs/Types/Bus"
+                },
+                "PowerState": {
+                    "$ref": "#/$defs/Types/PowerState"
+                },
+                "Thresholds": {
+                    "$ref": "#/$defs/Types/Thresholds"
+                },
+                "DtsCritOffset": {
+                    "$ref": "#/$defs/Types/DtsCritOffset"
+                },
+                "PresenceGpio": {
+                    "$ref": "#/$defs/Types/PresenceGpio"
+                },
+                "CpuID": {
+                    "$ref": "#/$defs/Types/CpuID"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "XeonCPU"
+                }
+            },
+            "required": ["Name", "Type", "CpuID", "Address"],
+            "type": "object"
+        },
+        "IpmbSensor": {
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Class": {
+                    "$ref": "#/$defs/Types/Class"
+                },
+                "Address": {
+                    "$ref": "#/$defs/Types/Address"
+                },
+                "Thresholds": {
+                    "$ref": "#/$defs/Types/Thresholds"
+                },
+                "HostSMbusIndex": {
+                    "$ref": "#/$defs/Types/HostSMbusIndex"
+                },
+                "PowerState": {
+                    "$ref": "#/$defs/Types/PowerState"
+                },
+                "SensorType": {
+                    "$ref": "#/$defs/Types/SensorType"
+                },
+                "ScaleValue": {
+                    "$ref": "#/$defs/Types/ScaleValue"
+                },
+                "OffsetValue": {
+                    "$ref": "#/$defs/Types/OffsetValue"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "IpmbSensor"
+                }
+            },
+            "required": ["Name", "Type", "Address", "Class"],
+            "type": "object"
+        },
+        "I2CMux": {
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Bus": {
+                    "$ref": "#/$defs/Types/Bus"
+                },
+                "Address": {
+                    "$ref": "#/$defs/Types/Address"
+                },
+                "ChannelNames": {
+                    "$ref": "#/$defs/Types/ChannelNames"
+                },
+                "Type": {
+                    "type": "string",
+                    "enum": [
+                        "PCA9543Mux",
+                        "PCA9544Mux",
+                        "PCA9545Mux",
+                        "PCA9546Mux"
+                    ]
+                }
+            },
+            "required": ["Name", "Type", "Address", "Bus", "ChannelNames"],
+            "type": "object"
+        },
+        "Gpio": {
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Index": {
+                    "$ref": "#/$defs/Types/Index"
+                },
+                "Direction": {
+                    "type": "string"
+                },
+                "Polarity": {
+                    "$ref": "#/$defs/Types/Polarity"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "Gpio"
+                }
+            },
+            "required": ["Name", "Type", "Index", "Direction", "Polarity"],
+            "type": "object"
+        },
+        "MultiNodeID": {
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "GpioPins": {
+                    "$ref": "#/$defs/Types/GpioPins"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "MultiNodeID"
+                }
+            },
+            "required": ["Name", "Type", "GpioPins"],
+            "type": "object"
+        },
+        "MultiNodePresence": {
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Bus": {
+                    "$ref": "#/$defs/Types/Bus"
+                },
+                "Address": {
+                    "$ref": "#/$defs/Types/Address"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "MultiNodePresence"
+                }
+            },
+            "required": ["Name", "Type", "Bus", "Address"],
+            "type": "object"
+        },
+        "HostCpuUtilization": {
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Polling": {
+                    "$ref": "#/$defs/Types/Polling"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "HostCpuUtilization"
+                }
+            },
+            "required": ["Name", "Type", "Polling"],
+            "type": "object"
+        },
+        "ExternalSensor": {
+            "description": "implemented in dbus-sensors: ExternalSensor",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Timeout": {
+                    "$ref": "#/$defs/Types/Timeout"
+                },
+                "Units": {
+                    "$ref": "#/$defs/Types/Units"
+                },
+                "MaxValue": {
+                    "$ref": "#/$defs/Types/MaxValue"
+                },
+                "MinValue": {
+                    "$ref": "#/$defs/Types/MinValue"
+                },
+                "EntityId": {
+                    "$ref": "#/$defs/Types/EntityId"
+                },
+                "EntityInstance": {
+                    "$ref": "#/$defs/Types/EntityInstance"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "ExternalSensor"
+                }
+            },
+            "required": ["Name", "Type", "Units", "EntityId", "EntityInstance"],
+            "type": "object"
+        },
+        "Port": {
+            "description": "https://github.com/openbmc/docs/blob/master/designs/physical-topology.md",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Type": {
+                    "description": "This enum may be extended as described in the design",
+                    "type": "string",
+                    "enum": ["MB Upstream Port"]
+                }
+            },
+            "required": ["Name", "Type"],
+            "type": "object"
+        },
+        "DownstreamPort": {
+            "description": "https://github.com/openbmc/docs/blob/master/designs/physical-topology.md",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "ConnectsToType": {
+                    "description": "Should be equal to the 'Type' property on the upstream port",
+                    "$ref": "#/$defs/Types/ConnectsToType"
+                },
+                "PowerPort": {
+                    "$ref": "#/$defs/Types/PowerPort"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "DownstreamPort"
+                }
+            },
+            "required": ["Name", "Type", "ConnectsToType"],
+            "type": "object"
+        },
+        "PSUPresence": {
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Bus": {
+                    "$ref": "#/$defs/Types/Bus"
+                },
+                "Address": {
+                    "oneOf": [
+                        {
+                            "$ref": "#/$defs/Types/Address"
+                        },
+                        {
+                            "$ref": "#/$defs/Types/AddressArray"
+                        }
+                    ]
+                },
+                "Type": {
+                    "const": "PSUPresence"
+                }
+            },
+            "required": ["Name", "Type", "Bus", "Address"],
+            "type": "object"
+        },
+        "EmmcDevice": {
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Type": {
+                    "const": "EmmcDevice"
+                }
+            },
+            "required": ["Name", "Type"],
+            "type": "object"
+        },
+        "IpmbDevice": {
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Bus": {
+                    "$ref": "#/$defs/Types/Bus"
+                },
+                "Address": {
+                    "$ref": "#/$defs/Types/Address"
+                },
+                "Class": {
+                    "$ref": "#/$defs/Types/Class"
+                },
+                "PowerState": {
+                    "$ref": "#/$defs/Types/PowerState"
+                },
+                "Type": {
+                    "const": "IpmbDevice"
+                }
+            },
+            "required": ["Name", "Type", "Bus", "Address", "Class"],
+            "type": "object"
+        },
+        "IpmbPowerMonitor": {
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Bus": {
+                    "$ref": "#/$defs/Types/Bus"
+                },
+                "Address": {
+                    "$ref": "#/$defs/Types/Address"
+                },
+                "Class": {
+                    "$ref": "#/$defs/Types/Class"
+                },
+                "Type": {
+                    "const": "IpmbPowerMonitor"
+                }
+            },
+            "required": ["Name", "Type", "Bus", "Address", "Class"],
+            "type": "object"
+        },
+        "ADC": {
+            "description": "implemented in dbus-sensors: ADCSensor",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "BridgeGpio": {
+                    "$ref": "#/$defs/Types/BridgeGpio"
+                },
+                "PowerState": {
+                    "$ref": "#/$defs/Types/PowerState"
+                },
+                "EntityId": {
+                    "$ref": "#/$defs/Types/EntityId"
+                },
+                "EntityInstance": {
+                    "$ref": "#/$defs/Types/EntityInstance"
+                },
+                "Index": {
+                    "$ref": "#/$defs/Types/Index"
+                },
+                "PollRate": {
+                    "$ref": "#/$defs/Types/PollRate"
+                },
+                "CPURequired": {
+                    "$ref": "#/$defs/Types/CPURequired"
+                },
+                "PresenceGpio": {
+                    "$ref": "#/$defs/Types/PresenceGpio"
+                },
+                "MaxValue": {
+                    "$ref": "#/$defs/Types/MaxValue"
+                },
+                "MinValue": {
+                    "$ref": "#/$defs/Types/MinValue"
+                },
+                "ScaleFactor": {
+                    "$ref": "#/$defs/Types/ScaleFactor"
+                },
+                "Thresholds": {
+                    "$ref": "#/$defs/Types/Thresholds"
+                },
+                "Type": {
+                    "const": "ADC"
+                }
+            },
+            "required": ["Name", "Type", "Index"],
+            "type": "object"
+        },
+        "TempSensor": {
+            "description": "implemented in dbus-sensors: HwmonTempSensor",
+            "additionalProperties": false,
+            "patternProperties": {
+                "Name([1-9][0-9]*)?$": {
+                    "$ref": "#/$defs/Types/Name"
+                }
+            },
+            "properties": {
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Address": {
+                    "$ref": "#/$defs/Types/Address"
+                },
+                "Bus": {
+                    "$ref": "#/$defs/Types/Bus"
+                },
+                "EntityId": {
+                    "$ref": "#/$defs/Types/EntityId"
+                },
+                "EntityInstance": {
+                    "$ref": "#/$defs/Types/EntityInstance"
+                },
+                "PowerState": {
+                    "$ref": "#/$defs/Types/PowerState"
+                },
+                "CPURequired": {
+                    "$ref": "#/$defs/Types/CPURequired"
+                },
+                "Labels": {
+                    "$ref": "#/$defs/Types/Labels"
+                },
+                "PollRate": {
+                    "$ref": "#/$defs/Types/PollRate"
+                },
+                "MinValue": {
+                    "$ref": "#/$defs/Types/MinValue"
+                },
+                "MaxValue": {
+                    "$ref": "#/$defs/Types/MaxValue"
+                },
+                "Thresholds": {
+                    "$ref": "#/$defs/Types/Thresholds"
+                },
+                "Type": {
+                    "enum": [
+                        "ADM1021",
+                        "DPS310",
+                        "EMC1403",
+                        "EMC1412",
+                        "EMC1413",
+                        "EMC1414",
+                        "HDC1080",
+                        "JC42",
+                        "LM75A",
+                        "LM95234",
+                        "MAX31725",
+                        "MAX31730",
+                        "MAX6581",
+                        "MAX6654",
+                        "MAX6639",
+                        "MCP9600",
+                        "NCT6779",
+                        "NCT7802",
+                        "PT5161L",
+                        "SBTSI",
+                        "SI7020",
+                        "TMP100",
+                        "TMP112",
+                        "TMP175",
+                        "TMP411",
+                        "TMP421",
+                        "TMP432",
+                        "TMP441",
+                        "TMP461",
+                        "TMP464",
+                        "TMP468",
+                        "TMP75",
+                        "W83773G"
+                    ]
+                }
+            },
+            "required": ["Name", "Type", "Bus", "Address"],
+            "type": "object"
+        },
+        "NVME1000": {
+            "description": "implemented in dbus-sensors: NVMEeSensor",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Bus": {
+                    "$ref": "#/$defs/Types/Bus"
+                },
+                "Address": {
+                    "$ref": "#/$defs/Types/Address"
+                },
+                "PowerState": {
+                    "$ref": "#/$defs/Types/PowerState"
+                },
+                "Thresholds": {
+                    "$ref": "#/$defs/Types/Thresholds"
+                },
+                "Type": {
+                    "const": "NVME1000"
+                }
+            },
+            "required": ["Name", "Type", "Bus", "Address"],
+            "type": "object"
+        },
+        "EEPROM": {
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Bus": {
+                    "$ref": "#/$defs/Types/Bus"
+                },
+                "Address": {
+                    "$ref": "#/$defs/Types/Address"
+                },
+                "Type": {
+                    "enum": [
+                        "EEPROM",
+                        "EEPROM_24C01",
+                        "EEPROM_24C02",
+                        "EEPROM_24C04",
+                        "EEPROM_24C08",
+                        "EEPROM_24C16",
+                        "EEPROM_24C32",
+                        "EEPROM_24C64",
+                        "EEPROM_24C128",
+                        "EEPROM_24C256"
+                    ]
+                }
+            },
+            "required": ["Name", "Type", "Bus", "Address"],
+            "type": "object"
+        },
+        "PSUSensor": {
+            "description": "implemented in dbus-sensors: PSUSensor",
+            "additionalProperties": false,
+            "patternProperties": {
+                "Name(1[0-7]|[1-9])?$": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "(vin|vmon|iin|pin|maxpin)_Name$": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "(in|in_voltage|vout)(1[0-7]|[0-9])_Name$": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "(curr|iin|iout|pin|pout|power|temp)(1[0-7]|[1-9])_Name$": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "(in|in_voltage)(1[0-7]|[0-9])_Scale$": {
+                    "$ref": "#/$defs/Types/ScaleValue"
+                },
+                "(curr|power|iout)(1[0-7]|[1-9])_Scale$": {
+                    "$ref": "#/$defs/Types/ScaleValue"
+                },
+                "in(1[0-7]|[0-9])_PowerState$": {
+                    "$ref": "#/$defs/Types/PowerState"
+                },
+                "(in|vout|in_voltage)(1[0-7]|[0-9])_(Min|Max)$": {
+                    "$ref": "#/$defs/Types/MinMaxType"
+                },
+                "(iin|vin|vmon|curr|iout|pin|pout|temp)(1[0-7]|[1-9])?_(Min|Max)$": {
+                    "$ref": "#/$defs/Types/MinMaxType"
+                },
+                "power(1[0-7]|[1-9])?_Max$": {
+                    "$ref": "#/$defs/Types/MinMaxType"
+                },
+                "(power|curr|iout|pout|pin)(1[0-7]|[1-9])?_Offset$": {
+                    "$ref": "#/$defs/Types/OffsetType"
+                }
+            },
+            "properties": {
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "EntityId": {
+                    "$ref": "#/$defs/Types/EntityId"
+                },
+                "EntityInstance": {
+                    "$ref": "#/$defs/Types/EntityInstance"
+                },
+                "CPURequired": {
+                    "$ref": "#/$defs/Types/CPURequired"
+                },
+                "maxiout1_Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "fan1_Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "pin_Scale": {
+                    "$ref": "#/$defs/Types/ScaleValue"
+                },
+                "pout1_Scale": {
+                    "$ref": "#/$defs/Types/ScaleValue"
+                },
+                "Bus": {
+                    "$ref": "#/$defs/Types/Bus"
+                },
+                "Address": {
+                    "$ref": "#/$defs/Types/Address"
+                },
+                "BridgeGpio": {
+                    "$ref": "#/$defs/Types/BridgeGpio"
+                },
+                "CurrScaleFactor": {
+                    "$ref": "#/$defs/Types/CurrScaleFactor"
+                },
+                "InScaleFactor": {
+                    "$ref": "#/$defs/Types/InScaleFactor"
+                },
+                "Labels": {
+                    "$ref": "#/$defs/Types/Labels"
+                },
+                "SlotId": {
+                    "$ref": "#/$defs/Types/SlotId"
+                },
+                "PowerState": {
+                    "$ref": "#/$defs/Types/PowerState"
+                },
+                "PowerScaleFactor": {
+                    "$ref": "#/$defs/Types/PowerScaleFactor"
+                },
+                "Polling": {
+                    "$ref": "#/$defs/Types/Polling"
+                },
+                "PollRate": {
+                    "$ref": "#/$defs/Types/PollRate"
+                },
+                "Thresholds": {
+                    "$ref": "#/$defs/Types/Thresholds"
+                },
+                "Type": {
+                    "enum": [
+                        "ADC128D818",
+                        "ADM1266",
+                        "ADM1272",
+                        "ADM1275",
+                        "ADM1278",
+                        "ADM1281",
+                        "ADM1293",
+                        "ADS1015",
+                        "ADS7830",
+                        "AHE50DC_FAN",
+                        "BMR490",
+                        "cffps",
+                        "cffps1",
+                        "cffps2",
+                        "cffps3",
+                        "CRPS185",
+                        "DPS800",
+                        "INA219",
+                        "INA230",
+                        "INA233",
+                        "INA238",
+                        "IPSPS1",
+                        "IR35221",
+                        "IR38060",
+                        "IR38164",
+                        "IR38263",
+                        "ISL28022",
+                        "ISL68137",
+                        "ISL68220",
+                        "ISL68223",
+                        "ISL69225",
+                        "ISL69243",
+                        "ISL69260",
+                        "ISL69269",
+                        "LM25066",
+                        "LTC2945",
+                        "LTC4282",
+                        "LTC4286",
+                        "LTC4287",
+                        "MAX5970",
+                        "MAX11607",
+                        "MAX11615",
+                        "MAX11617",
+                        "MAX16601",
+                        "MAX20710",
+                        "MAX20730",
+                        "MAX20734",
+                        "MAX20796",
+                        "MAX34451",
+                        "MP2856",
+                        "MP2857",
+                        "MP2971",
+                        "MP2973",
+                        "MP2975",
+                        "MP5023",
+                        "MP5990",
+                        "MPQ8785",
+                        "NCP4200",
+                        "PLI1209BC",
+                        "pmbus",
+                        "PXE1610",
+                        "RAA228000",
+                        "RAA228004",
+                        "RAA228228",
+                        "RAA228620",
+                        "RAA229001",
+                        "RAA229004",
+                        "RAA229126",
+                        "RTQ6056",
+                        "SBRMI",
+                        "smpro_hwmon",
+                        "SY24655",
+                        "TDA38640",
+                        "TPS53679",
+                        "TPS546D24",
+                        "XDP710",
+                        "XDPE11280",
+                        "XDPE12284",
+                        "XDPE132G5C",
+                        "XDPE152C4"
+                    ]
+                }
+            },
+            "required": ["Name", "Type"],
+            "type": "object"
+        },
+        "NMSensor": {
+            "description": "unknown purpose",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Type": {
+                    "const": "NMSensor"
+                }
+            }
+        },
+        "IntelHsbpFruDevice": {
+            "description": "unknown purpose",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Type": {
+                    "const": "IntelHsbpFruDevice"
+                }
+            }
+        },
+        "IntelHsbpTempSensor": {
+            "description": "unknown purpose",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Type": {
+                    "const": "IntelHsbpTempSensor"
+                }
+            }
+        },
+        "IntelHsbpCPLD": {
+            "description": "https://github.com/openbmc/s2600wf-misc",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Address": {
+                    "$ref": "#/$defs/Types/Address"
+                },
+                "Bus": {
+                    "$ref": "#/$defs/Types/Bus"
+                },
+                "Type": {
+                    "const": "Intel HSBP CPLD"
+                }
+            }
+        },
+        "GenericSMBusMux": {
+            "description": "unknown purpose",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Address": {
+                    "$ref": "#/$defs/Types/Address"
+                },
+                "Type": {
+                    "const": "GenericSMBusMux"
+                }
+            }
+        },
+        "BMC": {
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Type": {
+                    "const": "BMC"
+                }
+            }
+        },
+        "UCD90XXX": {
+            "description": "used in https://github.com/openbmc/phosphor-power",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Address": {
+                    "$ref": "#/$defs/Types/Address"
+                },
+                "Bus": {
+                    "$ref": "#/$defs/Types/Bus"
+                },
+                "Type": {
+                    "enum": ["UCD90160", "UCD90320"]
+                }
+            }
+        },
         "Types": {
             "Address": {
-                "type": ["string", "array"]
+                "type": "string"
+            },
+            "AddressArray": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/$defs/Types/Address"
+                }
             },
             "AllowedFailures": {
-                "type": "number"
-            },
-            "AlphaF": {
-                "type": "number"
-            },
-            "AlphaS": {
-                "type": "number"
+                "type": "number",
+                "multipleOf": 1,
+                "minimum": 0
             },
             "BindConnector": {
                 "type": "string"
             },
-            "BindPresence": {
-                "type": "string"
-            },
             "BridgeGpio": {
-                "type": ["number", "array"]
+                "type": "array",
+                "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                        "Name": {
+                            "$ref": "#/$defs/Types/Name"
+                        },
+                        "Label": {
+                            "$ref": "#/$defs/Types/Name"
+                        },
+                        "Polarity": {
+                            "$ref": "#/$defs/Types/Polarity"
+                        },
+                        "SetupTime": {
+                            "type": "number"
+                        }
+                    },
+                    "required": ["Name", "Polarity"]
+                }
             },
             "Bus": {
                 "type": ["string", "number"]
             },
-            "C1": {
-                "type": "number"
-            },
-            "C2": {
-                "type": "number"
-            },
             "CPURequired": {
-                "type": "number"
+                "type": "number",
+                "multipleOf": 1,
+                "minimum": 0
             },
             "ChannelNames": {
                 "items": {
@@ -977,7 +1132,19 @@
                 "type": "array"
             },
             "Class": {
-                "type": "string"
+                "type": "string",
+                "enum": [
+                    "fan",
+                    "temp",
+                    "i2c",
+                    "Aspeed2600_Hwmon",
+                    "METemp",
+                    "IpmbDevice",
+                    "twin_lake",
+                    "Gpio",
+                    "PxeBridgeTemp",
+                    "HSCBridge"
+                ]
             },
             "Connector": {
                 "properties": {
@@ -998,16 +1165,20 @@
                 "type": "object"
             },
             "ConnectsToType": {
-                "type": "string"
+                "type": "string",
+                "const": "MB Upstream Port"
             },
             "CpuID": {
-                "type": "number"
+                "type": "number",
+                "minimum": 0,
+                "multipleOf": 1
             },
             "CurrScaleFactor": {
                 "type": "number"
             },
             "Direction": {
-                "type": "string"
+                "type": "string",
+                "enum": ["less than", "greater than"]
             },
             "DtsCritOffset": {
                 "type": "number"
@@ -1017,12 +1188,6 @@
             },
             "EntityInstance": {
                 "type": "number"
-            },
-            "FaultIndex": {
-                "type": "number"
-            },
-            "FaultType": {
-                "type": "string"
             },
             "GpioPins": {
                 "items": {
@@ -1034,7 +1199,9 @@
                 "enum": ["Low"]
             },
             "Index": {
-                "type": "number"
+                "type": "number",
+                "minimum": 0,
+                "multipleOf": 1
             },
             "InScaleFactor": {
                 "type": "number"
@@ -1045,19 +1212,13 @@
                 },
                 "type": "array"
             },
-            "LedGpioPins": {
-                "items": {
-                    "type": "number"
-                },
-                "type": "array"
-            },
-            "MaxCFM": {
-                "type": "number"
-            },
             "MaxReading": {
                 "type": "number"
             },
             "MaxValue": {
+                "type": "number"
+            },
+            "MinMaxType": {
                 "type": "number"
             },
             "Units": {
@@ -1084,57 +1245,6 @@
             "Name": {
                 "type": "string"
             },
-            "Name1": {
-                "type": "string"
-            },
-            "Name2": {
-                "type": "string"
-            },
-            "Name3": {
-                "type": "string"
-            },
-            "Name4": {
-                "type": "string"
-            },
-            "Name5": {
-                "type": "string"
-            },
-            "Name6": {
-                "type": "string"
-            },
-            "Name7": {
-                "type": "string"
-            },
-            "Name8": {
-                "type": "string"
-            },
-            "Name9": {
-                "type": "string"
-            },
-            "Name10": {
-                "type": "string"
-            },
-            "Name11": {
-                "type": "string"
-            },
-            "Name12": {
-                "type": "string"
-            },
-            "Name13": {
-                "type": "string"
-            },
-            "Name14": {
-                "type": "string"
-            },
-            "Name15": {
-                "type": "string"
-            },
-            "Name16": {
-                "type": "string"
-            },
-            "Name17": {
-                "type": "string"
-            },
             "OffsetValue": {
                 "type": "number"
             },
@@ -1142,7 +1252,22 @@
                 "enum": ["High", "Low"]
             },
             "Polling": {
-                "type": "object"
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "AveragingPeriod": {
+                        "type": "number"
+                    },
+                    "Interval": {
+                        "type": "number"
+                    },
+                    "PollRate": {
+                        "type": "number"
+                    },
+                    "Label": {
+                        "type": "string"
+                    }
+                }
             },
             "PowerFactorMax": {
                 "type": "number"
@@ -1157,10 +1282,13 @@
                 "type": "number"
             },
             "PowerState": {
-                "type": "string"
+                "enum": ["On", "ChassisOn", "Always", "BiosPost"]
             },
             "Presence": {
                 "properties": {
+                    "MonitorType": {
+                        "enum": ["Event", "Polling"]
+                    },
                     "PinName": {
                         "type": "string"
                     },
@@ -1174,16 +1302,9 @@
                 "type": ["number", "array"]
             },
             "Pwm": {
-                "type": "number"
-            },
-            "QMax": {
-                "type": "number"
-            },
-            "QMin": {
-                "type": "number"
-            },
-            "Rearm": {
-                "enum": ["Automatic", "Manual"]
+                "type": "number",
+                "minimum": 0,
+                "multipleOf": 1
             },
             "RedundantCount": {
                 "type": "number"
@@ -1195,16 +1316,10 @@
                 "type": "number"
             },
             "SensorType": {
-                "type": "string"
+                "enum": ["current", "power", "voltage"]
             },
             "SlotId": {
                 "type": "string"
-            },
-            "TachMaxPercent": {
-                "type": "number"
-            },
-            "TachMinPercent": {
-                "type": "number"
             },
             "Tachs": {
                 "items": {
@@ -1216,7 +1331,7 @@
                 "items": {
                     "properties": {
                         "Direction": {
-                            "type": "string"
+                            "enum": ["less than", "greater than"]
                         },
                         "Hysteresis": {
                             "type": "number"
@@ -1247,698 +1362,12 @@
             "HostSMbusIndex": {
                 "type": "number"
             },
-            "pin_Max": {
-                "type": "number"
-            },
-            "pin_Min": {
-                "type": "number"
-            },
-            "pin_Name": {
-                "type": "string"
-            },
-            "maxpin_Name": {
-                "type": "string"
-            },
-            "vin_Max": {
-                "type": "number"
-            },
-            "vin_Min": {
-                "type": "number"
-            },
-            "vin_Name": {
-                "type": "string"
-            },
-            "iin_Name": {
-                "type": "string"
-            },
-            "in0_Max": {
-                "type": "number"
-            },
-            "in0_Min": {
-                "type": "number"
-            },
-            "in0_Name": {
-                "type": "string"
-            },
-            "in1_Max": {
-                "type": "number"
-            },
-            "in1_Name": {
-                "type": "string"
-            },
-            "in2_Max": {
-                "type": "number"
-            },
-            "in2_Name": {
-                "type": "string"
-            },
-            "in3_Max": {
-                "type": "number"
-            },
-            "in3_Name": {
-                "type": "string"
-            },
-            "in4_Max": {
-                "type": "number"
-            },
-            "in4_Name": {
-                "type": "string"
-            },
-            "in5_Max": {
-                "type": "number"
-            },
-            "in5_Name": {
-                "type": "string"
-            },
-            "in6_Name": {
-                "type": "string"
-            },
-            "in7_Name": {
-                "type": "string"
-            },
-            "in_voltage0_Max": {
-                "type": "number"
-            },
-            "in_voltage0_Name": {
-                "type": "string"
-            },
-            "in_voltage1_Max": {
-                "type": "number"
-            },
-            "in_voltage1_Name": {
-                "type": "string"
-            },
-            "in_voltage2_Max": {
-                "type": "number"
-            },
-            "in_voltage2_Name": {
-                "type": "string"
-            },
-            "in_voltage3_Max": {
-                "type": "number"
-            },
-            "in_voltage3_Name": {
-                "type": "string"
-            },
-            "in_voltage4_Max": {
-                "type": "number"
-            },
-            "in_voltage4_Name": {
-                "type": "string"
-            },
-            "in_voltage5_Max": {
-                "type": "number"
-            },
-            "in_voltage5_Name": {
-                "type": "string"
-            },
-            "in_voltage6_Name": {
-                "type": "string"
-            },
-            "in_voltage7_Name": {
-                "type": "string"
-            },
-            "in_voltage8_Name": {
-                "type": "string"
-            },
-            "in_voltage9_Name": {
-                "type": "string"
-            },
-            "in0_PowerState": {
-                "type": "string"
-            },
-            "in1_PowerState": {
-                "type": "string"
-            },
-            "in2_PowerState": {
-                "type": "string"
-            },
-            "in3_PowerState": {
-                "type": "string"
-            },
-            "in4_PowerState": {
-                "type": "string"
-            },
-            "in5_PowerState": {
-                "type": "string"
-            },
-            "in6_PowerState": {
-                "type": "string"
-            },
-            "in7_PowerState": {
-                "type": "string"
-            },
-            "curr1_Name": {
-                "type": "string"
-            },
-            "curr2_Name": {
-                "type": "string"
-            },
-            "curr3_Name": {
-                "type": "string"
-            },
-            "curr4_Name": {
-                "type": "string"
-            },
-            "iin1_Max": {
-                "type": "number"
-            },
-            "iin1_Min": {
-                "type": "number"
-            },
-            "iin1_Name": {
-                "type": "string"
-            },
-            "iin2_Max": {
-                "type": "number"
-            },
-            "iin2_Min": {
-                "type": "number"
-            },
-            "iin2_Name": {
-                "type": "string"
-            },
-            "iin3_Max": {
-                "type": "number"
-            },
-            "iin3_Min": {
-                "type": "number"
-            },
-            "iin3_Name": {
-                "type": "string"
-            },
-            "iout1_Max": {
-                "type": "number"
-            },
-            "iout1_Min": {
-                "type": "number"
-            },
-            "iout1_Name": {
-                "type": "string"
-            },
-            "maxiout1_Name": {
-                "type": "string"
-            },
-            "iout2_Max": {
-                "type": "number"
-            },
-            "iout2_Min": {
-                "type": "number"
-            },
-            "iout2_Name": {
-                "type": "string"
-            },
-            "iout3_Max": {
-                "type": "number"
-            },
-            "iout3_Min": {
-                "type": "number"
-            },
-            "iout3_Name": {
-                "type": "string"
-            },
-            "iout4_Max": {
-                "type": "number"
-            },
-            "iout4_Min": {
-                "type": "number"
-            },
-            "iout4_Name": {
-                "type": "string"
-            },
-            "iout5_Max": {
-                "type": "number"
-            },
-            "iout5_Min": {
-                "type": "number"
-            },
-            "iout5_Name": {
-                "type": "string"
-            },
-            "pin1_Max": {
-                "type": "number"
-            },
-            "pin1_Min": {
-                "type": "number"
-            },
-            "pin1_Name": {
-                "type": "string"
-            },
-            "pin2_Max": {
-                "type": "number"
-            },
-            "pin2_Min": {
-                "type": "number"
-            },
-            "pin2_Name": {
-                "type": "string"
-            },
-            "pin3_Max": {
-                "type": "number"
-            },
-            "pin3_Min": {
-                "type": "number"
-            },
-            "pin3_Name": {
-                "type": "string"
-            },
-            "pout1_Max": {
-                "type": "number"
-            },
-            "pout1_Min": {
-                "type": "number"
-            },
-            "pout1_Name": {
-                "type": "string"
-            },
-            "pout2_Max": {
-                "type": "number"
-            },
-            "pout2_Min": {
-                "type": "number"
-            },
-            "pout2_Name": {
-                "type": "string"
-            },
-            "pout3_Max": {
-                "type": "number"
-            },
-            "pout3_Min": {
-                "type": "number"
-            },
-            "pout3_Name": {
-                "type": "string"
-            },
-            "power1_Max": {
-                "type": "number"
-            },
-            "power1_Name": {
-                "type": "string"
-            },
-            "power2_Max": {
-                "type": "number"
-            },
-            "power2_Name": {
-                "type": "string"
-            },
-            "power3_Max": {
-                "type": "number"
-            },
-            "power3_Name": {
-                "type": "string"
-            },
-            "power4_Max": {
-                "type": "number"
-            },
-            "power4_Name": {
-                "type": "string"
-            },
-            "power5_Max": {
-                "type": "number"
-            },
-            "power5_Name": {
-                "type": "string"
-            },
-            "power6_Name": {
-                "type": "string"
-            },
-            "power7_Name": {
-                "type": "string"
-            },
-            "power8_Name": {
-                "type": "string"
-            },
-            "power9_Name": {
-                "type": "string"
-            },
-            "temp1_Max": {
-                "type": "number"
-            },
-            "temp1_Min": {
-                "type": "number"
-            },
-            "temp1_Name": {
-                "type": "string"
-            },
-            "temp2_Max": {
-                "type": "number"
-            },
-            "temp2_Min": {
-                "type": "number"
-            },
-            "temp2_Name": {
-                "type": "string"
-            },
-            "temp3_Max": {
-                "type": "number"
-            },
-            "temp3_Min": {
-                "type": "number"
-            },
-            "temp3_Name": {
-                "type": "string"
-            },
-            "temp4_Max": {
-                "type": "number"
-            },
-            "temp4_Min": {
-                "type": "number"
-            },
-            "temp4_Name": {
-                "type": "string"
-            },
-            "temp5_Max": {
-                "type": "number"
-            },
-            "temp5_Min": {
-                "type": "number"
-            },
-            "temp5_Name": {
-                "type": "string"
-            },
-            "temp6_Max": {
-                "type": "number"
-            },
-            "temp6_Min": {
-                "type": "number"
-            },
-            "temp6_Name": {
-                "type": "string"
-            },
-            "temp7_Max": {
-                "type": "number"
-            },
-            "temp7_Min": {
-                "type": "number"
-            },
-            "temp7_Name": {
-                "type": "string"
-            },
-            "temp8_Max": {
-                "type": "number"
-            },
-            "temp8_Min": {
-                "type": "number"
-            },
-            "temp8_Name": {
-                "type": "string"
-            },
-            "temp9_Max": {
-                "type": "number"
-            },
-            "temp9_Min": {
-                "type": "number"
-            },
-            "temp9_Name": {
-                "type": "string"
-            },
-            "temp10_Max": {
-                "type": "number"
-            },
-            "temp10_Min": {
-                "type": "number"
-            },
-            "temp10_Name": {
-                "type": "string"
-            },
-            "temp11_Max": {
-                "type": "number"
-            },
-            "temp11_Min": {
-                "type": "number"
-            },
-            "temp11_Name": {
-                "type": "string"
-            },
-            "temp12_Max": {
-                "type": "number"
-            },
-            "temp12_Min": {
-                "type": "number"
-            },
-            "temp12_Name": {
-                "type": "string"
-            },
-            "temp13_Max": {
-                "type": "number"
-            },
-            "temp13_Min": {
-                "type": "number"
-            },
-            "temp13_Name": {
-                "type": "string"
-            },
-            "vout0_Max": {
-                "type": "number"
-            },
-            "vout0_Min": {
-                "type": "number"
-            },
-            "vout0_Name": {
-                "type": "string"
-            },
-            "vout1_Max": {
-                "type": "number"
-            },
-            "vout1_Min": {
-                "type": "number"
-            },
-            "vout1_Name": {
-                "type": "string"
-            },
-            "vout2_Max": {
-                "type": "number"
-            },
-            "vout2_Min": {
-                "type": "number"
-            },
-            "vout2_Name": {
-                "type": "string"
-            },
-            "vout3_Max": {
-                "type": "number"
-            },
-            "vout3_Min": {
-                "type": "number"
-            },
-            "vout3_Name": {
-                "type": "string"
-            },
-            "vout4_Max": {
-                "type": "number"
-            },
-            "vout4_Min": {
-                "type": "number"
-            },
-            "vout4_Name": {
-                "type": "string"
-            },
-            "vout5_Max": {
-                "type": "number"
-            },
-            "vout5_Min": {
-                "type": "number"
-            },
-            "vout5_Name": {
-                "type": "string"
-            },
-            "vout6_Max": {
-                "type": "number"
-            },
-            "vout6_Min": {
-                "type": "number"
-            },
-            "vout6_Name": {
-                "type": "string"
-            },
-            "vout7_Max": {
-                "type": "number"
-            },
-            "vout7_Min": {
-                "type": "number"
-            },
-            "vout7_Name": {
-                "type": "string"
-            },
-            "vout8_Max": {
-                "type": "number"
-            },
-            "vout8_Min": {
-                "type": "number"
-            },
-            "vout8_Name": {
-                "type": "string"
-            },
-            "vout9_Max": {
-                "type": "number"
-            },
-            "vout9_Min": {
-                "type": "number"
-            },
-            "vout9_Name": {
-                "type": "string"
-            },
-            "vout10_Max": {
-                "type": "number"
-            },
-            "vout10_Min": {
-                "type": "number"
-            },
-            "vout10_Name": {
-                "type": "string"
-            },
-            "vout11_Max": {
-                "type": "number"
-            },
-            "vout11_Min": {
-                "type": "number"
-            },
-            "vout11_Name": {
-                "type": "string"
-            },
-            "vout12_Max": {
-                "type": "number"
-            },
-            "vout12_Min": {
-                "type": "number"
-            },
-            "vout12_Name": {
-                "type": "string"
-            },
-            "vout13_Max": {
-                "type": "number"
-            },
-            "vout13_Min": {
-                "type": "number"
-            },
-            "vout13_Name": {
-                "type": "string"
-            },
-            "vout14_Max": {
-                "type": "number"
-            },
-            "vout14_Min": {
-                "type": "number"
-            },
-            "vout14_Name": {
-                "type": "string"
-            },
-            "vout15_Max": {
-                "type": "number"
-            },
-            "vout15_Min": {
-                "type": "number"
-            },
-            "vout15_Name": {
-                "type": "string"
-            },
-            "vout16_Max": {
-                "type": "number"
-            },
-            "vout16_Min": {
-                "type": "number"
-            },
-            "vout16_Name": {
-                "type": "string"
-            },
-            "vout17_Max": {
-                "type": "number"
-            },
-            "vout17_Min": {
-                "type": "number"
-            },
-            "vout17_Name": {
-                "type": "string"
-            },
-            "fan1_Name": {
-                "type": "string"
-            },
-            "iout1_Offset": {
-                "type": "number"
-            },
-            "pout1_Offset": {
-                "type": "number"
-            },
-            "pin_Offset": {
-                "type": "number"
-            },
-            "iout1_Scale": {
-                "type": "number"
-            },
-            "iout2_Scale": {
-                "type": "number"
-            },
-            "iout3_Scale": {
-                "type": "number"
-            },
-            "iout4_Scale": {
-                "type": "number"
-            },
-            "iout5_Scale": {
-                "type": "number"
-            },
-            "pin_Scale": {
-                "type": "number"
-            },
-            "in0_Scale": {
-                "type": "number"
-            },
-            "in1_Scale": {
-                "type": "number"
-            },
-            "in2_Scale": {
-                "type": "number"
-            },
-            "in3_Scale": {
-                "type": "number"
-            },
-            "in4_Scale": {
-                "type": "number"
-            },
-            "in5_Scale": {
-                "type": "number"
-            },
-            "in6_Scale": {
-                "type": "number"
-            },
-            "in7_Scale": {
-                "type": "number"
-            },
-            "in_voltage0_Scale": {
-                "type": "number"
-            },
-            "in_voltage1_Scale": {
-                "type": "number"
-            },
-            "in_voltage2_Scale": {
-                "type": "number"
-            },
-            "in_voltage3_Scale": {
-                "type": "number"
-            },
-            "in_voltage4_Scale": {
-                "type": "number"
-            },
-            "in_voltage5_Scale": {
-                "type": "number"
-            },
-            "in_voltage6_Scale": {
-                "type": "number"
-            },
-            "in_voltage7_Scale": {
-                "type": "number"
-            },
-            "in_voltage8_Scale": {
-                "type": "number"
-            },
-            "in_voltage9_Scale": {
+            "OffsetType": {
                 "type": "number"
             },
             "PollRate": {
-                "type": "number"
-            },
-            "Type": {
-                "type": "string"
+                "type": "number",
+                "exclusiveMinimum": 0
             }
         }
     }

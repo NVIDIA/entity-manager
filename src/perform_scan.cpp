@@ -28,9 +28,9 @@
 // NOLINTBEGIN(cppcoreguidelines-avoid-non-const-global-variables)
 extern std::shared_ptr<sdbusplus::asio::connection> systemBus;
 extern nlohmann::json lastJson;
-extern void
-    propertiesChangedCallback(nlohmann::json& systemConfiguration,
-                              sdbusplus::asio::object_server& objServer);
+extern void propertiesChangedCallback(
+    nlohmann::json& systemConfiguration,
+    sdbusplus::asio::object_server& objServer);
 // NOLINTEND(cppcoreguidelines-avoid-non-const-global-variables)
 
 using GetSubTreeType = std::vector<
@@ -108,10 +108,10 @@ static void registerCallback(nlohmann::json& systemConfiguration,
     dbusMatches.emplace(path, std::move(match));
 }
 
-static void
-    processDbusObjects(std::vector<std::shared_ptr<PerformProbe>>& probeVector,
-                       const std::shared_ptr<PerformScan>& scan,
-                       const GetSubTreeType& interfaceSubtree)
+static void processDbusObjects(
+    std::vector<std::shared_ptr<PerformProbe>>& probeVector,
+    const std::shared_ptr<PerformScan>& scan,
+    const GetSubTreeType& interfaceSubtree)
 {
     for (const auto& [path, object] : interfaceSubtree)
     {

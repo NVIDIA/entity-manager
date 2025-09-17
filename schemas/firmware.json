@@ -1,0 +1,95 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$defs": {
+        "FirmwareInfoDef": {
+            "description": "This indicates the properties which apply to all firmwares",
+            "type": "object",
+            "properties": {
+                "VendorIANA": {
+                    "description": "The IANA Enterprise Id of the hardware vendor",
+                    "type": "number"
+                },
+                "CompatibleHardware": {
+                    "description": "The compatible hardware with name format com.<vendor>.Hardware.<XXX> specified by vendor in phosphor-dbus-interfaces",
+                    "type": "string"
+                }
+            },
+            "required": ["VendorIANA", "CompatibleHardware"]
+        },
+        "XDPE1X2XXFirmware": {
+            "description": "Required information to complete a voltage regulator firmware update",
+            "object": "object",
+            "properties": {
+                "Name": {
+                    "description": "Name of the firmware",
+                    "type": "string"
+                },
+                "Type": {
+                    "description": "The type of configuration object",
+                    "enum": ["XDPE1X2XXFirmware"]
+                },
+                "Bus": {
+                    "description": "I2C bus, the device is connected to",
+                    "type": "integer"
+                },
+                "Address": {
+                    "description": "I2C address of the device",
+                    "type": "integer"
+                },
+                "FirmwareInfo": {
+                    "$ref": "#/$defs/FirmwareInfoDef"
+                }
+            },
+            "required": ["Name", "Type", "Bus", "Address", "FirmwareInfo"]
+        },
+        "BIOS": {
+            "description": "Required information to complete the host fw update process.",
+            "type": "object",
+            "properties": {
+                "Type": {
+                    "description": "The type of configuration object. IntelSPIFlash implies Intel Flash Descriptor.",
+                    "enum": ["IntelSPIFlash", "SPIFlash"]
+                },
+                "Name": {
+                    "description": "The name of the firmware.",
+                    "type": "string"
+                },
+                "SPIControllerIndex": {
+                    "description": "The index of the SPI controller",
+                    "type": "number"
+                },
+                "SPIDeviceIndex": {
+                    "description": "The index of the SPI device connected to that controller",
+                    "type": "number"
+                },
+                "MuxOutputs": {
+                    "description": "The pin names and values for the mux which toggles the flash to BMC",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "Name": {
+                                "$ref": "legacy.json#/$defs/Types/Name"
+                            },
+                            "Polarity": {
+                                "$ref": "legacy.json#/$defs/Types/Polarity"
+                            }
+                        },
+                        "required": ["Name", "Polarity"]
+                    }
+                },
+                "FirmwareInfo": {
+                    "$ref": "#/$defs/FirmwareInfoDef"
+                }
+            },
+            "required": [
+                "Name",
+                "Type",
+                "SPIControllerIndex",
+                "SPIDeviceIndex",
+                "MuxOutputs",
+                "FirmwareInfo"
+            ]
+        }
+    }
+}

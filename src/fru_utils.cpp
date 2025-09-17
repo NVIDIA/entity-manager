@@ -100,8 +100,8 @@ enum SubManagementAccessRecord : uint8_t
  * iterator is no longer usable.
  */
 std::pair<DecodeState, std::string> decodeFRUData(
-    std::vector<uint8_t>::const_iterator& iter,
-    const std::vector<uint8_t>::const_iterator& end, bool isLangEng)
+    std::span<const uint8_t>::const_iterator& iter,
+    std::span<const uint8_t>::const_iterator& end, bool isLangEng)
 {
     std::string value;
     unsigned int i = 0;
@@ -224,7 +224,7 @@ bool checkLangEng(uint8_t lang)
  * len:         Length of current area space and it is a multiple of 8 bytes
  *              as per specification
  */
-bool verifyOffset(const std::vector<uint8_t>& fruBytes, fruAreas currentArea,
+bool verifyOffset(std::span<const uint8_t> fruBytes, fruAreas currentArea,
                   uint8_t len)
 {
     unsigned int fruBytesSize = fruBytes.size();
@@ -290,7 +290,7 @@ bool verifyOffset(const std::vector<uint8_t>& fruBytes, fruAreas currentArea,
 }
 
 static void parseMultirecordUUID(
-    const std::vector<uint8_t>& device,
+    std::span<const uint8_t> device,
     boost::container::flat_map<std::string, std::string>& result)
 {
     constexpr size_t uuidDataLen = 16;
@@ -304,8 +304,12 @@ static void parseMultirecordUUID(
      */
     const std::array<uint8_t, uuidDataLen> uuidCharOrder = {
         3, 2, 1, 0, 5, 4, 7, 6, 8, 9, 10, 11, 12, 13, 14, 15};
-    uint32_t areaOffset =
-        device.at(getHeaderAreaFieldOffset(fruAreas::fruAreaMultirecord));
+    size_t offset = getHeaderAreaFieldOffset(fruAreas::fruAreaMultirecord);
+    if (offset >= device.size())
+    {
+        throw std::runtime_error("Multirecord UUID offset is out of range");
+    }
+    uint32_t areaOffset = device[offset];
 
     if (areaOffset == 0)
     {
@@ -313,7 +317,7 @@ static void parseMultirecordUUID(
     }
 
     areaOffset *= fruBlockSize;
-    std::vector<uint8_t>::const_iterator fruBytesIter =
+    std::span<const uint8_t>::const_iterator fruBytesIter =
         device.begin() + areaOffset;
 
     /* Verify area offset */
@@ -369,9 +373,79 @@ static void parseMultirecordUUID(
     }
 }
 
-resCodes
-    formatIPMIFRU(const std::vector<uint8_t>& fruBytes,
-                  boost::container::flat_map<std::string, std::string>& result)
+resCodes decodeField(
+    std::span<const uint8_t>::const_iterator& fruBytesIter,
+    std::span<const uint8_t>::const_iterator& fruBytesIterEndArea,
+    const std::vector<std::string>& fruAreaFieldNames, size_t& fieldIndex,
+    DecodeState& state, bool isLangEng, const fruAreas& area,
+    boost::container::flat_map<std::string, std::string>& result)
+{
+    auto res = decodeFRUData(fruBytesIter, fruBytesIterEndArea, isLangEng);
+    state = res.first;
+    std::string value = res.second;
+    std::string name;
+    bool isCustomField = false;
+    if (fieldIndex < fruAreaFieldNames.size())
+    {
+        name = std::string(getFruAreaName(area)) + "_" +
+               fruAreaFieldNames.at(fieldIndex);
+    }
+    else
+    {
+        isCustomField = true;
+        name = std::string(getFruAreaName(area)) + "_" + fruCustomFieldName +
+               std::to_string(fieldIndex - fruAreaFieldNames.size() + 1);
+    }
+
+    if (state == DecodeState::ok)
+    {
+        // Strip non null characters and trailing spaces from the end
+        value.erase(
+            std::find_if(value.rbegin(), value.rend(),
+                         [](char ch) { return ((ch != 0) && (ch != ' ')); })
+                .base(),
+            value.end());
+        if (isCustomField)
+        {
+            // Some MAC addresses are stored in a custom field, with
+            // "MAC:" prefixed on the value.  If we see that, create a
+            // new field with the decoded data
+            if (value.starts_with("MAC: "))
+            {
+                result["MAC_" + name] = value.substr(5);
+            }
+        }
+        result[name] = std::move(value);
+        ++fieldIndex;
+    }
+    else if (state == DecodeState::err)
+    {
+        std::cerr << "Error while parsing " << name << "\n";
+
+        // Cancel decoding if failed to parse any of mandatory
+        // fields
+        if (fieldIndex < fruAreaFieldNames.size())
+        {
+            std::cerr << "Failed to parse mandatory field \n";
+            return resCodes::resErr;
+        }
+        return resCodes::resWarn;
+    }
+    else
+    {
+        if (fieldIndex < fruAreaFieldNames.size())
+        {
+            std::cerr << "Mandatory fields absent in FRU area "
+                      << getFruAreaName(area) << " after " << name << "\n";
+            return resCodes::resWarn;
+        }
+    }
+    return resCodes::resOK;
+}
+
+resCodes formatIPMIFRU(
+    std::span<const uint8_t> fruBytes,
+    boost::container::flat_map<std::string, std::string>& result)
 {
     resCodes ret = resCodes::resOK;
     if (fruBytes.size() <= fruBlockSize)
@@ -394,7 +468,7 @@ resCodes
             continue;
         }
         offset *= fruBlockSize;
-        std::vector<uint8_t>::const_iterator fruBytesIter =
+        std::span<const uint8_t>::const_iterator fruBytesIter =
             fruBytes.begin() + offset;
         if (fruBytesIter + fruBlockSize >= fruBytes.end())
         {
@@ -423,7 +497,7 @@ resCodes
             return resCodes::resErr;
         }
 
-        std::vector<uint8_t>::const_iterator fruBytesIterEndArea =
+        std::span<const uint8_t>::const_iterator fruBytesIterEndArea =
             fruBytes.begin() + offset + fruAreaSize - 1;
         ++fruBytesIter;
 
@@ -510,56 +584,16 @@ resCodes
         DecodeState state = DecodeState::ok;
         do
         {
-            auto res =
-                decodeFRUData(fruBytesIter, fruBytesIterEndArea, isLangEng);
-            state = res.first;
-            std::string value = res.second;
-            std::string name;
-            if (fieldIndex < fruAreaFieldNames->size())
+            resCodes decodeRet = decodeField(fruBytesIter, fruBytesIterEndArea,
+                                             *fruAreaFieldNames, fieldIndex,
+                                             state, isLangEng, area, result);
+            if (decodeRet == resCodes::resErr)
             {
-                name = std::string(getFruAreaName(area)) + "_" +
-                       fruAreaFieldNames->at(fieldIndex);
+                return resCodes::resErr;
             }
-            else
+            if (decodeRet == resCodes::resWarn)
             {
-                name =
-                    std::string(getFruAreaName(area)) + "_" +
-                    fruCustomFieldName +
-                    std::to_string(fieldIndex - fruAreaFieldNames->size() + 1);
-            }
-
-            if (state == DecodeState::ok)
-            {
-                // Strip non null characters from the end
-                value.erase(std::find_if(value.rbegin(), value.rend(),
-                                         [](char ch) { return ch != 0; })
-                                .base(),
-                            value.end());
-
-                result[name] = std::move(value);
-                ++fieldIndex;
-            }
-            else if (state == DecodeState::err)
-            {
-                std::cerr << "Error while parsing " << name << "\n";
-                ret = resCodes::resWarn;
-                // Cancel decoding if failed to parse any of mandatory
-                // fields
-                if (fieldIndex < fruAreaFieldNames->size())
-                {
-                    std::cerr << "Failed to parse mandatory field \n";
-                    return resCodes::resErr;
-                }
-            }
-            else
-            {
-                if (fieldIndex < fruAreaFieldNames->size())
-                {
-                    std::cerr
-                        << "Mandatory fields absent in FRU area "
-                        << getFruAreaName(area) << " after " << name << "\n";
-                    ret = resCodes::resWarn;
-                }
+                ret = decodeRet;
             }
         } while (state == DecodeState::ok);
         for (; fruBytesIter < fruBytesIterEndArea; fruBytesIter++)
@@ -582,15 +616,15 @@ resCodes
 }
 
 // Calculate new checksum for fru info area
-uint8_t calculateChecksum(std::vector<uint8_t>::const_iterator iter,
-                          std::vector<uint8_t>::const_iterator end)
+uint8_t calculateChecksum(std::span<const uint8_t>::const_iterator iter,
+                          std::span<const uint8_t>::const_iterator end)
 {
     constexpr int checksumMod = 256;
     uint8_t sum = std::accumulate(iter, end, static_cast<uint8_t>(0));
     return (checksumMod - sum) % checksumMod;
 }
 
-uint8_t calculateChecksum(std::vector<uint8_t>& fruAreaData)
+uint8_t calculateChecksum(std::span<const uint8_t> fruAreaData)
 {
     return calculateChecksum(fruAreaData.begin(), fruAreaData.end());
 }
@@ -742,8 +776,8 @@ bool findFRUHeader(FRUReader& reader, const std::string& errorHelp,
     return false;
 }
 
-std::pair<std::vector<uint8_t>, bool>
-    readFRUContents(FRUReader& reader, const std::string& errorHelp)
+std::pair<std::vector<uint8_t>, bool> readFRUContents(
+    FRUReader& reader, const std::string& errorHelp)
 {
     std::array<uint8_t, I2C_SMBUS_BLOCK_MAX> blockData{};
     off_t baseOffset = 0x0;

@@ -62,6 +62,29 @@
                             "required": ["Names"],
                             "type": "object"
                         },
+                        "ManagedHost": {
+                            "additionalProperties": false,
+                            "properties": {
+                                "HostIndex": {
+                                    "type": ["string", "number"]
+                                }
+                            },
+                            "required": ["HostIndex"],
+                            "type": "object"
+                        },
+                        "Cable": {
+                            "additionalProperties": false,
+                            "properties": {
+                                "Length": {
+                                    "type": "number"
+                                },
+                                "Type": {
+                                    "enum": ["Optical", "Copper", "Unknown"]
+                                }
+                            },
+                            "required": ["Length", "Type"],
+                            "type": "object"
+                        },
                         "Replaceable": {
                             "additionalProperties": false,
                             "properties": {
@@ -112,17 +135,16 @@
                         "Board": {
                             "Motherboard": {
                                 "additionalProperties": false,
-                                "properties": {
-                                    "ProductId": {
-                                        "type": "number"
-                                    }
-                                },
-                                "required": ["ProductId"],
                                 "type": "object"
                             }
                         },
                         "Chassis": {
                             "additionalProperties": false,
+                            "properties": {
+                                "Type": {
+                                    "type": "string"
+                                }
+                            },
                             "type": "object"
                         },
                         "NetworkInterface": {
@@ -143,11 +165,25 @@
                             "additionalProperties": false,
                             "type": "object"
                         },
-                        "BMC": {
+                        "Bmc": {
                             "additionalProperties": false,
                             "type": "object"
                         },
                         "Storage": {
+                            "additionalProperties": false,
+                            "type": "object"
+                        },
+                        "Accelerator": {
+                            "additionalProperties": false,
+                            "properties": {
+                                "Type": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": ["Type"],
+                            "type": "object"
+                        },
+                        "Dimm": {
                             "additionalProperties": false,
                             "type": "object"
                         }

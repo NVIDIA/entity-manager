@@ -73,6 +73,8 @@ const static constexpr char* baseboardFruLocation =
 
 const static constexpr char* i2CDevLocation = "/dev";
 
+constexpr const char* fruDevice16BitDetectMode = FRU_DEVICE_16BITDETECTMODE;
+
 // TODO Refactor these to not be globals
 // NOLINTBEGIN(cppcoreguidelines-avoid-non-const-global-variables)
 static boost::container::flat_map<size_t, std::optional<std::set<size_t>>>
@@ -268,11 +270,54 @@ static int64_t readData(bool is16bit, bool isBytewise, int file,
     return i2cSmbusWriteThenRead(file, address, u8Offset, 2, buf, len);
 }
 
-static std::optional<bool> isDevice16Bit(int file, uint16_t address)
+// Mode_1:
+// --------
+// Please refer to document docs/address_size_detection_modes.md for
+// more details and explanations.
+static std::optional<bool> isDevice16BitMode1(int file)
+{
+    // Set the higher data word address bits to 0. It's safe on 8-bit
+    // addressing EEPROMs because it doesn't write any actual data.
+    int ret = i2c_smbus_write_byte(file, 0);
+    if (ret < 0)
+    {
+        return std::nullopt;
+    }
+
+    /* Get first byte */
+    int byte1 = i2c_smbus_read_byte_data(file, 0);
+    if (byte1 < 0)
+    {
+        return std::nullopt;
+    }
+    /* Read 7 more bytes, it will read same first byte in case of
+     * 8 bit but it will read next byte in case of 16 bit
+     */
+    for (int i = 0; i < 7; i++)
+    {
+        int byte2 = i2c_smbus_read_byte_data(file, 0);
+        if (byte2 < 0)
+        {
+            return std::nullopt;
+        }
+        if (byte2 != byte1)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+// Mode_2:
+// --------
+// Please refer to document docs/address_size_detection_modes.md for
+// more details and explanations.
+static std::optional<bool> isDevice16BitMode2(int file, uint16_t address)
 {
     uint8_t first = 0;
     uint8_t cur = 0;
     uint16_t v = 0;
+    int ret = 0;
     // NOLINTNEXTLINE(cppcoreguidelines-pro-type-reinterpret-cast)
     uint8_t* p = reinterpret_cast<uint8_t*>(&v);
 
@@ -285,7 +330,12 @@ static std::optional<bool> isDevice16Bit(int file, uint16_t address)
     {
         v = htobe16(i);
 
-        i2cSmbusWriteThenRead(file, address, p, 2, &cur, 1);
+        ret = i2cSmbusWriteThenRead(file, address, p, 2, &cur, 1);
+        if (ret < 0)
+        {
+            return std::nullopt;
+        }
+
         if (i == 0)
         {
             first = cur;
@@ -297,6 +347,18 @@ static std::optional<bool> isDevice16Bit(int file, uint16_t address)
         }
     }
     return false;
+}
+
+static std::optional<bool> isDevice16Bit(int file, uint16_t address)
+{
+    std::string mode(fruDevice16BitDetectMode);
+
+    if (mode == "MODE_2")
+    {
+        return isDevice16BitMode2(file, address);
+    }
+
+    return isDevice16BitMode1(file);
 }
 
 // TODO: This code is very similar to the non-eeprom version and can be merged
@@ -818,6 +880,7 @@ static void findI2CDevices(const std::vector<fs::path>& i2cBuses,
         {
             std::cerr << "Error: Can't use SMBus Receive Byte command bus "
                       << bus << "\n";
+            close(file);
             continue;
         }
         auto& device = busmap[bus];
@@ -1042,12 +1105,35 @@ bool writeFRU(uint8_t bus, uint8_t address, const std::vector<uint8_t>& fru)
     if (hasEepromFile(bus, address))
     {
         auto path = getEepromPath(bus, address);
+        off_t offset = 0;
+
         int eeprom = open(path.c_str(), O_RDWR | O_CLOEXEC);
         if (eeprom < 0)
         {
             std::cerr << "unable to open i2c device " << path << "\n";
             throw DBusInternalError();
             return false;
+        }
+
+        std::array<uint8_t, I2C_SMBUS_BLOCK_MAX> blockData{};
+        std::string errorMessage = "eeprom at " + std::to_string(bus) +
+                                   " address " + std::to_string(address);
+        auto readFunc = [eeprom](off_t offset, size_t length, uint8_t* outbuf) {
+            return readFromEeprom(eeprom, offset, length, outbuf);
+        };
+        FRUReader reader(std::move(readFunc));
+
+        if (!findFRUHeader(reader, errorMessage, blockData, offset))
+        {
+            offset = 0;
+        }
+
+        if (lseek(eeprom, offset, SEEK_SET) < 0)
+        {
+            std::cerr << "Unable to seek to offset " << offset
+                      << " in device: " << path << "\n";
+            close(eeprom);
+            throw DBusInternalError();
         }
 
         ssize_t writtenBytes = write(eeprom, fru.data(), fru.size());

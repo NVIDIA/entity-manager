@@ -1057,6 +1057,100 @@
                 "Type": "MB Upstream Port"
             },
             {
+                "Name": "S0_DIMMG0_Temp",
+                "Sensors": [
+                    "S0_DIMM_CH0_Temp",
+                    "S0_DIMM_CH1_Temp",
+                    "S0_DIMM_CH2_Temp",
+                    "S0_DIMM_CH3_Temp"
+                ],
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 85
+                    }
+                ],
+                "Type": "Maximum",
+                "Units": "DegreesC"
+            },
+            {
+                "Name": "S1_DIMMG0_Temp",
+                "Sensors": [
+                    "S1_DIMM_CH0_Temp",
+                    "S1_DIMM_CH1_Temp",
+                    "S1_DIMM_CH2_Temp",
+                    "S1_DIMM_CH3_Temp"
+                ],
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 85
+                    }
+                ],
+                "Type": "Maximum",
+                "Units": "DegreesC"
+            },
+            {
+                "Name": "S0_DIMMG1_Temp",
+                "Sensors": [
+                    "S0_DIMM_CH4_Temp",
+                    "S0_DIMM_CH5_Temp",
+                    "S0_DIMM_CH6_Temp",
+                    "S0_DIMM_CH7_Temp"
+                ],
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 85
+                    }
+                ],
+                "Type": "Maximum",
+                "Units": "DegreesC"
+            },
+            {
+                "Name": "S1_DIMMG1_Temp",
+                "Sensors": [
+                    "S1_DIMM_CH4_Temp",
+                    "S1_DIMM_CH5_Temp",
+                    "S1_DIMM_CH6_Temp",
+                    "S1_DIMM_CH7_Temp"
+                ],
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 85
+                    }
+                ],
+                "Type": "Maximum",
+                "Units": "DegreesC"
+            },
+            {
+                "Name": "S0_DIMM_DDR_Volt",
+                "Sensors": [
+                    "S0_DIMM_VR1_Volt",
+                    "S0_DIMM_VR2_Volt"
+                ],
+                "Type": "Maximum",
+                "Units": "Volts"
+            },
+            {
+                "Name": "S1_DIMM_DDR_Volt",
+                "Sensors": [
+                    "S1_DIMM_VR1_Volt",
+                    "S1_DIMM_VR2_Volt"
+                ],
+                "Type": "Maximum",
+                "Units": "Volts"
+            },
+            {
                 "Name": "nvme_bp_max",
                 "Sensors": [
                     "nvme0",
@@ -1550,19 +1644,14 @@
                 "Type": "smpro_hwmon",
                 "iout1_Max": 100,
                 "iout1_Name": "S0_Core_VRD_Curr",
-                "iout1_Scale": 1,
                 "iout2_Max": 100,
                 "iout2_Name": "S0_SOC_VRD_Curr",
-                "iout2_Scale": 1,
                 "iout3_Max": 100,
                 "iout3_Name": "S0_DIMM_VR1_Curr",
-                "iout3_Scale": 1,
                 "iout4_Max": 100,
                 "iout4_Name": "S0_DIMM_VR2_Curr",
-                "iout4_Scale": 1,
                 "iout5_Max": 100,
                 "iout5_Name": "S0_RCA_VRD_Curr",
-                "iout5_Scale": 1,
                 "power1_Max": 200,
                 "power1_Name": "S0_Core_VRD_Pwr",
                 "power2_Max": 200,
@@ -1762,19 +1851,14 @@
                 "Type": "smpro_hwmon",
                 "iout1_Max": 100,
                 "iout1_Name": "S1_Core_VRD_Curr",
-                "iout1_Scale": 1,
                 "iout2_Max": 100,
                 "iout2_Name": "S1_SOC_VRD_Curr",
-                "iout2_Scale": 1,
                 "iout3_Max": 100,
                 "iout3_Name": "S1_DIMM_VR1_Curr",
-                "iout3_Scale": 1,
                 "iout4_Max": 100,
                 "iout4_Name": "S1_DIMM_VR2_Curr",
-                "iout4_Scale": 1,
                 "iout5_Max": 100,
                 "iout5_Name": "S1_RCA_VRD_Curr",
-                "iout5_Scale": 1,
                 "power1_Max": 200,
                 "power1_Name": "S1_Core_VRD_Pwr",
                 "power2_Max": 200,
@@ -1851,5 +1935,37 @@
             "MACAddress": "$BOARD_INFO_AM1"
         },
         "xyz.openbmc_project.Inventory.Item.System": {}
+    },
+    {
+        "Exposes": [
+            {
+                "ConnectsToType": "MB Upstream Port",
+                "Name": "PowerSupply$ADDRESS % 80 Downstream Port",
+                "PowerPort": true,
+                "Type": "DownstreamPort"
+            }
+        ],
+        "Name": "PowerSupply$ADDRESS % 80",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 6, 'ADDRESS': 80})",
+            "OR",
+            "xyz.openbmc_project.FruDevice({'BUS': 6, 'ADDRESS': 81})",
+            "AND",
+            "FOUND('Mt.Jade')"
+        ],
+        "Type": "PowerSupply",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$PRODUCT_MANUFACTURER",
+            "Model": "$PRODUCT_PRODUCT_NAME",
+            "PartNumber": "$PRODUCT_PART_NUMBER",
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.AssetTag": {
+            "AssetTag": "$PRODUCT_ASSET_TAG"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": false,
+            "HotPluggable": false
+        }
     }
 ]
