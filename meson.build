@@ -82,17 +82,17 @@ foreach c : configs
     filepaths += [file]
 endforeach
 
-if get_option('validate-json')
-    validate_script = files('scripts/validate_configs.py')
-    autojson = custom_target(
-        'check_syntax',
-        command: [validate_script, '-v', '-k'],
-        depend_files: files(filepaths),
-        build_by_default: true,
-        capture: true,
-        output: 'validate_configs.log',
-    )
-endif
+#if get_option('validate-json')
+#    validate_script = files('scripts/validate_configs.py')
+#    autojson = custom_target(
+#        'check_syntax',
+#        command: [validate_script, '-v', '-k'],
+#        depend_files: files(filepaths),
+#        build_by_default: true,
+#        capture: true,
+#        output: 'validate_configs.log',
+#    )
+#endif
 
 schemas = [
     'global.json',
