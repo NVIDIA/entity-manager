@@ -26,9 +26,6 @@
                                 },
                                 "SerialNumber": {
                                     "type": "string"
-                                },
-                                "SKU": {
-                                    "type": "string"
                                 }
                             },
                             "required": [
