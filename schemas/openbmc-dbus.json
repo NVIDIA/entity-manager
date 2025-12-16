@@ -46,6 +46,16 @@
                             "required": ["AssetTag"],
                             "type": "object"
                         },
+                        "SKU": {
+                            "additionalProperties": false,
+                            "properties": {
+                                "SKU": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": ["SKU"],
+                            "type": "object"
+                        },
                         "Compatible": {
                             "additionalProperties": false,
                             "properties": {

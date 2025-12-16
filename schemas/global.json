@@ -59,6 +59,9 @@
                 "xyz.openbmc_project.Inventory.Decorator.AssetTag": {
                     "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Decorator/AssetTag"
                 },
+                "xyz.openbmc_project.Inventory.Decorator.SKU": {
+                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Decorator/SKU"
+                },
                 "xyz.openbmc_project.Inventory.Decorator.Cable": {
                     "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Decorator/Cable"
                 },

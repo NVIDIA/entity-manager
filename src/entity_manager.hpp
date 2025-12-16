@@ -111,10 +111,12 @@ inline void logDeviceAdded(const nlohmann::json& record)
     auto findType = record.find("Type");
     auto findAsset =
         record.find("xyz.openbmc_project.Inventory.Decorator.Asset");
+    auto findSKU = record.find("xyz.openbmc_project.Inventory.Decorator.SKU");
 
     std::string model = "Unknown";
     std::string type = "Unknown";
     std::string sn = "Unknown";
+    std::string sku = "Unknown";
     std::string name = "Unknown";
 
     if (findType != record.end())
@@ -142,6 +144,23 @@ inline void logDeviceAdded(const nlohmann::json& record)
             }
         }
     }
+    if (findSKU != record.end())
+    {
+        auto findSkuValue = findSKU->find("SKU");
+        if (findSkuValue != findSKU->end())
+        {
+            const std::string* getSkuValue =
+                findSkuValue->get_ptr<const std::string*>();
+            if (getSkuValue != nullptr)
+            {
+                sku = *getSkuValue;
+            }
+            else
+            {
+                sku = findSkuValue->dump();
+            }
+        }
+    }
 
     auto findName = record.find("Name");
     if (findName != record.end())
@@ -149,11 +168,11 @@ inline void logDeviceAdded(const nlohmann::json& record)
         name = findName->get<std::string>();
     }
 
-    sd_journal_send("MESSAGE=Inventory Added: %s", name.c_str(), "PRIORITY=%i",
-                    LOG_INFO, "REDFISH_MESSAGE_ID=%s",
-                    "OpenBMC.0.1.InventoryAdded",
-                    "REDFISH_MESSAGE_ARGS=%s,%s,%s", model.c_str(),
-                    type.c_str(), sn.c_str(), "NAME=%s", name.c_str(), NULL);
+    sd_journal_send(
+        "MESSAGE=Inventory Added: %s", name.c_str(), "PRIORITY=%i", LOG_INFO,
+        "REDFISH_MESSAGE_ID=%s", "OpenBMC.0.1.InventoryAdded",
+        "REDFISH_MESSAGE_ARGS=%s,%s,%s,%s", model.c_str(), type.c_str(),
+        sn.c_str(), sku.c_str(), "NAME=%s", name.c_str(), NULL);
 }
 
 inline void logDeviceRemoved(const nlohmann::json& record)
@@ -165,10 +184,12 @@ inline void logDeviceRemoved(const nlohmann::json& record)
     auto findType = record.find("Type");
     auto findAsset =
         record.find("xyz.openbmc_project.Inventory.Decorator.Asset");
+    auto findSKU = record.find("xyz.openbmc_project.Inventory.Decorator.SKU");
 
     std::string model = "Unknown";
     std::string type = "Unknown";
     std::string sn = "Unknown";
+    std::string sku = "Unknown";
     std::string name = "Unknown";
 
     if (findType != record.end())
@@ -196,6 +217,23 @@ inline void logDeviceRemoved(const nlohmann::json& record)
             }
         }
     }
+    if (findSKU != record.end())
+    {
+        auto findSkuValue = findSKU->find("SKU");
+        if (findSkuValue != findSKU->end())
+        {
+            const std::string* getSkuValue =
+                findSkuValue->get_ptr<const std::string*>();
+            if (getSkuValue != nullptr)
+            {
+                sku = *getSkuValue;
+            }
+            else
+            {
+                sku = findSkuValue->dump();
+            }
+        }
+    }
 
     auto findName = record.find("Name");
     if (findName != record.end())
@@ -203,9 +241,9 @@ inline void logDeviceRemoved(const nlohmann::json& record)
         name = findName->get<std::string>();
     }
 
-    sd_journal_send("MESSAGE=Inventory Removed: %s", name.c_str(),
-                    "PRIORITY=%i", LOG_INFO, "REDFISH_MESSAGE_ID=%s",
-                    "OpenBMC.0.1.InventoryRemoved",
-                    "REDFISH_MESSAGE_ARGS=%s,%s,%s", model.c_str(),
-                    type.c_str(), sn.c_str(), "NAME=%s", name.c_str(), NULL);
+    sd_journal_send(
+        "MESSAGE=Inventory Removed: %s", name.c_str(), "PRIORITY=%i", LOG_INFO,
+        "REDFISH_MESSAGE_ID=%s", "OpenBMC.0.1.InventoryRemoved",
+        "REDFISH_MESSAGE_ARGS=%s,%s,%s,%s", model.c_str(), type.c_str(),
+        sn.c_str(), sku.c_str(), "NAME=%s", name.c_str(), NULL);
 }
