@@ -1131,6 +1131,10 @@ void postToDbus(const nlohmann::json& newConfiguration,
                                 "xyz.openbmc_project.Configuration." + itemType,
                                 boardNameOrig);
 
+            // Reset jsonPointerPath to the item root before populating item
+            // interface
+            jsonPointerPath =
+                jsonPointerPathBoard + std::to_string(exposesIndex);
             populateInterfaceFromJson(systemConfiguration, jsonPointerPath,
                                       itemIface, item, objServer,
                                       getPermission(itemType));
