@@ -50,6 +50,7 @@
 #include <set>
 #include <sstream>
 #include <string>
+#include <string_view>
 #include <thread>
 #include <utility>
 #include <variant>
@@ -152,6 +153,20 @@ static int busStrToInt(const std::string_view busName)
     return val;
 }
 
+/**
+ * @brief Retrieve the root I2C bus number for a muxed bus.
+ *
+ * Resolves the mux_device symlink for the given bus to determine which
+ * root bus it originates from. The symlink target filename is expected
+ * to have the format "<root-bus>-<address>".
+ *
+ * Example: For bus 18, if /sys/bus/i2c/devices/i2c-18/mux_device points to
+ *          ../2-0070, this function returns 2.
+ *
+ * @param[in] bus - The I2C bus number to query.
+ * @return The root bus number, or -1 if the bus is not behind a mux
+ *         or the symlink format is unexpected.
+ */
 static int getRootBus(size_t bus)
 {
     auto ec = std::error_code();
@@ -170,7 +185,16 @@ static int getRootBus(size_t bus)
     {
         return -1;
     }
-    return std::stoi(filename.substr(0, findBus));
+
+    int rootBus = -1;
+    std::string_view busStr(filename.data(), findBus);
+    auto [ptr, errc] = std::from_chars(busStr.begin(), busStr.end(), rootBus);
+    if (errc != std::errc{} || ptr != busStr.end())
+    {
+        return -1;
+    }
+
+    return rootBus;
 }
 
 static bool isMuxBus(size_t bus)
