@@ -76,6 +76,10 @@
                 "PollingInterval": {
                     "description": "Health check interval in seconds. 0 to disable.",
                     "type": "string"
+                },
+                "IgnoreMessageTypes": {
+                    "description": "A comma separated list of MCTP message types in decimal format to be ignored by BusOwner.",
+                    "type": "string"
                 }
             },
             "required": ["Name", "Type", "Interface", "USBPath"],
