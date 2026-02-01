@@ -70,7 +70,7 @@ const boost::container::flat_map<const char*, probe_type_codes, CmpStr>
                 {"FOUND", probe_type_codes::FOUND},
                 {"MATCH_ONE", probe_type_codes::MATCH_ONE}}};
 
-static constexpr std::array<const char*, 11> settableInterfaces = {
+static constexpr std::array<const char*, 12> settableInterfaces = {
     "FanProfile",
     "Pid",
     "Pid.Zone",
@@ -78,6 +78,7 @@ static constexpr std::array<const char*, 11> settableInterfaces = {
     "Thresholds",
     "Polling",
     "VoltageLeakDetector",
+    "LeakDetectionPolicy",
     "xyz.openbmc_project.Inventory.Decorator.AssetTag",
     "xyz.openbmc_project.Inventory.Decorator.Asset",
     "xyz.openbmc_project.Inventory.Decorator.SKU",
