@@ -34,3 +34,9 @@ option(
     value: true,
     description: 'Build gpio presence daemon',
 )
+option(
+    'cbc-tray-topology',
+    type: 'boolean',
+    value: false,
+    description: 'Build CBC tray topology parser service',
+)

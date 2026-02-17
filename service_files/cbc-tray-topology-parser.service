@@ -1,0 +1,17 @@
+[Unit]
+Description=CBC Tray Topology Parser Service
+After=xyz.openbmc_project.EntityManager.service
+After=xyz.openbmc_project.ObjectMapper.service
+Requires=xyz.openbmc_project.EntityManager.service
+Requires=xyz.openbmc_project.ObjectMapper.service
+
+[Service]
+ExecStart=/usr/libexec/entity-manager/cbc-tray-topology-parser
+Type=dbus
+BusName=xyz.openbmc_project.CBCTrayTopologyParser
+SyslogIdentifier=cbc-tray-topology-parser
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

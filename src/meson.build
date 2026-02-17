@@ -66,6 +66,16 @@ if get_option('devicetree-vpd')
     )
 endif
 
+if get_option('cbc-tray-topology')
+    executable(
+        'cbc-tray-topology-parser',
+        'cbc_tray_topology_parser.cpp',
+        dependencies: [sdbusplus, phosphor_logging_dep],
+        install: true,
+        install_dir: installdir,
+    )
+endif
+
 if get_option('gpio-presence')
     subdir('gpio-presence')
 endif
