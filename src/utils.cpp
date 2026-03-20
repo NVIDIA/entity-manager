@@ -258,7 +258,7 @@ std::optional<std::string> templateCharReplace(
                                                          '/'};
         size_t nextItemIdx = start + templateName.size() + 1;
 
-        if (nextItemIdx > strPtr->size() ||
+        if (nextItemIdx >= strPtr->size() ||
             std::find(mathChars.begin(), mathChars.end(),
                       strPtr->at(nextItemIdx)) == mathChars.end())
         {
