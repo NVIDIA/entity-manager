@@ -227,6 +227,36 @@ TEST(TemplateCharReplace, replaceSecondAsInt)
     EXPECT_EQ(expected, j["foo"]);
 }
 
+TEST(TemplateCharReplace, replaceVarFollowedByOneChar)
+{
+    // When $TEST ends 1 char before string end, nextItemIdx == strPtr->size().
+    // Boundary check must use >= (not >) to guard .at(nextItemIdx).
+    nlohmann::json j = {{"foo", "$TEST_"}};
+    auto it = j.begin();
+    DBusInterface data;
+    data["TEST"] = 23;
+
+    templateCharReplace(it, data, 0);
+
+    nlohmann::json expected = "23_";
+    EXPECT_EQ(expected, j["foo"]);
+}
+
+TEST(TemplateCharReplace, replaceVarAtEndOfLongerString)
+{
+    // Same boundary condition but with prefix text, matching production
+    // pattern like "GPU_$INSTANCE_NUMBER (HGX_GPU_SXM_$SXM_INSTANCE_NUMBER)"
+    nlohmann::json j = {{"foo", "prefix $TEST_"}};
+    auto it = j.begin();
+    DBusInterface data;
+    data["TEST"] = std::string("Value");
+
+    templateCharReplace(it, data, 0);
+
+    nlohmann::json expected = "prefix Value_";
+    EXPECT_EQ(expected, j["foo"]);
+}
+
 TEST(TemplateCharReplace, singleHex)
 {
     nlohmann::json j = {{"foo", "0x54"}};
