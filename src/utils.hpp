@@ -161,3 +161,12 @@ inline bool deviceHasLogging(const nlohmann::json& json)
 /// \param dbusValue the property value being matched to a probe.
 /// \return true if the dbusValue matched the probe otherwise false.
 bool matchProbe(const nlohmann::json& probe, const DBusValueVariant& dbusValue);
+
+// Nvidia Added Code Start
+/// \brief Resolve the element type of a JSON array, resolves mixed
+///        (number_integer / number_unsigned) array
+/// \param array a JSON array value.
+/// \return the resolved element value_t, or std::nullopt
+std::optional<nlohmann::json::value_t> resolveArrayElementType(
+    const nlohmann::json& array);
+// Nvidia Added Code End

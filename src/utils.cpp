@@ -415,3 +415,31 @@ bool matchProbe(const nlohmann::json& probe, const DBusValueVariant& dbusValue)
 {
     return std::visit(MatchProbeForwarder(probe), dbusValue);
 }
+
+// Nvidia Added Code Start
+std::optional<nlohmann::json::value_t> resolveArrayElementType(
+    const nlohmann::json& array)
+{
+    if (!array.is_array() || array.empty())
+    {
+        return std::nullopt;
+    }
+
+    auto type = array[0].type();
+    for (const auto& item : array)
+    {
+        if (item.type() != type)
+        {
+            if (item.is_number_integer() &&
+                (type == nlohmann::json::value_t::number_integer ||
+                 type == nlohmann::json::value_t::number_unsigned))
+            {
+                type = nlohmann::json::value_t::number_integer;
+                continue;
+            }
+            return std::nullopt;
+        }
+    }
+    return type;
+}
+// Nvidia Added Code End

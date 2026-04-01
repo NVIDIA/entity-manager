@@ -215,11 +215,26 @@ void addArrayToDbus(const std::string& name, const nlohmann::json& array,
     std::vector<PropertyType> values;
     for (const auto& property : array)
     {
-        auto ptr = property.get_ptr<const PropertyType*>();
-        if (ptr != nullptr)
+        // auto ptr = property.get_ptr<const PropertyType*>();
+        // if (ptr != nullptr)
+        // {
+        //     values.emplace_back(*ptr);
+        // }
+
+        // Nvidia Added Code Start
+        if (property.is_number())
         {
-            values.emplace_back(*ptr);
+            values.emplace_back(property.get<PropertyType>());
         }
+        else
+        {
+            auto ptr = property.get_ptr<const PropertyType*>();
+            if (ptr != nullptr)
+            {
+                values.emplace_back(*ptr);
+            }
+        }
+        // Nvidia Added Code End
     }
 
     if (permission == sdbusplus::asio::PropertyPermission::readOnly)
@@ -456,21 +471,15 @@ void populateInterfaceFromJson(
             {
                 continue;
             }
-            type = value[0].type();
-            bool isLegal = true;
-            for (const auto& arrayItem : value)
-            {
-                if (arrayItem.type() != type)
-                {
-                    isLegal = false;
-                    break;
-                }
-            }
-            if (!isLegal)
+            // Nvidia Added Code Start
+            auto resolvedType = resolveArrayElementType(value);
+            if (!resolvedType)
             {
                 std::cerr << "dbus format error" << value << "\n";
                 continue;
             }
+            type = *resolvedType;
+            // Nvidia Added Code End
         }
         if (type == nlohmann::json::value_t::object)
         {

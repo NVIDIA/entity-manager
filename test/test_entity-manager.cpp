@@ -920,3 +920,132 @@ TEST(MatchProbe, nullNeqArray)
     DBusValueVariant v = std::vector<uint8_t>{};
     EXPECT_FALSE(matchProbe(j, v));
 }
+
+// Nvidia Added Code Start
+TEST(ResolveArrayElementType, uintEqUint)
+{
+    nlohmann::json j = R"([0, 0, 0, 1, 5])"_json;
+    auto result = resolveArrayElementType(j);
+    if (!result.has_value())
+    {
+        FAIL() << "expected number_unsigned";
+    }
+    EXPECT_EQ(*result, nlohmann::json::value_t::number_unsigned);
+}
+
+TEST(ResolveArrayElementType, intEqInt)
+{
+    nlohmann::json j = R"([-1, -2, -3])"_json;
+    auto result = resolveArrayElementType(j);
+    if (!result.has_value())
+    {
+        FAIL() << "expected number_integer";
+    }
+    EXPECT_EQ(*result, nlohmann::json::value_t::number_integer);
+}
+
+TEST(ResolveArrayElementType, intFirstUintLastEqInt)
+{
+    nlohmann::json j = R"([-1, -1, -1, -1, 2])"_json;
+    auto result = resolveArrayElementType(j);
+    if (!result.has_value())
+    {
+        FAIL() << "expected number_integer";
+    }
+    EXPECT_EQ(*result, nlohmann::json::value_t::number_integer);
+}
+
+TEST(ResolveArrayElementType, uintFirstIntMiddleEqInt)
+{
+    nlohmann::json j = R"([0, 0, 0, -1, 5])"_json;
+    auto result = resolveArrayElementType(j);
+    if (!result.has_value())
+    {
+        FAIL() << "expected number_integer";
+    }
+    EXPECT_EQ(*result, nlohmann::json::value_t::number_integer);
+}
+
+TEST(ResolveArrayElementType, mixedIntUintSparseEqInt)
+{
+    nlohmann::json j = R"([-1, -1, -1, 1, 5])"_json;
+    auto result = resolveArrayElementType(j);
+    if (!result.has_value())
+    {
+        FAIL() << "expected number_integer";
+    }
+    EXPECT_EQ(*result, nlohmann::json::value_t::number_integer);
+}
+
+TEST(ResolveArrayElementType, stringEqString)
+{
+    nlohmann::json j = R"(["foo", "bar"])"_json;
+    auto result = resolveArrayElementType(j);
+    if (!result.has_value())
+    {
+        FAIL() << "expected string";
+    }
+    EXPECT_EQ(*result, nlohmann::json::value_t::string);
+}
+
+TEST(ResolveArrayElementType, boolEqBool)
+{
+    nlohmann::json j = R"([true, false, true])"_json;
+    auto result = resolveArrayElementType(j);
+    if (!result.has_value())
+    {
+        FAIL() << "expected boolean";
+    }
+    EXPECT_EQ(*result, nlohmann::json::value_t::boolean);
+}
+
+TEST(ResolveArrayElementType, stringNeqUint)
+{
+    nlohmann::json j = R"(["foo", 1])"_json;
+    auto result = resolveArrayElementType(j);
+    EXPECT_FALSE(result.has_value());
+}
+
+TEST(ResolveArrayElementType, boolNeqUint)
+{
+    nlohmann::json j = R"([true, 1])"_json;
+    auto result = resolveArrayElementType(j);
+    EXPECT_FALSE(result.has_value());
+}
+
+TEST(ResolveArrayElementType, uintNeqString)
+{
+    nlohmann::json j = R"([1, "foo"])"_json;
+    auto result = resolveArrayElementType(j);
+    EXPECT_FALSE(result.has_value());
+}
+
+TEST(ResolveArrayElementType, emptyNeqAny)
+{
+    nlohmann::json j = R"([])"_json;
+    auto result = resolveArrayElementType(j);
+    EXPECT_FALSE(result.has_value());
+}
+
+TEST(ResolveArrayElementType, singleIntEqInt)
+{
+    nlohmann::json j = R"([-1])"_json;
+    auto result = resolveArrayElementType(j);
+    if (!result.has_value())
+    {
+        FAIL() << "expected number_integer";
+    }
+    EXPECT_EQ(*result, nlohmann::json::value_t::number_integer);
+}
+
+TEST(ResolveArrayElementType, singleUintEqUint)
+{
+    nlohmann::json j = R"([42])"_json;
+    auto result = resolveArrayElementType(j);
+    if (!result.has_value())
+    {
+        FAIL() << "expected number_unsigned";
+    }
+    EXPECT_EQ(*result, nlohmann::json::value_t::number_unsigned);
+}
+// Nvidia Added Code End
