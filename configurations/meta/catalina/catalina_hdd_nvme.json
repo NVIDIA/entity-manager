@@ -1,0 +1,56 @@
+{
+    "Exposes": [
+        {
+            "Address": "0x6a",
+            "Bus": "48",
+            "Name": "HDDBOARD_SSD0_TEMP_C",
+            "PEC": "Required",
+            "PowerState": "On",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 1.4,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 70
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 0.1,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 5
+                }
+            ],
+            "Type": "NVME1000"
+        },
+        {
+            "Address": "0x6a",
+            "Bus": "50",
+            "Name": "HDDBOARD_SSD2_TEMP_C",
+            "PEC": "Required",
+            "PowerState": "On",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 1.4,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 70
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 0.1,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 5
+                }
+            ],
+            "Type": "NVME1000"
+        }
+    ],
+    "Name": "Catalina HDD NVMe",
+    "Probe": "FOUND('Catalina HDD Carrier')",
+    "Type": "Board",
+    "xyz.openbmc_project.Inventory.Item.Chassis": {}
+}

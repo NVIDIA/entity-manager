@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$defs": {
+        "NvidiaMctpVdm": {
+            "description": "Nvidia device that implements an MCTP VDM protocol to provide sensor readings - implemented in dbus-sensors",
+            "properties": {
+                "Name": {
+                    "description": "A recognisable name for the device",
+                    "type": "string"
+                },
+                "PollRate": {
+                    "description": "Poll the device at this rate, specified in milliseconds, to fetch sensors",
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NvidiaMctpVdm"
+                }
+            },
+            "required": ["Name", "Type"],
+            "type": "object"
+        }
+    }
+}

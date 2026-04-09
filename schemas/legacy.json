@@ -265,6 +265,32 @@
             "required": ["Name", "Type", "Connector"],
             "type": "object"
         },
+        "HPEFan": {
+            "additionalProperties": false,
+            "properties": {
+                "Index": {
+                    "$ref": "#/$defs/Types/Index"
+                },
+                "Connector": {
+                    "$ref": "#/$defs/Types/Connector"
+                },
+                "Presence": {
+                    "$ref": "#/$defs/Types/Presence"
+                },
+                "MaxReading": {
+                    "$ref": "#/$defs/Types/MaxReading"
+                },
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "HPEFan"
+                }
+            },
+            "required": ["Name", "Type", "Connector"],
+            "type": "object"
+        },
         "XeonCPU": {
             "description": "implemented in dbus-sensors: IntelCPUSensor",
             "additionalProperties": false,
@@ -357,10 +383,18 @@
                 "Type": {
                     "type": "string",
                     "enum": [
+                        "PCA9537",
+                        "PCA9542Mux",
                         "PCA9543Mux",
                         "PCA9544Mux",
                         "PCA9545Mux",
-                        "PCA9546Mux"
+                        "PCA9546Mux",
+                        "PCA9547Mux",
+                        "PCA9548Mux",
+                        "PCA9846Mux",
+                        "PCA9847Mux",
+                        "PCA9848Mux",
+                        "PCA9849Mux"
                     ]
                 }
             },
@@ -475,44 +509,6 @@
                 }
             },
             "required": ["Name", "Type", "Units", "EntityId", "EntityInstance"],
-            "type": "object"
-        },
-        "Port": {
-            "description": "https://github.com/openbmc/docs/blob/master/designs/physical-topology.md",
-            "additionalProperties": false,
-            "properties": {
-                "Name": {
-                    "$ref": "#/$defs/Types/Name"
-                },
-                "Type": {
-                    "description": "This enum may be extended as described in the design",
-                    "type": "string",
-                    "enum": ["MB Upstream Port"]
-                }
-            },
-            "required": ["Name", "Type"],
-            "type": "object"
-        },
-        "DownstreamPort": {
-            "description": "https://github.com/openbmc/docs/blob/master/designs/physical-topology.md",
-            "additionalProperties": false,
-            "properties": {
-                "Name": {
-                    "$ref": "#/$defs/Types/Name"
-                },
-                "ConnectsToType": {
-                    "description": "Should be equal to the 'Type' property on the upstream port",
-                    "$ref": "#/$defs/Types/ConnectsToType"
-                },
-                "PowerPort": {
-                    "$ref": "#/$defs/Types/PowerPort"
-                },
-                "Type": {
-                    "type": "string",
-                    "const": "DownstreamPort"
-                }
-            },
-            "required": ["Name", "Type", "ConnectsToType"],
             "type": "object"
         },
         "PSUPresence": {
@@ -663,6 +659,12 @@
                 "Name": {
                     "$ref": "#/$defs/Types/Name"
                 },
+                "NamePressure": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "NameHumidity": {
+                    "$ref": "#/$defs/Types/Name"
+                },
                 "Address": {
                     "$ref": "#/$defs/Types/Address"
                 },
@@ -699,11 +701,13 @@
                 "Type": {
                     "enum": [
                         "ADM1021",
+                        "BME280",
                         "DPS310",
                         "EMC1403",
                         "EMC1412",
                         "EMC1413",
                         "EMC1414",
+                        "G751",
                         "HDC1080",
                         "JC42",
                         "LM75A",
@@ -720,6 +724,7 @@
                         "SBTSI",
                         "SI7020",
                         "TMP100",
+                        "TMP1075",
                         "TMP112",
                         "TMP175",
                         "TMP411",
@@ -755,6 +760,11 @@
                 },
                 "Thresholds": {
                     "$ref": "#/$defs/Types/Thresholds"
+                },
+                "PEC": {
+                    "description": "Enable SMBus PEC generation and verification.",
+                    "type": "string",
+                    "enum": ["Required", "NotRequired"]
                 },
                 "Type": {
                     "const": "NVME1000"
@@ -803,17 +813,20 @@
                 "(vin|vmon|iin|pin|maxpin)_Name$": {
                     "$ref": "#/$defs/Types/Name"
                 },
-                "(in|in_voltage|vout)(1[0-7]|[0-9])_Name$": {
+                "(in|in_voltage|vout|in_current|in_power)(1[0-7]|[0-9])_Name$": {
                     "$ref": "#/$defs/Types/Name"
                 },
                 "(curr|iin|iout|pin|pout|power|temp)(1[0-7]|[1-9])_Name$": {
                     "$ref": "#/$defs/Types/Name"
                 },
-                "(in|in_voltage)(1[0-7]|[0-9])_Scale$": {
+                "(in|in_voltage|in_current|in_power)(1[0-7]|[0-9])_Scale$": {
                     "$ref": "#/$defs/Types/ScaleValue"
                 },
                 "(curr|power|iout)(1[0-7]|[1-9])_Scale$": {
                     "$ref": "#/$defs/Types/ScaleValue"
+                },
+                "in(1[0-7]|[0-9])_PollRate$": {
+                    "$ref": "#/$defs/Types/PollRate"
                 },
                 "in(1[0-7]|[0-9])_PowerState$": {
                     "$ref": "#/$defs/Types/PowerState"
@@ -827,8 +840,14 @@
                 "power(1[0-7]|[1-9])?_Max$": {
                     "$ref": "#/$defs/Types/MinMaxType"
                 },
-                "(power|curr|iout|pout|pin)(1[0-7]|[1-9])?_Offset$": {
+                "fan1_(Min|Max)$": {
+                    "$ref": "#/$defs/Types/MinMaxType"
+                },
+                "(in|power|curr|iout|iin|pout|pin)(1[0-7]|[1-9])?_Offset$": {
                     "$ref": "#/$defs/Types/OffsetType"
+                },
+                "^(in|in_voltage|vin|vmon|vout|voltage)(1[0-7]|[0-9])?_ShuntResistorInOhms$": {
+                    "$ref": "#/$defs/Types/ShuntResistorInOhms"
                 }
             },
             "properties": {
@@ -849,6 +868,9 @@
                 },
                 "fan1_Name": {
                     "$ref": "#/$defs/Types/Name"
+                },
+                "iin_Scale": {
+                    "$ref": "#/$defs/Types/ScaleValue"
                 },
                 "pin_Scale": {
                     "$ref": "#/$defs/Types/ScaleValue"
@@ -929,6 +951,7 @@
                         "ISL69260",
                         "ISL69269",
                         "LM25066",
+                        "LM5066I",
                         "LTC2945",
                         "LTC4282",
                         "LTC4286",
@@ -945,11 +968,19 @@
                         "MAX34451",
                         "MP2856",
                         "MP2857",
+                        "MP2869",
+                        "MP2925",
+                        "MP2929",
                         "MP2971",
                         "MP2973",
                         "MP2975",
+                        "MP2993",
                         "MP5023",
+                        "MP5926",
                         "MP5990",
+                        "MP5998",
+                        "MP9945",
+                        "MP29612",
                         "MPQ8785",
                         "NCP4200",
                         "PLI1209BC",
@@ -957,6 +988,7 @@
                         "PXE1610",
                         "RAA228000",
                         "RAA228004",
+                        "RAA228006",
                         "RAA228228",
                         "RAA228620",
                         "RAA229001",
@@ -965,8 +997,10 @@
                         "RTQ6056",
                         "SBRMI",
                         "smpro_hwmon",
+                        "SQ52206",
                         "SY24655",
                         "TDA38640",
+                        "TPS25990",
                         "TPS53679",
                         "TPS546D24",
                         "XDP710",
@@ -1057,8 +1091,12 @@
                 },
                 "Type": {
                     "const": "BMC"
+                },
+                "FirmwareInfo": {
+                    "$ref": "firmware.json#/$defs/FirmwareInfoDef"
                 }
-            }
+            },
+            "required": ["Name", "Type"]
         },
         "UCD90XXX": {
             "description": "used in https://github.com/openbmc/phosphor-power",
@@ -1159,14 +1197,14 @@
                             "type": "number"
                         },
                         "type": "array"
+                    },
+                    "LED": {
+                        "description": "Name of LED group to assert on lower critical threshold event",
+                        "type": "string"
                     }
                 },
                 "required": ["Name", "Pwm", "Tachs"],
                 "type": "object"
-            },
-            "ConnectsToType": {
-                "type": "string",
-                "const": "MB Upstream Port"
             },
             "CpuID": {
                 "type": "number",
@@ -1275,9 +1313,6 @@
             "PowerFactorMin": {
                 "type": "number"
             },
-            "PowerPort": {
-                "type": "boolean"
-            },
             "PowerScaleFactor": {
                 "type": "number"
             },
@@ -1314,6 +1349,10 @@
             },
             "ScaleValue": {
                 "type": "number"
+            },
+            "ShuntResistorInOhms": {
+                "type": "number",
+                "exclusiveMinimum": 0
             },
             "SensorType": {
                 "enum": ["current", "power", "voltage"]
@@ -1366,8 +1405,21 @@
                 "type": "number"
             },
             "PollRate": {
+                "description": "Interval in seconds between consecutive polls",
                 "type": "number",
                 "exclusiveMinimum": 0
+            },
+            "Type": {
+                "type": "string",
+                "enum": [
+                    "RAA229621",
+                    "IPSPS1",
+                    "MAX334440",
+                    "MAX31790",
+                    "SIC450",
+                    "PIC32",
+                    "Q50SN12072"
+                ]
             }
         }
     }

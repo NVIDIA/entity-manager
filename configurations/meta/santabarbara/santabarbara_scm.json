@@ -1,0 +1,547 @@
+{
+    "Exposes": [
+        {
+            "Index": 0,
+            "Name": "SCM_P12V_VOLT_V",
+            "ScaleFactor": 0.112359551,
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 0.264,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 13.2
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 0.216,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 10.8
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "Index": 1,
+            "Name": "SCM_P5V_VOLT_V",
+            "ScaleFactor": 0.27173913,
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 0.1092,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 5.46
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 0.0988,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 4.94
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "Index": 2,
+            "Name": "SCM_P3V3_VOLT_V",
+            "ScaleFactor": 0.410677618,
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 0.0693,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 3.465
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 0.0627,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 3.135
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "Index": 3,
+            "Name": "SCM_P2V5_VOLT_V",
+            "ScaleFactor": 0.54200542,
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 0.0525,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 2.625
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 0.0475,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 2.375
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "Index": 4,
+            "Name": "SCM_P1V8_VOLT_V",
+            "ScaleFactor": 0.750469043,
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 0.0378,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 1.89
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 0.0342,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 1.71
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "Index": 5,
+            "Name": "SCM_PGPPA_VOLT_V",
+            "ScaleFactor": 0.410677618,
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 0.0378,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 1.89
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 0.0342,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 1.71
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "Index": 6,
+            "Name": "SCM_P1V2_VOLT_V",
+            "ScaleFactor": 1,
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 0.0252,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 1.26
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 0.0228,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 1.14
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "Index": 8,
+            "Name": "SCM_P1V0_VOLT_V",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 0.021,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 1.05
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 0.019,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 0.95
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "Name": "BMC",
+            "Type": "BMC"
+        },
+        {
+            "Address": "$address",
+            "Bus": "$bus",
+            "Name": "Santa Barbara SCM FRU",
+            "Type": "EEPROM"
+        },
+        {
+            "Name": "PDB_Cable_J311",
+            "PresencePinNames": [
+                "PDB_PRSNT_J311_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "PDB_Cable_J312",
+            "PresencePinNames": [
+                "PDB_PRSNT_J312_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "PDB_Cable_J313",
+            "PresencePinNames": [
+                "PDB_PRSNT_J313_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "PDB_Cable_J314",
+            "PresencePinNames": [
+                "PDB_PRSNT_J314_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "E1SBP_Cable_0A",
+            "PresencePinNames": [
+                "FM_CBL_PRSNT_0A_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "SWB_Cable_0B",
+            "PresencePinNames": [
+                "FM_CBL_PRSNT_0B_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "Rainbow_Cable_1A",
+            "PresencePinNames": [
+                "FM_CBL_PRSNT_1A_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "Rainbow_Cable_1B",
+            "PresencePinNames": [
+                "FM_CBL_PRSNT_1B_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "Rainbow_Cable_2A",
+            "PresencePinNames": [
+                "FM_CBL_PRSNT_2A_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "Rainbow_Cable_2B",
+            "PresencePinNames": [
+                "FM_CBL_PRSNT_2B_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "Rainbow_Cable_3A",
+            "PresencePinNames": [
+                "FM_CBL_PRSNT_3A_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "Rainbow_Cable_3B",
+            "PresencePinNames": [
+                "FM_CBL_PRSNT_3B_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "Rainbow_Cable_4A",
+            "PresencePinNames": [
+                "FM_CBL_PRSNT_4A_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "Rainbow_Cable_4B",
+            "PresencePinNames": [
+                "FM_CBL_PRSNT_4B_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "Leak_Cable_1",
+            "PresencePinNames": [
+                "PRSNT_LEAK_CABLE_1_R_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "Leak_Cable_2",
+            "PresencePinNames": [
+                "PRSNT_LEAK_CABLE_2_R_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Level": "Critical",
+            "Name": "PDB1_Right_Manifold",
+            "PinName": "LEAK_PDB1_RIGHT_MANIFOLD",
+            "Polarity": "High",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Critical",
+            "Name": "PDB1_Left_Manifold",
+            "PinName": "LEAK_PDB1_LEFT_MANIFOLD",
+            "Polarity": "High",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Critical",
+            "Name": "MB_Manifold",
+            "PinName": "LEAK_MB_MANIFOLD",
+            "Polarity": "High",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Warning",
+            "Name": "SWB_Cold_Plate",
+            "PinName": "LEAK_SWB_COLDPLATE",
+            "Polarity": "High",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Warning",
+            "Name": "Rainbow3_Cold_Plate",
+            "PinName": "LEAK_R3_COLDPLATE",
+            "Polarity": "High",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Warning",
+            "Name": "Rainbow2_Cold_Plate",
+            "PinName": "LEAK_R2_COLDPLATE",
+            "Polarity": "High",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Warning",
+            "Name": "Rainbow1_Cold_Plate",
+            "PinName": "LEAK_R1_COLDPLATE",
+            "Polarity": "High",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Warning",
+            "Name": "Rainbow0_Cold_Plate",
+            "PinName": "LEAK_R0_COLDPLATE",
+            "Polarity": "High",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Warning",
+            "Name": "MB_Cold_Plate",
+            "PinName": "LEAK_MB_COLDPLATE",
+            "Polarity": "High",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Address": "0x46",
+            "Bus": 19,
+            "Labels": [
+                "in1",
+                "curr1",
+                "power1"
+            ],
+            "Name": "SCM_PMON_P12V",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 0.264,
+                    "Label": "in1",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 13.2
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 0.216,
+                    "Label": "in1",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 10.8
+                },
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 0.104,
+                    "Label": "curr1",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 5.2
+                },
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 1.248,
+                    "Label": "power1",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 62.4
+                }
+            ],
+            "Type": "INA230",
+            "curr1_Name": "SCM_PMON_P12V_CURR_A",
+            "in1_Name": "SCM_PMON_P12V_VOLT_V",
+            "power1_Name": "SCM_PMON_P12V_PWR_W"
+        },
+        {
+            "Address": "0x40",
+            "Bus": 7,
+            "FirmwareInfo": {
+                "CompatibleHardware": "com.meta.Hardware.Santabarbara.CPLD.LCMXO3D_9400_scm",
+                "VendorIANA": 40981
+            },
+            "MuxOutputs": [
+                {
+                    "Name": "debug-card-mux",
+                    "Polarity": "High"
+                }
+            ],
+            "Name": "Santabarbara_SCM_CPLD",
+            "Type": "LatticeLCMXO3D_9400Firmware"
+        },
+        {
+            "FirmwareInfo": {
+                "CompatibleHardware": "com.meta.Hardware.Santabarbara.SPI.Host",
+                "VendorIANA": 40981
+            },
+            "MuxOutputs": [
+                {
+                    "Name": "FM_MUX1_SEL_R",
+                    "Polarity": "High"
+                }
+            ],
+            "Name": "Santabarbara_BIOS",
+            "SPIControllerIndex": 1,
+            "SPIDeviceIndex": 0,
+            "Type": "SPIFlash"
+        },
+        {
+            "Address": "0x4b",
+            "Bus": 9,
+            "Name": "SCM_TEMP_C",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 0.8,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 40
+                }
+            ],
+            "Type": "TMP75"
+        },
+        {
+            "FirmwareInfo": {
+                "CompatibleHardware": "com.meta.Hardware.Santabarbara.TPM.BMC",
+                "VendorIANA": 40981
+            },
+            "Name": "Santabarbara_TPM",
+            "TPMIndex": 0,
+            "Type": "TPM2Firmware"
+        }
+    ],
+    "Name": "Santa Barbara SCM",
+    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': 'Santa Barbara SCM'})",
+    "Type": "Board",
+    "xyz.openbmc_project.Inventory.Decorator.Asset": {
+        "BuildDate": "$BOARD_MANUFACTURE_DATE",
+        "Manufacturer": "$BOARD_MANUFACTURER",
+        "Model": "$BOARD_PRODUCT_NAME",
+        "PartNumber": "$BOARD_PART_NUMBER",
+        "SerialNumber": "$BOARD_SERIAL_NUMBER",
+        "SparePartNumber": "$BOARD_INFO_AM1"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.AssetTag": {
+        "AssetTag": "$PRODUCT_ASSET_TAG"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.Compatible": {
+        "Names": [
+            "com.meta.Hardware.BMC.Model.Santabarbara"
+        ]
+    },
+    "xyz.openbmc_project.Inventory.Decorator.Revision": {
+        "Version": "$PRODUCT_VERSION"
+    }
+}

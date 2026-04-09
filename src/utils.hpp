@@ -1,76 +1,37 @@
-/*
-// Copyright (c) 2017 Intel Corporation
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//      http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-*/
-/// \file utils.hpp
+// SPDX-License-Identifier: Apache-2.0
+// SPDX-FileCopyrightText: Copyright 2017 Intel Corporation
 
 #pragma once
 
-#include <boost/container/flat_map.hpp>
 #include <nlohmann/json.hpp>
 #include <sdbusplus/asio/connection.hpp>
 #include <sdbusplus/exception.hpp>
 
+#include <charconv>
 #include <filesystem>
-#include <fstream>
-#include <iostream>
-
-constexpr const char* configurationOutDir = "/var/configuration/";
-constexpr const char* versionHashFile = "/var/configuration/version";
-constexpr const char* versionFile = "/etc/os-release";
-
-// NOLINTNEXTLINE(cppcoreguidelines-avoid-non-const-global-variables)
-extern boost::asio::io_context io;
+#include <flat_map>
 
 using DBusValueVariant =
     std::variant<std::string, int64_t, uint64_t, double, int32_t, uint32_t,
-                 int16_t, uint16_t, uint8_t, bool, std::vector<uint8_t>>;
-using DBusInterface = boost::container::flat_map<std::string, DBusValueVariant>;
-using DBusObject = boost::container::flat_map<std::string, DBusInterface>;
+                 int16_t, uint16_t, uint8_t, bool, std::vector<uint8_t>,
+                 std::vector<std::string>>;
+using DBusInterface = std::flat_map<std::string, DBusValueVariant, std::less<>>;
+using DBusObject = std::flat_map<std::string, DBusInterface, std::less<>>;
 using MapperGetSubTreeResponse =
-    boost::container::flat_map<std::string, DBusObject>;
-
-namespace properties
-{
-constexpr const char* interface = "org.freedesktop.DBus.Properties";
-constexpr const char* get = "Get";
-} // namespace properties
-
-namespace power
-{
-const static constexpr char* busname = "xyz.openbmc_project.State.Host";
-const static constexpr char* interface = "xyz.openbmc_project.State.Host";
-const static constexpr char* path = "/xyz/openbmc_project/state/host0";
-const static constexpr char* property = "CurrentHostState";
-} // namespace power
+    std::flat_map<std::string, DBusObject, std::less<>>;
+using FirstIndex = size_t;
+using LastIndex = size_t;
 
 bool findFiles(const std::filesystem::path& dirPath,
                const std::string& matchString,
                std::vector<std::filesystem::path>& foundPaths);
-bool findFiles(const std::vector<std::filesystem::path>&& dirPaths,
+bool findFiles(const std::vector<std::filesystem::path>& dirPaths,
                const std::string& matchString,
                std::vector<std::filesystem::path>& foundPaths);
 
-bool getI2cDevicePaths(
-    const std::filesystem::path& dirPath,
-    boost::container::flat_map<size_t, std::filesystem::path>& busPaths);
+bool getI2cDevicePaths(const std::filesystem::path& dirPath,
+                       std::flat_map<size_t, std::filesystem::path>& busPaths);
 
-bool validateJson(const nlohmann::json& schemaFile,
-                  const nlohmann::json& input);
-
-bool isPowerOn();
-void setupPowerMatch(const std::shared_ptr<sdbusplus::asio::connection>& conn);
 struct DBusInternalError final : public sdbusplus::exception_t
 {
     const char* name() const noexcept override
@@ -93,71 +54,48 @@ struct DBusInternalError final : public sdbusplus::exception_t
     }
 };
 
-inline bool fwVersionIsSame()
-{
-    std::ifstream version(versionFile);
-    if (!version.good())
-    {
-        std::cerr << "Can't read " << versionFile << "\n";
-        return false;
-    }
-
-    std::string versionData;
-    std::string line;
-    while (std::getline(version, line))
-    {
-        versionData += line;
-    }
-
-    std::string expectedHash =
-        std::to_string(std::hash<std::string>{}(versionData));
-
-    std::filesystem::create_directory(configurationOutDir);
-    std::ifstream hashFile(versionHashFile);
-    if (hashFile.good())
-    {
-        std::string hashString;
-        hashFile >> hashString;
-
-        if (expectedHash == hashString)
-        {
-            return true;
-        }
-        hashFile.close();
-    }
-
-    std::ofstream output(versionHashFile);
-    output << expectedHash;
-    return false;
-}
-
-std::optional<std::string> templateCharReplace(
-    nlohmann::json::iterator& keyPair, const DBusObject& object, size_t index,
-    const std::optional<std::string>& replaceStr = std::nullopt);
-
-std::optional<std::string> templateCharReplace(
-    nlohmann::json::iterator& keyPair, const DBusInterface& interface,
-    size_t index, const std::optional<std::string>& replaceStr = std::nullopt);
-
-inline bool deviceHasLogging(const nlohmann::json& json)
-{
-    auto logging = json.find("Logging");
-    if (logging != json.end())
-    {
-        const auto* ptr = logging->get_ptr<const std::string*>();
-        if (ptr != nullptr)
-        {
-            if (*ptr == "Off")
-            {
-                return false;
-            }
-        }
-    }
-    return true;
-}
-
 /// \brief Match a Dbus property against a probe statement.
 /// \param probe the probe statement to match against.
 /// \param dbusValue the property value being matched to a probe.
 /// \return true if the dbusValue matched the probe otherwise false.
 bool matchProbe(const nlohmann::json& probe, const DBusValueVariant& dbusValue);
+
+inline char asciiToLower(char c)
+{
+    // Converts a character to lower case without relying on std::locale
+    if ('A' <= c && c <= 'Z')
+    {
+        c -= static_cast<char>('A' - 'a');
+    }
+    return c;
+}
+
+template <typename T>
+auto iFindFirst(T&& str, std::string_view sub)
+{
+    return std::ranges::search(str, sub, [](char a, char b) {
+        return asciiToLower(a) == asciiToLower(b);
+    });
+}
+
+std::vector<std::string> split(std::string_view str, char delim);
+
+void iReplaceAll(std::string& str, std::string_view search,
+                 std::string_view replace);
+
+void replaceAll(std::string& str, std::string_view search,
+                std::string_view replace);
+
+std::string toLowerCopy(std::string_view str);
+
+template <typename T>
+std::from_chars_result fromCharsWrapper(const std::string_view& str, T& out,
+                                        bool& fullMatch, int base = 10)
+{
+    auto result = std::from_chars(
+        str.data(), std::next(str.begin(), str.size()), out, base);
+
+    fullMatch = result.ptr == std::next(str.begin(), str.size());
+
+    return result;
+}

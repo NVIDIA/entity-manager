@@ -4,6 +4,7 @@
         "FirmwareInfoDef": {
             "description": "This indicates the properties which apply to all firmwares",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "VendorIANA": {
                     "description": "The IANA Enterprise Id of the hardware vendor",
@@ -16,9 +17,27 @@
             },
             "required": ["VendorIANA", "CompatibleHardware"]
         },
-        "XDPE1X2XXFirmware": {
-            "description": "Required information to complete a voltage regulator firmware update",
+        "MuxOutputs": {
+            "description": "The pin names and values for the mux which toggles the flash to BMC",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Name": {
+                        "$ref": "legacy.json#/$defs/Types/Name"
+                    },
+                    "Polarity": {
+                        "$ref": "legacy.json#/$defs/Types/Polarity"
+                    }
+                },
+                "required": ["Name", "Polarity"]
+            }
+        },
+        "I2CVRFirmware": {
+            "description": "Required information to complete I2C voltage regulator firmware update",
             "object": "object",
+            "additionalProperties": false,
             "properties": {
                 "Name": {
                     "description": "Name of the firmware",
@@ -26,15 +45,26 @@
                 },
                 "Type": {
                     "description": "The type of configuration object",
-                    "enum": ["XDPE1X2XXFirmware"]
+                    "enum": [
+                        "XDPE1X2XXFirmware",
+                        "ISL69269Firmware",
+                        "MP2X6XXFirmware",
+                        "MP292XFirmware",
+                        "MP297XFirmware",
+                        "MP5998Firmware",
+                        "MP994XFirmware",
+                        "MPQ87XXFirmware",
+                        "RAA22XGen2Firmware",
+                        "RAA22XGen3p5Firmware",
+                        "TDA38640AFirmware",
+                        "XDP71XFirmware"
+                    ]
                 },
                 "Bus": {
-                    "description": "I2C bus, the device is connected to",
-                    "type": "integer"
+                    "$ref": "legacy.json#/$defs/Types/Bus"
                 },
                 "Address": {
-                    "description": "I2C address of the device",
-                    "type": "integer"
+                    "$ref": "legacy.json#/$defs/Types/Address"
                 },
                 "FirmwareInfo": {
                     "$ref": "#/$defs/FirmwareInfoDef"
@@ -45,6 +75,7 @@
         "BIOS": {
             "description": "Required information to complete the host fw update process.",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "Type": {
                     "description": "The type of configuration object. IntelSPIFlash implies Intel Flash Descriptor.",
@@ -63,20 +94,7 @@
                     "type": "number"
                 },
                 "MuxOutputs": {
-                    "description": "The pin names and values for the mux which toggles the flash to BMC",
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "Name": {
-                                "$ref": "legacy.json#/$defs/Types/Name"
-                            },
-                            "Polarity": {
-                                "$ref": "legacy.json#/$defs/Types/Polarity"
-                            }
-                        },
-                        "required": ["Name", "Polarity"]
-                    }
+                    "$ref": "#/$defs/MuxOutputs"
                 },
                 "FirmwareInfo": {
                     "$ref": "#/$defs/FirmwareInfoDef"
@@ -90,6 +108,68 @@
                 "MuxOutputs",
                 "FirmwareInfo"
             ]
+        },
+        "EEPROMDeviceFirmware": {
+            "description": "Required information to complete the EEPROM device firmware update process",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "description": "Unique identifier or label for the EEPROM device",
+                    "type": "string"
+                },
+                "Type": {
+                    "description": "The type of configuration object",
+                    "enum": ["PT5161LFirmware", "PT5081LFirmware"]
+                },
+                "Bus": {
+                    "$ref": "legacy.json#/$defs/Types/Bus"
+                },
+                "Address": {
+                    "$ref": "legacy.json#/$defs/Types/Address"
+                },
+                "FirmwareDevice": {
+                    "description": "The device that stores the EEPROM device firmware",
+                    "type": "string"
+                },
+                "MuxOutputs": {
+                    "$ref": "#/$defs/MuxOutputs"
+                },
+                "FirmwareInfo": {
+                    "$ref": "#/$defs/FirmwareInfoDef"
+                }
+            },
+            "required": [
+                "Name",
+                "Type",
+                "Bus",
+                "Address",
+                "FirmwareDevice",
+                "FirmwareInfo"
+            ]
+        },
+        "TPMFirmware": {
+            "description": "Required information to complete the TPM firmware update process",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "description": "Unique identifier or label for the TPM device",
+                    "type": "string"
+                },
+                "TPMIndex": {
+                    "description": "The index of the TPM device",
+                    "type": "number"
+                },
+                "Type": {
+                    "description": "The type of configuration object",
+                    "enum": ["TPM2Firmware"]
+                },
+                "FirmwareInfo": {
+                    "$ref": "#/$defs/FirmwareInfoDef"
+                }
+            },
+            "required": ["Name", "TPMIndex", "Type", "FirmwareInfo"]
         }
     }
 }

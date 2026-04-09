@@ -4,7 +4,8 @@
  */
 #include "config_provider.hpp"
 
-#include <boost/container/flat_map.hpp>
+#include "../utils.hpp"
+
 #include <phosphor-logging/lg2.hpp>
 #include <sdbusplus/async/match.hpp>
 #include <sdbusplus/bus/match.hpp>
@@ -14,12 +15,6 @@
 #include <string>
 
 PHOSPHOR_LOG2_USING;
-
-using VariantType =
-    std::variant<std::vector<std::string>, std::string, int64_t, uint64_t,
-                 double, int32_t, uint32_t, int16_t, uint16_t, uint8_t, bool>;
-using ConfigMap = boost::container::flat_map<std::string, VariantType>;
-using ConfigData = boost::container::flat_map<std::string, ConfigMap>;
 
 namespace gpio_presence
 {
@@ -99,7 +94,7 @@ auto ConfigProvider::handleInterfacesAdded(AddedCallback addConfig)
     while (!ctx.stop_requested())
     {
         auto tmp = co_await addedMatch
-                       .next<sdbusplus::message::object_path, ConfigData>();
+                       .next<sdbusplus::message::object_path, DBusObject>();
 
         auto [objPath, intfMap] = std::move(tmp);
 

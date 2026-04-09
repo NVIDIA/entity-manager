@@ -70,6 +70,7 @@
                             "type": "object"
                         },
                         "ManagedHost": {
+                            "description": "Used to enumerate hosts from 1 to N on multi-host platforms. Set to 0 for a single-host system. Can be used to map a host to e.g. a systemd service instance.",
                             "additionalProperties": false,
                             "properties": {
                                 "HostIndex": {
@@ -190,6 +191,20 @@
                         },
                         "Dimm": {
                             "additionalProperties": false,
+                            "type": "object"
+                        },
+                        "Valve": {
+                            "additionalProperties": false,
+                            "properties": {
+                                "Direction": {
+                                    "enum": [
+                                        "xyz.openbmc_project.Inventory.Item.Valve.Direction.Supply",
+                                        "xyz.openbmc_project.Inventory.Item.Valve.Direction.Return",
+                                        "xyz.openbmc_project.Inventory.Item.Valve.Direction.Unknown"
+                                    ]
+                                }
+                            },
+                            "required": ["Direction"],
                             "type": "object"
                         }
                     }

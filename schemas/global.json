@@ -7,18 +7,12 @@
             "additionalProperties": false,
             "type": "object",
             "properties": {
-                "Bus": {
-                    "type": "string"
-                },
                 "Exposes": {
                     "description": "The schema for the exposes property. The exposes property must be an array where elements are of type EMExposesElement.  The exposes property is the heterogeneous configuration data exported to DBus upon a probe match.",
                     "type": "array",
                     "items": {
                         "$ref": "exposes_record.json#/$defs/EMExposesElement"
                     }
-                },
-                "Logging": {
-                    "enum": ["Off"]
                 },
                 "Name": {
                     "description": "The schema for the name property.  The name property identifies the configuration.  When exported, the configuration will be instantiated at: /xyz/openbmc_project/configuration/<Type>/<Name>",
@@ -43,11 +37,13 @@
                     "description": "The schema for the type property. The type property identifies the type of the configuration.  When exported, configurations will be instantiated as children of: /xyz/openbmc_project/configuration/<Type>",
                     "enum": [
                         "Board",
+                        "Cable",
                         "Chassis",
+                        "Cpu",
+                        "FlowMeter",
                         "NVMe",
                         "PowerSupply",
-                        "CPU",
-                        "Cable"
+                        "Valve"
                     ]
                 },
                 "xyz.openbmc_project.Common.UUID": {
@@ -106,13 +102,16 @@
                 },
                 "xyz.openbmc_project.Inventory.Item.Dimm": {
                     "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/Dimm"
+                },
+                "xyz.openbmc_project.Inventory.Item.Valve": {
+                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/Valve"
                 }
             },
             "required": ["Exposes", "Name", "Probe", "Type"]
         }
     },
     "title": "Entity Manager Configuration File",
-    "description": "The schema for an entity manager configuration file. An entity mananger configuration file can consist of a single object, or an array of objects. Objects must be of type EMConfig.",
+    "description": "The schema for an entity manager configuration file. An entity manager configuration file can consist of a single object, or an array of objects. Objects must be of type EMConfig.",
     "oneOf": [
         {
             "type": "array",

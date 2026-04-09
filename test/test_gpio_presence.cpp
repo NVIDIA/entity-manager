@@ -37,8 +37,11 @@ TEST(GpioPresence, AcceptConfig1Gpio)
     std::vector<std::string> gpioNames = {gpioName};
     std::vector<uint64_t> gpioValues = {0};
 
+    std::vector<std::string> parentInvCompatible = {};
+
     auto c = std::make_unique<gpio_presence::DevicePresence>(
-        ctx, gpioNames, gpioValues, name, sensor.gpioState);
+        ctx, gpioNames, gpioValues, name, sensor.gpioState,
+        parentInvCompatible);
 
     sensor.addConfig(name, std::move(c));
 
@@ -67,8 +70,14 @@ auto testDevicePresentDbus(sdbusplus::async::context& ctx)
     std::vector<std::string> gpioNames = {gpioName};
     std::vector<uint64_t> gpioValues = {0};
 
+    std::vector<std::string> parentInvCompatible = {
+        "com.ibm.Hardware.Chassis.Model.BlueRidge4U",
+        "com.ibm.Hardware.Chassis.Model.BlueRidge",
+    };
+
     auto c = std::make_unique<gpio_presence::DevicePresence>(
-        ctx, gpioNames, gpioValues, name, sensor.gpioState);
+        ctx, gpioNames, gpioValues, name, sensor.gpioState,
+        parentInvCompatible);
 
     sdbusplus::message::object_path objPath = c->getObjPath();
 
@@ -86,6 +95,10 @@ auto testDevicePresentDbus(sdbusplus::async::context& ctx)
     std::string nameFound = co_await client.name();
 
     assert(nameFound == "cable0");
+
+    // Note: compatible property requires a newer phosphor-dbus-interfaces
+    // that adds Compatible to DevicePresence. Enable when the interface is
+    // updated in the downstream.
 
     ctx.request_stop();
 
@@ -112,8 +125,11 @@ auto testDevicePresentThenDisappearDbus(sdbusplus::async::context& ctx)
     std::vector<std::string> gpioNames = {gpioName};
     std::vector<uint64_t> gpioValues = {0};
 
+    std::vector<std::string> parentInvCompatible = {};
+
     auto c = std::make_unique<gpio_presence::DevicePresence>(
-        ctx, gpioNames, gpioValues, name, sensor.gpioState);
+        ctx, gpioNames, gpioValues, name, sensor.gpioState,
+        parentInvCompatible);
 
     sdbusplus::message::object_path objPath = c->getObjPath();
 
@@ -144,7 +160,7 @@ auto testDevicePresentThenDisappearDbus(sdbusplus::async::context& ctx)
     {
         // expected, since cable 0 is gone.
         // have to do something here to shut up clang-tidy
-        std::cout << "" << std::endl;
+        lg2::info("");
     }
 
     ctx.request_stop();
@@ -156,5 +172,58 @@ TEST(GpioPresence, DevicePresentThenDisappearDbus)
 {
     sdbusplus::async::context ctx;
     ctx.spawn(testDevicePresentThenDisappearDbus(ctx));
+    ctx.run();
+}
+
+auto testReAddConfigRestoresPresenceDbus(sdbusplus::async::context& ctx)
+    -> sdbusplus::async::task<>
+{
+    gpio_presence::GPIOPresenceManager sensor(ctx);
+
+    std::string busName = sensor.setupBusName();
+
+    std::string name = "cable0";
+    std::string gpioName = "TEST_GPIO";
+
+    std::vector<std::string> gpioNames = {gpioName};
+    std::vector<uint64_t> gpioValues = {0};
+    std::vector<std::string> parentInvCompatible = {};
+
+    // First add: c1 is stored in presenceMap via addConfig.
+    auto c1 = std::make_unique<gpio_presence::DevicePresence>(
+        ctx, gpioNames, gpioValues, name, sensor.gpioState,
+        parentInvCompatible);
+
+    sensor.addConfig(name, std::move(c1));
+
+    // Simulate GPIO event: creates D-Bus interface for c1.
+    sensor.updatePresence(gpioName, false);
+
+    // Re-add: simulate config provider restart. The reactor should create
+    // c2 D-Bus interface from the cached GPIO state.
+    auto c2 = std::make_unique<gpio_presence::DevicePresence>(
+        ctx, gpioNames, gpioValues, name, sensor.gpioState,
+        parentInvCompatible);
+
+    sdbusplus::message::object_path objPath = c2->getObjPath();
+
+    sensor.addConfig(name, std::move(c2));
+
+    auto client = sdbusplus::client::xyz::openbmc_project::inventory::source::
+                      DevicePresence<>(ctx)
+                          .service(busName)
+                          .path(objPath.str);
+
+    std::string nameFound = co_await client.name();
+    EXPECT_EQ(nameFound, "cable0");
+
+    ctx.request_stop();
+    co_return;
+}
+
+TEST(GpioPresence, ReAddConfigRestoresPresenceDbus)
+{
+    sdbusplus::async::context ctx;
+    ctx.spawn(testReAddConfigRestoresPresenceDbus(ctx));
     ctx.run();
 }

@@ -1,0 +1,781 @@
+{
+    "Exposes": [
+        {
+            "Index": 0,
+            "Name": "SCM_P12V_VOLT_V",
+            "ScaleFactor": 0.112359551,
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 0.264,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 13.2
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 0.216,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 10.8
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "Index": 1,
+            "Name": "SCM_P5V_VOLT_V",
+            "ScaleFactor": 0.27173913,
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 0.105,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 5.25
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 0.095,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 4.75
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "Index": 2,
+            "Name": "SCM_P3V3_VOLT_V",
+            "ScaleFactor": 0.410677618,
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 0.072,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 3.6
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 0.06,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 3.0
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "Index": 3,
+            "Name": "SCM_P2V5_VOLT_V",
+            "ScaleFactor": 0.54200542,
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 0.0525,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 2.625
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 0.0475,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 2.375
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "Index": 4,
+            "Name": "SCM_P1V8_VOLT_V",
+            "ScaleFactor": 0.750469043,
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 0.0378,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 1.89
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 0.0342,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 1.71
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "Index": 5,
+            "Name": "SCM_PGPPA_VOLT_V",
+            "ScaleFactor": 0.410677618,
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 0.0378,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 1.89
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 0.0342,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 1.71
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "Index": 6,
+            "Name": "SCM_P1V2_VOLT_V",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 0.0252,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 1.26
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 0.0228,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 1.14
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "Index": 8,
+            "Name": "SCM_P1V0_VOLT_V",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 0.022,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 1.1
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 0.018,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 0.9
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "Name": "BMC",
+            "Type": "BMC"
+        },
+        {
+            "Name": "BCBCableBottom",
+            "PresencePinNames": [
+                "BOT_BCB_CABLE_PRSNT_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "BCBCableTop",
+            "PresencePinNames": [
+                "TOP_BCB_CABLE_PRSNT_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "CableCartridgeBottom",
+            "PresencePinNames": [
+                "CMM_CABLE_CARTRIDGE_PRSNT_BOT_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "CableCartridgeTop",
+            "PresencePinNames": [
+                "CMM_CABLE_CARTRIDGE_PRSNT_TOP_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "MtiaBlade1",
+            "PresencePinNames": [
+                "PRSNT_MTIA_BLADE1_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "MtiaBlade2",
+            "PresencePinNames": [
+                "PRSNT_MTIA_BLADE2_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "MtiaBlade3",
+            "PresencePinNames": [
+                "PRSNT_MTIA_BLADE3_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "MtiaBlade4",
+            "PresencePinNames": [
+                "PRSNT_MTIA_BLADE4_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "MtiaBlade5",
+            "PresencePinNames": [
+                "PRSNT_MTIA_BLADE5_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "MtiaBlade6",
+            "PresencePinNames": [
+                "PRSNT_MTIA_BLADE6_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "MtiaBlade7",
+            "PresencePinNames": [
+                "PRSNT_MTIA_BLADE7_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "MtiaBlade8",
+            "PresencePinNames": [
+                "PRSNT_MTIA_BLADE8_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "MtiaBlade9",
+            "PresencePinNames": [
+                "PRSNT_MTIA_BLADE9_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "MtiaBlade10",
+            "PresencePinNames": [
+                "PRSNT_MTIA_BLADE10_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "MtiaBlade11",
+            "PresencePinNames": [
+                "PRSNT_MTIA_BLADE11_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "MtiaBlade12",
+            "PresencePinNames": [
+                "PRSNT_MTIA_BLADE12_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "MtiaBlade13",
+            "PresencePinNames": [
+                "PRSNT_MTIA_BLADE13_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "MtiaBlade14",
+            "PresencePinNames": [
+                "PRSNT_MTIA_BLADE14_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "MtiaBlade15",
+            "PresencePinNames": [
+                "PRSNT_MTIA_BLADE15_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "MtiaBlade16",
+            "PresencePinNames": [
+                "PRSNT_MTIA_BLADE16_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "NWBlade1",
+            "PresencePinNames": [
+                "PRSNT_NW_BLADE1_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "NWBlade2",
+            "PresencePinNames": [
+                "PRSNT_NW_BLADE2_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "NWBlade3",
+            "PresencePinNames": [
+                "PRSNT_NW_BLADE3_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "NWBlade4",
+            "PresencePinNames": [
+                "PRSNT_NW_BLADE4_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "NWBlade5",
+            "PresencePinNames": [
+                "PRSNT_NW_BLADE5_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "NWBlade6",
+            "PresencePinNames": [
+                "PRSNT_NW_BLADE6_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "FanControlBoard1",
+            "PresencePinNames": [
+                "PRSNT_FCB_1_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "FanControlBoard2",
+            "PresencePinNames": [
+                "PRSNT_FCB_2_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "FanControlBoard3",
+            "PresencePinNames": [
+                "PRSNT_FCB_3_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "FanControlBoard4",
+            "PresencePinNames": [
+                "PRSNT_FCB_4_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "FanControlBoard5",
+            "PresencePinNames": [
+                "PRSNT_FCB_5_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "FanControlBoard6",
+            "PresencePinNames": [
+                "PRSNT_FCB_6_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "RpuLink",
+            "PresencePinNames": [
+                "IT_GEAR_RPU_LINK_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "SpareRpuLink",
+            "PresencePinNames": [
+                "IT_GEAR_RPU_LINK_SPARE_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Level": "Critical",
+            "Name": "ComputeBlade1",
+            "PinName": "LEAK_DETECT_MTIA_BLADE1_N",
+            "Polarity": "Low",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Critical",
+            "Name": "ComputeBlade2",
+            "PinName": "LEAK_DETECT_MTIA_BLADE2_N",
+            "Polarity": "Low",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Critical",
+            "Name": "ComputeBlade3",
+            "PinName": "LEAK_DETECT_MTIA_BLADE3_N",
+            "Polarity": "Low",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Critical",
+            "Name": "ComputeBlade4",
+            "PinName": "LEAK_DETECT_MTIA_BLADE4_N",
+            "Polarity": "Low",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Critical",
+            "Name": "ComputeBlade5",
+            "PinName": "LEAK_DETECT_MTIA_BLADE5_N",
+            "Polarity": "Low",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Critical",
+            "Name": "ComputeBlade6",
+            "PinName": "LEAK_DETECT_MTIA_BLADE6_N",
+            "Polarity": "Low",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Critical",
+            "Name": "ComputeBlade7",
+            "PinName": "LEAK_DETECT_MTIA_BLADE7_N",
+            "Polarity": "Low",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Critical",
+            "Name": "ComputeBlade8",
+            "PinName": "LEAK_DETECT_MTIA_BLADE8_N",
+            "Polarity": "Low",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Critical",
+            "Name": "ComputeBlade9",
+            "PinName": "LEAK_DETECT_MTIA_BLADE9_N",
+            "Polarity": "Low",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Critical",
+            "Name": "ComputeBlade10",
+            "PinName": "LEAK_DETECT_MTIA_BLADE10_N",
+            "Polarity": "Low",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Critical",
+            "Name": "ComputeBlade11",
+            "PinName": "LEAK_DETECT_MTIA_BLADE11_N",
+            "Polarity": "Low",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Critical",
+            "Name": "ComputeBlade12",
+            "PinName": "LEAK_DETECT_MTIA_BLADE12_N",
+            "Polarity": "Low",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Critical",
+            "Name": "ComputeBlade13",
+            "PinName": "LEAK_DETECT_MTIA_BLADE13_N",
+            "Polarity": "Low",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Critical",
+            "Name": "ComputeBlade14",
+            "PinName": "LEAK_DETECT_MTIA_BLADE14_N",
+            "Polarity": "Low",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Critical",
+            "Name": "ComputeBlade15",
+            "PinName": "LEAK_DETECT_MTIA_BLADE15_N",
+            "Polarity": "Low",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Critical",
+            "Name": "ComputeBlade16",
+            "PinName": "LEAK_DETECT_MTIA_BLADE16_N",
+            "Polarity": "Low",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Critical",
+            "Name": "NetworkBlade1",
+            "PinName": "LEAK_DETECT_NW_BLADE1_N",
+            "Polarity": "Low",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Critical",
+            "Name": "NetworkBlade2",
+            "PinName": "LEAK_DETECT_NW_BLADE2_N",
+            "Polarity": "Low",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Critical",
+            "Name": "NetworkBlade3",
+            "PinName": "LEAK_DETECT_NW_BLADE3_N",
+            "Polarity": "Low",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Critical",
+            "Name": "NetworkBlade4",
+            "PinName": "LEAK_DETECT_NW_BLADE4_N",
+            "Polarity": "Low",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Critical",
+            "Name": "NetworkBlade5",
+            "PinName": "LEAK_DETECT_NW_BLADE5_N",
+            "Polarity": "Low",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Critical",
+            "Name": "NetworkBlade6",
+            "PinName": "LEAK_DETECT_NW_BLADE6_N",
+            "Polarity": "Low",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Critical",
+            "Name": "ITGearMain",
+            "PinName": "IT_GEAR_LEAK",
+            "Polarity": "High",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Critical",
+            "Name": "ITGearSpare",
+            "PinName": "IT_GEAR_LEAK_SPARE",
+            "Polarity": "High",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Critical",
+            "Name": "UpperManifoldDripTray",
+            "PinName": "CHASSIS_LEAK0_DETECT_N",
+            "Polarity": "Low",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Level": "Critical",
+            "Name": "LowerManifoldDripTray",
+            "PinName": "CHASSIS_LEAK1_DETECT_N",
+            "Polarity": "Low",
+            "SubType": "LeakSensingCable",
+            "Type": "GPIOLeakDetector"
+        },
+        {
+            "Address": "0x40",
+            "Bus": 15,
+            "FirmwareInfo": {
+                "CompatibleHardware": "com.meta.Hardware.Minerva.CPLD.LCMXO3LF_2100C_scm",
+                "VendorIANA": 40981
+            },
+            "Name": "Minerva_SCM_CPLD",
+            "Type": "LatticeLCMXO3LF_2100CFirmware"
+        },
+        {
+            "Address": "0x4B",
+            "Bus": 1,
+            "Name": "SCM_INLET_TEMP_C",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 0.9,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 45
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 0.1,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 5
+                }
+            ],
+            "Type": "TMP75"
+        }
+    ],
+    "Name": "Minerva CMM SCM",
+    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': 'Minerva_CMM_SCM.*'})",
+    "Type": "Board",
+    "xyz.openbmc_project.Inventory.Decorator.Asset": {
+        "BuildDate": "$BOARD_MANUFACTURE_DATE",
+        "Manufacturer": "$BOARD_MANUFACTURER",
+        "Model": "$BOARD_PRODUCT_NAME",
+        "PartNumber": "$BOARD_PART_NUMBER",
+        "SerialNumber": "$BOARD_SERIAL_NUMBER",
+        "SparePartNumber": "$BOARD_INFO_AM1"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.AssetTag": {
+        "AssetTag": "$PRODUCT_ASSET_TAG"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.Compatible": {
+        "Names": [
+            "com.meta.Hardware.BMC.Model.Minerva"
+        ]
+    }
+}

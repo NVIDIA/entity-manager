@@ -37,6 +37,9 @@
                     "$ref": "satellite_controller.json#/$defs/SatelliteController"
                 },
                 {
+                    "$ref": "spdm_endpoint.json#/$defs/SpdmTcpEndpoint"
+                },
+                {
                     "$ref": "stepwise.json#/$defs/Stepwise"
                 },
                 {
@@ -64,6 +67,9 @@
                     "$ref": "legacy.json#/$defs/NuvotonFan"
                 },
                 {
+                    "$ref": "legacy.json#/$defs/HPEFan"
+                },
+                {
                     "$ref": "legacy.json#/$defs/XeonCPU"
                 },
                 {
@@ -88,10 +94,7 @@
                     "$ref": "legacy.json#/$defs/ExternalSensor"
                 },
                 {
-                    "$ref": "legacy.json#/$defs/Port"
-                },
-                {
-                    "$ref": "legacy.json#/$defs/DownstreamPort"
+                    "$ref": "topology.json#/$defs/Port"
                 },
                 {
                     "$ref": "legacy.json#/$defs/PSUPresence"
@@ -148,10 +151,37 @@
                     "$ref": "leak_detector.json#/$defs/GPIOLeakDetector"
                 },
                 {
-                    "$ref": "firmware.json#/$defs/XDPE1X2XXFirmware"
+                    "$ref": "firmware.json#/$defs/I2CVRFirmware"
+                },
+                {
+                    "$ref": "firmware.json#/$defs/EEPROMDeviceFirmware"
+                },
+                {
+                    "$ref": "firmware.json#/$defs/TPMFirmware"
                 },
                 {
                     "$ref": "firmware.json#/$defs/BIOS"
+                },
+                {
+                    "$ref": "nvidia.json#/$defs/NvidiaMctpVdm"
+                },
+                {
+                    "$ref": "cpld.json#/$defs/CPLDFirmware"
+                },
+                {
+                    "$ref": "gpio_presence.json#/$defs/GPIODeviceDetect"
+                },
+                {
+                    "$ref": "usb_port.json#/$defs/USBPort"
+                },
+                {
+                    "$ref": "modbus.json#/$defs/ModbusRTUDetect"
+                },
+                {
+                    "$ref": "valve.json#/$defs/GPIOValve"
+                },
+                {
+                    "$ref": "modbus.json#/$defs/ModbusRTUDevice"
                 }
             ]
         },

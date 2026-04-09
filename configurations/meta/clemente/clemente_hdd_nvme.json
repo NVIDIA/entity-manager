@@ -1,0 +1,181 @@
+[
+    {
+        "Exposes": [
+            {
+                "Address": "$address",
+                "Bus": "$bus",
+                "Name": "NVMe $index FRU",
+                "Type": "EEPROM"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "$bus",
+                "Name": "HDDBOARD0 SSD$bus - 48 / 2 TEMP_C",
+                "PEC": "Required",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Index": 2,
+                        "Name": "upper non recoverable",
+                        "Severity": 4,
+                        "Value": 85
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Index": 2,
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 78
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 71
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": -1
+                    }
+                ],
+                "Type": "NVME1000"
+            }
+        ],
+        /* Clemente Hard Disk Drive NVMe Board 0*/
+        "Name": "Clemente HDD NVMe 0 $bus - 48 / 2",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 48, 'ADDRESS': 83, 'PRODUCT_MANUFACTURER': '(Samsung|MICRON)'})",
+            "OR",
+            "xyz.openbmc_project.FruDevice({'BUS': 50, 'ADDRESS': 83, 'PRODUCT_MANUFACTURER': '(Samsung|MICRON)'})",
+            "AND",
+            "FOUND('Clemente HDD Carrier $bus - 25 % 11')"
+        ],
+        "Type": "NVMe",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$PRODUCT_MANUFACTURER",
+            "Model": "$PRODUCT_PRODUCT_NAME",
+            "PartNumber": "$PRODUCT_PART_NUMBER",
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {}
+    },
+    {
+        "Exposes": [
+            {
+                "Address": "$address",
+                "Bus": "$bus",
+                "Name": "NVMe $index FRU",
+                "Type": "EEPROM"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "$bus",
+                "Name": "HDDBOARD1 SSD$bus - 52 / 2 TEMP_C",
+                "PEC": "Required",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Index": 2,
+                        "Name": "upper non recoverable",
+                        "Severity": 4,
+                        "Value": 85
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Index": 2,
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 78
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 71
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": -1
+                    }
+                ],
+                "Type": "NVME1000"
+            }
+        ],
+        /* Clemente Hard Disk Drive NVMe Board 1*/
+        "Name": "Clemente HDD NVMe 1 $bus - 52 / 2",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 52, 'ADDRESS': 83, 'PRODUCT_MANUFACTURER': '(Samsung|MICRON)'})",
+            "OR",
+            "xyz.openbmc_project.FruDevice({'BUS': 54, 'ADDRESS': 83, 'PRODUCT_MANUFACTURER': '(Samsung|MICRON)'})",
+            "AND",
+            "FOUND('Clemente HDD Carrier $bus - 25 % 11')"
+        ],
+        "Type": "NVMe",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$PRODUCT_MANUFACTURER",
+            "Model": "$PRODUCT_PRODUCT_NAME",
+            "PartNumber": "$PRODUCT_PART_NUMBER",
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {}
+    },
+    {
+        "Exposes": [
+            {
+                "Address": "$address",
+                "Bus": "$bus",
+                "Name": "NVMe $index FRU",
+                "Type": "EEPROM"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": "45",
+                "Name": "BOOTDRIVE_TEMP_C",
+                "PEC": "Required",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 78
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 71
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": -1
+                    }
+                ],
+                "Type": "NVME1000"
+            }
+        ],
+        /* Clemente Boot Drive NVMe*/
+        "Name": "Clemente Boot Drive NVMe",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 45, 'ADDRESS': 83, 'PRODUCT_MANUFACTURER': '(Samsung|MICRON|KIOXIA)'})",
+            "AND",
+            "FOUND('Clemente HDD Carrier $bus - 25 % 11')"
+        ],
+        "Type": "NVMe",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$PRODUCT_MANUFACTURER",
+            "Model": "$PRODUCT_PRODUCT_NAME",
+            "PartNumber": "$PRODUCT_PART_NUMBER",
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {}
+    }
+]

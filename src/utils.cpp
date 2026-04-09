@@ -1,51 +1,23 @@
-/*
-// Copyright (c) 2017 Intel Corporation
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//      http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-*/
-/// \file utils.cpp
+// SPDX-License-Identifier: Apache-2.0
+// SPDX-FileCopyrightText: Copyright 2017 Intel Corporation
 
 #include "utils.hpp"
 
-#include "expression.hpp"
-#include "variant_visitors.hpp"
-
-#include <boost/algorithm/string/classification.hpp>
-#include <boost/algorithm/string/find.hpp>
-#include <boost/algorithm/string/predicate.hpp>
-#include <boost/algorithm/string/replace.hpp>
-#include <boost/algorithm/string/split.hpp>
-#include <boost/container/flat_map.hpp>
 #include <boost/lexical_cast.hpp>
+#include <phosphor-logging/lg2.hpp>
 #include <sdbusplus/bus/match.hpp>
-#include <valijson/adapters/nlohmann_json_adapter.hpp>
-#include <valijson/schema.hpp>
-#include <valijson/schema_parser.hpp>
-#include <valijson/validator.hpp>
 
-#include <charconv>
+#include <algorithm>
+#include <cctype>
 #include <filesystem>
-#include <fstream>
+#include <flat_map>
 #include <map>
+#include <ranges>
 #include <regex>
-
-constexpr const char* templateChar = "$";
+#include <string_view>
+#include <utility>
 
 namespace fs = std::filesystem;
-// NOLINTNEXTLINE(cppcoreguidelines-avoid-non-const-global-variables)
-static bool powerStatusOn = false;
-// NOLINTNEXTLINE(cppcoreguidelines-avoid-non-const-global-variables)
-static std::unique_ptr<sdbusplus::bus::match_t> powerMatch = nullptr;
 
 bool findFiles(const fs::path& dirPath, const std::string& matchString,
                std::vector<fs::path>& foundPaths)
@@ -68,7 +40,7 @@ bool findFiles(const fs::path& dirPath, const std::string& matchString,
     return true;
 }
 
-bool findFiles(const std::vector<fs::path>&& dirPaths,
+bool findFiles(const std::vector<fs::path>& dirPaths,
                const std::string& matchString,
                std::vector<fs::path>& foundPaths)
 {
@@ -82,8 +54,14 @@ bool findFiles(const std::vector<fs::path>&& dirPaths,
             continue;
         }
 
-        for (const auto& p : fs::directory_iterator(dirPath))
+        for (const auto& p : fs::recursive_directory_iterator(dirPath))
         {
+            std::error_code ec;
+            if (p.is_directory(ec))
+            {
+                continue;
+            }
+
             std::string path = p.path().string();
             if (std::regex_search(path, match, search))
             {
@@ -101,7 +79,7 @@ bool findFiles(const std::vector<fs::path>&& dirPaths,
 }
 
 bool getI2cDevicePaths(const fs::path& dirPath,
-                       boost::container::flat_map<size_t, fs::path>& busPaths)
+                       std::flat_map<size_t, fs::path>& busPaths)
 {
     if (!fs::exists(dirPath))
     {
@@ -128,223 +106,6 @@ bool getI2cDevicePaths(const fs::path& dirPath,
     }
 
     return true;
-}
-
-bool validateJson(const nlohmann::json& schemaFile, const nlohmann::json& input)
-{
-    valijson::Schema schema;
-    valijson::SchemaParser parser;
-    valijson::adapters::NlohmannJsonAdapter schemaAdapter(schemaFile);
-    parser.populateSchema(schemaAdapter, schema);
-    valijson::Validator validator;
-    valijson::adapters::NlohmannJsonAdapter targetAdapter(input);
-    return validator.validate(schema, targetAdapter, nullptr);
-}
-
-bool isPowerOn()
-{
-    if (!powerMatch)
-    {
-        throw std::runtime_error("Power Match Not Created");
-    }
-    return powerStatusOn;
-}
-
-void setupPowerMatch(const std::shared_ptr<sdbusplus::asio::connection>& conn)
-{
-    powerMatch = std::make_unique<sdbusplus::bus::match_t>(
-        static_cast<sdbusplus::bus_t&>(*conn),
-        "type='signal',interface='" + std::string(properties::interface) +
-            "',path='" + std::string(power::path) + "',arg0='" +
-            std::string(power::interface) + "'",
-        [](sdbusplus::message_t& message) {
-            std::string objectName;
-            boost::container::flat_map<std::string, std::variant<std::string>>
-                values;
-            message.read(objectName, values);
-            auto findState = values.find(power::property);
-            if (findState != values.end())
-            {
-                powerStatusOn = boost::ends_with(
-                    std::get<std::string>(findState->second), "Running");
-            }
-        });
-
-    conn->async_method_call(
-        [](boost::system::error_code ec,
-           const std::variant<std::string>& state) {
-            if (ec)
-            {
-                return;
-            }
-            powerStatusOn =
-                boost::ends_with(std::get<std::string>(state), "Running");
-        },
-        power::busname, power::path, properties::interface, properties::get,
-        power::interface, power::property);
-}
-
-// Replaces the template character like the other version of this function,
-// but checks all properties on all interfaces provided to do the substitution
-// with.
-std::optional<std::string> templateCharReplace(
-    nlohmann::json::iterator& keyPair, const DBusObject& object,
-    const size_t index, const std::optional<std::string>& replaceStr)
-{
-    for (const auto& [_, interface] : object)
-    {
-        auto ret = templateCharReplace(keyPair, interface, index, replaceStr);
-        if (ret)
-        {
-            return ret;
-        }
-    }
-    return std::nullopt;
-}
-
-// finds the template character (currently set to $) and replaces the value with
-// the field found in a dbus object i.e. $ADDRESS would get populated with the
-// ADDRESS field from a object on dbus
-std::optional<std::string> templateCharReplace(
-    nlohmann::json::iterator& keyPair, const DBusInterface& interface,
-    const size_t index, const std::optional<std::string>& replaceStr)
-{
-    std::optional<std::string> ret = std::nullopt;
-
-    if (keyPair.value().type() == nlohmann::json::value_t::object ||
-        keyPair.value().type() == nlohmann::json::value_t::array)
-    {
-        for (auto nextLayer = keyPair.value().begin();
-             nextLayer != keyPair.value().end(); nextLayer++)
-        {
-            templateCharReplace(nextLayer, interface, index, replaceStr);
-        }
-        return ret;
-    }
-
-    std::string* strPtr = keyPair.value().get_ptr<std::string*>();
-    if (strPtr == nullptr)
-    {
-        return ret;
-    }
-
-    boost::replace_all(*strPtr, std::string(templateChar) + "index",
-                       std::to_string(index));
-    if (replaceStr)
-    {
-        boost::replace_all(*strPtr, *replaceStr, std::to_string(index));
-    }
-
-    for (const auto& [propName, propValue] : interface)
-    {
-        std::string templateName = templateChar + propName;
-        boost::iterator_range<std::string::const_iterator> find =
-            boost::ifind_first(*strPtr, templateName);
-        if (!find)
-        {
-            continue;
-        }
-
-        size_t start = find.begin() - strPtr->begin();
-
-        // check for additional operations
-        if ((start == 0U) && find.end() == strPtr->end())
-        {
-            std::visit([&](auto&& val) { keyPair.value() = val; }, propValue);
-            return ret;
-        }
-
-        constexpr const std::array<char, 5> mathChars = {'+', '-', '%', '*',
-                                                         '/'};
-        size_t nextItemIdx = start + templateName.size() + 1;
-
-        if (nextItemIdx >= strPtr->size() ||
-            std::find(mathChars.begin(), mathChars.end(),
-                      strPtr->at(nextItemIdx)) == mathChars.end())
-        {
-            std::string val = std::visit(VariantToStringVisitor(), propValue);
-            boost::ireplace_all(*strPtr, templateName, val);
-            continue;
-        }
-
-        // save the prefix
-        std::string prefix = strPtr->substr(0, start);
-
-        // operate on the rest
-        std::string end = strPtr->substr(nextItemIdx);
-
-        std::vector<std::string> split;
-        boost::split(split, end, boost::is_any_of(" "));
-
-        // need at least 1 operation and number
-        if (split.size() < 2)
-        {
-            std::cerr << "Syntax error on template replacement of " << *strPtr
-                      << "\n";
-            for (const std::string& data : split)
-            {
-                std::cerr << data << " ";
-            }
-            std::cerr << "\n";
-            continue;
-        }
-
-        // we assume that the replacement is a number, because we can
-        // only do math on numbers.. we might concatenate strings in the
-        // future, but thats later
-        int number = std::visit(VariantToIntVisitor(), propValue);
-        auto exprBegin = split.begin();
-        auto exprEnd = split.end();
-
-        number = expression::evaluate(number, exprBegin, exprEnd);
-
-        std::string replaced(find.begin(), find.end());
-        while (exprBegin != exprEnd)
-        {
-            replaced.append(" ").append(*exprBegin++);
-        }
-        ret = replaced;
-
-        std::string result = prefix + std::to_string(number);
-        while (exprEnd != split.end())
-        {
-            result.append(" ").append(*exprEnd++);
-        }
-        keyPair.value() = result;
-
-        // We probably just invalidated the pointer abovei,
-        // reset and continue to handle multiple templates
-        strPtr = keyPair.value().get_ptr<std::string*>();
-        if (strPtr == nullptr)
-        {
-            break;
-        }
-    }
-
-    strPtr = keyPair.value().get_ptr<std::string*>();
-    if (strPtr == nullptr)
-    {
-        return ret;
-    }
-
-    std::string_view strView = *strPtr;
-    int base = 10;
-    if (boost::starts_with(strView, "0x"))
-    {
-        strView.remove_prefix(2);
-        base = 16;
-    }
-
-    uint64_t temp = 0;
-    const char* strDataEndPtr = strView.data() + strView.size();
-    const std::from_chars_result res =
-        std::from_chars(strView.data(), strDataEndPtr, temp, base);
-    if (res.ec == std::errc{} && res.ptr == strDataEndPtr)
-    {
-        keyPair.value() = temp;
-    }
-
-    return ret;
 }
 
 /// \brief JSON/DBus matching Callable for std::variant (visitor)
@@ -384,8 +145,9 @@ struct MatchProbe<std::string>
             }
             catch (const std::regex_error&)
             {
-                std::cerr << "Syntax error in regular expression: " << probe
-                          << " will never match";
+                lg2::error(
+                    "Syntax error in regular expression: {PROBE} will never match",
+                    "PROBE", probe);
             }
         }
 
@@ -414,4 +176,70 @@ struct MatchProbeForwarder
 bool matchProbe(const nlohmann::json& probe, const DBusValueVariant& dbusValue)
 {
     return std::visit(MatchProbeForwarder(probe), dbusValue);
+}
+
+std::vector<std::string> split(std::string_view str, char delim)
+{
+    std::vector<std::string> out;
+
+    size_t start = 0;
+    while (start <= str.size())
+    {
+        size_t end = str.find(delim, start);
+        if (end == std::string_view::npos)
+        {
+            out.emplace_back(str.substr(start));
+            break;
+        }
+
+        out.emplace_back(str.substr(start, end - start));
+        start = end + 1;
+    }
+
+    return out;
+}
+
+void iReplaceAll(std::string& str, std::string_view search,
+                 std::string_view replace)
+{
+    if (search.empty() || search == replace)
+    {
+        return;
+    }
+
+    while (true)
+    {
+        std::ranges::subrange<std::string::iterator> match =
+            iFindFirst(str, search);
+        if (!match)
+        {
+            break;
+        }
+
+        str.replace(match.begin(), match.end(), replace.begin(), replace.end());
+    }
+}
+
+void replaceAll(std::string& str, std::string_view search,
+                std::string_view replace)
+{
+    if (search.empty())
+    {
+        return;
+    }
+
+    size_t pos = 0;
+    while ((pos = str.find(search, pos)) != std::string::npos)
+    {
+        str.replace(pos, search.size(), replace);
+        pos += replace.size();
+    }
+}
+
+std::string toLowerCopy(std::string_view str)
+{
+    std::string result(str);
+    std::transform(result.begin(), result.end(), result.begin(),
+                   [](unsigned char c) { return asciiToLower(c); });
+    return result;
 }

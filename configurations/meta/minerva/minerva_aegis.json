@@ -1,0 +1,40 @@
+{
+    "Exposes": [
+        {
+            "Address": "$address",
+            "Bus": "$bus",
+            "Name": "Minerva Aegis FRU",
+            "Type": "EEPROM"
+        },
+        {
+            "Address": "0x40",
+            "Bus": 11,
+            "FirmwareInfo": {
+                "CompatibleHardware": "com.meta.Hardware.Harma.CPLD.LCMXO3D_9400HC_aegis",
+                "VendorIANA": 40981
+            },
+            "Name": "Minerva_Aegis_CPLD",
+            "Type": "LatticeLCMXO3D_9400Firmware"
+        }
+    ],
+    "Name": "Minerva Aegis",
+    "Probe": [
+        "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': 'Minerva Aegis Board ', 'PRODUCT_MANUFACTURER': 'Quanta'})",
+        "OR",
+        "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': 'Minerva EVB ', 'PRODUCT_MANUFACTURER': 'Quanta'})",
+        "AND",
+        "FOUND('Harma SCM')"
+    ],
+    "Type": "Board",
+    "xyz.openbmc_project.Inventory.Decorator.Asset": {
+        "BuildDate": "$BOARD_MANUFACTURE_DATE",
+        "Manufacturer": "$BOARD_MANUFACTURER",
+        "Model": "$BOARD_PRODUCT_NAME",
+        "PartNumber": "$BOARD_PART_NUMBER",
+        "SerialNumber": "$BOARD_SERIAL_NUMBER",
+        "SparePartNumber": "$BOARD_INFO_AM1"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.AssetTag": {
+        "AssetTag": "$PRODUCT_ASSET_TAG"
+    }
+}

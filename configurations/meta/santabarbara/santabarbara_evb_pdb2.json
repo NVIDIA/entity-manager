@@ -1,0 +1,645 @@
+{
+    "Exposes": [
+        {
+            "Address": "$address",
+            "Bus": "$bus",
+            "Name": "Santa Barbara EVB_PDB2 FRU",
+            "Type": "EEPROM"
+        },
+        {
+            "Address": "0x23",
+            "Bus": 43,
+            "Connector": {
+                "Name": "EVB_PDB2_FAN0_TACH_IL",
+                "Pwm": 0,
+                "PwmName": "EVB_PDB2_FAN0_PWM_PCT",
+                "Tachs": [
+                    9
+                ]
+            },
+            "Index": 9,
+            "Name": "EVB_PDB2_FAN0_TACH_IL_SPEED_RPM",
+            "PowerState": "Always",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 800,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 40000
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 20,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 1000
+                }
+            ],
+            "Type": "I2CFan"
+        },
+        {
+            "Address": "0x23",
+            "Bus": 43,
+            "Connector": {
+                "Name": "EVB_PDB2_FAN0_TACH_OL",
+                "Pwm": 0,
+                "PwmName": "EVB_PDB2_FAN0_PWM_PCT",
+                "Tachs": [
+                    10
+                ]
+            },
+            "Index": 10,
+            "Name": "EVB_PDB2_FAN0_TACH_OL_SPEED_RPM",
+            "PowerState": "Always",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 800,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 40000
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 20,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 1000
+                }
+            ],
+            "Type": "I2CFan"
+        },
+        {
+            "Address": "0x23",
+            "Bus": 43,
+            "Connector": {
+                "Name": "EVB_PDB2_FAN2_TACH_IL",
+                "Pwm": 8,
+                "PwmName": "EVB_PDB2_FAN2_PWM_PCT",
+                "Tachs": [
+                    1
+                ]
+            },
+            "Index": 1,
+            "Name": "EVB_PDB2_FAN2_TACH_IL_SPEED_RPM",
+            "PowerState": "Always",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 800,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 40000
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 20,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 1000
+                }
+            ],
+            "Type": "I2CFan"
+        },
+        {
+            "Address": "0x23",
+            "Bus": 43,
+            "Connector": {
+                "Name": "EVB_PDB2_FAN2_TACH_OL",
+                "Pwm": 8,
+                "PwmName": "EVB_PDB2_FAN2_PWM_PCT",
+                "Tachs": [
+                    2
+                ]
+            },
+            "Index": 2,
+            "Name": "EVB_PDB2_FAN2_TACH_OL_SPEED_RPM",
+            "PowerState": "Always",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 800,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 40000
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 20,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 1000
+                }
+            ],
+            "Type": "I2CFan"
+        },
+        {
+            "Address": "0x23",
+            "Bus": 43,
+            "Connector": {
+                "Name": "EVB_PDB2_FAN1_TACH_IL",
+                "Pwm": 4,
+                "PwmName": "EVB_PDB2_FAN1_PWM_PCT",
+                "Tachs": [
+                    13
+                ]
+            },
+            "Index": 13,
+            "Name": "EVB_PDB2_FAN1_TACH_IL_SPEED_RPM",
+            "PowerState": "Always",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 800,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 40000
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 20,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 1000
+                }
+            ],
+            "Type": "I2CFan"
+        },
+        {
+            "Address": "0x23",
+            "Bus": 43,
+            "Connector": {
+                "Name": "EVB_PDB2_FAN1_TACH_OL",
+                "Pwm": 4,
+                "PwmName": "EVB_PDB2_FAN1_PWM_PCT",
+                "Tachs": [
+                    14
+                ]
+            },
+            "Index": 14,
+            "Name": "EVB_PDB2_FAN1_TACH_OL_SPEED_RPM",
+            "PowerState": "Always",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 800,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 40000
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 20,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 1000
+                }
+            ],
+            "Type": "I2CFan"
+        },
+        {
+            "Address": "0x23",
+            "Bus": 43,
+            "Connector": {
+                "Name": "EVB_PDB2_FAN3_TACH_IL",
+                "Pwm": 12,
+                "PwmName": "EVB_PDB2_FAN3_PWM_PCT",
+                "Tachs": [
+                    5
+                ]
+            },
+            "Index": 5,
+            "Name": "EVB_PDB2_FAN3_TACH_IL_SPEED_RPM",
+            "PowerState": "Always",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 800,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 40000
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 20,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 1000
+                }
+            ],
+            "Type": "I2CFan"
+        },
+        {
+            "Address": "0x23",
+            "Bus": 43,
+            "Connector": {
+                "Name": "EVB_PDB2_FAN3_TACH_OL",
+                "Pwm": 12,
+                "PwmName": "EVB_PDB2_FAN3_PWM_PCT",
+                "Tachs": [
+                    6
+                ]
+            },
+            "Index": 6,
+            "Name": "EVB_PDB2_FAN3_TACH_OL_SPEED_RPM",
+            "PowerState": "Always",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 800,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 40000
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 20,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 1000
+                }
+            ],
+            "Type": "I2CFan"
+        },
+        {
+            "Address": "0x2",
+            "Bus": 43,
+            "Connector": {
+                "Name": "EVB_PDB2_FAN4_TACH_IL",
+                "Pwm": 0,
+                "PwmName": "EVB_PDB2_FAN4_PWM_PCT",
+                "Tachs": [
+                    9
+                ]
+            },
+            "Index": 9,
+            "Name": "EVB_PDB2_FAN4_TACH_IL_SPEED_RPM",
+            "PowerState": "Always",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 800,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 40000
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 20,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 1000
+                }
+            ],
+            "Type": "I2CFan"
+        },
+        {
+            "Address": "0x2",
+            "Bus": 43,
+            "Connector": {
+                "Name": "EVB_PDB2_FAN4_TACH_OL",
+                "Pwm": 0,
+                "PwmName": "EVB_PDB2_FAN4_PWM_PCT",
+                "Tachs": [
+                    10
+                ]
+            },
+            "Index": 10,
+            "Name": "EVB_PDB2_FAN4_TACH_OL_SPEED_RPM",
+            "PowerState": "Always",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 800,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 40000
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 20,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 1000
+                }
+            ],
+            "Type": "I2CFan"
+        },
+        {
+            "Address": "0x2",
+            "Bus": 43,
+            "Connector": {
+                "Name": "EVB_PDB2_FAN5_TACH_IL",
+                "Pwm": 4,
+                "PwmName": "EVB_PDB2_FAN5_PWM_PCT",
+                "Tachs": [
+                    13
+                ]
+            },
+            "Index": 13,
+            "Name": "EVB_PDB2_FAN5_TACH_IL_SPEED_RPM",
+            "PowerState": "Always",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 800,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 40000
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 20,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 1000
+                }
+            ],
+            "Type": "I2CFan"
+        },
+        {
+            "Address": "0x2",
+            "Bus": 43,
+            "Connector": {
+                "Name": "EVB_PDB2_FAN5_TACH_OL",
+                "Pwm": 4,
+                "PwmName": "EVB_PDB2_FAN5_PWM_PCT",
+                "Tachs": [
+                    14
+                ]
+            },
+            "Index": 14,
+            "Name": "EVB_PDB2_FAN5_TACH_OL_SPEED_RPM",
+            "PowerState": "Always",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 800,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 40000
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 20,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 1000
+                }
+            ],
+            "Type": "I2CFan"
+        },
+        {
+            "Address": "0x45",
+            "Bus": 46,
+            "Labels": [
+                "in1",
+                "curr1",
+                "power1"
+            ],
+            "Name": "EVB_PDB2_P52V_EVB_SENSE",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 1.12,
+                    "Label": "in1",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 56
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 0.92,
+                    "Label": "in1",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 46
+                },
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 0.62,
+                    "Label": "curr1",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 31
+                },
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 31,
+                    "Label": "power1",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 1550
+                }
+            ],
+            "Type": "INA238",
+            "curr1_Name": "EVB_PDB2_P52V_EVB_SENSE_CURR_A",
+            "in1_Name": "EVB_PDB2_P52V_EVB_SENSE_VOLT_V",
+            "power1_Name": "EVB_PDB2_P52V_EVB_SENSE_PWR_W"
+        },
+        {
+            "Address": "0x43",
+            "Bus": 47,
+            "Labels": [
+                "iout1",
+                "pin",
+                "temp1",
+                "vin",
+                "vout1"
+            ],
+            "Name": "EVB_PDB2_P52V_HSC",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 2.4,
+                    "Label": "temp1",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 120.0
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 0.2,
+                    "Label": "temp1",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 10
+                },
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 1.12,
+                    "Label": "vin",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 56
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 0.92,
+                    "Label": "vin",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 46
+                },
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 1.12,
+                    "Label": "vout1",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 56
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 0.92,
+                    "Label": "vout1",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 46
+                },
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 2.4,
+                    "Label": "iout1",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 120
+                },
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 122.4,
+                    "Label": "pin",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 6120
+                }
+            ],
+            "Type": "LTC4287",
+            "iout1_Name": "EVB_PDB2_P52V_HSC_CURR_A",
+            "pin_Name": "EVB_PDB2_P52V_HSC_PWR_W",
+            "temp1_Name": "EVB_PDB2_P52V_HSC_TEMP_C",
+            "vin_Name": "EVB_PDB2_P52V_HSC_VIN_VOLT_V",
+            "vout1_Name": "EVB_PDB2_P52V_HSC_VOUT_VOLT_V"
+        },
+        {
+            "Address": "0x4a",
+            "Bus": 40,
+            "Name": "EVB_PDB2_TOP_TEMP_C",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 2,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 100
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 0.1,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 5
+                }
+            ],
+            "Type": "TMP75"
+        },
+        {
+            "Address": "0x4e",
+            "Bus": 40,
+            "Name": "EVB_PDB2_BOT_TEMP_C",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 2,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 100
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 0.1,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 5
+                }
+            ],
+            "Type": "TMP75"
+        },
+        {
+            "Address": "0x69",
+            "Bus": 42,
+            "Labels": [
+                "iout1",
+                "pout1",
+                "temp1",
+                "vout1"
+            ],
+            "Name": "EVB_PDB2_P12V_BRICK",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 3.0722,
+                    "Label": "iout1",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 153.61
+                },
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 36.8664,
+                    "Label": "pout1",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 1843.32
+                },
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 2,
+                    "Label": "temp1",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 100
+                },
+                {
+                    "Direction": "greater than",
+                    "Hysteresis": 0.2522,
+                    "Label": "vout1",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 12.61
+                },
+                {
+                    "Direction": "less than",
+                    "Hysteresis": 0.2278,
+                    "Label": "vout1",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 11.39
+                }
+            ],
+            "Type": "pmbus",
+            "iout1_Name": "EVB_PDB2_P12V_BRICK_CURR_A",
+            "pout1_Name": "EVB_PDB2_P12V_BRICK_POUT_PWR_W",
+            "temp1_Name": "EVB_PDB2_P12V_BRICK_TEMP_C",
+            "vout1_Name": "EVB_PDB2_P12V_BRICK_VOUT_VOLT_V"
+        }
+    ],
+    "Name": "Santa Barbara EVB_PDB2",
+    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': 'Santa Barbara EVB_PDB2', 'BOARD_MANUFACTURER': 'Quanta'})",
+    "Type": "Board",
+    "xyz.openbmc_project.Inventory.Decorator.Asset": {
+        "BuildDate": "$BOARD_MANUFACTURE_DATE",
+        "Manufacturer": "$BOARD_MANUFACTURER",
+        "Model": "$BOARD_PRODUCT_NAME",
+        "PartNumber": "$BOARD_PART_NUMBER",
+        "SerialNumber": "$BOARD_SERIAL_NUMBER",
+        "SparePartNumber": "$BOARD_INFO_AM1"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.AssetTag": {
+        "AssetTag": "$PRODUCT_ASSET_TAG"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.Revision": {
+        "Version": "$PRODUCT_VERSION"
+    }
+}

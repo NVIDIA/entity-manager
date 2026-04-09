@@ -1,0 +1,322 @@
+{
+    "Exposes": [
+        {
+            "Address": "$address",
+            "Bus": "$bus",
+            "Name": "BRB_R FRU",
+            "Type": "EEPROM"
+        },
+        {
+            "Address": "0x71",
+            "Bus": 22,
+            "FirmwareInfo": {
+                "CompatibleHardware": "com.meta.Hardware.Anacapa.CPLD.LFMXO5_15D_t16_bb_evt2",
+                "VendorIANA": 40981
+            },
+            "Name": "Anacapa_RBB_CPLD",
+            "Type": "LatticeLFMXO5_15DFirmware"
+        },
+        {
+            "Address": "0x60",
+            "Bus": "$bus + 2",
+            "Labels": [
+                "iout1",
+                "iout2",
+                "pout1",
+                "pout2",
+                "temp1",
+                "temp2",
+                "vout1",
+                "vout2"
+            ],
+            "Name": "BRB_R_VR_P0V85_VDD",
+            "Name1": "BRB_R_VR_P0V8_VDDA",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Label": "iout1",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 80
+                },
+                {
+                    "Direction": "greater than",
+                    "Label": "iout1",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 90
+                },
+                {
+                    "Direction": "greater than",
+                    "Label": "iout1",
+                    "Name": "upper non recoverable",
+                    "Severity": 4,
+                    "Value": 100
+                },
+                {
+                    "Direction": "greater than",
+                    "Label": "iout2",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 30
+                },
+                {
+                    "Direction": "greater than",
+                    "Label": "iout2",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 35
+                },
+                {
+                    "Direction": "greater than",
+                    "Label": "iout2",
+                    "Name": "upper non recoverable",
+                    "Severity": 4,
+                    "Value": 37
+                },
+                {
+                    "Direction": "greater than",
+                    "Label": "temp1",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 110
+                },
+                {
+                    "Direction": "greater than",
+                    "Label": "temp1",
+                    "Name": "upper non recoverable",
+                    "Severity": 4,
+                    "Value": 125
+                },
+                {
+                    "Direction": "greater than",
+                    "Label": "temp2",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 110
+                },
+                {
+                    "Direction": "greater than",
+                    "Label": "temp2",
+                    "Name": "upper non recoverable",
+                    "Severity": 4,
+                    "Value": 125
+                },
+                {
+                    "Direction": "less than",
+                    "Label": "vout1",
+                    "Name": "lower non recoverable",
+                    "Severity": 4,
+                    "Value": 0.2
+                },
+                {
+                    "Direction": "less than",
+                    "Label": "vout1",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 0.7
+                },
+                {
+                    "Direction": "less than",
+                    "Label": "vout1",
+                    "Name": "lower non critical",
+                    "Severity": 0,
+                    "Value": 0.799
+                },
+                {
+                    "Direction": "greater than",
+                    "Label": "vout1",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 0.913
+                },
+                {
+                    "Direction": "greater than",
+                    "Label": "vout1",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 1.1
+                },
+                {
+                    "Direction": "greater than",
+                    "Label": "vout1",
+                    "Name": "upper non recoverable",
+                    "Severity": 4,
+                    "Value": 1.2
+                },
+                {
+                    "Direction": "less than",
+                    "Label": "vout2",
+                    "Name": "lower non recoverable",
+                    "Severity": 4,
+                    "Value": 0.2
+                },
+                {
+                    "Direction": "less than",
+                    "Label": "vout2",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 0.7
+                },
+                {
+                    "Direction": "less than",
+                    "Label": "vout2",
+                    "Name": "lower non critical",
+                    "Severity": 0,
+                    "Value": 0.776
+                },
+                {
+                    "Direction": "greater than",
+                    "Label": "vout2",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 0.85
+                },
+                {
+                    "Direction": "greater than",
+                    "Label": "vout2",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 1
+                },
+                {
+                    "Direction": "greater than",
+                    "Label": "vout2",
+                    "Name": "upper non recoverable",
+                    "Severity": 4,
+                    "Value": 1.2
+                }
+            ],
+            "Type": "MP2993",
+            "iout1_Name": "BRB_R_VR_P0V85_VDD_CURR_A",
+            "iout2_Name": "BRB_R_VR_P0V8_VDDA_CURR_A",
+            "pout1_Name": "BRB_R_VR_P0V85_VDD_PWR_W",
+            "pout2_Name": "BRB_R_VR_P0V8_VDDA_PWR_W",
+            "temp1_Name": "BRB_R_VR_P0V85_VDD_TEMP_C",
+            "temp2_Name": "BRB_R_VR_P0V8_VDDA_TEMP_C",
+            "vout1_Name": "BRB_R_VR_P0V85_VDD_VOLT_V",
+            "vout2_Name": "BRB_R_VR_P0V8_VDDA_VOLT_V"
+        },
+        {
+            "Address": "0x4c",
+            "Bus": "$bus",
+            "Name": "BRB_R_OUTLET_BE5_TEMP_C",
+            "Name1": "BRB_R_OUTLET_SW_TEMP_C",
+            "Name2": "BRB_R_OUTLET_BE7_TEMP_C",
+            "Thresholds": [
+                {
+                    "Direction": "less than",
+                    "Index": 1,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 0
+                },
+                {
+                    "Direction": "greater than",
+                    "Index": 1,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 85
+                },
+                {
+                    "Direction": "less than",
+                    "Index": 2,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 0
+                },
+                {
+                    "Direction": "greater than",
+                    "Index": 2,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 85
+                },
+                {
+                    "Direction": "less than",
+                    "Index": 3,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 0
+                },
+                {
+                    "Direction": "greater than",
+                    "Index": 3,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 85
+                }
+            ],
+            "Type": "TMP432"
+        },
+        {
+            "Address": "0x4c",
+            "Bus": "$bus + 1",
+            "Name": "BRB_R_INLET_SW_TEMP_C",
+            "Name1": "BRB_R_INLET_BE7_TEMP_C",
+            "Name2": "BRB_R_INLET_BE5_TEMP_C",
+            "Thresholds": [
+                {
+                    "Direction": "less than",
+                    "Index": 1,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 0
+                },
+                {
+                    "Direction": "greater than",
+                    "Index": 1,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 75
+                },
+                {
+                    "Direction": "less than",
+                    "Index": 2,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 0
+                },
+                {
+                    "Direction": "greater than",
+                    "Index": 2,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 75
+                },
+                {
+                    "Direction": "less than",
+                    "Index": 3,
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 0
+                },
+                {
+                    "Direction": "greater than",
+                    "Index": 3,
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 75
+                }
+            ],
+            "Type": "TMP432"
+        }
+    ],
+    "Name": "BRB_R",
+    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': 'Anacapa(?!.*T20).*RBB EVT2', 'BOARD_MANUFACTURER': 'Inventec'})",
+    "Type": "Board",
+    "xyz.openbmc_project.Inventory.Decorator.Asset": {
+        "BuildDate": "$BOARD_MANUFACTURE_DATE",
+        "Manufacturer": "$BOARD_MANUFACTURER",
+        "Model": "$BOARD_PRODUCT_NAME",
+        "PartNumber": "$BOARD_PART_NUMBER",
+        "SerialNumber": "$BOARD_SERIAL_NUMBER",
+        "SparePartNumber": "$BOARD_INFO_AM1"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.AssetTag": {
+        "AssetTag": "$PRODUCT_ASSET_TAG"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.Revision": {
+        "Version": "$PRODUCT_VERSION"
+    }
+}

@@ -5,8 +5,15 @@ option(
     description: 'Build fru-device VPD parser.',
 )
 option(
+    'fru-device-update-property',
+    type: 'combo',
+    choices: ['asset_only', 'all'],
+    value: 'all',
+    description: 'Enable updating FRU properties via D-BUS. Choose "asset_only" to update only asset properties, or "all" to update all properties.',
+)
+option(
     'fru-device-resizefru',
-    value: false,
+    value: true,
     type: 'boolean',
     description: 'Allow FruDevice to resize FRU areas.',
 )
@@ -29,6 +36,12 @@ option(
     description: 'Run JSON schema validation during the build.',
 )
 option(
+    'runtime-validate-json',
+    type: 'boolean',
+    value: false,
+    description: 'Run JSON schema validation at runtime.',
+)
+option(
     'gpio-presence',
     type: 'boolean',
     value: true,
@@ -39,4 +52,10 @@ option(
     type: 'boolean',
     value: false,
     description: 'Build CBC tray topology parser service',
+)
+option(
+    'new-device-detection',
+    type: 'boolean',
+    value: true,
+    description: 'Cache the current configuration to support new-device detection. This option can be set to false for development, which will force re-parsing of configuration.',
 )
