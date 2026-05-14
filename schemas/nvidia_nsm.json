@@ -1,0 +1,1116 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "NVIDIA nsm Exposes schemas",
+    "$defs": {
+        "NSM_Chassis": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Associations": {
+                    "type": "array"
+                },
+                "Chassis": {
+                    "type": "object"
+                },
+                "ChassisAttributes": {
+                    "type": "object"
+                },
+                "DeviceType": {
+                    "type": "string"
+                },
+                "ImageCopyEnabled": {
+                    "type": "boolean"
+                },
+                "ImageCopyPolicyEnabled": {
+                    "type": "boolean"
+                },
+                "InbandUpdatePolicyEnabled": {
+                    "type": "boolean"
+                },
+                "InstanceNumber": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "SlotCount": {
+                    "type": "integer"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_Chassis"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_ChassisAssembly": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AssemblyType": {
+                    "type": "string"
+                },
+                "ChassisAttributes": {
+                    "type": "object"
+                },
+                "ChassisName": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_ChassisAssembly"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_ChassisIRoTResponder": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Associations": {
+                    "type": "array"
+                },
+                "ChassisAttributes": {
+                    "type": "object"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_ChassisIRoTResponder"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_ChassisPCIeDevice": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Associations": {
+                    "type": "array"
+                },
+                "ChassisAttributes": {
+                    "type": "object"
+                },
+                "ChassisName": {
+                    "type": "string"
+                },
+                "ClockOutputEnableState": {
+                    "type": "object"
+                },
+                "DEVICE_UUID": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PCIeDevice": {
+                    "type": "object"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_ChassisPCIeDevice"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_ChassisRoT": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Chassis": {
+                    "type": "object"
+                },
+                "DeviceType": {
+                    "type": "string"
+                },
+                "ImageCopyEnabled": {
+                    "type": "boolean"
+                },
+                "ImageCopyPolicyEnabled": {
+                    "type": "boolean"
+                },
+                "InbandUpdatePolicyEnabled": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "SetRotPropertyList": {
+                    "type": "array"
+                },
+                "SlotCount": {
+                    "type": "integer"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_ChassisRoT"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_ControlClockLimit_0": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Associations": {
+                    "type": "array"
+                },
+                "ClockMode": {
+                    "type": "string"
+                },
+                "InventoryObjPath": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PhysicalContext": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "boolean"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_ControlClockLimit_0"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_DOT": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChassisName": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_DOT"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_DOTBlob": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChassisName": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PathName": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_DOTBlob"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_DebugToken": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChassisName": {
+                    "type": "string"
+                },
+                "DebugTokenDeviceType": {
+                    "type": "string"
+                },
+                "DebugTokenType": {
+                    "type": "array"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_DebugToken"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_Energy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Aggregated": {
+                    "type": "boolean"
+                },
+                "Associations": {
+                    "type": "array"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PhysicalContext": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "boolean"
+                },
+                "SensorId": {
+                    "type": "integer"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_Energy"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_EventConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AcknowledgementEventIds": {
+                    "type": "array"
+                },
+                "MessageType": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "SubscribedEventIDs": {
+                    "type": "array"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_EventConfig"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_EventSetting": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EventGenerationSetting": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_EventSetting"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_Event_DiagGetSystemConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_Event_DiagGetSystemConfig"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_Event_DiagGetTidConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_Event_DiagGetTidConfig"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_Event_DiagSetFlowControl": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_Event_DiagSetFlowControl"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_Event_DiagSetTestResult": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_Event_DiagSetTestResult"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_Event_Rediscovery": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EventIds": {
+                    "type": "array"
+                },
+                "Logging": {
+                    "type": "boolean"
+                },
+                "LoggingNamespace": {
+                    "type": "string"
+                },
+                "MessageArgs": {
+                    "type": "array"
+                },
+                "MessageId": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OriginOfCondition": {
+                    "type": "string"
+                },
+                "Resolution": {
+                    "type": "string"
+                },
+                "Severity": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_Event_Rediscovery"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_Event_Reset_Required": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EventIds": {
+                    "type": "array"
+                },
+                "LoggingNamespace": {
+                    "type": "string"
+                },
+                "MessageArgs": {
+                    "type": "array"
+                },
+                "MessageId": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OriginOfCondition": {
+                    "type": "string"
+                },
+                "Resolution": {
+                    "type": "string"
+                },
+                "Severity": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_Event_Reset_Required"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_Event_Runtime_IST_Complete": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EventIds": {
+                    "type": "array"
+                },
+                "LoggingNamespace": {
+                    "type": "string"
+                },
+                "MessageArgs": {
+                    "type": "array"
+                },
+                "MessageId": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OriginOfCondition": {
+                    "type": "string"
+                },
+                "Resolution": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_Event_Runtime_IST_Complete"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_Event_Threshold": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EventIds": {
+                    "type": "array"
+                },
+                "LoggingNamespace": {
+                    "type": "string"
+                },
+                "MessageArgs": {
+                    "type": "array"
+                },
+                "MessageId": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OriginOfCondition": {
+                    "type": "string"
+                },
+                "Resolution": {
+                    "type": "string"
+                },
+                "Severity": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_Event_Threshold"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_Event_XID": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EventIds": {
+                    "type": "array"
+                },
+                "LoggingNamespace": {
+                    "type": "string"
+                },
+                "MessageArgs": {
+                    "type": "array"
+                },
+                "MessageId": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OriginOfCondition": {
+                    "type": "string"
+                },
+                "Resolution": {
+                    "type": "string"
+                },
+                "Severity": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_Event_XID"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_FW_ComponentType": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ComponentType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_FW_ComponentType"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_GPMMetrics": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ComputeInstance": {
+                    "type": "integer"
+                },
+                "GpuInstance": {
+                    "type": "integer"
+                },
+                "InventoryObjPath": {
+                    "type": "string"
+                },
+                "MemoryBandwidth": {
+                    "type": "boolean"
+                },
+                "MemoryInventoryObjPath": {
+                    "type": "string"
+                },
+                "MetricsBitfield": {
+                    "type": "array"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PerInstanceMetrics": {
+                    "type": "array"
+                },
+                "RetrievalSource": {
+                    "type": "integer"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_GPMMetrics"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_GPMPortMetrics": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ComputeInstance": {
+                    "type": "integer"
+                },
+                "GpuInstance": {
+                    "type": "integer"
+                },
+                "InstanceBitfield": {
+                    "type": "array"
+                },
+                "InventoryObjPath": {
+                    "type": "string"
+                },
+                "Metrics": {
+                    "type": "array"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Ports": {
+                    "type": "array"
+                },
+                "Priority": {
+                    "type": "boolean"
+                },
+                "RetrievalSource": {
+                    "type": "integer"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_GPMPortMetrics"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_GPU_PCIe_0": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Associations": {
+                    "type": "array"
+                },
+                "ChasisPowerState": {
+                    "type": "string"
+                },
+                "ClearableScalarGroup": {
+                    "type": "array"
+                },
+                "DeviceIndex": {
+                    "type": "integer"
+                },
+                "Health": {
+                    "type": "string"
+                },
+                "InventoryObjPath": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PortInfo": {
+                    "type": "object"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_GPU_PCIe_0"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_GPU_SWInventory": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Associations": {
+                    "type": "array"
+                },
+                "Manufacturer": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_GPU_SWInventory"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_LeakDetection": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChassisPath": {
+                    "type": "string"
+                },
+                "CriticalThresholdsmV": {
+                    "type": "array"
+                },
+                "MaxThresholdsmV": {
+                    "type": "array"
+                },
+                "MinThresholdsmV": {
+                    "type": "array"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "SensorIdMap": {
+                    "type": "array"
+                },
+                "SensorNameMap": {
+                    "type": "array"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_LeakDetection"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_Memory": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Associations": {
+                    "type": "array"
+                },
+                "DeviceType": {
+                    "type": "string"
+                },
+                "ErrorCorrection": {
+                    "type": "string"
+                },
+                "InventoryObjPath": {
+                    "type": "string"
+                },
+                "MemoryAttributes": {
+                    "type": "object"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_Memory"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_NVLink": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Count": {
+                    "type": "integer"
+                },
+                "DeviceType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ParentObjPath": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "boolean"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_NVLink"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_NumericCompositeSensor": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Associations": {
+                    "type": "array"
+                },
+                "Implementation": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PhysicalContext": {
+                    "type": "string"
+                },
+                "SensorType": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_NumericCompositeSensor"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_Poll_Ready": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_Poll_Ready"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_Power": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Aggregated": {
+                    "type": "boolean"
+                },
+                "Associations": {
+                    "type": "array"
+                },
+                "AveragingInterval": {
+                    "type": "integer"
+                },
+                "CompositeNumericSensors": {
+                    "type": "array"
+                },
+                "MaxAllowableOperatingValue": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PeakValue": {
+                    "type": "object"
+                },
+                "PhysicalContext": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "boolean"
+                },
+                "SensorId": {
+                    "type": "integer"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_Power"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_Processor": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Associations": {
+                    "type": "array"
+                },
+                "DEVICE_UUID": {
+                    "type": "string"
+                },
+                "InventoryObjPath": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PowerCap": {
+                    "type": "object"
+                },
+                "ProcessorAttributes": {
+                    "type": "object"
+                },
+                "ProcessorPerformance": {
+                    "type": "object"
+                },
+                "ReconfigPermissions": {
+                    "type": "object"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_Processor"
+                },
+                "UUID": {
+                    "type": "string"
+                },
+                "WorkloadPowerProfile": {
+                    "type": "object"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_RoT_Slot": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Associations": {
+                    "type": "array"
+                },
+                "ChassisName": {
+                    "type": "string"
+                },
+                "ComponentClassification": {
+                    "type": "integer"
+                },
+                "ComponentIdentifier": {
+                    "type": "integer"
+                },
+                "ComponentIndex": {
+                    "type": "integer"
+                },
+                "FirmwareType": {
+                    "type": "string"
+                },
+                "IsRoT": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ReportSkuWithNsm": {
+                    "type": "boolean"
+                },
+                "SetRotPropertyList": {
+                    "type": "array"
+                },
+                "SlotType": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_RoT_Slot"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_Temp": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Aggregated": {
+                    "type": "boolean"
+                },
+                "Associations": {
+                    "type": "array"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "Implementation": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PhysicalContext": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "boolean"
+                },
+                "ReadingBasis": {
+                    "type": "string"
+                },
+                "SensorId": {
+                    "type": "integer"
+                },
+                "ThermalParameters": {
+                    "type": "array"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_Temp"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_Voltage": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Aggregated": {
+                    "type": "boolean"
+                },
+                "Associations": {
+                    "type": "array"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PhysicalContext": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "boolean"
+                },
+                "SensorId": {
+                    "type": "integer"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_Voltage"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        }
+    }
+}

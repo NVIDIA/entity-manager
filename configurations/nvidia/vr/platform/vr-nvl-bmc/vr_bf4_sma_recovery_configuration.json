@@ -1,0 +1,21 @@
+{
+    "Exposes": [
+        {
+            "ChassisName": "BlueField_SMA_0",
+            "ForceRecoveryChassisObject": "BlueField_SMA_0",
+            "Interface": "USB",
+            "MctpEID": 55,
+            "Name": "FW_BlueField_SMA_0",
+            "ProductId": "0xCF11",
+            "RecoveryGpioName": "BF4_USB_MCU_RECOVERY_L",
+            "ResetGpioName": "BF4_USB_MCU_RST_L",
+            "Target": "BF4",
+            "Type": "MCURecovery",
+            "USBPort": "1-1.4.1",
+            "VendorId": "0x0955"
+        }
+    ],
+    "Name": "BF4_SMA_Recovery_Devices",
+    "Probe": "TRUE",
+    "Type": "Recovery_Config"
+}

@@ -1,0 +1,40 @@
+{
+    "Exposes": [
+        {
+            "ConnectsToName": "",
+            "DeviceAddress": "",
+            "DeviceType": "BMC",
+            "Name": "BMC_0",
+            "PhysicalInterface": "",
+            "RecoveryLayers": "",
+            "ResetGPIO": "",
+            "Type": "PlatformDevice",
+            "poweredInStandby": false
+        },
+        {
+            "ConnectsToName": "BMC_0",
+            "DeviceAddress": "MCTP:20",
+            "DeviceType": "MCTPBridge",
+            "Name": "ProcessorModule_SMA_0",
+            "PhysicalInterface": "usb1:1-1-2-1-1",
+            "RecoveryLayers": "",
+            "ResetGPIO": "",
+            "Type": "PlatformDevice",
+            "poweredInStandby": false
+        },
+        {
+            "ConnectsToName": "BMC_0",
+            "DeviceAddress": "MCTP:16",
+            "DeviceType": "CPU",
+            "Name": "CPU_0",
+            "PhysicalInterface": "usb1:1-1-3-1-4-1",
+            "RecoveryLayers": "",
+            "ResetGPIO": "",
+            "Type": "PlatformDevice",
+            "poweredInStandby": true
+        }
+    ],
+    "Name": "VR C2 Platform Recovery",
+    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.*MGX C1.*'})",
+    "Type": "PlatformRecoveryConfiguration"
+}

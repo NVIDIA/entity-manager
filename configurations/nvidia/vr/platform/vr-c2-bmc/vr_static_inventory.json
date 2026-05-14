@@ -1,0 +1,105 @@
+[
+    {
+        "Exposes": [],
+        "Name": "NSM_ERoT_BMC_0",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 4,
+            "INSTANCE_NUMBER": 0,
+            "UUID": "STATIC:4:0:MCTP_EID:10"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_IRoT_CPU_0",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 6,
+            "INSTANCE_NUMBER": 0,
+            "UUID": "STATIC:6:0:MCTP_EID:16"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_IRoT_CPU_1",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.*MGX C2.*'})",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 6,
+            "INSTANCE_NUMBER": 1,
+            "UUID": "STATIC:6:1:MCTP_EID:17"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_ProcessorModule_SMA_0",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 5,
+            "DEVICE_ROLE": "HPMSMA",
+            "INSTANCE_NUMBER": 0,
+            "UUID": "STATIC:773:0:MCTP_EID:20"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_StorageBackplane_SMA_0",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 5,
+            "DEVICE_ROLE": "BPSMA",
+            "INSTANCE_NUMBER": 0,
+            "UUID": "STATIC:5:1:MCTP_EID:60"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_GPU_SMA_0",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 5,
+            "DEVICE_ROLE": "GPUSMA",
+            "INSTANCE_NUMBER": 0,
+            "UUID": "STATIC:261:0:MCTP_EID:70"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_GPU_SMA_1",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 5,
+            "DEVICE_ROLE": "GPUSMA",
+            "INSTANCE_NUMBER": 1,
+            "UUID": "STATIC:261:1:MCTP_EID:80"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_DEV_GPU_0",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 0,
+            "INSTANCE_NUMBER": 0,
+            "UUID": "STATIC:0:0:MCTP_EID:71"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_DEV_GPU_1",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 0,
+            "INSTANCE_NUMBER": 1,
+            "UUID": "STATIC:0:1:MCTP_EID:81"
+        }
+    }
+]

@@ -1,0 +1,35 @@
+[
+    {
+        "Exposes": [
+            {
+                "ChipSelect": 1,
+                "Gpio": [
+                    {
+                        "ActiveValue": "high",
+                        "DeactiveValue": "low",
+                        "GpioLine": "OOB_MUX_CTRL0-O"
+                    },
+                    {
+                        "ActiveValue": "high",
+                        "DeactiveValue": "low",
+                        "GpioLine": "OOB_MUX_CTRL1-O"
+                    }
+                ],
+                "InventoryObjPath": "/xyz/openbmc_project/inventory/system",
+                "Name": "RWSPI_0",
+                "Programmer": "nv_sma_spi",
+                "Type": "SPI",
+                "USBPort": "1-1.2.1.1"
+            }
+        ],
+        "Name": "ProcessorModule_0_SBIOS_RWFlash_0",
+        "Probe": "TRUE",
+        "Type": "Chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": false
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Other"
+        }
+    }
+]

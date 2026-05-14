@@ -1,0 +1,48 @@
+[
+    {
+        "Exposes": [
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/StorageBackplane_0",
+                        "Backward": "chassis",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_StorageBackplane_SMA_0",
+                        "Backward": "chassis",
+                        "Forward": "all_chassis"
+                    }
+                ],
+                "Chassis": {
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "ChassisAttributes": {
+                    "AssetInformationAvailable": true,
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "DeviceDiagnosticsSupported": false,
+                    "ErrorInjectionSupported": true,
+                    "FieldReplaceable": false,
+                    "GPIOStateSupported": true,
+                    "LocationCode": "StorageBackplane_SMA_0",
+                    "LocationContext": "Chassis_0/StorageBackplane_0",
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "ResetMetricsSupported": true,
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "DeviceType": "$DEVICE_TYPE",
+                "Name": "StorageBackplane_SMA_0",
+                "Type": "NSM_Chassis",
+                "UUID": "$UUID"
+            }
+        ],
+        "Name": "StorageBackplane_SMA_0",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/StorageBackplane_0",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'BPSMA', 'INSTANCE_NUMBER': 0})",
+        "Type": "chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "NVIDIA"
+        }
+    }
+]

@@ -1,0 +1,104 @@
+[
+    {
+        "Exposes": [
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/ProcessorModule_$INSTANCE_NUMBER",
+                        "Backward": "all_chassis",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_SMA_$INSTANCE_NUMBER",
+                        "Backward": "associated_ROT",
+                        "Forward": "inventory"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_SMA_$INSTANCE_NUMBER",
+                        "Backward": "associated_chassis",
+                        "Forward": "inventory_chassis"
+                    }
+                ],
+                "ChassisAttributes": {
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "FieldReplaceable": false,
+                    "LocationCode": "IRoT_$INSTANCE_NUMBER",
+                    "LocationContext": "HGX_Chassis_0/ProcessorModule_$INSTANCE_NUMBER/GPU_SMA_$INSTANCE_NUMBER",
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "Name": "IRoT_GPU_SMA_$INSTANCE_NUMBER IRoT",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "Name": "IRoT_GPU_SMA_$INSTANCE_NUMBER",
+                "Type": "NSM_ChassisIRoTResponder",
+                "UUID": "$UUID"
+            },
+            {
+                "Chassis": {
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "DeviceType": "$DEVICE_TYPE",
+                "ImageCopyEnabled": true,
+                "Name": "IRoT_GPU_SMA_$INSTANCE_NUMBER",
+                "SlotCount": 2,
+                "Type": "NSM_ChassisRoT",
+                "UUID": "$UUID"
+            },
+            {
+                "ChassisName": "IRoT_GPU_SMA_$INSTANCE_NUMBER",
+                "DebugTokenDeviceType": "SMA",
+                "DebugTokenType": [
+                    "Unified"
+                ],
+                "Name": "DebugToken",
+                "Type": "NSM_DebugToken",
+                "UUID": "$UUID"
+            },
+            {
+                "ComponentType": "AP",
+                "Name": "AP",
+                "Type": "NSM_FW_ComponentType"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/FW_GPU_SMA_$INSTANCE_NUMBER",
+                        "Backward": "ActiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "GPU_SMA_$INSTANCE_NUMBER",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 65282,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot1",
+                "SlotType": "Active",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/FW_GPU_SMA_$INSTANCE_NUMBER",
+                        "Backward": "InactiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "GPU_SMA_$INSTANCE_NUMBER",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 65282,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot2",
+                "SlotType": "InActive",
+                "Type": "NSM_RoT_Slot"
+            }
+        ],
+        "Name": "IRoT_GPU_SMA_$INSTANCE_NUMBER",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'GPUSMA'})",
+        "Type": "Chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": "$INSTANCE_NUMBER"
+        }
+    }
+]

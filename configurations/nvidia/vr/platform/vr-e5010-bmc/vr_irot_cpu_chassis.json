@@ -1,0 +1,134 @@
+[
+    {
+        "Exposes": [
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/cpu/CPU_0",
+                        "Backward": "all_chassis",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/cpu/CPU_0",
+                        "Backward": "associated_ROT",
+                        "Forward": "inventory"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/cpu/CPU_0",
+                        "Backward": "associated_chassis",
+                        "Forward": "inventory_chassis"
+                    }
+                ],
+                "ChassisAttributes": {
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "Name": "IRoT_CPU_0 IRoT",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "Name": "IRoT_CPU_0",
+                "Type": "NSM_ChassisIRoTResponder",
+                "UUID": "$UUID"
+            },
+            {
+                "Chassis": {
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "DeviceType": "$DEVICE_TYPE",
+                "Name": "IRoT_CPU_0",
+                "SlotCount": 4,
+                "Type": "NSM_ChassisRoT",
+                "UUID": "$UUID"
+            },
+            {
+                "ChassisName": "IRoT_CPU_0",
+                "Name": "DOT",
+                "Type": "NSM_DOT",
+                "UUID": "$UUID"
+            },
+            {
+                "ChassisName": "IRoT_CPU_0",
+                "DebugTokenType": [
+                    "Unified"
+                ],
+                "Name": "DebugToken",
+                "Type": "NSM_DebugToken",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/SBIOS_FMC_0",
+                        "Backward": "ActiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "SBIOS_FMC_0",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 2,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot1",
+                "SlotType": "Active",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/SBIOS_FMC_0",
+                        "Backward": "InactiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "SBIOS_FMC_0",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 2,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot2",
+                "SlotType": "InActive",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/SBIOS_FW_0",
+                        "Backward": "ActiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "SBIOS_FW_0",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 513,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot3",
+                "SlotType": "Active",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/SBIOS_FW_0",
+                        "Backward": "InactiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "SBIOS_FW_0",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 513,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot4",
+                "SlotType": "InActive",
+                "Type": "NSM_RoT_Slot"
+            }
+        ],
+        "Name": "IRoT_CPU_0",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 6, 'INSTANCE_NUMBER': 0})",
+        "Type": "Chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 0
+        }
+    }
+]

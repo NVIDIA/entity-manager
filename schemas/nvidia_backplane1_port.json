@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "NVIDIA Backplane1Port schema",
+    "$defs": {
+        "Backplane1Port": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "Backplane1Port"
+                }
+            },
+            "required": ["Name", "Type"]
+        }
+    }
+}

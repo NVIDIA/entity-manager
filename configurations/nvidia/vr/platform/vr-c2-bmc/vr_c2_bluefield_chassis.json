@@ -1,0 +1,203 @@
+[
+    {
+        "Exposes": [
+            {
+                "Address": "$address",
+                "Bus": "$bus",
+                "Name": "$bus BlueField_FRU",
+                "Type": "EEPROM_24C128"
+            },
+            {
+                "EID": 105,
+                "Name": "BlueField_0",
+                "Type": "I2CDeviceAssociation"
+            },
+            {
+                "AuxNames": [
+                    "BlueField_0_Temp_0"
+                ],
+                "Name": "BlueField_0_Temp_0",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/board/BlueField_0",
+                "SensorId": 1,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "BlueField_0_Port_0_Temp_0"
+                ],
+                "Name": "BlueField_0_Port_0_Temp_0",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/board/BlueField_0",
+                "SensorId": 8,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "BlueField_0_Port_1_Temp_0"
+                ],
+                "Name": "BlueField_0_Port_1_Temp_0",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/board/BlueField_0",
+                "SensorId": 9,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "Port_0"
+                ],
+                "Name": "BlueField_0_Port_0_State_0",
+                "SensorId": 4,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "Port_1"
+                ],
+                "Name": "BlueField_0_Port_1_State_0",
+                "SensorId": 5,
+                "Type": "SensorAuxName"
+            }
+        ],
+        "Name": "BlueField_0",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 30, 'ADDRESS': 80})",
+            "OR",
+            "xyz.openbmc_project.FruDevice({'BUS': 34, 'ADDRESS': 80})",
+            "MATCH_ONE"
+        ],
+        "Type": "Board",
+        "xyz.openbmc_project.Association.Definitions": {
+            "Associations": [
+                [
+                    "assembly",
+                    "parent_chassis",
+                    "/xyz/openbmc_project/inventory/system/assembly/BlueField_Board_FRU_Assembly0"
+                ],
+                [
+                    "assembly",
+                    "parent_chassis",
+                    "/xyz/openbmc_project/inventory/system/assembly/BlueField_Product_FRU_Assembly1"
+                ]
+            ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SKU": "$BOARD_SKU",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "$address",
+            "Bus": "$bus",
+            "Name": "BlueField_FRU"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.Inventory.Item.NetworkInterface": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "BlueField Board FRU Assembly0",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 30, 'ADDRESS': 80})",
+            "OR",
+            "xyz.openbmc_project.FruDevice({'BUS': 34, 'ADDRESS': 80})",
+            "MATCH_ONE"
+        ],
+        "Type": "Assembly",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "BuildDate": "$BOARD_MANUFACTURE_DATE",
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Item.Assembly": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "BlueField Product FRU Assembly1",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 30, 'ADDRESS': 80})",
+            "OR",
+            "xyz.openbmc_project.FruDevice({'BUS': 34, 'ADDRESS': 80})",
+            "MATCH_ONE"
+        ],
+        "Type": "Assembly",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$PRODUCT_MANUFACTURER",
+            "Model": "$PRODUCT_PRODUCT_NAME",
+            "PartNumber": "$PRODUCT_PART_NUMBER",
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Revision": {
+            "Version": "$PRODUCT_VERSION"
+        },
+        "xyz.openbmc_project.Inventory.Item.Assembly": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "BlueField_NIC_0",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 30, 'ADDRESS': 80})",
+            "OR",
+            "xyz.openbmc_project.FruDevice({'BUS': 34, 'ADDRESS': 80})",
+            "MATCH_ONE"
+        ],
+        "Type": "NetworkAdapter",
+        "xyz.openbmc_project.Association.Definitions": {
+            "Associations": [
+                [
+                    "parent_chassis",
+                    "network_adapters",
+                    "/xyz/openbmc_project/inventory/system/board/BlueField_0"
+                ],
+                [
+                    "parent_device",
+                    "all_states",
+                    "/xyz/openbmc_project/inventory/system/board/BlueField_0"
+                ],
+                [
+                    "all_states",
+                    "parent_device",
+                    "/xyz/openbmc_project/state/PLDM_Sensor_4_105/Port_0"
+                ],
+                [
+                    "all_states",
+                    "parent_device",
+                    "/xyz/openbmc_project/state/PLDM_Sensor_5_105/Port_1"
+                ]
+            ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "EID": 105,
+            "Name": "I2CDeviceAssociation"
+        },
+        "xyz.openbmc_project.Inventory.Item.NetworkInterface": {}
+    }
+]

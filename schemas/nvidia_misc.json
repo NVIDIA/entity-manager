@@ -1,0 +1,646 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "NVIDIA misc Exposes schemas",
+    "$defs": {
+        "ADC": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Index": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PollRate": {
+                    "type": "integer"
+                },
+                "ScaleFactor": {
+                    "type": "integer"
+                },
+                "SensorParams": {
+                    "type": "array"
+                },
+                "Thresholds": {
+                    "type": "array"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "ADC"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "ChassisIntrusionSensor": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Class": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "integer"
+                },
+                "Rearm": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "ChassisIntrusionSensor"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "DownstreamPort": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConnectsToType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "DownstreamPort"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "EEPROM_24C02": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Bus": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "EEPROM_24C02"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "EEPROM_24C128": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Bus": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "EEPROM_24C128"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "EEPROM_24C256": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Bus": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "EEPROM_24C256"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "EEPROM_24C64": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Bus": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "EEPROM_24C64"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "I2CFan": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Bus": {
+                    "type": "integer"
+                },
+                "Connector": {
+                    "type": "object"
+                },
+                "Index": {
+                    "type": "integer"
+                },
+                "MaxReading": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PowerState": {
+                    "type": "string"
+                },
+                "Thresholds": {
+                    "type": "array"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "I2CFan"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "LTC4287": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Bus": {
+                    "type": "string"
+                },
+                "Labels": {
+                    "type": "array"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "LTC4287"
+                },
+                "iout1_Name": {
+                    "type": "string"
+                },
+                "pin_Name": {
+                    "type": "string"
+                },
+                "temp1_Name": {
+                    "type": "string"
+                },
+                "vin_Name": {
+                    "type": "string"
+                },
+                "vout1_Name": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "MCTPI2CTarget": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Bus": {
+                    "type": "string"
+                },
+                "IgnoreMessageTypes": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PollingInterval": {
+                    "type": "string"
+                },
+                "StaticEndpointID": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "MCTPI2CTarget"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "MCTPSPIDevice": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bus": {
+                    "type": "string"
+                },
+                "ChipSelect": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PollingInterval": {
+                    "type": "string"
+                },
+                "StaticEndpointID": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "MCTPSPIDevice"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "MCTPUSBGadgetTarget": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Interface": {
+                    "type": "string"
+                },
+                "LocalEID": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "MCTPUSBGadgetTarget"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "MCTPUSBTarget": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BridgePoolEndEID": {
+                    "type": "string"
+                },
+                "BridgePoolStartEID": {
+                    "type": "string"
+                },
+                "IgnoreEIDs": {
+                    "type": "string"
+                },
+                "IgnoreMessageTypes": {
+                    "type": "string"
+                },
+                "Interface": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PollingInterval": {
+                    "type": "string"
+                },
+                "StaticEndpointID": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "MCTPUSBTarget"
+                },
+                "USBPath": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "MCTPXROTTarget": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Interface": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PollingInterval": {
+                    "type": "string"
+                },
+                "StaticEndpointID": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "MCTPXROTTarget"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NVME1000": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Bus": {
+                    "type": ["integer", "string"]
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PowerState": {
+                    "type": "string"
+                },
+                "Thresholds": {
+                    "type": "array"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NVME1000"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "Pid": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Class": {
+                    "type": "string"
+                },
+                "FFGainCoefficient": {
+                    "type": "number"
+                },
+                "FFOffCoefficient": {
+                    "type": "number"
+                },
+                "ICoefficient": {
+                    "type": "number"
+                },
+                "ILimitMax": {
+                    "type": "number"
+                },
+                "ILimitMin": {
+                    "type": "number"
+                },
+                "Inputs": {
+                    "type": "array"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NegativeHysteresis": {
+                    "type": "number"
+                },
+                "OutLimitMax": {
+                    "type": "number"
+                },
+                "OutLimitMin": {
+                    "type": "number"
+                },
+                "Outputs": {
+                    "type": "array"
+                },
+                "PCoefficient": {
+                    "type": "number"
+                },
+                "PositiveHysteresis": {
+                    "type": "number"
+                },
+                "SlewNeg": {
+                    "type": "number"
+                },
+                "SlewPos": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "Pid"
+                },
+                "Zones": {
+                    "type": "array"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "Pid_Zone": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CycleIntervalTimeMS": {
+                    "type": "integer"
+                },
+                "FailSafePercent": {
+                    "type": "integer"
+                },
+                "MinThermalOutput": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "Pid.Zone"
+                },
+                "UpdateThermalsTimeMS": {
+                    "type": "integer"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "RAA228004": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Bus": {
+                    "type": "integer"
+                },
+                "Labels": {
+                    "type": "array"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Thresholds": {
+                    "type": "array"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "RAA228004"
+                },
+                "temp1_Name": {
+                    "type": "string"
+                },
+                "temp2_Name": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "SatelliteController": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthType": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "SatelliteController"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "Stepwise": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Class": {
+                    "type": "string"
+                },
+                "InputUnavailableAsFailed": {
+                    "type": "boolean"
+                },
+                "Inputs": {
+                    "type": "array"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NegativeHysteresis": {
+                    "type": "integer"
+                },
+                "Output": {
+                    "type": "array"
+                },
+                "PositiveHysteresis": {
+                    "type": "integer"
+                },
+                "Reading": {
+                    "type": "array"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "Stepwise"
+                },
+                "Zones": {
+                    "type": "array"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "TMP411": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Bus": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "TMP411"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "TMP421": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Bus": {
+                    "type": "integer"
+                },
+                "Labels": {
+                    "type": "array"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Name1": {
+                    "type": "string"
+                },
+                "PowerState": {
+                    "type": "string"
+                },
+                "Thresholds": {
+                    "type": "array"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "TMP421"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "TMP75": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Bus": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Thresholds": {
+                    "type": "array"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "TMP75"
+                }
+            },
+            "required": ["Name", "Type"]
+        }
+    }
+}

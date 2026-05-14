@@ -1,0 +1,22 @@
+{
+    "Exposes": [
+        {
+            "ChassisName": "ProcessorModule_SMA_0",
+            "ForceRecoveryChassisObject": "ProcessorModule_SMA_0",
+            "Interface": "USB",
+            "MctpEID": 20,
+            "Name": "FW_ProcessorModule_SMA_0",
+            "ProductId": "0xCF11",
+            "RecoveryGpioName": "B0_M1_MCU_RECOVERY_L-O",
+            "ResetGpioName": "B0_M1_MCU_RESET_L-O",
+            "Target": "HPM",
+            "Type": "MCURecovery",
+            "USBPort": "1-1.2.1.1",
+            "VendorId": "0x0955",
+            "hasChassisPowerSource": false
+        }
+    ],
+    "Name": "HPM_SMA_Recovery_Devices",
+    "Probe": "TRUE",
+    "Type": "Recovery_Config"
+}

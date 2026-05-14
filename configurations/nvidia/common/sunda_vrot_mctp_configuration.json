@@ -1,0 +1,15 @@
+[
+    {
+        "Exposes": [
+            {
+                "Interface": "$Interface",
+                "Name": "MCTPVROT_0",
+                "StaticEndpointID": "100",
+                "Type": "MCTPXROTTarget"
+            }
+        ],
+        "Name": "MCTP_XROT_DEV2",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpvrot0'})",
+        "Type": "MCTPInterface"
+    }
+]

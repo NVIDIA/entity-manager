@@ -1,0 +1,55 @@
+{
+    "Exposes": [
+        {
+            "ChassisName": "HGX_IRoT_GPU_0",
+            "ForceRecoveryChassisObject": "HGX_GPU_0",
+            "I2CAddress": 105,
+            "InfoRomName": "HGX_InfoROM_GPU_0",
+            "MctpEID": 11,
+            "Name": "HGX_FW_GPU_0",
+            "SMAEID": 10,
+            "Type": "OCPRecovery",
+            "USBPort": "1-1.1.1.1",
+            "hasChassisPowerSource": true
+        },
+        {
+            "ChassisName": "HGX_IRoT_GPU_1",
+            "ForceRecoveryChassisObject": "HGX_GPU_1",
+            "I2CAddress": 106,
+            "InfoRomName": "HGX_InfoROM_GPU_1",
+            "MctpEID": 12,
+            "Name": "HGX_FW_GPU_1",
+            "SMAEID": 10,
+            "Type": "OCPRecovery",
+            "USBPort": "1-1.1.1.1",
+            "hasChassisPowerSource": true
+        },
+        {
+            "ChassisName": "HGX_IRoT_GPU_2",
+            "ForceRecoveryChassisObject": "HGX_GPU_2",
+            "I2CAddress": 105,
+            "InfoRomName": "HGX_InfoROM_GPU_2",
+            "MctpEID": 21,
+            "Name": "HGX_FW_GPU_2",
+            "SMAEID": 20,
+            "Type": "OCPRecovery",
+            "USBPort": "1-1.1.2.1",
+            "hasChassisPowerSource": true
+        },
+        {
+            "ChassisName": "HGX_IRoT_GPU_3",
+            "ForceRecoveryChassisObject": "HGX_GPU_3",
+            "I2CAddress": 106,
+            "InfoRomName": "HGX_InfoROM_GPU_3",
+            "MctpEID": 22,
+            "Name": "HGX_FW_GPU_3",
+            "SMAEID": 20,
+            "Type": "OCPRecovery",
+            "USBPort": "1-1.1.2.1",
+            "hasChassisPowerSource": true
+        }
+    ],
+    "Name": "OCP_Recovery_Devices",
+    "Probe": "TRUE",
+    "Type": "Recovery_Config"
+}

@@ -1,0 +1,16 @@
+[
+    {
+        "Exposes": [
+            {
+                "AuthType": "None",
+                "Hostname": "172.31.13.251",
+                "Name": "sat0",
+                "Port": "80",
+                "Type": "SatelliteController"
+            }
+        ],
+        "Name": "HMC_SAT_0",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 2, 'ADDRESS': 87})",
+        "Type": "BMC"
+    }
+]

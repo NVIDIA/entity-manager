@@ -1,0 +1,694 @@
+[
+    {
+        "Exposes": [
+            {
+                "Chassis": {
+                    "DEVICE_UUID": "$UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "ChassisAttributes": {
+                    "AssetInformationAvailable": false,
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Zone",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "DeviceType": "3",
+                "InstanceNumber": "0",
+                "Name": "HGX_Chassis_0",
+                "Type": "NSM_Chassis",
+                "UUID": "$UUID"
+            },
+            {
+                "Chassis": {
+                    "DEVICE_UUID": "$UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "ChassisAttributes": {
+                    "AssetInformationAvailable": false,
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Module",
+                    "Type": "NSM_Chassis_Attributes",
+                    "WriteProtectSupported": false
+                },
+                "DeviceType": "3",
+                "InstanceNumber": "0",
+                "Name": "HGX_ProcessorModule_0",
+                "Type": "NSM_Chassis",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_0",
+                        "Backward": "chassis",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_ProcessorModule_SMA_0",
+                        "Backward": "chassis",
+                        "Forward": "all_chassis"
+                    }
+                ],
+                "Chassis": {
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "ChassisAttributes": {
+                    "AssetInformationAvailable": true,
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "DeviceDiagnosticsSupported": false,
+                    "ErrorInjectionSupported": true,
+                    "FieldReplaceable": false,
+                    "GPIOStateSupported": true,
+                    "LocationCode": "HPM_SMA_0",
+                    "LocationContext": "HGX_Chassis_0/ProcessorModule_0",
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "ResetMetricsSupported": true,
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "DeviceType": "$DEVICE_TYPE",
+                "Name": "HGX_ProcessorModule_SMA_0",
+                "Type": "NSM_Chassis",
+                "UUID": "$UUID"
+            },
+            {
+                "AcknowledgementEventIds": [],
+                "MessageType": 0,
+                "Name": "GPIOStateEventSetting",
+                "SubscribedEventIDs": [
+                    3
+                ],
+                "Type": "NSM_EventConfig",
+                "UUID": "$UUID"
+            },
+            {
+                "EventGenerationSetting": 2,
+                "Name": "GlobalEventSetting",
+                "Type": "NSM_EventSetting",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0",
+                        "Backward": "total_power",
+                        "Forward": "all_processors"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1",
+                        "Backward": "total_power",
+                        "Forward": "all_processors"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_2",
+                        "Backward": "total_power",
+                        "Forward": "all_processors"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_3",
+                        "Backward": "total_power",
+                        "Forward": "all_processors"
+                    }
+                ],
+                "Implementation": "Synthesized",
+                "Name": "HGX_Chassis_0_TotalGPU_Power_0",
+                "PhysicalContext": "GPU",
+                "SensorType": "power",
+                "Type": "NSM_NumericCompositeSensor",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ProcessorModule_SMA_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Description": "Internal SMA temperature values",
+                "Name": "HGX_ProcessorModule_SMA_0_Temp_0",
+                "PhysicalContext": "GPUSubsystem",
+                "Priority": true,
+                "SensorId": 17,
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Name": "HGX_ProcessorModule_0_External_SMA_0_Temp_0",
+                "PhysicalContext": "GPUSubsystem",
+                "Priority": true,
+                "SensorId": 16,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": true,
+                        "Name": "UpperCaution",
+                        "ParameterId": 16,
+                        "PeriodicUpdate": false,
+                        "Type": "NSM_ThermalParameter"
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Name": "HGX_ProcessorModule_0_GPU_VR_Temp_0",
+                "PhysicalContext": "Board",
+                "Priority": true,
+                "SensorId": 18,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": false,
+                        "Name": "UpperFatal",
+                        "Value": 135.0
+                    },
+                    {
+                        "Dynamic": false,
+                        "Name": "UpperCritical",
+                        "Value": 130.0
+                    },
+                    {
+                        "Dynamic": false,
+                        "Name": "UpperCaution",
+                        "Value": 120.0
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Name": "HGX_ProcessorModule_0_GPU_0_Die_0_Temp_0",
+                "PhysicalContext": "GPU",
+                "Priority": true,
+                "SensorId": 138,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": true,
+                        "Name": "UpperCaution",
+                        "ParameterId": 138,
+                        "PeriodicUpdate": false,
+                        "Type": "NSM_ThermalParameter"
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Name": "HGX_ProcessorModule_0_GPU_0_Die_1_Temp_0",
+                "PhysicalContext": "GPU",
+                "Priority": true,
+                "SensorId": 139,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": true,
+                        "Name": "UpperCaution",
+                        "ParameterId": 139,
+                        "PeriodicUpdate": false,
+                        "Type": "NSM_ThermalParameter"
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Name": "HGX_ProcessorModule_0_GPU_1_Die_0_Temp_0",
+                "PhysicalContext": "GPU",
+                "Priority": true,
+                "SensorId": 140,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": true,
+                        "Name": "UpperCaution",
+                        "ParameterId": 140,
+                        "PeriodicUpdate": false,
+                        "Type": "NSM_ThermalParameter"
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Name": "HGX_ProcessorModule_0_GPU_1_Die_1_Temp_0",
+                "PhysicalContext": "GPU",
+                "Priority": true,
+                "SensorId": 141,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": true,
+                        "Name": "UpperCaution",
+                        "ParameterId": 141,
+                        "PeriodicUpdate": false,
+                        "Type": "NSM_ThermalParameter"
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Name": "HGX_ProcessorModule_0_CPU_0_Die_0_Temp_0",
+                "PhysicalContext": "CPU",
+                "Priority": true,
+                "SensorId": 216,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": true,
+                        "Name": "UpperCaution",
+                        "ParameterId": 216,
+                        "PeriodicUpdate": false,
+                        "Type": "NSM_ThermalParameter"
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Name": "HGX_ProcessorModule_0_CPU_0_SocTemp_0",
+                "PhysicalContext": "CPU",
+                "Priority": true,
+                "SensorId": 217,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": true,
+                        "Name": "UpperCaution",
+                        "ParameterId": 217,
+                        "PeriodicUpdate": false,
+                        "Type": "NSM_ThermalParameter"
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            }
+        ],
+        "Name": "HGX_ProcessorModule_SMA_0",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_0",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'HPMSMA', 'INSTANCE_NUMBER': 0})",
+        "Type": "Chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "NVIDIA"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Chassis": {
+                    "DEVICE_UUID": "$UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "ChassisAttributes": {
+                    "AssetInformationAvailable": false,
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Module",
+                    "Type": "NSM_Chassis_Attributes",
+                    "WriteProtectSupported": false
+                },
+                "DeviceType": "3",
+                "InstanceNumber": "1",
+                "Name": "HGX_ProcessorModule_1",
+                "Type": "NSM_Chassis",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_1",
+                        "Backward": "chassis",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_ProcessorModule_SMA_1",
+                        "Backward": "chassis",
+                        "Forward": "all_chassis"
+                    }
+                ],
+                "Chassis": {
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "ChassisAttributes": {
+                    "AssetInformationAvailable": true,
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "DeviceDiagnosticsSupported": false,
+                    "ErrorInjectionSupported": true,
+                    "FieldReplaceable": false,
+                    "GPIOStateSupported": true,
+                    "LocationCode": "HPM_SMA_0",
+                    "LocationContext": "HGX_Chassis_0/ProcessorModule_1",
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "ResetMetricsSupported": true,
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "DeviceType": "$DEVICE_TYPE",
+                "Name": "HGX_ProcessorModule_SMA_1",
+                "Type": "NSM_Chassis",
+                "UUID": "$UUID"
+            },
+            {
+                "AcknowledgementEventIds": [],
+                "MessageType": 0,
+                "Name": "GPIOStateEventSetting",
+                "SubscribedEventIDs": [
+                    3
+                ],
+                "Type": "NSM_EventConfig",
+                "UUID": "$UUID"
+            },
+            {
+                "EventGenerationSetting": 2,
+                "Name": "GlobalEventSetting",
+                "Type": "NSM_EventSetting",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ProcessorModule_SMA_1",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Description": "Internal SMA temperature values",
+                "Name": "HGX_ProcessorModule_SMA_1_Temp_0",
+                "PhysicalContext": "GPUSubsystem",
+                "Priority": true,
+                "SensorId": 17,
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_1",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Name": "HGX_ProcessorModule_1_External_SMA_0_Temp_0",
+                "PhysicalContext": "GPUSubsystem",
+                "Priority": true,
+                "SensorId": 16,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": true,
+                        "Name": "UpperCaution",
+                        "ParameterId": 16,
+                        "PeriodicUpdate": false,
+                        "Type": "NSM_ThermalParameter"
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_1",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Name": "HGX_ProcessorModule_1_GPU_VR_Temp_0",
+                "PhysicalContext": "Board",
+                "Priority": true,
+                "SensorId": 18,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": false,
+                        "Name": "UpperFatal",
+                        "Value": 135.0
+                    },
+                    {
+                        "Dynamic": false,
+                        "Name": "UpperCritical",
+                        "Value": 130.0
+                    },
+                    {
+                        "Dynamic": false,
+                        "Name": "UpperCaution",
+                        "Value": 120.0
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_1",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Name": "HGX_ProcessorModule_1_BusBar_Temp_0",
+                "PhysicalContext": "DCBus",
+                "Priority": true,
+                "SensorId": 19,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": false,
+                        "Name": "UpperFatal",
+                        "Value": 110.0
+                    },
+                    {
+                        "Dynamic": false,
+                        "Name": "UpperCritical",
+                        "Value": 107.0
+                    },
+                    {
+                        "Dynamic": false,
+                        "Name": "UpperCaution",
+                        "Value": 100.0
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_1",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Name": "HGX_ProcessorModule_1_GPU_0_Die_0_Temp_0",
+                "PhysicalContext": "GPU",
+                "Priority": true,
+                "SensorId": 138,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": true,
+                        "Name": "UpperCaution",
+                        "ParameterId": 138,
+                        "PeriodicUpdate": false,
+                        "Type": "NSM_ThermalParameter"
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_1",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Name": "HGX_ProcessorModule_1_GPU_0_Die_1_Temp_0",
+                "PhysicalContext": "GPU",
+                "Priority": true,
+                "SensorId": 139,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": true,
+                        "Name": "UpperCaution",
+                        "ParameterId": 139,
+                        "PeriodicUpdate": false,
+                        "Type": "NSM_ThermalParameter"
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_1",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Name": "HGX_ProcessorModule_1_GPU_1_Die_0_Temp_0",
+                "PhysicalContext": "GPU",
+                "Priority": true,
+                "SensorId": 140,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": true,
+                        "Name": "UpperCaution",
+                        "ParameterId": 140,
+                        "PeriodicUpdate": false,
+                        "Type": "NSM_ThermalParameter"
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_1",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Name": "HGX_ProcessorModule_1_GPU_1_Die_1_Temp_0",
+                "PhysicalContext": "GPU",
+                "Priority": true,
+                "SensorId": 141,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": true,
+                        "Name": "UpperCaution",
+                        "ParameterId": 141,
+                        "PeriodicUpdate": false,
+                        "Type": "NSM_ThermalParameter"
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_1",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Name": "HGX_ProcessorModule_1_CPU_0_Die_0_Temp_0",
+                "PhysicalContext": "CPU",
+                "Priority": true,
+                "SensorId": 216,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": true,
+                        "Name": "UpperCaution",
+                        "ParameterId": 216,
+                        "PeriodicUpdate": false,
+                        "Type": "NSM_ThermalParameter"
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_1",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Name": "HGX_ProcessorModule_1_CPU_0_SocTemp_0",
+                "PhysicalContext": "CPU",
+                "Priority": true,
+                "SensorId": 217,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": true,
+                        "Name": "UpperCaution",
+                        "ParameterId": 217,
+                        "PeriodicUpdate": false,
+                        "Type": "NSM_ThermalParameter"
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            }
+        ],
+        "Name": "HGX_ProcessorModule_SMA_1",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_1",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'HPMSMA', 'INSTANCE_NUMBER': 1})",
+        "Type": "Chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "NVIDIA"
+        }
+    }
+]

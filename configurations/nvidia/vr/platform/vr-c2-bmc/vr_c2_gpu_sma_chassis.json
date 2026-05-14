@@ -1,0 +1,36 @@
+[
+    {
+        "Exposes": [
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_$INSTANCE_NUMBER",
+                        "Backward": "chassis",
+                        "Forward": "parent_chassis"
+                    }
+                ],
+                "Chassis": {
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "ChassisAttributes": {
+                    "AssetInformationAvailable": true,
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "FieldReplaceable": false,
+                    "LocationCode": "GPU_SMA_$INSTANCE_NUMBER",
+                    "LocationContext": "Chassis_0/GPU_$INSTANCE_NUMBER",
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "DeviceType": "$DEVICE_TYPE",
+                "Name": "GPU_SMA_$INSTANCE_NUMBER",
+                "Type": "NSM_Chassis",
+                "UUID": "$UUID"
+            }
+        ],
+        "Name": "GPU_SMA_$INSTANCE_NUMBER",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/GPU_$INSTANCE_NUMBER",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'GPUSMA'})",
+        "Type": "chassis"
+    }
+]

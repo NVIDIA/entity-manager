@@ -1,0 +1,201 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "NVIDIA sensors Exposes schemas",
+    "$defs": {
+        "LM5066i": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Bus": {
+                    "type": "integer"
+                },
+                "Labels": {
+                    "type": "array"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Thresholds": {
+                    "type": "array"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "LM5066i"
+                },
+                "iin_Name": {
+                    "type": "string"
+                },
+                "pin_Name": {
+                    "type": "string"
+                },
+                "temp1_Name": {
+                    "type": "string"
+                },
+                "vin_Name": {
+                    "type": "string"
+                },
+                "vout1_Name": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NvidiaFlightDataRecorder": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Model": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NvidiaFlightDataRecorder"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "Nvmem2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Bus": {
+                    "type": "integer"
+                },
+                "EntityId": {
+                    "type": "integer"
+                },
+                "EntityInstance": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PollRate": {
+                    "type": "integer"
+                },
+                "PowerState": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "Nvmem2"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "Satellite": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Bus": {
+                    "type": "integer"
+                },
+                "MaxValue": {
+                    "type": "number"
+                },
+                "MinValue": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Name1": {
+                    "type": "string"
+                },
+                "OffsetValue": {
+                    "type": "integer"
+                },
+                "PollRate": {
+                    "type": "integer"
+                },
+                "PowerState": {
+                    "type": "string"
+                },
+                "SensorType": {
+                    "type": "string"
+                },
+                "Thresholds": {
+                    "type": "array"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "Satellite"
+                },
+                "ValueType": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "SensorAuxName": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "integer"
+                },
+                "AuxNames": {
+                    "type": "array"
+                },
+                "Bus": {
+                    "type": "integer"
+                },
+                "EID": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ParentObjPath": {
+                    "type": "string"
+                },
+                "SensorId": {
+                    "type": "integer"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "SensorAuxName"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "TMP75C": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Bus": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PhysicalContext": {
+                    "type": "string"
+                },
+                "Thresholds": {
+                    "type": "array"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "TMP75C"
+                }
+            },
+            "required": ["Name", "Type"]
+        }
+    }
+}

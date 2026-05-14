@@ -1,0 +1,31 @@
+{
+    "Exposes": [
+        {
+            "ChassisName": "HGX_IRoT_GPU_0",
+            "ForceRecoveryChassisObject": "HGX_GPU_0",
+            "I2CAddress": 105,
+            "I2CBus": 72,
+            "InfoRomName": "HGX_InfoROM_GPU_0",
+            "MctpEID": 11,
+            "Name": "HGX_FW_GPU_0",
+            "SMAEID": 10,
+            "Type": "OCPRecovery",
+            "hasChassisPowerSource": true
+        },
+        {
+            "ChassisName": "HGX_IRoT_GPU_1",
+            "ForceRecoveryChassisObject": "HGX_GPU_1",
+            "I2CAddress": 106,
+            "I2CBus": 72,
+            "InfoRomName": "HGX_InfoROM_GPU_1",
+            "MctpEID": 12,
+            "Name": "HGX_FW_GPU_1",
+            "SMAEID": 10,
+            "Type": "OCPRecovery",
+            "hasChassisPowerSource": true
+        }
+    ],
+    "Name": "OCP_Recovery_Devices",
+    "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 0})",
+    "Type": "Recovery_Config"
+}

@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$defs": {
         "ConfigSchema": {
-            "oneOf": [
+            "anyOf": [
                 {
                     "$ref": "ibm.json#/$defs/PowerModeProperties"
                 },
@@ -185,6 +185,264 @@
                 },
                 {
                     "$ref": "modbus.json#/$defs/ModbusRTUDevice"
+                },
+                {
+                    "$ref": "nvidia_backplane0_port.json#/$defs/Backplane0Port"
+                },
+                {
+                    "$ref": "nvidia_backplane1_port.json#/$defs/Backplane1Port"
+                },
+                {
+                    "$ref": "nvidia_cpld_gpio_monitor.json#/$defs/CPLDGPIOMonitor"
+                },
+                {
+                    "$ref": "nvidia_eeprom_24c512.json#/$defs/EEPROM_24C512"
+                },
+                {
+                    "$ref": "nvidia_fru_eeprom.json#/$defs/FRU_EEPROM"
+                },
+                {
+                    "$ref": "nvidia_i2c_device_association.json#/$defs/I2CDeviceAssociation"
+                },
+                {
+                    "$ref": "nvidia_leak_detection_policy.json#/$defs/LeakDetectionPolicy"
+                },
+                {
+                    "$ref": "nvidia_m2nvme0_port.json#/$defs/M2NVME0Port"
+                },
+                {
+                    "$ref": "nvidia_nvlink_topology.json#/$defs/NVLinkTopology"
+                },
+                {
+                    "$ref": "nvidia_platform_device.json#/$defs/PlatformDevice"
+                },
+                {
+                    "$ref": "nvidia_smm_port.json#/$defs/SMMPort"
+                },
+                {
+                    "$ref": "nvidia_spi.json#/$defs/SPI"
+                },
+                {
+                    "$ref": "nvidia_misc.json#/$defs/ADC"
+                },
+                {
+                    "$ref": "nvidia_misc.json#/$defs/ChassisIntrusionSensor"
+                },
+                {
+                    "$ref": "nvidia_misc.json#/$defs/DownstreamPort"
+                },
+                {
+                    "$ref": "nvidia_misc.json#/$defs/EEPROM_24C02"
+                },
+                {
+                    "$ref": "nvidia_misc.json#/$defs/EEPROM_24C128"
+                },
+                {
+                    "$ref": "nvidia_misc.json#/$defs/EEPROM_24C256"
+                },
+                {
+                    "$ref": "nvidia_misc.json#/$defs/EEPROM_24C64"
+                },
+                {
+                    "$ref": "nvidia_misc.json#/$defs/I2CFan"
+                },
+                {
+                    "$ref": "nvidia_misc.json#/$defs/LTC4287"
+                },
+                {
+                    "$ref": "nvidia_misc.json#/$defs/MCTPI2CTarget"
+                },
+                {
+                    "$ref": "nvidia_misc.json#/$defs/MCTPSPIDevice"
+                },
+                {
+                    "$ref": "nvidia_misc.json#/$defs/MCTPUSBGadgetTarget"
+                },
+                {
+                    "$ref": "nvidia_misc.json#/$defs/MCTPUSBTarget"
+                },
+                {
+                    "$ref": "nvidia_misc.json#/$defs/MCTPXROTTarget"
+                },
+                {
+                    "$ref": "nvidia_misc.json#/$defs/NVME1000"
+                },
+                {
+                    "$ref": "nvidia_misc.json#/$defs/Pid"
+                },
+                {
+                    "$ref": "nvidia_misc.json#/$defs/Pid_Zone"
+                },
+                {
+                    "$ref": "nvidia_misc.json#/$defs/RAA228004"
+                },
+                {
+                    "$ref": "nvidia_misc.json#/$defs/SatelliteController"
+                },
+                {
+                    "$ref": "nvidia_misc.json#/$defs/Stepwise"
+                },
+                {
+                    "$ref": "nvidia_misc.json#/$defs/TMP411"
+                },
+                {
+                    "$ref": "nvidia_misc.json#/$defs/TMP421"
+                },
+                {
+                    "$ref": "nvidia_misc.json#/$defs/TMP75"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_Chassis"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_ChassisAssembly"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_ChassisIRoTResponder"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_ChassisPCIeDevice"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_ChassisRoT"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_ControlClockLimit_0"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_DOT"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_DOTBlob"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_DebugToken"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_Energy"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_EventConfig"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_EventSetting"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_Event_DiagGetSystemConfig"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_Event_DiagGetTidConfig"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_Event_DiagSetFlowControl"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_Event_DiagSetTestResult"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_Event_Rediscovery"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_Event_Reset_Required"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_Event_Runtime_IST_Complete"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_Event_Threshold"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_Event_XID"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_FW_ComponentType"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_GPMMetrics"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_GPMPortMetrics"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_GPU_PCIe_0"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_GPU_SWInventory"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_LeakDetection"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_Memory"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_NVLink"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_NumericCompositeSensor"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_Poll_Ready"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_Power"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_Processor"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_RoT_Slot"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_Temp"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_Voltage"
+                },
+                {
+                    "$ref": "nvidia_recovery.json#/$defs/GPIORecovery"
+                },
+                {
+                    "$ref": "nvidia_recovery.json#/$defs/GlacierCrisisRecovery"
+                },
+                {
+                    "$ref": "nvidia_recovery.json#/$defs/MCURecovery"
+                },
+                {
+                    "$ref": "nvidia_recovery.json#/$defs/OCPRecovery"
+                },
+                {
+                    "$ref": "nvidia_recovery.json#/$defs/USBRCMForceRecovery"
+                },
+                {
+                    "$ref": "nvidia_recovery.json#/$defs/USBRCMRecovery"
+                },
+                {
+                    "$ref": "nvidia_sensors.json#/$defs/LM5066i"
+                },
+                {
+                    "$ref": "nvidia_sensors.json#/$defs/NvidiaFlightDataRecorder"
+                },
+                {
+                    "$ref": "nvidia_sensors.json#/$defs/Nvmem2"
+                },
+                {
+                    "$ref": "nvidia_sensors.json#/$defs/Satellite"
+                },
+                {
+                    "$ref": "nvidia_sensors.json#/$defs/SensorAuxName"
+                },
+                {
+                    "$ref": "nvidia_sensors.json#/$defs/TMP75C"
+                },
+                {
+                    "$ref": "nvidia_writeprotect.json#/$defs/HardwareWriteProtectedControl"
+                },
+                {
+                    "$ref": "nvidia_writeprotect.json#/$defs/WriteProtect"
+                },
+                {
+                    "$ref": "nvidia_writeprotect.json#/$defs/WriteProtectInput"
                 }
             ]
         },

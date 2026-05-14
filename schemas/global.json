@@ -4,8 +4,8 @@
         "EMConfig": {
             "title": "Entity Manager Configuration",
             "description": "The schema for an entity manager configuration. An entity manager configuration describes an association between a match condition, also known as a probe, and an array of heterogeneous configuration data.  When a probe match occurs, the configuration data is exported to DBus.",
-            "additionalProperties": false,
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "Exposes": {
                     "description": "The schema for the exposes property. The exposes property must be an array where elements are of type EMExposesElement.  The exposes property is the heterogeneous configuration data exported to DBus upon a probe match.",
@@ -16,6 +16,9 @@
                 },
                 "Name": {
                     "description": "The schema for the name property.  The name property identifies the configuration.  When exported, the configuration will be instantiated at: /xyz/openbmc_project/configuration/<Type>/<Name>",
+                    "type": "string"
+                },
+                "Parent_Chassis": {
                     "type": "string"
                 },
                 "Probe": {
@@ -36,27 +39,74 @@
                     "title": "Configuration Type",
                     "description": "The schema for the type property. The type property identifies the type of the configuration.  When exported, configurations will be instantiated as children of: /xyz/openbmc_project/configuration/<Type>",
                     "enum": [
+                        "Accelerator",
+                        "Assembly",
+                        "BMC",
+                        "Backplane0Port",
+                        "Backplane1Port",
                         "Board",
+                        "CPLDGPIOMonitor",
+                        "CPU",
                         "Cable",
+                        "CableCartridge",
                         "Chassis",
+                        "ChassisIntrusionSensor",
+                        "Component",
                         "Cpu",
+                        "Dimm",
+                        "DownstreamPort",
+                        "EEPROM_24C02",
+                        "EEPROM_24C256",
+                        "EEPROM_24C512",
+                        "EEPROM_24C64",
+                        "FRU_EEPROM",
                         "FlowMeter",
+                        "GlacierCrisisRecovery",
+                        "HardwareWriteProtectedControl",
+                        "I2CDeviceAssociation",
+                        "I2CFan",
+                        "LM5066i",
+                        "LTC4287",
+                        "LinkTopology",
+                        "MCTPInterface",
+                        "Module",
+                        "NSM_Configs",
                         "NVMe",
+                        "NetworkAdapter",
+                        "PlatformRecoveryConfiguration",
                         "PowerSupply",
-                        "Valve"
+                        "ProcessorModule0",
+                        "ProcessorModule1",
+                        "Recovery_Config",
+                        "SMM_0",
+                        "SMM_Interposer_0",
+                        "System",
+                        "Valve",
+                        "bmc_0",
+                        "chassis",
+                        "pcie"
                     ]
+                },
+                "xyz.openbmc_project.Association.Definitions": {
+                    "type": "object"
                 },
                 "xyz.openbmc_project.Common.UUID": {
                     "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Common/UUID"
                 },
+                "xyz.openbmc_project.Configuration.NSMReady": {
+                    "type": "object"
+                },
+                "xyz.openbmc_project.Control.Power.Mode": {
+                    "type": "object"
+                },
+                "xyz.openbmc_project.Inventory.Decorator.Area": {
+                    "type": "object"
+                },
                 "xyz.openbmc_project.Inventory.Decorator.Asset": {
-                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Decorator/Asset"
+                    "type": "object"
                 },
                 "xyz.openbmc_project.Inventory.Decorator.AssetTag": {
                     "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Decorator/AssetTag"
-                },
-                "xyz.openbmc_project.Inventory.Decorator.SKU": {
-                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Decorator/SKU"
                 },
                 "xyz.openbmc_project.Inventory.Decorator.Cable": {
                     "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Decorator/Cable"
@@ -64,50 +114,104 @@
                 "xyz.openbmc_project.Inventory.Decorator.Compatible": {
                     "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Decorator/Compatible"
                 },
+                "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+                    "type": "object"
+                },
+                "xyz.openbmc_project.Inventory.Decorator.Instance": {
+                    "type": "object"
+                },
+                "xyz.openbmc_project.Inventory.Decorator.Location": {
+                    "type": "object"
+                },
+                "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+                    "type": "object"
+                },
+                "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+                    "type": "object"
+                },
+                "xyz.openbmc_project.Inventory.Decorator.LocationReference": {
+                    "type": "object"
+                },
                 "xyz.openbmc_project.Inventory.Decorator.ManagedHost": {
                     "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Decorator/ManagedHost"
                 },
                 "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
-                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Decorator/Replaceable"
-                },
-                "xyz.openbmc_project.Inventory.Decorator.Slot": {
-                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Decorator/Slot"
+                    "type": "object"
                 },
                 "xyz.openbmc_project.Inventory.Decorator.Revision": {
                     "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Decorator/Revision"
                 },
-                "xyz.openbmc_project.Inventory.Item.Board.Motherboard": {
-                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/Board/Motherboard"
+                "xyz.openbmc_project.Inventory.Decorator.SKU": {
+                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Decorator/SKU"
                 },
-                "xyz.openbmc_project.Inventory.Item.Chassis": {
-                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/Chassis"
+                "xyz.openbmc_project.Inventory.Decorator.Slot": {
+                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Decorator/Slot"
                 },
-                "xyz.openbmc_project.Inventory.Item.NetworkInterface": {
-                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/NetworkInterface"
-                },
-                "xyz.openbmc_project.Inventory.Item.Panel": {
-                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/Panel"
-                },
-                "xyz.openbmc_project.Inventory.Item.System": {
-                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/System"
-                },
-                "xyz.openbmc_project.Inventory.Item.Bmc": {
-                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/Bmc"
-                },
-                "xyz.openbmc_project.Inventory.Item.Storage": {
-                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/Storage"
+                "xyz.openbmc_project.Inventory.Decorator.VendorInformation": {
+                    "type": "object"
                 },
                 "xyz.openbmc_project.Inventory.Item.Accelerator": {
                     "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/Accelerator"
                 },
+                "xyz.openbmc_project.Inventory.Item.Assembly": {
+                    "type": "object"
+                },
+                "xyz.openbmc_project.Inventory.Item.Bmc": {
+                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/Bmc"
+                },
+                "xyz.openbmc_project.Inventory.Item.Board.Motherboard": {
+                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/Board/Motherboard"
+                },
+                "xyz.openbmc_project.Inventory.Item.Cable": {
+                    "type": "object"
+                },
+                "xyz.openbmc_project.Inventory.Item.Chassis": {
+                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/Chassis"
+                },
+                "xyz.openbmc_project.Inventory.Item.Cpu": {
+                    "type": "object"
+                },
                 "xyz.openbmc_project.Inventory.Item.Dimm": {
                     "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/Dimm"
                 },
+                "xyz.openbmc_project.Inventory.Item.Drive": {
+                    "type": "object"
+                },
+                "xyz.openbmc_project.Inventory.Item.ManagementService": {
+                    "type": "object"
+                },
+                "xyz.openbmc_project.Inventory.Item.NetworkInterface": {
+                    "type": "object"
+                },
+                "xyz.openbmc_project.Inventory.Item.Panel": {
+                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/Panel"
+                },
+                "xyz.openbmc_project.Inventory.Item.ProcessorModule": {
+                    "type": "object"
+                },
+                "xyz.openbmc_project.Inventory.Item.SPDMResponder": {
+                    "type": "object"
+                },
+                "xyz.openbmc_project.Inventory.Item.Storage": {
+                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/Storage"
+                },
+                "xyz.openbmc_project.Inventory.Item.System": {
+                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/System"
+                },
                 "xyz.openbmc_project.Inventory.Item.Valve": {
                     "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/Valve"
+                },
+                "xyz.openbmc_project.MCTP.Endpoint": {
+                    "type": "object"
+                },
+                "xyz.openbmc_project.NsmDevice": {
+                    "type": "object"
+                },
+                "xyz.openbmc_project.State.Decorator.Health": {
+                    "type": "object"
                 }
             },
-            "required": ["Exposes", "Name", "Probe", "Type"]
+            "required": ["Name", "Probe"]
         }
     },
     "title": "Entity Manager Configuration File",

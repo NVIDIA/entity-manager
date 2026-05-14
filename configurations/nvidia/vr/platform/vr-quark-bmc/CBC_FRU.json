@@ -1,0 +1,38 @@
+[
+    {
+        "Exposes": [
+            {
+                "Address": "0x54",
+                "Bus": "72",
+                "Name": "CBC00_FRU",
+                "Type": "EEPROM_24C02"
+            }
+        ],
+        "Name": "CBC00_FRU",
+        "Probe": "TRUE",
+        "Type": "FRU_EEPROM",
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "0x54",
+            "Bus": "72",
+            "Name": "1-SLOT VR CBC"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Address": "0x55",
+                "Bus": "72",
+                "Name": "CBC01_FRU",
+                "Type": "EEPROM_24C02"
+            }
+        ],
+        "Name": "CBC01_FRU",
+        "Probe": "TRUE",
+        "Type": "FRU_EEPROM",
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "0x55",
+            "Bus": "72",
+            "Name": "1-SLOT VR CBC"
+        }
+    }
+]

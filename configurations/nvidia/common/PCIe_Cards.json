@@ -1,0 +1,348 @@
+[
+    {
+        "Exposes": [
+            {
+                "Address": "50",
+                "Bus": "$BUS",
+                "Name": "BF3_Slot_$PCIE_LABEL",
+                "Type": "I2CDeviceAssociation"
+            },
+            {
+                "AuxNames": [
+                    "BF3_Slot_$PCIE_LABEL_Temp"
+                ],
+                "Name": "BF3_Slot_$PCIE_LABEL_Temp",
+                "SensorId": 1,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "BF3_Slot_$PCIE_LABEL_Port_0_Temp"
+                ],
+                "Name": "BF3_Slot_$PCIE_LABEL_Port_0_Temp",
+                "SensorId": 8,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "BF3_Slot_$PCIE_LABEL_Port_1_Temp"
+                ],
+                "Name": "BF3_Slot_$PCIE_LABEL_Port_1_Temp",
+                "SensorId": 9,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "Port_0"
+                ],
+                "Name": "BF3_Slot_$PCIE_LABEL_Port_0_State",
+                "SensorId": 4,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "Port_1"
+                ],
+                "Name": "BF3_Slot_$PCIE_LABEL_Port_1_State",
+                "SensorId": 5,
+                "Type": "SensorAuxName"
+            },
+            {
+                "Address": "0x1f",
+                "Bus": 14,
+                "Labels": [
+                    "temp2"
+                ],
+                "Name": "NIC_0_Local_Temp_0",
+                "Name1": "BF3_Slot_$PCIE_LABEL_NIC_Temp_0",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Index": 2,
+                        "Name": "upper non recoverable",
+                        "Severity": 4,
+                        "Value": 115.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Index": 2,
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 96.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Index": 2,
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 91.0
+                    }
+                ],
+                "Type": "TMP421"
+            }
+        ],
+        "Name": "Riser_Slot$PCIE_LABEL_BlueField_3_Card",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 14, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'BlueField-3.*'})",
+        "Type": "Board",
+        "xyz.openbmc_project.Association.Definitions": {
+            "Associations": [
+                [
+                    "assembly",
+                    "parent_chassis",
+                    "/xyz/openbmc_project/inventory/system/pcie/Slot$PCIE_LABEL_BlueField_3_Card_Board_FRU_Assembly0"
+                ],
+                [
+                    "assembly",
+                    "parent_chassis",
+                    "/xyz/openbmc_project/inventory/system/pcie/Slot$PCIE_LABEL_BlueField_3_Card_Product_FRU_Assembly1"
+                ],
+                [
+                    "all_states",
+                    "parent_device",
+                    "/xyz/openbmc_project/state/PLDM_Sensor_4_105/Port_0"
+                ],
+                [
+                    "all_states",
+                    "parent_device",
+                    "/xyz/openbmc_project/state/PLDM_Sensor_5_105/Port_1"
+                ]
+            ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 1
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.Inventory.Item.NetworkInterface": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "Slot$PCIE_LABEL BlueField_3_Card Board FRU Assembly0",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 14, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'BlueField-3.*'})",
+        "Type": "pcie",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "BuildDate": "$BOARD_MANUFACTURE_DATE",
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Item.Assembly": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "Slot$PCIE_LABEL BlueField_3_Card Product FRU Assembly1",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 14, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'BlueField-3.*'})",
+        "Type": "pcie",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$PRODUCT_MANUFACTURER",
+            "Model": "$PRODUCT_PRODUCT_NAME",
+            "PartNumber": "$PRODUCT_PART_NUMBER",
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Revision": {
+            "Version": "$PRODUCT_VERSION"
+        },
+        "xyz.openbmc_project.Inventory.Item.Assembly": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Address": "50",
+                "Bus": "$BUS",
+                "Name": "BF3_Slot_$PCIE_LABEL",
+                "Type": "I2CDeviceAssociation"
+            },
+            {
+                "AuxNames": [
+                    "BF3_Slot_$PCIE_LABEL_Temp"
+                ],
+                "Name": "BF3_Slot_$PCIE_LABEL_Temp",
+                "SensorId": 1,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "BF3_Slot_$PCIE_LABEL_Port_0_Temp"
+                ],
+                "Name": "BF3_Slot_$PCIE_LABEL_Port_0_Temp",
+                "SensorId": 8,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "BF3_Slot_$PCIE_LABEL_Port_1_Temp"
+                ],
+                "Name": "BF3_Slot_$PCIE_LABEL_Port_1_Temp",
+                "SensorId": 9,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "Port_0"
+                ],
+                "Name": "BF3_Slot_$PCIE_LABEL_Port_0_State",
+                "SensorId": 4,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "Port_1"
+                ],
+                "Name": "BF3_Slot_$PCIE_LABEL_Port_1_State",
+                "SensorId": 5,
+                "Type": "SensorAuxName"
+            },
+            {
+                "Address": "0x1f",
+                "Bus": 15,
+                "Labels": [
+                    "temp2"
+                ],
+                "Name": "NIC_1_Local_Temp_0",
+                "Name1": "BF3_Slot_$PCIE_LABEL_NIC_Temp_0",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Index": 2,
+                        "Name": "upper non recoverable",
+                        "Severity": 4,
+                        "Value": 115.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Index": 2,
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 96.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Index": 2,
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 91.0
+                    }
+                ],
+                "Type": "TMP421"
+            }
+        ],
+        "Name": "Riser_Slot$PCIE_LABEL_BlueField_3_Card",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 15, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'BlueField-3.*'})",
+        "Type": "Board",
+        "xyz.openbmc_project.Association.Definitions": {
+            "Associations": [
+                [
+                    "assembly",
+                    "parent_chassis",
+                    "/xyz/openbmc_project/inventory/system/pcie/Slot$PCIE_LABEL_BlueField_3_Card_Board_FRU_Assembly0"
+                ],
+                [
+                    "assembly",
+                    "parent_chassis",
+                    "/xyz/openbmc_project/inventory/system/pcie/Slot$PCIE_LABEL_BlueField_3_Card_Product_FRU_Assembly1"
+                ],
+                [
+                    "all_states",
+                    "parent_device",
+                    "/xyz/openbmc_project/state/PLDM_Sensor_4_106/Port_0"
+                ],
+                [
+                    "all_states",
+                    "parent_device",
+                    "/xyz/openbmc_project/state/PLDM_Sensor_5_106/Port_1"
+                ]
+            ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 1
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.Inventory.Item.NetworkInterface": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "Slot$PCIE_LABEL BlueField_3_Card Board FRU Assembly0",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 15, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'BlueField-3.*'})",
+        "Type": "pcie",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "BuildDate": "$BOARD_MANUFACTURE_DATE",
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Item.Assembly": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "Slot$PCIE_LABEL BlueField_3_Card Product FRU Assembly1",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 15, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'BlueField-3.*'})",
+        "Type": "pcie",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$PRODUCT_MANUFACTURER",
+            "Model": "$PRODUCT_PRODUCT_NAME",
+            "PartNumber": "$PRODUCT_PART_NUMBER",
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Revision": {
+            "Version": "$PRODUCT_VERSION"
+        },
+        "xyz.openbmc_project.Inventory.Item.Assembly": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    }
+]

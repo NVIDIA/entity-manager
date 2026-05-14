@@ -1,0 +1,33 @@
+{
+    "Exposes": [
+        {
+            "ForceRecoveryChassisObject": "HGX_GPU_SMA_0",
+            "Interface": "USB",
+            "MctpEID": 10,
+            "Name": "HGX_FW_GPU_SMA_0",
+            "ProductId": "0xCF11",
+            "RecoveryGpioName": "BRD0_GPU_MCU_RECOVERY_L_3V3-O",
+            "ResetGpioName": "BRD0_GPU_MCU_RESET_L_3V3-O",
+            "Target": "GPU",
+            "Type": "MCURecovery",
+            "USBPort": "1-1.1.1",
+            "VendorId": "0x0955"
+        },
+        {
+            "ForceRecoveryChassisObject": "HGX_GPU_SMA_1",
+            "Interface": "USB",
+            "MctpEID": 20,
+            "Name": "HGX_FW_GPU_SMA_1",
+            "ProductId": "0xCF11",
+            "RecoveryGpioName": "BRD1_GPU_MCU_RECOVERY_L_3V3-O",
+            "ResetGpioName": "BRD1_GPU_MCU_RESET_L_3V3-O",
+            "Target": "GPU",
+            "Type": "MCURecovery",
+            "USBPort": "1-1.2.1",
+            "VendorId": "0x0955"
+        }
+    ],
+    "Name": "GPU_SMA_Recovery_Devices",
+    "Probe": "TRUE",
+    "Type": "Recovery_Config"
+}

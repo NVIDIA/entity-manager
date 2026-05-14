@@ -1,0 +1,124 @@
+[
+    {
+        "Exposes": [
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_$INSTANCE_NUMBER",
+                        "Backward": "all_chassis",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ProcessorModule_SMA_$INSTANCE_NUMBER",
+                        "Backward": "associated_ROT",
+                        "Forward": "inventory"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ProcessorModule_SMA_$INSTANCE_NUMBER",
+                        "Backward": "associated_chassis",
+                        "Forward": "inventory_chassis"
+                    }
+                ],
+                "ChassisAttributes": {
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "FieldReplaceable": false,
+                    "LocationCode": "IRoT_0",
+                    "LocationContext": "HGX_Chassis_0/ProcessorModule_$INSTANCE_NUMBER/HPM_SMA_0",
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "Name": "HGX_IRoT_ProcessorModule_SMA_$INSTANCE_NUMBER IRoT",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "Name": "HGX_IRoT_ProcessorModule_SMA_$INSTANCE_NUMBER",
+                "Type": "NSM_ChassisIRoTResponder",
+                "UUID": "$UUID"
+            },
+            {
+                "Chassis": {
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "DeviceType": "$DEVICE_TYPE",
+                "ImageCopyEnabled": true,
+                "Name": "HGX_IRoT_ProcessorModule_SMA_$INSTANCE_NUMBER",
+                "SlotCount": 3,
+                "Type": "NSM_ChassisRoT",
+                "UUID": "$UUID"
+            },
+            {
+                "ChassisName": "HGX_IRoT_ProcessorModule_SMA_$INSTANCE_NUMBER",
+                "DebugTokenDeviceType": "SMA",
+                "DebugTokenType": [
+                    "Unified"
+                ],
+                "Name": "DebugToken",
+                "Type": "NSM_DebugToken",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_ProcessorModule_SMA_$INSTANCE_NUMBER",
+                        "Backward": "ActiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "ProcessorModule_SMA_$INSTANCE_NUMBER",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 65282,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "IsRoT": true,
+                "Name": "Slot1",
+                "SlotType": "Active",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_ProcessorModule_SMA_$INSTANCE_NUMBER",
+                        "Backward": "InactiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "ProcessorModule_SMA_$INSTANCE_NUMBER",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 65282,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "IsRoT": true,
+                "Name": "Slot2",
+                "SlotType": "InActive",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_CPLD_$INSTANCE_NUMBER",
+                        "Backward": "ActiveSlot",
+                        "Forward": "software"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/component/HGX_CPLD_$INSTANCE_NUMBER",
+                        "Backward": "associated_SKU",
+                        "Forward": "inventory_SKU"
+                    }
+                ],
+                "ChassisName": "CPLD_$INSTANCE_NUMBER",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 65283,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot3",
+                "ReportSkuWithNsm": true,
+                "SlotType": "Active",
+                "Type": "NSM_RoT_Slot"
+            }
+        ],
+        "Name": "HGX_IRoT_ProcessorModule_SMA_$INSTANCE_NUMBER",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'HPMSMA'})",
+        "Type": "Chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": "$INSTANCE_NUMBER"
+        }
+    }
+]

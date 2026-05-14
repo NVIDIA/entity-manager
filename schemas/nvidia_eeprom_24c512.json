@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "NVIDIA EEPROM_24C512 schema",
+    "$defs": {
+        "EEPROM_24C512": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Bus": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "EEPROM_24C512"
+                }
+            },
+            "required": ["Name", "Type"]
+        }
+    }
+}

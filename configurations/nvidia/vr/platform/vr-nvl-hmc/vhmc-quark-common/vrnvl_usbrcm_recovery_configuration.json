@@ -1,0 +1,22 @@
+{
+    "Exposes": [
+        {
+            "ConfigType": "c2g4",
+            "ForceRecoveryChassisObject": "HGX_Chassis_0",
+            "Name": "HGX_Chassis_0_CPU_Recovery",
+            "Type": "USBRCMForceRecovery"
+        },
+        {
+            "FMCComponentName": "HGX_SBIOS_FMC_0",
+            "FWSComponentName": "HGX_SBIOS_FW_0",
+            "MctpEID": 14,
+            "Name": "HGX_FW_CPU_0",
+            "Type": "USBRCMRecovery",
+            "USBPort": "1-1.3.2",
+            "hasChassisPowerSource": true
+        }
+    ],
+    "Name": "USBRCM_Recovery_Devices",
+    "Probe": "TRUE",
+    "Type": "Recovery_Config"
+}

@@ -1,0 +1,13 @@
+[
+    {
+        "Exposes": [],
+        "Name": "NSM_IRoT_CPU_0",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 6,
+            "INSTANCE_NUMBER": 0,
+            "UUID": "STATIC:6:0:MCTP_EID:14"
+        }
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "Exposes": [
+            {
+                "Name": "NSM Poll Readyness",
+                "Status": "Enabled",
+                "Type": "NSM_Poll_Ready"
+            }
+        ],
+        "Name": "NSM_Readiness",
+        "Probe": [
+            "xyz.openbmc_project.Configuration.NSMReady({'C1G2_GPU_0_Ready': 'Enabled'})",
+            "AND",
+            "xyz.openbmc_project.Configuration.NSMReady({'C1G2_GPU_1_Ready': 'Enabled'})",
+            "AND",
+            "xyz.openbmc_project.Configuration.NSMReady({'C1G2_GPU_2_Ready': 'Enabled'})",
+            "AND",
+            "xyz.openbmc_project.Configuration.NSMReady({'C1G2_GPU_3_Ready': 'Enabled'})",
+            "AND",
+            "xyz.openbmc_project.Configuration.NSMReady({'C1G2_NVLinkReady': 'Enabled'})",
+            "AND",
+            "xyz.openbmc_project.Configuration.NSMReady({'C1G2_Mapping_Ready': 'Enabled'})"
+        ],
+        "Type": "chassis"
+    }
+]

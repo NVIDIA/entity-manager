@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "NVIDIA PlatformDevice schema",
+    "$defs": {
+        "PlatformDevice": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConnectsToName": {
+                    "type": "string"
+                },
+                "DeviceAddress": {
+                    "type": "string"
+                },
+                "DeviceType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PhysicalInterface": {
+                    "type": "string"
+                },
+                "RecoveryLayers": {
+                    "type": "string"
+                },
+                "ResetGPIO": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "PlatformDevice"
+                },
+                "poweredInStandby": {
+                    "type": "boolean"
+                }
+            },
+            "required": ["Name", "Type"]
+        }
+    }
+}

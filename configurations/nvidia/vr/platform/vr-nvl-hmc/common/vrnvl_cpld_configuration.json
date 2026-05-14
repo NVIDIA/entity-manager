@@ -1,0 +1,19 @@
+{
+    "Exposes": [
+        {
+            "DeviceId": "CPLD_0",
+            "Name": "HGX_FW_CPLD_0",
+            "SMAEID": 13,
+            "Type": "CPLDGPIOMonitor"
+        },
+        {
+            "DeviceId": "CPLD_1",
+            "Name": "HGX_FW_CPLD_1",
+            "SMAEID": 23,
+            "Type": "CPLDGPIOMonitor"
+        }
+    ],
+    "Name": "CPLD_GPIO_Monitor_Devices",
+    "Probe": "TRUE",
+    "Type": "Recovery_Config"
+}

@@ -1,0 +1,216 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "NVIDIA recovery Exposes schemas",
+    "$defs": {
+        "GPIORecovery": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FallingTarget": {
+                    "type": "string"
+                },
+                "GPIO": {
+                    "type": "string"
+                },
+                "IsERoT": {
+                    "type": "boolean"
+                },
+                "MctpEID": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Polarity": {
+                    "type": "string"
+                },
+                "RisingTarget": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "GPIORecovery"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "GlacierCrisisRecovery": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "APBootStatusType": {
+                    "type": "string"
+                },
+                "ChassisName": {
+                    "type": "string"
+                },
+                "MctpEID": {
+                    "type": "integer"
+                },
+                "MctpUUID": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "GlacierCrisisRecovery"
+                },
+                "hasChassisPowerSource": {
+                    "type": "boolean"
+                },
+                "isRecoverable": {
+                    "type": "boolean"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "MCURecovery": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChassisName": {
+                    "type": "string"
+                },
+                "ForceRecoveryChassisObject": {
+                    "type": "string"
+                },
+                "I2CBus": {
+                    "type": "integer"
+                },
+                "Interface": {
+                    "type": "string"
+                },
+                "MctpEID": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NormalI2CAddress": {
+                    "type": "string"
+                },
+                "ProductId": {
+                    "type": "string"
+                },
+                "RecoveryGpioName": {
+                    "type": "string"
+                },
+                "RecoveryI2CAddress": {
+                    "type": "string"
+                },
+                "ResetGpioName": {
+                    "type": "string"
+                },
+                "Target": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "MCURecovery"
+                },
+                "USBPort": {
+                    "type": "string"
+                },
+                "VendorId": {
+                    "type": "string"
+                },
+                "hasChassisPowerSource": {
+                    "type": "boolean"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "OCPRecovery": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChassisName": {
+                    "type": "string"
+                },
+                "ForceRecoveryChassisObject": {
+                    "type": "string"
+                },
+                "I2CAddress": {
+                    "type": "integer"
+                },
+                "I2CBus": {
+                    "type": "integer"
+                },
+                "InfoRomName": {
+                    "type": "string"
+                },
+                "MctpEID": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "SMAEID": {
+                    "type": "integer"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "OCPRecovery"
+                },
+                "USBPort": {
+                    "type": "string"
+                },
+                "hasChassisPowerSource": {
+                    "type": "boolean"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "USBRCMForceRecovery": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConfigType": {
+                    "type": "string"
+                },
+                "ForceRecoveryChassisObject": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "USBRCMForceRecovery"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "USBRCMRecovery": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FMCComponentName": {
+                    "type": "string"
+                },
+                "FWSComponentName": {
+                    "type": "string"
+                },
+                "MctpEID": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "USBRCMRecovery"
+                },
+                "USBPort": {
+                    "type": "string"
+                },
+                "hasChassisPowerSource": {
+                    "type": "boolean"
+                }
+            },
+            "required": ["Name", "Type"]
+        }
+    }
+}

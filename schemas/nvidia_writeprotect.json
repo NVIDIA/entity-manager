@@ -1,0 +1,69 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "NVIDIA writeprotect Exposes schemas",
+    "$defs": {
+        "HardwareWriteProtectedControl": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FlashProtectedComponents": {
+                    "type": "array"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Sources": {
+                    "type": "array"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "HardwareWriteProtectedControl"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "WriteProtect": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GpioLine": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Polarity": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "WriteProtect"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "WriteProtectInput": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActiveLow": {
+                    "type": "boolean"
+                },
+                "LineName": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PollInterval": {
+                    "type": "integer"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "WriteProtectInput"
+                }
+            },
+            "required": ["Name", "Type"]
+        }
+    }
+}

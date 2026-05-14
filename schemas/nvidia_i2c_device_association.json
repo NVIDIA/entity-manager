@@ -1,0 +1,29 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "NVIDIA I2CDeviceAssociation schema",
+    "$defs": {
+        "I2CDeviceAssociation": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": ["integer", "string"]
+                },
+                "Bus": {
+                    "type": ["integer", "string"]
+                },
+                "EID": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "I2CDeviceAssociation"
+                }
+            },
+            "required": ["Name", "Type"]
+        }
+    }
+}

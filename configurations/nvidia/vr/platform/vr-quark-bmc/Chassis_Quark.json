@@ -1,0 +1,259 @@
+[
+    {
+        "Exposes": [
+            {
+                "Address": "0x24",
+                "Bus": 9,
+                "Connector": {
+                    "Pwm": 1,
+                    "PwmName": "Chassis_0_FAN_1_PWM"
+                },
+                "Index": 2,
+                "MaxReading": 37400,
+                "Name": "Chassis_0_FAN_1_FRONT",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 2204.0
+                    }
+                ],
+                "Type": "I2CFan"
+            },
+            {
+                "Address": "0x24",
+                "Bus": 9,
+                "Connector": {
+                    "Pwm": 1,
+                    "PwmName": "Chassis_0_FAN_1_PWM"
+                },
+                "Index": 3,
+                "MaxReading": 37400,
+                "Name": "Chassis_0_FAN_1_REAR",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 2204.0
+                    }
+                ],
+                "Type": "I2CFan"
+            },
+            {
+                "Address": "0x25",
+                "Bus": 9,
+                "Connector": {
+                    "Pwm": 0,
+                    "PwmName": "Chassis_0_FAN_2_PWM"
+                },
+                "Index": 0,
+                "MaxReading": 37400,
+                "Name": "Chassis_0_FAN_2_FRONT",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 2204.0
+                    }
+                ],
+                "Type": "I2CFan"
+            },
+            {
+                "Address": "0x25",
+                "Bus": 9,
+                "Connector": {
+                    "Pwm": 0,
+                    "PwmName": "Chassis_0_FAN_2_PWM"
+                },
+                "Index": 1,
+                "MaxReading": 37400,
+                "Name": "Chassis_0_FAN_2_REAR",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 2204.0
+                    }
+                ],
+                "Type": "I2CFan"
+            },
+            {
+                "Address": "0x25",
+                "Bus": 9,
+                "Connector": {
+                    "Pwm": 2,
+                    "PwmName": "Chassis_0_FAN_3_PWM"
+                },
+                "Index": 4,
+                "MaxReading": 37400,
+                "Name": "Chassis_0_FAN_3_FRONT",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 2204.0
+                    }
+                ],
+                "Type": "I2CFan"
+            },
+            {
+                "Address": "0x25",
+                "Bus": 9,
+                "Connector": {
+                    "Pwm": 2,
+                    "PwmName": "Chassis_0_FAN_3_PWM"
+                },
+                "Index": 5,
+                "MaxReading": 37400,
+                "Name": "Chassis_0_FAN_3_REAR",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 2204.0
+                    }
+                ],
+                "Type": "I2CFan"
+            },
+            {
+                "CriticalReactionType": "None",
+                "LeakDetectorName": "Chassis_0_LeakDetector_0",
+                "Name": "Chassis_0_LeakDetector_0_Policy",
+                "ReactionDelaySeconds": 0,
+                "Type": "LeakDetectionPolicy"
+            },
+            {
+                "Class": "fan",
+                "FFGainCoefficient": 1.0,
+                "FFOffCoefficient": 0.0,
+                "ICoefficient": 0.0,
+                "ILimitMax": 0.0,
+                "ILimitMin": 0.0,
+                "Inputs": [
+                    "Chassis_0_FAN_1_FRONT",
+                    "Chassis_0_FAN_1_REAR"
+                ],
+                "Name": "NODE_FAN_1",
+                "NegativeHysteresis": 0.0,
+                "OutLimitMax": 100.0,
+                "OutLimitMin": 15.0,
+                "Outputs": [
+                    "Chassis_0_FAN_1_PWM"
+                ],
+                "PCoefficient": 0.0,
+                "PositiveHysteresis": 0.0,
+                "SlewNeg": 0.0,
+                "SlewPos": 0.0,
+                "Type": "Pid",
+                "Zones": [
+                    "Zone0"
+                ]
+            },
+            {
+                "Class": "fan",
+                "FFGainCoefficient": 1.0,
+                "FFOffCoefficient": 0.0,
+                "ICoefficient": 0.0,
+                "ILimitMax": 0.0,
+                "ILimitMin": 0.0,
+                "Inputs": [
+                    "Chassis_0_FAN_2_FRONT",
+                    "Chassis_0_FAN_2_REAR"
+                ],
+                "Name": "NODE_FAN_2",
+                "NegativeHysteresis": 0.0,
+                "OutLimitMax": 100.0,
+                "OutLimitMin": 15.0,
+                "Outputs": [
+                    "Chassis_0_FAN_2_PWM"
+                ],
+                "PCoefficient": 0.0,
+                "PositiveHysteresis": 0.0,
+                "SlewNeg": 0.0,
+                "SlewPos": 0.0,
+                "Type": "Pid",
+                "Zones": [
+                    "Zone0"
+                ]
+            },
+            {
+                "Class": "fan",
+                "FFGainCoefficient": 1.0,
+                "FFOffCoefficient": 0.0,
+                "ICoefficient": 0.0,
+                "ILimitMax": 0.0,
+                "ILimitMin": 0.0,
+                "Inputs": [
+                    "Chassis_0_FAN_3_FRONT",
+                    "Chassis_0_FAN_3_REAR"
+                ],
+                "Name": "NODE_FAN_3",
+                "NegativeHysteresis": 0.0,
+                "OutLimitMax": 100.0,
+                "OutLimitMin": 15.0,
+                "Outputs": [
+                    "Chassis_0_FAN_3_PWM"
+                ],
+                "PCoefficient": 0.0,
+                "PositiveHysteresis": 0.0,
+                "SlewNeg": 0.0,
+                "SlewPos": 0.0,
+                "Type": "Pid",
+                "Zones": [
+                    "Zone0"
+                ]
+            },
+            {
+                "CycleIntervalTimeMS": 100,
+                "FailSafePercent": 100,
+                "MinThermalOutput": 40,
+                "Name": "Zone0",
+                "Type": "Pid.Zone",
+                "UpdateThermalsTimeMS": 100
+            },
+            {
+                "GpioLine": "BMC_FRU_WP-O",
+                "Name": "BMC_FRU_WP",
+                "Polarity": "active_high",
+                "Type": "WriteProtect"
+            },
+            {
+                "GpioLine": "GLOBAL_WP-O",
+                "Name": "GLOBAL_WP",
+                "Polarity": "active_high",
+                "Type": "WriteProtect"
+            }
+        ],
+        "Name": "Chassis_0",
+        "Probe": "TRUE",
+        "Type": "Chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "NVIDIA",
+            "Model": "Quark VR Tester"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Backplane"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "Chassis_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": ""
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Shelf"
+        }
+    }
+]

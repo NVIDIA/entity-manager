@@ -1,0 +1,62 @@
+{
+    "Exposes": [
+        {
+            "ConnectsToName": "HGX_GPU_SMA_0",
+            "DeviceAddress": "MCTP:11",
+            "DeviceType": "GPU",
+            "Name": "HGX_GPU_0",
+            "PhysicalInterface": "",
+            "RecoveryLayers": "",
+            "ResetGPIO": "",
+            "Type": "PlatformDevice",
+            "poweredInStandby": false
+        },
+        {
+            "ConnectsToName": "HGX_GPU_SMA_0",
+            "DeviceAddress": "MCTP:12",
+            "DeviceType": "GPU",
+            "Name": "HGX_GPU_1",
+            "PhysicalInterface": "",
+            "RecoveryLayers": "",
+            "ResetGPIO": "",
+            "Type": "PlatformDevice",
+            "poweredInStandby": false
+        },
+        {
+            "ConnectsToName": "HGX_BMC_0",
+            "DeviceAddress": "MCTP:10",
+            "DeviceType": "MCTPBridge",
+            "Name": "HGX_GPU_SMA_0",
+            "PhysicalInterface": "usb1:0x0955:0xcf11:1.3.1",
+            "RecoveryLayers": "",
+            "ResetGPIO": "",
+            "Type": "PlatformDevice",
+            "poweredInStandby": true
+        },
+        {
+            "ConnectsToName": "HGX_BMC_0",
+            "DeviceAddress": "MCTP:14",
+            "DeviceType": "CPU",
+            "Name": "HGX_CPU_0",
+            "PhysicalInterface": "usb1:0x0955:0x7410:1.3.2",
+            "RecoveryLayers": "",
+            "ResetGPIO": "",
+            "Type": "PlatformDevice",
+            "poweredInStandby": false
+        },
+        {
+            "ConnectsToName": "HGX_BMC_0",
+            "DeviceAddress": "MCTP:13",
+            "DeviceType": "MCTPBridge",
+            "Name": "HGX_ProcessorModule_SMA_0",
+            "PhysicalInterface": "",
+            "RecoveryLayers": "",
+            "ResetGPIO": "",
+            "Type": "PlatformDevice",
+            "poweredInStandby": true
+        }
+    ],
+    "Name": "VRNVL Platform Recovery",
+    "Probe": "TRUE",
+    "Type": "PlatformRecoveryConfiguration"
+}

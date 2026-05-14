@@ -1,0 +1,205 @@
+[
+    {
+        "Exposes": [
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_$INSTANCE_NUMBER",
+                        "Backward": "chassis",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_GPU_SMA_$INSTANCE_NUMBER",
+                        "Backward": "chassis",
+                        "Forward": "all_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_$INSTANCE_NUMBER * 2",
+                        "Backward": "bridged_processor",
+                        "Forward": "bridging_processor"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_$INSTANCE_NUMBER * 2 + 1",
+                        "Backward": "bridged_processor",
+                        "Forward": "bridging_processor"
+                    }
+                ],
+                "Chassis": {
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "ChassisAttributes": {
+                    "AssetInformationAvailable": true,
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "DeviceDiagnosticsSupported": false,
+                    "ErrorInjectionSupported": true,
+                    "FieldReplaceable": false,
+                    "LocationCode": "GPU_SMA_0",
+                    "LocationContext": "HGX_Chassis_0/ProcessorModule_$INSTANCE_NUMBER",
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "ResetMetricsSupported": true,
+                    "SoCPowerSmoothingSupported": true,
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "DeviceType": "$DEVICE_TYPE",
+                "Name": "HGX_GPU_SMA_$INSTANCE_NUMBER",
+                "Type": "NSM_Chassis",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_$INSTANCE_NUMBER",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "AveragingInterval": 0,
+                "Name": "HGX_ProcessorModule_$INSTANCE_NUMBER_HSC_0_Power_0",
+                "PhysicalContext": "VoltageRegulator",
+                "Priority": true,
+                "SensorId": 128,
+                "Type": "NSM_Power",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_$INSTANCE_NUMBER",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "AveragingInterval": 0,
+                "Name": "HGX_ProcessorModule_$INSTANCE_NUMBER_HSCC_0_Power_0",
+                "PhysicalContext": "VoltageRegulator",
+                "Priority": true,
+                "SensorId": 192,
+                "Type": "NSM_Power",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_SMA_$INSTANCE_NUMBER",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Description": "Internal SMA temperature values",
+                "Name": "HGX_GPU_SMA_$INSTANCE_NUMBER_Temp_0",
+                "PhysicalContext": "GPUSubsystem",
+                "Priority": true,
+                "SensorId": 17,
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_$INSTANCE_NUMBER",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Name": "HGX_ProcessorModule_$INSTANCE_NUMBER_HSCC_0_Temp_0",
+                "PhysicalContext": "VoltageRegulator",
+                "Priority": true,
+                "SensorId": 168,
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_$INSTANCE_NUMBER",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Name": "HGX_ProcessorModule_$INSTANCE_NUMBER_HSC_0_Temp_0",
+                "PhysicalContext": "VoltageRegulator",
+                "Priority": true,
+                "SensorId": 192,
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_$INSTANCE_NUMBER",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Name": "HGX_ProcessorModule_$INSTANCE_NUMBER_HSC_0_OutputVoltage_0",
+                "PhysicalContext": "VoltageRegulator",
+                "Priority": false,
+                "SensorId": 128,
+                "Type": "NSM_Voltage",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_$INSTANCE_NUMBER",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Name": "HGX_ProcessorModule_$INSTANCE_NUMBER_HSC_0_InputVoltage_0",
+                "PhysicalContext": "VoltageRegulator",
+                "Priority": false,
+                "SensorId": 192,
+                "Type": "NSM_Voltage",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_$INSTANCE_NUMBER",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Name": "HGX_ProcessorModule_$INSTANCE_NUMBER_HSCC_0_OutputVoltage_0",
+                "PhysicalContext": "VoltageRegulator",
+                "Priority": false,
+                "SensorId": 208,
+                "Type": "NSM_Voltage",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_$INSTANCE_NUMBER",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Name": "HGX_ProcessorModule_$INSTANCE_NUMBER_HSCC_0_InputVoltage_0",
+                "PhysicalContext": "VoltageRegulator",
+                "Priority": false,
+                "SensorId": 224,
+                "Type": "NSM_Voltage",
+                "UUID": "$UUID"
+            }
+        ],
+        "Name": "HGX_GPU_SMA_$INSTANCE_NUMBER",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_$INSTANCE_NUMBER",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'GPUSMA'})",
+        "Type": "Chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "NVIDIA"
+        }
+    }
+]

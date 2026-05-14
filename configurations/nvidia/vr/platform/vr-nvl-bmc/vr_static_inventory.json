@@ -1,0 +1,209 @@
+[
+    {
+        "Exposes": [],
+        "Name": "NSM_IRoT_BMC_0",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 4,
+            "INSTANCE_NUMBER": 0,
+            "UUID": "STATIC:4:0:MCTP_EID:9"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_CX_0",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_ROLE": "CX9",
+            "DEVICE_TYPE": 2,
+            "INSTANCE_NUMBER": 0,
+            "UUID": "STATIC:770:0:MCTP_EID:62"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_CX_1",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_ROLE": "CX9",
+            "DEVICE_TYPE": 2,
+            "INSTANCE_NUMBER": 1,
+            "UUID": "STATIC:770:1:MCTP_EID:64"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_CX_2",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_ROLE": "CX9",
+            "DEVICE_TYPE": 2,
+            "INSTANCE_NUMBER": 2,
+            "UUID": "STATIC:770:2:MCTP_EID:72"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_CX_3",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_ROLE": "CX9",
+            "DEVICE_TYPE": 2,
+            "INSTANCE_NUMBER": 3,
+            "UUID": "STATIC:770:3:MCTP_EID:74"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_CX_4",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_ROLE": "CX9",
+            "DEVICE_TYPE": 2,
+            "INSTANCE_NUMBER": 4,
+            "UUID": "STATIC:770:4:MCTP_EID:82"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_CX_5",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_ROLE": "CX9",
+            "DEVICE_TYPE": 2,
+            "INSTANCE_NUMBER": 5,
+            "UUID": "STATIC:770:5:MCTP_EID:84"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_CX_6",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_ROLE": "CX9",
+            "DEVICE_TYPE": 2,
+            "INSTANCE_NUMBER": 6,
+            "UUID": "STATIC:770:6:MCTP_EID:92"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_CX_7",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_ROLE": "CX9",
+            "DEVICE_TYPE": 2,
+            "INSTANCE_NUMBER": 7,
+            "UUID": "STATIC:770:7:MCTP_EID:94"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_BF4_0",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_ROLE": "BF4",
+            "DEVICE_TYPE": 2,
+            "INSTANCE_NUMBER": 0,
+            "UUID": "STATIC:770:8:MCTP_EID:56"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_SMA_CX9_0_Bridge",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_ROLE": "CXSMA",
+            "DEVICE_TYPE": 5,
+            "INSTANCE_NUMBER": 0,
+            "LEAK_DETECTION": false,
+            "UUID": "STATIC:517:0:MCTP_EID:60"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_SMA_CX9_1_Bridge",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_ROLE": "CXSMA",
+            "DEVICE_TYPE": 5,
+            "INSTANCE_NUMBER": 1,
+            "LEAK_DETECTION": true,
+            "UUID": "STATIC:517:1:MCTP_EID:70"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_SMA_CX9_2_Bridge",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_ROLE": "CXSMA",
+            "DEVICE_TYPE": 5,
+            "INSTANCE_NUMBER": 2,
+            "LEAK_DETECTION": false,
+            "UUID": "STATIC:517:2:MCTP_EID:80"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_SMA_CX9_3_Bridge",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_ROLE": "CXSMA",
+            "DEVICE_TYPE": 5,
+            "INSTANCE_NUMBER": 3,
+            "LEAK_DETECTION": true,
+            "UUID": "STATIC:517:3:MCTP_EID:90"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_SMA_BF4_0_Bridge",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_ROLE": "BFSMA",
+            "DEVICE_TYPE": 5,
+            "INSTANCE_NUMBER": 0,
+            "UUID": "STATIC:517:4:MCTP_EID:55"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_SMA_HPM_0",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_ROLE": "HPMSMA",
+            "DEVICE_TYPE": 5,
+            "INSTANCE_NUMBER": 0,
+            "UUID": "STATIC:773:0:MCTP_EID:45"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_SMA_HPM_1",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_ROLE": "HPMSMA",
+            "DEVICE_TYPE": 5,
+            "INSTANCE_NUMBER": 1,
+            "UUID": "STATIC:773:1:MCTP_EID:40"
+        }
+    }
+]

@@ -1,0 +1,257 @@
+[
+    {
+        "Name": "HGX_Chassis_0",
+        "Probe": [
+            "FOUND('HGX ProcessorModule 0')",
+            "OR",
+            "FOUND('HGX ProcessorModule 1')"
+        ],
+        "Type": "Chassis",
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Zone"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Backplane"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "HGX_Chassis_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": ""
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": false
+        },
+        "xyz.openbmc_project.Association.Definitions": {
+          "Associations": [
+              [
+                "all_managers",
+                "chassis",
+                "/xyz/openbmc_project/inventory/system/bmc/HGX_BMC_0"
+              ]
+          ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "NVIDIA",
+            "Model": "VR NVL144",
+            "PartNumber": "N/A",
+            "SerialNumber": "N/A"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.SKU": {
+            "SKU": "N/A"
+        }
+    },
+    {
+        "Name": "HGX_SMM_0",
+        "Probe": "FOUND('HGX_BMC_0')",
+        "Type": "Module",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Zone"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "SMM_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "HGX_Chassis_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": false
+        },
+        "xyz.openbmc_project.Association.Definitions": {
+          "Associations": [
+              [
+                "all_managers",
+                "chassis",
+                "/xyz/openbmc_project/inventory/system/bmc/HGX_BMC_0"
+              ]
+          ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "NVIDIA",
+            "Model": "VR NVL144",
+            "PartNumber": "N/A",
+            "SerialNumber": "N/A"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.SKU": {
+            "SKU": "N/A"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Bus": "$bus",
+                "Address": "$address",
+                "Name": "HMC_FRU",
+                "Type": "EEPROM_24C02"
+            },
+            {
+                "Name": "HMC_Global_WriteProtect",
+                "Type": "WriteProtectInput",
+                "LineName": "GLOBAL_WP_BUF-I",
+                "ActiveLow": false,
+                "PollInterval": 5000
+            },
+            {
+                "Name": "HMC_WriteProtect",
+                "Type": "HardwareWriteProtectedControl",
+                "FlashProtectedComponents": [
+                    "HGX_FW_BMC_0"
+                ],
+                "Sources": [
+                    "HMC_Global_WriteProtect"
+                ]
+            },
+            {
+                "Address": "0x48",
+                "Bus": 10,
+                "PhysicalContext": "Manager",
+                "Name": "HGX_BMC_0_Temp_0",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non recoverable",
+                        "Severity": 4,
+                        "Value": 100.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 98.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 95.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    }
+                ],
+                "Type": "TMP75C"
+            }
+        ],
+        "Name": "HGX_BMC_0",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
+        "Type": "BMC",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/module/HGX_SMM_0",
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Bus": "$bus",
+            "Address": "$address",
+            "Name": "HMC_FRU"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+	    "Name": "HGX Baseboard",
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "VR NVL144",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+
+        "xyz.openbmc_project.Control.Power.Mode": {
+            "PowerMode": "xyz.openbmc_project.Control.Power.Mode.PowerMode.OEM",
+            "AllowedPowerModes": ["xyz.openbmc_project.Control.Power.Mode.PowerMode.OEM"],
+            "SafeMode": false
+        },
+
+        "xyz.openbmc_project.Inventory.Decorator.SKU": {
+            "SKU": ""
+        },
+        "xyz.openbmc_project.Inventory.Item.ManagementService": {},
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "HMC_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "HGX_Chassis_0/SMM_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": true
+        },
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        },
+        "xyz.openbmc_project.Association.Definitions": {
+          "Associations": [
+              [
+                "assembly",
+                "parent_chassis",
+                "/xyz/openbmc_project/inventory/system/bmc_0/HMC_Board_FRU_Assembly0"
+              ],
+              [
+                "assembly",
+                "parent_chassis",
+                "/xyz/openbmc_project/inventory/system/bmc_0/HMC_Product_FRU_Assembly1"
+              ]
+          ]
+        }
+    },
+    {
+        "Name": "HMC Board FRU Assembly0",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
+        "Type": "bmc_0",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER",
+            "BuildDate": "$BOARD_MANUFACTURE_DATE",
+            "Manufacturer": "$BOARD_MANUFACTURER"
+        },
+        "xyz.openbmc_project.Inventory.Item.Assembly": {},
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "HMC_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "HGX_Chassis_0/SMM_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Area": {
+            "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.GPUSubsystem"
+        },
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    },
+    {
+        "Name": "HMC Product FRU Assembly1",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
+        "Type": "bmc_0",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Model": "$PRODUCT_PRODUCT_NAME",
+            "PartNumber": "$PRODUCT_PART_NUMBER",
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER",
+            "Manufacturer": "$PRODUCT_MANUFACTURER"
+        },
+        "xyz.openbmc_project.Inventory.Item.Assembly": {},
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "HMC_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "HGX_Chassis_0/SMM_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Area": {
+            "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.GPUSubsystem"
+        },
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    }
+]

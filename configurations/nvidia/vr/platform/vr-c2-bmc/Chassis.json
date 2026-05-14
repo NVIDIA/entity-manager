@@ -1,0 +1,135 @@
+[
+    {
+        "Exposes": [
+            {
+                "Address": "$address",
+                "Bus": "$bus",
+                "Name": "Chassis_0",
+                "Type": "FRU_EEPROM"
+            }
+        ],
+        "Name": "Chassis_0",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80})"
+        ],
+        "Type": "Chassis",
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Shelf"
+        },
+        "xyz.openbmc_project.Inventory.Item.System": {},
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "NVIDIA",
+            "Model": "Vera MGX C2",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER",
+            "ChassisType": "$CHASSIS_TYPE",
+            "ChassisPartNumber": "$CHASSIS_PART_NUMBER",
+            "ChassisSerial": "$CHASSIS_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.AssetTag": {
+            "AssetTag": "$PRODUCT_ASSET_TAG"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Bus": "$bus",
+            "Address": "$address",
+            "Name": "Chassis_0"
+        },
+        "xyz.openbmc_project.Association.Definitions": {
+            "Associations": [
+                [
+                    "assembly",
+                    "parent_chassis",
+                    "/xyz/openbmc_project/inventory/system/assembly/ProcessorModule_0_Chassis_FRU_Assembly0"
+                ],
+                [
+                    "assembly",
+                    "parent_chassis",
+                    "/xyz/openbmc_project/inventory/system/assembly/ProcessorModule_0_Board_FRU_Assembly1"
+                ],
+                [
+                    "assembly",
+                    "parent_chassis",
+                    "/xyz/openbmc_project/inventory/system/assembly/ProcessorModule_0_Product_FRU_Assembly2"
+                ],
+                [
+                    "activation",
+                    "inventory",
+                    "/xyz/openbmc_project/software/UEFI"
+                ]
+            ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Backplane"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "Chassis_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": ""
+        }
+    },
+    {
+        "Name": "ProcessorModule 0 Chassis FRU Assembly0",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80})"
+        ],
+        "Type": "Assembly",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Model": "Vera MGX C2",
+            "PartNumber": "$CHASSIS_PART_NUMBER",
+            "SerialNumber": "$CHASSIS_SERIAL_NUMBER",
+            "Manufacturer": "NVIDIA"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        },
+        "Exposes": []
+    },
+    {
+        "Name": "ProcessorModule 0 Board FRU Assembly1",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80})"
+        ],
+        "Type": "Assembly",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER",
+            "BuildDate": "$BOARD_MANUFACTURE_DATE",
+            "Manufacturer": "$BOARD_MANUFACTURER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        },
+        "Exposes": []
+    },
+    {
+        "Name": "ProcessorModule 0 Product FRU Assembly2",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80})"
+        ],
+        "Type": "Assembly",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Model": "$PRODUCT_PRODUCT_NAME",
+            "PartNumber": "$PRODUCT_PART_NUMBER",
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER",
+            "Manufacturer": "$PRODUCT_MANUFACTURER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Revision": {
+            "Version": "$PRODUCT_VERSION"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        },
+        "Exposes": []
+    }
+]

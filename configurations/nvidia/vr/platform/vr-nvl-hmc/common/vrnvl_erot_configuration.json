@@ -1,0 +1,16 @@
+{
+    "Exposes": [
+        {
+            "APBootStatusType": "QueryBootStatus",
+            "ChassisName": "HGX_ERoT_BMC_0",
+            "MctpEID": 9,
+            "Name": "HGX_FW_ERoT_BMC_0",
+            "Type": "GlacierCrisisRecovery",
+            "hasChassisPowerSource": false,
+            "isRecoverable": false
+        }
+    ],
+    "Name": "Glacier_Crisis_Recovery_Devices",
+    "Probe": "TRUE",
+    "Type": "Recovery_Config"
+}

@@ -1,0 +1,22 @@
+{
+    "Exposes": [
+        {
+            "ConfigType": "c2",
+            "ForceRecoveryChassisObject": "BMC_0",
+            "Name": "Chassis_0_CPU_Recovery",
+            "Type": "USBRCMForceRecovery"
+        },
+        {
+            "FMCComponentName": "SBIOS_FMC_0",
+            "FWSComponentName": "SBIOS_FW_0",
+            "MctpEID": 16,
+            "Name": "FW_CPU_0",
+            "Type": "USBRCMRecovery",
+            "USBPort": "1-1.3.1.4.1",
+            "hasChassisPowerSource": true
+        }
+    ],
+    "Name": "USBRCM_Recovery_Devices",
+    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.*MGX C1.*'})",
+    "Type": "Recovery_Config"
+}

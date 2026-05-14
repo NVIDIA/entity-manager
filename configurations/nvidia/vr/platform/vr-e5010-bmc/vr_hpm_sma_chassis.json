@@ -1,0 +1,77 @@
+[
+    {
+        "Exposes": [
+            {
+                "Chassis": {
+                    "DEVICE_UUID": "$UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "ChassisAttributes": {
+                    "AssetInformationAvailable": false,
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Zone",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "DeviceType": "3",
+                "InstanceNumber": "0",
+                "Name": "HPM_NSM_Chassis_0",
+                "Type": "NSM_Chassis",
+                "UUID": "$UUID"
+            },
+            {
+                "Chassis": {
+                    "DEVICE_UUID": "$UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "ChassisAttributes": {
+                    "AssetInformationAvailable": false,
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Module",
+                    "Type": "NSM_Chassis_Attributes",
+                    "WriteProtectSupported": true
+                },
+                "DeviceType": "3",
+                "InstanceNumber": "0",
+                "Name": "HPM_NSM_ProcessorModule_0",
+                "Type": "NSM_Chassis",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/ProcessorModule_0",
+                        "Backward": "chassis",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_ProcessorModule_SMA_0",
+                        "Backward": "chassis",
+                        "Forward": "all_chassis"
+                    }
+                ],
+                "Chassis": {
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "ChassisAttributes": {
+                    "AssetInformationAvailable": true,
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "FieldReplaceable": false,
+                    "LocationCode": "HPM_SMA_0",
+                    "LocationContext": "Chassis_0/ProcessorModule_0",
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "DeviceType": "$DEVICE_TYPE",
+                "Name": "ProcessorModule_SMA_0",
+                "Type": "NSM_Chassis",
+                "UUID": "$UUID"
+            }
+        ],
+        "Name": "ProcessorModule_SMA_0",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/board/ProcessorModule_0",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'INSTANCE_NUMBER': 0})",
+        "Type": "chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "NVIDIA"
+        }
+    }
+]

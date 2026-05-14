@@ -1,0 +1,111 @@
+[
+    {
+        "Exposes": [
+            {
+                "Chassis": {
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "DeviceType": "$DEVICE_TYPE",
+                "Name": "ERoT_BMC_0",
+                "SlotCount": 4,
+                "Type": "NSM_Chassis",
+                "UUID": "$UUID"
+            },
+            {
+                "ComponentType": "AP",
+                "Name": "AP",
+                "Type": "NSM_FW_ComponentType"
+            },
+            {
+                "ComponentType": "EC",
+                "Name": "EC",
+                "Type": "NSM_FW_ComponentType"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/FW_ERoT_BMC_0",
+                        "Backward": "ActiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "ERoT_BMC_0",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 65280,
+                "ComponentIndex": 0,
+                "FirmwareType": "EC",
+                "Name": "Slot1",
+                "SlotType": "Active",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/FW_ERoT_BMC_0",
+                        "Backward": "InactiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "ERoT_BMC_0",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 65280,
+                "ComponentIndex": 0,
+                "FirmwareType": "EC",
+                "Name": "Slot2",
+                "SlotType": "InActive",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/FW_BMC_0",
+                        "Backward": "ActiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "BMC_0",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 16,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot3",
+                "SlotType": "Active",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/FW_BMC_0",
+                        "Backward": "ActiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "BMC_0",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 16,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot4",
+                "SlotType": "InActive",
+                "Type": "NSM_RoT_Slot"
+            }
+        ],
+        "Name": "ERoT_BMC_0",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 4, 'INSTANCE_NUMBER': 0})",
+        "Type": "Chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 0
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "ERoT_BMC_0"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.Inventory.Item.SPDMResponder": {}
+    }
+]

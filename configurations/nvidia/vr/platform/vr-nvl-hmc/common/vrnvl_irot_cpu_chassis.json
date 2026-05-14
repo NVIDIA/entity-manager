@@ -1,0 +1,404 @@
+[
+    {
+        "Exposes": [
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/component/HGX_CPU_0",
+                        "Backward": "all_chassis",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/component/HGX_CPU_0",
+                        "Backward": "associated_ROT",
+                        "Forward": "inventory"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/component/HGX_CPU_0",
+                        "Backward": "associated_chassis",
+                        "Forward": "inventory_chassis"
+                    }
+                ],
+                "ChassisAttributes": {
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "FieldReplaceable": false,
+                    "LocationCode": "IRoT_CPU_0",
+                    "LocationContext": "HGX_Chassis_0/ProcessorModule_0",
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "Name": "HGX_IRoT_CPU_0 IRoT",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "Name": "HGX_IRoT_CPU_0",
+                "Type": "NSM_ChassisIRoTResponder",
+                "UUID": "$UUID"
+            },
+            {
+                "Chassis": {
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "DeviceType": "$DEVICE_TYPE",
+                "ImageCopyEnabled": true,
+                "Name": "HGX_IRoT_CPU_0",
+                "SetRotPropertyList": [
+                    "FAILOVER_POLICY"
+                ],
+                "SlotCount": 4,
+                "Type": "NSM_ChassisRoT",
+                "UUID": "$UUID"
+            },
+            {
+                "ChassisName": "HGX_IRoT_CPU_0",
+                "Name": "DOT",
+                "Type": "NSM_DOT",
+                "UUID": "$UUID"
+            },
+            {
+                "ChassisName": "HGX_IRoT_CPU_0",
+                "Name": "DOTBlob",
+                "PathName": "CPU_0",
+                "Type": "NSM_DOTBlob",
+                "UUID": "$UUID"
+            },
+            {
+                "ChassisName": "HGX_IRoT_CPU_0",
+                "DebugTokenDeviceType": "CPU",
+                "DebugTokenType": [
+                    "Unified"
+                ],
+                "Name": "DebugToken",
+                "Type": "NSM_DebugToken",
+                "UUID": "$UUID"
+            },
+            {
+                "AcknowledgementEventIds": [
+                    0,
+                    1,
+                    2
+                ],
+                "MessageType": 4,
+                "Name": "PreBootDiagEventSetting",
+                "SubscribedEventIDs": [
+                    0,
+                    1,
+                    2,
+                    3
+                ],
+                "Type": "NSM_EventConfig",
+                "UUID": "$UUID"
+            },
+            {
+                "EventGenerationSetting": 2,
+                "Name": "GlobalEventSetting",
+                "Type": "NSM_EventSetting",
+                "UUID": "$UUID"
+            },
+            {
+                "Name": "DiagGetSystemConfig",
+                "Type": "NSM_Event_DiagGetSystemConfig",
+                "UUID": "$UUID"
+            },
+            {
+                "Name": "DiagGetTidConfig",
+                "Type": "NSM_Event_DiagGetTidConfig",
+                "UUID": "$UUID"
+            },
+            {
+                "Name": "DiagSetFlowControl",
+                "Type": "NSM_Event_DiagSetFlowControl",
+                "UUID": "$UUID"
+            },
+            {
+                "Name": "DiagSetTestResult",
+                "Type": "NSM_Event_DiagSetTestResult",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_SBIOS_FMC_0",
+                        "Backward": "ActiveSlot",
+                        "Forward": "software"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/component/HGX_CPU_0",
+                        "Backward": "associated_SKU",
+                        "Forward": "inventory_SKU"
+                    }
+                ],
+                "ChassisName": "CPU_FMC_0",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 2,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "IsRoT": true,
+                "Name": "Slot1",
+                "ReportSkuWithNsm": true,
+                "SetRotPropertyList": [
+                    "AP_SKU_ID"
+                ],
+                "SlotType": "Active",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_SBIOS_FMC_0",
+                        "Backward": "InactiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "CPU_FMC_0",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 2,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "IsRoT": true,
+                "Name": "Slot2",
+                "SlotType": "InActive",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_SBIOS_FW_0",
+                        "Backward": "ActiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "CPU_FWS_0",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 513,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot3",
+                "SlotType": "Active",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_SBIOS_FW_0",
+                        "Backward": "InactiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "CPU_FWS_0",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 513,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot4",
+                "SlotType": "InActive",
+                "Type": "NSM_RoT_Slot"
+            }
+        ],
+        "Name": "HGX_IRoT_CPU_0",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 6, 'INSTANCE_NUMBER': 0})",
+        "Type": "Chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 0
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/component/HGX_CPU_1",
+                        "Backward": "all_chassis",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/component/HGX_CPU_1",
+                        "Backward": "associated_ROT",
+                        "Forward": "inventory"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/component/HGX_CPU_1",
+                        "Backward": "associated_chassis",
+                        "Forward": "inventory_chassis"
+                    }
+                ],
+                "ChassisAttributes": {
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "FieldReplaceable": false,
+                    "LocationCode": "IRoT_CPU_0",
+                    "LocationContext": "HGX_Chassis_0/ProcessorModule_1",
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "Name": "HGX_IRoT_CPU_1 IRoT",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "Name": "HGX_IRoT_CPU_1",
+                "Type": "NSM_ChassisIRoTResponder",
+                "UUID": "$UUID"
+            },
+            {
+                "Chassis": {
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "DeviceType": "$DEVICE_TYPE",
+                "ImageCopyEnabled": true,
+                "Name": "HGX_IRoT_CPU_1",
+                "SetRotPropertyList": [
+                    "FAILOVER_POLICY"
+                ],
+                "SlotCount": 4,
+                "Type": "NSM_ChassisRoT",
+                "UUID": "$UUID"
+            },
+            {
+                "ChassisName": "HGX_IRoT_CPU_1",
+                "Name": "DOT",
+                "Type": "NSM_DOT",
+                "UUID": "$UUID"
+            },
+            {
+                "ChassisName": "HGX_IRoT_CPU_1",
+                "Name": "DOTBlob",
+                "PathName": "CPU_1",
+                "Type": "NSM_DOTBlob",
+                "UUID": "$UUID"
+            },
+            {
+                "ChassisName": "HGX_IRoT_CPU_1",
+                "DebugTokenDeviceType": "CPU",
+                "DebugTokenType": [
+                    "Unified"
+                ],
+                "Name": "DebugToken",
+                "Type": "NSM_DebugToken",
+                "UUID": "$UUID"
+            },
+            {
+                "AcknowledgementEventIds": [
+                    0,
+                    1,
+                    2
+                ],
+                "MessageType": 4,
+                "Name": "PreBootDiagEventSetting",
+                "SubscribedEventIDs": [
+                    0,
+                    1,
+                    2,
+                    3
+                ],
+                "Type": "NSM_EventConfig",
+                "UUID": "$UUID"
+            },
+            {
+                "EventGenerationSetting": 2,
+                "Name": "GlobalEventSetting",
+                "Type": "NSM_EventSetting",
+                "UUID": "$UUID"
+            },
+            {
+                "Name": "DiagGetSystemConfig",
+                "Type": "NSM_Event_DiagGetSystemConfig",
+                "UUID": "$UUID"
+            },
+            {
+                "Name": "DiagGetTidConfig",
+                "Type": "NSM_Event_DiagGetTidConfig",
+                "UUID": "$UUID"
+            },
+            {
+                "Name": "DiagSetFlowControl",
+                "Type": "NSM_Event_DiagSetFlowControl",
+                "UUID": "$UUID"
+            },
+            {
+                "Name": "DiagSetTestResult",
+                "Type": "NSM_Event_DiagSetTestResult",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_SBIOS_FMC_1",
+                        "Backward": "ActiveSlot",
+                        "Forward": "software"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/component/HGX_CPU_1",
+                        "Backward": "associated_SKU",
+                        "Forward": "inventory_SKU"
+                    }
+                ],
+                "ChassisName": "CPU_FMC_1",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 2,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "IsRoT": true,
+                "Name": "Slot1",
+                "ReportSkuWithNsm": true,
+                "SetRotPropertyList": [
+                    "AP_SKU_ID"
+                ],
+                "SlotType": "Active",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_SBIOS_FMC_1",
+                        "Backward": "InactiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "CPU_FMC_1",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 2,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "IsRoT": true,
+                "Name": "Slot2",
+                "SlotType": "InActive",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_SBIOS_FW_1",
+                        "Backward": "ActiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "CPU_FWS_1",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 513,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot3",
+                "SlotType": "Active",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_SBIOS_FW_1",
+                        "Backward": "InactiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "CPU_FWS_1",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 513,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot4",
+                "SlotType": "InActive",
+                "Type": "NSM_RoT_Slot"
+            }
+        ],
+        "Name": "HGX_IRoT_CPU_1",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 6, 'INSTANCE_NUMBER': 1})",
+        "Type": "Chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 1
+        }
+    }
+]
