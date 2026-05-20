@@ -86,11 +86,20 @@ void addArrayToDbus(const std::string& name, const nlohmann::json& array,
     std::vector<PropertyType> values;
     for (const auto& property : array)
     {
-        auto ptr = property.get_ptr<const PropertyType*>();
-        if (ptr != nullptr)
+        // Nvidia Added Code Start
+        if (property.is_number())
         {
-            values.emplace_back(*ptr);
+            values.emplace_back(property.get<PropertyType>());
         }
+        else
+        {
+            auto ptr = property.get_ptr<const PropertyType*>();
+            if (ptr != nullptr)
+            {
+                values.emplace_back(*ptr);
+            }
+        }
+        // Nvidia Added Code End
     }
 
     if (permission == sdbusplus::asio::PropertyPermission::readOnly)

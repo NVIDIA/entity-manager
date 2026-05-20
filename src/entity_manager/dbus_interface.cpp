@@ -94,25 +94,6 @@ void EMDBusInterface::createDeleteObjectMethod(
         });
 }
 
-static bool checkArrayElementsSameType(nlohmann::json& value)
-{
-    nlohmann::json::array_t* arr = value.get_ptr<nlohmann::json::array_t*>();
-    if (arr == nullptr)
-    {
-        return false;
-    }
-
-    if (arr->empty())
-    {
-        return true;
-    }
-
-    nlohmann::json::value_t firstType = value[0].type();
-    return std::ranges::all_of(value, [firstType](const nlohmann::json& el) {
-        return el.type() == firstType;
-    });
-}
-
 static nlohmann::json::value_t getDBusType(
     const nlohmann::json& value, nlohmann::json::value_t type,
     sdbusplus::asio::PropertyPermission permission)
@@ -206,12 +187,15 @@ void EMDBusInterface::populateInterfaceFromJson(
             {
                 continue;
             }
-            type = value[0].type();
-            if (!checkArrayElementsSameType(value))
+            // Nvidia Added Code Start
+            auto resolvedType = resolveArrayElementType(value);
+            if (!resolvedType)
             {
                 lg2::error("dbus format error {VALUE}", "VALUE", value);
                 continue;
             }
+            type = *resolvedType;
+            // Nvidia Added Code End
         }
         if (type == nlohmann::json::value_t::object)
         {
