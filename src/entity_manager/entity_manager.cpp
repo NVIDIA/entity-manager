@@ -215,6 +215,7 @@ void EntityManager::postBoardToDBus(
             {
                 boardValues[key] = value;
             }
+            boardValues.erase(invItemIntf);
             break;
         }
     }
