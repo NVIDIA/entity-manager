@@ -1,0 +1,51 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$defs": {
+        "PLDMDeviceInventory": {
+            "description": "Downstream Exposes type. Declares the RoT chassis to entity-manager and optionally names a pre-existing inventory object where pldmd should also write the device UUID. On encountering this entry, entity-manager creates the object at CreateInventoryPath with Inventory.Item.Board/Platform plus the static properties below; pldmd writes only the dynamic UUID.",
+            "properties": {
+                "Name": {
+                    "description": "A recognisable name for the PLDMDeviceInventory entry.",
+                    "type": "string"
+                },
+                "MCTPTargetName": {
+                    "description": "Match key tying this entry to the transport anchor's Name.",
+                    "type": "string"
+                },
+                "CreateInventoryPath": {
+                    "description": "Absolute D-Bus path entity-manager creates for this device's RoT chassis. pldmd writes UUID here after creation.",
+                    "type": "string"
+                },
+                "UpdateInventoryPath": {
+                    "description": "Absolute D-Bus path of an already-existing inventory object (created by some other entity-manager entity). pldmd writes the same UUID here in addition to CreateInventoryPath. entity-manager does NOT create this object.",
+                    "type": "string"
+                },
+                "Manufacturer": {
+                    "description": "Written by entity-manager to Decorator.Asset.Manufacturer on the created chassis.",
+                    "type": "string"
+                },
+                "Associations": {
+                    "description": "Written by entity-manager to Association.Definitions on the created chassis.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "pldm_firmware_device.json#/$defs/PLDMAssociation"
+                    }
+                },
+                "Type": {
+                    "type": "string",
+                    "enum": ["PLDMDeviceInventory"]
+                }
+            },
+            "patternProperties": {
+                "^xyz\\.openbmc_project\\.": {
+                    "description": "Any xyz.openbmc_project.* decorator key (e.g. Inventory.Item.SPDMResponder) is applied by entity-manager to the created chassis object."
+                }
+            },
+            "required": ["Name", "MCTPTargetName", "CreateInventoryPath", "Manufacturer", "Associations", "Type"],
+            "additionalProperties": false,
+            "type": "object"
+        }
+    },
+    "title": "PLDM Device Inventory Exposes Record",
+    "description": "Downstream entity-manager Exposes schema declaring a RoT chassis entity-manager creates for a PLDM device, plus an optional pre-existing inventory object pldmd also writes the UUID to."
+}

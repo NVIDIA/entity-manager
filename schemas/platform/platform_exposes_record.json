@@ -1,0 +1,58 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$defs": {
+        "PlatformConfigSchema": {
+            "oneOf": [
+                {
+                    "$ref": "../mctp.json#/$defs/MCTPUSBDevice"
+                },
+                {
+                    "$ref": "../mctp.json#/$defs/MCTPI2CTarget"
+                },
+                {
+                    "$ref": "../mctp.json#/$defs/MCTPI3CTarget"
+                },
+                {
+                    "$ref": "../mctp.json#/$defs/MCTPUSBGadgetTarget"
+                },
+                {
+                    "$comment": "downstream: pending upstream hoist per SADD section 2.3 — MCTPSPIDevice is not yet part of the upstream mctp-usb-config topic.",
+                    "$ref": "../mctp.json#/$defs/MCTPSPIDevice"
+                },
+                {
+                    "$comment": "downstream-only: bridge-downstream anchor; the upstream topic ships BridgedEndpoints + per-consumer computation instead.",
+                    "$ref": "mctp_bridge_pool_device.json#/$defs/MCTPBridgePoolDevice"
+                },
+                {
+                    "$comment": "downstream-only: PLDM firmware-update target consumed by pldmd.",
+                    "$ref": "pldm_firmware_device.json#/$defs/PLDMFirmwareDevice"
+                },
+                {
+                    "$comment": "downstream-only: RoT chassis create + UUID update target consumed by entity-manager and pldmd.",
+                    "$ref": "pldm_device_inventory.json#/$defs/PLDMDeviceInventory"
+                }
+            ]
+        },
+        "PlatformExposesElement": {
+            "description": "The platform exposes property element schema. An element of the PlatformExposes property. Used for configurations (e.g. MCTP USB topology) that span multiple entities.",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/PlatformConfigSchema"
+                },
+                {
+                    "title": "Missing 'Name'",
+                    "description": "Ensure the schema does not validate when an element does not define a Name",
+                    "required": ["Name"]
+                },
+                {
+                    "title": "Missing 'Type'",
+                    "description": "Ensure the schema does not validate when an element does not define a Type",
+                    "required": ["Type"]
+                }
+            ],
+            "title": "Platform Exposes Property Element"
+        }
+    },
+    "title": "Entity Manager Platform Exposes Record",
+    "description": "The schema for an entity manager platform exposes record. Platform exposes are used for configurations such as MCTP USB topology that are not tied to a single entity."
+}

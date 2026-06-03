@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$defs": {
+        "MCTPBridgePoolDevice": {
+            "description": "Downstream Exposes type. One entry per bridge-downstream device; the configured_by anchor that mctpreactor's BridgePoolMCTPDevice consumer targets. The consumer computes bridgedEid = <bridge>.Bridge1.PoolStart + PoolIndex and publishes configured_by on that pool-member endpoint -> this object, so bridged devices look identical to direct devices to all consumers.",
+            "properties": {
+                "Name": {
+                    "description": "Bridged device identity; matched by its PLDMFirmwareDevice.MCTPTargetName. This is what configured_by ultimately resolves to.",
+                    "type": "string"
+                },
+                "BridgeName": {
+                    "description": "The sibling bridge's MCTPUSBDevice.Name. The consumer resolves it to the bridge's mctpd endpoint -> Bridge1.PoolStart.",
+                    "type": "string"
+                },
+                "PoolIndex": {
+                    "description": "0-based slot in the bridge's EID pool. bridgedEid = Bridge1.PoolStart + PoolIndex. Encodes the bridge-port-to-device wiring (fixed at PCB design).",
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "Type": {
+                    "type": "string",
+                    "enum": ["MCTPBridgePoolDevice"]
+                }
+            },
+            "required": ["Name", "BridgeName", "PoolIndex", "Type"],
+            "additionalProperties": false,
+            "type": "object"
+        }
+    },
+    "title": "MCTP Bridge Pool Device Exposes Record",
+    "description": "Downstream entity-manager Exposes schema describing a bridge-downstream MCTP device as the configured_by anchor for mctpreactor's BridgePoolMCTPDevice consumer."
+}

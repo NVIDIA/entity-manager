@@ -1,0 +1,86 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$defs": {
+        "PLDMFirmwareComponent": {
+            "description": "A single PLDM T5 firmware component on a PLDMFirmwareDevice. pldmd matches it against the device's GetFirmwareParameters response by ComponentIdentifier.",
+            "properties": {
+                "Name": {
+                    "description": "The component's human-visible identifier. Becomes the suffix of /xyz/openbmc_project/software/<Name> when pldmd creates the Software.Version object.",
+                    "type": "string"
+                },
+                "ComponentIdentifier": {
+                    "description": "Per DSP0267 section 10.1; matched against the ComponentIdentifier field in the device's PLDM T5 GetFirmwareParameters response.",
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 65535
+                },
+                "Manufacturer": {
+                    "description": "If set, pldmd writes the value to the resulting Software.Version object's xyz.openbmc_project.Inventory.Decorator.Asset.Manufacturer property.",
+                    "type": "string"
+                },
+                "Associations": {
+                    "description": "pldmd copies these to the Software.Version object's Association.Definitions interface; surfaces as Redfish RelatedItem.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/PLDMAssociation"
+                    }
+                }
+            },
+            "required": ["Name", "ComponentIdentifier"],
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "PLDMAssociation": {
+            "description": "A forward/backward/path association tuple consumed by pldmd or entity-manager.",
+            "properties": {
+                "Forward": {
+                    "type": "string"
+                },
+                "Backward": {
+                    "type": "string"
+                },
+                "AbsolutePath": {
+                    "type": "string"
+                }
+            },
+            "required": ["Forward", "Backward", "AbsolutePath"],
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "PLDMFirmwareDevice": {
+            "description": "Downstream Exposes type. One entry per PLDM T5 firmware-update target. Presence tells pldmd the device is a PLDM firmware-update target; the nested Components array carries every firmware component on the device.",
+            "properties": {
+                "Name": {
+                    "description": "A recognisable name for the PLDMFirmwareDevice entry.",
+                    "type": "string"
+                },
+                "MCTPTargetName": {
+                    "description": "Match key tying this entry to the transport anchor's Name (MCTPUSBDevice/MCTPI2CTarget/MCTPSPIDevice.Name for direct devices, or MCTPBridgePoolDevice.Name for bridged devices).",
+                    "type": "string"
+                },
+                "Components": {
+                    "description": "The list of firmware components on this device. Encoded on D-Bus as aa{sv}. Order is not load-bearing; pldmd matches by ComponentIdentifier.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/PLDMFirmwareComponent"
+                    }
+                },
+                "StaticEID": {
+                    "description": "Temporary workaround: static MCTP EID pldmd uses to associate this entry to an endpoint while configured_by is not yet reliably published. Removed once dynamic configured_by resolution works end-to-end.",
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255
+                },
+                "Type": {
+                    "type": "string",
+                    "enum": ["PLDMFirmwareDevice"]
+                }
+            },
+            "required": ["Name", "MCTPTargetName", "Components", "Type"],
+            "additionalProperties": false,
+            "type": "object"
+        }
+    },
+    "title": "PLDM Firmware Device Exposes Record",
+    "description": "Downstream entity-manager Exposes schema describing a PLDM T5 firmware-update target and its firmware components."
+}

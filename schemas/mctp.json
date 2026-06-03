@@ -153,6 +153,43 @@
             "required": ["Address", "Bus", "Name", "Type"],
             "type": "object"
         },
+        "MCTPUSBDevice": {
+            "properties": {
+                "RootHubPath": {
+                    "description": "The path to the USB root hub for the device.",
+                    "type": "string"
+                },
+                "Port": {
+                    "description": "The port on the root hub to which the device is attached.",
+                    "type": "string"
+                },
+                "Configuration": {
+                    "description": "The configuration index for the USB device.",
+                    "type": "integer"
+                },
+                "InterfaceNum": {
+                    "description": "The interface number for the USB device.",
+                    "type": "integer"
+                },
+                "Name": {
+                    "description": "A recognisable name for the USB device",
+                    "type": "string"
+                },
+                "BridgedEndpoints": {
+                    "description": "Names of the downstream devices reachable behind this device when it acts as an MCTP bridge. Consumed to discover bridged endpoints from the bridge's EID pool range.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Type": {
+                    "type": "string",
+                    "enum": ["MCTPUSBDevice"]
+                }
+            },
+            "required": ["RootHubPath", "Port", "Configuration", "InterfaceNum", "Name", "Type"],
+            "type": "object"
+        },
         "MCTPXROTTarget": {
             "properties": {
                 "Name": {
