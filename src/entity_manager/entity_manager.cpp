@@ -263,9 +263,14 @@ void EntityManager::postBoardToDBus(
                     dbus_interface.createInterface(boardPath, propName,
                                                    boardNameOrig);
 
+                // Honour settableInterfaces for board-level interfaces too, so
+                // designated-settable decorators (SKU/UUID/Asset/AssetTag)
+                // declared on a board are writable — matching how Exposes-item
+                // interfaces are already populated. Lets runtime owners (e.g.
+                // pldmd) set the value; non-settable interfaces stay read-only.
                 dbus_interface.populateInterfaceFromJson(
                     systemConfiguration, jsonPointerPath + propName, iface,
-                    propValue);
+                    propValue, getPermission(propName));
             }
         }
     }
