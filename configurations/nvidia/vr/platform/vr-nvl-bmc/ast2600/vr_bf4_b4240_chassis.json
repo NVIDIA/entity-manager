@@ -1,0 +1,382 @@
+[
+  {
+    "Exposes": [
+        {
+            "Name": "BF4_GLOBAL_WP",
+            "GpioLine": "BF4_GLOBAL_WP",
+            "Polarity": "active_high",
+            "Type": "WriteProtect"
+        },
+        {
+            "Name": "BlueField_0",
+            "Type": "NSM_NVLinkMgmtNic_Chassis",
+            "UUID": "$UUID",
+            "ChassisAttributes": {
+              "Type": "NSM_Chassis_Attributes",
+              "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+              "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Bay",
+              "LocationCode": "Bay-C-Middle"
+            }
+          },
+          {
+            "ChassisName": "BlueField_0",
+            "Name": "Assembly0",
+            "Type": "NSM_NVLinkMgmtNic_ChassisAssembly",
+            "UUID": "$UUID",
+            "ChassisAttributes": {
+              "Type": "NSM_Chassis_Attributes",
+              "Name": "BlueField_0 Device Assembly",
+              "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.Board",
+              "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
+            }
+          },
+          {
+            "Name": "BlueField_NIC_0",
+            "Type": "NSM_NetworkAdapter",
+            "InventoryObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0/NetworkAdapters/",
+            "UUID": "$UUID",
+            "DeviceModesSupported": [-1,-1,-1,1,5],
+            "Associations": [
+              {
+                "Forward": "parent_chassis",
+                "Backward": "network_adapters",
+                "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0"
+              },
+              {
+                "Forward": "",
+                "Backward": "network_adapter",
+                "AbsolutePath": "/xyz/openbmc_project/sensors/temperature/BlueField_0_Temp_0"
+              },
+              {
+                "Forward": "",
+                "Backward": "network_adapter",
+                "AbsolutePath": "/xyz/openbmc_project/sensors/power/BlueField_0_Power_0"
+              },
+              {
+                "Forward": "",
+                "Backward": "network_adapter",
+                "AbsolutePath": "/xyz/openbmc_project/sensors/temperature/BlueField_NIC_0_Port_0_Temp_0"
+              },
+              {
+                "Forward": "",
+                "Backward": "network_adapter",
+                "AbsolutePath": "/xyz/openbmc_project/sensors/temperature/BlueField_NIC_0_Port_1_Temp_0"
+              }
+            ]
+          },
+          {
+            "Name": "BlueField_0_Association",
+            "Type": "NsmDeviceAssociation",
+            "UUID": "$UUID"
+          },
+          {
+            "Name": "BlueField_0_AUX",
+            "Type": "SensorAuxName",
+            "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+            "SensorId": 4101,
+            "AuxNames": [
+              "BlueField_0"
+            ]
+          },
+          {
+            "Name": "BlueField_NIC_0_AUX",
+            "Type": "SensorAuxName",
+            "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+            "SensorId": 4156,
+            "AuxNames": [
+              "BlueField_NIC_0"
+            ]
+          },
+          {
+            "Name": "BlueField_NIC_0_Port_0_AUX",
+            "Type": "SensorAuxName",
+            "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+            "SensorId": 4296,
+            "AuxNames": [
+              "Port_0"
+            ]
+          },
+          {
+            "Name": "BlueField_NIC_0_Port_1_AUX",
+            "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+            "Type": "SensorAuxName",
+            "SensorId": 4297,
+            "AuxNames": [
+              "Port_1"
+            ]
+          },
+          {
+            "Name": "BlueField_NIC_0_Port_0_INFO",
+            "Type": "SensorPortInfo",
+            "SensorId": 4296,
+            "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+            "MaxSpeedMBps": 50000,
+            "Association": [
+              "associated_port",
+              "associated_port",
+              "/xyz/openbmc_project/inventory/system/chassis/BlueField_0/NetworkAdapters/BlueField_NIC_0/Ports/Port_0"
+            ]
+          },
+          {
+            "Name": "BlueField_NIC_0_Port_1_INFO",
+            "Type": "SensorPortInfo",
+            "SensorId": 4297,
+            "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+            "MaxSpeedMBps": 50000,
+            "Association": [
+              "associated_port",
+              "associated_port",
+              "/xyz/openbmc_project/inventory/system/chassis/BlueField_0/NetworkAdapters/BlueField_NIC_0/Ports/Port_1"
+            ]
+          },
+          {
+            "Name": "Port",
+            "Type": "NSM_NVLinkWithNetworkPortAddresses",
+            "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0/NetworkAdapters/BlueField_NIC_0",
+            "DeviceType": "$DEVICE_TYPE",
+            "UUID": "$UUID",
+            "Priority": false,
+            "Count": 2
+          },
+          {
+            "Name": "BlueField_0_Temp_0",
+            "Type": "SensorAuxName",
+            "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+            "SensorId": 4396,
+            "AuxNames": [
+              "BlueField_0_Temp_0"
+            ]
+          },
+          {
+            "Name": "BlueField_NIC_0_Port_0_Temp_0",
+            "Type": "SensorAuxName",
+            "SensorId": 4596,
+            "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+            "AuxNames": [
+              "BlueField_NIC_0_Port_0_Temp_0"
+            ]
+          },
+          {
+            "Name": "BlueField_NIC_0_Port_1_Temp_0",
+            "Type": "SensorAuxName",
+            "SensorId": 4597,
+            "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+            "AuxNames": [
+              "BlueField_NIC_0_Port_1_Temp_0"
+            ]
+          },
+          {
+            "Name": "BlueField_0_CPU_0_Temp_0",
+            "Type": "SensorAuxName",
+            "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+            "SensorId": 7840,
+            "AuxNames": [
+              "BlueField_0_CPU_0_Temp_0"
+            ]
+          },
+          {
+            "Name": "BlueField_0_CPU_0_SSD_0_Temp_0",
+            "Type": "SensorAuxName",
+            "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+            "SensorId": 7841,
+            "AuxNames": [
+              "BlueField_0_CPU_0_SSD_0_Temp_0"
+            ]
+          },
+          {
+            "Name": "BlueField_0_Core_Rail_Vdd_Power_0",
+            "Type": "SensorAuxName",
+            "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+            "SensorId": 4103,
+            "AuxNames": [
+              "BlueField_0_Core_Rail_Vdd_0_Power_0"
+            ]
+          },
+          {
+            "Name": "BlueField_0_Analog_Rail_Vddp_Power_0",
+            "Type": "SensorAuxName",
+            "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+            "SensorId": 4104,
+            "AuxNames": [
+              "BlueField_0_Analog_Rail_Vddp_Power_0"
+            ]
+          },
+          {
+            "Name": "BlueField_0_Digital_Rail_Dvdd_Power_0",
+            "Type": "SensorAuxName",
+            "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+            "SensorId": 4105,
+            "AuxNames": [
+              "BlueField_0_Digital_Rail_Dvdd_Power_0"
+            ]
+          },
+          {
+            "Name": "BlueField_0_High_Voltage_Hvdd_Power_0",
+            "Type": "SensorAuxName",
+            "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+            "SensorId": 4106,
+            "AuxNames": [
+              "BlueField_0_High_Voltage_Hvdd_Power_0"
+            ]
+          },
+          {
+            "Name": "BlueField_0_Power_0",
+            "Type": "SensorAuxName",
+            "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+            "SensorId": 4146,
+            "AuxNames": [
+              "BlueField_0_Power_0"
+            ]
+          },
+          {
+            "Name": "BlueField_0_CPU_0_Rail_Power_0",
+            "Type": "SensorAuxName",
+            "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+            "SensorId": 7696,
+            "AuxNames": [
+              "BlueField_0_CPU_0_Rail_Power_0"
+            ]
+          },
+          {
+            "Name": "BlueField_0_CPU_0_OsState_0",
+            "Type": "SensorAuxName",
+            "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+            "SensorId": 7842,
+            "AuxNames": [
+              "BlueField_0_CPU_0_OsState_0"
+            ]
+          },
+          {
+            "Name": "BlueField_0_CPU_0_Power_0",
+            "Type": "SensorAuxName",
+            "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+            "SensorId": 7728,
+            "AuxNames": [
+              "BlueField_0_CPU_0_Power_0"
+            ]
+          },
+          {
+            "Name": "BlueField_0_Stby_Rail_Power_0",
+            "Type": "SensorAuxName",
+            "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+            "SensorId": 7952,
+            "AuxNames": [
+              "BlueField_0_Stby_Rail_Power_0"
+            ]
+          },
+          {
+            "Name": "BlueField_0_Total_Power_0",
+            "Type": "SensorAuxName",
+            "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+            "SensorId": 7984,
+            "AuxNames": [
+              "BlueField_0_Total_Power_0"
+            ]
+          },
+          {
+            "ChassisName": "BlueField_0",
+            "Name": "BlueField_0",
+            "Type": "NSM_ChassisPCIeDevice",
+            "UUID": "$UUID",
+            "DEVICE_UUID": "$DEVICE_UUID",
+            "ChassisAttributes": {
+              "Type": "NSM_Chassis_Attributes",
+              "Name": "BlueField_0"
+            },
+            "Associations": [
+              {
+                "Forward": "chassis",
+                "Backward": "pciedevice",
+                "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0"
+              }
+            ],
+            "PCIeDevice": {
+              "Type": "NSM_MultiPortPCIeDevice"
+            }
+          },
+          {
+            "Name": "PCIeTopology_BlueField_0",
+            "Type": "NSM_PCIeRetimer_Fabrics",
+            "FabricType": "xyz.openbmc_project.Inventory.Item.Fabric.FabricType.PCIe",
+            "UUID": "$UUID",
+            "Associations": [
+              {
+                "Forward": "chassis",
+                "Backward": "fabrics",
+                "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0"
+              },
+              {
+                "Forward": "all_switches",
+                "Backward": "fabrics",
+                "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/PCIeTopology_BlueField_0/Switches/BlueField_Switch_0"
+              }
+            ]
+          },
+          {
+            "Name": "BlueField_Switch_0",
+            "Type": "NSM_MultiPortPCIeSwitchDevice",
+            "DeviceInstance": 0,
+            "InventoryObjPath": "/xyz/openbmc_project/inventory/system/fabrics/PCIeTopology_BlueField_0/Switches/",
+            "Associations": [
+              {
+                "Forward": "parent_chassis",
+                "Backward": "all_switches",
+                "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0"
+              },
+              {
+                "Forward": "fabrics",
+                "Backward": "all_switches",
+                "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/PCIeTopology_BlueField_0"
+              }
+            ],
+            "UUID": "$UUID",
+            "Priority": false
+          },
+          {
+            "Name": "PCIePorts",
+            "Type": "NSM_PCIeRetimer_MultiPCIeLink",
+            "InventoryObjPath": "/xyz/openbmc_project/inventory/system/fabrics/PCIeTopology_BlueField_0/Switches/BlueField_Switch_0/Ports/",
+            "Associations": [
+              {
+                "Forward": "parent_device",
+                "Backward": "all_states",
+                "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/PCIeTopology_BlueField_0/Switches/BlueField_Switch_0"
+              }
+            ],
+            "UUID": "$UUID",
+            "UpstreamPortName": "UP",
+            "DownstreamPortName": "DOWN"
+          }
+        ],
+        "Name": "BlueField_0",
+        "Type": "chassis",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 2, 'DEVICE_ROLE': 'BF4B4'})",
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Bay"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "Bay-C-Middle"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "Chassis_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationReference": {
+            "LocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Middle"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal": {
+            "Orientation": "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal.Orientations.BottomToTop",
+            "LocationOrdinalValue": 0
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": true
+        },
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        },
+        "xyz.openbmc_project.Inventory.Item.Board": {},
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": "$INSTANCE_NUMBER"
+        }
+    }
+]

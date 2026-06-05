@@ -1,0 +1,16 @@
+[
+  {
+    "Exposes": [
+      {
+        "Hostname": "172.31.13.251",
+        "Port": "80",
+        "Name": "sat0",
+        "Type": "SatelliteController",
+        "AuthType": "None"
+      }
+    ],
+    "Name": "HMC_SAT_0",
+    "Probe": "TRUE",
+    "Type": "BMC"
+  }
+]

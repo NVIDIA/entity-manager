@@ -1,0 +1,117 @@
+[
+    {
+      "Exposes": [
+        {
+          "Name": "IRoT_CX_$INSTANCE_NUMBER",
+          "Type": "NSM_ChassisIRoTResponder",
+          "UUID": "$UUID",
+          "ChassisAttributes": {
+            "Type": "NSM_Chassis_Attributes",
+            "Name": "CX_$INSTANCE_NUMBER IRoT",
+            "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+            "FieldReplaceable": false
+          },
+          "Associations": [
+            {
+              "Forward": "inventory",
+              "Backward": "associated_ROT",
+              "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_$INSTANCE_NUMBER/NetworkAdapters/CX_NIC_$INSTANCE_NUMBER"
+            },
+            {
+              "Forward": "inventory_chassis",
+              "Backward": "associated_chassis",
+              "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_$INSTANCE_NUMBER"
+            },
+            {
+              "Forward": "parent_chassis",
+              "Backward": "associated_chassis",
+              "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_$INSTANCE_NUMBER"
+            },
+            {
+              "Forward": "parent_chassis",
+              "Backward": "all_chassis",
+              "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_$INSTANCE_NUMBER"
+            }
+          ]
+        },
+        {
+          "Name": "IRoT_CX_$INSTANCE_NUMBER",
+          "Type": "NSM_ChassisRoT",
+          "UUID": "$UUID",
+          "SlotCount": 2,
+          "DeviceType": "$DEVICE_TYPE",
+          "Chassis": {
+            "Type": "NSM_Chassis",
+            "DEVICE_UUID": "$DEVICE_UUID"
+          }
+        },
+        {
+          "Name": "AP",
+          "Type": "NSM_FW_ComponentType",
+          "ComponentType": "AP"
+        },
+        {
+          "ChassisName": "CX_$INSTANCE_NUMBER",
+          "Name": "Slot1",
+          "Type": "NSM_RoT_Slot",
+          "FirmwareType": "AP",
+          "SlotType": "Active",
+          "ComponentClassification": 10,
+          "ComponentIdentifier": 1,
+          "ComponentIndex": 0,
+          "Associations": [
+            {
+              "Forward": "software",
+              "Backward": "ActiveSlot",
+              "AbsolutePath": "/xyz/openbmc_project/software/FW_CX_$INSTANCE_NUMBER"
+            }
+          ]
+        },
+        {
+          "ChassisName": "CX_$INSTANCE_NUMBER",
+          "Name": "Slot2",
+          "Type": "NSM_RoT_Slot",
+          "FirmwareType": "AP",
+          "SlotType": "InActive",
+          "ComponentClassification": 10,
+          "ComponentIdentifier":  1,
+          "ComponentIndex": 0,
+          "Associations":
+          [
+            {
+                "Forward": "software",
+                "Backward": "InactiveSlot",
+                "AbsolutePath": "/xyz/openbmc_project/software/FW_CX_$INSTANCE_NUMBER"
+            }
+          ]
+        },
+        {
+          "ChassisName": "IRoT_CX_$INSTANCE_NUMBER",
+          "Name": "DebugToken",
+          "Type": "NSM_DebugToken",
+          "UUID": "$UUID",
+          "DebugTokenType": [
+            "Unified"
+          ],
+          "DebugTokenDeviceType": "NIC"
+        }
+      ],
+      "Name": "IRoT_CX_$INSTANCE_NUMBER",
+      "Type": "chassis",
+      "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 2, 'DEVICE_ROLE': 'CX9'})",
+      "xyz.openbmc_project.Inventory.Decorator.Instance": {
+        "InstanceNumber": "$INSTANCE_NUMBER"
+      },
+      "xyz.openbmc_project.Inventory.Decorator.Location": {
+          "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+      },
+      "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+          "LocationCode": "IRoT_0"
+      },
+      "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+          "LocationContext": "Chassis_0/CX_$INSTANCE_NUMBER"
+      }
+    }
+]
+

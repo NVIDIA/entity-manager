@@ -1,0 +1,47 @@
+[
+    {
+        "Name": "MCTP_USB_DEV",
+        "Type": "MCTPInterface",
+        "Exposes": [
+            {
+                "Name": "MCTPUSB_x1",
+                "Type": "MCTPUSBTarget",
+                "Interface" : "$Interface",
+                "USBPath": "1-1-2-1-1",
+                "StaticEndpointID" : "20",
+                "BridgePoolStartEID" : "21"
+            }
+        ],
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpusb0'})"
+    },
+    {
+        "Name": "MCTP_USB_DEV",
+        "Type": "MCTPInterface",
+        "Exposes": [
+            {
+                "Name": "MCTPUSB_x1",
+                "Type": "MCTPUSBTarget",
+                "Interface" : "$Interface",
+                "USBPath": "1-1-2-1-1",
+                "StaticEndpointID" : "20",
+                "BridgePoolStartEID" : "21"
+            }
+        ],
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Alias': 'mctpusb1-1.2.1.1'})"
+    },
+    {
+        "Name": "MCTP_USB_DEV",
+        "Type": "MCTPInterface",
+        "Exposes": [
+            {
+                "Name": "MCTPUSB_x2",
+                "Type": "MCTPUSBTarget",
+                "Interface" : "$Interface",
+                "USBPath": "1-1-2-1-1-1",
+                "StaticEndpointID" : "20",
+                "BridgePoolStartEID" : "21"
+            }
+        ],
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Alias': 'mctpusb1-1.2.1.1.1'})"
+    }
+]

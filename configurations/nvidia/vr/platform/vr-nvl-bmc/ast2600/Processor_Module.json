@@ -1,0 +1,50 @@
+[
+    {
+        "Exposes": [
+            {
+                "Bus": "90",
+                "Address": "0x50",
+                "Name": "ProcessorModule 0",
+                "Type": "EEPROM_24C64"
+            },
+            {
+                "Name": "B0_M0_GLOBAL_WP",
+                "GpioLine": "B0_M0_GLOBAL_WP-O",
+                "Polarity": "active_high",
+                "Type": "WriteProtect"
+            }
+        ],
+        "Name": "ProcessorModule 0",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 90, 'ADDRESS': 80})",
+        "Type": "FRU_EEPROM",
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Bus": "90",
+            "Address": "0x50",
+            "Name": "ProcMod_0"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Bus": "90",
+                "Address": "0x51",
+                "Name": "ProcessorModule 1",
+                "Type": "EEPROM_24C64"
+            },
+            {
+                "Name": "B1_M0_GLOBAL_WP",
+                "GpioLine": "B1_M0_GLOBAL_WP-O",
+                "Polarity": "active_high",
+                "Type": "WriteProtect"
+            }
+        ],
+        "Name": "ProcessorModule 1",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 90, 'ADDRESS': 81})",
+        "Type": "FRU_EEPROM",
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Bus": "90",
+            "Address": "0x51",
+            "Name": "ProcMod_1"
+        }
+    }
+]

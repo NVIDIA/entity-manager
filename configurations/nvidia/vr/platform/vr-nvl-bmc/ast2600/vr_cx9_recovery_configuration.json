@@ -1,0 +1,95 @@
+{
+    "Exposes": [
+        {
+            "Name": "FW_CX_0",
+            "ChassisName": "IRoT_CX_0",
+            "ForceRecoveryChassisObject":"IRoT_CX_0",
+            "EID": 62,
+            "SMAEID": 60,
+            "I2CBus": 78,
+            "I2CAddress": 72,
+            "hasChassisPowerSource": true,
+            "Type": "ConnectXRecovery"
+        },
+        {
+            "Name": "FW_CX_1",
+            "ChassisName": "IRoT_CX_1",
+            "ForceRecoveryChassisObject":"IRoT_CX_1",
+            "EID": 64,
+            "SMAEID": 60,
+            "I2CBus": 78,
+            "I2CAddress": 74,
+            "hasChassisPowerSource": true,
+            "Type": "ConnectXRecovery"
+        },
+        {
+            "Name": "FW_CX_2",
+            "ChassisName": "IRoT_CX_2",
+            "ForceRecoveryChassisObject":"IRoT_CX_2",
+            "EID": 72,
+            "SMAEID": 70,
+            "I2CBus": 79,
+            "I2CAddress": 72,
+            "hasChassisPowerSource": true,
+            "Type": "ConnectXRecovery"
+        },
+        {
+            "Name": "FW_CX_3",
+            "ChassisName": "IRoT_CX_3",
+            "ForceRecoveryChassisObject":"IRoT_CX_3",
+            "EID": 74,
+            "SMAEID": 70,
+            "I2CBus": 79,
+            "I2CAddress": 74,
+            "hasChassisPowerSource": true,
+            "Type": "ConnectXRecovery"
+        },
+        {
+            "Name": "FW_CX_4",
+            "ChassisName": "IRoT_CX_4",
+            "ForceRecoveryChassisObject":"IRoT_CX_4",
+            "EID": 82,
+            "SMAEID": 80,
+            "I2CBus": 80,
+            "I2CAddress": 72,
+            "hasChassisPowerSource": true,
+            "Type": "ConnectXRecovery"
+        },
+        {
+            "Name": "FW_CX_5",
+            "ChassisName": "IRoT_CX_5",
+            "ForceRecoveryChassisObject":"IRoT_CX_5",
+            "EID": 84,
+            "SMAEID": 80,
+            "I2CBus": 80,
+            "I2CAddress": 74,
+            "hasChassisPowerSource": true,
+            "Type": "ConnectXRecovery"
+        },
+        {
+            "Name": "FW_CX_6",
+            "ChassisName": "IRoT_CX_6",
+            "ForceRecoveryChassisObject":"IRoT_CX_6",
+            "EID": 92,
+            "SMAEID": 90,
+            "I2CBus": 81,
+            "I2CAddress": 72,
+            "hasChassisPowerSource": true,
+            "Type": "ConnectXRecovery"
+        },
+        {
+            "Name": "FW_CX_7",
+            "ChassisName": "IRoT_CX_7",
+            "ForceRecoveryChassisObject":"IRoT_CX_7",
+            "EID": 94,
+            "SMAEID": 90,
+            "I2CBus": 81,
+            "I2CAddress": 74,
+            "hasChassisPowerSource": true,
+            "Type": "ConnectXRecovery"
+        }
+    ],
+    "Name": "CX9_Recovery_Devices",
+    "Probe": "TRUE",
+    "Type": "Recovery_Config"
+}
