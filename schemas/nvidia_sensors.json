@@ -28,17 +28,118 @@
                 "iin_Name": {
                     "type": "string"
                 },
+                "iin_Offset": {
+                    "type": "number"
+                },
+                "iin_Scale": {
+                    "type": "number"
+                },
                 "pin_Name": {
                     "type": "string"
+                },
+                "pin_Offset": {
+                    "type": "number"
+                },
+                "pin_Scale": {
+                    "type": "number"
                 },
                 "temp1_Name": {
                     "type": "string"
                 },
+                "temp1_Offset": {
+                    "type": "number"
+                },
+                "temp1_Scale": {
+                    "type": "number"
+                },
                 "vin_Name": {
                     "type": "string"
                 },
+                "vin_Offset": {
+                    "type": "number"
+                },
+                "vin_Scale": {
+                    "type": "number"
+                },
                 "vout1_Name": {
                     "type": "string"
+                },
+                "vout1_Offset": {
+                    "type": "number"
+                },
+                "vout1_Scale": {
+                    "type": "number"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "LM5066I": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Bus": {
+                    "type": "integer"
+                },
+                "Labels": {
+                    "type": "array"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Thresholds": {
+                    "type": "array"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "LM5066I"
+                },
+                "iin_Name": {
+                    "type": "string"
+                },
+                "iin_Offset": {
+                    "type": "number"
+                },
+                "iin_Scale": {
+                    "type": "number"
+                },
+                "pin_Name": {
+                    "type": "string"
+                },
+                "pin_Offset": {
+                    "type": "number"
+                },
+                "pin_Scale": {
+                    "type": "number"
+                },
+                "temp1_Name": {
+                    "type": "string"
+                },
+                "temp1_Offset": {
+                    "type": "number"
+                },
+                "temp1_Scale": {
+                    "type": "number"
+                },
+                "vin_Name": {
+                    "type": "string"
+                },
+                "vin_Offset": {
+                    "type": "number"
+                },
+                "vin_Scale": {
+                    "type": "number"
+                },
+                "vout1_Name": {
+                    "type": "string"
+                },
+                "vout1_Offset": {
+                    "type": "number"
+                },
+                "vout1_Scale": {
+                    "type": "number"
                 }
             },
             "required": ["Name", "Type"]
@@ -204,9 +305,61 @@
                 "SensorId": {
                     "type": "integer"
                 },
+                "ThermalParameters": {
+                    "type": "array"
+                },
                 "Type": {
                     "type": "string",
                     "const": "SensorAuxName"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "SensorPortInfo": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Association": {
+                    "type": "array"
+                },
+                "MaxSpeedMBps": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PortType": {
+                    "type": "string"
+                },
+                "SensorId": {
+                    "type": "integer"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "SensorPortInfo"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "TMP1075": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Bus": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Thresholds": {
+                    "type": "array"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "TMP1075"
                 }
             },
             "required": ["Name", "Type"]

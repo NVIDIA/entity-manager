@@ -198,6 +198,41 @@
             },
             "required": ["Name", "Type"]
         },
+        "ConnectXRecovery": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChassisName": {
+                    "type": "string"
+                },
+                "EID": {
+                    "type": "integer"
+                },
+                "ForceRecoveryChassisObject": {
+                    "type": "string"
+                },
+                "I2CAddress": {
+                    "type": "integer"
+                },
+                "I2CBus": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "SMAEID": {
+                    "type": "integer"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "ConnectXRecovery"
+                },
+                "hasChassisPowerSource": {
+                    "type": "boolean"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
         "USBRCMRecovery": {
             "type": "object",
             "additionalProperties": false,

@@ -421,7 +421,49 @@
                     "$ref": "nvidia_recovery.json#/$defs/USBRCMRecovery"
                 },
                 {
+                    "$ref": "nvidia_backplane2_port.json#/$defs/Backplane2Port"
+                },
+                {
+                    "$ref": "nvidia_backplane3_port.json#/$defs/Backplane3Port"
+                },
+                {
+                    "$ref": "nvidia_misc.json#/$defs/MP5926"
+                },
+                {
+                    "$ref": "nvidia_misc.json#/$defs/XDP710"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NsmDeviceAssociation"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_MultiPortPCIeSwitchDevice"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_NetworkAdapter"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_NVLinkMgmtNic_Chassis"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_NVLinkMgmtNic_ChassisAssembly"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_NVLinkWithNetworkPortAddresses"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_PCIeRetimer_Fabrics"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_PCIeRetimer_MultiPCIeLink"
+                },
+                {
+                    "$ref": "nvidia_recovery.json#/$defs/ConnectXRecovery"
+                },
+                {
                     "$ref": "nvidia_sensors.json#/$defs/LM5066i"
+                },
+                {
+                    "$ref": "nvidia_sensors.json#/$defs/LM5066I"
                 },
                 {
                     "$ref": "nvidia_sensors.json#/$defs/NvidiaFlightDataRecorder"
@@ -436,7 +478,13 @@
                     "$ref": "nvidia_sensors.json#/$defs/SensorAuxName"
                 },
                 {
+                    "$ref": "nvidia_sensors.json#/$defs/SensorPortInfo"
+                },
+                {
                     "$ref": "nvidia_sensors.json#/$defs/SummationSensor"
+                },
+                {
+                    "$ref": "nvidia_sensors.json#/$defs/TMP1075"
                 },
                 {
                     "$ref": "nvidia_sensors.json#/$defs/TMP75C"

@@ -360,6 +360,77 @@
             },
             "required": ["Name", "Type"]
         },
+        "MP5926": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Bus": {
+                    "type": "integer"
+                },
+                "Labels": {
+                    "type": "array"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Thresholds": {
+                    "type": "array"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "MP5926"
+                },
+                "iin_Name": {
+                    "type": "string"
+                },
+                "iin_Offset": {
+                    "type": "number"
+                },
+                "iin_Scale": {
+                    "type": "number"
+                },
+                "pin_Name": {
+                    "type": "string"
+                },
+                "pin_Offset": {
+                    "type": "number"
+                },
+                "pin_Scale": {
+                    "type": "number"
+                },
+                "temp1_Name": {
+                    "type": "string"
+                },
+                "temp1_Offset": {
+                    "type": "number"
+                },
+                "temp1_Scale": {
+                    "type": "number"
+                },
+                "vin_Name": {
+                    "type": "string"
+                },
+                "vin_Offset": {
+                    "type": "number"
+                },
+                "vin_Scale": {
+                    "type": "number"
+                },
+                "vout1_Name": {
+                    "type": "string"
+                },
+                "vout1_Offset": {
+                    "type": "number"
+                },
+                "vout1_Scale": {
+                    "type": "number"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
         "NVME1000": {
             "type": "object",
             "additionalProperties": false,
@@ -563,6 +634,77 @@
                 },
                 "Zones": {
                     "type": "array"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "XDP710": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Bus": {
+                    "type": "integer"
+                },
+                "Labels": {
+                    "type": "array"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Thresholds": {
+                    "type": "array"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "XDP710"
+                },
+                "iout1_Name": {
+                    "type": "string"
+                },
+                "iout1_Offset": {
+                    "type": "number"
+                },
+                "iout1_Scale": {
+                    "type": "number"
+                },
+                "pin_Name": {
+                    "type": "string"
+                },
+                "pin_Offset": {
+                    "type": "number"
+                },
+                "pin_Scale": {
+                    "type": "number"
+                },
+                "temp1_Name": {
+                    "type": "string"
+                },
+                "temp1_Offset": {
+                    "type": "number"
+                },
+                "temp1_Scale": {
+                    "type": "number"
+                },
+                "vin_Name": {
+                    "type": "string"
+                },
+                "vin_Offset": {
+                    "type": "number"
+                },
+                "vin_Scale": {
+                    "type": "number"
+                },
+                "vout1_Name": {
+                    "type": "string"
+                },
+                "vout1_Offset": {
+                    "type": "number"
+                },
+                "vout1_Scale": {
+                    "type": "number"
                 }
             },
             "required": ["Name", "Type"]

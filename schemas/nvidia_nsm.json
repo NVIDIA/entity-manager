@@ -778,8 +778,14 @@
                 "MaxThresholdsmV": {
                     "type": "array"
                 },
+                "MaxValue": {
+                    "type": "number"
+                },
                 "MinThresholdsmV": {
                     "type": "array"
+                },
+                "MinValue": {
+                    "type": "number"
                 },
                 "Name": {
                     "type": "string"
@@ -1052,6 +1058,12 @@
                 "Implementation": {
                     "type": "string"
                 },
+                "MaxValue": {
+                    "type": "number"
+                },
+                "MinValue": {
+                    "type": "number"
+                },
                 "Name": {
                     "type": "string"
                 },
@@ -1108,6 +1120,214 @@
                 },
                 "UUID": {
                     "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NsmDeviceAssociation": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NsmDeviceAssociation"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_MultiPortPCIeSwitchDevice": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Associations": {
+                    "type": "array"
+                },
+                "DeviceInstance": {
+                    "oneOf": [{"type": "integer"}, {"type": "string"}]
+                },
+                "InventoryObjPath": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "boolean"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_MultiPortPCIeSwitchDevice"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_NetworkAdapter": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Associations": {
+                    "type": "array"
+                },
+                "DeviceModesSupported": {
+                    "type": "array"
+                },
+                "InventoryObjPath": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_NetworkAdapter"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_NVLinkMgmtNic_Chassis": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChassisAttributes": {
+                    "type": "object"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_NVLinkMgmtNic_Chassis"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_NVLinkMgmtNic_ChassisAssembly": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChassisAttributes": {
+                    "type": "object"
+                },
+                "ChassisName": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_NVLinkMgmtNic_ChassisAssembly"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_NVLinkWithNetworkPortAddresses": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Count": {
+                    "type": "integer"
+                },
+                "DeviceType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ParentObjPath": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "boolean"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_NVLinkWithNetworkPortAddresses"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_PCIeRetimer_Fabrics": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Associations": {
+                    "type": "array"
+                },
+                "FabricType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_PCIeRetimer_Fabrics"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_PCIeRetimer_MultiPCIeLink": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Associations": {
+                    "type": "array"
+                },
+                "Counts": {
+                    "type": "array"
+                },
+                "DownstreamPortName": {
+                    "type": "string"
+                },
+                "InventoryObjPath": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PortType": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "boolean"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_PCIeRetimer_MultiPCIeLink"
+                },
+                "UUID": {
+                    "type": "string"
+                },
+                "UpstreamPortName": {
+                    "type": "string"
+                },
+                "UpstreamPortNumbers": {
+                    "type": "array"
                 }
             },
             "required": ["Name", "Type"]

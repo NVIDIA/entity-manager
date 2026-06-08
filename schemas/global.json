@@ -69,6 +69,7 @@
                         "I2CDeviceAssociation",
                         "I2CFan",
                         "LM5066i",
+                        "LM5066I",
                         "LTC4287",
                         "LinkTopology",
                         "MCTPInterface",
@@ -132,6 +133,9 @@
                 "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
                     "type": "object"
                 },
+                "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal": {
+                    "type": "object"
+                },
                 "xyz.openbmc_project.Inventory.Decorator.LocationReference": {
                     "type": "object"
                 },
@@ -161,6 +165,9 @@
                 },
                 "xyz.openbmc_project.Inventory.Item.Bmc": {
                     "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/Bmc"
+                },
+                "xyz.openbmc_project.Inventory.Item.Board": {
+                    "type": "object"
                 },
                 "xyz.openbmc_project.Inventory.Item.Board.Motherboard": {
                     "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/Board/Motherboard"

@@ -15,6 +15,8 @@ schemas = [
     'nvidia.json',
     'nvidia_backplane0_port.json',
     'nvidia_backplane1_port.json',
+    'nvidia_backplane2_port.json',
+    'nvidia_backplane3_port.json',
     'nvidia_cpld_gpio_monitor.json',
     'nvidia_eeprom_24c512.json',
     'nvidia_fru_eeprom.json',
