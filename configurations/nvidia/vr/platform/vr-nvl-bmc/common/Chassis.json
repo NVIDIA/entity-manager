@@ -14,6 +14,24 @@
                 "Name": "Chassis_0_LeakDetector_1_Policy",
                 "ReactionDelaySeconds": 0,
                 "Type": "LeakDetectionPolicy"
+            },
+            {
+                "Name": "Chassis_0_TotalHSC_Power_0",
+                "SensorParams": [
+                    {
+                        "MaxValue": 16000.0,
+                        "MinValue": 0.0
+                    }
+                ],
+                "SensorsToSum": [
+                    "PDB_0_HSC_0_Pwr_0",
+                    "PDB_0_HSC_1_Pwr_0",
+                    "PDB_0_HSC_2_Pwr_0",
+                    "PDB_0_HSC_3_Pwr_0",
+                    "M0_HSC_Pwr",
+                    "M1_HSC_Pwr"
+                ],
+                "Type": "SummationSensor"
             }
         ],
         "Name": "Chassis_0",

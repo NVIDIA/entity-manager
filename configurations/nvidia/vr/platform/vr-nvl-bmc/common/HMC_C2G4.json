@@ -12,6 +12,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 0,
+                "StaleOffset": 57,
                 "Thresholds": [
                     {
                         "Direction": "greater than",
@@ -34,6 +36,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 1,
+                "StaleOffset": 57,
                 "Thresholds": [
                     {
                         "Direction": "greater than",
@@ -56,6 +60,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 2,
+                "StaleOffset": 57,
                 "Thresholds": [
                     {
                         "Direction": "greater than",
@@ -78,6 +84,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 3,
+                "StaleOffset": 57,
                 "Thresholds": [
                     {
                         "Direction": "greater than",
@@ -100,6 +108,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Power",
+                "StaleBit": 0,
+                "StaleOffset": 107,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -114,6 +124,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Power",
+                "StaleBit": 1,
+                "StaleOffset": 107,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -128,6 +140,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Power",
+                "StaleBit": 2,
+                "StaleOffset": 107,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -142,6 +156,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Power",
+                "StaleBit": 3,
+                "StaleOffset": 107,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -156,6 +172,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 0,
+                "StaleOffset": 140,
                 "Thresholds": [
                     {
                         "Direction": "less than",
@@ -196,6 +214,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 1,
+                "StaleOffset": 140,
                 "Thresholds": [
                     {
                         "Direction": "less than",
@@ -236,6 +256,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 2,
+                "StaleOffset": 140,
                 "Thresholds": [
                     {
                         "Direction": "less than",
@@ -276,6 +298,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 3,
+                "StaleOffset": 140,
                 "Thresholds": [
                     {
                         "Direction": "less than",
@@ -316,6 +340,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Energy",
+                "StaleBit": 0,
+                "StaleOffset": 205,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -330,6 +356,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Energy",
+                "StaleBit": 1,
+                "StaleOffset": 205,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -344,6 +372,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Energy",
+                "StaleBit": 2,
+                "StaleOffset": 205,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -358,6 +388,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Energy",
+                "StaleBit": 3,
+                "StaleOffset": 205,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -372,6 +404,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Power",
+                "StaleBit": 0,
+                "StaleOffset": 238,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -386,6 +420,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Power",
+                "StaleBit": 1,
+                "StaleOffset": 238,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -400,6 +436,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Power",
+                "StaleBit": 2,
+                "StaleOffset": 238,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -414,6 +452,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Power",
+                "StaleBit": 3,
+                "StaleOffset": 238,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -428,6 +468,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Temperature",
+                "StaleBit": 0,
+                "StaleOffset": 0,
                 "Thresholds": [
                     {
                         "Direction": "greater than",
@@ -474,6 +516,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 0,
+                "StaleOffset": 256,
                 "Thresholds": [
                     {
                         "Direction": "greater than",
@@ -514,6 +558,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 1,
+                "StaleOffset": 256,
                 "Thresholds": [
                     {
                         "Direction": "greater than",
@@ -554,6 +600,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 2,
+                "StaleOffset": 256,
                 "Thresholds": [
                     {
                         "Direction": "greater than",
@@ -594,6 +642,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 3,
+                "StaleOffset": 256,
                 "Thresholds": [
                     {
                         "Direction": "greater than",
@@ -634,6 +684,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Energy",
+                "StaleBit": 0,
+                "StaleOffset": 512,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -648,6 +700,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Power",
+                "StaleBit": 1,
+                "StaleOffset": 512,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -662,6 +716,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Power",
+                "StaleBit": 2,
+                "StaleOffset": 512,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -676,6 +732,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Power",
+                "StaleBit": 3,
+                "StaleOffset": 512,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -690,6 +748,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 4,
+                "StaleOffset": 512,
                 "Thresholds": [
                     {
                         "Direction": "greater than",
@@ -730,6 +790,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 5,
+                "StaleOffset": 512,
                 "Thresholds": [
                     {
                         "Direction": "less than",
@@ -770,6 +832,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Voltage",
+                "StaleBit": 0,
+                "StaleOffset": 0,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -784,6 +848,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Voltage",
+                "StaleBit": 0,
+                "StaleOffset": 0,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -798,6 +864,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Energy",
+                "StaleBit": 0,
+                "StaleOffset": 544,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -812,6 +880,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Power",
+                "StaleBit": 1,
+                "StaleOffset": 544,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -826,6 +896,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Power",
+                "StaleBit": 2,
+                "StaleOffset": 544,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -840,6 +912,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Power",
+                "StaleBit": 3,
+                "StaleOffset": 544,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -854,6 +928,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 4,
+                "StaleOffset": 544,
                 "Thresholds": [
                     {
                         "Direction": "greater than",
@@ -894,6 +970,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 5,
+                "StaleOffset": 544,
                 "Thresholds": [
                     {
                         "Direction": "less than",
@@ -934,6 +1012,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Voltage",
+                "StaleBit": 0,
+                "StaleOffset": 0,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -948,6 +1028,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Voltage",
+                "StaleBit": 0,
+                "StaleOffset": 0,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -962,6 +1044,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Temperature",
+                "StaleBit": 0,
+                "StaleOffset": 576,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -976,6 +1060,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Temperature",
+                "StaleBit": 1,
+                "StaleOffset": 576,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -990,6 +1076,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 2,
+                "StaleOffset": 576,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -1004,6 +1092,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 3,
+                "StaleOffset": 576,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -1018,6 +1108,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Temperature",
+                "StaleBit": 0,
+                "StaleOffset": 577,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -1032,6 +1124,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Temperature",
+                "StaleBit": 1,
+                "StaleOffset": 577,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -1046,6 +1140,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Temperature",
+                "StaleBit": 2,
+                "StaleOffset": 577,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -1060,6 +1156,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Temperature",
+                "StaleBit": 3,
+                "StaleOffset": 577,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -1074,6 +1172,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Temperature",
+                "StaleBit": 4,
+                "StaleOffset": 577,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -1088,6 +1188,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Temperature",
+                "StaleBit": 0,
+                "StaleOffset": 578,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -1102,6 +1204,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Temperature",
+                "StaleBit": 1,
+                "StaleOffset": 578,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -1116,6 +1220,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Temperature",
+                "StaleBit": 2,
+                "StaleOffset": 578,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -1130,6 +1236,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Temperature",
+                "StaleBit": 3,
+                "StaleOffset": 578,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -1144,6 +1252,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Temperature",
+                "StaleBit": 0,
+                "StaleOffset": 584,
                 "Thresholds": [
                     {
                         "Direction": "greater than",
@@ -1184,6 +1294,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Temperature",
+                "StaleBit": 0,
+                "StaleOffset": 579,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -1198,6 +1310,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Temperature",
+                "StaleBit": 1,
+                "StaleOffset": 579,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -1212,6 +1326,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Temperature",
+                "StaleBit": 2,
+                "StaleOffset": 579,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -1226,6 +1342,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Temperature",
+                "StaleBit": 3,
+                "StaleOffset": 579,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -1240,6 +1358,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Temperature",
+                "StaleBit": 4,
+                "StaleOffset": 579,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -1254,6 +1374,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Temperature",
+                "StaleBit": 0,
+                "StaleOffset": 580,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -1268,6 +1390,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Temperature",
+                "StaleBit": 1,
+                "StaleOffset": 580,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -1282,6 +1406,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Temperature",
+                "StaleBit": 2,
+                "StaleOffset": 580,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -1296,6 +1422,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Temperature",
+                "StaleBit": 3,
+                "StaleOffset": 580,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -1310,6 +1438,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Temperature",
+                "StaleBit": 2,
+                "StaleOffset": 584,
                 "Thresholds": [
                     {
                         "Direction": "greater than",
@@ -1350,6 +1480,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Temperature",
+                "StaleBit": 3,
+                "StaleOffset": 584,
                 "Thresholds": [
                     {
                         "Direction": "greater than",
@@ -1390,6 +1522,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Power",
+                "StaleBit": 2,
+                "StaleOffset": 582,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -1404,6 +1538,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Power",
+                "StaleBit": 3,
+                "StaleOffset": 582,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -1418,6 +1554,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Power",
+                "StaleBit": 2,
+                "StaleOffset": 583,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -1432,6 +1570,8 @@
                 "PollRate": 1,
                 "PowerState": "Always",
                 "SensorType": "Power",
+                "StaleBit": 3,
+                "StaleOffset": 583,
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
@@ -1446,6 +1586,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 0,
+                "StaleOffset": 585,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -1460,6 +1602,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 1,
+                "StaleOffset": 585,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -1474,6 +1618,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 2,
+                "StaleOffset": 585,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -1488,6 +1634,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 3,
+                "StaleOffset": 585,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -1502,6 +1650,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 4,
+                "StaleOffset": 585,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -1516,6 +1666,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 5,
+                "StaleOffset": 585,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -1530,6 +1682,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 6,
+                "StaleOffset": 585,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -1544,6 +1698,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 7,
+                "StaleOffset": 585,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -1558,6 +1714,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 0,
+                "StaleOffset": 587,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -1572,6 +1730,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 1,
+                "StaleOffset": 587,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -1586,6 +1746,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 2,
+                "StaleOffset": 587,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -1600,6 +1762,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 3,
+                "StaleOffset": 587,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -1614,6 +1778,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 4,
+                "StaleOffset": 587,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -1628,6 +1794,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 5,
+                "StaleOffset": 587,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -1642,6 +1810,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 6,
+                "StaleOffset": 587,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -1656,6 +1826,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 7,
+                "StaleOffset": 587,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -1670,6 +1842,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 0,
+                "StaleOffset": 589,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
@@ -1684,6 +1858,8 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "StaleBit": 1,
+                "StaleOffset": 589,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             }
