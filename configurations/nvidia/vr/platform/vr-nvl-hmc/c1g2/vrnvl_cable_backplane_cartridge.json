@@ -62,7 +62,6 @@
         }
     },
     {
-        "Exposes": [],
         "Name": "HGX_CBC_0 Chassis FRU Assembly0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 70, 'ADDRESS': 84, 'BOARD_MANUFACTURER': 'Nvidia|NVIDIA'})",
         "Type": "Assembly",
@@ -84,7 +83,6 @@
         }
     },
     {
-        "Exposes": [],
         "Name": "HGX_CBC_0 Board FRU Assembly1",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 70, 'ADDRESS': 84, 'BOARD_MANUFACTURER': 'Nvidia|NVIDIA'})",
         "Type": "Assembly",
@@ -109,7 +107,6 @@
         }
     },
     {
-        "Exposes": [],
         "Name": "HGX_CBC_0 Product FRU Assembly2",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 70, 'ADDRESS': 84, 'BOARD_MANUFACTURER': 'Nvidia|NVIDIA'})",
         "Type": "Assembly",
@@ -198,7 +195,6 @@
         }
     },
     {
-        "Exposes": [],
         "Name": "HGX_CBC_1 Chassis FRU Assembly0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 70, 'ADDRESS': 85, 'BOARD_MANUFACTURER': 'Nvidia|NVIDIA'})",
         "Type": "Assembly",
@@ -220,7 +216,6 @@
         }
     },
     {
-        "Exposes": [],
         "Name": "HGX_CBC_1 Board FRU Assembly1",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 70, 'ADDRESS': 85, 'BOARD_MANUFACTURER': 'Nvidia|NVIDIA'})",
         "Type": "Assembly",
@@ -245,7 +240,6 @@
         }
     },
     {
-        "Exposes": [],
         "Name": "HGX_CBC_1 Product FRU Assembly2",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 70, 'ADDRESS': 85, 'BOARD_MANUFACTURER': 'Nvidia|NVIDIA'})",
         "Type": "Assembly",
@@ -334,7 +328,6 @@
         }
     },
     {
-        "Exposes": [],
         "Name": "HGX_CBC_2 Chassis FRU Assembly0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 71, 'ADDRESS': 84, 'BOARD_MANUFACTURER': 'Nvidia|NVIDIA'})",
         "Type": "Assembly",
@@ -356,7 +349,6 @@
         }
     },
     {
-        "Exposes": [],
         "Name": "HGX_CBC_2 Board FRU Assembly1",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 71, 'ADDRESS': 84, 'BOARD_MANUFACTURER': 'Nvidia|NVIDIA'})",
         "Type": "Assembly",
@@ -381,7 +373,6 @@
         }
     },
     {
-        "Exposes": [],
         "Name": "HGX_CBC_2 Product FRU Assembly2",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 71, 'ADDRESS': 84, 'BOARD_MANUFACTURER': 'Nvidia|NVIDIA'})",
         "Type": "Assembly",
@@ -470,7 +461,6 @@
         }
     },
     {
-        "Exposes": [],
         "Name": "HGX_CBC_3 Chassis FRU Assembly0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 71, 'ADDRESS': 85, 'BOARD_MANUFACTURER': 'Nvidia|NVIDIA'})",
         "Type": "Assembly",
@@ -492,7 +482,6 @@
         }
     },
     {
-        "Exposes": [],
         "Name": "HGX_CBC_3 Board FRU Assembly1",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 71, 'ADDRESS': 85, 'BOARD_MANUFACTURER': 'Nvidia|NVIDIA'})",
         "Type": "Assembly",
@@ -517,7 +506,6 @@
         }
     },
     {
-        "Exposes": [],
         "Name": "HGX_CBC_3 Product FRU Assembly2",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 71, 'ADDRESS': 85, 'BOARD_MANUFACTURER': 'Nvidia|NVIDIA'})",
         "Type": "Assembly",

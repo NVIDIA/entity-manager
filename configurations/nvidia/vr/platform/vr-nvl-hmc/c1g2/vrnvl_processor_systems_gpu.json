@@ -1,6 +1,5 @@
 [
     {
-        "Exposes": [],
         "Name": "GPU_$INSTANCE_NUMBER",
         "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 0})",
         "Type": "Accelerator",

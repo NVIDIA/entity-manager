@@ -1,6 +1,5 @@
 [
     {
-        "Exposes": [],
         "Name": "HGX_CPLD_0",
         "Parent_Chassis": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_0",
         "Probe": "FOUND('HGX ProcessorModule 0')",
@@ -27,7 +26,6 @@
         }
     },
     {
-        "Exposes": [],
         "Name": "HGX_CPLD_1",
         "Parent_Chassis": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_1",
         "Probe": "FOUND('HGX ProcessorModule 1')",

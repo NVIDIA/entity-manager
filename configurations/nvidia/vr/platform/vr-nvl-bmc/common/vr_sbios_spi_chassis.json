@@ -16,7 +16,7 @@
                 "Programmer": "nv_sma_spi",
                 "TargetFirmware": "FW_CPU_0",
                 "Type": "SPI",
-                "USBPort": ".*-1.1.1"
+                "USBPort": "1-1.2.1.1"
             }
         ],
         "Name": "ProcessorModule_0_SBIOS_BootFlash_0",
@@ -40,7 +40,7 @@
                 "Programmer": "nv_sma_spi",
                 "TargetFirmware": "FW_CPU_1",
                 "Type": "SPI",
-                "USBPort": ".*-1.2.1"
+                "USBPort": "1-1.2.2.1"
             }
         ],
         "Name": "ProcessorModule_1_SBIOS_BootFlash_0",
@@ -63,12 +63,18 @@
                 "Name": "RWSPI_0",
                 "Programmer": "nv_sma_spi",
                 "Type": "SPI",
-                "USBPort": ".*-1.1.1"
+                "USBPort": "1-1.2.1.1"
             }
         ],
         "Name": "ProcessorModule_0_SBIOS_RWFlash_0",
         "Probe": "TRUE",
-        "Type": "Chassis"
+        "Type": "Chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": false
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Other"
+        }
     },
     {
         "Exposes": [
@@ -86,11 +92,17 @@
                 "Name": "RWSPI_1",
                 "Programmer": "nv_sma_spi",
                 "Type": "SPI",
-                "USBPort": ".*-1.2.1"
+                "USBPort": "1-1.2.2.1"
             }
         ],
         "Name": "ProcessorModule_1_SBIOS_RWFlash_0",
         "Probe": "TRUE",
-        "Type": "Chassis"
+        "Type": "Chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": false
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Other"
+        }
     }
 ]

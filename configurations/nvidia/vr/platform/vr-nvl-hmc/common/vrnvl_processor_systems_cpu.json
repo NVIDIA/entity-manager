@@ -1,6 +1,5 @@
 [
     {
-        "Exposes": [],
         "Name": "CPU_0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?'})",
         "Type": "Cpu",
@@ -37,7 +36,6 @@
         }
     },
     {
-        "Exposes": [],
         "Name": "CPU_1",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 7, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?'})",
         "Type": "Cpu",

@@ -1,6 +1,5 @@
 [
     {
-        "Exposes": [],
         "Name": "HGX_Chassis_0",
         "Probe": [
             "FOUND('HGX ProcessorModule 0')",
@@ -43,7 +42,6 @@
         }
     },
     {
-        "Exposes": [],
         "Name": "HGX_SMM_0",
         "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
         "Probe": "FOUND('HGX_BMC_0')",
@@ -185,7 +183,6 @@
         }
     },
     {
-        "Exposes": [],
         "Name": "HMC Board FRU Assembly0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 0, 'ADDRESS': 0, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
         "Type": "bmc_0",
@@ -214,7 +211,6 @@
         }
     },
     {
-        "Exposes": [],
         "Name": "HMC Product FRU Assembly1",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 0, 'ADDRESS': 0, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
         "Type": "bmc_0",

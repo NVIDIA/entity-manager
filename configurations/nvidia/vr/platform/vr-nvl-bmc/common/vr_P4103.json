@@ -43,20 +43,26 @@
             },
             {
                 "Address": "0x50",
-                "Bus": "2",
-                "Name": "2 SMM_FRU",
+                "Bus": "11",
+                "Name": "11 SMM_FRU",
                 "Type": "EEPROM_24C64"
             },
             {
                 "Address": "0x48",
-                "Bus": 14,
+                "Bus": 5,
                 "Name": "SMM_0_Temp_0",
                 "Type": "TMP75C"
+            },
+            {
+                "GpioLine": "GLOBAL_WP-O",
+                "Name": "GLOBAL_WP",
+                "Polarity": "active_high",
+                "Type": "WriteProtect"
             }
         ],
         "Name": "SMM_0",
         "Parent_Chassis": "/xyz/openbmc_project/inventory/system/board/SMM_Interposer_0",
-        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 14, 'ADDRESS': 80})",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 5, 'ADDRESS': 80})",
         "Type": "Board",
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
@@ -97,6 +103,9 @@
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/SMM_Interposer_0"
         },
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": true
+        },
         "xyz.openbmc_project.Inventory.Decorator.SKU": {
             "SKU": ""
         },
@@ -109,9 +118,8 @@
         }
     },
     {
-        "Exposes": [],
         "Name": "SMM Board FRU Assembly0",
-        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 14, 'ADDRESS': 80})",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 5, 'ADDRESS': 80})",
         "Type": "SMM_0",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
             "BuildDate": "$BOARD_MANUFACTURE_DATE",
@@ -129,9 +137,8 @@
         }
     },
     {
-        "Exposes": [],
         "Name": "SMM Product FRU Assembly1",
-        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 14, 'ADDRESS': 80})",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 5, 'ADDRESS': 80})",
         "Type": "SMM_0",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
             "Manufacturer": "$PRODUCT_MANUFACTURER",

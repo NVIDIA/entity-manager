@@ -50,7 +50,6 @@
         }
     },
     {
-        "Exposes": [],
         "Name": "PDB_0 Chassis FRU Assembly0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 0, 'ADDRESS': 80})",
         "Type": "Assembly",
@@ -66,7 +65,6 @@
         }
     },
     {
-        "Exposes": [],
         "Name": "PDB_0 Board FRU Assembly1",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 0, 'ADDRESS': 80})",
         "Type": "Assembly",
@@ -85,7 +83,6 @@
         }
     },
     {
-        "Exposes": [],
         "Name": "PDB_0 Product FRU Assembly2",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 0, 'ADDRESS': 80})",
         "Type": "Assembly",

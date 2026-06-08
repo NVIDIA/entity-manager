@@ -3,7 +3,7 @@
         "Exposes": [
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -128,
                 "Name": "GPU_0_DRAM_Temp",
@@ -15,27 +15,9 @@
                 "Thresholds": [
                     {
                         "Direction": "greater than",
-                        "Name": "upper non recoverable",
-                        "Severity": 4,
-                        "Value": 105.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Name": "soft shutdown",
-                        "Severity": 3,
-                        "Value": 103.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Name": "upper critical",
-                        "Severity": 1,
-                        "Value": 103.0
-                    },
-                    {
-                        "Direction": "greater than",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 100.0
+                        "Value": 105.0
                     }
                 ],
                 "Type": "Satellite",
@@ -43,7 +25,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -128,
                 "Name": "GPU_1_DRAM_Temp",
@@ -55,27 +37,9 @@
                 "Thresholds": [
                     {
                         "Direction": "greater than",
-                        "Name": "upper non recoverable",
-                        "Severity": 4,
-                        "Value": 105.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Name": "soft shutdown",
-                        "Severity": 3,
-                        "Value": 103.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Name": "upper critical",
-                        "Severity": 1,
-                        "Value": 103.0
-                    },
-                    {
-                        "Direction": "greater than",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 100.0
+                        "Value": 105.0
                     }
                 ],
                 "Type": "Satellite",
@@ -83,7 +47,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -128,
                 "Name": "GPU_2_DRAM_Temp",
@@ -95,27 +59,9 @@
                 "Thresholds": [
                     {
                         "Direction": "greater than",
-                        "Name": "upper non recoverable",
-                        "Severity": 4,
-                        "Value": 105.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Name": "soft shutdown",
-                        "Severity": 3,
-                        "Value": 103.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Name": "upper critical",
-                        "Severity": 1,
-                        "Value": 103.0
-                    },
-                    {
-                        "Direction": "greater than",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 100.0
+                        "Value": 105.0
                     }
                 ],
                 "Type": "Satellite",
@@ -123,7 +69,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -128,
                 "Name": "GPU_3_DRAM_Temp",
@@ -135,27 +81,9 @@
                 "Thresholds": [
                     {
                         "Direction": "greater than",
-                        "Name": "upper non recoverable",
-                        "Severity": 4,
-                        "Value": 105.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Name": "soft shutdown",
-                        "Severity": 3,
-                        "Value": 103.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Name": "upper critical",
-                        "Severity": 1,
-                        "Value": 103.0
-                    },
-                    {
-                        "Direction": "greater than",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 100.0
+                        "Value": 105.0
                     }
                 ],
                 "Type": "Satellite",
@@ -163,7 +91,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 1023,
                 "MinValue": 0,
                 "Name": "GPU_0_Pwr",
@@ -177,7 +105,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 1023,
                 "MinValue": 0,
                 "Name": "GPU_1_Pwr",
@@ -191,7 +119,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 1023,
                 "MinValue": 0,
                 "Name": "GPU_2_Pwr",
@@ -205,7 +133,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 1023,
                 "MinValue": 0,
                 "Name": "GPU_3_Pwr",
@@ -219,7 +147,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -128,
                 "Name": "GPU_0_Temp_1",
@@ -228,12 +156,38 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non recoverable",
+                        "Severity": 4,
+                        "Value": -5.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "soft shutdown",
+                        "Severity": 3,
+                        "Value": -4.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": -4.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": -2.0
+                    }
+                ],
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -128,
                 "Name": "GPU_1_Temp_1",
@@ -242,12 +196,38 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non recoverable",
+                        "Severity": 4,
+                        "Value": -5.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "soft shutdown",
+                        "Severity": 3,
+                        "Value": -4.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": -4.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": -2.0
+                    }
+                ],
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -128,
                 "Name": "GPU_2_Temp_1",
@@ -256,12 +236,38 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non recoverable",
+                        "Severity": 4,
+                        "Value": -5.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "soft shutdown",
+                        "Severity": 3,
+                        "Value": -4.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": -4.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": -2.0
+                    }
+                ],
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -128,
                 "Name": "GPU_3_Temp_1",
@@ -270,12 +276,38 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non recoverable",
+                        "Severity": 4,
+                        "Value": -5.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "soft shutdown",
+                        "Severity": 3,
+                        "Value": -4.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": -4.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": -2.0
+                    }
+                ],
                 "Type": "Satellite",
                 "ValueType": "Raw"
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 4294970000.0,
                 "MinValue": 0,
                 "Name": "GPU_0_Engy",
@@ -289,7 +321,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 4294970000.0,
                 "MinValue": 0,
                 "Name": "GPU_1_Engy",
@@ -303,7 +335,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 4294970000.0,
                 "MinValue": 0,
                 "Name": "GPU_2_Engy",
@@ -317,7 +349,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 4294970000.0,
                 "MinValue": 0,
                 "Name": "GPU_3_Engy",
@@ -331,7 +363,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 1023,
                 "MinValue": 0,
                 "Name": "GPU_0_DRAM_Pwr",
@@ -345,7 +377,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 1023,
                 "MinValue": 0,
                 "Name": "GPU_1_DRAM_Pwr",
@@ -359,7 +391,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 1023,
                 "MinValue": 0,
                 "Name": "GPU_2_DRAM_Pwr",
@@ -373,7 +405,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 1023,
                 "MinValue": 0,
                 "Name": "GPU_3_DRAM_Pwr",
@@ -387,7 +419,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -128,
                 "Name": "HMC_0_Temp_0",
@@ -433,7 +465,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -128,
                 "Name": "GPU_0_Temp_0",
@@ -447,25 +479,25 @@
                         "Direction": "greater than",
                         "Name": "upper non recoverable",
                         "Severity": 4,
-                        "Value": 90.0
+                        "Value": 95.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "soft shutdown",
                         "Severity": 3,
-                        "Value": 88.0
+                        "Value": 92.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 88.0
+                        "Value": 92.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 85.0
+                        "Value": 90.0
                     }
                 ],
                 "Type": "Satellite",
@@ -473,7 +505,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -128,
                 "Name": "GPU_1_Temp_0",
@@ -487,25 +519,25 @@
                         "Direction": "greater than",
                         "Name": "upper non recoverable",
                         "Severity": 4,
-                        "Value": 90.0
+                        "Value": 95.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "soft shutdown",
                         "Severity": 3,
-                        "Value": 88.0
+                        "Value": 92.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 88.0
+                        "Value": 92.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 85.0
+                        "Value": 90.0
                     }
                 ],
                 "Type": "Satellite",
@@ -513,7 +545,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -128,
                 "Name": "GPU_2_Temp_0",
@@ -527,25 +559,25 @@
                         "Direction": "greater than",
                         "Name": "upper non recoverable",
                         "Severity": 4,
-                        "Value": 90.0
+                        "Value": 95.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "soft shutdown",
                         "Severity": 3,
-                        "Value": 88.0
+                        "Value": 92.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 88.0
+                        "Value": 92.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 85.0
+                        "Value": 90.0
                     }
                 ],
                 "Type": "Satellite",
@@ -553,7 +585,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -128,
                 "Name": "GPU_3_Temp_0",
@@ -567,25 +599,25 @@
                         "Direction": "greater than",
                         "Name": "upper non recoverable",
                         "Severity": 4,
-                        "Value": 90.0
+                        "Value": 95.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "soft shutdown",
                         "Severity": 3,
-                        "Value": 88.0
+                        "Value": 92.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 88.0
+                        "Value": 92.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 85.0
+                        "Value": 90.0
                     }
                 ],
                 "Type": "Satellite",
@@ -593,7 +625,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 100000,
                 "MinValue": 0,
                 "Name": "M0_CPU_Engy",
@@ -607,7 +639,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 10000,
                 "MinValue": 0,
                 "Name": "M0_CPU_Pwr",
@@ -621,7 +653,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 10000,
                 "MinValue": 0,
                 "Name": "M0_Vreg_CPU_Pwr",
@@ -635,7 +667,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 10000,
                 "MinValue": 0,
                 "Name": "M0_Vreg_Soc_Pwr",
@@ -649,7 +681,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M0_CPU_Temp_Avg",
@@ -663,25 +695,25 @@
                         "Direction": "greater than",
                         "Name": "upper non recoverable",
                         "Severity": 4,
-                        "Value": 90.0
+                        "Value": 95.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "soft shutdown",
                         "Severity": 3,
-                        "Value": 88.0
+                        "Value": 93.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 88.0
+                        "Value": 93.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 85.0
+                        "Value": 90.0
                     }
                 ],
                 "Type": "Satellite",
@@ -689,7 +721,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M0_CPU_TLimit",
@@ -698,12 +730,38 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non recoverable",
+                        "Severity": 4,
+                        "Value": -5.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "soft shutdown",
+                        "Severity": 3,
+                        "Value": -4.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": -4.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": -2.0
+                    }
+                ],
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 100,
                 "MinValue": 0,
                 "Name": "M0_VregCPU_Volt",
@@ -717,7 +775,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 100,
                 "MinValue": 0,
                 "Name": "M0_VregSoc_Volt",
@@ -731,7 +789,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 100000,
                 "MinValue": 0,
                 "Name": "M1_CPU_Engy",
@@ -745,7 +803,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 10000,
                 "MinValue": 0,
                 "Name": "M1_CPU_Pwr",
@@ -759,7 +817,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 10000,
                 "MinValue": 0,
                 "Name": "M1_Vreg_CPU_Pwr",
@@ -773,7 +831,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 10000,
                 "MinValue": 0,
                 "Name": "M1_Vreg_Soc_Pwr",
@@ -787,7 +845,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M1_CPU_Temp_Avg",
@@ -801,25 +859,25 @@
                         "Direction": "greater than",
                         "Name": "upper non recoverable",
                         "Severity": 4,
-                        "Value": 90.0
+                        "Value": 95.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "soft shutdown",
                         "Severity": 3,
-                        "Value": 88.0
+                        "Value": 93.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 88.0
+                        "Value": 93.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 85.0
+                        "Value": 90.0
                     }
                 ],
                 "Type": "Satellite",
@@ -827,7 +885,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M1_CPU_TLimit",
@@ -836,12 +894,38 @@
                 "PollRate": 1,
                 "PowerState": "On",
                 "SensorType": "Temperature",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non recoverable",
+                        "Severity": 4,
+                        "Value": -5.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "soft shutdown",
+                        "Severity": 3,
+                        "Value": -4.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": -4.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": -2.0
+                    }
+                ],
                 "Type": "Satellite",
                 "ValueType": "PLDM"
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 100,
                 "MinValue": 0,
                 "Name": "M1_VregCPU_Volt",
@@ -855,7 +939,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 100,
                 "MinValue": 0,
                 "Name": "M1_VregSoc_Volt",
@@ -869,7 +953,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "GPU_SMA_0_Temp",
@@ -883,7 +967,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "GPU_SMA_1_Temp",
@@ -897,7 +981,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M0_HPM_SMA_Temp",
@@ -911,7 +995,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M1_HPM_SMA_Temp",
@@ -925,7 +1009,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M0_CPU_Soc_Temp",
@@ -939,7 +1023,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M0_CPU_Die_Temp",
@@ -953,7 +1037,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M0_SMA_Ext_Temp",
@@ -967,7 +1051,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M0_HSCC_Temp",
@@ -981,7 +1065,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M0_HSC_Temp",
@@ -995,7 +1079,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M0_GPU_0_Die_0_Temp",
@@ -1009,7 +1093,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M0_GPU_0_Die_1_Temp",
@@ -1023,7 +1107,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M0_GPU_1_Die_0_Temp",
@@ -1037,7 +1121,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M0_GPU_1_Die_1_Temp",
@@ -1051,7 +1135,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M0_GPU_VR_Temp",
@@ -1065,25 +1149,25 @@
                         "Direction": "greater than",
                         "Name": "upper non recoverable",
                         "Severity": 4,
-                        "Value": 100.0
+                        "Value": 135.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "soft shutdown",
                         "Severity": 3,
-                        "Value": 98.0
+                        "Value": 130.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 98.0
+                        "Value": 130.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 95.0
+                        "Value": 120.0
                     }
                 ],
                 "Type": "Satellite",
@@ -1091,7 +1175,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M1_CPU_Soc_Temp",
@@ -1105,7 +1189,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M1_CPU_Die_Temp",
@@ -1119,7 +1203,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M1_SMA_Ext_Temp",
@@ -1133,7 +1217,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M1_HSCC_Temp",
@@ -1147,7 +1231,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M1_HSC_Temp",
@@ -1161,7 +1245,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M1_GPU_0_Die_0_Temp",
@@ -1175,7 +1259,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M1_GPU_0_Die_1_Temp",
@@ -1189,7 +1273,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M1_GPU_1_Die_0_Temp",
@@ -1203,7 +1287,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M1_GPU_1_Die_1_Temp",
@@ -1217,7 +1301,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M1_GPU_VR_Temp",
@@ -1231,25 +1315,25 @@
                         "Direction": "greater than",
                         "Name": "upper non recoverable",
                         "Severity": 4,
-                        "Value": 100.0
+                        "Value": 135.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "soft shutdown",
                         "Severity": 3,
-                        "Value": 98.0
+                        "Value": 130.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 98.0
+                        "Value": 130.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 95.0
+                        "Value": 120.0
                     }
                 ],
                 "Type": "Satellite",
@@ -1257,7 +1341,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M1_BusBar_Temp",
@@ -1269,15 +1353,27 @@
                 "Thresholds": [
                     {
                         "Direction": "greater than",
+                        "Name": "upper non recoverable",
+                        "Severity": 4,
+                        "Value": 110.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "soft shutdown",
+                        "Severity": 3,
+                        "Value": 107.0
+                    },
+                    {
+                        "Direction": "greater than",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 98.0
+                        "Value": 107.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 95.0
+                        "Value": 105.0
                     }
                 ],
                 "Type": "Satellite",
@@ -1285,7 +1381,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 1023,
                 "MinValue": 0,
                 "Name": "M0_HSCC_Pwr",
@@ -1299,7 +1395,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 1023,
                 "MinValue": 0,
                 "Name": "M0_HSC_Pwr",
@@ -1313,7 +1409,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 1023,
                 "MinValue": 0,
                 "Name": "M1_HSCC_Pwr",
@@ -1327,7 +1423,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 1023,
                 "MinValue": 0,
                 "Name": "M1_HSC_Pwr",
@@ -1341,7 +1437,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M0_Dram_Temp_0",
@@ -1355,7 +1451,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M0_Dram_Temp_1",
@@ -1369,7 +1465,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M0_Dram_Temp_2",
@@ -1383,7 +1479,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M0_Dram_Temp_3",
@@ -1397,7 +1493,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M0_Dram_Temp_4",
@@ -1411,7 +1507,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M0_Dram_Temp_5",
@@ -1425,7 +1521,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M0_Dram_Temp_6",
@@ -1439,7 +1535,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M0_Dram_Temp_7",
@@ -1453,7 +1549,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M1_Dram_Temp_0",
@@ -1467,7 +1563,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M1_Dram_Temp_1",
@@ -1481,7 +1577,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M1_Dram_Temp_2",
@@ -1495,7 +1591,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M1_Dram_Temp_3",
@@ -1509,7 +1605,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M1_Dram_Temp_4",
@@ -1523,7 +1619,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M1_Dram_Temp_5",
@@ -1537,7 +1633,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M1_Dram_Temp_6",
@@ -1551,7 +1647,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M1_Dram_Temp_7",
@@ -1565,7 +1661,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M0_CPU_VR_Temp",
@@ -1579,7 +1675,7 @@
             },
             {
                 "Address": "0x4f",
-                "Bus": 12,
+                "Bus": 3,
                 "MaxValue": 127,
                 "MinValue": -127,
                 "Name": "M1_CPU_VR_Temp",

@@ -1,13 +1,13 @@
 [
     {
         "Exposes": [],
-        "Name": "NSM_IRoT_BMC_0",
+        "Name": "NSM_ERoT_BMC_0",
         "Probe": "TRUE",
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_TYPE": 4,
             "INSTANCE_NUMBER": 0,
-            "UUID": "STATIC:4:0:MCTP_EID:9"
+            "UUID": "STATIC:4:0:MCTP_EID:50"
         }
     },
     {
@@ -19,6 +19,7 @@
             "DEVICE_ROLE": "CX9",
             "DEVICE_TYPE": 2,
             "INSTANCE_NUMBER": 0,
+            "LOCATION_CONTEXT": "Chassis_0/Bay-B-Left-Bottom",
             "UUID": "STATIC:770:0:MCTP_EID:62"
         }
     },
@@ -31,6 +32,7 @@
             "DEVICE_ROLE": "CX9",
             "DEVICE_TYPE": 2,
             "INSTANCE_NUMBER": 1,
+            "LOCATION_CONTEXT": "Chassis_0/Bay-B-Left-Bottom",
             "UUID": "STATIC:770:1:MCTP_EID:64"
         }
     },
@@ -43,6 +45,7 @@
             "DEVICE_ROLE": "CX9",
             "DEVICE_TYPE": 2,
             "INSTANCE_NUMBER": 2,
+            "LOCATION_CONTEXT": "Chassis_0/Bay-B-Left-Top",
             "UUID": "STATIC:770:2:MCTP_EID:72"
         }
     },
@@ -55,6 +58,7 @@
             "DEVICE_ROLE": "CX9",
             "DEVICE_TYPE": 2,
             "INSTANCE_NUMBER": 3,
+            "LOCATION_CONTEXT": "Chassis_0/Bay-B-Left-Top",
             "UUID": "STATIC:770:3:MCTP_EID:74"
         }
     },
@@ -67,6 +71,7 @@
             "DEVICE_ROLE": "CX9",
             "DEVICE_TYPE": 2,
             "INSTANCE_NUMBER": 4,
+            "LOCATION_CONTEXT": "Chassis_0/Bay-B-Right-Bottom",
             "UUID": "STATIC:770:4:MCTP_EID:82"
         }
     },
@@ -79,6 +84,7 @@
             "DEVICE_ROLE": "CX9",
             "DEVICE_TYPE": 2,
             "INSTANCE_NUMBER": 5,
+            "LOCATION_CONTEXT": "Chassis_0/Bay-B-Right-Bottom",
             "UUID": "STATIC:770:5:MCTP_EID:84"
         }
     },
@@ -91,6 +97,7 @@
             "DEVICE_ROLE": "CX9",
             "DEVICE_TYPE": 2,
             "INSTANCE_NUMBER": 6,
+            "LOCATION_CONTEXT": "Chassis_0/Bay-B-Right-Top",
             "UUID": "STATIC:770:6:MCTP_EID:92"
         }
     },
@@ -103,19 +110,32 @@
             "DEVICE_ROLE": "CX9",
             "DEVICE_TYPE": 2,
             "INSTANCE_NUMBER": 7,
+            "LOCATION_CONTEXT": "Chassis_0/Bay-B-Right-Top",
             "UUID": "STATIC:770:7:MCTP_EID:94"
         }
     },
     {
         "Exposes": [],
-        "Name": "NSM_BF4_0",
-        "Probe": "TRUE",
+        "Name": "NSM_BF4_B4240_0",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'B4240V.*'})",
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
-            "DEVICE_ROLE": "BF4",
+            "DEVICE_ROLE": "BF4B4",
             "DEVICE_TYPE": 2,
             "INSTANCE_NUMBER": 0,
-            "UUID": "STATIC:770:8:MCTP_EID:56"
+            "UUID": "STATIC:1026:0:MCTP_EID:56"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_BF4_C9180_0",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'ConnectX-9.*'})",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_ROLE": "BF4C9",
+            "DEVICE_TYPE": 2,
+            "INSTANCE_NUMBER": 0,
+            "UUID": "STATIC:1026:0:MCTP_EID:57"
         }
     },
     {
@@ -128,6 +148,7 @@
             "DEVICE_TYPE": 5,
             "INSTANCE_NUMBER": 0,
             "LEAK_DETECTION": false,
+            "LOCATION_CONTEXT": "Chassis_0/Bay-B-Left-Bottom",
             "UUID": "STATIC:517:0:MCTP_EID:60"
         }
     },
@@ -141,6 +162,7 @@
             "DEVICE_TYPE": 5,
             "INSTANCE_NUMBER": 1,
             "LEAK_DETECTION": true,
+            "LOCATION_CONTEXT": "Chassis_0/Bay-B-Left-Top",
             "UUID": "STATIC:517:1:MCTP_EID:70"
         }
     },
@@ -154,6 +176,7 @@
             "DEVICE_TYPE": 5,
             "INSTANCE_NUMBER": 2,
             "LEAK_DETECTION": false,
+            "LOCATION_CONTEXT": "Chassis_0/Bay-B-Right-Bottom",
             "UUID": "STATIC:517:2:MCTP_EID:80"
         }
     },
@@ -167,13 +190,14 @@
             "DEVICE_TYPE": 5,
             "INSTANCE_NUMBER": 3,
             "LEAK_DETECTION": true,
+            "LOCATION_CONTEXT": "Chassis_0/Bay-B-Right-Top",
             "UUID": "STATIC:517:3:MCTP_EID:90"
         }
     },
     {
         "Exposes": [],
         "Name": "NSM_SMA_BF4_0_Bridge",
-        "Probe": "TRUE",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80})",
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "BFSMA",

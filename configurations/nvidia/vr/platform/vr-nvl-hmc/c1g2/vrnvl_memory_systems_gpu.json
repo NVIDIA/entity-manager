@@ -1,6 +1,5 @@
 [
     {
-        "Exposes": [],
         "Name": "GPU_0_DRAM_0",
         "Probe": "FOUND('NSM_DEV_GPU_0')",
         "Type": "Dimm",
@@ -15,7 +14,6 @@
         }
     },
     {
-        "Exposes": [],
         "Name": "GPU_1_DRAM_0",
         "Probe": "FOUND('NSM_DEV_GPU_1')",
         "Type": "Dimm",
@@ -30,7 +28,6 @@
         }
     },
     {
-        "Exposes": [],
         "Name": "GPU_2_DRAM_0",
         "Probe": "FOUND('NSM_DEV_GPU_2')",
         "Type": "Dimm",
@@ -45,7 +42,6 @@
         }
     },
     {
-        "Exposes": [],
         "Name": "GPU_3_DRAM_0",
         "Probe": "FOUND('NSM_DEV_GPU_3')",
         "Type": "Dimm",

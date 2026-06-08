@@ -11,8 +11,9 @@
             "ResetGpioName": "BF4_USB_MCU_RST_L",
             "Target": "BF4",
             "Type": "MCURecovery",
-            "USBPort": "1-1.4.1",
-            "VendorId": "0x0955"
+            "USBPort": "1-1.1.4.1",
+            "VendorId": "0x0955",
+            "hasChassisPowerSource": false
         }
     ],
     "Name": "BF4_SMA_Recovery_Devices",
