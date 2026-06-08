@@ -1,0 +1,534 @@
+{
+    "Name": "Nvidia VR-NVL72 HMC",
+    "Type": "Platform",
+    "Probe": [
+        "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
+        "AND",
+        "FOUND('HGX_Baseboard_0')",
+        "AND",
+        "FOUND('HGX_BMC_0')"
+    ],
+    "PlatformExposes": [
+        {
+            "Name": "HMC_USB_GADGET_0",
+            "Type": "MCTPUSBGadgetTarget",
+            "Interface": "mctpusbg0",
+            "LocalEID": "8"
+        },
+        {
+            "Name": "HGX_ERoT_BMC_0",
+            "Type": "MCTPSPIDevice",
+            "Bus": "0",
+            "ChipSelect": "2",
+            "StaticEndpointID": "9"
+        },
+        {
+            "Name": "HGX_ERoT_BMC_0_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "HGX_ERoT_BMC_0",
+            "Components": [
+                {
+                    "Name": "HGX_FW_ERoT_BMC_0",
+                    "ComponentIdentifier": 65280,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_BMC_0"
+                        }
+                    ]
+                },
+                {
+                    "Name": "HGX_FW_BMC_0",
+                    "ComponentIdentifier": 16
+                }
+            ]
+        },
+        {
+            "Name": "HGX_ERoT_BMC_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "MCTPTargetName": "HGX_ERoT_BMC_0",
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_BMC_0",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/bmc/HGX_BMC_0",
+            "Manufacturer": "NVIDIA",
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null,
+            "Associations": [
+                {
+                    "Forward": "parent_chassis",
+                    "Backward": "all_chassis",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/bmc/HGX_BMC_0"
+                },
+                {
+                    "Forward": "inventory",
+                    "Backward": "associated_ROT",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/bmc/HGX_BMC_0"
+                },
+                {
+                    "Forward": "inventory_chassis",
+                    "Backward": "associated_chassis",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_BMC_0"
+                }
+            ]
+        },
+        {
+            "Name": "HGX_GPU_SMA_0",
+            "Type": "MCTPUSBDevice",
+            "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+            "Port": "1.1.1.1",
+            "Configuration": 1,
+            "InterfaceNum": 0,
+            "BridgedEndpoints": [
+                "HGX_GPU_0",
+                "HGX_GPU_1"
+            ],
+            "StaticEndpointID": "10",
+            "BridgePoolStartEid": "11",
+            "BridgePoolEndEID": "12"
+        },
+        {
+            "Name": "HGX_GPU_0",
+            "Type": "MCTPBridgePoolDevice",
+            "BridgeName": "HGX_GPU_SMA_0",
+            "PoolIndex": 0
+        },
+        {
+            "Name": "HGX_GPU_1",
+            "Type": "MCTPBridgePoolDevice",
+            "BridgeName": "HGX_GPU_SMA_0",
+            "PoolIndex": 1
+        },
+        {
+            "Name": "HGX_GPU_SMA_0_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "HGX_GPU_SMA_0",
+            "Components": [
+                {
+                    "Name": "HGX_FW_GPU_SMA_0",
+                    "ComponentIdentifier": 65282,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_SMA_0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "HGX_GPU_0_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "HGX_GPU_0",
+            "Components": [
+                {
+                    "Name": "HGX_FW_GPU_0",
+                    "ComponentIdentifier": 49152,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_0"
+                        }
+                    ]
+                },
+                {
+                    "Name": "HGX_InfoROM_GPU_0",
+                    "ComponentIdentifier": 49168,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "active",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "HGX_IRoT_GPU_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "MCTPTargetName": "HGX_GPU_0",
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_GPU_0",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_0",
+            "Manufacturer": "NVIDIA",
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null,
+            "Associations": [
+                {
+                    "Forward": "parent_chassis",
+                    "Backward": "all_chassis",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_0"
+                },
+                {
+                    "Forward": "inventory",
+                    "Backward": "associated_ROT",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0"
+                },
+                {
+                    "Forward": "inventory_chassis",
+                    "Backward": "associated_chassis",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_0"
+                }
+            ]
+        },
+        {
+            "Name": "HGX_GPU_1_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "HGX_GPU_1",
+            "Components": [
+                {
+                    "Name": "HGX_FW_GPU_1",
+                    "ComponentIdentifier": 49152,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_1"
+                        }
+                    ]
+                },
+                {
+                    "Name": "HGX_InfoROM_GPU_1",
+                    "ComponentIdentifier": 49168,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "active",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "HGX_IRoT_GPU_1_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "MCTPTargetName": "HGX_GPU_1",
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_GPU_1",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_1",
+            "Manufacturer": "NVIDIA",
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null,
+            "Associations": [
+                {
+                    "Forward": "parent_chassis",
+                    "Backward": "all_chassis",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_1"
+                },
+                {
+                    "Forward": "inventory",
+                    "Backward": "associated_ROT",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1"
+                },
+                {
+                    "Forward": "inventory_chassis",
+                    "Backward": "associated_chassis",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_1"
+                }
+            ]
+        },
+        {
+            "Name": "HGX_ProcessorModule_SMA_0",
+            "Type": "MCTPI2CTarget",
+            "Bus": "1",
+            "Address": "0x52",
+            "StaticEndpointID": "13"
+        },
+        {
+            "Name": "HGX_ProcessorModule_SMA_0_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "HGX_ProcessorModule_SMA_0",
+            "Components": [
+                {
+                    "Name": "HGX_FW_ProcessorModule_SMA_0",
+                    "ComponentIdentifier": 65282,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ProcessorModule_SMA_0"
+                        }
+                    ]
+                },
+                {
+                    "Name": "HGX_FW_CPLD_0",
+                    "ComponentIdentifier": 65283,
+                    "Manufacturer": "Lattice",
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/component/HGX_CPLD_0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "HGX_CPU_0",
+            "Type": "MCTPUSBDevice",
+            "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+            "Port": "1.1.1.2",
+            "Configuration": 1,
+            "InterfaceNum": 0,
+            "StaticEndpointID": "14"
+        },
+        {
+            "Name": "HGX_CPU_0_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "HGX_CPU_0",
+            "Components": [
+                {
+                    "Name": "HGX_SBIOS_FMC_0",
+                    "ComponentIdentifier": 2,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/component/HGX_CPU_0"
+                        }
+                    ]
+                },
+                {
+                    "Name": "HGX_SBIOS_FW_0",
+                    "ComponentIdentifier": 513,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/component/HGX_CPU_0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "HGX_GPU_SMA_1",
+            "Type": "MCTPUSBDevice",
+            "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+            "Port": "1.1.2.1",
+            "Configuration": 1,
+            "InterfaceNum": 0,
+            "BridgedEndpoints": [
+                "HGX_GPU_2",
+                "HGX_GPU_3"
+            ],
+            "StaticEndpointID": "20",
+            "BridgePoolStartEid": "21",
+            "BridgePoolEndEID": "22"
+        },
+        {
+            "Name": "HGX_GPU_2",
+            "Type": "MCTPBridgePoolDevice",
+            "BridgeName": "HGX_GPU_SMA_1",
+            "PoolIndex": 0
+        },
+        {
+            "Name": "HGX_GPU_3",
+            "Type": "MCTPBridgePoolDevice",
+            "BridgeName": "HGX_GPU_SMA_1",
+            "PoolIndex": 1
+        },
+        {
+            "Name": "HGX_GPU_SMA_1_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "HGX_GPU_SMA_1",
+            "Components": [
+                {
+                    "Name": "HGX_FW_GPU_SMA_1",
+                    "ComponentIdentifier": 65282,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_SMA_1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "HGX_GPU_2_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "HGX_GPU_2",
+            "Components": [
+                {
+                    "Name": "HGX_FW_GPU_2",
+                    "ComponentIdentifier": 49152,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_2"
+                        }
+                    ]
+                },
+                {
+                    "Name": "HGX_InfoROM_GPU_2",
+                    "ComponentIdentifier": 49168,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "active",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_2"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "HGX_IRoT_GPU_2_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "MCTPTargetName": "HGX_GPU_2",
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_GPU_2",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_2",
+            "Manufacturer": "NVIDIA",
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null,
+            "Associations": [
+                {
+                    "Forward": "parent_chassis",
+                    "Backward": "all_chassis",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_2"
+                },
+                {
+                    "Forward": "inventory",
+                    "Backward": "associated_ROT",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_2"
+                },
+                {
+                    "Forward": "inventory_chassis",
+                    "Backward": "associated_chassis",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_2"
+                }
+            ]
+        },
+        {
+            "Name": "HGX_GPU_3_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "HGX_GPU_3",
+            "Components": [
+                {
+                    "Name": "HGX_FW_GPU_3",
+                    "ComponentIdentifier": 49152,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_3"
+                        }
+                    ]
+                },
+                {
+                    "Name": "HGX_InfoROM_GPU_3",
+                    "ComponentIdentifier": 49168,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "active",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_3"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "HGX_IRoT_GPU_3_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "MCTPTargetName": "HGX_GPU_3",
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_GPU_3",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_3",
+            "Manufacturer": "NVIDIA",
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null,
+            "Associations": [
+                {
+                    "Forward": "parent_chassis",
+                    "Backward": "all_chassis",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_3"
+                },
+                {
+                    "Forward": "inventory",
+                    "Backward": "associated_ROT",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_3"
+                },
+                {
+                    "Forward": "inventory_chassis",
+                    "Backward": "associated_chassis",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_3"
+                }
+            ]
+        },
+        {
+            "Name": "HGX_ProcessorModule_SMA_1",
+            "Type": "MCTPI2CTarget",
+            "Bus": "7",
+            "Address": "0x52",
+            "StaticEndpointID": "23"
+        },
+        {
+            "Name": "HGX_ProcessorModule_SMA_1_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "HGX_ProcessorModule_SMA_1",
+            "Components": [
+                {
+                    "Name": "HGX_FW_ProcessorModule_SMA_1",
+                    "ComponentIdentifier": 65282,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ProcessorModule_SMA_1"
+                        }
+                    ]
+                },
+                {
+                    "Name": "HGX_FW_CPLD_1",
+                    "ComponentIdentifier": 65283,
+                    "Manufacturer": "Lattice",
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/component/HGX_CPLD_1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "HGX_CPU_1",
+            "Type": "MCTPUSBDevice",
+            "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+            "Port": "1.1.2.2",
+            "Configuration": 1,
+            "InterfaceNum": 0,
+            "StaticEndpointID": "24"
+        },
+        {
+            "Name": "HGX_CPU_1_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "HGX_CPU_1",
+            "Components": [
+                {
+                    "Name": "HGX_SBIOS_FMC_1",
+                    "ComponentIdentifier": 2,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/component/HGX_CPU_1"
+                        }
+                    ]
+                },
+                {
+                    "Name": "HGX_SBIOS_FW_1",
+                    "ComponentIdentifier": 513,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/component/HGX_CPU_1"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
