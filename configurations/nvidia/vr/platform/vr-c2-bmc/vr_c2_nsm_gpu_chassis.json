@@ -2,216 +2,216 @@
     {
         "Exposes": [
             {
+                "Chassis": {
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "ChassisAttributes": {
+                    "AssetInformationAvailable": true,
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "DimensionSupported": true,
+                    "PowerLimitSupported": true,
+                    "PrettyNameForChassis": "GPU_0",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "DeviceType": "0",
                 "Name": "GPU_0",
                 "Type": "NSM_Chassis",
-                "UUID": "$UUID",
-                "DeviceType": "0",
-                "Chassis": {
-                    "Type": "NSM_Chassis",
-                    "DEVICE_UUID": "$DEVICE_UUID"
-                },
-                "ChassisAttributes": {
-                    "Type": "NSM_Chassis_Attributes",
-                    "AssetInformationAvailable": true,
-                    "DimensionSupported": true,
-                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
-                    "PowerLimitSupported": true,
-                    "PrettyNameForChassis": "GPU_0"
-                }
+                "UUID": "$UUID"
             },
             {
-                "ChassisName": "GPU_0",
-                "Name": "GPU_0",
-                "Type": "NSM_ChassisPCIeDevice",
-                "UUID": "$UUID",
-                "DEVICE_UUID": "$DEVICE_UUID",
-                "ChassisAttributes": {
-                    "Type": "NSM_Chassis_Attributes",
-                    "Name": "GPU_0"
-                },
                 "Associations": [
                     {
-                        "Forward": "chassis",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_0",
                         "Backward": "pciedevice",
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_0"
+                        "Forward": "chassis"
                     }
                 ],
+                "ChassisAttributes": {
+                    "Name": "GPU_0",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "ChassisName": "GPU_0",
+                "ClockOutputEnableState": {
+                    "InstanceNumber": "0",
+                    "Type": "NSM_ClockOutputEnableState"
+                },
+                "DEVICE_UUID": "$DEVICE_UUID",
+                "Name": "GPU_0",
                 "PCIeDevice": {
                     "Type": "NSM_PCIeDevice"
                 },
-                "ClockOutputEnableState": {
-                    "Type": "NSM_ClockOutputEnableState",
-                    "InstanceNumber": "0"
-                }
+                "Type": "NSM_ChassisPCIeDevice",
+                "UUID": "$UUID"
             },
             {
-                "Name": "GPU_0 TEMP_0",
-                "Type": "NSM_Temp",
                 "Associations": [
                     {
-                        "Forward": "chassis",
-                        "Backward": "all_sensors",
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_0"
-                    },
-                    {
-                        "Forward": "processor",
-                        "Backward": "all_sensors",
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0"
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0",
+                        "Backward": "all_states",
+                        "Forward": "parent_device"
                     }
                 ],
-                "ThermalParameters": [
-                    {
-                        "Name": "UpperFatal",
-                        "Dynamic": false,
-                        "Value": 95.0
-                    },
-                    {
-                        "Name": "UpperCritical",
-                        "Dynamic": false,
-                        "Value": 92.0
-                    },
-                    {
-                        "Name": "UpperCaution",
-                        "Dynamic": false,
-                        "Value": 90.0
-                    }
-                ],
-                "UUID": "$UUID",
-                "PhysicalContext": "GPU",
-                "Aggregated": true,
-                "SensorId": 0,
-                "Priority": true
-            },
-            {
-                "Name": "GPU_0 TEMP_1",
-                "Type": "NSM_Temp",
-                "Associations": [
-                    {
-                        "Forward": "chassis",
-                        "Backward": "all_sensors",
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_0"
-                    },
-                    {
-                        "Forward": "processor",
-                        "Backward": "all_sensors",
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0"
-                    }
-                ],
-                "ThermalParameters": [
-                    {
-                        "Name": "LowerFatal",
-                        "Dynamic": false,
-                        "Value": -5.0
-                    },
-                    {
-                        "Name": "LowerCritical",
-                        "Dynamic": false,
-                        "Value": -4.0
-                    },
-                    {
-                        "Name": "LowerCaution",
-                        "Dynamic": false,
-                        "Value": -2.0
-                    }
-                ],
-                "UUID": "$UUID",
-                "PhysicalContext": "GPU",
-                "Implementation": "Synthesized",
-                "ReadingBasis": "Headroom",
-                "Description": "Thermal Limit(TLIMIT) Temperature is the distance in deg C from the GPU temperature to the first throttle limit.",
-                "Aggregated": true,
-                "SensorId": 2,
-                "Priority": true
-            },
-            {
-                "Name": "GPU_0 Processor",
-                "Type": "NSM_Processor",
-                "Associations": [
-                    {
-                        "Forward": "parent_chassis",
-                        "Backward": "all_processors",
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_0"
-                    },
-                    {
-                        "Forward": "system_interface",
-                        "Backward": "",
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_0/PCIeDevices/GPU_0"
-                    },
-                    {
-                        "Forward": "all_memory",
-                        "Backward": "parent_processor",
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/dimm/GPU_0_DRAM_0"
-                    }
-                ],
-                "UUID": "$UUID",
-                "DEVICE_UUID": "$DEVICE_UUID",
-                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0"
-            },
-            {
-                "Name": "GPU_0 Memory",
-                "Type": "NSM_Memory",
-                "Associations": [
-                    {
-                        "Forward": "parent_processor",
-                        "Backward": "all_memory",
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0"
-                    },
-                    {
-                        "Forward": "parent_chassis",
-                        "Backward": "all_memory",
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_0"
-                    },
-                    {
-                        "Forward": "all_sensors",
-                        "Backward": "memory",
-                        "AbsolutePath": "/xyz/openbmc_project/sensors/temperature/GPU_0_DRAM_0_Temp_0"
-                    },
-                    {
-                        "Forward": "all_sensors",
-                        "Backward": "memory",
-                        "AbsolutePath": "/xyz/openbmc_project/sensors/power/GPU_0_DRAM_0_Power_0"
-                    }
-                ],
-                "ErrorCorrection": "xyz.openbmc_project.Inventory.Item.Dimm.Ecc.SingleBitECC",
-                "DeviceType": "xyz.openbmc_project.Inventory.Item.Dimm.DeviceType.HBM",
-                "UUID": "$UUID",
-                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/dimm/GPU_0",
-                "MemoryAttributes": {
-                    "Type": "NSM_Memory_Attributes"
-                }
-            },
-            {
-                "Name": "GPU_0 PCIe_0",
-                "Type": "NSM_GPU_PCIe_0",
-                "UUID": "$UUID",
-                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0",
-                "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK",
                 "ChasisPowerState": "xyz.openbmc_project.State.Chassis.PowerState.On",
-                "DeviceIndex": 0,
                 "ClearableScalarGroup": [
                     2,
                     3,
                     4
                 ],
+                "DeviceIndex": 0,
+                "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK",
+                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0",
+                "Name": "GPU_0 PCIe_0",
+                "PortInfo": {
+                    "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.PCIe",
+                    "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.UpstreamPort",
+                    "Priority": false,
+                    "Type": "NSM_PortInfo"
+                },
+                "Type": "NSM_GPU_PCIe_0",
+                "UUID": "$UUID"
+            },
+            {
                 "Associations": [
                     {
-                        "Forward": "parent_device",
-                        "Backward": "all_states",
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0"
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0",
+                        "Backward": "all_memory",
+                        "Forward": "parent_processor"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_0",
+                        "Backward": "all_memory",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/temperature/GPU_0_DRAM_0_Temp_0",
+                        "Backward": "memory",
+                        "Forward": "all_sensors"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/power/GPU_0_DRAM_0_Power_0",
+                        "Backward": "memory",
+                        "Forward": "all_sensors"
                     }
                 ],
-                "PortInfo": {
-                    "Type": "NSM_PortInfo",
-                    "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.UpstreamPort",
-                    "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.PCIe",
-                    "Priority": false
-                }
+                "DeviceType": "xyz.openbmc_project.Inventory.Item.Dimm.DeviceType.HBM",
+                "ErrorCorrection": "xyz.openbmc_project.Inventory.Item.Dimm.Ecc.SingleBitECC",
+                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/dimm/GPU_0",
+                "MemoryAttributes": {
+                    "Type": "NSM_Memory_Attributes"
+                },
+                "Name": "GPU_0 Memory",
+                "Type": "NSM_Memory",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_0",
+                        "Backward": "all_processors",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_0/PCIeDevices/GPU_0",
+                        "Backward": "",
+                        "Forward": "system_interface"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/dimm/GPU_0_DRAM_0",
+                        "Backward": "parent_processor",
+                        "Forward": "all_memory"
+                    }
+                ],
+                "DEVICE_UUID": "$DEVICE_UUID",
+                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0",
+                "Name": "GPU_0 Processor",
+                "Type": "NSM_Processor",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0",
+                        "Backward": "all_sensors",
+                        "Forward": "processor"
+                    }
+                ],
+                "Name": "GPU_0 TEMP_0",
+                "PhysicalContext": "GPU",
+                "Priority": true,
+                "SensorId": 0,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": false,
+                        "Name": "UpperFatal",
+                        "Value": 95.0
+                    },
+                    {
+                        "Dynamic": false,
+                        "Name": "UpperCritical",
+                        "Value": 92.0
+                    },
+                    {
+                        "Dynamic": false,
+                        "Name": "UpperCaution",
+                        "Value": 90.0
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0",
+                        "Backward": "all_sensors",
+                        "Forward": "processor"
+                    }
+                ],
+                "Description": "Thermal Limit(TLIMIT) Temperature is the distance in deg C from the GPU temperature to the first throttle limit.",
+                "Implementation": "Synthesized",
+                "Name": "GPU_0 TEMP_1",
+                "PhysicalContext": "GPU",
+                "Priority": true,
+                "ReadingBasis": "Headroom",
+                "SensorId": 2,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": false,
+                        "Name": "LowerFatal",
+                        "Value": -5.0
+                    },
+                    {
+                        "Dynamic": false,
+                        "Name": "LowerCritical",
+                        "Value": -4.0
+                    },
+                    {
+                        "Dynamic": false,
+                        "Name": "LowerCaution",
+                        "Value": -2.0
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
             }
         ],
-        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 0, 'INSTANCE_NUMBER': 0})",
         "Name": "GPU_0",
-        "Type": "Component",
         "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 0, 'INSTANCE_NUMBER': 0})",
+        "Type": "Component",
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
         },
@@ -231,216 +231,216 @@
     {
         "Exposes": [
             {
+                "Chassis": {
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "ChassisAttributes": {
+                    "AssetInformationAvailable": true,
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "DimensionSupported": true,
+                    "PowerLimitSupported": true,
+                    "PrettyNameForChassis": "GPU_1",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "DeviceType": "0",
                 "Name": "GPU_1",
                 "Type": "NSM_Chassis",
-                "UUID": "$UUID",
-                "DeviceType": "0",
-                "Chassis": {
-                    "Type": "NSM_Chassis",
-                    "DEVICE_UUID": "$DEVICE_UUID"
-                },
-                "ChassisAttributes": {
-                    "Type": "NSM_Chassis_Attributes",
-                    "AssetInformationAvailable": true,
-                    "DimensionSupported": true,
-                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
-                    "PowerLimitSupported": true,
-                    "PrettyNameForChassis": "GPU_1"
-                }
+                "UUID": "$UUID"
             },
             {
-                "ChassisName": "GPU_1",
-                "Name": "GPU_1",
-                "Type": "NSM_ChassisPCIeDevice",
-                "UUID": "$UUID",
-                "DEVICE_UUID": "$DEVICE_UUID",
-                "ChassisAttributes": {
-                    "Type": "NSM_Chassis_Attributes",
-                    "Name": "GPU_1"
-                },
                 "Associations": [
                     {
-                        "Forward": "chassis",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_1",
                         "Backward": "pciedevice",
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_1"
+                        "Forward": "chassis"
                     }
                 ],
+                "ChassisAttributes": {
+                    "Name": "GPU_1",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "ChassisName": "GPU_1",
+                "ClockOutputEnableState": {
+                    "InstanceNumber": "1",
+                    "Type": "NSM_ClockOutputEnableState"
+                },
+                "DEVICE_UUID": "$DEVICE_UUID",
+                "Name": "GPU_1",
                 "PCIeDevice": {
                     "Type": "NSM_PCIeDevice"
                 },
-                "ClockOutputEnableState": {
-                    "Type": "NSM_ClockOutputEnableState",
-                    "InstanceNumber": "1"
-                }
+                "Type": "NSM_ChassisPCIeDevice",
+                "UUID": "$UUID"
             },
             {
-                "Name": "GPU_1 TEMP_0",
-                "Type": "NSM_Temp",
                 "Associations": [
                     {
-                        "Forward": "chassis",
-                        "Backward": "all_sensors",
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_1"
-                    },
-                    {
-                        "Forward": "processor",
-                        "Backward": "all_sensors",
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1"
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1",
+                        "Backward": "all_states",
+                        "Forward": "parent_device"
                     }
                 ],
-                "ThermalParameters": [
-                    {
-                        "Name": "UpperFatal",
-                        "Dynamic": false,
-                        "Value": 95.0
-                    },
-                    {
-                        "Name": "UpperCritical",
-                        "Dynamic": false,
-                        "Value": 92.0
-                    },
-                    {
-                        "Name": "UpperCaution",
-                        "Dynamic": false,
-                        "Value": 90.0
-                    }
-                ],
-                "UUID": "$UUID",
-                "PhysicalContext": "GPU",
-                "Aggregated": true,
-                "SensorId": 0,
-                "Priority": true
-            },
-            {
-                "Name": "GPU_1 TEMP_1",
-                "Type": "NSM_Temp",
-                "Associations": [
-                    {
-                        "Forward": "chassis",
-                        "Backward": "all_sensors",
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_1"
-                    },
-                    {
-                        "Forward": "processor",
-                        "Backward": "all_sensors",
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1"
-                    }
-                ],
-                "ThermalParameters": [
-                    {
-                        "Name": "LowerFatal",
-                        "Dynamic": false,
-                        "Value": -5.0
-                    },
-                    {
-                        "Name": "LowerCritical",
-                        "Dynamic": false,
-                        "Value": -4.0
-                    },
-                    {
-                        "Name": "LowerCaution",
-                        "Dynamic": false,
-                        "Value": -2.0
-                    }
-                ],
-                "UUID": "$UUID",
-                "PhysicalContext": "GPU",
-                "Implementation": "Synthesized",
-                "ReadingBasis": "Headroom",
-                "Description": "Thermal Limit(TLIMIT) Temperature is the distance in deg C from the GPU temperature to the first throttle limit.",
-                "Aggregated": true,
-                "SensorId": 2,
-                "Priority": true
-            },
-            {
-                "Name": "GPU_1 Processor",
-                "Type": "NSM_Processor",
-                "Associations": [
-                    {
-                        "Forward": "parent_chassis",
-                        "Backward": "all_processors",
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_1"
-                    },
-                    {
-                        "Forward": "system_interface",
-                        "Backward": "",
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_1/PCIeDevices/GPU_1"
-                    },
-                    {
-                        "Forward": "all_memory",
-                        "Backward": "parent_processor",
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/dimm/GPU_1_DRAM_0"
-                    }
-                ],
-                "UUID": "$UUID",
-                "DEVICE_UUID": "$DEVICE_UUID",
-                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1"
-            },
-            {
-                "Name": "GPU_1 Memory",
-                "Type": "NSM_Memory",
-                "Associations": [
-                    {
-                        "Forward": "parent_processor",
-                        "Backward": "all_memory",
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1"
-                    },
-                    {
-                        "Forward": "parent_chassis",
-                        "Backward": "all_memory",
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_1"
-                    },
-                    {
-                        "Forward": "all_sensors",
-                        "Backward": "memory",
-                        "AbsolutePath": "/xyz/openbmc_project/sensors/temperature/GPU_1_DRAM_0_Temp_0"
-                    },
-                    {
-                        "Forward": "all_sensors",
-                        "Backward": "memory",
-                        "AbsolutePath": "/xyz/openbmc_project/sensors/power/GPU_1_DRAM_0_Power_0"
-                    }
-                ],
-                "ErrorCorrection": "xyz.openbmc_project.Inventory.Item.Dimm.Ecc.SingleBitECC",
-                "DeviceType": "xyz.openbmc_project.Inventory.Item.Dimm.DeviceType.HBM",
-                "UUID": "$UUID",
-                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/dimm/GPU_1",
-                "MemoryAttributes": {
-                    "Type": "NSM_Memory_Attributes"
-                }
-            },
-            {
-                "Name": "GPU_1 PCIe_0",
-                "Type": "NSM_GPU_PCIe_0",
-                "UUID": "$UUID",
-                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1",
-                "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK",
                 "ChasisPowerState": "xyz.openbmc_project.State.Chassis.PowerState.On",
-                "DeviceIndex": 0,
                 "ClearableScalarGroup": [
                     2,
                     3,
                     4
                 ],
+                "DeviceIndex": 0,
+                "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK",
+                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1",
+                "Name": "GPU_1 PCIe_0",
+                "PortInfo": {
+                    "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.PCIe",
+                    "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.UpstreamPort",
+                    "Priority": false,
+                    "Type": "NSM_PortInfo"
+                },
+                "Type": "NSM_GPU_PCIe_0",
+                "UUID": "$UUID"
+            },
+            {
                 "Associations": [
                     {
-                        "Forward": "parent_device",
-                        "Backward": "all_states",
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1"
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1",
+                        "Backward": "all_memory",
+                        "Forward": "parent_processor"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_1",
+                        "Backward": "all_memory",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/temperature/GPU_1_DRAM_0_Temp_0",
+                        "Backward": "memory",
+                        "Forward": "all_sensors"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/power/GPU_1_DRAM_0_Power_0",
+                        "Backward": "memory",
+                        "Forward": "all_sensors"
                     }
                 ],
-                "PortInfo": {
-                    "Type": "NSM_PortInfo",
-                    "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.UpstreamPort",
-                    "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.PCIe",
-                    "Priority": false
-                }
+                "DeviceType": "xyz.openbmc_project.Inventory.Item.Dimm.DeviceType.HBM",
+                "ErrorCorrection": "xyz.openbmc_project.Inventory.Item.Dimm.Ecc.SingleBitECC",
+                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/dimm/GPU_1",
+                "MemoryAttributes": {
+                    "Type": "NSM_Memory_Attributes"
+                },
+                "Name": "GPU_1 Memory",
+                "Type": "NSM_Memory",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_1",
+                        "Backward": "all_processors",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_1/PCIeDevices/GPU_1",
+                        "Backward": "",
+                        "Forward": "system_interface"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/dimm/GPU_1_DRAM_0",
+                        "Backward": "parent_processor",
+                        "Forward": "all_memory"
+                    }
+                ],
+                "DEVICE_UUID": "$DEVICE_UUID",
+                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1",
+                "Name": "GPU_1 Processor",
+                "Type": "NSM_Processor",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_1",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1",
+                        "Backward": "all_sensors",
+                        "Forward": "processor"
+                    }
+                ],
+                "Name": "GPU_1 TEMP_0",
+                "PhysicalContext": "GPU",
+                "Priority": true,
+                "SensorId": 0,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": false,
+                        "Name": "UpperFatal",
+                        "Value": 95.0
+                    },
+                    {
+                        "Dynamic": false,
+                        "Name": "UpperCritical",
+                        "Value": 92.0
+                    },
+                    {
+                        "Dynamic": false,
+                        "Name": "UpperCaution",
+                        "Value": 90.0
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_1",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1",
+                        "Backward": "all_sensors",
+                        "Forward": "processor"
+                    }
+                ],
+                "Description": "Thermal Limit(TLIMIT) Temperature is the distance in deg C from the GPU temperature to the first throttle limit.",
+                "Implementation": "Synthesized",
+                "Name": "GPU_1 TEMP_1",
+                "PhysicalContext": "GPU",
+                "Priority": true,
+                "ReadingBasis": "Headroom",
+                "SensorId": 2,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": false,
+                        "Name": "LowerFatal",
+                        "Value": -5.0
+                    },
+                    {
+                        "Dynamic": false,
+                        "Name": "LowerCritical",
+                        "Value": -4.0
+                    },
+                    {
+                        "Dynamic": false,
+                        "Name": "LowerCaution",
+                        "Value": -2.0
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
             }
         ],
-        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 0, 'INSTANCE_NUMBER': 1})",
         "Name": "GPU_1",
-        "Type": "Component",
         "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 0, 'INSTANCE_NUMBER': 1})",
+        "Type": "Component",
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
         },

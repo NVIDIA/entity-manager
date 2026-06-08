@@ -1,74 +1,74 @@
 [
-  {
-    "Exposes": [
-      {
-        "Bus": "90",
-        "Address": "0x53",
+    {
+        "Exposes": [
+            {
+                "Address": "0x53",
+                "Bus": "90",
+                "Name": "CBC00_FRU",
+                "Type": "EEPROM_24C02"
+            }
+        ],
         "Name": "CBC00_FRU",
-        "Type": "EEPROM_24C02"
-      }
-    ],
-    "Name": "CBC00_FRU",
-    "Probe": "TRUE",
-    "Type": "FRU_EEPROM",
-    "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-      "Bus": "90",
-      "Address": "0x53",
-      "Name": "CBC00_FRU"
-    }
-  },
-  {
-    "Exposes": [
-      {
-        "Bus": "90",
-        "Address": "0x54",
+        "Probe": "TRUE",
+        "Type": "FRU_EEPROM",
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "0x53",
+            "Bus": "90",
+            "Name": "CBC00_FRU"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Address": "0x54",
+                "Bus": "90",
+                "Name": "CBC01_FRU",
+                "Type": "EEPROM_24C02"
+            }
+        ],
         "Name": "CBC01_FRU",
-        "Type": "EEPROM_24C02"
-      }
-    ],
-    "Name": "CBC01_FRU",
-    "Probe": "TRUE",
-    "Type": "FRU_EEPROM",
-    "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-      "Bus": "90",
-      "Address": "0x54",
-      "Name": "CBC01_FRU"
-    }
-  },
-  {
-    "Exposes": [
-      {
-        "Bus": "90",
-        "Address": "0x55",
+        "Probe": "TRUE",
+        "Type": "FRU_EEPROM",
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "0x54",
+            "Bus": "90",
+            "Name": "CBC01_FRU"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Address": "0x55",
+                "Bus": "90",
+                "Name": "CBC10_FRU",
+                "Type": "EEPROM_24C02"
+            }
+        ],
         "Name": "CBC10_FRU",
-        "Type": "EEPROM_24C02"
-      }
-    ],
-    "Name": "CBC10_FRU",
-    "Probe": "TRUE",
-    "Type": "FRU_EEPROM",
-    "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-      "Bus": "90",
-      "Address": "0x55",
-      "Name": "CBC10_FRU"
-    }
-  },
-  {
-    "Exposes": [
-      {
-        "Bus": "90",
-        "Address": "0x56",
+        "Probe": "TRUE",
+        "Type": "FRU_EEPROM",
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "0x55",
+            "Bus": "90",
+            "Name": "CBC10_FRU"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Address": "0x56",
+                "Bus": "90",
+                "Name": "CBC11_FRU",
+                "Type": "EEPROM_24C02"
+            }
+        ],
         "Name": "CBC11_FRU",
-        "Type": "EEPROM_24C02"
-      }
-    ],
-    "Name": "CBC11_FRU",
-    "Probe": "TRUE",
-    "Type": "FRU_EEPROM",
-    "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-      "Bus": "90",
-      "Address": "0x56",
-      "Name": "CBC11_FRU"
+        "Probe": "TRUE",
+        "Type": "FRU_EEPROM",
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "0x56",
+            "Bus": "90",
+            "Name": "CBC11_FRU"
+        }
     }
-  }
 ]

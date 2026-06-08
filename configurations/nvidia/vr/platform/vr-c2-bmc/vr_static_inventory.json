@@ -38,8 +38,8 @@
         "Probe": "TRUE",
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
-            "DEVICE_TYPE": 5,
             "DEVICE_ROLE": "HPMSMA",
+            "DEVICE_TYPE": 5,
             "INSTANCE_NUMBER": 0,
             "UUID": "STATIC:773:0:MCTP_EID:20"
         }
@@ -50,8 +50,8 @@
         "Probe": "TRUE",
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
-            "DEVICE_TYPE": 5,
             "DEVICE_ROLE": "BPSMA",
+            "DEVICE_TYPE": 5,
             "INSTANCE_NUMBER": 0,
             "UUID": "STATIC:5:1:MCTP_EID:60"
         }
@@ -62,8 +62,8 @@
         "Probe": "TRUE",
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
-            "DEVICE_TYPE": 5,
             "DEVICE_ROLE": "GPUSMA",
+            "DEVICE_TYPE": 5,
             "INSTANCE_NUMBER": 0,
             "UUID": "STATIC:261:0:MCTP_EID:70"
         }
@@ -74,8 +74,8 @@
         "Probe": "TRUE",
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
-            "DEVICE_TYPE": 5,
             "DEVICE_ROLE": "GPUSMA",
+            "DEVICE_TYPE": 5,
             "INSTANCE_NUMBER": 1,
             "UUID": "STATIC:261:1:MCTP_EID:80"
         }

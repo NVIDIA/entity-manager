@@ -1,20 +1,20 @@
 [
-  {
-    "Exposes": [
-      {
-        "Bus": "72",
-        "Address": "0x50",
+    {
+        "Exposes": [
+            {
+                "Address": "0x50",
+                "Bus": "72",
+                "Name": "BF_FRU",
+                "Type": "EEPROM_24C64"
+            }
+        ],
         "Name": "BF_FRU",
-        "Type": "EEPROM_24C64"
-      }
-    ],
-    "Name": "BF_FRU",
-    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80})",
-    "Type": "FRU_EEPROM",
-    "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-      "Bus": "72",
-      "Address": "0x50",
-      "Name": "BF_FRU"
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80})",
+        "Type": "FRU_EEPROM",
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "0x50",
+            "Bus": "72",
+            "Name": "BF_FRU"
+        }
     }
-  }
 ]

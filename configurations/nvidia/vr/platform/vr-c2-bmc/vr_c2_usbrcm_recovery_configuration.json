@@ -1,28 +1,28 @@
 {
     "Exposes": [
         {
-            "Name": "Chassis_0_CPU_Recovery",
-            "ForceRecoveryChassisObject": "BMC_0",
             "ConfigType": "c2",
+            "ForceRecoveryChassisObject": "BMC_0",
+            "Name": "Chassis_0_CPU_Recovery",
             "Type": "USBRCMForceRecovery"
         },
         {
-            "Name": "FW_CPU_0",
-            "USBPort": "1-1.3.1.4.1",
-            "MctpEID": 16,
             "FMCComponentName": "SBIOS_FMC_0",
             "FWSComponentName": "SBIOS_FW_0",
-            "hasChassisPowerSource": true,
-            "Type": "USBRCMRecovery"
+            "MctpEID": 16,
+            "Name": "FW_CPU_0",
+            "Type": "USBRCMRecovery",
+            "USBPort": "1-1.3.1.4.1",
+            "hasChassisPowerSource": true
         },
         {
-            "Name": "FW_CPU_1",
-            "USBPort": "1-1.3.1.4.2",
-            "MctpEID": 17,
             "FMCComponentName": "SBIOS_FMC_1",
             "FWSComponentName": "SBIOS_FW_1",
-            "hasChassisPowerSource": true,
-            "Type": "USBRCMRecovery"
+            "MctpEID": 17,
+            "Name": "FW_CPU_1",
+            "Type": "USBRCMRecovery",
+            "USBPort": "1-1.3.1.4.2",
+            "hasChassisPowerSource": true
         }
     ],
     "Name": "USBRCM_Recovery_Devices",

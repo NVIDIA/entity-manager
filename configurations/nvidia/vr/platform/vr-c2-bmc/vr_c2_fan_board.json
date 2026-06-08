@@ -10,9 +10,13 @@
             {
                 "Address": "0x2c",
                 "Bus": 20,
+                "Connector": {
+                    "Pwm": 0,
+                    "PwmName": "FanBoard_0_Fan_1_PWM"
+                },
                 "Index": 0,
+                "MaxReading": 37400,
                 "Name": "FanBoard_0_Fan_1_Front",
-                "MaxReading": 37400,
                 "PowerState": "On",
                 "Thresholds": [
                     {
@@ -22,18 +26,18 @@
                         "Value": 2204.0
                     }
                 ],
-                "Connector": {
-                    "Pwm": 0,
-                    "PwmName": "FanBoard_0_Fan_1_PWM"
-                },
                 "Type": "I2CFan"
             },
             {
                 "Address": "0x2c",
                 "Bus": 20,
+                "Connector": {
+                    "Pwm": 0,
+                    "PwmName": "FanBoard_0_Fan_1_PWM"
+                },
                 "Index": 1,
+                "MaxReading": 37400,
                 "Name": "FanBoard_0_Fan_1_Rear",
-                "MaxReading": 37400,
                 "PowerState": "On",
                 "Thresholds": [
                     {
@@ -43,18 +47,18 @@
                         "Value": 2204.0
                     }
                 ],
-                "Connector": {
-                    "Pwm": 0,
-                    "PwmName": "FanBoard_0_Fan_1_PWM"
-                },
                 "Type": "I2CFan"
             },
             {
                 "Address": "0x2c",
                 "Bus": 20,
+                "Connector": {
+                    "Pwm": 1,
+                    "PwmName": "FanBoard_0_Fan_2_PWM"
+                },
                 "Index": 2,
+                "MaxReading": 37400,
                 "Name": "FanBoard_0_Fan_2_Front",
-                "MaxReading": 37400,
                 "PowerState": "On",
                 "Thresholds": [
                     {
@@ -64,18 +68,18 @@
                         "Value": 2204.0
                     }
                 ],
-                "Connector": {
-                    "Pwm": 1,
-                    "PwmName": "FanBoard_0_Fan_2_PWM"
-                },
                 "Type": "I2CFan"
             },
             {
                 "Address": "0x2c",
                 "Bus": 20,
+                "Connector": {
+                    "Pwm": 1,
+                    "PwmName": "FanBoard_0_Fan_2_PWM"
+                },
                 "Index": 3,
+                "MaxReading": 37400,
                 "Name": "FanBoard_0_Fan_2_Rear",
-                "MaxReading": 37400,
                 "PowerState": "On",
                 "Thresholds": [
                     {
@@ -85,18 +89,18 @@
                         "Value": 2204.0
                     }
                 ],
-                "Connector": {
-                    "Pwm": 1,
-                    "PwmName": "FanBoard_0_Fan_2_PWM"
-                },
                 "Type": "I2CFan"
             },
             {
                 "Address": "0x2c",
                 "Bus": 20,
+                "Connector": {
+                    "Pwm": 2,
+                    "PwmName": "FanBoard_0_Fan_3_PWM"
+                },
                 "Index": 4,
+                "MaxReading": 37400,
                 "Name": "FanBoard_0_Fan_3_Front",
-                "MaxReading": 37400,
                 "PowerState": "On",
                 "Thresholds": [
                     {
@@ -106,144 +110,18 @@
                         "Value": 2204.0
                     }
                 ],
-                "Connector": {
-                    "Pwm": 2,
-                    "PwmName": "FanBoard_0_Fan_3_PWM"
-                },
                 "Type": "I2CFan"
             },
             {
                 "Address": "0x2c",
                 "Bus": 20,
-                "Index": 5,
-                "Name": "FanBoard_0_Fan_3_Rear",
-                "MaxReading": 37400,
-                "PowerState": "On",
-                "Thresholds": [
-                    {
-                        "Direction": "less than",
-                        "Name": "lower critical",
-                        "Severity": 1,
-                        "Value": 2204.0
-                    }
-                ],
                 "Connector": {
                     "Pwm": 2,
                     "PwmName": "FanBoard_0_Fan_3_PWM"
                 },
-                "Type": "I2CFan"
-            },
-            {
-                "Address": "0x2f",
-                "Bus": 21,
-                "Index": 0,
-                "Name": "FanBoard_0_Fan_4_Front",
-                "MaxReading": 37400,
-                "PowerState": "On",
-                "Thresholds": [
-                    {
-                        "Direction": "less than",
-                        "Name": "lower critical",
-                        "Severity": 1,
-                        "Value": 2204.0
-                    }
-                ],
-                "Connector": {
-                    "Pwm": 0,
-                    "PwmName": "FanBoard_0_Fan_4_PWM"
-                },
-                "Type": "I2CFan"
-            },
-            {
-                "Address": "0x2f",
-                "Bus": 21,
-                "Index": 1,
-                "Name": "FanBoard_0_Fan_4_Rear",
-                "MaxReading": 37400,
-                "PowerState": "On",
-                "Thresholds": [
-                    {
-                        "Direction": "less than",
-                        "Name": "lower critical",
-                        "Severity": 1,
-                        "Value": 2204.0
-                    }
-                ],
-                "Connector": {
-                    "Pwm": 0,
-                    "PwmName": "FanBoard_0_Fan_4_PWM"
-                },
-                "Type": "I2CFan"
-            },
-            {
-                "Address": "0x2f",
-                "Bus": 21,
-                "Index": 2,
-                "Name": "FanBoard_0_Fan_5_Front",
-                "MaxReading": 37400,
-                "PowerState": "On",
-                "Thresholds": [
-                    {
-                        "Direction": "less than",
-                        "Name": "lower critical",
-                        "Severity": 1,
-                        "Value": 2204.0
-                    }
-                ],
-                "Connector": {
-                    "Pwm": 1,
-                    "PwmName": "FanBoard_0_Fan_5_PWM"
-                },
-                "Type": "I2CFan"
-            },
-            {
-                "Address": "0x2f",
-                "Bus": 21,
-                "Index": 3,
-                "Name": "FanBoard_0_Fan_5_Rear",
-                "MaxReading": 37400,
-                "PowerState": "On",
-                "Thresholds": [
-                    {
-                        "Direction": "less than",
-                        "Name": "lower critical",
-                        "Severity": 1,
-                        "Value": 2204.0
-                    }
-                ],
-                "Connector": {
-                    "Pwm": 1,
-                    "PwmName": "FanBoard_0_Fan_5_PWM"
-                },
-                "Type": "I2CFan"
-            },
-            {
-                "Address": "0x2f",
-                "Bus": 21,
-                "Index": 4,
-                "Name": "FanBoard_0_Fan_6_Front",
-                "MaxReading": 37400,
-                "PowerState": "On",
-                "Thresholds": [
-                    {
-                        "Direction": "less than",
-                        "Name": "lower critical",
-                        "Severity": 1,
-                        "Value": 2204.0
-                    }
-                ],
-                "Connector": {
-                    "Pwm": 2,
-                    "PwmName": "FanBoard_0_Fan_6_PWM"
-                },
-                "Type": "I2CFan"
-            },
-            {
-                "Address": "0x2f",
-                "Bus": 21,
                 "Index": 5,
-                "Name": "FanBoard_0_Fan_6_Rear",
                 "MaxReading": 37400,
+                "Name": "FanBoard_0_Fan_3_Rear",
                 "PowerState": "On",
                 "Thresholds": [
                     {
@@ -253,10 +131,132 @@
                         "Value": 2204.0
                     }
                 ],
+                "Type": "I2CFan"
+            },
+            {
+                "Address": "0x2f",
+                "Bus": 21,
+                "Connector": {
+                    "Pwm": 0,
+                    "PwmName": "FanBoard_0_Fan_4_PWM"
+                },
+                "Index": 0,
+                "MaxReading": 37400,
+                "Name": "FanBoard_0_Fan_4_Front",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 2204.0
+                    }
+                ],
+                "Type": "I2CFan"
+            },
+            {
+                "Address": "0x2f",
+                "Bus": 21,
+                "Connector": {
+                    "Pwm": 0,
+                    "PwmName": "FanBoard_0_Fan_4_PWM"
+                },
+                "Index": 1,
+                "MaxReading": 37400,
+                "Name": "FanBoard_0_Fan_4_Rear",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 2204.0
+                    }
+                ],
+                "Type": "I2CFan"
+            },
+            {
+                "Address": "0x2f",
+                "Bus": 21,
+                "Connector": {
+                    "Pwm": 1,
+                    "PwmName": "FanBoard_0_Fan_5_PWM"
+                },
+                "Index": 2,
+                "MaxReading": 37400,
+                "Name": "FanBoard_0_Fan_5_Front",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 2204.0
+                    }
+                ],
+                "Type": "I2CFan"
+            },
+            {
+                "Address": "0x2f",
+                "Bus": 21,
+                "Connector": {
+                    "Pwm": 1,
+                    "PwmName": "FanBoard_0_Fan_5_PWM"
+                },
+                "Index": 3,
+                "MaxReading": 37400,
+                "Name": "FanBoard_0_Fan_5_Rear",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 2204.0
+                    }
+                ],
+                "Type": "I2CFan"
+            },
+            {
+                "Address": "0x2f",
+                "Bus": 21,
                 "Connector": {
                     "Pwm": 2,
                     "PwmName": "FanBoard_0_Fan_6_PWM"
                 },
+                "Index": 4,
+                "MaxReading": 37400,
+                "Name": "FanBoard_0_Fan_6_Front",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 2204.0
+                    }
+                ],
+                "Type": "I2CFan"
+            },
+            {
+                "Address": "0x2f",
+                "Bus": 21,
+                "Connector": {
+                    "Pwm": 2,
+                    "PwmName": "FanBoard_0_Fan_6_PWM"
+                },
+                "Index": 5,
+                "MaxReading": 37400,
+                "Name": "FanBoard_0_Fan_6_Rear",
+                "PowerState": "On",
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Name": "lower critical",
+                        "Severity": 1,
+                        "Value": 2204.0
+                    }
+                ],
                 "Type": "I2CFan"
             },
             {
@@ -271,14 +271,14 @@
                     "FanBoard_0_Fan_1_Rear"
                 ],
                 "Name": "FanBoard_0_Fan_1",
-                "PositiveHysteresis": 0.0,
                 "NegativeHysteresis": 0.0,
-                "PCoefficient": 0.0,
                 "OutLimitMax": 100.0,
                 "OutLimitMin": 20.0,
                 "Outputs": [
                     "FanBoard_0_Fan_1_PWM"
                 ],
+                "PCoefficient": 0.0,
+                "PositiveHysteresis": 0.0,
                 "SlewNeg": 0.0,
                 "SlewPos": 0.0,
                 "Type": "Pid",
@@ -298,14 +298,14 @@
                     "FanBoard_0_Fan_2_Rear"
                 ],
                 "Name": "FanBoard_0_Fan_2",
-                "PositiveHysteresis": 0.0,
                 "NegativeHysteresis": 0.0,
-                "PCoefficient": 0.0,
                 "OutLimitMax": 100.0,
                 "OutLimitMin": 20.0,
                 "Outputs": [
                     "FanBoard_0_Fan_2_PWM"
                 ],
+                "PCoefficient": 0.0,
+                "PositiveHysteresis": 0.0,
                 "SlewNeg": 0.0,
                 "SlewPos": 0.0,
                 "Type": "Pid",
@@ -325,14 +325,14 @@
                     "FanBoard_0_Fan_3_Rear"
                 ],
                 "Name": "FanBoard_0_Fan_3",
-                "PositiveHysteresis": 0.0,
                 "NegativeHysteresis": 0.0,
-                "PCoefficient": 0.0,
                 "OutLimitMax": 100.0,
                 "OutLimitMin": 20.0,
                 "Outputs": [
                     "FanBoard_0_Fan_3_PWM"
                 ],
+                "PCoefficient": 0.0,
+                "PositiveHysteresis": 0.0,
                 "SlewNeg": 0.0,
                 "SlewPos": 0.0,
                 "Type": "Pid",
@@ -352,14 +352,14 @@
                     "FanBoard_0_Fan_4_Rear"
                 ],
                 "Name": "FanBoard_0_Fan_4",
-                "PositiveHysteresis": 0.0,
                 "NegativeHysteresis": 0.0,
-                "PCoefficient": 0.0,
                 "OutLimitMax": 100.0,
                 "OutLimitMin": 20.0,
                 "Outputs": [
                     "FanBoard_0_Fan_4_PWM"
                 ],
+                "PCoefficient": 0.0,
+                "PositiveHysteresis": 0.0,
                 "SlewNeg": 0.0,
                 "SlewPos": 0.0,
                 "Type": "Pid",
@@ -379,14 +379,14 @@
                     "FanBoard_0_Fan_5_Rear"
                 ],
                 "Name": "FanBoard_0_Fan_5",
-                "PositiveHysteresis": 0.0,
                 "NegativeHysteresis": 0.0,
-                "PCoefficient": 0.0,
                 "OutLimitMax": 100.0,
                 "OutLimitMin": 20.0,
                 "Outputs": [
                     "FanBoard_0_Fan_5_PWM"
                 ],
+                "PCoefficient": 0.0,
+                "PositiveHysteresis": 0.0,
                 "SlewNeg": 0.0,
                 "SlewPos": 0.0,
                 "Type": "Pid",
@@ -406,14 +406,14 @@
                     "FanBoard_0_Fan_6_Rear"
                 ],
                 "Name": "FanBoard_0_Fan_6",
-                "PositiveHysteresis": 0.0,
                 "NegativeHysteresis": 0.0,
-                "PCoefficient": 0.0,
                 "OutLimitMax": 100.0,
                 "OutLimitMin": 20.0,
                 "Outputs": [
                     "FanBoard_0_Fan_6_PWM"
                 ],
+                "PCoefficient": 0.0,
+                "PositiveHysteresis": 0.0,
                 "SlewNeg": 0.0,
                 "SlewPos": 0.0,
                 "Type": "Pid",
@@ -422,22 +422,21 @@
                 ]
             },
             {
+                "CycleIntervalTimeMS": 100,
                 "FailSafePercent": 100,
                 "MinThermalOutput": 20,
                 "Name": "Zone0",
                 "Type": "Pid.Zone",
-                "CycleIntervalTimeMS": 100,
                 "UpdateThermalsTimeMS": 100
             },
             {
                 "Class": "temp",
+                "InputUnavailableAsFailed": true,
                 "Inputs": [
                     "PDB_0_Ext_Ambient_Temp_1"
                 ],
                 "Name": "STEPWISE_AMBIENT_EXTERNAL",
-                "InputUnavailableAsFailed": true,
                 "NegativeHysteresis": 2,
-                "PositiveHysteresis": 0,
                 "Output": [
                     30.0,
                     35.0,
@@ -455,6 +454,7 @@
                     95.0,
                     100.0
                 ],
+                "PositiveHysteresis": 0,
                 "Reading": [
                     25.0,
                     30.0,
@@ -479,13 +479,12 @@
             },
             {
                 "Class": "temp",
+                "InputUnavailableAsFailed": true,
                 "Inputs": [
                     "ProcessorModule_0_CPU_0_TempLimit_0"
                 ],
                 "Name": "STEPWISE_CPU_0_TLIMIT",
-                "InputUnavailableAsFailed": true,
                 "NegativeHysteresis": 0,
-                "PositiveHysteresis": 5,
                 "Output": [
                     100.0,
                     95.0,
@@ -503,6 +502,7 @@
                     35.0,
                     30.0
                 ],
+                "PositiveHysteresis": 5,
                 "Reading": [
                     0.0,
                     1.0,
@@ -527,13 +527,12 @@
             },
             {
                 "Class": "temp",
+                "InputUnavailableAsFailed": true,
                 "Inputs": [
                     "ProcessorModule_0_CPU_1_TempLimit_0"
                 ],
                 "Name": "STEPWISE_CPU_1_TLIMIT",
-                "InputUnavailableAsFailed": true,
                 "NegativeHysteresis": 0,
-                "PositiveHysteresis": 5,
                 "Output": [
                     100.0,
                     95.0,
@@ -551,6 +550,7 @@
                     35.0,
                     30.0
                 ],
+                "PositiveHysteresis": 5,
                 "Reading": [
                     0.0,
                     1.0,
@@ -575,6 +575,7 @@
             },
             {
                 "Class": "temp",
+                "InputUnavailableAsFailed": false,
                 "Inputs": [
                     "CX_0_Temp_0",
                     "CX_1_Temp_0"
@@ -584,9 +585,7 @@
                     "CX_1_Temp_0"
                 ],
                 "Name": "STEPWISE_CONNECTX",
-                "InputUnavailableAsFailed": false,
                 "NegativeHysteresis": 4,
-                "PositiveHysteresis": 0,
                 "Output": [
                     30.0,
                     35.0,
@@ -604,6 +603,7 @@
                     95.0,
                     100.0
                 ],
+                "PositiveHysteresis": 0,
                 "Reading": [
                     74.0,
                     76.0,
@@ -628,6 +628,7 @@
             },
             {
                 "Class": "temp",
+                "InputUnavailableAsFailed": false,
                 "Inputs": [
                     "CX_0_Port_0_Temp_0",
                     "CX_1_Port_0_Temp_0"
@@ -637,9 +638,7 @@
                     "CX_1_Port_0_Temp_0"
                 ],
                 "Name": "STEPWISE_CONNECTX_PORT",
-                "InputUnavailableAsFailed": false,
                 "NegativeHysteresis": 4,
-                "PositiveHysteresis": 0,
                 "Output": [
                     30.0,
                     35.0,
@@ -657,6 +656,7 @@
                     95.0,
                     100.0
                 ],
+                "PositiveHysteresis": 0,
                 "Reading": [
                     61.0,
                     61.5,
@@ -681,6 +681,7 @@
             },
             {
                 "Class": "temp",
+                "InputUnavailableAsFailed": false,
                 "Inputs": [
                     "BlueField_0_Temp_0"
                 ],
@@ -688,9 +689,7 @@
                     "BlueField_0_Temp_0"
                 ],
                 "Name": "STEPWISE_BLUEFIELD",
-                "InputUnavailableAsFailed": false,
                 "NegativeHysteresis": 5,
-                "PositiveHysteresis": 0,
                 "Output": [
                     30.0,
                     35.0,
@@ -708,6 +707,7 @@
                     95.0,
                     100.0
                 ],
+                "PositiveHysteresis": 0,
                 "Reading": [
                     77.4,
                     79.2,
@@ -732,6 +732,7 @@
             },
             {
                 "Class": "temp",
+                "InputUnavailableAsFailed": false,
                 "Inputs": [
                     "BlueField_0_Port_0_Temp_0",
                     "BlueField_0_Port_1_Temp_0"
@@ -741,9 +742,7 @@
                     "BlueField_0_Port_1_Temp_0"
                 ],
                 "Name": "STEPWISE_BLUEFIELD_PORT",
-                "InputUnavailableAsFailed": false,
                 "NegativeHysteresis": 4,
-                "PositiveHysteresis": 0,
                 "Output": [
                     30.0,
                     35.0,
@@ -761,6 +760,7 @@
                     95.0,
                     100.0
                 ],
+                "PositiveHysteresis": 0,
                 "Reading": [
                     66.5,
                     67.0,
@@ -785,6 +785,7 @@
             },
             {
                 "Class": "temp",
+                "InputUnavailableAsFailed": false,
                 "Inputs": [
                     "GPU_0_TEMP_1"
                 ],
@@ -792,9 +793,7 @@
                     "GPU_0_TEMP_1"
                 ],
                 "Name": "STEPWISE_GPU_0_TLIMIT",
-                "InputUnavailableAsFailed": false,
                 "NegativeHysteresis": 0,
-                "PositiveHysteresis": 4,
                 "Output": [
                     97.0,
                     95.0,
@@ -812,6 +811,7 @@
                     35.0,
                     30.0
                 ],
+                "PositiveHysteresis": 4,
                 "Reading": [
                     1.0,
                     3.0,
@@ -836,6 +836,7 @@
             },
             {
                 "Class": "temp",
+                "InputUnavailableAsFailed": false,
                 "Inputs": [
                     "GPU_1_TEMP_1"
                 ],
@@ -843,9 +844,7 @@
                     "GPU_1_TEMP_1"
                 ],
                 "Name": "STEPWISE_GPU_1_TLIMIT",
-                "InputUnavailableAsFailed": false,
                 "NegativeHysteresis": 0,
-                "PositiveHysteresis": 4,
                 "Output": [
                     97.0,
                     95.0,
@@ -863,6 +862,7 @@
                     35.0,
                     30.0
                 ],
+                "PositiveHysteresis": 4,
                 "Reading": [
                     1.0,
                     3.0,
@@ -887,14 +887,13 @@
             },
             {
                 "Class": "temp",
+                "InputUnavailableAsFailed": true,
                 "Inputs": [
                     "StorageBackplane_0_SSD_0_Temp_0",
                     "StorageBackplane_0_SSD_1_Temp_0"
                 ],
                 "Name": "STEPWISE_NVME_0_1",
-                "InputUnavailableAsFailed": true,
                 "NegativeHysteresis": 8,
-                "PositiveHysteresis": 0,
                 "Output": [
                     30.0,
                     35.0,
@@ -912,6 +911,7 @@
                     95.0,
                     100.0
                 ],
+                "PositiveHysteresis": 0,
                 "Reading": [
                     44.6,
                     46.8,
@@ -936,6 +936,7 @@
             },
             {
                 "Class": "temp",
+                "InputUnavailableAsFailed": false,
                 "Inputs": [
                     "StorageBackplane_0_SSD_2_Temp_0",
                     "StorageBackplane_0_SSD_3_Temp_0"
@@ -945,9 +946,7 @@
                     "StorageBackplane_0_SSD_3_Temp_0"
                 ],
                 "Name": "STEPWISE_NVME_2_3",
-                "InputUnavailableAsFailed": false,
                 "NegativeHysteresis": 8,
-                "PositiveHysteresis": 0,
                 "Output": [
                     30.0,
                     35.0,
@@ -965,6 +964,7 @@
                     95.0,
                     100.0
                 ],
+                "PositiveHysteresis": 0,
                 "Reading": [
                     44.6,
                     46.8,
@@ -989,6 +989,7 @@
             },
             {
                 "Class": "temp",
+                "InputUnavailableAsFailed": false,
                 "Inputs": [
                     "StorageBackplane_0_SSD_4_Temp_0",
                     "StorageBackplane_0_SSD_5_Temp_0",
@@ -1002,9 +1003,7 @@
                     "StorageBackplane_0_SSD_7_Temp_0"
                 ],
                 "Name": "STEPWISE_NVME_4_7",
-                "InputUnavailableAsFailed": false,
                 "NegativeHysteresis": 8,
-                "PositiveHysteresis": 0,
                 "Output": [
                     30.0,
                     35.0,
@@ -1022,6 +1021,7 @@
                     95.0,
                     100.0
                 ],
+                "PositiveHysteresis": 0,
                 "Reading": [
                     44.6,
                     46.8,
@@ -1046,31 +1046,9 @@
             }
         ],
         "Name": "FanBoard_0",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 20, 'ADDRESS': 81})",
         "Type": "Board",
-        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
-        "xyz.openbmc_project.Inventory.Decorator.Asset": {
-            "Manufacturer": "$BOARD_MANUFACTURER",
-            "Model": "$BOARD_PRODUCT_NAME",
-            "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER",
-            "SKU": "$BOARD_SKU"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-            "Bus": "$bus",
-            "Address": "$address",
-            "Name": "FanBoard_FRU"
-        },
-        "xyz.openbmc_project.Inventory.Item.ManagementService": {},
-        "xyz.openbmc_project.Inventory.Item.Chassis": {
-            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Module"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Location": {
-            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
-        },
-        "xyz.openbmc_project.State.Decorator.Health": {
-            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
-        },
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
@@ -1084,48 +1062,70 @@
                     "/xyz/openbmc_project/inventory/system/assembly/FanBoard_Product_FRU_Assembly1"
                 ]
             ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SKU": "$BOARD_SKU",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "$address",
+            "Bus": "$bus",
+            "Name": "FanBoard_FRU"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Module"
+        },
+        "xyz.openbmc_project.Inventory.Item.ManagementService": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
         }
     },
     {
+        "Exposes": [],
         "Name": "FanBoard Board FRU Assembly0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 20, 'ADDRESS': 81})",
         "Type": "Assembly",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "BuildDate": "$BOARD_MANUFACTURE_DATE",
+            "Manufacturer": "$BOARD_MANUFACTURER",
             "Model": "$BOARD_PRODUCT_NAME",
             "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER",
-            "BuildDate": "$BOARD_MANUFACTURE_DATE",
-            "Manufacturer": "$BOARD_MANUFACTURER"
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
         },
-        "xyz.openbmc_project.Inventory.Item.Assembly": {},
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
         },
+        "xyz.openbmc_project.Inventory.Item.Assembly": {},
         "xyz.openbmc_project.State.Decorator.Health": {
             "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
-        },
-        "Exposes": []
+        }
     },
     {
+        "Exposes": [],
         "Name": "FanBoard Product FRU Assembly1",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 20, 'ADDRESS': 81})",
         "Type": "Assembly",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$PRODUCT_MANUFACTURER",
             "Model": "$PRODUCT_PRODUCT_NAME",
             "PartNumber": "$PRODUCT_PART_NUMBER",
-            "SerialNumber": "$PRODUCT_SERIAL_NUMBER",
-            "Manufacturer": "$PRODUCT_MANUFACTURER"
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
         },
         "xyz.openbmc_project.Inventory.Decorator.Revision": {
             "Version": "$PRODUCT_VERSION"
         },
         "xyz.openbmc_project.Inventory.Item.Assembly": {},
-        "xyz.openbmc_project.Inventory.Decorator.Location": {
-            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
-        },
         "xyz.openbmc_project.State.Decorator.Health": {
             "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
-        },
-        "Exposes": []
+        }
     }
 ]

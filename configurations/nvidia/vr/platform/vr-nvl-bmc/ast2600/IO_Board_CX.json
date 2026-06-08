@@ -2,13 +2,8 @@
     {
         "Exposes": [
             {
-                "Address": "65",
-                "Name": "NVMe_E1S_IO0_STS_0",
-                "PowerState": "On",
-                "PollRate": 1,
-                "EntityId": 4,
-                "EntityInstance": 3,
-                "Type": "Nvmem2"
+                "Name": "BPNPort0",
+                "Type": "Backplane0Port"
             },
             {
                 "Address": "65",
@@ -49,54 +44,25 @@
                 "Type": "NVME1000"
             },
             {
-                "Name": "BPNPort0",
-                "Type": "Backplane0Port"
+                "Address": "65",
+                "EntityId": 4,
+                "EntityInstance": 3,
+                "Name": "NVMe_E1S_IO0_STS_0",
+                "PollRate": 1,
+                "PowerState": "On",
+                "Type": "Nvmem2"
             },
             {
-                "Name": "IOB0_GLOBAL_WP",
                 "GpioLine": "IOB0_GLOBAL_WP-O",
+                "Name": "IOB0_GLOBAL_WP",
                 "Polarity": "active_high",
                 "Type": "WriteProtect"
             }
         ],
         "Name": "IO_Board_0",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 73, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '(900-9X9BE).?'})",
         "Type": "Board",
-        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
-        "xyz.openbmc_project.Inventory.Decorator.Asset": {
-            "Manufacturer": "$BOARD_MANUFACTURER",
-            "Model": "$BOARD_PRODUCT_NAME",
-            "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER"
-        },
-        "xyz.openbmc_project.Inventory.Item.Chassis": {
-            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Location": {
-            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Bay"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode": "Bay-B-Left-Bottom"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-            "LocationContext": "Chassis_0"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.LocationReference": {
-            "LocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Left"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal": {
-            "Orientation": "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal.Orientations.BottomToTop",
-            "LocationOrdinalValue": 0
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
-            "FieldReplaceable": true
-        },
-        "xyz.openbmc_project.State.Decorator.Health": {
-            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Instance": {
-            "InstanceNumber": 1
-        },
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
@@ -110,6 +76,40 @@
                     "/xyz/openbmc_project/inventory/system/assembly/IO_Board_0_Product_FRU_Assembly1"
                 ]
             ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 1
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Bay"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "Bay-B-Left-Bottom"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "Chassis_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal": {
+            "LocationOrdinalValue": 0,
+            "Orientation": "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal.Orientations.BottomToTop"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationReference": {
+            "LocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Left"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": true
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
         }
     },
     {
@@ -117,11 +117,11 @@
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 73, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '(900-9X9BE).?'})",
         "Type": "Assembly",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "BuildDate": "$BOARD_MANUFACTURE_DATE",
+            "Manufacturer": "$BOARD_MANUFACTURER",
             "Model": "$BOARD_PRODUCT_NAME",
             "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER",
-            "BuildDate": "$BOARD_MANUFACTURE_DATE",
-            "Manufacturer": "$BOARD_MANUFACTURER"
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
         },
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
@@ -135,16 +135,16 @@
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 73, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '(900-9X9BE).?'})",
         "Type": "Assembly",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$PRODUCT_MANUFACTURER",
             "Model": "$PRODUCT_PRODUCT_NAME",
             "PartNumber": "$PRODUCT_PART_NUMBER",
-            "SerialNumber": "$PRODUCT_SERIAL_NUMBER",
-            "Manufacturer": "$PRODUCT_MANUFACTURER"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Revision": {
-            "Version": "$PRODUCT_VERSION"
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
         },
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Revision": {
+            "Version": "$PRODUCT_VERSION"
         },
         "xyz.openbmc_project.State.Decorator.Health": {
             "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
@@ -153,13 +153,8 @@
     {
         "Exposes": [
             {
-                "Address": "75",
-                "Name": "NVMe_E1S_IO1_STS_0",
-                "PowerState": "On",
-                "PollRate": 1,
-                "EntityId": 4,
-                "EntityInstance": 3,
-                "Type": "Nvmem2"
+                "Name": "BPNPort1",
+                "Type": "Backplane1Port"
             },
             {
                 "Address": "75",
@@ -200,54 +195,25 @@
                 "Type": "NVME1000"
             },
             {
-                "Name": "BPNPort1",
-                "Type": "Backplane1Port"
+                "Address": "75",
+                "EntityId": 4,
+                "EntityInstance": 3,
+                "Name": "NVMe_E1S_IO1_STS_0",
+                "PollRate": 1,
+                "PowerState": "On",
+                "Type": "Nvmem2"
             },
             {
-                "Name": "IOB1_GLOBAL_WP",
                 "GpioLine": "IOB1_GLOBAL_WP-O",
+                "Name": "IOB1_GLOBAL_WP",
                 "Polarity": "active_high",
                 "Type": "WriteProtect"
             }
         ],
         "Name": "IO_Board_1",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 74, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '(900-9X9BE).?'})",
         "Type": "Board",
-        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
-        "xyz.openbmc_project.Inventory.Decorator.Asset": {
-            "Manufacturer": "$BOARD_MANUFACTURER",
-            "Model": "$BOARD_PRODUCT_NAME",
-            "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER"
-        },
-        "xyz.openbmc_project.Inventory.Item.Chassis": {
-            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Location": {
-            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Bay"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode": "Bay-B-Left-Top"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-            "LocationContext": "Chassis_0"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.LocationReference": {
-            "LocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Left"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal": {
-            "Orientation": "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal.Orientations.BottomToTop",
-            "LocationOrdinalValue": 1
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
-            "FieldReplaceable": true
-        },
-        "xyz.openbmc_project.State.Decorator.Health": {
-            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Instance": {
-            "InstanceNumber": 1
-        },
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
@@ -261,6 +227,40 @@
                     "/xyz/openbmc_project/inventory/system/assembly/IO_Board_1_Product_FRU_Assembly1"
                 ]
             ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 1
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Bay"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "Bay-B-Left-Top"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "Chassis_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal": {
+            "LocationOrdinalValue": 1,
+            "Orientation": "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal.Orientations.BottomToTop"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationReference": {
+            "LocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Left"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": true
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
         }
     },
     {
@@ -268,11 +268,11 @@
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 74, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '(900-9X9BE).?'})",
         "Type": "Assembly",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "BuildDate": "$BOARD_MANUFACTURE_DATE",
+            "Manufacturer": "$BOARD_MANUFACTURER",
             "Model": "$BOARD_PRODUCT_NAME",
             "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER",
-            "BuildDate": "$BOARD_MANUFACTURE_DATE",
-            "Manufacturer": "$BOARD_MANUFACTURER"
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
         },
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
@@ -286,16 +286,16 @@
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 74, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '(900-9X9BE).?'})",
         "Type": "Assembly",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$PRODUCT_MANUFACTURER",
             "Model": "$PRODUCT_PRODUCT_NAME",
             "PartNumber": "$PRODUCT_PART_NUMBER",
-            "SerialNumber": "$PRODUCT_SERIAL_NUMBER",
-            "Manufacturer": "$PRODUCT_MANUFACTURER"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Revision": {
-            "Version": "$PRODUCT_VERSION"
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
         },
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Revision": {
+            "Version": "$PRODUCT_VERSION"
         },
         "xyz.openbmc_project.State.Decorator.Health": {
             "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
@@ -304,13 +304,8 @@
     {
         "Exposes": [
             {
-                "Address": "85",
-                "Name": "NVMe_E1S_IO2_STS_0",
-                "PowerState": "On",
-                "PollRate": 1,
-                "EntityId": 4,
-                "EntityInstance": 3,
-                "Type": "Nvmem2"
+                "Name": "BPNPort2",
+                "Type": "Backplane2Port"
             },
             {
                 "Address": "85",
@@ -351,54 +346,25 @@
                 "Type": "NVME1000"
             },
             {
-                "Name": "BPNPort2",
-                "Type": "Backplane2Port"
+                "Address": "85",
+                "EntityId": 4,
+                "EntityInstance": 3,
+                "Name": "NVMe_E1S_IO2_STS_0",
+                "PollRate": 1,
+                "PowerState": "On",
+                "Type": "Nvmem2"
             },
             {
-                "Name": "IOB2_GLOBAL_WP",
                 "GpioLine": "IOB2_GLOBAL_WP-O",
+                "Name": "IOB2_GLOBAL_WP",
                 "Polarity": "active_high",
                 "Type": "WriteProtect"
             }
         ],
         "Name": "IO_Board_2",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 75, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '(900-9X9BE).?'})",
         "Type": "Board",
-        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
-        "xyz.openbmc_project.Inventory.Decorator.Asset": {
-            "Manufacturer": "$BOARD_MANUFACTURER",
-            "Model": "$BOARD_PRODUCT_NAME",
-            "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER"
-        },
-        "xyz.openbmc_project.Inventory.Item.Chassis": {
-            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Location": {
-            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Bay"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode": "Bay-B-Right-Bottom"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-            "LocationContext": "Chassis_0"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.LocationReference": {
-            "LocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Right"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal": {
-            "Orientation": "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal.Orientations.BottomToTop",
-            "LocationOrdinalValue": 0
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
-            "FieldReplaceable": true
-        },
-        "xyz.openbmc_project.State.Decorator.Health": {
-            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Instance": {
-            "InstanceNumber": 1
-        },
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
@@ -412,6 +378,40 @@
                     "/xyz/openbmc_project/inventory/system/assembly/IO_Board_2_Product_FRU_Assembly1"
                 ]
             ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 1
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Bay"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "Bay-B-Right-Bottom"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "Chassis_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal": {
+            "LocationOrdinalValue": 0,
+            "Orientation": "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal.Orientations.BottomToTop"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationReference": {
+            "LocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Right"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": true
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
         }
     },
     {
@@ -419,11 +419,11 @@
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 75, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '(900-9X9BE).?'})",
         "Type": "Assembly",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "BuildDate": "$BOARD_MANUFACTURE_DATE",
+            "Manufacturer": "$BOARD_MANUFACTURER",
             "Model": "$BOARD_PRODUCT_NAME",
             "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER",
-            "BuildDate": "$BOARD_MANUFACTURE_DATE",
-            "Manufacturer": "$BOARD_MANUFACTURER"
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
         },
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
@@ -437,16 +437,16 @@
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 75, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '(900-9X9BE).?'})",
         "Type": "Assembly",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$PRODUCT_MANUFACTURER",
             "Model": "$PRODUCT_PRODUCT_NAME",
             "PartNumber": "$PRODUCT_PART_NUMBER",
-            "SerialNumber": "$PRODUCT_SERIAL_NUMBER",
-            "Manufacturer": "$PRODUCT_MANUFACTURER"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Revision": {
-            "Version": "$PRODUCT_VERSION"
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
         },
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Revision": {
+            "Version": "$PRODUCT_VERSION"
         },
         "xyz.openbmc_project.State.Decorator.Health": {
             "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
@@ -455,13 +455,8 @@
     {
         "Exposes": [
             {
-                "Address": "95",
-                "Name": "NVMe_E1S_IO3_STS_0",
-                "PowerState": "On",
-                "PollRate": 1,
-                "EntityId": 4,
-                "EntityInstance": 3,
-                "Type": "Nvmem2"
+                "Name": "BPNPort3",
+                "Type": "Backplane3Port"
             },
             {
                 "Address": "95",
@@ -502,54 +497,25 @@
                 "Type": "NVME1000"
             },
             {
-                "Name": "BPNPort3",
-                "Type": "Backplane3Port"
+                "Address": "95",
+                "EntityId": 4,
+                "EntityInstance": 3,
+                "Name": "NVMe_E1S_IO3_STS_0",
+                "PollRate": 1,
+                "PowerState": "On",
+                "Type": "Nvmem2"
             },
             {
-                "Name": "IOB3_GLOBAL_WP",
                 "GpioLine": "IOB3_GLOBAL_WP-O",
+                "Name": "IOB3_GLOBAL_WP",
                 "Polarity": "active_high",
                 "Type": "WriteProtect"
             }
         ],
         "Name": "IO_Board_3",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 76, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '(900-9X9BE).?'})",
         "Type": "Board",
-        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
-        "xyz.openbmc_project.Inventory.Decorator.Asset": {
-            "Manufacturer": "$BOARD_MANUFACTURER",
-            "Model": "$BOARD_PRODUCT_NAME",
-            "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER"
-        },
-        "xyz.openbmc_project.Inventory.Item.Chassis": {
-            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Location": {
-            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Bay"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode": "Bay-B-Right-Top"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-            "LocationContext": "Chassis_0"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.LocationReference": {
-            "LocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Right"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal": {
-            "Orientation": "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal.Orientations.BottomToTop",
-            "LocationOrdinalValue": 1
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
-            "FieldReplaceable": true
-        },
-        "xyz.openbmc_project.State.Decorator.Health": {
-            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Instance": {
-            "InstanceNumber": 1
-        },
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
@@ -563,6 +529,40 @@
                     "/xyz/openbmc_project/inventory/system/assembly/IO_Board_3_Product_FRU_Assembly1"
                 ]
             ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 1
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Bay"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "Bay-B-Right-Top"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "Chassis_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal": {
+            "LocationOrdinalValue": 1,
+            "Orientation": "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal.Orientations.BottomToTop"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationReference": {
+            "LocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Right"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": true
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
         }
     },
     {
@@ -570,11 +570,11 @@
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 76, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '(900-9X9BE).?'})",
         "Type": "Assembly",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "BuildDate": "$BOARD_MANUFACTURE_DATE",
+            "Manufacturer": "$BOARD_MANUFACTURER",
             "Model": "$BOARD_PRODUCT_NAME",
             "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER",
-            "BuildDate": "$BOARD_MANUFACTURE_DATE",
-            "Manufacturer": "$BOARD_MANUFACTURER"
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
         },
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
@@ -588,16 +588,16 @@
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 76, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '(900-9X9BE).?'})",
         "Type": "Assembly",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$PRODUCT_MANUFACTURER",
             "Model": "$PRODUCT_PRODUCT_NAME",
             "PartNumber": "$PRODUCT_PART_NUMBER",
-            "SerialNumber": "$PRODUCT_SERIAL_NUMBER",
-            "Manufacturer": "$PRODUCT_MANUFACTURER"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Revision": {
-            "Version": "$PRODUCT_VERSION"
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
         },
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Revision": {
+            "Version": "$PRODUCT_VERSION"
         },
         "xyz.openbmc_project.State.Decorator.Health": {
             "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
@@ -612,23 +612,8 @@
             }
         ],
         "Name": "NVMe_E1S_IO0",
-        "Type": "NVMe",
         "Probe": "TRUE",
-        "xyz.openbmc_project.MCTP.Endpoint": {
-            "EID": 65
-        },
-        "xyz.openbmc_project.Inventory.Item.Drive": {
-            "FormFactor": "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode": "NVMe E1.S Slot 1"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Location": {
-            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-            "LocationContext": "Chassis_0/Bay-B-Left-Bottom"
-        },
+        "Type": "NVMe",
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
@@ -637,6 +622,21 @@
                     "/xyz/openbmc_project/inventory/system/board/IO_Board_0"
                 ]
             ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "NVMe E1.S Slot 1"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "Chassis_0/Bay-B-Left-Bottom"
+        },
+        "xyz.openbmc_project.Inventory.Item.Drive": {
+            "FormFactor": "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
+        },
+        "xyz.openbmc_project.MCTP.Endpoint": {
+            "EID": 65
         }
     },
     {
@@ -648,23 +648,8 @@
             }
         ],
         "Name": "NVMe_E1S_IO1",
-        "Type": "NVMe",
         "Probe": "TRUE",
-        "xyz.openbmc_project.MCTP.Endpoint": {
-            "EID": 75
-        },
-        "xyz.openbmc_project.Inventory.Item.Drive": {
-            "FormFactor": "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode": "NVMe E1.S Slot 2"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Location": {
-            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-            "LocationContext": "Chassis_0/Bay-B-Left-Top"
-        },
+        "Type": "NVMe",
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
@@ -673,6 +658,21 @@
                     "/xyz/openbmc_project/inventory/system/board/IO_Board_1"
                 ]
             ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "NVMe E1.S Slot 2"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "Chassis_0/Bay-B-Left-Top"
+        },
+        "xyz.openbmc_project.Inventory.Item.Drive": {
+            "FormFactor": "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
+        },
+        "xyz.openbmc_project.MCTP.Endpoint": {
+            "EID": 75
         }
     },
     {
@@ -684,23 +684,8 @@
             }
         ],
         "Name": "NVMe_E1S_IO2",
-        "Type": "NVMe",
         "Probe": "TRUE",
-        "xyz.openbmc_project.MCTP.Endpoint": {
-            "EID": 85
-        },
-        "xyz.openbmc_project.Inventory.Item.Drive": {
-            "FormFactor": "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode": "NVMe E1.S Slot 3"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Location": {
-            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-            "LocationContext": "Chassis_0/Bay-B-Right-Bottom"
-        },
+        "Type": "NVMe",
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
@@ -709,6 +694,21 @@
                     "/xyz/openbmc_project/inventory/system/board/IO_Board_2"
                 ]
             ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "NVMe E1.S Slot 3"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "Chassis_0/Bay-B-Right-Bottom"
+        },
+        "xyz.openbmc_project.Inventory.Item.Drive": {
+            "FormFactor": "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
+        },
+        "xyz.openbmc_project.MCTP.Endpoint": {
+            "EID": 85
         }
     },
     {
@@ -720,23 +720,8 @@
             }
         ],
         "Name": "NVMe_E1S_IO3",
-        "Type": "NVMe",
         "Probe": "TRUE",
-        "xyz.openbmc_project.MCTP.Endpoint": {
-            "EID": 95
-        },
-        "xyz.openbmc_project.Inventory.Item.Drive": {
-            "FormFactor": "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode": "NVMe E1.S Slot 4"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Location": {
-            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-            "LocationContext": "Chassis_0/Bay-B-Right-Top"
-        },
+        "Type": "NVMe",
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
@@ -745,6 +730,21 @@
                     "/xyz/openbmc_project/inventory/system/board/IO_Board_3"
                 ]
             ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "NVMe E1.S Slot 4"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "Chassis_0/Bay-B-Right-Top"
+        },
+        "xyz.openbmc_project.Inventory.Item.Drive": {
+            "FormFactor": "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
+        },
+        "xyz.openbmc_project.MCTP.Endpoint": {
+            "EID": 95
         }
     }
 ]

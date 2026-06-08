@@ -2,102 +2,102 @@
     {
         "Exposes": [
             {
-                "Name": "IRoT_GPU_$INSTANCE_NUMBER",
-                "Type": "NSM_ChassisIRoTResponder",
-                "UUID": "$UUID",
-                "ChassisAttributes": {
-                    "Type": "NSM_Chassis_Attributes",
-                    "Name": "IRoT_GPU_$INSTANCE_NUMBER IRoT",
-                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
-                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
-                    "LocationCode": "IRoT_GPU_$INSTANCE_NUMBER",
-                    "LocationContext": "Chassis_0/GPU_$INSTANCE_NUMBER",
-                    "FieldReplaceable": false
-                },
                 "Associations": [
                     {
-                        "Forward": "parent_chassis",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_$INSTANCE_NUMBER",
                         "Backward": "all_chassis",
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_$INSTANCE_NUMBER"
+                        "Forward": "parent_chassis"
                     },
                     {
-                        "Forward": "inventory",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_$INSTANCE_NUMBER",
                         "Backward": "associated_ROT",
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_$INSTANCE_NUMBER"
+                        "Forward": "inventory"
                     },
                     {
-                        "Forward": "inventory_chassis",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_$INSTANCE_NUMBER",
                         "Backward": "associated_chassis",
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_$INSTANCE_NUMBER"
+                        "Forward": "inventory_chassis"
                     }
-                ]
+                ],
+                "ChassisAttributes": {
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "FieldReplaceable": false,
+                    "LocationCode": "IRoT_GPU_$INSTANCE_NUMBER",
+                    "LocationContext": "Chassis_0/GPU_$INSTANCE_NUMBER",
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "Name": "IRoT_GPU_$INSTANCE_NUMBER IRoT",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "Name": "IRoT_GPU_$INSTANCE_NUMBER",
+                "Type": "NSM_ChassisIRoTResponder",
+                "UUID": "$UUID"
             },
             {
-                "Name": "IRoT_GPU_$INSTANCE_NUMBER",
-                "Type": "NSM_ChassisRoT",
-                "UUID": "$UUID",
-                "SlotCount": 2,
+                "Chassis": {
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
                 "DeviceType": "$DEVICE_TYPE",
                 "ImageCopyEnabled": true,
                 "InbandUpdatePolicyEnabled": true,
-                "Chassis": {
-                    "Type": "NSM_Chassis",
-                    "DEVICE_UUID": "$DEVICE_UUID"
-                }
-            },
-            {
-                "Name": "AP",
-                "Type": "NSM_FW_ComponentType",
-                "ComponentType": "AP"
-            },
-            {
-                "ChassisName": "GPU_$INSTANCE_NUMBER",
-                "Name": "Slot1",
-                "Type": "NSM_RoT_Slot",
-                "FirmwareType": "AP",
-                "SlotType": "Active",
-                "ComponentClassification": 10,
-                "ComponentIdentifier": 49152,
-                "ComponentIndex": 0,
-                "Associations": [
-                    {
-                        "Forward": "software",
-                        "Backward": "ActiveSlot",
-                        "AbsolutePath": "/xyz/openbmc_project/software/FW_GPU_$INSTANCE_NUMBER"
-                    }
-                ]
-            },
-            {
-                "ChassisName": "GPU_$INSTANCE_NUMBER",
-                "Name": "Slot2",
-                "Type": "NSM_RoT_Slot",
-                "FirmwareType": "AP",
-                "SlotType": "InActive",
-                "ComponentClassification": 10,
-                "ComponentIdentifier": 49152,
-                "ComponentIndex": 0,
-                "Associations": [
-                    {
-                        "Forward": "software",
-                        "Backward": "InactiveSlot",
-                        "AbsolutePath": "/xyz/openbmc_project/software/FW_GPU_$INSTANCE_NUMBER"
-                    }
-                ]
+                "Name": "IRoT_GPU_$INSTANCE_NUMBER",
+                "SlotCount": 2,
+                "Type": "NSM_ChassisRoT",
+                "UUID": "$UUID"
             },
             {
                 "ChassisName": "IRoT_GPU_$INSTANCE_NUMBER",
-                "Name": "DebugToken",
-                "Type": "NSM_DebugToken",
-                "UUID": "$UUID",
+                "DebugTokenDeviceType": "GPU",
                 "DebugTokenType": [
                     "Unified"
                 ],
-                "DebugTokenDeviceType": "GPU"
+                "Name": "DebugToken",
+                "Type": "NSM_DebugToken",
+                "UUID": "$UUID"
+            },
+            {
+                "ComponentType": "AP",
+                "Name": "AP",
+                "Type": "NSM_FW_ComponentType"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/FW_GPU_$INSTANCE_NUMBER",
+                        "Backward": "ActiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "GPU_$INSTANCE_NUMBER",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 49152,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot1",
+                "SlotType": "Active",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/FW_GPU_$INSTANCE_NUMBER",
+                        "Backward": "InactiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "GPU_$INSTANCE_NUMBER",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 49152,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot2",
+                "SlotType": "InActive",
+                "Type": "NSM_RoT_Slot"
             }
         ],
         "Name": "IRoT_GPU_$INSTANCE_NUMBER",
-        "Type": "Chassis",
         "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 0})",
+        "Type": "Chassis",
         "xyz.openbmc_project.Inventory.Decorator.Instance": {
             "InstanceNumber": "$INSTANCE_NUMBER"
         },
