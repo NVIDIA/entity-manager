@@ -1,0 +1,129 @@
+[
+    {
+        "Exposes": [
+            {
+                "BridgePoolStartEID": "56",
+                "Interface": "$Interface",
+                "Name": "MCTPUSB_x1",
+                "StaticEndpointID": "55",
+                "Type": "MCTPUSBTarget",
+                "USBPath": ".*-1-4-1"
+            }
+        ],
+        "Name": "MCTP_USB_DEV_BF4_SMA",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'musb.*_1_4_1'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgePoolStartEID": "46",
+                "IgnoreMessageTypes": "1,5",
+                "Interface": "$Interface",
+                "Name": "MCTPUSB_x1",
+                "StaticEndpointID": "45",
+                "Type": "MCTPUSBTarget",
+                "USBPath": ".*-1-1-1"
+            }
+        ],
+        "Name": "MCTP_USB_DEV_SMA0",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'musb.*_1_1_1'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgePoolStartEID": "41",
+                "IgnoreMessageTypes": "1,5",
+                "Interface": "$Interface",
+                "Name": "MCTPUSB_x1",
+                "StaticEndpointID": "40",
+                "Type": "MCTPUSBTarget",
+                "USBPath": ".*-1-2-1"
+            }
+        ],
+        "Name": "MCTP_USB_DEV_SMA1",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'musb.*_1_2_1'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgePoolStartEID": "61",
+                "IgnoreEIDs": "61,63",
+                "Interface": "$Interface",
+                "Name": "MCTPUSB_x1",
+                "StaticEndpointID": "60",
+                "Type": "MCTPUSBTarget",
+                "USBPath": ".*-1-1-4-1"
+            }
+        ],
+        "Name": "MCTP_USB_CX9_SMA_B0_0",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'musb.*_1_1_4_1'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgePoolStartEID": "71",
+                "IgnoreEIDs": "71,73",
+                "Interface": "$Interface",
+                "Name": "MCTPUSB_x1",
+                "StaticEndpointID": "70",
+                "Type": "MCTPUSBTarget",
+                "USBPath": ".*-1-1-3-1"
+            }
+        ],
+        "Name": "MCTP_USB_CX9_SMA_B0_1",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'musb.*_1_1_3_1'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgePoolStartEID": "81",
+                "IgnoreEIDs": "81,83",
+                "Interface": "$Interface",
+                "Name": "MCTPUSB_x1",
+                "StaticEndpointID": "80",
+                "Type": "MCTPUSBTarget",
+                "USBPath": ".*-1-2-3-1"
+            }
+        ],
+        "Name": "MCTP_USB_CX9_SMA_B1_0",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'musb.*_1_2_3_1'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgePoolStartEID": "91",
+                "IgnoreEIDs": "91,93",
+                "Interface": "$Interface",
+                "Name": "MCTPUSB_x1",
+                "StaticEndpointID": "90",
+                "Type": "MCTPUSBTarget",
+                "USBPath": ".*-1-2-4-1"
+            }
+        ],
+        "Name": "MCTP_USB_CX9_SMA_B1_1",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'musb.*_1_2_4_1'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "Address": "0x1D",
+                "Bus": "7",
+                "IgnoreMessageTypes": "1,5",
+                "Name": "MCTPI2C_7",
+                "PollingInterval": "1",
+                "StaticEndpointID": "210",
+                "Type": "MCTPI2CTarget"
+            }
+        ],
+        "Name": "MCTP_I2C_DEV_7",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpi2c7'})",
+        "Type": "MCTPInterface"
+    }
+]
