@@ -2,6 +2,105 @@
     "Name": "Nvidia VR-NVL72 HMC",
     "PlatformExposes": [
         {
+            "Name": "HGX_ERoT_BMC_0",
+            "SupportedDumps": [
+                "RoT",
+                "FwAttrs",
+                "HwCheckout"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "Name": "HGX_GPU_SMA_0",
+            "SupportedDumps": [
+                "RoT",
+                "SMA"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "GPU_0",
+            "Name": "HGX_GPU_0",
+            "SupportedDumps": [
+                "RoT",
+                "GPUDiag",
+                "NetIR"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "GPU_1",
+            "Name": "HGX_GPU_1",
+            "SupportedDumps": [
+                "RoT",
+                "GPUDiag",
+                "NetIR"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "Name": "HGX_GPU_SMA_1",
+            "SupportedDumps": [
+                "RoT",
+                "SMA"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "GPU_2",
+            "Name": "HGX_GPU_2",
+            "SupportedDumps": [
+                "RoT",
+                "GPUDiag",
+                "NetIR"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "GPU_3",
+            "Name": "HGX_GPU_3",
+            "SupportedDumps": [
+                "RoT",
+                "GPUDiag",
+                "NetIR"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "CPU_0",
+            "Name": "HGX_CPU_0",
+            "SupportedDumps": [
+                "CPUDiag"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "CPU_1",
+            "Name": "HGX_CPU_1",
+            "SupportedDumps": [
+                "CPUDiag"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "Name": "HGX_ProcessorModule_SMA_0",
+            "SupportedDumps": [
+                "RoT",
+                "SMA",
+                "CPLD"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "Name": "HGX_ProcessorModule_SMA_1",
+            "SupportedDumps": [
+                "RoT",
+                "SMA",
+                "CPLD"
+            ],
+            "Type": "Dump"
+        },
+        {
             "BridgeName": "HGX_GPU_SMA_0",
             "Name": "HGX_GPU_0",
             "PoolIndex": 0,

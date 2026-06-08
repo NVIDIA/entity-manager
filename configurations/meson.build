@@ -419,7 +419,7 @@ configs = [
     'nvidia/vr/platform/vr-nvl-hmc/common/vrnvl_gpu_sma_recovery_configuration.json',
     'nvidia/vr/platform/vr-nvl-hmc/common/vrnvl_hpm_sma_recovery_configuration.json',
     'nvidia/vr/platform/vr-nvl-hmc/common/vrnvl_irot_cpu_chassis.json',
-    'nvidia/vr/platform/vr-nvl-hmc/common/vrnvl_mctp_hmc_target_configuration.json',
+    'nvidia/vr/platform/vr-nvl-hmc/common/vrnvl_platform.json',
     'nvidia/vr/platform/vr-nvl-hmc/common/vrnvl_memory_systems_cpu.json',
     'nvidia/vr/platform/vr-nvl-hmc/common/vrnvl_processor_systems_cpu.json',
     'nvidia/vr/platform/vr-nvl-hmc/common/vrnvl_static_inventory.json',
