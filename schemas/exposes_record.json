@@ -433,6 +433,9 @@
                     "$ref": "nvidia_sensors.json#/$defs/SensorAuxName"
                 },
                 {
+                    "$ref": "nvidia_sensors.json#/$defs/SummationSensor"
+                },
+                {
                     "$ref": "nvidia_sensors.json#/$defs/TMP75C"
                 },
                 {

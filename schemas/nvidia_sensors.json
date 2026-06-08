@@ -126,6 +126,12 @@
                 "SensorType": {
                     "type": "string"
                 },
+                "StaleBit": {
+                    "type": "integer"
+                },
+                "StaleOffset": {
+                    "type": "integer"
+                },
                 "Thresholds": {
                     "type": "array"
                 },
@@ -138,6 +144,40 @@
                 }
             },
             "required": ["Name", "Type"]
+        },
+        "SummationSensor": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "SensorParams": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "MaxValue": {
+                                "type": "number"
+                            },
+                            "MinValue": {
+                                "type": "number"
+                            }
+                        }
+                    }
+                },
+                "SensorsToSum": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "SummationSensor"
+                }
+            },
+            "required": ["Name", "SensorsToSum", "Type"]
         },
         "SensorAuxName": {
             "type": "object",
