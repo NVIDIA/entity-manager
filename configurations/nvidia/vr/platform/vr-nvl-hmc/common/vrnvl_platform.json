@@ -625,8 +625,6 @@
     "Probe": [
         "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
         "AND",
-        "FOUND('HGX_Baseboard_0')",
-        "AND",
         "FOUND('HGX_BMC_0')"
     ],
     "Type": "Platform"
