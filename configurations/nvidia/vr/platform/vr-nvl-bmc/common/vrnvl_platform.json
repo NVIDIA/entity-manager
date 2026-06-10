@@ -1,0 +1,844 @@
+{
+    "Name": "Nvidia VR-NVL72 BMC",
+    "Type": "Platform",
+    "Probe": [
+        "xyz.openbmc_project.FruDevice({'BUS': 9, 'ADDRESS': 80, 'BOARD_MANUFACTURER': 'NVIDIA'})"
+    ],
+    "PlatformExposes": [
+        {
+            "Name": "BlueField_SMA_0",
+            "Type": "MCTPUSBDevice",
+            "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+            "Port": "1.1.4.1",
+            "Configuration": 1,
+            "InterfaceNum": 0,
+            "StaticEndpointID": "55",
+            "BridgePoolStartEid": "56"
+        },
+        {
+            "Name": "SMA_0",
+            "Type": "MCTPUSBDevice",
+            "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+            "Port": "1.2.1.1",
+            "Configuration": 1,
+            "InterfaceNum": 0,
+            "StaticEndpointID": "45",
+            "IgnoreMessageTypes": "1,5",
+            "BridgePoolStartEid": "46"
+        },
+        {
+            "Name": "SMA_1",
+            "Type": "MCTPUSBDevice",
+            "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+            "Port": "1.2.2.1",
+            "Configuration": 1,
+            "InterfaceNum": 0,
+            "StaticEndpointID": "40",
+            "IgnoreMessageTypes": "1,5",
+            "BridgePoolStartEid": "41"
+        },
+        {
+            "Name": "IO_Board_SMA_0",
+            "Type": "MCTPUSBDevice",
+            "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+            "Port": "1.2.1.4.1",
+            "Configuration": 1,
+            "InterfaceNum": 0,
+            "StaticEndpointID": "60",
+            "BridgePoolStartEid": "61",
+            "BridgePoolEndEID": "65",
+            "BridgedEndpoints": [
+                "CX_0",
+                "CX_1",
+                "NVMe_E1S_IO0"
+            ]
+        },
+        {
+            "Name": "IO_Board_SMA_1",
+            "Type": "MCTPUSBDevice",
+            "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+            "Port": "1.2.1.3.1",
+            "Configuration": 1,
+            "InterfaceNum": 0,
+            "StaticEndpointID": "70",
+            "BridgePoolStartEid": "71",
+            "BridgePoolEndEID": "75",
+            "BridgedEndpoints": [
+                "CX_2",
+                "CX_3",
+                "NVMe_E1S_IO1"
+            ]
+        },
+        {
+            "Name": "IO_Board_SMA_2",
+            "Type": "MCTPUSBDevice",
+            "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+            "Port": "1.2.2.3.1",
+            "Configuration": 1,
+            "InterfaceNum": 0,
+            "StaticEndpointID": "80",
+            "BridgePoolStartEid": "81",
+            "BridgePoolEndEID": "85",
+            "BridgedEndpoints": [
+                "CX_4",
+                "CX_5",
+                "NVMe_E1S_IO2"
+            ]
+        },
+        {
+            "Name": "IO_Board_SMA_3",
+            "Type": "MCTPUSBDevice",
+            "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+            "Port": "1.2.2.4.1",
+            "Configuration": 1,
+            "InterfaceNum": 0,
+            "StaticEndpointID": "90",
+            "BridgePoolStartEid": "91",
+            "BridgePoolEndEID": "95",
+            "BridgedEndpoints": [
+                "CX_6",
+                "CX_7",
+                "NVMe_E1S_IO3"
+            ]
+        },
+        {
+            "Name": "ERoT_BMC_0",
+            "Type": "MCTPSPIDevice",
+            "Bus": "0",
+            "ChipSelect": "2",
+            "StaticEndpointID": "50"
+        },
+        {
+            "Name": "NVMe_E1S_SMM",
+            "Type": "MCTPI2CTarget",
+            "Bus": "13",
+            "Address": "0x1D",
+            "StaticEndpointID": "210",
+            "IgnoreMessageTypes": "1,5"
+        },
+        {
+            "Name": "CX_0",
+            "Type": "MCTPBridgePoolDevice",
+            "BridgeName": "IO_Board_SMA_0",
+            "PoolIndex": 1
+        },
+        {
+            "Name": "CX_1",
+            "Type": "MCTPBridgePoolDevice",
+            "BridgeName": "IO_Board_SMA_0",
+            "PoolIndex": 3
+        },
+        {
+            "Name": "NVMe_E1S_IO0",
+            "Type": "MCTPBridgePoolDevice",
+            "BridgeName": "IO_Board_SMA_0",
+            "PoolIndex": 4
+        },
+        {
+            "Name": "CX_2",
+            "Type": "MCTPBridgePoolDevice",
+            "BridgeName": "IO_Board_SMA_1",
+            "PoolIndex": 1
+        },
+        {
+            "Name": "CX_3",
+            "Type": "MCTPBridgePoolDevice",
+            "BridgeName": "IO_Board_SMA_1",
+            "PoolIndex": 3
+        },
+        {
+            "Name": "NVMe_E1S_IO1",
+            "Type": "MCTPBridgePoolDevice",
+            "BridgeName": "IO_Board_SMA_1",
+            "PoolIndex": 4
+        },
+        {
+            "Name": "CX_4",
+            "Type": "MCTPBridgePoolDevice",
+            "BridgeName": "IO_Board_SMA_2",
+            "PoolIndex": 1
+        },
+        {
+            "Name": "CX_5",
+            "Type": "MCTPBridgePoolDevice",
+            "BridgeName": "IO_Board_SMA_2",
+            "PoolIndex": 3
+        },
+        {
+            "Name": "NVMe_E1S_IO2",
+            "Type": "MCTPBridgePoolDevice",
+            "BridgeName": "IO_Board_SMA_2",
+            "PoolIndex": 4
+        },
+        {
+            "Name": "CX_6",
+            "Type": "MCTPBridgePoolDevice",
+            "BridgeName": "IO_Board_SMA_3",
+            "PoolIndex": 1
+        },
+        {
+            "Name": "CX_7",
+            "Type": "MCTPBridgePoolDevice",
+            "BridgeName": "IO_Board_SMA_3",
+            "PoolIndex": 3
+        },
+        {
+            "Name": "NVMe_E1S_IO3",
+            "Type": "MCTPBridgePoolDevice",
+            "BridgeName": "IO_Board_SMA_3",
+            "PoolIndex": 4
+        },
+        {
+            "Name": "BlueField_SMA_0_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "BlueField_SMA_0",
+            "Components": [
+                {
+                    "Name": "FW_BlueField_SMA_0",
+                    "ComponentIdentifier": 65282,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_SMA_0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "CX_0_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "CX_0",
+            "Components": [
+                {
+                    "Name": "FW_CX_0",
+                    "ComponentIdentifier": 1,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_0"
+                        }
+                    ]
+                },
+                {
+                    "Name": "CX_NVConfig_MLNX_0",
+                    "ComponentIdentifier": 4,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "active",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_0"
+                        }
+                    ]
+                },
+                {
+                    "Name": "CX_NVConfig_OEM_0",
+                    "ComponentIdentifier": 3,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "active",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "CX_1_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "CX_1",
+            "Components": [
+                {
+                    "Name": "FW_CX_1",
+                    "ComponentIdentifier": 1,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_1"
+                        }
+                    ]
+                },
+                {
+                    "Name": "CX_NVConfig_MLNX_1",
+                    "ComponentIdentifier": 4,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "active",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_1"
+                        }
+                    ]
+                },
+                {
+                    "Name": "CX_NVConfig_OEM_1",
+                    "ComponentIdentifier": 3,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "active",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "IO_Board_SMA_0_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "IO_Board_SMA_0",
+            "Components": [
+                {
+                    "Name": "FW_IO_Board_SMA_0",
+                    "ComponentIdentifier": 65282,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IO_Board_SMA_0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "CX_2_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "CX_2",
+            "Components": [
+                {
+                    "Name": "FW_CX_2",
+                    "ComponentIdentifier": 1,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_2"
+                        }
+                    ]
+                },
+                {
+                    "Name": "CX_NVConfig_MLNX_2",
+                    "ComponentIdentifier": 4,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "active",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_2"
+                        }
+                    ]
+                },
+                {
+                    "Name": "CX_NVConfig_OEM_2",
+                    "ComponentIdentifier": 3,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "active",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_2"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "CX_3_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "CX_3",
+            "Components": [
+                {
+                    "Name": "FW_CX_3",
+                    "ComponentIdentifier": 1,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_3"
+                        }
+                    ]
+                },
+                {
+                    "Name": "CX_NVConfig_MLNX_3",
+                    "ComponentIdentifier": 4,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "active",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_3"
+                        }
+                    ]
+                },
+                {
+                    "Name": "CX_NVConfig_OEM_3",
+                    "ComponentIdentifier": 3,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "active",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_3"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "IO_Board_SMA_1_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "IO_Board_SMA_1",
+            "Components": [
+                {
+                    "Name": "FW_IO_Board_SMA_1",
+                    "ComponentIdentifier": 65282,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IO_Board_SMA_1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "CX_4_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "CX_4",
+            "Components": [
+                {
+                    "Name": "FW_CX_4",
+                    "ComponentIdentifier": 1,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_4"
+                        }
+                    ]
+                },
+                {
+                    "Name": "CX_NVConfig_MLNX_4",
+                    "ComponentIdentifier": 4,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "active",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_4"
+                        }
+                    ]
+                },
+                {
+                    "Name": "CX_NVConfig_OEM_4",
+                    "ComponentIdentifier": 3,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "active",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_4"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "CX_5_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "CX_5",
+            "Components": [
+                {
+                    "Name": "FW_CX_5",
+                    "ComponentIdentifier": 1,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_5"
+                        }
+                    ]
+                },
+                {
+                    "Name": "CX_NVConfig_MLNX_5",
+                    "ComponentIdentifier": 4,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "active",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_5"
+                        }
+                    ]
+                },
+                {
+                    "Name": "CX_NVConfig_OEM_5",
+                    "ComponentIdentifier": 3,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "active",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_5"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "IO_Board_SMA_2_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "IO_Board_SMA_2",
+            "Components": [
+                {
+                    "Name": "FW_IO_Board_SMA_2",
+                    "ComponentIdentifier": 65282,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IO_Board_SMA_2"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "CX_6_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "CX_6",
+            "Components": [
+                {
+                    "Name": "FW_CX_6",
+                    "ComponentIdentifier": 1,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_6"
+                        }
+                    ]
+                },
+                {
+                    "Name": "CX_NVConfig_MLNX_6",
+                    "ComponentIdentifier": 4,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "active",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_6"
+                        }
+                    ]
+                },
+                {
+                    "Name": "CX_NVConfig_OEM_6",
+                    "ComponentIdentifier": 3,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "active",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_6"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "CX_7_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "CX_7",
+            "Components": [
+                {
+                    "Name": "FW_CX_7",
+                    "ComponentIdentifier": 1,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_7"
+                        }
+                    ]
+                },
+                {
+                    "Name": "CX_NVConfig_MLNX_7",
+                    "ComponentIdentifier": 4,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "active",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_7"
+                        }
+                    ]
+                },
+                {
+                    "Name": "CX_NVConfig_OEM_7",
+                    "ComponentIdentifier": 3,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "active",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_7"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "IO_Board_SMA_3_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "IO_Board_SMA_3",
+            "Components": [
+                {
+                    "Name": "FW_IO_Board_SMA_3",
+                    "ComponentIdentifier": 65282,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IO_Board_SMA_3"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "ERoT_BMC_0_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "ERoT_BMC_0",
+            "Components": [
+                {
+                    "Name": "FW_ERoT_BMC_0",
+                    "ComponentIdentifier": 65280,
+                    "Associations": [
+                        {
+                            "Forward": "inventory",
+                            "Backward": "activation",
+                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/ERoT_BMC_0"
+                        }
+                    ]
+                },
+                {
+                    "Name": "FW_BMC_0",
+                    "ComponentIdentifier": 16
+                }
+            ]
+        },
+        {
+            "Name": "BlueField_SMA_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "MCTPTargetName": "BlueField_SMA_0",
+            "Manufacturer": "NVIDIA",
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_BlueField_SMA_0",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_SMA_0",
+            "Associations": [
+                {
+                    "Forward": "parent_chassis",
+                    "Backward": "all_chassis",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_SMA_0"
+                },
+                {
+                    "Forward": "inventory",
+                    "Backward": "associated_ROT",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_SMA_0"
+                },
+                {
+                    "Forward": "inventory_chassis",
+                    "Backward": "associated_chassis",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_SMA_0"
+                }
+            ],
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
+        },
+        {
+            "Name": "CX_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "MCTPTargetName": "CX_0",
+            "Manufacturer": "NVIDIA",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/CX_0",
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
+        },
+        {
+            "Name": "CX_1_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "MCTPTargetName": "CX_1",
+            "Manufacturer": "NVIDIA",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/CX_1",
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
+        },
+        {
+            "Name": "IO_Board_SMA_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "MCTPTargetName": "IO_Board_SMA_0",
+            "Manufacturer": "NVIDIA",
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_IO_Board_SMA_0",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IO_Board_SMA_0",
+            "Associations": [
+                {
+                    "Forward": "parent_chassis",
+                    "Backward": "all_chassis",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IO_Board_0"
+                },
+                {
+                    "Forward": "inventory",
+                    "Backward": "associated_ROT",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IO_Board_SMA_0"
+                },
+                {
+                    "Forward": "inventory_chassis",
+                    "Backward": "associated_chassis",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IO_Board_SMA_0"
+                }
+            ],
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
+        },
+        {
+            "Name": "CX_2_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "MCTPTargetName": "CX_2",
+            "Manufacturer": "NVIDIA",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/CX_2",
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
+        },
+        {
+            "Name": "CX_3_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "MCTPTargetName": "CX_3",
+            "Manufacturer": "NVIDIA",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/CX_3",
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
+        },
+        {
+            "Name": "IO_Board_SMA_1_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "MCTPTargetName": "IO_Board_SMA_1",
+            "Manufacturer": "NVIDIA",
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_IO_Board_SMA_1",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IO_Board_SMA_1",
+            "Associations": [
+                {
+                    "Forward": "parent_chassis",
+                    "Backward": "all_chassis",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IO_Board_1"
+                },
+                {
+                    "Forward": "inventory",
+                    "Backward": "associated_ROT",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IO_Board_SMA_1"
+                },
+                {
+                    "Forward": "inventory_chassis",
+                    "Backward": "associated_chassis",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IO_Board_SMA_1"
+                }
+            ],
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
+        },
+        {
+            "Name": "CX_4_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "MCTPTargetName": "CX_4",
+            "Manufacturer": "NVIDIA",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/CX_4",
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
+        },
+        {
+            "Name": "CX_5_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "MCTPTargetName": "CX_5",
+            "Manufacturer": "NVIDIA",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/CX_5",
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
+        },
+        {
+            "Name": "IO_Board_SMA_2_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "MCTPTargetName": "IO_Board_SMA_2",
+            "Manufacturer": "NVIDIA",
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_IO_Board_SMA_2",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IO_Board_SMA_2",
+            "Associations": [
+                {
+                    "Forward": "parent_chassis",
+                    "Backward": "all_chassis",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IO_Board_2"
+                },
+                {
+                    "Forward": "inventory",
+                    "Backward": "associated_ROT",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IO_Board_SMA_2"
+                },
+                {
+                    "Forward": "inventory_chassis",
+                    "Backward": "associated_chassis",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IO_Board_SMA_2"
+                }
+            ],
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
+        },
+        {
+            "Name": "CX_6_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "MCTPTargetName": "CX_6",
+            "Manufacturer": "NVIDIA",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/CX_6",
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
+        },
+        {
+            "Name": "CX_7_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "MCTPTargetName": "CX_7",
+            "Manufacturer": "NVIDIA",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/CX_7",
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
+        },
+        {
+            "Name": "IO_Board_SMA_3_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "MCTPTargetName": "IO_Board_SMA_3",
+            "Manufacturer": "NVIDIA",
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_IO_Board_SMA_3",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IO_Board_SMA_3",
+            "Associations": [
+                {
+                    "Forward": "parent_chassis",
+                    "Backward": "all_chassis",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IO_Board_3"
+                },
+                {
+                    "Forward": "inventory",
+                    "Backward": "associated_ROT",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IO_Board_SMA_3"
+                },
+                {
+                    "Forward": "inventory_chassis",
+                    "Backward": "associated_chassis",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IO_Board_SMA_3"
+                }
+            ],
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
+        },
+        {
+            "Name": "ERoT_BMC_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "MCTPTargetName": "ERoT_BMC_0",
+            "Manufacturer": "NVIDIA",
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/ERoT_BMC_0",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/bmc/BMC_0",
+            "Associations": [
+                {
+                    "Forward": "parent_chassis",
+                    "Backward": "all_chassis",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/bmc/BMC_0"
+                },
+                {
+                    "Forward": "inventory",
+                    "Backward": "associated_ROT",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/bmc/BMC_0"
+                },
+                {
+                    "Forward": "inventory_chassis",
+                    "Backward": "associated_chassis",
+                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/ERoT_BMC_0"
+                }
+            ],
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
+        }
+    ]
+}
