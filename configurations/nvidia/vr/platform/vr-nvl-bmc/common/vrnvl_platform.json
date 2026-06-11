@@ -839,6 +839,124 @@
                 }
             ],
             "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
+        },
+        {
+            "Name": "ERoT_BMC_0",
+            "Type": "Dump",
+            "SupportedDumps": [
+                "RoT",
+                "FwAttrs",
+                "HwCheckout"
+            ]
+        },
+        {
+            "Name": "BlueField_SMA_0",
+            "Type": "Dump",
+            "DeviceType": "BlueField_SMA_0",
+            "SupportedDumps": [
+                "SMA",
+                "GPUDiag"
+            ]
+        },
+        {
+            "Name": "IO_Board_SMA_0",
+            "Type": "Dump",
+            "DeviceType": "IO_Board_SMA_0",
+            "SupportedDumps": [
+                "SMA",
+                "GPUDiag"
+            ]
+        },
+        {
+            "Name": "IO_Board_SMA_1",
+            "Type": "Dump",
+            "DeviceType": "IO_Board_SMA_1",
+            "SupportedDumps": [
+                "SMA",
+                "GPUDiag"
+            ]
+        },
+        {
+            "Name": "IO_Board_SMA_2",
+            "Type": "Dump",
+            "DeviceType": "IO_Board_SMA_2",
+            "SupportedDumps": [
+                "SMA",
+                "GPUDiag"
+            ]
+        },
+        {
+            "Name": "IO_Board_SMA_3",
+            "Type": "Dump",
+            "DeviceType": "IO_Board_SMA_3",
+            "SupportedDumps": [
+                "SMA",
+                "GPUDiag"
+            ]
+        },
+        {
+            "Name": "CX_0",
+            "Type": "Dump",
+            "DeviceType": "CX_NIC_0",
+            "SupportedDumps": [
+                "NetIR"
+            ]
+        },
+        {
+            "Name": "CX_1",
+            "Type": "Dump",
+            "DeviceType": "CX_NIC_1",
+            "SupportedDumps": [
+                "NetIR"
+            ]
+        },
+        {
+            "Name": "CX_2",
+            "Type": "Dump",
+            "DeviceType": "CX_NIC_2",
+            "SupportedDumps": [
+                "NetIR"
+            ]
+        },
+        {
+            "Name": "CX_3",
+            "Type": "Dump",
+            "DeviceType": "CX_NIC_3",
+            "SupportedDumps": [
+                "NetIR"
+            ]
+        },
+        {
+            "Name": "CX_4",
+            "Type": "Dump",
+            "DeviceType": "CX_NIC_4",
+            "SupportedDumps": [
+                "NetIR"
+            ]
+        },
+        {
+            "Name": "CX_5",
+            "Type": "Dump",
+            "DeviceType": "CX_NIC_5",
+            "SupportedDumps": [
+                "NetIR"
+            ]
+        },
+        {
+            "Name": "CX_6",
+            "Type": "Dump",
+            "DeviceType": "CX_NIC_6",
+            "SupportedDumps": [
+                "NetIR"
+            ]
+        },
+        {
+            "Name": "CX_7",
+            "Type": "Dump",
+            "DeviceType": "CX_NIC_7",
+            "SupportedDumps": [
+                "NetIR"
+            ]
         }
     ]
 }
