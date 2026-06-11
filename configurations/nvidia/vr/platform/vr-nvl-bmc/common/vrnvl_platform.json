@@ -855,7 +855,8 @@
             "DeviceType": "BlueField_SMA_0",
             "SupportedDumps": [
                 "SMA",
-                "GPUDiag"
+                "GPUDiag",
+                "NetIR=BlueField_NIC_0"
             ]
         },
         {
