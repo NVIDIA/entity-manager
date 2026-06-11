@@ -47,6 +47,7 @@
             "StaticEndpointID": "60",
             "BridgePoolStartEid": "61",
             "BridgePoolEndEID": "65",
+            "IgnoreEIDs": "61,63",
             "BridgedEndpoints": [
                 "CX_0",
                 "CX_1",
@@ -63,6 +64,7 @@
             "StaticEndpointID": "70",
             "BridgePoolStartEid": "71",
             "BridgePoolEndEID": "75",
+            "IgnoreEIDs": "71,73",
             "BridgedEndpoints": [
                 "CX_2",
                 "CX_3",
@@ -79,6 +81,7 @@
             "StaticEndpointID": "80",
             "BridgePoolStartEid": "81",
             "BridgePoolEndEID": "85",
+            "IgnoreEIDs": "81,83",
             "BridgedEndpoints": [
                 "CX_4",
                 "CX_5",
@@ -95,6 +98,7 @@
             "StaticEndpointID": "90",
             "BridgePoolStartEid": "91",
             "BridgePoolEndEID": "95",
+            "IgnoreEIDs": "91,93",
             "BridgedEndpoints": [
                 "CX_6",
                 "CX_7",
