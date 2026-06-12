@@ -84,6 +84,23 @@
         },
         {
             "Name": "HGX_ProcessorModule_SMA_0",
+            "Pages": [
+                {
+                    "Bus": 1,
+                    "Idx": "Page1",
+                    "RegAddr": "0x00",
+                    "Size": 256,
+                    "SlaveAddr": "0x0b"
+                },
+                {
+                    "Bus": 1,
+                    "Idx": "Page1",
+                    "Page": "0x00",
+                    "RegAddr": "0x00",
+                    "Size": 256,
+                    "SlaveAddr": "0x11"
+                }
+            ],
             "SupportedDumps": [
                 "RoT",
                 "SMA",
