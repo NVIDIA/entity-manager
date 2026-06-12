@@ -13,7 +13,7 @@
             "Configuration": 1,
             "InterfaceNum": 0,
             "StaticEndpointID": "55",
-            "BridgePoolStartEid": "56"
+            "BridgePoolStartEID": "56"
         },
         {
             "Name": "SMA_0",
@@ -24,7 +24,7 @@
             "InterfaceNum": 0,
             "StaticEndpointID": "45",
             "IgnoreMessageTypes": "1,5",
-            "BridgePoolStartEid": "46"
+            "BridgePoolStartEID": "46"
         },
         {
             "Name": "SMA_1",
@@ -35,7 +35,7 @@
             "InterfaceNum": 0,
             "StaticEndpointID": "40",
             "IgnoreMessageTypes": "1,5",
-            "BridgePoolStartEid": "41"
+            "BridgePoolStartEID": "41"
         },
         {
             "Name": "IO_Board_SMA_0",
@@ -45,7 +45,7 @@
             "Configuration": 1,
             "InterfaceNum": 0,
             "StaticEndpointID": "60",
-            "BridgePoolStartEid": "61",
+            "BridgePoolStartEID": "61",
             "BridgePoolEndEID": "65",
             "IgnoreEIDs": "61,63",
             "BridgedEndpoints": [
@@ -62,7 +62,7 @@
             "Configuration": 1,
             "InterfaceNum": 0,
             "StaticEndpointID": "70",
-            "BridgePoolStartEid": "71",
+            "BridgePoolStartEID": "71",
             "BridgePoolEndEID": "75",
             "IgnoreEIDs": "71,73",
             "BridgedEndpoints": [
@@ -79,7 +79,7 @@
             "Configuration": 1,
             "InterfaceNum": 0,
             "StaticEndpointID": "80",
-            "BridgePoolStartEid": "81",
+            "BridgePoolStartEID": "81",
             "BridgePoolEndEID": "85",
             "IgnoreEIDs": "81,83",
             "BridgedEndpoints": [
@@ -96,7 +96,7 @@
             "Configuration": 1,
             "InterfaceNum": 0,
             "StaticEndpointID": "90",
-            "BridgePoolStartEid": "91",
+            "BridgePoolStartEID": "91",
             "BridgePoolEndEID": "95",
             "IgnoreEIDs": "91,93",
             "BridgedEndpoints": [

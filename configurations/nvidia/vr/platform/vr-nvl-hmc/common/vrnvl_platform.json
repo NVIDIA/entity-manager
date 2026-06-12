@@ -164,7 +164,7 @@
         },
         {
             "BridgePoolEndEID": "12",
-            "BridgePoolStartEid": "11",
+            "BridgePoolStartEID": "11",
             "BridgedEndpoints": [
                 "HGX_GPU_0",
                 "HGX_GPU_1"
@@ -188,7 +188,7 @@
         },
         {
             "BridgePoolEndEID": "22",
-            "BridgePoolStartEid": "21",
+            "BridgePoolStartEID": "21",
             "BridgedEndpoints": [
                 "HGX_GPU_2",
                 "HGX_GPU_3"
