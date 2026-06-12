@@ -89,6 +89,9 @@
       "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
         "FieldReplaceable": false
       },
+      "xyz.openbmc_project.Common.UUID": {
+        "UUID": ""
+      },
       "xyz.openbmc_project.Inventory.Item.SPDMResponder": {}
     }
 ]
