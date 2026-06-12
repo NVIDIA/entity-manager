@@ -77,6 +77,10 @@
                     "description": "Health check interval in seconds. 0 to disable.",
                     "type": "string"
                 },
+                "RecoveryThreshold": {
+                    "description": "Number of MCTP setup failures before attempting USB endpoint recovery. Allowed values are numeric strings from 0 to 10. A value of 0 disables recovery and is equivalent to omitting this property.",
+                    "type": "string"
+                },
                 "IgnoreMessageTypes": {
                     "description": "A comma separated list of MCTP message types in decimal format to be ignored by BusOwner.",
                     "type": "string"
