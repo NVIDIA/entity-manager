@@ -178,6 +178,39 @@
         "Priority": true
       },
       {
+        "Name": "HGX_GPU $INSTANCE_NUMBER DRAM_0_Temp_0",
+        "Type": "NSM_Temp",
+        "Associations": [
+          {
+            "Forward": "chassis",
+            "Backward": "all_sensors",
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU $INSTANCE_NUMBER"
+          },
+          {
+            "Forward": "processor",
+            "Backward": "all_sensors",
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU $INSTANCE_NUMBER"
+          },
+          {
+            "Forward": "memory",
+            "Backward": "all_sensors",
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/dimm/GPU $INSTANCE_NUMBER DRAM_0"
+          }
+        ],
+        "ThermalParameters": [
+          {
+            "Name": "UpperCaution",
+            "Dynamic": false,
+            "Value": 105.0
+          }
+        ],
+        "UUID": "$UUID",
+        "PhysicalContext": "GPU",
+        "Aggregated": true,
+        "SensorId": 1,
+        "Priority": true
+      },
+      {
         "Name": "HGX_GPU $INSTANCE_NUMBER Power_0",
         "Type": "NSM_Power",
         "CompositeNumericSensors": [
