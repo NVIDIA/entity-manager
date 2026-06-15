@@ -146,14 +146,16 @@
             "Bus": "1",
             "Name": "HGX_ProcessorModule_SMA_0",
             "StaticEndpointID": "13",
-            "Type": "MCTPI2CTarget"
+            "Type": "MCTPI2CTarget",
+            "PollingInterval": "1"
         },
         {
             "Address": "0x52",
             "Bus": "7",
             "Name": "HGX_ProcessorModule_SMA_1",
             "StaticEndpointID": "23",
-            "Type": "MCTPI2CTarget"
+            "Type": "MCTPI2CTarget",
+            "PollingInterval": "1"
         },
         {
             "Bus": "0",
@@ -175,16 +177,19 @@
             "Port": "1.1.1.1",
             "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
             "StaticEndpointID": "10",
-            "Type": "MCTPUSBDevice"
+            "Type": "MCTPUSBDevice",
+            "PollingInterval": "5"
         },
         {
             "Configuration": 1,
-            "InterfaceNum": 0,
+            "InterfaceNum": 2,
             "Name": "HGX_CPU_0",
             "Port": "1.1.1.2",
             "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
             "StaticEndpointID": "14",
-            "Type": "MCTPUSBDevice"
+            "Type": "MCTPUSBDevice",
+            "PollingInterval": "5",
+            "RecoveryThreshold": "5"
         },
         {
             "BridgePoolEndEID": "22",
@@ -199,16 +204,19 @@
             "Port": "1.1.2.1",
             "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
             "StaticEndpointID": "20",
-            "Type": "MCTPUSBDevice"
+            "Type": "MCTPUSBDevice",
+            "PollingInterval": "5"
         },
         {
             "Configuration": 1,
-            "InterfaceNum": 0,
+            "InterfaceNum": 2,
             "Name": "HGX_CPU_1",
             "Port": "1.1.2.2",
             "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
             "StaticEndpointID": "24",
-            "Type": "MCTPUSBDevice"
+            "Type": "MCTPUSBDevice",
+            "PollingInterval": "5",
+            "RecoveryThreshold": "5"
         },
         {
             "Interface": "mctpusbg0",
