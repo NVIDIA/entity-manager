@@ -24,13 +24,6 @@
                     "description": "Written by entity-manager to Decorator.Asset.Manufacturer on the created chassis.",
                     "type": "string"
                 },
-                "Associations": {
-                    "description": "Written by entity-manager to Association.Definitions on the created chassis.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pldm_firmware_device.json#/$defs/PLDMAssociation"
-                    }
-                },
                 "Type": {
                     "type": "string",
                     "enum": ["PLDMDeviceInventory"]
@@ -41,7 +34,7 @@
                     "description": "Any xyz.openbmc_project.* decorator key (e.g. Inventory.Item.SPDMResponder) is applied by entity-manager to the created chassis object."
                 }
             },
-            "required": ["Name", "MCTPTargetName", "CreateInventoryPath", "Manufacturer", "Associations", "Type"],
+            "required": ["Name", "MCTPTargetName", "CreateInventoryPath", "Manufacturer", "Type"],
             "additionalProperties": false,
             "type": "object"
         }

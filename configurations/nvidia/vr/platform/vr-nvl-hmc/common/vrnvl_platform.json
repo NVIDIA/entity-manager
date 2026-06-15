@@ -225,23 +225,6 @@
             "Type": "MCTPUSBGadgetTarget"
         },
         {
-            "Associations": [
-                {
-                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/bmc/HGX_BMC_0",
-                    "Backward": "all_chassis",
-                    "Forward": "parent_chassis"
-                },
-                {
-                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/bmc/HGX_BMC_0",
-                    "Backward": "associated_ROT",
-                    "Forward": "inventory"
-                },
-                {
-                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_BMC_0",
-                    "Backward": "associated_chassis",
-                    "Forward": "inventory_chassis"
-                }
-            ],
             "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_BMC_0",
             "MCTPTargetName": "HGX_ERoT_BMC_0",
             "Manufacturer": "NVIDIA",
@@ -251,23 +234,6 @@
             "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
         },
         {
-            "Associations": [
-                {
-                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_0",
-                    "Backward": "all_chassis",
-                    "Forward": "parent_chassis"
-                },
-                {
-                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0",
-                    "Backward": "associated_ROT",
-                    "Forward": "inventory"
-                },
-                {
-                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_0",
-                    "Backward": "associated_chassis",
-                    "Forward": "inventory_chassis"
-                }
-            ],
             "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_GPU_0",
             "MCTPTargetName": "HGX_GPU_0",
             "Manufacturer": "NVIDIA",
@@ -277,23 +243,6 @@
             "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
         },
         {
-            "Associations": [
-                {
-                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_1",
-                    "Backward": "all_chassis",
-                    "Forward": "parent_chassis"
-                },
-                {
-                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1",
-                    "Backward": "associated_ROT",
-                    "Forward": "inventory"
-                },
-                {
-                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_1",
-                    "Backward": "associated_chassis",
-                    "Forward": "inventory_chassis"
-                }
-            ],
             "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_GPU_1",
             "MCTPTargetName": "HGX_GPU_1",
             "Manufacturer": "NVIDIA",
@@ -303,23 +252,6 @@
             "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
         },
         {
-            "Associations": [
-                {
-                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_2",
-                    "Backward": "all_chassis",
-                    "Forward": "parent_chassis"
-                },
-                {
-                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_2",
-                    "Backward": "associated_ROT",
-                    "Forward": "inventory"
-                },
-                {
-                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_2",
-                    "Backward": "associated_chassis",
-                    "Forward": "inventory_chassis"
-                }
-            ],
             "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_GPU_2",
             "MCTPTargetName": "HGX_GPU_2",
             "Manufacturer": "NVIDIA",
@@ -329,23 +261,6 @@
             "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
         },
         {
-            "Associations": [
-                {
-                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_3",
-                    "Backward": "all_chassis",
-                    "Forward": "parent_chassis"
-                },
-                {
-                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_3",
-                    "Backward": "associated_ROT",
-                    "Forward": "inventory"
-                },
-                {
-                    "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_3",
-                    "Backward": "associated_chassis",
-                    "Forward": "inventory_chassis"
-                }
-            ],
             "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_GPU_3",
             "MCTPTargetName": "HGX_GPU_3",
             "Manufacturer": "NVIDIA",
