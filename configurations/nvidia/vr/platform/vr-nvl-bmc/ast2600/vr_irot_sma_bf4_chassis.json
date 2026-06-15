@@ -74,6 +74,25 @@
       "Name": "IRoT_BlueField_SMA_$INSTANCE_NUMBER",
       "Type": "chassis",
       "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'BFSMA'})",
+      "xyz.openbmc_project.Association.Definitions": {
+        "Associations": [
+          [
+            "parent_chassis",
+            "all_chassis",
+            "/xyz/openbmc_project/inventory/system/chassis/BlueField_SMA_$INSTANCE_NUMBER"
+          ],
+          [
+            "inventory",
+            "associated_ROT",
+            "/xyz/openbmc_project/inventory/system/chassis/BlueField_SMA_$INSTANCE_NUMBER"
+          ],
+          [
+            "inventory_chassis",
+            "associated_chassis",
+            "/xyz/openbmc_project/inventory/system/chassis/BlueField_SMA_$INSTANCE_NUMBER"
+          ]
+        ]
+      },
       "xyz.openbmc_project.Inventory.Decorator.Location": {
         "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
       },
