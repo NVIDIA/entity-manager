@@ -67,6 +67,25 @@
     "Name": "HGX_IRoT_GPU_$INSTANCE_NUMBER",
     "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 0})",
     "Type": "Chassis",
+    "xyz.openbmc_project.Association.Definitions": {
+      "Associations": [
+        [
+          "parent_chassis",
+          "all_chassis",
+          "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_$INSTANCE_NUMBER"
+        ],
+        [
+          "inventory",
+          "associated_ROT",
+          "/xyz/openbmc_project/inventory/system/accelerator/GPU_$INSTANCE_NUMBER"
+        ],
+        [
+          "inventory_chassis",
+          "associated_chassis",
+          "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_$INSTANCE_NUMBER"
+        ]
+      ]
+    },
     "xyz.openbmc_project.Common.UUID": {
       "UUID": ""
     },
