@@ -208,13 +208,9 @@
                 {
                     "Name": "FW_BlueField_SMA_0",
                     "ComponentIdentifier": 65282,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "activation",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_SMA_0"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/BlueField_SMA_0"]
                 }
             ]
         },
@@ -226,35 +222,23 @@
                 {
                     "Name": "FW_CX_0",
                     "ComponentIdentifier": 1,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "activation",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_0"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/CX_0"]
                 },
                 {
                     "Name": "CX_NVConfig_MLNX_0",
                     "ComponentIdentifier": 4,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "active",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_0"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["active"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/CX_0"]
                 },
                 {
                     "Name": "CX_NVConfig_OEM_0",
                     "ComponentIdentifier": 3,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "active",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_0"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["active"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/CX_0"]
                 }
             ]
         },
@@ -266,35 +250,23 @@
                 {
                     "Name": "FW_CX_1",
                     "ComponentIdentifier": 1,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "activation",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_1"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/CX_1"]
                 },
                 {
                     "Name": "CX_NVConfig_MLNX_1",
                     "ComponentIdentifier": 4,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "active",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_1"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["active"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/CX_1"]
                 },
                 {
                     "Name": "CX_NVConfig_OEM_1",
                     "ComponentIdentifier": 3,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "active",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_1"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["active"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/CX_1"]
                 }
             ]
         },
@@ -306,13 +278,9 @@
                 {
                     "Name": "FW_IO_Board_SMA_0",
                     "ComponentIdentifier": 65282,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "activation",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IO_Board_SMA_0"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/IO_Board_SMA_0"]
                 }
             ]
         },
@@ -324,35 +292,23 @@
                 {
                     "Name": "FW_CX_2",
                     "ComponentIdentifier": 1,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "activation",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_2"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/CX_2"]
                 },
                 {
                     "Name": "CX_NVConfig_MLNX_2",
                     "ComponentIdentifier": 4,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "active",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_2"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["active"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/CX_2"]
                 },
                 {
                     "Name": "CX_NVConfig_OEM_2",
                     "ComponentIdentifier": 3,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "active",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_2"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["active"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/CX_2"]
                 }
             ]
         },
@@ -364,35 +320,23 @@
                 {
                     "Name": "FW_CX_3",
                     "ComponentIdentifier": 1,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "activation",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_3"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/CX_3"]
                 },
                 {
                     "Name": "CX_NVConfig_MLNX_3",
                     "ComponentIdentifier": 4,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "active",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_3"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["active"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/CX_3"]
                 },
                 {
                     "Name": "CX_NVConfig_OEM_3",
                     "ComponentIdentifier": 3,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "active",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_3"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["active"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/CX_3"]
                 }
             ]
         },
@@ -404,13 +348,9 @@
                 {
                     "Name": "FW_IO_Board_SMA_1",
                     "ComponentIdentifier": 65282,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "activation",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IO_Board_SMA_1"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/IO_Board_SMA_1"]
                 }
             ]
         },
@@ -422,35 +362,23 @@
                 {
                     "Name": "FW_CX_4",
                     "ComponentIdentifier": 1,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "activation",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_4"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/CX_4"]
                 },
                 {
                     "Name": "CX_NVConfig_MLNX_4",
                     "ComponentIdentifier": 4,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "active",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_4"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["active"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/CX_4"]
                 },
                 {
                     "Name": "CX_NVConfig_OEM_4",
                     "ComponentIdentifier": 3,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "active",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_4"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["active"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/CX_4"]
                 }
             ]
         },
@@ -462,35 +390,23 @@
                 {
                     "Name": "FW_CX_5",
                     "ComponentIdentifier": 1,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "activation",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_5"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/CX_5"]
                 },
                 {
                     "Name": "CX_NVConfig_MLNX_5",
                     "ComponentIdentifier": 4,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "active",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_5"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["active"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/CX_5"]
                 },
                 {
                     "Name": "CX_NVConfig_OEM_5",
                     "ComponentIdentifier": 3,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "active",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_5"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["active"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/CX_5"]
                 }
             ]
         },
@@ -502,13 +418,9 @@
                 {
                     "Name": "FW_IO_Board_SMA_2",
                     "ComponentIdentifier": 65282,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "activation",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IO_Board_SMA_2"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/IO_Board_SMA_2"]
                 }
             ]
         },
@@ -520,35 +432,23 @@
                 {
                     "Name": "FW_CX_6",
                     "ComponentIdentifier": 1,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "activation",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_6"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/CX_6"]
                 },
                 {
                     "Name": "CX_NVConfig_MLNX_6",
                     "ComponentIdentifier": 4,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "active",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_6"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["active"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/CX_6"]
                 },
                 {
                     "Name": "CX_NVConfig_OEM_6",
                     "ComponentIdentifier": 3,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "active",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_6"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["active"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/CX_6"]
                 }
             ]
         },
@@ -560,35 +460,23 @@
                 {
                     "Name": "FW_CX_7",
                     "ComponentIdentifier": 1,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "activation",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_7"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/CX_7"]
                 },
                 {
                     "Name": "CX_NVConfig_MLNX_7",
                     "ComponentIdentifier": 4,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "active",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_7"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["active"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/CX_7"]
                 },
                 {
                     "Name": "CX_NVConfig_OEM_7",
                     "ComponentIdentifier": 3,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "active",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_7"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["active"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/CX_7"]
                 }
             ]
         },
@@ -600,13 +488,9 @@
                 {
                     "Name": "FW_IO_Board_SMA_3",
                     "ComponentIdentifier": 65282,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "activation",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IO_Board_SMA_3"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/IO_Board_SMA_3"]
                 }
             ]
         },
@@ -618,13 +502,9 @@
                 {
                     "Name": "FW_ERoT_BMC_0",
                     "ComponentIdentifier": 65280,
-                    "Associations": [
-                        {
-                            "Forward": "inventory",
-                            "Backward": "activation",
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/ERoT_BMC_0"
-                        }
-                    ]
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/ERoT_BMC_0"]
                 },
                 {
                     "Name": "FW_BMC_0",

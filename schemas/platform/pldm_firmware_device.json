@@ -18,11 +18,25 @@
                     "description": "If set, pldmd writes the value to the resulting Software.Version object's xyz.openbmc_project.Inventory.Decorator.Asset.Manufacturer property.",
                     "type": "string"
                 },
-                "Associations": {
-                    "description": "pldmd copies these to the Software.Version object's Association.Definitions interface; surfaces as Redfish RelatedItem.",
+                "AssociationForward": {
+                    "description": "Per-component association forward types, one per association. Index-aligned with AssociationBackward/AssociationEndpoint. pldmd zips the three arrays into the Software.Version object's Association.Definitions interface; surfaces as Redfish RelatedItem. Flat string arrays are used (rather than a nested object array) so the association survives entity-manager's PlatformExposes flattening onto the Components<N> child interface.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/$defs/PLDMAssociation"
+                        "type": "string"
+                    }
+                },
+                "AssociationBackward": {
+                    "description": "Per-component association backward (reverse) types, index-aligned with AssociationForward/AssociationEndpoint.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AssociationEndpoint": {
+                    "description": "Per-component association endpoint object paths, index-aligned with AssociationForward/AssociationBackward.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
                     }
                 }
             },

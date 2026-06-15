@@ -357,13 +357,9 @@
         {
             "Components": [
                 {
-                    "Associations": [
-                        {
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_BMC_0",
-                            "Backward": "activation",
-                            "Forward": "inventory"
-                        }
-                    ],
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_BMC_0"],
                     "ComponentIdentifier": 65280,
                     "Name": "HGX_FW_ERoT_BMC_0"
                 },
@@ -379,13 +375,9 @@
         {
             "Components": [
                 {
-                    "Associations": [
-                        {
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_SMA_0",
-                            "Backward": "activation",
-                            "Forward": "inventory"
-                        }
-                    ],
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_SMA_0"],
                     "ComponentIdentifier": 65282,
                     "Name": "HGX_FW_GPU_SMA_0"
                 }
@@ -397,24 +389,16 @@
         {
             "Components": [
                 {
-                    "Associations": [
-                        {
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_0",
-                            "Backward": "activation",
-                            "Forward": "inventory"
-                        }
-                    ],
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_0"],
                     "ComponentIdentifier": 49152,
                     "Name": "HGX_FW_GPU_0"
                 },
                 {
-                    "Associations": [
-                        {
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_0",
-                            "Backward": "active",
-                            "Forward": "inventory"
-                        }
-                    ],
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["active"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_0"],
                     "ComponentIdentifier": 49168,
                     "Name": "HGX_InfoROM_GPU_0"
                 }
@@ -426,24 +410,16 @@
         {
             "Components": [
                 {
-                    "Associations": [
-                        {
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_1",
-                            "Backward": "activation",
-                            "Forward": "inventory"
-                        }
-                    ],
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_1"],
                     "ComponentIdentifier": 49152,
                     "Name": "HGX_FW_GPU_1"
                 },
                 {
-                    "Associations": [
-                        {
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_1",
-                            "Backward": "active",
-                            "Forward": "inventory"
-                        }
-                    ],
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["active"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_1"],
                     "ComponentIdentifier": 49168,
                     "Name": "HGX_InfoROM_GPU_1"
                 }
@@ -455,24 +431,16 @@
         {
             "Components": [
                 {
-                    "Associations": [
-                        {
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ProcessorModule_SMA_0",
-                            "Backward": "activation",
-                            "Forward": "inventory"
-                        }
-                    ],
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/HGX_ProcessorModule_SMA_0"],
                     "ComponentIdentifier": 65282,
                     "Name": "HGX_FW_ProcessorModule_SMA_0"
                 },
                 {
-                    "Associations": [
-                        {
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/component/HGX_CPLD_0",
-                            "Backward": "activation",
-                            "Forward": "inventory"
-                        }
-                    ],
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/component/HGX_CPLD_0"],
                     "ComponentIdentifier": 65283,
                     "Manufacturer": "Lattice",
                     "Name": "HGX_FW_CPLD_0"
@@ -485,24 +453,16 @@
         {
             "Components": [
                 {
-                    "Associations": [
-                        {
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/component/HGX_CPU_0",
-                            "Backward": "activation",
-                            "Forward": "inventory"
-                        }
-                    ],
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/component/HGX_CPU_0"],
                     "ComponentIdentifier": 2,
                     "Name": "HGX_SBIOS_FMC_0"
                 },
                 {
-                    "Associations": [
-                        {
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/component/HGX_CPU_0",
-                            "Backward": "activation",
-                            "Forward": "inventory"
-                        }
-                    ],
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/component/HGX_CPU_0"],
                     "ComponentIdentifier": 513,
                     "Name": "HGX_SBIOS_FW_0"
                 }
@@ -514,13 +474,9 @@
         {
             "Components": [
                 {
-                    "Associations": [
-                        {
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_SMA_1",
-                            "Backward": "activation",
-                            "Forward": "inventory"
-                        }
-                    ],
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_SMA_1"],
                     "ComponentIdentifier": 65282,
                     "Name": "HGX_FW_GPU_SMA_1"
                 }
@@ -532,24 +488,16 @@
         {
             "Components": [
                 {
-                    "Associations": [
-                        {
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_2",
-                            "Backward": "activation",
-                            "Forward": "inventory"
-                        }
-                    ],
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_2"],
                     "ComponentIdentifier": 49152,
                     "Name": "HGX_FW_GPU_2"
                 },
                 {
-                    "Associations": [
-                        {
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_2",
-                            "Backward": "active",
-                            "Forward": "inventory"
-                        }
-                    ],
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["active"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_2"],
                     "ComponentIdentifier": 49168,
                     "Name": "HGX_InfoROM_GPU_2"
                 }
@@ -561,24 +509,16 @@
         {
             "Components": [
                 {
-                    "Associations": [
-                        {
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_3",
-                            "Backward": "activation",
-                            "Forward": "inventory"
-                        }
-                    ],
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_3"],
                     "ComponentIdentifier": 49152,
                     "Name": "HGX_FW_GPU_3"
                 },
                 {
-                    "Associations": [
-                        {
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_3",
-                            "Backward": "active",
-                            "Forward": "inventory"
-                        }
-                    ],
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["active"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_3"],
                     "ComponentIdentifier": 49168,
                     "Name": "HGX_InfoROM_GPU_3"
                 }
@@ -590,24 +530,16 @@
         {
             "Components": [
                 {
-                    "Associations": [
-                        {
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ProcessorModule_SMA_1",
-                            "Backward": "activation",
-                            "Forward": "inventory"
-                        }
-                    ],
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/HGX_ProcessorModule_SMA_1"],
                     "ComponentIdentifier": 65282,
                     "Name": "HGX_FW_ProcessorModule_SMA_1"
                 },
                 {
-                    "Associations": [
-                        {
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/component/HGX_CPLD_1",
-                            "Backward": "activation",
-                            "Forward": "inventory"
-                        }
-                    ],
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/component/HGX_CPLD_1"],
                     "ComponentIdentifier": 65283,
                     "Manufacturer": "Lattice",
                     "Name": "HGX_FW_CPLD_1"
@@ -620,24 +552,16 @@
         {
             "Components": [
                 {
-                    "Associations": [
-                        {
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/component/HGX_CPU_1",
-                            "Backward": "activation",
-                            "Forward": "inventory"
-                        }
-                    ],
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/component/HGX_CPU_1"],
                     "ComponentIdentifier": 2,
                     "Name": "HGX_SBIOS_FMC_1"
                 },
                 {
-                    "Associations": [
-                        {
-                            "AbsolutePath": "/xyz/openbmc_project/inventory/system/component/HGX_CPU_1",
-                            "Backward": "activation",
-                            "Forward": "inventory"
-                        }
-                    ],
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/component/HGX_CPU_1"],
                     "ComponentIdentifier": 513,
                     "Name": "HGX_SBIOS_FW_1"
                 }
