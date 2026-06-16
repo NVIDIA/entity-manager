@@ -55,6 +55,16 @@
                 "UUID": "$UUID"
             },
             {
+                "ComponentType": "AP",
+                "Name": "AP",
+                "Type": "NSM_FW_ComponentType"
+            },
+            {
+                "ComponentType": "EC",
+                "Name": "EC",
+                "Type": "NSM_FW_ComponentType"
+            },
+            {
                 "Associations": [
                     {
                         "AbsolutePath": "/xyz/openbmc_project/software/FW_BMC_0",
@@ -136,7 +146,7 @@
         ],
         "Name": "IRoT_BMC_0",
         "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 4, 'INSTANCE_NUMBER': 0})",
-        "Type": "chassis",
+        "Type": "Chassis",
         "xyz.openbmc_project.Inventory.Decorator.Instance": {
             "InstanceNumber": 0
         }
