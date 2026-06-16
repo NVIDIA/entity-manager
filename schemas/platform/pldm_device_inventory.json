@@ -34,7 +34,16 @@
                     "description": "Any xyz.openbmc_project.* decorator key (e.g. Inventory.Item.SPDMResponder) is applied by entity-manager to the created chassis object."
                 }
             },
-            "required": ["Name", "MCTPTargetName", "CreateInventoryPath", "Manufacturer", "Type"],
+            "required": ["Name", "MCTPTargetName", "Manufacturer", "Type"],
+            "anyOf": [
+                {
+                    "$comment": "A device-inventory record must declare at least one inventory path: CreateInventoryPath (entity-manager creates the RoT chassis) and/or UpdateInventoryPath (pldmd writes the UUID to a pre-existing object). Update-only records mirror fw_update_config device_inventory entries that have 'update' but no 'create'.",
+                    "required": ["CreateInventoryPath"]
+                },
+                {
+                    "required": ["UpdateInventoryPath"]
+                }
+            ],
             "additionalProperties": false,
             "type": "object"
         }

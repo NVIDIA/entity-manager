@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$defs": {
+        "Dump": {
+            "description": "Downstream-only platform anchor describing the dump capabilities of a device. Consumed by the dump manager to advertise which diagnostic dumps a given device supports.",
+            "properties": {
+                "Name": {
+                    "description": "A recognisable name for the dump-capable device. For device-backed dumps this matches the device's MCTP/PLDM target name.",
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "enum": ["Dump"]
+                },
+                "DeviceType": {
+                    "description": "Optional device type identifier used to resolve the backing device for the dump.",
+                    "type": "string"
+                },
+                "SupportedDumps": {
+                    "description": "The list of dump kinds this device supports (e.g. RoT, SMA, NetIR, GPUDiag). Entries may carry a '=<target>' suffix to bind the dump to a specific sub-device.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Pages": {
+                    "description": "Optional list of SMBus page descriptors used to read the dump payload from the device (bus/slave address/register/size per page).",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                }
+            },
+            "required": ["Name", "Type", "SupportedDumps"],
+            "additionalProperties": false,
+            "type": "object"
+        }
+    },
+    "title": "Platform Dump Capability Record",
+    "description": "Downstream entity-manager platform Exposes schema describing the diagnostic dump capabilities advertised for a device."
+}

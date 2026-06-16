@@ -20,6 +20,14 @@
                     "$ref": "../mctp.json#/$defs/MCTPSPIDevice"
                 },
                 {
+                    "$comment": "downstream-only: on-die IRoT/vROT (XROT) co-processor MCTP anchor. Unlike a bus-discovered device, the Caliptra IRoT/vROT is reached over a fixed XROT interface (mctpirot0/mctpvrot0); mctpd brings up the static endpoint from the Interface + StaticEndpointID.",
+                    "$ref": "../mctp.json#/$defs/MCTPXROTTarget"
+                },
+                {
+                    "$comment": "downstream-only: per-device diagnostic dump capability advertisement consumed by the dump manager.",
+                    "$ref": "dump.json#/$defs/Dump"
+                },
+                {
                     "$comment": "downstream-only: bridge-downstream anchor; the upstream topic ships BridgedEndpoints + per-consumer computation instead.",
                     "$ref": "mctp_bridge_pool_device.json#/$defs/MCTPBridgePoolDevice"
                 },
