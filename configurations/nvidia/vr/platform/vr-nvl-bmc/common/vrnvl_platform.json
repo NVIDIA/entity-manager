@@ -508,7 +508,8 @@
                 },
                 {
                     "Name": "FW_BMC_0",
-                    "ComponentIdentifier": 16
+                    "ComponentIdentifier": 16,
+                    "UpdateOnly": true
                 }
             ]
         },

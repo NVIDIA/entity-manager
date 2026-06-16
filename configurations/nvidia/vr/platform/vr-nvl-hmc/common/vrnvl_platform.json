@@ -280,7 +280,8 @@
                 },
                 {
                     "ComponentIdentifier": 16,
-                    "Name": "HGX_FW_BMC_0"
+                    "Name": "HGX_FW_BMC_0",
+                    "UpdateOnly": true
                 }
             ],
             "MCTPTargetName": "HGX_ERoT_BMC_0",

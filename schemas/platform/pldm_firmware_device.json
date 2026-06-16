@@ -38,6 +38,10 @@
                     "items": {
                         "type": "string"
                     }
+                },
+                "UpdateOnly": {
+                    "description": "If true, the component's Software.Version object is owned by another service (e.g. BMC firmware, owned by the BMC inventory). pldmd only stamps SoftwareId on the existing object and does not create a competing object (which would carry Purpose=Other and shadow the real inventory entry).",
+                    "type": "boolean"
                 }
             },
             "required": ["Name", "ComponentIdentifier"],
