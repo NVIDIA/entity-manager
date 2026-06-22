@@ -1,0 +1,299 @@
+{
+    "Name": "Nvidia GB200 NVL BMC CX8",
+    "Type": "Platform",
+    "Probe": [
+        "xyz.openbmc_project.FruDevice({'BUS': 21, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '900-9X86E-00[6|C|S]X-.*'})",
+        "xyz.openbmc_project.FruDevice({'BUS': 33, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '900-9X86E-00[6|C|S]X-.*'})"
+    ],
+    "PlatformExposes": [
+        {
+            "Name": "ERoT_BMC_0",
+            "Type": "MCTPSPIDevice",
+            "Bus": "0",
+            "ChipSelect": "2",
+            "StaticEndpointID": "10"
+        },
+        {
+            "Name": "FW_RECOVERY_HGX_ERoT_BMC_0",
+            "Type": "MCTPSPIDevice",
+            "Bus": "2",
+            "ChipSelect": "0",
+            "StaticEndpointID": "1"
+        },
+        {
+            "Name": "FW_RECOVERY_HGX_FW_ERoT_FPGA_0",
+            "Type": "MCTPI2CTarget",
+            "Bus": "2",
+            "Address": "0x72",
+            "StaticEndpointID": "2",
+            "PollingInterval": "5"
+        },
+        {
+            "Name": "FW_RECOVERY_HGX_FW_ERoT_FPGA_1",
+            "Type": "MCTPI2CTarget",
+            "Bus": "1",
+            "Address": "0x72",
+            "StaticEndpointID": "3",
+            "PollingInterval": "5"
+        },
+        {
+            "Name": "NIC_0_BF3",
+            "Type": "MCTPI2CTarget",
+            "Bus": "15",
+            "Address": "0x32",
+            "StaticEndpointID": "106",
+            "PollingInterval": "5"
+        },
+        {
+            "Name": "SMA_0",
+            "Type": "MCTPUSBDevice",
+            "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+            "Port": "1.2.2",
+            "Configuration": 1,
+            "InterfaceNum": 0,
+            "StaticEndpointID": "20",
+            "BridgePoolStartEID": "21",
+            "PollingInterval": "5"
+        },
+        {
+            "Name": "SMA_1",
+            "Type": "MCTPUSBDevice",
+            "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+            "Port": "1.2.7.2",
+            "Configuration": 1,
+            "InterfaceNum": 0,
+            "StaticEndpointID": "30",
+            "BridgePoolStartEID": "31",
+            "PollingInterval": "5"
+        },
+        {
+            "Name": "CX8_0",
+            "Type": "MCTPBridgePoolDevice",
+            "BridgeName": "SMA_0",
+            "PoolIndex": 0
+        },
+        {
+            "Name": "CX8_1",
+            "Type": "MCTPBridgePoolDevice",
+            "BridgeName": "SMA_0",
+            "PoolIndex": 2
+        },
+        {
+            "Name": "CX8_2",
+            "Type": "MCTPBridgePoolDevice",
+            "BridgeName": "SMA_1",
+            "PoolIndex": 0
+        },
+        {
+            "Name": "CX8_3",
+            "Type": "MCTPBridgePoolDevice",
+            "BridgeName": "SMA_1",
+            "PoolIndex": 2
+        },
+        {
+            "Name": "ERoT_BMC_0_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "ERoT_BMC_0",
+            "Components": [
+                {
+                    "Name": "FW_ERoT_BMC_0",
+                    "ComponentIdentifier": 65280,
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/ERoT_BMC_0"]
+                },
+                {
+                    "Name": "FW_BMC_0",
+                    "ComponentIdentifier": 16,
+                    "UpdateOnly": true
+                }
+            ]
+        },
+        {
+            "Name": "FW_RECOVERY_HGX_ERoT_BMC_0_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "FW_RECOVERY_HGX_ERoT_BMC_0",
+            "Components": [
+                {
+                    "Name": "FW_RECOVERY_HGX_FW_ERoT_BMC_0",
+                    "ComponentIdentifier": 65280
+                },
+                {
+                    "Name": "FW_RECOVERY_HGX_FW_BMC_0",
+                    "ComponentIdentifier": 16
+                }
+            ]
+        },
+        {
+            "Name": "FW_RECOVERY_HGX_FW_ERoT_FPGA_0_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "FW_RECOVERY_HGX_FW_ERoT_FPGA_0",
+            "Components": [
+                {
+                    "Name": "FW_RECOVERY_HGX_FW_ERoT_FPGA_0",
+                    "ComponentIdentifier": 65280
+                }
+            ]
+        },
+        {
+            "Name": "FW_RECOVERY_HGX_FW_ERoT_FPGA_1_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "FW_RECOVERY_HGX_FW_ERoT_FPGA_1",
+            "Components": [
+                {
+                    "Name": "FW_RECOVERY_HGX_FW_ERoT_FPGA_1",
+                    "ComponentIdentifier": 65280
+                }
+            ]
+        },
+        {
+            "Name": "NIC_0_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "NIC_0_BF3",
+            "Components": [
+                {
+                    "Name": "NIC_0",
+                    "ComponentIdentifier": 1,
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/board/Riser_Slot1_BlueField_3_Card"]
+                }
+            ]
+        },
+        {
+            "Name": "CX8_0_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "CX8_0",
+            "Components": [
+                {
+                    "Name": "CX8_0",
+                    "ComponentIdentifier": 1,
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/networkadapter/IO_Board_0_CX8_0"]
+                }
+            ]
+        },
+        {
+            "Name": "CX8_1_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "CX8_1",
+            "Components": [
+                {
+                    "Name": "CX8_1",
+                    "ComponentIdentifier": 1,
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/networkadapter/IO_Board_0_CX8_1"]
+                }
+            ]
+        },
+        {
+            "Name": "CX8_2_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "CX8_2",
+            "Components": [
+                {
+                    "Name": "CX8_2",
+                    "ComponentIdentifier": 1,
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/networkadapter/IO_Board_1_CX8_0"]
+                }
+            ]
+        },
+        {
+            "Name": "CX8_3_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "CX8_3",
+            "Components": [
+                {
+                    "Name": "CX8_3",
+                    "ComponentIdentifier": 1,
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/networkadapter/IO_Board_1_CX8_1"]
+                }
+            ]
+        },
+        {
+            "Name": "SMA_0_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "SMA_0",
+            "Components": [
+                {
+                    "Name": "SMA_0",
+                    "ComponentIdentifier": 65282,
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/SMA_0"]
+                }
+            ]
+        },
+        {
+            "Name": "SMA_1_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "MCTPTargetName": "SMA_1",
+            "Components": [
+                {
+                    "Name": "SMA_1",
+                    "ComponentIdentifier": 65282,
+                    "AssociationForward": ["inventory"],
+                    "AssociationBackward": ["activation"],
+                    "AssociationEndpoint": ["/xyz/openbmc_project/inventory/system/chassis/SMA_1"]
+                }
+            ]
+        },
+        {
+            "Name": "ERoT_BMC_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "MCTPTargetName": "ERoT_BMC_0",
+            "Manufacturer": "NVIDIA",
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/ERoT_BMC_0",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/bmc/BMC_0",
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
+        },
+        {
+            "Name": "FW_RECOVERY_HGX_ERoT_BMC_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "MCTPTargetName": "FW_RECOVERY_HGX_ERoT_BMC_0",
+            "Manufacturer": "NVIDIA",
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/FW_RECOVERY_HGX_ERoT_BMC_0"
+        },
+        {
+            "Name": "IRoT_BF3_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "MCTPTargetName": "NIC_0_BF3",
+            "Manufacturer": "NVIDIA",
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_BF3_0"
+        },
+        {
+            "Name": "CX8_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "MCTPTargetName": "CX8_0",
+            "Manufacturer": "NVIDIA",
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/CX8_0"
+        },
+        {
+            "Name": "CX8_1_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "MCTPTargetName": "CX8_1",
+            "Manufacturer": "NVIDIA",
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/CX8_1"
+        },
+        {
+            "Name": "CX8_2_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "MCTPTargetName": "CX8_2",
+            "Manufacturer": "NVIDIA",
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/CX8_2"
+        },
+        {
+            "Name": "CX8_3_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "MCTPTargetName": "CX8_3",
+            "Manufacturer": "NVIDIA",
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/CX8_3"
+        }
+    ]
+}

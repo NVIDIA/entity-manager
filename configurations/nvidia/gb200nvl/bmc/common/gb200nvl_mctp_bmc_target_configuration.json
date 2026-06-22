@@ -1,0 +1,121 @@
+[
+	{
+		"Name": "MCTP_SPI_DEV",
+		"Type": "MCTPInterface",
+		"Exposes": [
+			{
+				"Name": "MCTPSPI_x",
+				"Type": "MCTPSPIDevice",
+				"Bus": "0",
+				"ChipSelect": "2",
+				"StaticEndpointID": "10"
+			}
+		],
+		"Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpspi0_2'})"
+	},
+    {
+        "Name": "MCTP_I2C_DEV_16",
+        "Type": "MCTPInterface",
+        "Exposes": [
+            {
+                "Name": "MCTPI2C_16",
+                "Type": "MCTPI2CTarget",
+                "Address": "0x32",
+                "Bus": "16",
+                "StaticEndpointID": "101",
+                "PollingInterval": "5"
+            }
+        ],
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpi2c16'})"
+    },
+    {
+        "Name": "MCTP_I2C_DEV_18",
+        "Type": "MCTPInterface",
+        "Exposes": [
+            {
+                "Name": "MCTPI2C_18",
+                "Type": "MCTPI2CTarget",
+                "Address": "0x32",
+                "Bus": "18",
+                "StaticEndpointID": "102",
+                "PollingInterval": "5"
+            }
+        ],
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpi2c18'})"
+    },
+    {
+        "Name": "MCTP_I2C_DEV_28",
+        "Type": "MCTPInterface",
+        "Exposes": [
+            {
+                "Name": "MCTPI2C_28",
+                "Type": "MCTPI2CTarget",
+                "Address": "0x32",
+                "Bus": "28",
+                "StaticEndpointID": "103",
+                "PollingInterval": "5"
+            }
+        ],
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpi2c28'})"
+    },
+    {
+        "Name": "MCTP_I2C_DEV_30",
+        "Type": "MCTPInterface",
+        "Exposes": [
+            {
+                "Name": "MCTPI2C_30",
+                "Type": "MCTPI2CTarget",
+                "Address": "0x32",
+                "Bus": "30",
+                "StaticEndpointID": "104",
+                "PollingInterval": "5"
+            }
+        ],
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpi2c30'})"
+    },
+	{
+        "Name": "MCTP_I2C_DEV_14",
+        "Type": "MCTPInterface",
+        "Exposes": [
+            {
+                "Name": "MCTPI2C_14",
+                "Type": "MCTPI2CTarget",
+                "Address": "0x32",
+                "Bus": "14",
+                "StaticEndpointID": "105",
+                "PollingInterval": "5"
+            }
+        ],
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpi2c14'})"
+    },
+    {
+        "Name": "MCTP_I2C_DEV_15",
+        "Type": "MCTPInterface",
+        "Exposes": [
+            {
+                "Name": "MCTPI2C_15",
+                "Type": "MCTPI2CTarget",
+                "Address": "0x32",
+                "Bus": "15",
+                "StaticEndpointID": "106",
+                "PollingInterval": "5"
+            }
+        ],
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpi2c15'})"
+    },
+    {
+        "Name": "MCTP_I2C_DEV_8",
+        "Type": "MCTPInterface",
+        "Exposes": [
+            {
+                "Name": "MCTPI2C_8",
+                "Type": "MCTPI2CTarget",
+                "Address": "0x1D",
+                "Bus": "8",
+                "StaticEndpointID": "210",
+                "PollingInterval": "5"
+            }
+        ],
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpi2c8'})"
+    }
+]

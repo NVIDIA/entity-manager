@@ -1,0 +1,15 @@
+{
+    "Exposes": [
+        {
+            "Name": "FW_ERoT_BMC_0",
+            "ChassisName": "ERoT_BMC_0",
+            "MctpEid": 0,
+            "APBootStatusType": "QueryBootStatus",
+            "isRecoverable": false,
+            "Type": "GlacierCrisisRecovery"
+        }
+    ],
+    "Name": "Glacier_Crisis_Recovery_Devices",
+    "Probe": "TRUE",
+    "Type": "Recovery_Config"
+}

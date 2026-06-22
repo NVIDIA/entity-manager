@@ -1,0 +1,297 @@
+{
+    "Name": "Nvidia GB200 NVL HMC C1G1 Ariel",
+    "PlatformExposes": [
+        {
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_FPGA_0",
+            "MCTPTargetName": "HGX_ERoT_FPGA_0",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_ERoT_FPGA_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_FPGA_0"
+        },
+        {
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_FPGA_1",
+            "MCTPTargetName": "HGX_ERoT_FPGA_1",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_ERoT_FPGA_1_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_FPGA_1"
+        },
+        {
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_BMC_0",
+            "MCTPTargetName": "HGX_ERoT_BMC_0",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_ERoT_BMC_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/bmc/HGX_BMC_0"
+        },
+        {
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_GPU_0",
+            "MCTPTargetName": "HGX_GPU_0",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_IRoT_GPU_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_0"
+        },
+        {
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_GPU_1",
+            "MCTPTargetName": "HGX_GPU_1",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_IRoT_GPU_1_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_1"
+        },
+        {
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_CPU_0",
+            "MCTPTargetName": "HGX_ERoT_CPU_0",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_ERoT_CPU_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_0/HGX_CPU_0"
+        },
+        {
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_CPU_1",
+            "MCTPTargetName": "HGX_ERoT_CPU_1",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_ERoT_CPU_1_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_1/HGX_CPU_1"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_FPGA_0"
+                    ],
+                    "ComponentIdentifier": 65280,
+                    "Name": "HGX_FW_ERoT_FPGA_0"
+                },
+                {
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_FPGA_0"
+                    ],
+                    "ComponentIdentifier": 80,
+                    "Name": "HGX_FW_FPGA_0"
+                }
+            ],
+            "MCTPTargetName": "HGX_ERoT_FPGA_0",
+            "Name": "HGX_ERoT_FPGA_0_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "StaticEID": 13
+        },
+        {
+            "Components": [
+                {
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_FPGA_1"
+                    ],
+                    "ComponentIdentifier": 65280,
+                    "Name": "HGX_FW_ERoT_FPGA_1"
+                },
+                {
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_FPGA_1"
+                    ],
+                    "ComponentIdentifier": 80,
+                    "Name": "HGX_FW_FPGA_1"
+                }
+            ],
+            "MCTPTargetName": "HGX_ERoT_FPGA_1",
+            "Name": "HGX_ERoT_FPGA_1_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "StaticEID": 21
+        },
+        {
+            "Components": [
+                {
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_BMC_0"
+                    ],
+                    "ComponentIdentifier": 65280,
+                    "Name": "HGX_FW_ERoT_BMC_0"
+                },
+                {
+                    "ComponentIdentifier": 16,
+                    "Name": "HGX_FW_BMC_0",
+                    "UpdateOnly": true
+                }
+            ],
+            "MCTPTargetName": "HGX_ERoT_BMC_0",
+            "Name": "HGX_ERoT_BMC_0_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "StaticEID": 15
+        },
+        {
+            "Components": [
+                {
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_0"
+                    ],
+                    "ComponentIdentifier": 49152,
+                    "Name": "HGX_FW_GPU_0"
+                },
+                {
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_0"
+                    ],
+                    "ComponentIdentifier": 49168,
+                    "Name": "HGX_InfoROM_GPU_0"
+                }
+            ],
+            "MCTPTargetName": "HGX_GPU_0",
+            "Name": "HGX_GPU_0_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "StaticEID": 18
+        },
+        {
+            "Components": [
+                {
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_1"
+                    ],
+                    "ComponentIdentifier": 49152,
+                    "Name": "HGX_FW_GPU_1"
+                },
+                {
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_1"
+                    ],
+                    "ComponentIdentifier": 49168,
+                    "Name": "HGX_InfoROM_GPU_1"
+                }
+            ],
+            "MCTPTargetName": "HGX_GPU_1",
+            "Name": "HGX_GPU_1_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "StaticEID": 26
+        },
+        {
+            "Components": [
+                {
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_CPU_0"
+                    ],
+                    "ComponentIdentifier": 65280,
+                    "Name": "HGX_FW_ERoT_CPU_0"
+                },
+                {
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/component/HGX_CPU_0"
+                    ],
+                    "ComponentIdentifier": 56,
+                    "Name": "HGX_FW_CPU_0"
+                }
+            ],
+            "MCTPTargetName": "HGX_ERoT_CPU_0",
+            "Name": "HGX_ERoT_CPU_0_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "StaticEID": 16
+        },
+        {
+            "Components": [
+                {
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_CPU_1"
+                    ],
+                    "ComponentIdentifier": 65280,
+                    "Name": "HGX_FW_ERoT_CPU_1"
+                },
+                {
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/component/HGX_CPU_1"
+                    ],
+                    "ComponentIdentifier": 56,
+                    "Name": "HGX_FW_CPU_1"
+                }
+            ],
+            "MCTPTargetName": "HGX_ERoT_CPU_1",
+            "Name": "HGX_ERoT_CPU_1_PLDM",
+            "Type": "PLDMFirmwareDevice",
+            "StaticEID": 24
+        }
+    ],
+    "Probe": [
+        "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': 'GB200 1CPU: ?1GPU Board PC'})",
+        "AND",
+        "FOUND('HGX_BMC_0')"
+    ],
+    "Type": "Platform"
+}

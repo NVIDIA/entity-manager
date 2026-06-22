@@ -1,0 +1,31 @@
+{
+    "Exposes": [
+        {
+            "Name": "HGX_FW_FPGA_0",
+            "ChassisName": "HGX_ERoT_FPGA_0",
+            "APBootStatusType": "QueryBootStatus",
+            "MctpEID": 13,
+            "GPIO": "FPGA0_READY-I",
+            "IsERoT": false,
+            "Polarity": "ActiveHigh",
+            "RisingTarget": "nvidia-set-fpga-on.service",
+            "FallingTarget": "nvidia-set-fpga-off.service",
+            "Type": "GPIORecovery"
+        },
+        {
+            "Name": "HGX_FW_FPGA_1",
+            "ChassisName": "HGX_ERoT_FPGA_1",
+            "APBootStatusType": "QueryBootStatus",
+            "MctpEID": 14,
+            "GPIO": "FPGA1_READY-I",
+            "IsERoT": false,
+            "Polarity": "ActiveHigh",
+            "RisingTarget": "nvidia-fpga1-ready.service",
+            "FallingTarget": "nvidia-fpga1-notready.service",
+            "Type": "GPIORecovery"
+        }
+    ],
+    "Name": "GPIO_Recovery_Devices",
+    "Probe": "TRUE",
+    "Type": "Recovery_Config"
+}

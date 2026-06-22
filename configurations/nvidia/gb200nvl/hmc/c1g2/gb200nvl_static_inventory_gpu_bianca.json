@@ -1,0 +1,74 @@
+[
+  {
+    "Exposes": [
+      {
+        "Model":"gb200nvl_hmc_2GPU",
+        "Name": "FlightDataRecorder",
+        "Type": "NvidiaFlightDataRecorder"
+       }
+    ],
+    "Name": "NSM_DEV_BIANCA_GPU_0",
+    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': 'GB[2-3]00( MaxQ)? 1CPU: ?2GPU .*'})",
+    "Type": "NSM_Configs",
+    "xyz.openbmc_project.NsmDevice": {
+      "DEVICE_TYPE": 0,
+      "INSTANCE_NUMBER": 0,
+      "UUID": "STATIC:0:0:MCTP_EID:18",
+      "LOCATION_NUMBER": 0
+    }
+  },
+  {
+    "Exposes": [
+      {
+        "Model":"gb200nvl_hmc_2GPU",
+        "Name": "FlightDataRecorder",
+        "Type": "NvidiaFlightDataRecorder"
+       }
+    ],
+    "Name": "NSM_DEV_BIANCA_GPU_1",
+    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': 'GB[2-3]00( MaxQ)? 1CPU: ?2GPU .*'})",
+    "Type": "NSM_Configs",
+    "xyz.openbmc_project.NsmDevice": {
+      "DEVICE_TYPE": 0,
+      "INSTANCE_NUMBER": 1,
+      "UUID": "STATIC:0:1:MCTP_EID:19",
+      "LOCATION_NUMBER": 1
+    }
+  },
+  {
+    "Exposes": [
+      {
+        "Model":"gb200nvl_hmc_2GPU",
+        "Name": "FlightDataRecorder",
+        "Type": "NvidiaFlightDataRecorder"
+       }
+    ],
+    "Name": "NSM_DEV_BIANCA_GPU_2",
+    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 2, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': 'GB[2-3]00( MaxQ)? 1CPU: ?2GPU .*'})",
+    "Type": "NSM_Configs",
+    "xyz.openbmc_project.NsmDevice": {
+      "DEVICE_TYPE": 0,
+      "INSTANCE_NUMBER": 2,
+      "UUID": "STATIC:0:2:MCTP_EID:26",
+      "LOCATION_NUMBER": 2
+    }
+  },
+  {
+    "Exposes": [
+      {
+        "Model":"gb200nvl_hmc_2GPU",
+        "Name": "FlightDataRecorder",
+        "Type": "NvidiaFlightDataRecorder"
+       }
+    ],
+    "Name": "NSM_DEV_BIANCA_GPU_3",
+    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 2, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': 'GB[2-3]00( MaxQ)? 1CPU: ?2GPU .*'})",
+    "Type": "NSM_Configs",
+    "xyz.openbmc_project.NsmDevice": {
+      "DEVICE_TYPE": 0,
+      "INSTANCE_NUMBER": 3,
+      "UUID": "STATIC:0:3:MCTP_EID:27",
+      "LOCATION_NUMBER": 3
+    }
+  }
+]

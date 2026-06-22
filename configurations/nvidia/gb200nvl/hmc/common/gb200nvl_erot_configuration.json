@@ -1,0 +1,41 @@
+{
+    "Exposes": [
+        {
+            "I2CAddress": 40,
+            "I2CBus": 1,
+            "Name": "HGX_FW_ERoT_CPU_0",
+            "ChassisName": "HGX_ERoT_CPU_0",
+            "MctpEID": 16,
+            "APName": "HGX_FW_CPU_0",
+            "APEID": 17,
+            "APBootStatusType": "QueryBootStatus",
+            "isRecoverable": true,
+            "HiddenByFPGA": true,
+            "Type": "GlacierCrisisRecovery"
+        },
+        {
+            "I2CAddress": 40,
+            "I2CBus": 2,
+            "Name": "HGX_FW_ERoT_CPU_1",
+            "ChassisName": "HGX_ERoT_CPU_1",
+            "MctpEID": 24,
+            "APName": "HGX_FW_CPU_1",
+            "APEID": 17,
+            "APBootStatusType": "QueryBootStatus",
+            "isRecoverable": true,
+            "HiddenByFPGA": true,
+            "Type": "GlacierCrisisRecovery"
+        },
+        {
+            "Name": "HGX_FW_ERoT_BMC_0",
+            "ChassisName": "HGX_ERoT_BMC_0",
+            "MctpEID": 15,
+            "APBootStatusType": "QueryBootStatus",
+            "isRecoverable": false,
+            "Type": "GlacierCrisisRecovery"
+        }
+    ],
+    "Name": "Glacier_Crisis_Recovery_Devices",
+    "Probe": "TRUE",
+    "Type": "Recovery_Config"
+}
