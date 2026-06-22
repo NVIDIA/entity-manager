@@ -2,174 +2,16 @@
     {
         "Exposes": [
             {
-                "Address": "0x50",
                 "Bus": "0x09",
+                "Address": "0x50",
                 "Name": "PDB_0",
                 "Type": "EEPROM_24C02"
             },
             {
-                "Address": "0x10",
-                "Bus": 9,
-                "Labels": [
-                    "iin",
-                    "pin",
-                    "temp1",
-                    "vout1",
-                    "vin"
-                ],
-                "Name": "PDB_0_HSC_0",
-                "Thresholds": [
-                    {
-                        "Direction": "greater than",
-                        "Label": "temp1",
-                        "Name": "upper non critical",
-                        "Severity": 0,
-                        "Value": 126.0
-                    }
-                ],
-                "Type": "MP5926",
-                "iin_Name": "PDB_0_HSC_0_Cur_0",
-                "iin_Offset": 0,
-                "iin_Scale": 1000,
-                "pin_Name": "PDB_0_HSC_0_Pwr_0",
-                "pin_Offset": 0,
-                "pin_Scale": 1000000,
-                "temp1_Name": "PDB_0_HSC_0_Temp_0",
-                "temp1_Offset": 0,
-                "temp1_Scale": 1000,
-                "vin_Name": "PDB_0_HSC_0_Volt_In_0",
-                "vin_Offset": 0,
-                "vin_Scale": 1000,
-                "vout1_Name": "PDB_0_HSC_0_Volt_Out_0",
-                "vout1_Offset": 0,
-                "vout1_Scale": 1000
-            },
-            {
-                "Address": "0x12",
-                "Bus": 9,
-                "Labels": [
-                    "iin",
-                    "pin",
-                    "temp1",
-                    "vout1",
-                    "vin"
-                ],
-                "Name": "PDB_0_HSC_1",
-                "Thresholds": [
-                    {
-                        "Direction": "greater than",
-                        "Label": "temp1",
-                        "Name": "upper non critical",
-                        "Severity": 0,
-                        "Value": 126.0
-                    }
-                ],
-                "Type": "MP5926",
-                "iin_Name": "PDB_0_HSC_1_Cur_0",
-                "iin_Offset": 0,
-                "iin_Scale": 1000,
-                "pin_Name": "PDB_0_HSC_1_Pwr_0",
-                "pin_Offset": 0,
-                "pin_Scale": 1000000,
-                "temp1_Name": "PDB_0_HSC_1_Temp_0",
-                "temp1_Offset": 0,
-                "temp1_Scale": 1000,
-                "vin_Name": "PDB_0_HSC_1_Volt_In_0",
-                "vin_Offset": 0,
-                "vin_Scale": 1000,
-                "vout1_Name": "PDB_0_HSC_1_Volt_Out_0",
-                "vout1_Offset": 0,
-                "vout1_Scale": 1000
-            },
-            {
-                "Address": "0x14",
-                "Bus": 9,
-                "Labels": [
-                    "iin",
-                    "pin",
-                    "temp1",
-                    "vout1",
-                    "vin"
-                ],
-                "Name": "PDB_0_HSC_2",
-                "Thresholds": [
-                    {
-                        "Direction": "greater than",
-                        "Label": "temp1",
-                        "Name": "upper non critical",
-                        "Severity": 0,
-                        "Value": 126.0
-                    }
-                ],
-                "Type": "MP5926",
-                "iin_Name": "PDB_0_HSC_2_Cur_0",
-                "iin_Offset": 0,
-                "iin_Scale": 1000,
-                "pin_Name": "PDB_0_HSC_2_Pwr_0",
-                "pin_Offset": 0,
-                "pin_Scale": 1000000,
-                "temp1_Name": "PDB_0_HSC_2_Temp_0",
-                "temp1_Offset": 0,
-                "temp1_Scale": 1000,
-                "vin_Name": "PDB_0_HSC_2_Volt_In_0",
-                "vin_Offset": 0,
-                "vin_Scale": 1000,
-                "vout1_Name": "PDB_0_HSC_2_Volt_Out_0",
-                "vout1_Offset": 0,
-                "vout1_Scale": 1000
-            },
-            {
-                "Address": "0x16",
-                "Bus": 9,
-                "Labels": [
-                    "iin",
-                    "pin",
-                    "temp1",
-                    "vout1",
-                    "vin"
-                ],
-                "Name": "PDB_0_HSC_3",
-                "Thresholds": [
-                    {
-                        "Direction": "greater than",
-                        "Label": "temp1",
-                        "Name": "upper non critical",
-                        "Severity": 0,
-                        "Value": 126.0
-                    }
-                ],
-                "Type": "MP5926",
-                "iin_Name": "PDB_0_HSC_3_Cur_0",
-                "iin_Offset": 0,
-                "iin_Scale": 1000,
-                "pin_Name": "PDB_0_HSC_3_Pwr_0",
-                "pin_Offset": 0,
-                "pin_Scale": 1000000,
-                "temp1_Name": "PDB_0_HSC_3_Temp_0",
-                "temp1_Offset": 0,
-                "temp1_Scale": 1000,
-                "vin_Name": "PDB_0_HSC_3_Volt_In_0",
-                "vin_Offset": 0,
-                "vin_Scale": 1000,
-                "vout1_Name": "PDB_0_HSC_3_Volt_Out_0",
-                "vout1_Offset": 0,
-                "vout1_Scale": 1000
-            },
-            {
-                "Name": "PDB_0_TotalHSC_Power_0",
-                "SensorParams": [
-                    {
-                        "MaxValue": 9000.0,
-                        "MinValue": 0.0
-                    }
-                ],
-                "SensorsToSum": [
-                    "PDB_0_HSC_0_Pwr_0",
-                    "PDB_0_HSC_1_Pwr_0",
-                    "PDB_0_HSC_2_Pwr_0",
-                    "PDB_0_HSC_3_Pwr_0"
-                ],
-                "Type": "SummationSensor"
+                "Name": "PDB_GLB_WP",
+                "GpioLine": "PDB_GLB_WP-O",
+                "Polarity": "active_high",
+                "Type": "WriteProtect"
             },
             {
                 "Address": "0x4e",
@@ -204,16 +46,203 @@
                 "Type": "TMP1075"
             },
             {
-                "GpioLine": "PDB_GLB_WP-O",
-                "Name": "PDB_GLB_WP",
-                "Polarity": "active_high",
-                "Type": "WriteProtect"
+                "Address": "0x10",
+                "Bus": 9,
+                "Labels": [
+                    "iin",
+                    "pin",
+                    "temp1",
+                    "vout1",
+                    "vin"
+                ],
+                "Name": "PDB_0_HSC_0",
+                "Type": "MP5926",
+                "iin_Name": "PDB_0_HSC_0_Cur_0",
+                "iin_Scale": 1000,
+                "iin_Offset": 0,
+                "pin_Name": "PDB_0_HSC_0_Pwr_0",
+                "pin_Scale": 1000000,
+                "pin_Offset": 0,
+                "temp1_Name": "PDB_0_HSC_0_Temp_0",
+                "temp1_Scale": 1000,
+                "temp1_Offset": 0,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 126.0,
+                        "Label": "temp1"
+                    }
+                ],
+                "vout1_Name": "PDB_0_HSC_0_Volt_Out_0",
+                "vout1_Scale": 1000,
+                "vout1_Offset": 0,
+                "vin_Name": "PDB_0_HSC_0_Volt_In_0",
+                "vin_Scale": 1000,
+                "vin_Offset": 0
+            },
+            {
+                "Address": "0x12",
+                "Bus": 9,
+                "Labels": [
+                    "iin",
+                    "pin",
+                    "temp1",
+                    "vout1",
+                    "vin"
+                ],
+                "Name": "PDB_0_HSC_1",
+                "Type": "MP5926",
+                "iin_Name": "PDB_0_HSC_1_Cur_0",
+                "iin_Scale": 1000,
+                "iin_Offset": 0,
+                "pin_Name": "PDB_0_HSC_1_Pwr_0",
+                "pin_Scale": 1000000,
+                "pin_Offset": 0,
+                "temp1_Name": "PDB_0_HSC_1_Temp_0",
+                "temp1_Scale": 1000,
+                "temp1_Offset": 0,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 126.0,
+                        "Label": "temp1"
+                    }
+                ],
+                "vout1_Name": "PDB_0_HSC_1_Volt_Out_0",
+                "vout1_Scale": 1000,
+                "vout1_Offset": 0,
+                "vin_Name": "PDB_0_HSC_1_Volt_In_0",
+                "vin_Scale": 1000,
+                "vin_Offset": 0
+            },
+            {
+                "Address": "0x14",
+                "Bus": 9,
+                "Labels": [
+                    "iin",
+                    "pin",
+                    "temp1",
+                    "vout1",
+                    "vin"
+                ],
+                "Name": "PDB_0_HSC_2",
+                "Type": "MP5926",
+                "iin_Name": "PDB_0_HSC_2_Cur_0",
+                "iin_Scale": 1000,
+                "iin_Offset": 0,
+                "pin_Name": "PDB_0_HSC_2_Pwr_0",
+                "pin_Scale": 1000000,
+                "pin_Offset": 0,
+                "temp1_Name": "PDB_0_HSC_2_Temp_0",
+                "temp1_Scale": 1000,
+                "temp1_Offset": 0,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 126.0,
+                        "Label": "temp1"
+                    }
+                ],
+                "vout1_Name": "PDB_0_HSC_2_Volt_Out_0",
+                "vout1_Scale": 1000,
+                "vout1_Offset": 0,
+                "vin_Name": "PDB_0_HSC_2_Volt_In_0",
+                "vin_Scale": 1000,
+                "vin_Offset": 0
+            },
+            {
+                "Address": "0x16",
+                "Bus": 9,
+                "Labels": [
+                    "iin",
+                    "pin",
+                    "temp1",
+                    "vout1",
+                    "vin"
+                ],
+                "Name": "PDB_0_HSC_3",
+                "Type": "MP5926",
+                "iin_Name": "PDB_0_HSC_3_Cur_0",
+                "iin_Scale": 1000,
+                "iin_Offset": 0,
+                "pin_Name": "PDB_0_HSC_3_Pwr_0",
+                "pin_Scale": 1000000,
+                "pin_Offset": 0,
+                "temp1_Name": "PDB_0_HSC_3_Temp_0",
+                "temp1_Scale": 1000,
+                "temp1_Offset": 0,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 126.0,
+                        "Label": "temp1"
+                    }
+                ],
+                "vout1_Name": "PDB_0_HSC_3_Volt_Out_0",
+                "vout1_Scale": 1000,
+                "vout1_Offset": 0,
+                "vin_Name": "PDB_0_HSC_3_Volt_In_0",
+                "vin_Scale": 1000,
+                "vin_Offset": 0
+            },
+            {
+                "Name": "PDB_0_TotalHSC_Power_0",
+                "Type": "SummationSensor",
+                "SensorsToSum": [
+                    "PDB_0_HSC_0_Pwr_0",
+                    "PDB_0_HSC_1_Pwr_0",
+                    "PDB_0_HSC_2_Pwr_0",
+                    "PDB_0_HSC_3_Pwr_0"
+                ],
+                "SensorParams": [
+                    {
+                        "MinValue": 0.0,
+                        "MaxValue": 9000.0
+                    }
+                ]
             }
         ],
         "Name": "PDB_0",
-        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 9, 'ADDRESS': 80})",
         "Type": "Board",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER",
+            "ChassisType": "$CHASSIS_TYPE",
+            "ChassisPartNumber": "$CHASSIS_PART_NUMBER",
+            "ChassisSerial": "$CHASSIS_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Bus": "0x09",
+            "Address": "0x50",
+            "Name": "PDB_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "PDB_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "Chassis_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": true
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
@@ -232,35 +261,6 @@
                     "/xyz/openbmc_project/inventory/system/assembly/PDB_0_Product_FRU_Assembly2"
                 ]
             ]
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Asset": {
-            "ChassisPartNumber": "$CHASSIS_PART_NUMBER",
-            "ChassisSerial": "$CHASSIS_SERIAL_NUMBER",
-            "ChassisType": "$CHASSIS_TYPE",
-            "Manufacturer": "$BOARD_MANUFACTURER",
-            "Model": "$BOARD_PRODUCT_NAME",
-            "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-            "Address": "0x50",
-            "Bus": "0x09",
-            "Name": "PDB_0"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Location": {
-            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode": "PDB_0"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-            "LocationContext": "Chassis_0"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
-            "FieldReplaceable": true
-        },
-        "xyz.openbmc_project.Inventory.Item.Chassis": {
-            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
         }
     },
     {
@@ -268,8 +268,8 @@
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 9, 'ADDRESS': 80})",
         "Type": "Assembly",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
-            "Manufacturer": "NVIDIA",
             "Model": "$BOARD_PRODUCT_NAME",
+            "Manufacturer": "NVIDIA",
             "PartNumber": "$CHASSIS_PART_NUMBER",
             "SerialNumber": "$CHASSIS_SERIAL_NUMBER"
         },
@@ -285,11 +285,11 @@
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 9, 'ADDRESS': 80})",
         "Type": "Assembly",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
-            "BuildDate": "$BOARD_MANUFACTURE_DATE",
-            "Manufacturer": "$BOARD_MANUFACTURER",
             "Model": "$BOARD_PRODUCT_NAME",
             "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+            "SerialNumber": "$BOARD_SERIAL_NUMBER",
+            "BuildDate": "$BOARD_MANUFACTURE_DATE",
+            "Manufacturer": "$BOARD_MANUFACTURER"
         },
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
@@ -302,20 +302,20 @@
         "Name": "PDB_0 Product FRU Assembly2",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 9, 'ADDRESS': 80})",
         "Type": "Assembly",
-        "xyz.openbmc_project.Inventory.Decorator.Area": {
-            "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.Board"
-        },
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
-            "Manufacturer": "$PRODUCT_MANUFACTURER",
             "Model": "$PRODUCT_PRODUCT_NAME",
             "PartNumber": "$PRODUCT_PART_NUMBER",
-            "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER",
+            "Manufacturer": "$PRODUCT_MANUFACTURER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Revision": {
+            "Version": "$PRODUCT_VERSION"
         },
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
         },
-        "xyz.openbmc_project.Inventory.Decorator.Revision": {
-            "Version": "$PRODUCT_VERSION"
+        "xyz.openbmc_project.Inventory.Decorator.Area": {
+            "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.Board"
         },
         "xyz.openbmc_project.State.Decorator.Health": {
             "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
