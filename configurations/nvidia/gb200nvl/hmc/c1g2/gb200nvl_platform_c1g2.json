@@ -659,12 +659,6 @@
             "Type": "Dump"
         }
     ],
-    "Probe": [
-        "xyz.openbmc_project.FruDevice({'BUS': 0, 'ADDRESS': 0, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
-        "AND",
-        "FOUND('HGX_BMC_0')",
-        "AND",
-        "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': 'GB[2-3]00( MaxQ)? 1CPU: ?2GPU .*'})"
-    ],
+    "Probe": "TRUE",
     "Type": "Platform"
 }
