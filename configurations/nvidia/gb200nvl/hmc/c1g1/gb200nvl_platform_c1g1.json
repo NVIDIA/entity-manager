@@ -2,6 +2,89 @@
     "Name": "Nvidia GB200 NVL HMC C1G1 Ariel",
     "PlatformExposes": [
         {
+            "Bus": "0",
+            "ChipSelect": "2",
+            "Name": "HGX_ERoT_BMC_0",
+            "StaticEndpointID": "10",
+            "Type": "MCTPSPIDevice"
+        },
+        {
+            "BridgeName": "HGX_FPGA_0",
+            "Name": "HGX_ERoT_FPGA_0",
+            "PoolIndex": 0,
+            "Type": "MCTPBridgePoolDevice"
+        },
+        {
+            "BridgeName": "HGX_FPGA_0",
+            "Name": "HGX_ERoT_BMC_0_USB",
+            "PoolIndex": 2,
+            "Type": "MCTPBridgePoolDevice"
+        },
+        {
+            "BridgeName": "HGX_FPGA_0",
+            "Name": "HGX_CPU_0",
+            "PoolIndex": 3,
+            "Type": "MCTPBridgePoolDevice"
+        },
+        {
+            "BridgeName": "HGX_FPGA_0",
+            "Name": "HGX_SATMC",
+            "PoolIndex": 4,
+            "Type": "MCTPBridgePoolDevice"
+        },
+        {
+            "BridgeName": "HGX_FPGA_0",
+            "Name": "HGX_GPU_0",
+            "PoolIndex": 5,
+            "Type": "MCTPBridgePoolDevice"
+        },
+        {
+            "BridgeName": "HGX_FPGA_0",
+            "Name": "HGX_GPU_1",
+            "PoolIndex": 6,
+            "Type": "MCTPBridgePoolDevice"
+        },
+        {
+            "BridgeName": "HGX_FPGA_0",
+            "Name": "HGX_FPGA_1",
+            "PoolIndex": 7,
+            "Type": "MCTPBridgePoolDevice"
+        },
+        {
+            "BridgeName": "HGX_FPGA_0",
+            "Name": "HGX_ERoT_FPGA_1",
+            "PoolIndex": 8,
+            "Type": "MCTPBridgePoolDevice"
+        },
+        {
+            "BridgeName": "HGX_FPGA_0",
+            "Name": "HGX_CPU_1",
+            "PoolIndex": 11,
+            "Type": "MCTPBridgePoolDevice"
+        },
+        {
+            "BridgePoolEndEID": "24",
+            "BridgePoolStartEID": "13",
+            "BridgedEndpoints": [
+                "HGX_ERoT_FPGA_0",
+                "HGX_ERoT_BMC_0_USB",
+                "HGX_CPU_0",
+                "HGX_SATMC",
+                "HGX_GPU_0",
+                "HGX_GPU_1",
+                "HGX_FPGA_1",
+                "HGX_ERoT_FPGA_1",
+                "HGX_CPU_1"
+            ],
+            "Configuration": 1,
+            "InterfaceNum": 0,
+            "Name": "HGX_FPGA_0",
+            "Port": "1",
+            "RootHubPath": "/sys/devices/platform/ahb/1e6a1000.usb",
+            "StaticEndpointID": "12",
+            "Type": "MCTPUSBDevice"
+        },
+        {
             "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_FPGA_0",
             "MCTPTargetName": "HGX_ERoT_FPGA_0",
             "Manufacturer": "NVIDIA",
