@@ -8,6 +8,128 @@
     "PlatformExposes": [
         {
             "Name": "ERoT_BMC_0",
+            "Type": "Dump",
+            "SupportedDumps": [
+                "RoT",
+                "FwAttrs",
+                "HwCheckout",
+                "FPGA"
+            ],
+            "Pages": [
+                {
+                    "Idx": "Module1_Page0",
+                    "Bus": 1,
+                    "SlaveAddr": "0x0b",
+                    "RegAddr": "0x00",
+                    "Size": 256
+                },
+                {
+                    "Idx": "Module1_Page0",
+                    "Bus": 1,
+                    "SlaveAddr": "0x11",
+                    "RegAddr": "0x00",
+                    "Page": "0x00",
+                    "Size": 256
+                },
+                {
+                    "Idx": "Module1_Page1",
+                    "Bus": 1,
+                    "SlaveAddr": "0x11",
+                    "RegAddr": "0x00",
+                    "Page": "0x01",
+                    "Size": 256
+                },
+                {
+                    "Idx": "Module1_Page2",
+                    "Bus": 1,
+                    "SlaveAddr": "0x11",
+                    "RegAddr": "0x00",
+                    "Page": "0x02",
+                    "Size": 256
+                },
+                {
+                    "Idx": "Module1_Page3",
+                    "Bus": 1,
+                    "SlaveAddr": "0x11",
+                    "RegAddr": "0x00",
+                    "Page": "0x03",
+                    "Size": 256
+                },
+                {
+                    "Idx": "Module1_Page4",
+                    "Bus": 1,
+                    "SlaveAddr": "0x11",
+                    "RegAddr": "0x00",
+                    "Page": "0x04",
+                    "Size": 256
+                },
+                {
+                    "Idx": "Module1_Page5",
+                    "Bus": 1,
+                    "SlaveAddr": "0x11",
+                    "RegAddr": "0x00",
+                    "Page": "0x05",
+                    "Size": 256
+                },
+                {
+                    "Idx": "Module0_Page0",
+                    "Bus": 2,
+                    "SlaveAddr": "0x0b",
+                    "RegAddr": "0x00",
+                    "Size": 256
+                },
+                {
+                    "Idx": "Module0_Page0",
+                    "Bus": 2,
+                    "SlaveAddr": "0x11",
+                    "RegAddr": "0x00",
+                    "Page": "0x00",
+                    "Size": 256
+                },
+                {
+                    "Idx": "Module0_Page1",
+                    "Bus": 2,
+                    "SlaveAddr": "0x11",
+                    "RegAddr": "0x00",
+                    "Page": "0x01",
+                    "Size": 256
+                },
+                {
+                    "Idx": "Module0_Page2",
+                    "Bus": 2,
+                    "SlaveAddr": "0x11",
+                    "RegAddr": "0x00",
+                    "Page": "0x02",
+                    "Size": 256
+                },
+                {
+                    "Idx": "Module0_Page3",
+                    "Bus": 2,
+                    "SlaveAddr": "0x11",
+                    "RegAddr": "0x00",
+                    "Page": "0x03",
+                    "Size": 256
+                },
+                {
+                    "Idx": "Module0_Page4",
+                    "Bus": 2,
+                    "SlaveAddr": "0x11",
+                    "RegAddr": "0x00",
+                    "Page": "0x04",
+                    "Size": 256
+                },
+                {
+                    "Idx": "Module0_Page5",
+                    "Bus": 2,
+                    "SlaveAddr": "0x11",
+                    "RegAddr": "0x00",
+                    "Page": "0x05",
+                    "Size": 256
+                }
+            ]
+        },
+        {
+            "Name": "ERoT_BMC_0",
             "Type": "MCTPSPIDevice",
             "Bus": "0",
             "ChipSelect": "2",
