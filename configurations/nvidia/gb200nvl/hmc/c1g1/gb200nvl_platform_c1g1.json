@@ -507,14 +507,14 @@
             "Type": "Dump"
         },
         {
-            "Name": "HGX_ERoT_CPU_0",
+            "Name": "HGX_CPU_0",
             "SupportedDumps": [
                 "RoT"
             ],
             "Type": "Dump"
         },
         {
-            "Name": "HGX_ERoT_CPU_1",
+            "Name": "HGX_CPU_1",
             "SupportedDumps": [
                 "RoT"
             ],
