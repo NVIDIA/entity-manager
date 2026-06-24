@@ -365,7 +365,6 @@ configs = [
     'nvidia/gb200nvl/hmc/common/gb200nvl_erot_cpu_chassis.json',
     'nvidia/gb200nvl/hmc/common/gb200nvl_erot_fpga_chassis.json',
     'nvidia/gb200nvl/hmc/common/gb200nvl_gpio_configuration.json',
-    'nvidia/gb200nvl/hmc/common/gb200nvl_mctp_hmc_target_configuration.json',
     'nvidia/gb200nvl/hmc/common/gb200nvl_memory_systems_cpu.json',
     'nvidia/gb200nvl/hmc/common/gb200nvl_processor_systems_cpu.json',
     'nvidia/gb200nvl/hmc/common/gb200nvl_static_inventory.json',
