@@ -104,7 +104,8 @@
             "Manufacturer": "NVIDIA",
             "Name": "HGX_ERoT_FPGA_0_DevInv",
             "Type": "PLDMDeviceInventory",
-            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_FPGA_0"
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_FPGA_0",
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
         },
         {
             "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_FPGA_1",
@@ -112,7 +113,8 @@
             "Manufacturer": "NVIDIA",
             "Name": "HGX_ERoT_FPGA_1_DevInv",
             "Type": "PLDMDeviceInventory",
-            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_FPGA_1"
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_FPGA_1",
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
         },
         {
             "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_BMC_0",
@@ -120,7 +122,8 @@
             "Manufacturer": "NVIDIA",
             "Name": "HGX_ERoT_BMC_0_DevInv",
             "Type": "PLDMDeviceInventory",
-            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/bmc/HGX_BMC_0"
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/bmc/HGX_BMC_0",
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
         },
         {
             "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_GPU_0",
@@ -128,7 +131,8 @@
             "Manufacturer": "NVIDIA",
             "Name": "HGX_IRoT_GPU_0_DevInv",
             "Type": "PLDMDeviceInventory",
-            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_0"
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_0",
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
         },
         {
             "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_GPU_1",
@@ -136,7 +140,8 @@
             "Manufacturer": "NVIDIA",
             "Name": "HGX_IRoT_GPU_1_DevInv",
             "Type": "PLDMDeviceInventory",
-            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_1"
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_1",
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
         },
         {
             "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_GPU_2",
@@ -144,7 +149,8 @@
             "Manufacturer": "NVIDIA",
             "Name": "HGX_IRoT_GPU_2_DevInv",
             "Type": "PLDMDeviceInventory",
-            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_2"
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_2",
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
         },
         {
             "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_GPU_3",
@@ -152,7 +158,8 @@
             "Manufacturer": "NVIDIA",
             "Name": "HGX_IRoT_GPU_3_DevInv",
             "Type": "PLDMDeviceInventory",
-            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_3"
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_3",
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
         },
         {
             "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_CPU_0",
@@ -160,7 +167,8 @@
             "Manufacturer": "NVIDIA",
             "Name": "HGX_ERoT_CPU_0_DevInv",
             "Type": "PLDMDeviceInventory",
-            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_0/HGX_CPU_0"
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_0/HGX_CPU_0",
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
         },
         {
             "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_CPU_1",
@@ -168,7 +176,8 @@
             "Manufacturer": "NVIDIA",
             "Name": "HGX_ERoT_CPU_1_DevInv",
             "Type": "PLDMDeviceInventory",
-            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_1/HGX_CPU_1"
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_1/HGX_CPU_1",
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
         },
         {
             "Components": [
