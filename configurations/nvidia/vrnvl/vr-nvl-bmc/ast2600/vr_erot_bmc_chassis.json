@@ -143,6 +143,10 @@
         "xyz.openbmc_project.Inventory.Item.Chassis": {
             "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
         },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "NVIDIA",
+            "SerialNumber": ""
+        },
         "xyz.openbmc_project.Common.UUID": {
             "UUID": ""
         },
