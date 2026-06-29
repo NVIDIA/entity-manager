@@ -207,6 +207,14 @@
             "PollingInterval": "5"
         },
         {
+            "Name": "NVME_0",
+            "Type": "MCTPI2CTarget",
+            "Bus": "8",
+            "Address": "0x1D",
+            "StaticEndpointID": "210",
+            "PollingInterval": "5"
+        },
+        {
             "Name": "ERoT_BMC_0_PLDM",
             "Type": "PLDMFirmwareDevice",
             "MCTPTargetName": "ERoT_BMC_0",
