@@ -89,7 +89,6 @@ static boost::container::flat_map<
     std::pair<size_t, size_t>, std::shared_ptr<sdbusplus::asio::dbus_interface>>
     foundDevices;
 
-static boost::container::flat_map<size_t, std::set<size_t>> failedAddresses;
 static boost::container::flat_map<size_t, std::set<size_t>> fruAddresses;
 
 boost::asio::io_context io;
@@ -521,7 +520,6 @@ int getBusFRUs(int file, int first, int last, int bus,
 
         // Scan for i2c eeproms loaded on this bus.
         std::set<size_t> skipList = findI2CEeproms(bus, devices);
-        std::set<size_t>& failedItems = failedAddresses[bus];
         std::set<size_t>& foundItems = fruAddresses[bus];
         foundItems.clear();
 
@@ -537,7 +535,6 @@ int getBusFRUs(int file, int first, int last, int bus,
             }
         }
 
-        std::set<size_t>* rootFailures = nullptr;
         int rootBus = getRootBus(bus);
 
         for (const auto& pair : addressBlacklist)
@@ -564,7 +561,6 @@ int getBusFRUs(int file, int first, int last, int bus,
                     }
                 }
             }
-            rootFailures = &(failedAddresses[rootBus]);
             foundItems = fruAddresses[rootBus];
         }
 
@@ -606,30 +602,12 @@ int getBusFRUs(int file, int first, int last, int bus,
 
             makeProbeInterface(bus, ii, objServer);
 
-            if (failedItems.contains(ii))
-            {
-                // if we failed to read it once, unlikely we can read it later
-                continue;
-            }
-
-            if (rootFailures != nullptr)
-            {
-                if (rootFailures->contains(ii))
-                {
-                    continue;
-                }
-            }
-
             /* Check for Device type if it is 8 bit or 16 bit */
             std::optional<bool> is16Bit = isDevice16Bit(file, ii);
             if (!is16Bit.has_value())
             {
-                std::cerr << "failed to read bus " << bus << " address " << ii
-                          << "\n";
-                if (powerIsOn)
-                {
-                    failedItems.insert(ii);
-                }
+                lg2::error("failed to read bus {BUS} address {ADDR}", "BUS",
+                           bus, "ADDR", ii);
                 continue;
             }
             bool is16BitBool{*is16Bit};
