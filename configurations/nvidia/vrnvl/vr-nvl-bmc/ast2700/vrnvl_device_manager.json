@@ -1,0 +1,194 @@
+{
+    "Name": "VRNVL BMC Platform Recovery",
+    "Type": "PlatformRecoveryConfiguration",
+    "Probe": "TRUE",
+    "Exposes": [
+        {
+            "Name": "BMC_0",
+            "DeviceType": "BMC",
+            "PhysicalInterface": "",
+            "DeviceAddress": "MCTP:30",
+            "ConnectsToName": "",
+            "ResetGPIO": "",
+            "RecoveryLayers": "",
+            "poweredInStandby": true,
+            "Type": "PlatformDevice"
+        },
+        {
+            "Name": "IROT_BMC_0",
+            "DeviceType": "IROT",
+            "PhysicalInterface": "",
+            "DeviceAddress": "MCTP:9",
+            "ConnectsToName": "BMC_0",
+            "ResetGPIO": "",
+            "RecoveryLayers": "",
+            "poweredInStandby": true,
+            "Type": "PlatformDevice"
+        },
+        {
+            "Name": "ProcessorModule_SMA_0",
+            "DeviceType": "MCTPBridge",
+            "PhysicalInterface": "usb1:0x0955:0xcf11:2.1.1",
+            "DeviceAddress": "MCTP:45",
+            "ConnectsToName": "BMC_0",
+            "ResetGPIO": "",
+            "RecoveryLayers": "",
+            "poweredInStandby": true,
+            "Type": "PlatformDevice"
+        },
+        {
+            "Name": "ProcessorModule_SMA_1",
+            "DeviceType": "MCTPBridge",
+            "PhysicalInterface": "usb1:0x0955:0xcf11:2.2.1",
+            "DeviceAddress": "MCTP:40",
+            "ConnectsToName": "BMC_0",
+            "ResetGPIO": "",
+            "RecoveryLayers": "",
+            "poweredInStandby": true,
+            "Type": "PlatformDevice"
+        },
+        {
+            "Name": "IO_Board_SMA_0",
+            "DeviceType": "MCTPBridge",
+            "PhysicalInterface": "usb1:0x0955:0xcf11:2.1.4.1",
+            "DeviceAddress": "MCTP:60",
+            "ConnectsToName": "BMC_0",
+            "ResetGPIO": "",
+            "RecoveryLayers": "",
+            "poweredInStandby": true,
+            "Type": "PlatformDevice"
+        },
+        {
+            "Name": "CX_0",
+            "DeviceType": "MCTPEndpoint",
+            "PhysicalInterface": "",
+            "DeviceAddress": "MCTP:62",
+            "ConnectsToName": "IO_Board_SMA_0",
+            "ResetGPIO": "",
+            "RecoveryLayers": "",
+            "poweredInStandby": true,
+            "Type": "PlatformDevice"
+        },
+        {
+            "Name": "CX_1",
+            "DeviceType": "MCTPEndpoint",
+            "PhysicalInterface": "",
+            "DeviceAddress": "MCTP:64",
+            "ConnectsToName": "IO_Board_SMA_0",
+            "ResetGPIO": "",
+            "RecoveryLayers": "",
+            "poweredInStandby": true,
+            "Type": "PlatformDevice"
+        },
+        {
+            "Name": "IO_Board_SMA_1",
+            "DeviceType": "MCTPBridge",
+            "PhysicalInterface": "usb1:0x0955:0xcf11:2.1.3.1",
+            "DeviceAddress": "MCTP:70",
+            "ConnectsToName": "BMC_0",
+            "ResetGPIO": "",
+            "RecoveryLayers": "",
+            "poweredInStandby": true,
+            "Type": "PlatformDevice"
+        },
+        {
+            "Name": "CX_2",
+            "DeviceType": "MCTPEndpoint",
+            "PhysicalInterface": "",
+            "DeviceAddress": "MCTP:72",
+            "ConnectsToName": "IO_Board_SMA_1",
+            "ResetGPIO": "",
+            "RecoveryLayers": "",
+            "poweredInStandby": true,
+            "Type": "PlatformDevice"
+        },
+        {
+            "Name": "CX_3",
+            "DeviceType": "MCTPEndpoint",
+            "PhysicalInterface": "",
+            "DeviceAddress": "MCTP:74",
+            "ConnectsToName": "IO_Board_SMA_1",
+            "ResetGPIO": "",
+            "RecoveryLayers": "",
+            "poweredInStandby": true,
+            "Type": "PlatformDevice"
+        },
+        {
+            "Name": "IO_Board_SMA_2",
+            "DeviceType": "MCTPBridge",
+            "PhysicalInterface": "usb1:0x0955:0xcf11:2.2.3.1",
+            "DeviceAddress": "MCTP:80",
+            "ConnectsToName": "BMC_0",
+            "ResetGPIO": "",
+            "RecoveryLayers": "",
+            "poweredInStandby": true,
+            "Type": "PlatformDevice"
+        },
+        {
+            "Name": "CX_4",
+            "DeviceType": "MCTPEndpoint",
+            "PhysicalInterface": "",
+            "DeviceAddress": "MCTP:82",
+            "ConnectsToName": "IO_Board_SMA_2",
+            "ResetGPIO": "",
+            "RecoveryLayers": "",
+            "poweredInStandby": true,
+            "Type": "PlatformDevice"
+        },
+        {
+            "Name": "CX_5",
+            "DeviceType": "MCTPEndpoint",
+            "PhysicalInterface": "",
+            "DeviceAddress": "MCTP:84",
+            "ConnectsToName": "IO_Board_SMA_2",
+            "ResetGPIO": "",
+            "RecoveryLayers": "",
+            "poweredInStandby": true,
+            "Type": "PlatformDevice"
+        },
+        {
+            "Name": "IO_Board_SMA_3",
+            "DeviceType": "MCTPBridge",
+            "PhysicalInterface": "usb1:0x0955:0xcf11:2.2.4.1",
+            "DeviceAddress": "MCTP:90",
+            "ConnectsToName": "BMC_0",
+            "ResetGPIO": "",
+            "RecoveryLayers": "",
+            "poweredInStandby": true,
+            "Type": "PlatformDevice"
+        },
+        {
+            "Name": "CX_6",
+            "DeviceType": "MCTPEndpoint",
+            "PhysicalInterface": "",
+            "DeviceAddress": "MCTP:92",
+            "ConnectsToName": "IO_Board_SMA_3",
+            "ResetGPIO": "",
+            "RecoveryLayers": "",
+            "poweredInStandby": true,
+            "Type": "PlatformDevice"
+        },
+        {
+            "Name": "CX_7",
+            "DeviceType": "MCTPEndpoint",
+            "PhysicalInterface": "",
+            "DeviceAddress": "MCTP:94",
+            "ConnectsToName": "IO_Board_SMA_3",
+            "ResetGPIO": "",
+            "RecoveryLayers": "",
+            "poweredInStandby": true,
+            "Type": "PlatformDevice"
+        },
+        {
+            "Name": "Bay_C_SMA_0",
+            "DeviceType": "MCTPBridge",
+            "PhysicalInterface": "usb1:0x1d6b:0x0104:1.4.1",
+            "DeviceAddress": "MCTP:55",
+            "ConnectsToName": "BMC_0",
+            "ResetGPIO": "",
+            "RecoveryLayers": "",
+            "poweredInStandby": true,
+            "Type": "PlatformDevice"
+        }
+    ]
+}

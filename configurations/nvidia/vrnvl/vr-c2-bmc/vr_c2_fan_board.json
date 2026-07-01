@@ -887,12 +887,14 @@
             },
             {
                 "Class": "temp",
-                "InputUnavailableAsFailed": true,
+                "InputUnavailableAsFailed": false,
                 "Inputs": [
-                    "StorageBackplane_0_SSD_0_Temp_0",
-                    "StorageBackplane_0_SSD_1_Temp_0"
+                    "NVMe_E1S_SSD0_Temp_0"
                 ],
-                "Name": "STEPWISE_NVME_0_1",
+                "MissingIsAcceptable": [
+                    "NVMe_E1S_SSD0_Temp_0"
+                ],
+                "Name": "STEPWISE_NVME_0",
                 "NegativeHysteresis": 8,
                 "Output": [
                     30.0,
@@ -938,12 +940,63 @@
                 "Class": "temp",
                 "InputUnavailableAsFailed": false,
                 "Inputs": [
-                    "StorageBackplane_0_SSD_2_Temp_0",
-                    "StorageBackplane_0_SSD_3_Temp_0"
+                    "NVMe_E1S_SSD1_Temp_0"
                 ],
                 "MissingIsAcceptable": [
-                    "StorageBackplane_0_SSD_2_Temp_0",
-                    "StorageBackplane_0_SSD_3_Temp_0"
+                    "NVMe_E1S_SSD1_Temp_0"
+                ],
+                "Name": "STEPWISE_NVME_1",
+                "NegativeHysteresis": 8,
+                "Output": [
+                    30.0,
+                    35.0,
+                    40.0,
+                    45.0,
+                    50.0,
+                    55.0,
+                    60.0,
+                    65.0,
+                    70.0,
+                    75.0,
+                    80.0,
+                    85.0,
+                    90.0,
+                    95.0,
+                    100.0
+                ],
+                "PositiveHysteresis": 0,
+                "Reading": [
+                    44.6,
+                    46.8,
+                    49.0,
+                    51.2,
+                    53.4,
+                    55.6,
+                    57.8,
+                    60.0,
+                    65.0,
+                    70.0,
+                    73.0,
+                    76.0,
+                    79.0,
+                    82.0,
+                    85.0
+                ],
+                "Type": "Stepwise",
+                "Zones": [
+                    "Zone0"
+                ]
+            },
+            {
+                "Class": "temp",
+                "InputUnavailableAsFailed": false,
+                "Inputs": [
+                    "NVMe_E1S_SSD2_Temp_0",
+                    "NVMe_E1S_SSD3_Temp_0"
+                ],
+                "MissingIsAcceptable": [
+                    "NVMe_E1S_SSD2_Temp_0",
+                    "NVMe_E1S_SSD3_Temp_0"
                 ],
                 "Name": "STEPWISE_NVME_2_3",
                 "NegativeHysteresis": 8,
@@ -991,16 +1044,16 @@
                 "Class": "temp",
                 "InputUnavailableAsFailed": false,
                 "Inputs": [
-                    "StorageBackplane_0_SSD_4_Temp_0",
-                    "StorageBackplane_0_SSD_5_Temp_0",
-                    "StorageBackplane_0_SSD_6_Temp_0",
-                    "StorageBackplane_0_SSD_7_Temp_0"
+                    "NVMe_E1S_SSD4_Temp_0",
+                    "NVMe_E1S_SSD5_Temp_0",
+                    "NVMe_E1S_SSD6_Temp_0",
+                    "NVMe_E1S_SSD7_Temp_0"
                 ],
                 "MissingIsAcceptable": [
-                    "StorageBackplane_0_SSD_4_Temp_0",
-                    "StorageBackplane_0_SSD_5_Temp_0",
-                    "StorageBackplane_0_SSD_6_Temp_0",
-                    "StorageBackplane_0_SSD_7_Temp_0"
+                    "NVMe_E1S_SSD4_Temp_0",
+                    "NVMe_E1S_SSD5_Temp_0",
+                    "NVMe_E1S_SSD6_Temp_0",
+                    "NVMe_E1S_SSD7_Temp_0"
                 ],
                 "Name": "STEPWISE_NVME_4_7",
                 "NegativeHysteresis": 8,

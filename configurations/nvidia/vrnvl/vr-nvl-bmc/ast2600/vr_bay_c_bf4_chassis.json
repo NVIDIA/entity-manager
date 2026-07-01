@@ -350,14 +350,14 @@
             },
             {
                 "GpioLine": "BF4_GLOBAL_WP",
-                "Name": "BF4_GLOBAL_WP",
+                "Name": "BAY_C_GLOBAL_WP",
                 "Polarity": "active_high",
                 "Type": "WriteProtect"
             }
         ],
         "Name": "BlueField_0",
         "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
-        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 2, 'DEVICE_ROLE': 'BF4B4'})",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 2, 'DEVICE_ROLE': 'BAYCB4'})",
         "Type": "chassis",
         "xyz.openbmc_project.Inventory.Decorator.Instance": {
             "InstanceNumber": "$INSTANCE_NUMBER"

@@ -2,7 +2,7 @@
     "Exposes": [
         {
             "ChassisName": "IRoT_CX_0",
-            "EID": 62,
+            "EID": 61,
             "ForceRecoveryChassisObject": "IRoT_CX_0",
             "I2CAddress": 72,
             "I2CBus": 78,
@@ -13,7 +13,7 @@
         },
         {
             "ChassisName": "IRoT_CX_1",
-            "EID": 64,
+            "EID": 63,
             "ForceRecoveryChassisObject": "IRoT_CX_1",
             "I2CAddress": 74,
             "I2CBus": 78,
@@ -24,7 +24,7 @@
         },
         {
             "ChassisName": "IRoT_CX_2",
-            "EID": 72,
+            "EID": 71,
             "ForceRecoveryChassisObject": "IRoT_CX_2",
             "I2CAddress": 72,
             "I2CBus": 79,
@@ -35,7 +35,7 @@
         },
         {
             "ChassisName": "IRoT_CX_3",
-            "EID": 74,
+            "EID": 73,
             "ForceRecoveryChassisObject": "IRoT_CX_3",
             "I2CAddress": 74,
             "I2CBus": 79,
@@ -46,7 +46,7 @@
         },
         {
             "ChassisName": "IRoT_CX_4",
-            "EID": 82,
+            "EID": 81,
             "ForceRecoveryChassisObject": "IRoT_CX_4",
             "I2CAddress": 72,
             "I2CBus": 80,
@@ -57,7 +57,7 @@
         },
         {
             "ChassisName": "IRoT_CX_5",
-            "EID": 84,
+            "EID": 83,
             "ForceRecoveryChassisObject": "IRoT_CX_5",
             "I2CAddress": 74,
             "I2CBus": 80,
@@ -68,7 +68,7 @@
         },
         {
             "ChassisName": "IRoT_CX_6",
-            "EID": 92,
+            "EID": 91,
             "ForceRecoveryChassisObject": "IRoT_CX_6",
             "I2CAddress": 72,
             "I2CBus": 81,
@@ -79,7 +79,7 @@
         },
         {
             "ChassisName": "IRoT_CX_7",
-            "EID": 94,
+            "EID": 93,
             "ForceRecoveryChassisObject": "IRoT_CX_7",
             "I2CAddress": 74,
             "I2CBus": 81,

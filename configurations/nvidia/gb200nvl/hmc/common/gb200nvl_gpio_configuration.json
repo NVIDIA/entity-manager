@@ -10,6 +10,7 @@
             "Polarity": "ActiveHigh",
             "RisingTarget": "nvidia-set-fpga-on.service",
             "FallingTarget": "nvidia-set-fpga-off.service",
+            "HideWhenHealthy": true,
             "Type": "GPIORecovery"
         },
         {
@@ -22,6 +23,7 @@
             "Polarity": "ActiveHigh",
             "RisingTarget": "nvidia-fpga1-ready.service",
             "FallingTarget": "nvidia-fpga1-notready.service",
+            "HideWhenHealthy": true,
             "Type": "GPIORecovery"
         }
     ],

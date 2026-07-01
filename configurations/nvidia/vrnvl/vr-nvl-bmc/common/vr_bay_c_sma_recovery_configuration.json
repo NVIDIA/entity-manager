@@ -1,11 +1,11 @@
 {
     "Exposes": [
         {
-            "ChassisName": "BlueField_SMA_0",
-            "ForceRecoveryChassisObject": "BlueField_SMA_0",
+            "ChassisName": "Bay_C_SMA_0",
+            "ForceRecoveryChassisObject": "Bay_C_SMA_0",
             "Interface": "USB",
             "MctpEID": 55,
-            "Name": "FW_BlueField_SMA_0",
+            "Name": "FW_Bay_C_SMA_0",
             "ProductId": "0xCF11",
             "RecoveryGpioName": "BF4_USB_MCU_RECOVERY_L",
             "ResetGpioName": "BF4_USB_MCU_RST_L",
@@ -16,7 +16,7 @@
             "hasChassisPowerSource": false
         }
     ],
-    "Name": "BF4_SMA_Recovery_Devices",
+    "Name": "BAY_C_SMA_Recovery_Devices",
     "Probe": "TRUE",
     "Type": "Recovery_Config"
 }

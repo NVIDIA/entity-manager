@@ -37,11 +37,11 @@
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
         },
-        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode": "SOCAMM_0"
-        },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
+        },
+        "xyz.openbmc_project.Inventory.Item": {
+            "Present": false
         }
     },
     {
@@ -52,11 +52,11 @@
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
         },
-        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode": "SOCAMM_1"
-        },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
+        },
+        "xyz.openbmc_project.Inventory.Item": {
+            "Present": false
         }
     },
     {
@@ -67,11 +67,11 @@
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
         },
-        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode": "SOCAMM_2"
-        },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
+        },
+        "xyz.openbmc_project.Inventory.Item": {
+            "Present": false
         }
     },
     {
@@ -82,11 +82,11 @@
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
         },
-        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode": "SOCAMM_3"
-        },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
+        },
+        "xyz.openbmc_project.Inventory.Item": {
+            "Present": false
         }
     },
     {
@@ -97,11 +97,11 @@
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
         },
-        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode": "SOCAMM_4"
-        },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
+        },
+        "xyz.openbmc_project.Inventory.Item": {
+            "Present": false
         }
     },
     {
@@ -112,11 +112,11 @@
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
         },
-        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode": "SOCAMM_5"
-        },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
+        },
+        "xyz.openbmc_project.Inventory.Item": {
+            "Present": false
         }
     },
     {
@@ -127,11 +127,11 @@
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
         },
-        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode": "SOCAMM_6"
-        },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
+        },
+        "xyz.openbmc_project.Inventory.Item": {
+            "Present": false
         }
     },
     {
@@ -142,11 +142,11 @@
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
         },
-        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode": "SOCAMM_7"
-        },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
+        },
+        "xyz.openbmc_project.Inventory.Item": {
+            "Present": false
         }
     },
     {
@@ -157,11 +157,11 @@
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
         },
-        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode": "SOCAMM_8"
-        },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
+        },
+        "xyz.openbmc_project.Inventory.Item": {
+            "Present": false
         }
     },
     {
@@ -172,11 +172,11 @@
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
         },
-        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode": "SOCAMM_9"
-        },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
+        },
+        "xyz.openbmc_project.Inventory.Item": {
+            "Present": false
         }
     },
     {
@@ -187,11 +187,11 @@
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
         },
-        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode": "SOCAMM_10"
-        },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
+        },
+        "xyz.openbmc_project.Inventory.Item": {
+            "Present": false
         }
     },
     {
@@ -202,11 +202,11 @@
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
         },
-        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode": "SOCAMM_11"
-        },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
+        },
+        "xyz.openbmc_project.Inventory.Item": {
+            "Present": false
         }
     },
     {
@@ -217,11 +217,11 @@
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
         },
-        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode": "SOCAMM_12"
-        },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
+        },
+        "xyz.openbmc_project.Inventory.Item": {
+            "Present": false
         }
     },
     {
@@ -232,11 +232,11 @@
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
         },
-        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode": "SOCAMM_13"
-        },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
+        },
+        "xyz.openbmc_project.Inventory.Item": {
+            "Present": false
         }
     },
     {
@@ -247,11 +247,11 @@
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
         },
-        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode": "SOCAMM_14"
-        },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
+        },
+        "xyz.openbmc_project.Inventory.Item": {
+            "Present": false
         }
     },
     {
@@ -262,11 +262,11 @@
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
         },
-        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode": "SOCAMM_15"
-        },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
+        },
+        "xyz.openbmc_project.Inventory.Item": {
+            "Present": false
         }
     }
 ]

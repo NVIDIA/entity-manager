@@ -4,18 +4,18 @@
             {
                 "Associations": [
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_CX_0",
                         "Backward": "pciedevice",
                         "Forward": "chassis"
                     }
                 ],
                 "ChassisAttributes": {
-                    "Name": "BlueField_0",
+                    "Name": "Bay_C_CX_0",
                     "Type": "NSM_Chassis_Attributes"
                 },
-                "ChassisName": "BlueField_0",
+                "ChassisName": "Bay_C_CX_0",
                 "DEVICE_UUID": "$DEVICE_UUID",
-                "Name": "BlueField_0",
+                "Name": "Bay_C_CX_0",
                 "PCIeDevice": {
                     "Type": "NSM_MultiPortPCIeDevice"
                 },
@@ -25,19 +25,19 @@
             {
                 "Associations": [
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_CX_0",
                         "Backward": "all_switches",
                         "Forward": "parent_chassis"
                     },
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/PCIeTopology_BlueField_0",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/PCIeTopology_Bay_C_CX_0",
                         "Backward": "all_switches",
                         "Forward": "fabrics"
                     }
                 ],
                 "DeviceInstance": 0,
-                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/fabrics/PCIeTopology_BlueField_0/Switches/",
-                "Name": "BlueField_Switch_0",
+                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/fabrics/PCIeTopology_Bay_C_CX_0/Switches/",
+                "Name": "Bay_C_CX_Switch_0",
                 "Priority": false,
                 "Type": "NSM_MultiPortPCIeSwitchDevice",
                 "UUID": "$UUID"
@@ -50,18 +50,18 @@
                     "Type": "NSM_Chassis_Attributes"
                 },
                 "DeviceResetSupported": true,
-                "Name": "BlueField_0",
+                "Name": "Bay_C_CX_0",
                 "Type": "NSM_NVLinkMgmtNic_Chassis",
                 "UUID": "$UUID"
             },
             {
                 "ChassisAttributes": {
                     "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot",
-                    "Name": "BlueField_0 Device Assembly",
+                    "Name": "Bay_C_CX_0 Device Assembly",
                     "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.Board",
                     "Type": "NSM_Chassis_Attributes"
                 },
-                "ChassisName": "BlueField_0",
+                "ChassisName": "Bay_C_CX_0",
                 "Name": "Assembly0",
                 "Type": "NSM_NVLinkMgmtNic_ChassisAssembly",
                 "UUID": "$UUID"
@@ -70,7 +70,7 @@
                 "Count": 2,
                 "DeviceType": "$DEVICE_TYPE",
                 "Name": "Port",
-                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0/NetworkAdapters/BlueField_NIC_0",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_CX_0/NetworkAdapters/Bay_C_CX_NIC_0",
                 "Priority": false,
                 "Type": "NSM_NVLinkWithNetworkPortAddresses",
                 "UUID": "$UUID"
@@ -78,58 +78,58 @@
             {
                 "Associations": [
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_CX_0",
                         "Backward": "network_adapters",
                         "Forward": "parent_chassis"
                     },
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/sensors/temperature/BlueField_0_Temp_0",
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/temperature/Bay_C_CX_0_Temp_0",
                         "Backward": "network_adapter",
                         "Forward": ""
                     },
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/sensors/power/BlueField_0_Power_0",
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/power/Bay_C_CX_0_Power_0",
                         "Backward": "network_adapter",
                         "Forward": ""
                     },
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/sensors/temperature/BlueField_NIC_0_Port_0_Temp_0",
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/temperature/Bay_C_CX_NIC_0_Port_0_Temp_0",
                         "Backward": "network_adapter",
                         "Forward": ""
                     },
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/sensors/temperature/BlueField_NIC_0_Port_1_Temp_0",
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/temperature/Bay_C_CX_NIC_0_Port_1_Temp_0",
                         "Backward": "network_adapter",
                         "Forward": ""
                     }
                 ],
-                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0/NetworkAdapters/",
-                "Name": "BlueField_NIC_0",
+                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_CX_0/NetworkAdapters/",
+                "Name": "Bay_C_CX_NIC_0",
                 "Type": "NSM_NetworkAdapter",
                 "UUID": "$UUID"
             },
             {
                 "Associations": [
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_CX_0",
                         "Backward": "fabrics",
                         "Forward": "chassis"
                     },
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/PCIeTopology_BlueField_0/Switches/BlueField_Switch_0",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/PCIeTopology_Bay_C_CX_0/Switches/Bay_C_CX_Switch_0",
                         "Backward": "fabrics",
                         "Forward": "all_switches"
                     }
                 ],
                 "FabricType": "xyz.openbmc_project.Inventory.Item.Fabric.FabricType.PCIe",
-                "Name": "PCIeTopology_BlueField_0",
+                "Name": "PCIeTopology_Bay_C_CX_0",
                 "Type": "NSM_PCIeRetimer_Fabrics",
                 "UUID": "$UUID"
             },
             {
                 "Associations": [
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/PCIeTopology_BlueField_0/Switches/BlueField_Switch_0",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/PCIeTopology_Bay_C_CX_0/Switches/Bay_C_CX_Switch_0",
                         "Backward": "all_states",
                         "Forward": "parent_device"
                     }
@@ -139,7 +139,7 @@
                     1,
                     1
                 ],
-                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/fabrics/PCIeTopology_BlueField_0/Switches/BlueField_Switch_0/Ports/",
+                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/fabrics/PCIeTopology_Bay_C_CX_0/Switches/Bay_C_CX_Switch_0/Ports/",
                 "Name": "UP",
                 "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.UpstreamPort",
                 "Priority": false,
@@ -152,23 +152,23 @@
                 ]
             },
             {
-                "Name": "BlueField_0_Association",
+                "Name": "Bay_C_CX_0_Association",
                 "Type": "NsmDeviceAssociation",
                 "UUID": "$UUID"
             },
             {
                 "AuxNames": [
-                    "BlueField_0"
+                    "Bay_C_CX_0"
                 ],
-                "Name": "BlueField_0_AUX",
+                "Name": "Bay_C_CX_0_AUX",
                 "SensorId": 5,
                 "Type": "SensorAuxName"
             },
             {
                 "AuxNames": [
-                    "BlueField_NIC_0"
+                    "Bay_C_CX_NIC_0"
                 ],
-                "Name": "BlueField_NIC_0_AUX",
+                "Name": "Bay_C_CX_NIC_0_AUX",
                 "SensorId": 60,
                 "Type": "SensorAuxName"
             },
@@ -176,7 +176,7 @@
                 "AuxNames": [
                     "Port_0"
                 ],
-                "Name": "BlueField_NIC_0_Port_0_AUX",
+                "Name": "Bay_C_CX_NIC_0_Port_0_AUX",
                 "SensorId": 200,
                 "Type": "SensorAuxName"
             },
@@ -184,43 +184,43 @@
                 "AuxNames": [
                     "Port_1"
                 ],
-                "Name": "BlueField_NIC_0_Port_1_AUX",
+                "Name": "Bay_C_CX_NIC_0_Port_1_AUX",
                 "SensorId": 201,
                 "Type": "SensorAuxName"
             },
             {
                 "AuxNames": [
-                    "BlueField_0_Temp_0"
+                    "Bay_C_CX_0_Temp_0"
                 ],
-                "Name": "BlueField_0_Temp_0",
-                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+                "Name": "Bay_C_CX_0_Temp_0",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_CX_0",
                 "SensorId": 300,
                 "Type": "SensorAuxName"
             },
             {
                 "AuxNames": [
-                    "BlueField_0_Power_0"
+                    "Bay_C_CX_0_Power_0"
                 ],
-                "Name": "BlueField_0_Power_0",
-                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+                "Name": "Bay_C_CX_0_Power_0",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_CX_0",
                 "SensorId": 50,
                 "Type": "SensorAuxName"
             },
             {
                 "AuxNames": [
-                    "BlueField_NIC_0_Port_0_Temp_0"
+                    "Bay_C_CX_NIC_0_Port_0_Temp_0"
                 ],
-                "Name": "BlueField_NIC_0_Port_0_Temp_0",
-                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+                "Name": "Bay_C_CX_NIC_0_Port_0_Temp_0",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_CX_0",
                 "SensorId": 500,
                 "Type": "SensorAuxName"
             },
             {
                 "AuxNames": [
-                    "BlueField_NIC_0_Port_1_Temp_0"
+                    "Bay_C_CX_NIC_0_Port_1_Temp_0"
                 ],
-                "Name": "BlueField_NIC_0_Port_1_Temp_0",
-                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+                "Name": "Bay_C_CX_NIC_0_Port_1_Temp_0",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_CX_0",
                 "SensorId": 501,
                 "Type": "SensorAuxName"
             },
@@ -228,10 +228,10 @@
                 "Association": [
                     "associated_port",
                     "associated_port",
-                    "/xyz/openbmc_project/inventory/system/chassis/BlueField_0/NetworkAdapters/BlueField_NIC_0/Ports/Port_0"
+                    "/xyz/openbmc_project/inventory/system/chassis/Bay_C_CX_0/NetworkAdapters/Bay_C_CX_NIC_0/Ports/Port_0"
                 ],
                 "MaxSpeedMBps": 50000,
-                "Name": "BlueField_NIC_0_Port_0_INFO",
+                "Name": "Bay_C_CX_NIC_0_Port_0_INFO",
                 "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
                 "SensorId": 200,
                 "Type": "SensorPortInfo"
@@ -240,24 +240,24 @@
                 "Association": [
                     "associated_port",
                     "associated_port",
-                    "/xyz/openbmc_project/inventory/system/chassis/BlueField_0/NetworkAdapters/BlueField_NIC_0/Ports/Port_1"
+                    "/xyz/openbmc_project/inventory/system/chassis/Bay_C_CX_0/NetworkAdapters/Bay_C_CX_NIC_0/Ports/Port_1"
                 ],
                 "MaxSpeedMBps": 50000,
-                "Name": "BlueField_NIC_0_Port_1_INFO",
+                "Name": "Bay_C_CX_NIC_0_Port_1_INFO",
                 "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
                 "SensorId": 201,
                 "Type": "SensorPortInfo"
             },
             {
                 "GpioLine": "BF4_GLOBAL_WP",
-                "Name": "BF4_GLOBAL_WP",
+                "Name": "BAY_C_GLOBAL_WP",
                 "Polarity": "active_high",
                 "Type": "WriteProtect"
             }
         ],
-        "Name": "BlueField_0",
+        "Name": "Bay_C_CX_0",
         "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
-        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 2, 'DEVICE_ROLE': 'BF4C9'})",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 2, 'DEVICE_ROLE': 'BAYCC9'})",
         "Type": "chassis",
         "xyz.openbmc_project.Inventory.Decorator.Instance": {
             "InstanceNumber": "$INSTANCE_NUMBER"

@@ -3,15 +3,8 @@
         "Exposes": [
             {
                 "ChassisPath": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
-                "CriticalThresholdsmV": [
-                    1650
-                ],
-                "MaxThresholdsmV": [
-                    1815
-                ],
-                "MinThresholdsmV": [
-                    165
-                ],
+                "MaxValue": 3.3,
+                "MinValue": 0,
                 "Name": "Chassis_0_LeakDetector_$INSTANCE_NUMBER",
                 "SensorIdMap": [
                     0

@@ -8,6 +8,7 @@
             "I2CBus": 1,
             "I2CAddress": 82,
             "HiddenByFPGA": false,
+            "HideWhenHealthy": true,
             "Target": "hmc-recovery.target",
             "Type": "GPIORecovery"
         },
@@ -19,6 +20,7 @@
             "I2CBus": 2,
             "I2CAddress": 114,
             "HiddenByFPGA": false,
+            "HideWhenHealthy": true,
             "Target": "fpga0-erot-recovery.target",
             "Type": "GPIORecovery"
         },
@@ -30,6 +32,7 @@
             "I2CBus": 1,
             "I2CAddress": 114,
             "HiddenByFPGA": false,
+            "HideWhenHealthy": true,
             "Target": "fpga1-erot-recovery.target",
             "Type": "GPIORecovery"
         },
@@ -41,6 +44,7 @@
             "Polarity": "ActiveHigh",
             "RisingTarget": "hmc-ready.service",
             "FallingTarget": "hmc-notready.service",
+            "HideWhenHealthy": true,
             "Type": "GPIORecovery"
         }
     ],

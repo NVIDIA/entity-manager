@@ -1,0 +1,96 @@
+[
+    {
+        "Exposes": [
+            {
+                "Programmer": "nv_sma_spi",
+                "Chip": "MX25U51245G",
+                "USBPort": ".*-1.1.1",
+                "ChipSelect": 0,
+                "Gpio": [
+                    {
+                        "GpioLine": "OOB_MUX_CTRL0-O",
+                        "ActiveValue": "high",
+                        "DeactiveValue": "low"
+                    }
+                ],
+                "TargetFirmware": "FW_CPU_0",
+                "InventoryObjPath": "/xyz/openbmc_project/inventory/system",
+                "Name": "BootSPI_0",
+                "Type": "SPI"
+            }
+        ],
+        "Name": "ProcessorModule_0_SBIOS_BootFlash_0",
+        "Probe": "TRUE",
+        "Type": "Module"
+    },
+    {
+        "Exposes": [
+            {
+                "Programmer": "nv_sma_spi",
+                "Chip": "MX25U51245G",
+                "USBPort": ".*-1.2.1",
+                "ChipSelect": 0,
+                "Gpio": [
+                    {
+                        "GpioLine": "SEC_OOB_MUX_CTRL0-O",
+                        "ActiveValue": "high",
+                        "DeactiveValue": "low"
+                    }
+                ],
+                "TargetFirmware": "FW_CPU_1",
+                "InventoryObjPath": "/xyz/openbmc_project/inventory/system",
+                "Name": "BootSPI_1",
+                "Type": "SPI"
+            }
+        ],
+        "Name": "ProcessorModule_1_SBIOS_BootFlash_0",
+        "Probe": "TRUE",
+        "Type": "Module"
+    },
+    {
+        "Exposes": [
+            {
+                "Programmer": "nv_sma_spi",
+                "Chip": "MX25U51245G",
+                "USBPort": ".*-1.1.1",
+                "ChipSelect": 1,
+                "Gpio": [
+                    {
+                        "GpioLine": "OOB_MUX_CTRL1-O",
+                        "ActiveValue": "high",
+                        "DeactiveValue": "low"
+                    }
+                ],
+                "InventoryObjPath": "/xyz/openbmc_project/inventory/system",
+                "Name": "RWSPI_0",
+                "Type": "SPI"
+            }
+        ],
+        "Name": "ProcessorModule_0_SBIOS_RWFlash_0",
+        "Probe": "TRUE",
+        "Type": "Chassis"
+    },
+    {
+        "Exposes": [
+            {
+                "Programmer": "nv_sma_spi",
+                "Chip": "MX25U51245G",
+                "USBPort": ".*-1.2.1",
+                "ChipSelect": 1,
+                "Gpio": [
+                    {
+                        "GpioLine": "SEC_OOB_MUX_CTRL1-O",
+                        "ActiveValue": "high",
+                        "DeactiveValue": "low"
+                    }
+                ],
+                "InventoryObjPath": "/xyz/openbmc_project/inventory/system",
+                "Name": "RWSPI_1",
+                "Type": "SPI"
+            }
+        ],
+        "Name": "ProcessorModule_1_SBIOS_RWFlash_0",
+        "Probe": "TRUE",
+        "Type": "Chassis"
+    }
+]

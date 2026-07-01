@@ -1,0 +1,208 @@
+[
+    {
+        "Exposes": [
+            {
+                "Name": "BMC_FRU_WP",
+                "GpioLine": "BMC_FRU_WP-O",
+                "Polarity": "active_high",
+                "Type": "WriteProtect"
+            },
+            {
+                "Name": "GLOBAL_WP",
+                "GpioLine": "GLOBAL_WP-O",
+                "Polarity": "active_high",
+                "Type": "WriteProtect"
+            },
+            {
+                "Name": "PDB_GLB_WP",
+                "GpioLine": "PDB_GLB_WP-O",
+                "Polarity": "active_high",
+                "Type": "WriteProtect"
+            },
+            {
+                "Name": "Chassis_0_LeakDetector_0_Policy",
+                "CriticalReactionType": "None",
+                "ReactionDelaySeconds": 0,
+                "LeakDetectorName": "Chassis_0_LeakDetector_0",
+                "Type": "LeakDetectionPolicy"
+            },
+            {
+                "Name": "Chassis_0_LeakDetector_1_Policy",
+                "CriticalReactionType": "None",
+                "ReactionDelaySeconds": 0,
+                "LeakDetectorName": "Chassis_0_LeakDetector_1",
+                "Type": "LeakDetectionPolicy"
+            }
+        ],
+        "Name": "Chassis_0",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 0, 'ADDRESS': 80})"
+        ],
+        "Type": "Chassis",
+        "xyz.openbmc_project.Inventory.Item.System": {},
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "NVIDIA",
+            "Model": "VR200 NVL72",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER",
+            "ChassisType": "$CHASSIS_TYPE",
+            "ChassisPartNumber": "$CHASSIS_PART_NUMBER",
+            "ChassisSerial": "$CHASSIS_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.AssetTag": {
+            "AssetTag": "$PRODUCT_ASSET_TAG"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Bus": "$bus",
+            "Address": "$address",
+            "Name": "Chassis_0"
+        },
+        "xyz.openbmc_project.Association.Definitions": {
+            "Associations": [
+                [
+                    "assembly",
+                    "parent_chassis",
+                    "/xyz/openbmc_project/inventory/system/assembly/PDB_Chassis_FRU_Assembly0"
+                ],
+                [
+                    "activation",
+                    "inventory",
+                    "/xyz/openbmc_project/software/UEFI"
+                ]
+            ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Backplane"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "Chassis_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": ""
+        }
+    },
+    {
+        "Name": "PDB Chassis FRU Assembly0",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 0, 'ADDRESS': 80})"
+        ],
+        "Type": "Assembly",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$CHASSIS_PART_NUMBER",
+            "SerialNumber": "$CHASSIS_SERIAL_NUMBER",
+            "Manufacturer": "NVIDIA"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    },
+    {
+      "Exposes": [
+            {
+                "Name": "B0_M0_GLOBAL_WP",
+                "GpioLine": "B0_M0_GLOBAL_WP-O",
+                "Polarity": "active_high",
+                "Type": "WriteProtect"
+            }
+        ],
+        "Name": "Chassis_0",
+        "Type": "Chassis",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 90, 'ADDRESS': 80})"
+        ]
+    },
+    {
+      "Exposes": [
+            {
+                "Name": "B1_M0_GLOBAL_WP",
+                "GpioLine": "B1_M0_GLOBAL_WP-O",
+                "Polarity": "active_high",
+                "Type": "WriteProtect"
+            }
+        ],
+        "Name": "Chassis_0",
+        "Type": "Chassis",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 90, 'ADDRESS': 81})"
+        ]
+    },
+    {
+      "Exposes": [
+            {
+                "Name": "GLOBAL_WP",
+                "GpioLine": "GLOBAL_WP-O",
+                "Polarity": "active_high",
+                "Type": "WriteProtect"
+            }
+        ],
+        "Name": "Chassis_0",
+        "Type": "Chassis",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 14, 'ADDRESS': 80})"
+        ]
+    },
+    {
+      "Exposes": [
+            {
+                "Name": "IOB0_GLOBAL_WP",
+                "GpioLine": "IOB0_GLOBAL_WP-O",
+                "Polarity": "active_high",
+                "Type": "WriteProtect"
+            }
+        ],
+        "Name": "Chassis_0",
+        "Type": "Chassis",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 73, 'ADDRESS': 80})"
+        ]
+    },
+    {
+      "Exposes": [
+            {
+                "Name": "IOB1_GLOBAL_WP",
+                "GpioLine": "IOB1_GLOBAL_WP-O",
+                "Polarity": "active_high",
+                "Type": "WriteProtect"
+            }
+        ],
+        "Name": "Chassis_0",
+        "Type": "Chassis",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 74, 'ADDRESS': 80})"
+        ]
+    },
+    {
+      "Exposes": [
+            {
+                "Name": "IOB2_GLOBAL_WP",
+                "GpioLine": "IOB2_GLOBAL_WP-O",
+                "Polarity": "active_high",
+                "Type": "WriteProtect"
+            }
+        ],
+        "Name": "Chassis_0",
+        "Type": "Chassis",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 75, 'ADDRESS': 80})"
+        ]
+    },
+    {
+      "Exposes": [
+            {
+                "Name": "IOB3_GLOBAL_WP",
+                "GpioLine": "IOB3_GLOBAL_WP-O",
+                "Polarity": "active_high",
+                "Type": "WriteProtect"
+            }
+        ],
+        "Name": "Chassis_0",
+        "Type": "Chassis",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 76, 'ADDRESS': 80})"
+        ]
+    }
+]

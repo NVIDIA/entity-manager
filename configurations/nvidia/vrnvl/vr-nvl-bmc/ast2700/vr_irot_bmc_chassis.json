@@ -1,0 +1,138 @@
+[
+  {
+    "Exposes": [
+      {
+        "Name": "IRoT_BMC_0",
+        "Type": "NSM_ChassisIRoTResponder",
+        "UUID": "$UUID",
+        "ChassisAttributes": {
+          "Type": "NSM_Chassis_Attributes",
+          "Name": "BMC_0 IRoT",
+          "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+          "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "Associations": [
+          {
+            "Forward": "inventory",
+            "Backward": "associated_ROT",
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/bmc/BMC_0"
+          },
+          {
+            "Forward": "inventory_chassis",
+            "Backward": "associated_chassis",
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/bmc/BMC_0"
+          },
+          {
+            "Forward": "parent_chassis",
+            "Backward": "all_chassis",
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/bmc/BMC_0"
+          }
+        ]
+      },
+      {
+        "Name": "IRoT_BMC_0",
+        "Type": "NSM_ChassisRoT",
+        "UUID": "$UUID",
+        "SlotCount": 4,
+        "DeviceType": "$DEVICE_TYPE",
+        "ImageCopyEnabled": true,
+        "SetRotPropertyList": ["FAILOVER_POLICY"],
+        "Chassis": {
+          "Type": "NSM_Chassis",
+          "DEVICE_UUID": "$DEVICE_UUID"
+        }
+      },
+      {
+        "ChassisName": "BMC_0",
+        "Name": "Slot1",
+        "Type": "NSM_RoT_Slot",
+        "FirmwareType": "AP",
+        "SlotType": "Active",
+        "ComponentClassification": 13,
+        "ComponentIdentifier": 10,
+        "ComponentIndex": 0,
+        "IsRoT": true,
+        "ReportSkuWithNsm": true,
+        "SetRotPropertyList": ["AP_SKU_ID"],
+        "Associations": [
+          {
+            "Forward": "software",
+            "Backward": "ActiveSlot",
+            "AbsolutePath": "/xyz/openbmc_project/software/FW_BMC_0"
+          },
+          {
+            "Forward": "inventory_SKU",
+            "Backward": "associated_SKU",
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/bmc/BMC_0"
+          }
+        ]
+      },
+      {
+        "ChassisName": "BMC_0",
+        "Name": "Slot2",
+        "Type": "NSM_RoT_Slot",
+        "FirmwareType": "AP",
+        "SlotType": "InActive",
+        "ComponentClassification": 13,
+        "ComponentIdentifier": 10,
+        "ComponentIndex": 0,
+        "IsRoT": true,
+        "Associations": [
+          {
+            "Forward": "software",
+            "Backward": "InactiveSlot",
+            "AbsolutePath": "/xyz/openbmc_project/software/FW_BMC_0"
+          }
+        ]
+      },
+      {
+        "ChassisName": "BMC_Caliptra_0",
+        "Name": "Slot3",
+        "Type": "NSM_RoT_Slot",
+        "FirmwareType": "AP",
+        "SlotType": "Active",
+        "ComponentClassification": 10,
+        "ComponentIdentifier": 11,
+        "ComponentIndex": 0,
+        "Associations": [
+          {
+            "Forward": "software",
+            "Backward": "ActiveSlot",
+            "AbsolutePath": "/xyz/openbmc_project/software/FW_BMC_Caliptra_0"
+          }
+        ]
+      },
+      {
+        "ChassisName": "BMC_Caliptra_0",
+        "Name": "Slot4",
+        "Type": "NSM_RoT_Slot",
+        "FirmwareType": "AP",
+        "SlotType": "InActive",
+        "ComponentClassification": 10,
+        "ComponentIdentifier": 11,
+        "ComponentIndex": 0,
+        "Associations": [
+          {
+            "Forward": "software",
+            "Backward": "InactiveSlot",
+            "AbsolutePath": "/xyz/openbmc_project/software/FW_BMC_Caliptra_0"
+          }
+        ]
+      },
+      {
+        "ChassisName": "IRoT_BMC_0",
+        "Name": "DebugToken",
+        "Type": "NSM_DebugToken",
+        "UUID": "$UUID",
+        "DebugTokenType": ["Unified"],
+        "DebugTokenDeviceType": "BMCIRoT"
+      }
+    ],
+    "Name": "IRoT_BMC_0",
+    "Type": "chassis",
+    "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 4, 'INSTANCE_NUMBER': 0})",
+    "xyz.openbmc_project.Inventory.Decorator.Instance": {
+      "InstanceNumber": 0
+    }
+  }
+]

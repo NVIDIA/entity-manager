@@ -2,7 +2,7 @@
     {
       "Exposes": [
         {
-          "Name": "IRoT_BlueField_SMA_$INSTANCE_NUMBER",
+          "Name": "IRoT_Bay_C_SMA_0$INSTANCE_NUMBER",
           "Type": "NSM_Chassis",
           "UUID": "$UUID",
           "SlotCount": 2,
@@ -12,7 +12,7 @@
             {
               "Forward": "parent_chassis",
               "Backward": "chassis",
-              "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_SMA_$INSTANCE_NUMBER"
+              "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_SMA_0$INSTANCE_NUMBER"
             }
           ],
           "Chassis": {
@@ -26,7 +26,7 @@
           "ComponentType": "AP"
         },
         {
-          "ChassisName": "BlueField_SMA_$INSTANCE_NUMBER",
+          "ChassisName": "Bay_C_SMA_0$INSTANCE_NUMBER",
           "Name": "Slot1",
           "Type": "NSM_RoT_Slot",
           "FirmwareType": "AP",
@@ -38,12 +38,12 @@
             {
               "Forward": "software",
               "Backward": "ActiveSlot",
-              "AbsolutePath": "/xyz/openbmc_project/software/FW_BlueField_SMA_$INSTANCE_NUMBER"
+              "AbsolutePath": "/xyz/openbmc_project/software/FW_Bay_C_SMA_0$INSTANCE_NUMBER"
             }
           ]
         },
         {
-          "ChassisName": "BlueField_SMA_$INSTANCE_NUMBER",
+          "ChassisName": "Bay_C_SMA_0$INSTANCE_NUMBER",
           "Name": "Slot2",
           "Type": "NSM_RoT_Slot",
           "FirmwareType": "AP",
@@ -56,12 +56,12 @@
             {
                 "Forward": "software",
                 "Backward": "InactiveSlot",
-                "AbsolutePath": "/xyz/openbmc_project/software/FW_BlueField_SMA_$INSTANCE_NUMBER"
+                "AbsolutePath": "/xyz/openbmc_project/software/FW_Bay_C_SMA_0$INSTANCE_NUMBER"
             }
           ]
         },
         {
-          "ChassisName": "IRoT_BlueField_SMA_$INSTANCE_NUMBER",
+          "ChassisName": "IRoT_Bay_C_SMA_0$INSTANCE_NUMBER",
           "Name": "DebugToken",
           "Type": "NSM_DebugToken",
           "UUID": "$UUID",
@@ -71,7 +71,7 @@
           "DebugTokenDeviceType": "SMA"
         }
       ],
-      "Name": "IRoT_BlueField_SMA_$INSTANCE_NUMBER",
+      "Name": "IRoT_Bay_C_SMA_0$INSTANCE_NUMBER",
       "Type": "chassis",
       "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'BFSMA'})",
       "xyz.openbmc_project.Association.Definitions": {
@@ -79,17 +79,17 @@
           [
             "parent_chassis",
             "all_chassis",
-            "/xyz/openbmc_project/inventory/system/chassis/BlueField_SMA_$INSTANCE_NUMBER"
+            "/xyz/openbmc_project/inventory/system/chassis/Bay_C_SMA_0$INSTANCE_NUMBER"
           ],
           [
             "inventory",
             "associated_ROT",
-            "/xyz/openbmc_project/inventory/system/chassis/BlueField_SMA_$INSTANCE_NUMBER"
+            "/xyz/openbmc_project/inventory/system/chassis/Bay_C_SMA_0$INSTANCE_NUMBER"
           ],
           [
             "inventory_chassis",
             "associated_chassis",
-            "/xyz/openbmc_project/inventory/system/chassis/BlueField_SMA_$INSTANCE_NUMBER"
+            "/xyz/openbmc_project/inventory/system/chassis/Bay_C_SMA_0$INSTANCE_NUMBER"
           ]
         ]
       },
@@ -100,7 +100,7 @@
           "LocationCode": "IRoT_0"
       },
       "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-          "LocationContext": "Chassis_0/BlueField_SMA_0"
+          "LocationContext": "Chassis_0/Bay_C_SMA_00"
       },
       "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
         "FieldReplaceable": false

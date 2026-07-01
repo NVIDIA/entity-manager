@@ -1,0 +1,63 @@
+{
+    "Exposes": [   
+        {
+            "USBPort": ".*-1.1.4.1",
+            "Name": "FW_IO_Board_SMA_0",
+            "ChassisName": "IO_Board_SMA_0",
+            "ForceRecoveryChassisObject":"IO_Board_SMA_1",
+            "MctpEID" : 60,
+            "Interface": "USB",
+            "VendorId" : "0x0955",
+            "ProductId" : "0xCF11",
+            "ResetGpioName": "IOB0_MCU_RST_L-O",
+            "RecoveryGpioName": "IOB0_MCU_RECOVERY_L-O",
+            "Target": "CX9",
+            "Type": "MCURecovery"
+        },
+        {
+            "USBPort": ".*-1.1.3.1",
+            "Name": "FW_IO_Board_SMA_1",
+            "ChassisName": "IO_Board_SMA_1",
+            "ForceRecoveryChassisObject":"IO_Board_SMA_1",
+            "MctpEID" : 70,
+            "Interface": "USB",
+            "VendorId" : "0x0955",
+            "ProductId" : "0xCF11",
+            "ResetGpioName": "IOB1_MCU_RST_L-O",
+            "RecoveryGpioName": "IOB1_MCU_RECOVERY_L-O",
+            "Target": "CX9",
+            "Type": "MCURecovery"
+        },
+        {
+            "USBPort": ".*-1.2.3.1",
+            "Name": "FW_IO_Board_SMA_2",
+            "ChassisName": "IO_Board_SMA_2",
+            "ForceRecoveryChassisObject":"IO_Board_SMA_2",
+            "MctpEID" : 80,
+            "Interface": "USB",
+            "VendorId" : "0x0955",
+            "ProductId" : "0xCF11",
+            "ResetGpioName": "IOB2_MCU_RST_L-O",
+            "RecoveryGpioName": "IOB2_MCU_RECOVERY_L-O",
+            "Target": "CX9",
+            "Type": "MCURecovery"
+        },
+        {
+            "USBPort": ".*-1.2.4.1",
+            "Name": "FW_IO_Board_SMA_3",
+            "ChassisName": "IO_Board_SMA_3",
+            "ForceRecoveryChassisObject":"IO_Board_SMA_3",
+            "MctpEID" : 90,
+            "Interface": "USB",
+            "VendorId" : "0x0955",
+            "ProductId" : "0xCF11",
+            "ResetGpioName": "IOB3_MCU_RST_L-O",
+            "RecoveryGpioName": "IOB3_MCU_RECOVERY_L-O",
+            "Target": "CX9",
+            "Type": "MCURecovery"
+        }
+    ],
+    "Name": "CX9_SMA_Recovery_Devices",
+    "Probe": "TRUE",
+    "Type": "Recovery_Config"
+}

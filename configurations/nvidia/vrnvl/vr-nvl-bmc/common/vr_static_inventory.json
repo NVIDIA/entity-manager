@@ -20,7 +20,7 @@
             "DEVICE_TYPE": 2,
             "INSTANCE_NUMBER": 0,
             "LOCATION_CONTEXT": "Chassis_0/Bay-B-Left-Bottom",
-            "UUID": "STATIC:770:0:MCTP_EID:62"
+            "UUID": "STATIC:770:0:MCTP_EID:61"
         }
     },
     {
@@ -33,7 +33,7 @@
             "DEVICE_TYPE": 2,
             "INSTANCE_NUMBER": 1,
             "LOCATION_CONTEXT": "Chassis_0/Bay-B-Left-Bottom",
-            "UUID": "STATIC:770:1:MCTP_EID:64"
+            "UUID": "STATIC:770:1:MCTP_EID:63"
         }
     },
     {
@@ -46,7 +46,7 @@
             "DEVICE_TYPE": 2,
             "INSTANCE_NUMBER": 2,
             "LOCATION_CONTEXT": "Chassis_0/Bay-B-Left-Top",
-            "UUID": "STATIC:770:2:MCTP_EID:72"
+            "UUID": "STATIC:770:2:MCTP_EID:71"
         }
     },
     {
@@ -59,7 +59,7 @@
             "DEVICE_TYPE": 2,
             "INSTANCE_NUMBER": 3,
             "LOCATION_CONTEXT": "Chassis_0/Bay-B-Left-Top",
-            "UUID": "STATIC:770:3:MCTP_EID:74"
+            "UUID": "STATIC:770:3:MCTP_EID:73"
         }
     },
     {
@@ -72,7 +72,7 @@
             "DEVICE_TYPE": 2,
             "INSTANCE_NUMBER": 4,
             "LOCATION_CONTEXT": "Chassis_0/Bay-B-Right-Bottom",
-            "UUID": "STATIC:770:4:MCTP_EID:82"
+            "UUID": "STATIC:770:4:MCTP_EID:81"
         }
     },
     {
@@ -85,7 +85,7 @@
             "DEVICE_TYPE": 2,
             "INSTANCE_NUMBER": 5,
             "LOCATION_CONTEXT": "Chassis_0/Bay-B-Right-Bottom",
-            "UUID": "STATIC:770:5:MCTP_EID:84"
+            "UUID": "STATIC:770:5:MCTP_EID:83"
         }
     },
     {
@@ -98,7 +98,7 @@
             "DEVICE_TYPE": 2,
             "INSTANCE_NUMBER": 6,
             "LOCATION_CONTEXT": "Chassis_0/Bay-B-Right-Top",
-            "UUID": "STATIC:770:6:MCTP_EID:92"
+            "UUID": "STATIC:770:6:MCTP_EID:91"
         }
     },
     {
@@ -111,16 +111,16 @@
             "DEVICE_TYPE": 2,
             "INSTANCE_NUMBER": 7,
             "LOCATION_CONTEXT": "Chassis_0/Bay-B-Right-Top",
-            "UUID": "STATIC:770:7:MCTP_EID:94"
+            "UUID": "STATIC:770:7:MCTP_EID:93"
         }
     },
     {
         "Exposes": [],
-        "Name": "NSM_BF4_B4240_0",
+        "Name": "NSM_BAY_C_B4240_0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'B4240V.*'})",
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
-            "DEVICE_ROLE": "BF4B4",
+            "DEVICE_ROLE": "BAYCB4",
             "DEVICE_TYPE": 2,
             "INSTANCE_NUMBER": 0,
             "UUID": "STATIC:1026:0:MCTP_EID:56"
@@ -128,11 +128,11 @@
     },
     {
         "Exposes": [],
-        "Name": "NSM_BF4_C9180_0",
+        "Name": "NSM_BAY_C_C9180_0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'ConnectX-9.*'})",
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
-            "DEVICE_ROLE": "BF4C9",
+            "DEVICE_ROLE": "BAYCC9",
             "DEVICE_TYPE": 2,
             "INSTANCE_NUMBER": 0,
             "UUID": "STATIC:1026:0:MCTP_EID:57"
@@ -196,11 +196,11 @@
     },
     {
         "Exposes": [],
-        "Name": "NSM_SMA_BF4_0_Bridge",
+        "Name": "NSM_SMA_BAY_C_0_Bridge",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80})",
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
-            "DEVICE_ROLE": "BFSMA",
+            "DEVICE_ROLE": "BAYCSMA",
             "DEVICE_TYPE": 5,
             "INSTANCE_NUMBER": 0,
             "UUID": "STATIC:517:4:MCTP_EID:55"
