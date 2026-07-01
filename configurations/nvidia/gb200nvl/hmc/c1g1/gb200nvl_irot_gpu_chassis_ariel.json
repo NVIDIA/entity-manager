@@ -2,54 +2,54 @@
     {
         "Exposes": [
             {
-                "Name": "HGX_IRoT_GPU_0",
-                "Type": "NSM_Chassis",
-                "UUID": "STATIC:0:0:MCTP_EID:18",
-                "SlotCount": 2,
-                "DeviceType": "0",
                 "Chassis": {
-                    "Type": "NSM_Chassis",
-                    "DEVICE_UUID": "$DEVICE_UUID"
-                }
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "DeviceType": "0",
+                "Name": "HGX_IRoT_GPU_0",
+                "SlotCount": 2,
+                "Type": "NSM_Chassis",
+                "UUID": "STATIC:0:0:MCTP_EID:18"
             },
             {
+                "ComponentType": "AP",
                 "Name": "AP",
-                "Type": "NSM_FW_ComponentType",
-                "ComponentType": "AP"
+                "Type": "NSM_FW_ComponentType"
             },
             {
-                "ChassisName": "HGX_IRoT_GPU_0",
-                "Name": "Slot1",
-                "Type": "NSM_RoT_Slot",
-                "FirmwareType": "AP",
-                "SlotType": "Active",
-                "ComponentClassification": 10,
-                "ComponentIdentifier": 49152,
-                "ComponentIndex": 0,
                 "Associations": [
                     {
-                        "Forward": "software",
+                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_GPU_0",
                         "Backward": "ActiveSlot",
-                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_GPU_0"
+                        "Forward": "software"
                     }
-                ]
-            },
-            {
+                ],
                 "ChassisName": "HGX_IRoT_GPU_0",
-                "Name": "Slot2",
-                "Type": "NSM_RoT_Slot",
-                "FirmwareType": "AP",
-                "SlotType": "InActive",
                 "ComponentClassification": 10,
                 "ComponentIdentifier": 49152,
                 "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot1",
+                "SlotType": "Active",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
                 "Associations": [
                     {
-                        "Forward": "software",
+                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_GPU_0",
                         "Backward": "InactiveSlot",
-                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_GPU_0"
+                        "Forward": "software"
                     }
-                ]
+                ],
+                "ChassisName": "HGX_IRoT_GPU_0",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 49152,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot2",
+                "SlotType": "InActive",
+                "Type": "NSM_RoT_Slot"
             }
         ],
         "Name": "HGX_IRoT_GPU_0",
@@ -78,7 +78,16 @@
                 ]
             ]
         },
-        "xyz.openbmc_project.Inventory.Item.SPDMResponder": {},
+        "xyz.openbmc_project.Common.UUID": {
+            "UUID": ""
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "NVIDIA",
+            "SerialNumber": ""
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": "0"
+        },
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
         },
@@ -94,68 +103,59 @@
         "xyz.openbmc_project.Inventory.Item.Chassis": {
             "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
         },
-        "xyz.openbmc_project.Inventory.Decorator.Instance": {
-            "InstanceNumber": "0"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Asset": {
-            "Manufacturer": "NVIDIA",
-            "SerialNumber": ""
-        },
-        "xyz.openbmc_project.Common.UUID": {
-            "UUID": ""
-        }
+        "xyz.openbmc_project.Inventory.Item.SPDMResponder": {}
     },
     {
         "Exposes": [
             {
-                "Name": "HGX_IRoT_GPU_1",
-                "Type": "NSM_Chassis",
-                "UUID": "STATIC:0:1:MCTP_EID:26",
-                "SlotCount": 2,
-                "DeviceType": "0",
                 "Chassis": {
-                    "Type": "NSM_Chassis",
-                    "DEVICE_UUID": "$DEVICE_UUID"
-                }
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "DeviceType": "0",
+                "Name": "HGX_IRoT_GPU_1",
+                "SlotCount": 2,
+                "Type": "NSM_Chassis",
+                "UUID": "STATIC:0:1:MCTP_EID:26"
             },
             {
+                "ComponentType": "AP",
                 "Name": "AP",
-                "Type": "NSM_FW_ComponentType",
-                "ComponentType": "AP"
+                "Type": "NSM_FW_ComponentType"
             },
             {
-                "ChassisName": "HGX_IRoT_GPU_1",
-                "Name": "Slot1",
-                "Type": "NSM_RoT_Slot",
-                "FirmwareType": "AP",
-                "SlotType": "Active",
-                "ComponentClassification": 10,
-                "ComponentIdentifier": 49152,
-                "ComponentIndex": 0,
                 "Associations": [
                     {
-                        "Forward": "software",
+                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_GPU_1",
                         "Backward": "ActiveSlot",
-                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_GPU_1"
+                        "Forward": "software"
                     }
-                ]
-            },
-            {
+                ],
                 "ChassisName": "HGX_IRoT_GPU_1",
-                "Name": "Slot2",
-                "Type": "NSM_RoT_Slot",
-                "FirmwareType": "AP",
-                "SlotType": "InActive",
                 "ComponentClassification": 10,
                 "ComponentIdentifier": 49152,
                 "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot1",
+                "SlotType": "Active",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
                 "Associations": [
                     {
-                        "Forward": "software",
+                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_GPU_1",
                         "Backward": "InactiveSlot",
-                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_GPU_1"
+                        "Forward": "software"
                     }
-                ]
+                ],
+                "ChassisName": "HGX_IRoT_GPU_1",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 49152,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot2",
+                "SlotType": "InActive",
+                "Type": "NSM_RoT_Slot"
             }
         ],
         "Name": "HGX_IRoT_GPU_1",
@@ -184,7 +184,16 @@
                 ]
             ]
         },
-        "xyz.openbmc_project.Inventory.Item.SPDMResponder": {},
+        "xyz.openbmc_project.Common.UUID": {
+            "UUID": ""
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "NVIDIA",
+            "SerialNumber": ""
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": "1"
+        },
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
         },
@@ -200,15 +209,6 @@
         "xyz.openbmc_project.Inventory.Item.Chassis": {
             "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
         },
-        "xyz.openbmc_project.Inventory.Decorator.Instance": {
-            "InstanceNumber": "1"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Asset": {
-            "Manufacturer": "NVIDIA",
-            "SerialNumber": ""
-        },
-        "xyz.openbmc_project.Common.UUID": {
-            "UUID": ""
-        }
+        "xyz.openbmc_project.Inventory.Item.SPDMResponder": {}
     }
 ]

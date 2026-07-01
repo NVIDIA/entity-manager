@@ -2,98 +2,98 @@
     {
         "Exposes": [
             {
-                "Name": "HGX_ERoT_FPGA_0",
-                "Type": "NSM_Chassis",
-                "UUID": "$UUID",
-                "SlotCount": 4,
-                "DeviceType": "$DEVICE_TYPE",
                 "Chassis": {
-                    "Type": "NSM_Chassis",
-                    "DEVICE_UUID": "$DEVICE_UUID"
-                }
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "DeviceType": "$DEVICE_TYPE",
+                "Name": "HGX_ERoT_FPGA_0",
+                "SlotCount": 4,
+                "Type": "NSM_Chassis",
+                "UUID": "$UUID"
             },
             {
+                "ComponentType": "AP",
                 "Name": "AP",
-                "Type": "NSM_FW_ComponentType",
-                "ComponentType": "AP"
+                "Type": "NSM_FW_ComponentType"
             },
             {
+                "ComponentType": "EC",
                 "Name": "EC",
-                "Type": "NSM_FW_ComponentType",
-                "ComponentType": "EC"
+                "Type": "NSM_FW_ComponentType"
             },
             {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_ERoT_FPGA_0",
+                        "Backward": "ActiveSlot",
+                        "Forward": "software"
+                    }
+                ],
                 "ChassisName": "HGX_ERoT_FPGA_0",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 65280,
+                "ComponentIndex": 0,
+                "FirmwareType": "EC",
                 "Name": "Slot1",
-                "Type": "NSM_RoT_Slot",
-                "FirmwareType": "EC",
                 "SlotType": "Active",
-                "ComponentClassification": 10,
-                "ComponentIdentifier": 65280,
-                "ComponentIndex": 0,
-                "Associations": [
-                    {
-                        "Forward": "software",
-                        "Backward": "ActiveSlot",
-                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_ERoT_FPGA_0"
-                    }
-                ]
+                "Type": "NSM_RoT_Slot"
             },
             {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_ERoT_FPGA_0",
+                        "Backward": "InactiveSlot",
+                        "Forward": "software"
+                    }
+                ],
                 "ChassisName": "HGX_ERoT_FPGA_0",
-                "Name": "Slot2",
-                "Type": "NSM_RoT_Slot",
-                "FirmwareType": "EC",
-                "SlotType": "InActive",
                 "ComponentClassification": 10,
                 "ComponentIdentifier": 65280,
                 "ComponentIndex": 0,
-                "Associations": [
-                    {
-                        "Forward": "software",
-                        "Backward": "InactiveSlot",
-                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_ERoT_FPGA_0"
-                    }
-                ]
-            },
-            {
-                "ChassisName": "HGX_FPGA_0",
-                "Name": "Slot3",
-                "Type": "NSM_RoT_Slot",
-                "FirmwareType": "AP",
-                "SlotType": "Active",
-                "ComponentClassification": 10,
-                "ComponentIdentifier": 80,
-                "ComponentIndex": 0,
-                "Associations": [
-                    {
-                        "Forward": "software",
-                        "Backward": "ActiveSlot",
-                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_FPGA_0"
-                    }
-                ]
-            },
-            {
-                "ChassisName": "HGX_FPGA_0",
-                "Name": "Slot4",
-                "Type": "NSM_RoT_Slot",
-                "FirmwareType": "AP",
+                "FirmwareType": "EC",
+                "Name": "Slot2",
                 "SlotType": "InActive",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_FPGA_0",
+                        "Backward": "ActiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "HGX_FPGA_0",
                 "ComponentClassification": 10,
                 "ComponentIdentifier": 80,
                 "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot3",
+                "SlotType": "Active",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
                 "Associations": [
                     {
-                        "Forward": "software",
+                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_FPGA_0",
                         "Backward": "InactiveSlot",
-                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_FPGA_0"
+                        "Forward": "software"
                     }
-                ]
+                ],
+                "ChassisName": "HGX_FPGA_0",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 80,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot4",
+                "SlotType": "InActive",
+                "Type": "NSM_RoT_Slot"
             }
         ],
         "Name": "HGX_ERoT_FPGA_0",
-        "Type": "Chassis",
         "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 4, 'INSTANCE_NUMBER': 1})",
+        "Type": "Chassis",
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
@@ -113,10 +113,16 @@
                 ]
             ]
         },
+        "xyz.openbmc_project.Common.UUID": {
+            "UUID": ""
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "NVIDIA",
+            "SerialNumber": ""
+        },
         "xyz.openbmc_project.Inventory.Decorator.Instance": {
             "InstanceNumber": 1
         },
-        "xyz.openbmc_project.Inventory.Item.SPDMResponder": {},
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
         },
@@ -132,109 +138,103 @@
         "xyz.openbmc_project.Inventory.Item.Chassis": {
             "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
         },
-        "xyz.openbmc_project.Inventory.Decorator.Asset": {
-            "Manufacturer": "NVIDIA",
-            "SerialNumber": ""
-        },
-        "xyz.openbmc_project.Common.UUID": {
-            "UUID": ""
-        }
+        "xyz.openbmc_project.Inventory.Item.SPDMResponder": {}
     },
     {
         "Exposes": [
             {
-                "Name": "HGX_ERoT_FPGA_1",
-                "Type": "NSM_Chassis",
-                "UUID": "$UUID",
-                "SlotCount": 4,
-                "DeviceType": "$DEVICE_TYPE",
                 "Chassis": {
-                    "Type": "NSM_Chassis",
-                    "DEVICE_UUID": "$DEVICE_UUID"
-                }
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "DeviceType": "$DEVICE_TYPE",
+                "Name": "HGX_ERoT_FPGA_1",
+                "SlotCount": 4,
+                "Type": "NSM_Chassis",
+                "UUID": "$UUID"
             },
             {
+                "ComponentType": "AP",
                 "Name": "AP",
-                "Type": "NSM_FW_ComponentType",
-                "ComponentType": "AP"
+                "Type": "NSM_FW_ComponentType"
             },
             {
+                "ComponentType": "EC",
                 "Name": "EC",
-                "Type": "NSM_FW_ComponentType",
-                "ComponentType": "EC"
+                "Type": "NSM_FW_ComponentType"
             },
             {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_ERoT_FPGA_1",
+                        "Backward": "ActiveSlot",
+                        "Forward": "software"
+                    }
+                ],
                 "ChassisName": "HGX_ERoT_FPGA_1",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 65280,
+                "ComponentIndex": 0,
+                "FirmwareType": "EC",
                 "Name": "Slot1",
-                "Type": "NSM_RoT_Slot",
-                "FirmwareType": "EC",
                 "SlotType": "Active",
-                "ComponentClassification": 10,
-                "ComponentIdentifier": 65280,
-                "ComponentIndex": 0,
-                "Associations": [
-                    {
-                        "Forward": "software",
-                        "Backward": "ActiveSlot",
-                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_ERoT_FPGA_1"
-                    }
-                ]
+                "Type": "NSM_RoT_Slot"
             },
             {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_ERoT_FPGA_1",
+                        "Backward": "InactiveSlot",
+                        "Forward": "software"
+                    }
+                ],
                 "ChassisName": "HGX_ERoT_FPGA_1",
-                "Name": "Slot2",
-                "Type": "NSM_RoT_Slot",
-                "FirmwareType": "EC",
-                "SlotType": "InActive",
                 "ComponentClassification": 10,
                 "ComponentIdentifier": 65280,
                 "ComponentIndex": 0,
-                "Associations": [
-                    {
-                        "Forward": "software",
-                        "Backward": "InactiveSlot",
-                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_ERoT_FPGA_1"
-                    }
-                ]
-            },
-            {
-                "ChassisName": "HGX_FPGA_1",
-                "Name": "Slot3",
-                "Type": "NSM_RoT_Slot",
-                "FirmwareType": "AP",
-                "SlotType": "Active",
-                "ComponentClassification": 10,
-                "ComponentIdentifier": 80,
-                "ComponentIndex": 0,
-                "Associations": [
-                    {
-                        "Forward": "software",
-                        "Backward": "ActiveSlot",
-                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_FPGA_1"
-                    }
-                ]
-            },
-            {
-                "ChassisName": "HGX_FPGA_1",
-                "Name": "Slot4",
-                "Type": "NSM_RoT_Slot",
-                "FirmwareType": "AP",
+                "FirmwareType": "EC",
+                "Name": "Slot2",
                 "SlotType": "InActive",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_FPGA_1",
+                        "Backward": "ActiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "HGX_FPGA_1",
                 "ComponentClassification": 10,
                 "ComponentIdentifier": 80,
                 "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot3",
+                "SlotType": "Active",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
                 "Associations": [
                     {
-                        "Forward": "software",
+                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_FPGA_1",
                         "Backward": "InactiveSlot",
-                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_FPGA_1"
+                        "Forward": "software"
                     }
-                ]
+                ],
+                "ChassisName": "HGX_FPGA_1",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 80,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot4",
+                "SlotType": "InActive",
+                "Type": "NSM_RoT_Slot"
             }
         ],
         "Name": "HGX_ERoT_FPGA_1",
-        "Type": "Chassis",
         "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 4, 'INSTANCE_NUMBER': 2})",
+        "Type": "Chassis",
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
@@ -254,10 +254,16 @@
                 ]
             ]
         },
+        "xyz.openbmc_project.Common.UUID": {
+            "UUID": ""
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "NVIDIA",
+            "SerialNumber": ""
+        },
         "xyz.openbmc_project.Inventory.Decorator.Instance": {
             "InstanceNumber": 2
         },
-        "xyz.openbmc_project.Inventory.Item.SPDMResponder": {},
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
         },
@@ -273,12 +279,6 @@
         "xyz.openbmc_project.Inventory.Item.Chassis": {
             "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
         },
-        "xyz.openbmc_project.Inventory.Decorator.Asset": {
-            "Manufacturer": "NVIDIA",
-            "SerialNumber": ""
-        },
-        "xyz.openbmc_project.Common.UUID": {
-            "UUID": ""
-        }
+        "xyz.openbmc_project.Inventory.Item.SPDMResponder": {}
     }
 ]

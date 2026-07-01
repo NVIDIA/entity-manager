@@ -2,44 +2,8 @@
     {
         "Exposes": [
             {
-                "Address": "0x6a",
-                "Bus": 40,
-                "Name": "StorageBackplane_0_SSD_0_Status_0",
-                "PowerState": "On",
-                "PollRate": 1,
-                "EntityId": 4,
-                "EntityInstance": 3,
-                "Type": "Nvmem2"
-            },
-            {
-                "Address": "0x6a",
-                "Bus": 41,
-                "Name": "StorageBackplane_0_SSD_1_Status_0",
-                "PowerState": "On",
-                "PollRate": 1,
-                "EntityId": 4,
-                "EntityInstance": 4,
-                "Type": "Nvmem2"
-            },
-            {
-                "Address": "0x6a",
-                "Bus": 42,
-                "Name": "StorageBackplane_0_SSD_2_Status_0",
-                "PowerState": "On",
-                "PollRate": 1,
-                "EntityId": 4,
-                "EntityInstance": 5,
-                "Type": "Nvmem2"
-            },
-            {
-                "Address": "0x6a",
-                "Bus": 43,
-                "Name": "StorageBackplane_0_SSD_3_Status_0",
-                "PowerState": "On",
-                "PollRate": 1,
-                "EntityId": 4,
-                "EntityInstance": 6,
-                "Type": "Nvmem2"
+                "Name": "BPNPort0",
+                "Type": "Backplane0Port"
             },
             {
                 "Address": "0x6a",
@@ -198,31 +162,55 @@
                 "Type": "NVME1000"
             },
             {
-                "Name": "BPNPort0",
-                "Type": "Backplane0Port"
+                "Address": "0x6a",
+                "Bus": 40,
+                "EntityId": 4,
+                "EntityInstance": 3,
+                "Name": "StorageBackplane_0_SSD_0_Status_0",
+                "PollRate": 1,
+                "PowerState": "On",
+                "Type": "Nvmem2"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": 41,
+                "EntityId": 4,
+                "EntityInstance": 4,
+                "Name": "StorageBackplane_0_SSD_1_Status_0",
+                "PollRate": 1,
+                "PowerState": "On",
+                "Type": "Nvmem2"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": 42,
+                "EntityId": 4,
+                "EntityInstance": 5,
+                "Name": "StorageBackplane_0_SSD_2_Status_0",
+                "PollRate": 1,
+                "PowerState": "On",
+                "Type": "Nvmem2"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": 43,
+                "EntityId": 4,
+                "EntityInstance": 6,
+                "Name": "StorageBackplane_0_SSD_3_Status_0",
+                "PollRate": 1,
+                "PowerState": "On",
+                "Type": "Nvmem2"
             }
         ],
         "Name": "StorageBackplane_0",
-        "Type": "Board",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
         "Probe": [
             "xyz.openbmc_project.Inventory.Item.I2CDevice({'Bus': 14, 'Address': 64})",
             "OR",
             "xyz.openbmc_project.FruDevice({'BUS': 14, 'ADDRESS': 86})",
             "MATCH_ONE"
         ],
-        "Parent_Chassis":  "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
-        "xyz.openbmc_project.Inventory.Item.Chassis": {
-            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Asset": {
-            "Manufacturer": "$BOARD_MANUFACTURER",
-            "Model": "$BOARD_PRODUCT_NAME",
-            "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER"
-        },
-        "xyz.openbmc_project.State.Decorator.Health": {
-            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
-        },
+        "Type": "Board",
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
@@ -236,6 +224,18 @@
                     "/xyz/openbmc_project/inventory/system/assembly/StorageBackplane_0_Product_FRU_Assembly1"
                 ]
             ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
         }
     },
     {
@@ -243,11 +243,11 @@
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 14, 'ADDRESS': 86})",
         "Type": "Assembly",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "BuildDate": "$BOARD_MANUFACTURE_DATE",
+            "Manufacturer": "$BOARD_MANUFACTURER",
             "Model": "$BOARD_PRODUCT_NAME",
             "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER",
-            "BuildDate": "$BOARD_MANUFACTURE_DATE",
-            "Manufacturer": "$BOARD_MANUFACTURER"
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
         },
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
@@ -265,11 +265,11 @@
             "PartNumber": "$PRODUCT_PART_NUMBER",
             "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
         },
-        "xyz.openbmc_project.Inventory.Decorator.Revision": {
-            "Version": "$PRODUCT_VERSION"
-        },
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Revision": {
+            "Version": "$PRODUCT_VERSION"
         },
         "xyz.openbmc_project.State.Decorator.Health": {
             "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
@@ -278,44 +278,8 @@
     {
         "Exposes": [
             {
-                "Address": "0x6a",
-                "Bus": 44,
-                "Name": "StorageBackplane_1_SSD_0_Status_0",
-                "PowerState": "On",
-                "PollRate": 1,
-                "EntityId": 4,
-                "EntityInstance": 3,
-                "Type": "Nvmem2"
-            },
-            {
-                "Address": "0x6a",
-                "Bus": 45,
-                "Name": "StorageBackplane_1_SSD_1_Status_0",
-                "PowerState": "On",
-                "PollRate": 1,
-                "EntityId": 4,
-                "EntityInstance": 4,
-                "Type": "Nvmem2"
-            },
-            {
-                "Address": "0x6a",
-                "Bus": 46,
-                "Name": "StorageBackplane_1_SSD_2_Status_0",
-                "PowerState": "On",
-                "PollRate": 1,
-                "EntityId": 4,
-                "EntityInstance": 5,
-                "Type": "Nvmem2"
-            },
-            {
-                "Address": "0x6a",
-                "Bus": 47,
-                "Name": "StorageBackplane_1_SSD_3_Status_0",
-                "PowerState": "On",
-                "PollRate": 1,
-                "EntityId": 4,
-                "EntityInstance": 6,
-                "Type": "Nvmem2"
+                "Name": "BPNPort1",
+                "Type": "Backplane1Port"
             },
             {
                 "Address": "0x6a",
@@ -474,31 +438,55 @@
                 "Type": "NVME1000"
             },
             {
-                "Name": "BPNPort1",
-                "Type": "Backplane1Port"
+                "Address": "0x6a",
+                "Bus": 44,
+                "EntityId": 4,
+                "EntityInstance": 3,
+                "Name": "StorageBackplane_1_SSD_0_Status_0",
+                "PollRate": 1,
+                "PowerState": "On",
+                "Type": "Nvmem2"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": 45,
+                "EntityId": 4,
+                "EntityInstance": 4,
+                "Name": "StorageBackplane_1_SSD_1_Status_0",
+                "PollRate": 1,
+                "PowerState": "On",
+                "Type": "Nvmem2"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": 46,
+                "EntityId": 4,
+                "EntityInstance": 5,
+                "Name": "StorageBackplane_1_SSD_2_Status_0",
+                "PollRate": 1,
+                "PowerState": "On",
+                "Type": "Nvmem2"
+            },
+            {
+                "Address": "0x6a",
+                "Bus": 47,
+                "EntityId": 4,
+                "EntityInstance": 6,
+                "Name": "StorageBackplane_1_SSD_3_Status_0",
+                "PollRate": 1,
+                "PowerState": "On",
+                "Type": "Nvmem2"
             }
         ],
         "Name": "StorageBackplane_1",
-        "Type": "Board",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
         "Probe": [
             "xyz.openbmc_project.Inventory.Item.I2CDevice({'Bus': 15, 'Address': 64})",
             "OR",
             "xyz.openbmc_project.FruDevice({'BUS': 15, 'ADDRESS': 86})",
             "MATCH_ONE"
         ],
-        "Parent_Chassis":  "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
-        "xyz.openbmc_project.Inventory.Item.Chassis": {
-            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Asset": {
-            "Manufacturer": "$BOARD_MANUFACTURER",
-            "Model": "$BOARD_PRODUCT_NAME",
-            "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER"
-        },
-        "xyz.openbmc_project.State.Decorator.Health": {
-            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
-        },
+        "Type": "Board",
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
@@ -512,6 +500,18 @@
                     "/xyz/openbmc_project/inventory/system/assembly/StorageBackplane_1_Product_FRU_Assembly1"
                 ]
             ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
         }
     },
     {
@@ -519,11 +519,11 @@
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 15, 'ADDRESS': 86})",
         "Type": "Assembly",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "BuildDate": "$BOARD_MANUFACTURE_DATE",
+            "Manufacturer": "$BOARD_MANUFACTURER",
             "Model": "$BOARD_PRODUCT_NAME",
             "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER",
-            "BuildDate": "$BOARD_MANUFACTURE_DATE",
-            "Manufacturer": "$BOARD_MANUFACTURER"
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
         },
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
@@ -541,11 +541,11 @@
             "PartNumber": "$PRODUCT_PART_NUMBER",
             "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
         },
-        "xyz.openbmc_project.Inventory.Decorator.Revision": {
-            "Version": "$PRODUCT_VERSION"
-        },
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Revision": {
+            "Version": "$PRODUCT_VERSION"
         },
         "xyz.openbmc_project.State.Decorator.Health": {
             "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
@@ -554,14 +554,8 @@
     {
         "Exposes": [
             {
-                    "Address": "0x6a",
-                    "Bus": 8,
-                    "Name": "NVME_M2_0_Status",
-                    "PowerState": "On",
-                    "PollRate": 1,
-                    "EntityId": 4,
-                    "EntityInstance": 1,
-                    "Type": "Nvmem2"
+                "Name": "M2Port0",
+                "Type": "M2NVME0Port"
             },
             {
                 "Address": "0x6a",
@@ -597,20 +591,26 @@
                 "Type": "NVME1000"
             },
             {
-                "Name": "M2Port0",
-                "Type": "M2NVME0Port"
+                "Address": "0x6a",
+                "Bus": 8,
+                "EntityId": 4,
+                "EntityInstance": 1,
+                "Name": "NVME_M2_0_Status",
+                "PollRate": 1,
+                "PowerState": "On",
+                "Type": "Nvmem2"
             }
         ],
         "Name": "NVME_M2_0",
-        "Type": "Board",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
         "Probe": "xyz.openbmc_project.Inventory.Item.I2CDevice({'Bus': 8, 'Address': 106, 'VendorId': '.?*.?'})",
-        "Parent_Chassis":  "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
-        "xyz.openbmc_project.Inventory.Item.Chassis": {
-            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
-        },
+        "Type": "Board",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
             "Manufacturer": "NVIDIA",
-	    "Model": "NVIDIA NVMe M.2 Backplane"
+            "Model": "NVIDIA NVMe M.2 Backplane"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
         }
     },
     {
@@ -622,24 +622,24 @@
             }
         ],
         "Name": "NVMe_SSD_200",
-        "Type": "NVMe",
         "Probe": "xyz.openbmc_project.Inventory.Item.I2CDevice({'Bus': 14, 'Address': 64})",
+        "Type": "NVMe",
         "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-            "Bus": "40",
             "Address": "0x6a",
+            "Bus": "40",
             "Name": "NVMeFru"
         },
-        "xyz.openbmc_project.Inventory.Item.Drive":{
-            "FormFactor" : "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
         },
         "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode" : "NVMe E1.S Slot 0"
+            "LocationCode": "NVMe E1.S Slot 0"
         },
-        "xyz.openbmc_project.Inventory.Decorator.Location": {
-            "LocationType" : "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
-        },
-	 "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/StorageBackplane_0"
+        },
+        "xyz.openbmc_project.Inventory.Item.Drive": {
+            "FormFactor": "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
         }
     },
     {
@@ -651,24 +651,24 @@
             }
         ],
         "Name": "NVMe_SSD_201",
-        "Type": "NVMe",
         "Probe": "xyz.openbmc_project.Inventory.Item.I2CDevice({'Bus': 14, 'Address': 64})",
+        "Type": "NVMe",
         "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-            "Bus": "41",
             "Address": "0x6a",
+            "Bus": "41",
             "Name": "NVMeFru"
         },
-        "xyz.openbmc_project.Inventory.Item.Drive":{
-            "FormFactor" : "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
         },
         "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode" : "NVMe E1.S Slot 1"
+            "LocationCode": "NVMe E1.S Slot 1"
         },
-        "xyz.openbmc_project.Inventory.Decorator.Location": {
-            "LocationType" : "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
-        },
-	 "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/StorageBackplane_0"
+        },
+        "xyz.openbmc_project.Inventory.Item.Drive": {
+            "FormFactor": "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
         }
     },
     {
@@ -680,24 +680,24 @@
             }
         ],
         "Name": "NVMe_SSD_202",
-        "Type": "NVMe",
         "Probe": "xyz.openbmc_project.Inventory.Item.I2CDevice({'Bus': 14, 'Address': 64})",
+        "Type": "NVMe",
         "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-            "Bus": "42",
             "Address": "0x6a",
+            "Bus": "42",
             "Name": "NVMeFru"
         },
-        "xyz.openbmc_project.Inventory.Item.Drive":{
-            "FormFactor" : "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
         },
         "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode" : "NVMe E1.S Slot 2"
+            "LocationCode": "NVMe E1.S Slot 2"
         },
-        "xyz.openbmc_project.Inventory.Decorator.Location": {
-            "LocationType" : "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
-        },
-	 "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/StorageBackplane_0"
+        },
+        "xyz.openbmc_project.Inventory.Item.Drive": {
+            "FormFactor": "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
         }
     },
     {
@@ -709,24 +709,24 @@
             }
         ],
         "Name": "NVMe_SSD_203",
-        "Type": "NVMe",
         "Probe": "xyz.openbmc_project.Inventory.Item.I2CDevice({'Bus': 14, 'Address': 64})",
+        "Type": "NVMe",
         "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-            "Bus": "43",
             "Address": "0x6a",
+            "Bus": "43",
             "Name": "NVMeFru"
         },
-        "xyz.openbmc_project.Inventory.Item.Drive":{
-            "FormFactor" : "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
         },
         "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode" : "NVMe E1.S Slot 3"
+            "LocationCode": "NVMe E1.S Slot 3"
         },
-        "xyz.openbmc_project.Inventory.Decorator.Location": {
-            "LocationType" : "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
-        },
-	 "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/StorageBackplane_0"
+        },
+        "xyz.openbmc_project.Inventory.Item.Drive": {
+            "FormFactor": "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
         }
     },
     {
@@ -738,24 +738,24 @@
             }
         ],
         "Name": "NVMe_SSD_204",
-        "Type": "NVMe",
         "Probe": "xyz.openbmc_project.Inventory.Item.I2CDevice({'Bus': 15, 'Address': 64})",
+        "Type": "NVMe",
         "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-            "Bus": "44",
             "Address": "0x6a",
+            "Bus": "44",
             "Name": "NVMeFru"
         },
-        "xyz.openbmc_project.Inventory.Item.Drive":{
-            "FormFactor" : "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
         },
         "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode" : "NVMe E1.S Slot 4"
+            "LocationCode": "NVMe E1.S Slot 4"
         },
-        "xyz.openbmc_project.Inventory.Decorator.Location": {
-            "LocationType" : "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
-        },
-	 "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/StorageBackplane_1"
+        },
+        "xyz.openbmc_project.Inventory.Item.Drive": {
+            "FormFactor": "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
         }
     },
     {
@@ -767,24 +767,24 @@
             }
         ],
         "Name": "NVMe_SSD_205",
-        "Type": "NVMe",
         "Probe": "xyz.openbmc_project.Inventory.Item.I2CDevice({'Bus': 15, 'Address': 64})",
+        "Type": "NVMe",
         "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-            "Bus": "45",
             "Address": "0x6a",
+            "Bus": "45",
             "Name": "NVMeFru"
         },
-        "xyz.openbmc_project.Inventory.Item.Drive":{
-            "FormFactor" : "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
         },
         "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode" : "NVMe E1.S Slot 5"
+            "LocationCode": "NVMe E1.S Slot 5"
         },
-        "xyz.openbmc_project.Inventory.Decorator.Location": {
-            "LocationType" : "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
-        },
-	 "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/StorageBackplane_1"
+        },
+        "xyz.openbmc_project.Inventory.Item.Drive": {
+            "FormFactor": "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
         }
     },
     {
@@ -796,24 +796,24 @@
             }
         ],
         "Name": "NVMe_SSD_206",
-        "Type": "NVMe",
         "Probe": "xyz.openbmc_project.Inventory.Item.I2CDevice({'Bus': 15, 'Address': 64})",
+        "Type": "NVMe",
         "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-            "Bus": "46",
             "Address": "0x6a",
+            "Bus": "46",
             "Name": "NVMeFru"
         },
-        "xyz.openbmc_project.Inventory.Item.Drive":{
-            "FormFactor" : "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
         },
         "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode" : "NVMe E1.S Slot 6"
+            "LocationCode": "NVMe E1.S Slot 6"
         },
-        "xyz.openbmc_project.Inventory.Decorator.Location": {
-            "LocationType" : "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
-        },
-	 "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/StorageBackplane_1"
+        },
+        "xyz.openbmc_project.Inventory.Item.Drive": {
+            "FormFactor": "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
         }
     },
     {
@@ -825,24 +825,24 @@
             }
         ],
         "Name": "NVMe_SSD_207",
-        "Type": "NVMe",
         "Probe": "xyz.openbmc_project.Inventory.Item.I2CDevice({'Bus': 15, 'Address': 64})",
+        "Type": "NVMe",
         "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-            "Bus": "47",
             "Address": "0x6a",
+            "Bus": "47",
             "Name": "NVMeFru"
         },
-        "xyz.openbmc_project.Inventory.Item.Drive":{
-            "FormFactor" : "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
         },
         "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode" : "NVMe E1.S Slot 7"
+            "LocationCode": "NVMe E1.S Slot 7"
         },
-        "xyz.openbmc_project.Inventory.Decorator.Location": {
-            "LocationType" : "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
-        },
-	 "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/StorageBackplane_1"
+        },
+        "xyz.openbmc_project.Inventory.Item.Drive": {
+            "FormFactor": "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
         }
     },
     {
@@ -854,24 +854,24 @@
             }
         ],
         "Name": "NVMe_SSD_210",
-        "Type": "NVMe",
         "Probe": "xyz.openbmc_project.Inventory.Item.I2CDevice({'Bus': 8, 'Address': 106, 'VendorId': '.?*.?'})",
+        "Type": "NVMe",
         "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-            "Bus": "8",
             "Address": "0x6a",
+            "Bus": "8",
             "Name": "NVMeFru"
         },
-        "xyz.openbmc_project.Inventory.Item.Drive":{
-            "FormFactor" : "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.M2_2280"
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
         },
         "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-            "LocationCode" : "NVMe M.2 Slot 0"
+            "LocationCode": "NVMe M.2 Slot 0"
         },
-        "xyz.openbmc_project.Inventory.Decorator.Location": {
-            "LocationType" : "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
-        },
-	 "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/NVME_M2_0"
+        },
+        "xyz.openbmc_project.Inventory.Item.Drive": {
+            "FormFactor": "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.M2_2280"
         }
     }
 ]

@@ -403,6 +403,36 @@
                     "$ref": "nvidia_nsm.json#/$defs/NSM_Voltage"
                 },
                 {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_WriteProtect"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_AltitudePressure"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_SPI"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_ChassisPCIeSlot"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_ControlTotalGPUPower"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_ChassisLED"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_ModulePowerControl"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_GetInstanceIDByDeviceEID"
+                },
+                {
+                    "$ref": "leak_detector.json#/$defs/VoltageLeakDetector"
+                },
+                {
+                    "$ref": "nvidia_misc.json#/$defs/GPIOCableSensing"
+                },
+                {
                     "$ref": "nvidia_recovery.json#/$defs/GPIORecovery"
                 },
                 {

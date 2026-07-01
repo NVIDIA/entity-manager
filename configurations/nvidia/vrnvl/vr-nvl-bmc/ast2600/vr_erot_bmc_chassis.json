@@ -107,23 +107,30 @@
         "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 4, 'INSTANCE_NUMBER': 0})",
         "Type": "Chassis",
         "xyz.openbmc_project.Association.Definitions": {
-          "Associations": [
-            [
-              "parent_chassis",
-              "all_chassis",
-              "/xyz/openbmc_project/inventory/system/bmc/BMC_0"
-            ],
-            [
-              "inventory",
-              "associated_ROT",
-              "/xyz/openbmc_project/inventory/system/bmc/BMC_0"
-            ],
-            [
-              "inventory_chassis",
-              "associated_chassis",
-              "/xyz/openbmc_project/inventory/system/chassis/ERoT_BMC_0"
+            "Associations": [
+                [
+                    "parent_chassis",
+                    "all_chassis",
+                    "/xyz/openbmc_project/inventory/system/bmc/BMC_0"
+                ],
+                [
+                    "inventory",
+                    "associated_ROT",
+                    "/xyz/openbmc_project/inventory/system/bmc/BMC_0"
+                ],
+                [
+                    "inventory_chassis",
+                    "associated_chassis",
+                    "/xyz/openbmc_project/inventory/system/chassis/ERoT_BMC_0"
+                ]
             ]
-          ]
+        },
+        "xyz.openbmc_project.Common.UUID": {
+            "UUID": ""
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "NVIDIA",
+            "SerialNumber": ""
         },
         "xyz.openbmc_project.Inventory.Decorator.Instance": {
             "InstanceNumber": 0
@@ -142,13 +149,6 @@
         },
         "xyz.openbmc_project.Inventory.Item.Chassis": {
             "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Asset": {
-            "Manufacturer": "NVIDIA",
-            "SerialNumber": ""
-        },
-        "xyz.openbmc_project.Common.UUID": {
-            "UUID": ""
         },
         "xyz.openbmc_project.Inventory.Item.SPDMResponder": {}
     }

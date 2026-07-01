@@ -28,10 +28,13 @@
                     "type": "boolean"
                 },
                 "InstanceNumber": {
-                    "type": "string"
+                    "type": ["string", "integer"]
                 },
                 "Name": {
                     "type": "string"
+                },
+                "OperationalStatus": {
+                    "type": "object"
                 },
                 "SlotCount": {
                     "type": "integer"
@@ -460,6 +463,9 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
+                "ErrorId": {
+                    "type": "string"
+                },
                 "EventIds": {
                     "type": "array"
                 },
@@ -674,7 +680,7 @@
                     "type": "integer"
                 },
                 "InstanceBitfield": {
-                    "type": "array"
+                    "type": ["array", "integer"]
                 },
                 "InventoryObjPath": {
                     "type": "string"
@@ -1058,6 +1064,9 @@
                 "Implementation": {
                     "type": "string"
                 },
+                "MaxAllowableOperatingValue": {
+                    "type": "number"
+                },
                 "MaxValue": {
                     "type": "number"
                 },
@@ -1149,7 +1158,7 @@
                     "type": "array"
                 },
                 "DeviceInstance": {
-                    "oneOf": [{"type": "integer"}, {"type": "string"}]
+                    "oneOf": [{ "type": "integer" }, { "type": "string" }]
                 },
                 "InventoryObjPath": {
                     "type": "string"
@@ -1203,6 +1212,9 @@
                 "ChassisAttributes": {
                     "type": "object"
                 },
+                "DeviceResetSupported": {
+                    "type": "boolean"
+                },
                 "Name": {
                     "type": "string"
                 },
@@ -1251,6 +1263,9 @@
                 },
                 "Name": {
                     "type": "string"
+                },
+                "OpticalModuleResetSupported": {
+                    "type": "boolean"
                 },
                 "ParentObjPath": {
                     "type": "string"
@@ -1328,6 +1343,190 @@
                 },
                 "UpstreamPortNumbers": {
                     "type": "array"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_AltitudePressure": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Associations": {
+                    "type": "array"
+                },
+                "MaxAllowableOperatingValue": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PhysicalContext": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "boolean"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_AltitudePressure"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_ChassisLED": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InventoryObjPath": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_ChassisLED"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_ChassisPCIeSlot": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChassisName": {
+                    "type": "string"
+                },
+                "DeviceIndex": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "boolean"
+                },
+                "SlotType": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_ChassisPCIeSlot"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_ControlTotalGPUPower": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Associations": {
+                    "type": "array"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PhysicalContext": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_ControlTotalGPUPower"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_GetInstanceIDByDeviceEID": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MappingArray": {
+                    "type": "array"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_GetInstanceIDByDeviceEID"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_ModulePowerControl": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Index": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "boolean"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_ModulePowerControl"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_SPI": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InventoryObjPath": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_SPI"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_WriteProtect": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Associations": {
+                    "type": "array"
+                },
+                "DataIndex": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_WriteProtect"
+                },
+                "UUID": {
+                    "type": "string"
                 }
             },
             "required": ["Name", "Type"]

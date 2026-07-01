@@ -783,6 +783,26 @@
                 }
             },
             "required": ["Name", "Type"]
+        },
+        "GPIOCableSensing": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GpioLine": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Polarity": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "GPIOCableSensing"
+                }
+            },
+            "required": ["Name", "Type"]
         }
     }
 }

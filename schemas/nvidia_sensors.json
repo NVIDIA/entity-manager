@@ -369,7 +369,7 @@
             "additionalProperties": false,
             "properties": {
                 "Address": {
-                    "type": "string"
+                    "type": ["string", "integer"]
                 },
                 "Bus": {
                     "type": "integer"

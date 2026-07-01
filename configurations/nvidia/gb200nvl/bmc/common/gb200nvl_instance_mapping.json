@@ -1,16 +1,16 @@
 [
     {
-      "Exposes": [
-        {
-          "Name": "ERoTMapping",
-          "Type": "NSM_GetInstanceIDByDeviceEID",
-          "MappingArray": [
-            10
-          ]
-        }
-      ],
-      "Name": "Mapping",
-      "Probe": "TRUE",
-      "Type": "NSM_Configs"
+        "Exposes": [
+            {
+                "MappingArray": [
+                    10
+                ],
+                "Name": "ERoTMapping",
+                "Type": "NSM_GetInstanceIDByDeviceEID"
+            }
+        ],
+        "Name": "Mapping",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs"
     }
-  ]
+]

@@ -7,8 +7,20 @@
             "FOUND('HGX ProcessorModule 1')"
         ],
         "Type": "Chassis",
-        "xyz.openbmc_project.Inventory.Item.Chassis": {
-            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Zone"
+        "xyz.openbmc_project.Association.Definitions": {
+            "Associations": [
+                [
+                    "all_managers",
+                    "chassis",
+                    "/xyz/openbmc_project/inventory/system/bmc/HGX_BMC_0"
+                ]
+            ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "NVIDIA",
+            "Model": "GB HMC",
+            "PartNumber": "N/A",
+            "SerialNumber": "N/A"
         },
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Backplane"
@@ -22,23 +34,11 @@
         "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
             "FieldReplaceable": false
         },
-        "xyz.openbmc_project.Association.Definitions": {
-          "Associations": [
-              [
-                "all_managers",
-                "chassis",
-                "/xyz/openbmc_project/inventory/system/bmc/HGX_BMC_0"
-              ]
-          ]
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Asset": {
-            "Manufacturer": "NVIDIA",
-            "Model": "GB HMC",
-            "PartNumber": "N/A",
-            "SerialNumber": "N/A"
-        },
         "xyz.openbmc_project.Inventory.Decorator.SKU": {
             "SKU": "N/A"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Zone"
         }
     },
     {
@@ -46,8 +46,8 @@
             {
                 "Address": 72,
                 "Bus": 8,
-                "PhysicalContext": "GPUSubsystem",
                 "Name": "HGX_BMC_0_Temp_0",
+                "PhysicalContext": "GPUSubsystem",
                 "Thresholds": [
                     {
                         "Direction": "greater than",
@@ -78,22 +78,29 @@
             }
         ],
         "Name": "HGX_BMC_0",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 0, 'ADDRESS': 0, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
         "Type": "BMC",
-        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_0",
+        "xyz.openbmc_project.Association.Definitions": {
+            "Associations": [
+                [
+                    "assembly",
+                    "parent_chassis",
+                    "/xyz/openbmc_project/inventory/system/bmc_0/HMC_Board_FRU_Assembly0"
+                ],
+                [
+                    "assembly",
+                    "parent_chassis",
+                    "/xyz/openbmc_project/inventory/system/bmc_0/HMC_Product_FRU_Assembly1"
+                ]
+            ]
+        },
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
-            "Name": "HGX Baseboard",
             "Manufacturer": "$BOARD_MANUFACTURER",
             "Model": "GB HMC",
+            "Name": "HGX Baseboard",
             "PartNumber": "$BOARD_PART_NUMBER",
             "SerialNumber": "$BOARD_SERIAL_NUMBER"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.SKU": {
-            "SKU": ""
-        },
-        "xyz.openbmc_project.Inventory.Item.ManagementService": {},
-        "xyz.openbmc_project.Inventory.Item.Chassis": {
-            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
         },
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
@@ -107,36 +114,31 @@
         "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
             "FieldReplaceable": true
         },
+        "xyz.openbmc_project.Inventory.Decorator.SKU": {
+            "SKU": ""
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.Inventory.Item.ManagementService": {},
         "xyz.openbmc_project.State.Decorator.Health": {
             "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
-        },
-        "xyz.openbmc_project.Association.Definitions": {
-          "Associations": [
-              [
-                "assembly",
-                "parent_chassis",
-                "/xyz/openbmc_project/inventory/system/bmc_0/HMC_Board_FRU_Assembly0"
-              ],
-              [
-                "assembly",
-                "parent_chassis",
-                "/xyz/openbmc_project/inventory/system/bmc_0/HMC_Product_FRU_Assembly1"
-              ]
-          ]
         }
     },
     {
         "Name": "HMC Board FRU Assembly0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 0, 'ADDRESS': 0, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
         "Type": "bmc_0",
+        "xyz.openbmc_project.Inventory.Decorator.Area": {
+            "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.GPUSubsystem"
+        },
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "BuildDate": "$BOARD_MANUFACTURE_DATE",
+            "Manufacturer": "$BOARD_MANUFACTURER",
             "Model": "$BOARD_PRODUCT_NAME",
             "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER",
-            "BuildDate": "$BOARD_MANUFACTURE_DATE",
-            "Manufacturer": "$BOARD_MANUFACTURER"
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
         },
-        "xyz.openbmc_project.Inventory.Item.Assembly": {},
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
         },
@@ -146,9 +148,7 @@
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "HGX_Chassis_0/ProcessorModule_0"
         },
-        "xyz.openbmc_project.Inventory.Decorator.Area": {
-            "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.GPUSubsystem"
-        },
+        "xyz.openbmc_project.Inventory.Item.Assembly": {},
         "xyz.openbmc_project.State.Decorator.Health": {
             "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
         }
@@ -157,13 +157,15 @@
         "Name": "HMC Product FRU Assembly1",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 0, 'ADDRESS': 0, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
         "Type": "bmc_0",
+        "xyz.openbmc_project.Inventory.Decorator.Area": {
+            "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.GPUSubsystem"
+        },
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$PRODUCT_MANUFACTURER",
             "Model": "$PRODUCT_PRODUCT_NAME",
             "PartNumber": "$PRODUCT_PART_NUMBER",
-            "SerialNumber": "$PRODUCT_SERIAL_NUMBER",
-            "Manufacturer": "$PRODUCT_MANUFACTURER"
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
         },
-        "xyz.openbmc_project.Inventory.Item.Assembly": {},
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
         },
@@ -173,9 +175,7 @@
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "HGX_Chassis_0/ProcessorModule_0"
         },
-        "xyz.openbmc_project.Inventory.Decorator.Area": {
-            "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.GPUSubsystem"
-        },
+        "xyz.openbmc_project.Inventory.Item.Assembly": {},
         "xyz.openbmc_project.State.Decorator.Health": {
             "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
         }

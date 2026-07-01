@@ -6,6 +6,12 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
+                "APBootStatusType": {
+                    "type": "string"
+                },
+                "ChassisName": {
+                    "type": "string"
+                },
                 "FallingTarget": {
                     "type": "string"
                 },
@@ -13,6 +19,9 @@
                     "type": "string"
                 },
                 "HiddenByFPGA": {
+                    "type": "boolean"
+                },
+                "HideWhenHealthy": {
                     "type": "boolean"
                 },
                 "I2CAddress": {
@@ -25,6 +34,9 @@
                     "type": "boolean"
                 },
                 "MctpEID": {
+                    "type": "integer"
+                },
+                "MctpEid": {
                     "type": "integer"
                 },
                 "Name": {
@@ -56,10 +68,28 @@
                 "APBootStatusType": {
                     "type": "string"
                 },
+                "APEID": {
+                    "type": "integer"
+                },
+                "APName": {
+                    "type": "string"
+                },
                 "ChassisName": {
                     "type": "string"
                 },
+                "HiddenByFPGA": {
+                    "type": "boolean"
+                },
+                "I2CAddress": {
+                    "type": "integer"
+                },
+                "I2CBus": {
+                    "type": "integer"
+                },
                 "MctpEID": {
+                    "type": "integer"
+                },
+                "MctpEid": {
                     "type": "integer"
                 },
                 "MctpUUID": {

@@ -157,6 +157,9 @@
                 "xyz.openbmc_project.Inventory.Decorator.VendorInformation": {
                     "type": "object"
                 },
+                "xyz.openbmc_project.Inventory.Item": {
+                    "type": "object"
+                },
                 "xyz.openbmc_project.Inventory.Item.Accelerator": {
                     "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/Accelerator"
                 },

@@ -2,33 +2,16 @@
     {
         "Exposes": [
             {
-                "Bus": "0x02",
                 "Address": "0x54",
+                "Bus": "0x02",
                 "Name": "CBC_0",
                 "Type": "EEPROM_24C02"
             }
         ],
         "Name": "CBC_0",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 2, 'ADDRESS': 84, 'BOARD_MANUFACTURER': 'Nvidia|NVIDIA'})",
         "Type": "CableCartridge",
-        "Parent_Chassis":  "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
-        "xyz.openbmc_project.Inventory.Decorator.Asset": {
-            "Manufacturer": "$BOARD_MANUFACTURER",
-            "Model": "$BOARD_PRODUCT_NAME",
-            "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-            "Bus": "0x02",
-            "Address": "0x54",
-            "Name": "CBC_0"
-        },
-	"xyz.openbmc_project.Inventory.Decorator.VendorInformation": {
-             "CustomField1": "$CHASSIS_INFO_AM1"
-        },
-        "xyz.openbmc_project.Inventory.Item.Chassis": {
-            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
-        },
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
@@ -47,6 +30,23 @@
                     "/xyz/openbmc_project/inventory/system/assembly/CBC_0_Product_FRU_Assembly2"
                 ]
             ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "0x54",
+            "Bus": "0x02",
+            "Name": "CBC_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.VendorInformation": {
+            "CustomField1": "$CHASSIS_INFO_AM1"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
         }
     },
     {
@@ -63,11 +63,11 @@
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 2, 'ADDRESS': 84, 'BOARD_MANUFACTURER': 'Nvidia|NVIDIA'})",
         "Type": "Assembly",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "BuildDate": "$BOARD_MANUFACTURE_DATE",
+            "Manufacturer": "$BOARD_MANUFACTURER",
             "Model": "$BOARD_PRODUCT_NAME",
             "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER",
-            "BuildDate": "$BOARD_MANUFACTURE_DATE",
-            "Manufacturer": "$BOARD_MANUFACTURER"
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
         }
     },
     {
@@ -78,7 +78,6 @@
             "Model": "$PRODUCT_PRODUCT_NAME",
             "PartNumber": "$PRODUCT_PART_NUMBER",
             "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
-
         },
         "xyz.openbmc_project.Inventory.Decorator.Revision": {
             "Version": "$PRODUCT_VERSION"
@@ -87,33 +86,16 @@
     {
         "Exposes": [
             {
-                "Bus": "0x02",
                 "Address": "0x55",
+                "Bus": "0x02",
                 "Name": "CBC_1",
                 "Type": "EEPROM_24C02"
             }
         ],
         "Name": "CBC_1",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 2, 'ADDRESS': 85, 'BOARD_MANUFACTURER': 'Nvidia|NVIDIA'})",
         "Type": "CableCartridge",
-        "Parent_Chassis":  "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
-        "xyz.openbmc_project.Inventory.Decorator.Asset": {
-            "Manufacturer": "$BOARD_MANUFACTURER",
-            "Model": "$BOARD_PRODUCT_NAME",
-            "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-            "Bus": "0x02",
-            "Address": "0x55",
-            "Name": "CBC_1"
-        },
-	"xyz.openbmc_project.Inventory.Decorator.VendorInformation": {
-             "CustomField1": "$CHASSIS_INFO_AM1"
-        },
-        "xyz.openbmc_project.Inventory.Item.Chassis": {
-            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
-        },
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
@@ -132,6 +114,23 @@
                     "/xyz/openbmc_project/inventory/system/assembly/CBC_1_Product_FRU_Assembly2"
                 ]
             ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "0x55",
+            "Bus": "0x02",
+            "Name": "CBC_1"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.VendorInformation": {
+            "CustomField1": "$CHASSIS_INFO_AM1"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
         }
     },
     {
@@ -148,11 +147,11 @@
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 2, 'ADDRESS': 85, 'BOARD_MANUFACTURER': 'Nvidia|NVIDIA'})",
         "Type": "Assembly",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "BuildDate": "$BOARD_MANUFACTURE_DATE",
+            "Manufacturer": "$BOARD_MANUFACTURER",
             "Model": "$BOARD_PRODUCT_NAME",
             "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER",
-            "BuildDate": "$BOARD_MANUFACTURE_DATE",
-            "Manufacturer": "$BOARD_MANUFACTURER"
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
         }
     },
     {
@@ -171,33 +170,16 @@
     {
         "Exposes": [
             {
-                "Bus": "0x01",
                 "Address": "0x54",
+                "Bus": "0x01",
                 "Name": "CBC_2",
                 "Type": "EEPROM_24C02"
             }
         ],
         "Name": "CBC_2",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 84, 'BOARD_MANUFACTURER': 'Nvidia|NVIDIA'})",
         "Type": "CableCartridge",
-        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
-        "xyz.openbmc_project.Inventory.Decorator.Asset": {
-            "Manufacturer": "$BOARD_MANUFACTURER",
-            "Model": "$BOARD_PRODUCT_NAME",
-            "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-            "Bus": "0x01",
-            "Address": "0x54",
-            "Name": "CBC_2"
-        },
-	"xyz.openbmc_project.Inventory.Decorator.VendorInformation": {
-             "CustomField1": "$CHASSIS_INFO_AM1"
-        },
-        "xyz.openbmc_project.Inventory.Item.Chassis": {
-            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
-        },
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
@@ -216,6 +198,23 @@
                     "/xyz/openbmc_project/inventory/system/assembly/CBC_2_Product_FRU_Assembly2"
                 ]
             ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "0x54",
+            "Bus": "0x01",
+            "Name": "CBC_2"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.VendorInformation": {
+            "CustomField1": "$CHASSIS_INFO_AM1"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
         }
     },
     {
@@ -232,11 +231,11 @@
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 84, 'BOARD_MANUFACTURER': 'Nvidia|NVIDIA'})",
         "Type": "Assembly",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "BuildDate": "$BOARD_MANUFACTURE_DATE",
+            "Manufacturer": "$BOARD_MANUFACTURER",
             "Model": "$BOARD_PRODUCT_NAME",
             "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER",
-            "BuildDate": "$BOARD_MANUFACTURE_DATE",
-            "Manufacturer": "$BOARD_MANUFACTURER"
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
         }
     },
     {
@@ -255,33 +254,16 @@
     {
         "Exposes": [
             {
-                "Bus": "0x01",
                 "Address": "0x55",
+                "Bus": "0x01",
                 "Name": "CBC_3",
                 "Type": "EEPROM_24C02"
             }
         ],
         "Name": "CBC_3",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 85, 'BOARD_MANUFACTURER': 'Nvidia|NVIDIA'})",
         "Type": "CableCartridge",
-        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
-        "xyz.openbmc_project.Inventory.Decorator.Asset": {
-            "Manufacturer": "$BOARD_MANUFACTURER",
-            "Model": "$BOARD_PRODUCT_NAME",
-            "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-            "Bus": "0x01",
-            "Address": "0x55",
-            "Name": "CBC_3"
-        },
-	"xyz.openbmc_project.Inventory.Decorator.VendorInformation": {
-             "CustomField1": "$CHASSIS_INFO_AM1"
-        },
-        "xyz.openbmc_project.Inventory.Item.Chassis": {
-            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
-        },
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
@@ -300,6 +282,23 @@
                     "/xyz/openbmc_project/inventory/system/assembly/CBC_3_Product_FRU_Assembly2"
                 ]
             ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "0x55",
+            "Bus": "0x01",
+            "Name": "CBC_3"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.VendorInformation": {
+            "CustomField1": "$CHASSIS_INFO_AM1"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
         }
     },
     {
@@ -316,11 +315,11 @@
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 85, 'BOARD_MANUFACTURER': 'Nvidia|NVIDIA'})",
         "Type": "Assembly",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "BuildDate": "$BOARD_MANUFACTURE_DATE",
+            "Manufacturer": "$BOARD_MANUFACTURER",
             "Model": "$BOARD_PRODUCT_NAME",
             "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER",
-            "BuildDate": "$BOARD_MANUFACTURE_DATE",
-            "Manufacturer": "$BOARD_MANUFACTURER"
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
         }
     },
     {

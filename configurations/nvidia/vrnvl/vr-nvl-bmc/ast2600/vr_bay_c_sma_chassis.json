@@ -1,150 +1,158 @@
 [
-  {
-    "Exposes": [
-      {
+    {
+        "Exposes": [
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+                        "Backward": "chassis",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_CX_0",
+                        "Backward": "chassis",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+                        "Backward": "all_chassis",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_CX_0",
+                        "Backward": "all_chassis",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_Bay_C_SMA_0",
+                        "Backward": "chassis",
+                        "Forward": "all_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+                        "Backward": "bridged_Chassis",
+                        "Forward": "bridging_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_CX_0",
+                        "Backward": "bridged_Chassis",
+                        "Forward": "bridging_chassis"
+                    }
+                ],
+                "Chassis": {
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "ChassisAttributes": {
+                    "AssetInformationAvailable": true,
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "DeviceDiagnosticsSupported": true,
+                    "ErrorInjectionSupported": true,
+                    "FieldReplaceable": false,
+                    "LocationCode": "SMA_0",
+                    "LocationContext": "Chassis_0/Bay-C-Middle",
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "ResetMetricsSupported": true,
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "DeviceType": "$DEVICE_TYPE",
+                "Name": "Bay_C_SMA_0",
+                "Type": "NSM_Chassis",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_SMA_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Description": "Internal SMA temperature values",
+                "MaxValue": 125.0,
+                "MinValue": -40.0,
+                "Name": "Bay_C_SMA_0_Temp_0",
+                "PhysicalContext": "Board",
+                "Priority": true,
+                "SensorId": 17,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": false,
+                        "Name": "UpperFatal",
+                        "Value": 100.0
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            }
+        ],
         "Name": "Bay_C_SMA_0",
-        "Type": "NSM_Chassis",
-        "UUID": "$UUID",
-        "DeviceType": "$DEVICE_TYPE",
-        "Associations": [
-          {
-            "Forward": "parent_chassis",
-            "Backward": "chassis",
-            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0"
-          },
-          {
-            "Forward": "parent_chassis",
-            "Backward": "chassis",
-            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_CX_0"
-          },
-          {
-            "Forward": "parent_chassis",
-            "Backward": "all_chassis",
-            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0"
-          },
-          {
-            "Forward": "parent_chassis",
-            "Backward": "all_chassis",
-            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_CX_0"
-          },
-          {
-            "Forward": "all_chassis",
-            "Backward": "chassis",
-            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_Bay_C_SMA_0"
-          },
-          {
-            "Forward": "bridging_chassis",
-            "Backward": "bridged_Chassis",
-            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0"
-          },
-          {
-            "Forward": "bridging_chassis",
-            "Backward": "bridged_Chassis",
-            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_CX_0"
-          }
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'BAYCSMA'})",
+        "Type": "chassis"
+    },
+    {
+        "Exposes": [
+            {
+                "CriticalReactionType": "None",
+                "LeakDetectorName": "Bay_C_CX_0_LeakDetector_0",
+                "Name": "Bay_C_CX_0_LeakDetector_0_Policy",
+                "ReactionDelaySeconds": 0,
+                "Type": "LeakDetectionPolicy"
+            },
+            {
+                "ChassisPath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_CX_0",
+                "MaxValue": 3.3,
+                "MinValue": 0.0,
+                "Name": "Bay_C_CX_0_LeakDetector_0",
+                "SensorIdMap": [
+                    3
+                ],
+                "SensorNameMap": [
+                    "Bay_C_CX_0_LeakDetector_0"
+                ],
+                "Type": "NSM_LeakDetection",
+                "UUID": "$UUID"
+            }
         ],
-        "Chassis": {
-          "Type": "NSM_Chassis",
-          "DEVICE_UUID": "$DEVICE_UUID"
-        },
-        "ChassisAttributes": {
-          "Type": "NSM_Chassis_Attributes",
-          "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
-          "LocationCode": "SMA_0",
-          "LocationContext": "Chassis_0/Bay-C-Middle",
-          "FieldReplaceable": false,
-          "AssetInformationAvailable": true,
-          "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
-          "ResetMetricsSupported": true,
-          "ErrorInjectionSupported": true,
-          "DeviceDiagnosticsSupported": true
-        }
-      },
-      {
-        "Name": "Bay_C_SMA_0_Temp_0",
-        "Type": "NSM_Temp",
-        "Associations": [
-          {
-            "Forward": "chassis",
-            "Backward": "all_sensors",
-            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_SMA_0"
-          }
+        "Name": "Bay_C_SMA_0_LeakDetector_Bay_C_CX_0",
+        "Probe": [
+            "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'BAYCSMA'})",
+            "AND",
+            "FOUND('Bay_C_CX_0')"
         ],
-        "ThermalParameters": [
-          {
-            "Name": "UpperFatal",
-            "Dynamic": false,
-            "Value": 100.0
-          }
+        "Type": "chassis"
+    },
+    {
+        "Exposes": [
+            {
+                "CriticalReactionType": "None",
+                "LeakDetectorName": "BlueField_0_LeakDetector_0",
+                "Name": "BlueField_0_LeakDetector_0_Policy",
+                "ReactionDelaySeconds": 0,
+                "Type": "LeakDetectionPolicy"
+            },
+            {
+                "ChassisPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+                "MaxValue": 3.3,
+                "MinValue": 0.0,
+                "Name": "BlueField_0_LeakDetector_0",
+                "SensorIdMap": [
+                    3
+                ],
+                "SensorNameMap": [
+                    "BlueField_0_LeakDetector_0"
+                ],
+                "Type": "NSM_LeakDetection",
+                "UUID": "$UUID"
+            }
         ],
-        "UUID": "$UUID",
-        "PhysicalContext": "Board",
-        "Description": "Internal SMA temperature values",
-        "Aggregated": true,
-        "MaxValue": 125.0,
-        "MinValue": -40.0,
-        "SensorId": 17,
-        "Priority": true
-      }
-    ],
-    "Name": "Bay_C_SMA_0",
-    "Type": "chassis",
-    "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'BAYCSMA'})"
-  },
-  {
-    "Exposes": [
-      {
-        "Name": "Bay_C_CX_0_LeakDetector_0",
-        "Type": "NSM_LeakDetection",
-        "SensorIdMap": [3],
-        "SensorNameMap": ["Bay_C_CX_0_LeakDetector_0"],
-        "ChassisPath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_CX_0",
-        "MinValue": 0.0,
-        "MaxValue": 3.3,
-        "UUID": "$UUID"
-      },
-      {
-        "Name": "Bay_C_CX_0_LeakDetector_0_Policy",
-        "CriticalReactionType": "None",
-        "ReactionDelaySeconds": 0,
-        "LeakDetectorName": "Bay_C_CX_0_LeakDetector_0",
-        "Type": "LeakDetectionPolicy"
-      }
-    ],
-    "Name": "Bay_C_SMA_0_LeakDetector_Bay_C_CX_0",
-    "Type": "chassis",
-    "Probe": [
-      "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'BAYCSMA'})",
-      "AND",
-      "FOUND('Bay_C_CX_0')"
-    ]
-  },
-  {
-    "Exposes": [
-      {
-        "Name": "BlueField_0_LeakDetector_0",
-        "Type": "NSM_LeakDetection",
-        "SensorIdMap": [3],
-        "SensorNameMap": ["BlueField_0_LeakDetector_0"],
-        "ChassisPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
-        "MinValue": 0.0,
-        "MaxValue": 3.3,
-        "UUID": "$UUID"
-      },
-      {
-        "Name": "BlueField_0_LeakDetector_0_Policy",
-        "CriticalReactionType": "None",
-        "ReactionDelaySeconds": 0,
-        "LeakDetectorName": "BlueField_0_LeakDetector_0",
-        "Type": "LeakDetectionPolicy"
-      }
-    ],
-    "Name": "Bay_C_SMA_0_LeakDetector_BlueField_0",
-    "Type": "chassis",
-    "Probe": [
-      "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'BAYCSMA'})",
-      "AND",
-      "FOUND('BlueField_0')"
-    ]
-  }
+        "Name": "Bay_C_SMA_0_LeakDetector_BlueField_0",
+        "Probe": [
+            "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'BAYCSMA'})",
+            "AND",
+            "FOUND('BlueField_0')"
+        ],
+        "Type": "chassis"
+    }
 ]

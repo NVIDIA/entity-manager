@@ -2,11 +2,12 @@
     {
         "Exposes": [
             {
-                "Type": "NSM_Poll_Ready",
+                "Name": "NSM Poll Readyness",
                 "Status": "Enabled",
-                "Name": "NSM Poll Readyness"
+                "Type": "NSM_Poll_Ready"
             }
         ],
+        "Name": "NSM_Readiness",
         "Probe": [
             "xyz.openbmc_project.Configuration.NSMReady({'C1G1_FPGA_0_Ready': 'Enabled'})",
             "AND",
@@ -20,7 +21,6 @@
             "AND",
             "xyz.openbmc_project.Configuration.NSMReady({'C1G1_Mapping_Ready': 'Enabled'})"
         ],
-        "Name": "NSM_Readiness",
         "Type": "chassis"
     }
 ]

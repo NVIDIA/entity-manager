@@ -191,7 +191,14 @@
                     "enum": ["MCTPUSBDevice"]
                 }
             },
-            "required": ["RootHubPath", "Port", "Configuration", "InterfaceNum", "Name", "Type"],
+            "required": [
+                "RootHubPath",
+                "Port",
+                "Configuration",
+                "InterfaceNum",
+                "Name",
+                "Type"
+            ],
             "type": "object"
         },
         "MCTPXROTTarget": {

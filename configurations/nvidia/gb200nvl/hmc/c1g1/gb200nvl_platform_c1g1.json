@@ -2,11 +2,174 @@
     "Name": "Nvidia GB200 NVL HMC C1G1 Ariel",
     "PlatformExposes": [
         {
-            "Bus": "0",
-            "ChipSelect": "2",
             "Name": "HGX_ERoT_BMC_0",
-            "StaticEndpointID": "10",
-            "Type": "MCTPSPIDevice"
+            "SupportedDumps": [
+                "RoT",
+                "FwAttrs",
+                "HwCheckout"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "Name": "HGX_ERoT_FPGA_0",
+            "Pages": [
+                {
+                    "Bus": 1,
+                    "Idx": "Module1_Page0",
+                    "RegAddr": "0x00",
+                    "Size": 256,
+                    "SlaveAddr": "0x0b"
+                },
+                {
+                    "Bus": 1,
+                    "Idx": "Module1_Page0",
+                    "Page": "0x00",
+                    "RegAddr": "0x00",
+                    "Size": 256,
+                    "SlaveAddr": "0x11"
+                },
+                {
+                    "Bus": 1,
+                    "Idx": "Module1_Page1",
+                    "Page": "0x01",
+                    "RegAddr": "0x00",
+                    "Size": 256,
+                    "SlaveAddr": "0x11"
+                },
+                {
+                    "Bus": 1,
+                    "Idx": "Module1_Page2",
+                    "Page": "0x02",
+                    "RegAddr": "0x00",
+                    "Size": 256,
+                    "SlaveAddr": "0x11"
+                },
+                {
+                    "Bus": 1,
+                    "Idx": "Module1_Page3",
+                    "Page": "0x03",
+                    "RegAddr": "0x00",
+                    "Size": 256,
+                    "SlaveAddr": "0x11"
+                },
+                {
+                    "Bus": 1,
+                    "Idx": "Module1_Page4",
+                    "Page": "0x04",
+                    "RegAddr": "0x00",
+                    "Size": 256,
+                    "SlaveAddr": "0x11"
+                },
+                {
+                    "Bus": 1,
+                    "Idx": "Module1_Page5",
+                    "Page": "0x05",
+                    "RegAddr": "0x00",
+                    "Size": 256,
+                    "SlaveAddr": "0x11"
+                },
+                {
+                    "Bus": 2,
+                    "Idx": "Module0_Page0",
+                    "RegAddr": "0x00",
+                    "Size": 256,
+                    "SlaveAddr": "0x0b"
+                },
+                {
+                    "Bus": 2,
+                    "Idx": "Module0_Page0",
+                    "Page": "0x00",
+                    "RegAddr": "0x00",
+                    "Size": 256,
+                    "SlaveAddr": "0x11"
+                },
+                {
+                    "Bus": 2,
+                    "Idx": "Module0_Page1",
+                    "Page": "0x01",
+                    "RegAddr": "0x00",
+                    "Size": 256,
+                    "SlaveAddr": "0x11"
+                },
+                {
+                    "Bus": 2,
+                    "Idx": "Module0_Page2",
+                    "Page": "0x02",
+                    "RegAddr": "0x00",
+                    "Size": 256,
+                    "SlaveAddr": "0x11"
+                },
+                {
+                    "Bus": 2,
+                    "Idx": "Module0_Page3",
+                    "Page": "0x03",
+                    "RegAddr": "0x00",
+                    "Size": 256,
+                    "SlaveAddr": "0x11"
+                },
+                {
+                    "Bus": 2,
+                    "Idx": "Module0_Page4",
+                    "Page": "0x04",
+                    "RegAddr": "0x00",
+                    "Size": 256,
+                    "SlaveAddr": "0x11"
+                },
+                {
+                    "Bus": 2,
+                    "Idx": "Module0_Page5",
+                    "Page": "0x05",
+                    "RegAddr": "0x00",
+                    "Size": 256,
+                    "SlaveAddr": "0x11"
+                }
+            ],
+            "SupportedDumps": [
+                "RoT",
+                "FPGA"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "Name": "HGX_ERoT_FPGA_1",
+            "SupportedDumps": [
+                "RoT"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "Name": "HGX_CPU_0",
+            "SupportedDumps": [
+                "RoT"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "Name": "HGX_CPU_1",
+            "SupportedDumps": [
+                "RoT"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "GPU_0",
+            "Name": "HGX_GPU_0",
+            "SupportedDumps": [
+                "RoT",
+                "GPUDiag",
+                "NetIR"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "GPU_1",
+            "Name": "HGX_GPU_1",
+            "SupportedDumps": [
+                "RoT",
+                "GPUDiag",
+                "NetIR"
+            ],
+            "Type": "Dump"
         },
         {
             "BridgeName": "HGX_FPGA_0",
@@ -61,6 +224,13 @@
             "Name": "HGX_CPU_1",
             "PoolIndex": 11,
             "Type": "MCTPBridgePoolDevice"
+        },
+        {
+            "Bus": "0",
+            "ChipSelect": "2",
+            "Name": "HGX_ERoT_BMC_0",
+            "StaticEndpointID": "10",
+            "Type": "MCTPSPIDevice"
         },
         {
             "BridgePoolEndEID": "24",
@@ -150,27 +320,27 @@
         {
             "Components": [
                 {
-                    "AssociationForward": [
-                        "inventory"
-                    ],
                     "AssociationBackward": [
                         "activation"
                     ],
                     "AssociationEndpoint": [
                         "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_FPGA_0"
                     ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
                     "ComponentIdentifier": 65280,
                     "Name": "HGX_FW_ERoT_FPGA_0"
                 },
                 {
-                    "AssociationForward": [
-                        "inventory"
-                    ],
                     "AssociationBackward": [
                         "activation"
                     ],
                     "AssociationEndpoint": [
                         "/xyz/openbmc_project/inventory/system/chassis/HGX_FPGA_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
                     ],
                     "ComponentIdentifier": 80,
                     "Name": "HGX_FW_FPGA_0"
@@ -178,33 +348,33 @@
             ],
             "MCTPTargetName": "HGX_ERoT_FPGA_0",
             "Name": "HGX_ERoT_FPGA_0_PLDM",
-            "Type": "PLDMFirmwareDevice",
-            "StaticEID": 13
+            "StaticEID": 13,
+            "Type": "PLDMFirmwareDevice"
         },
         {
             "Components": [
                 {
-                    "AssociationForward": [
-                        "inventory"
-                    ],
                     "AssociationBackward": [
                         "activation"
                     ],
                     "AssociationEndpoint": [
                         "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_FPGA_1"
                     ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
                     "ComponentIdentifier": 65280,
                     "Name": "HGX_FW_ERoT_FPGA_1"
                 },
                 {
-                    "AssociationForward": [
-                        "inventory"
-                    ],
                     "AssociationBackward": [
                         "activation"
                     ],
                     "AssociationEndpoint": [
                         "/xyz/openbmc_project/inventory/system/chassis/HGX_FPGA_1"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
                     ],
                     "ComponentIdentifier": 80,
                     "Name": "HGX_FW_FPGA_1"
@@ -212,20 +382,20 @@
             ],
             "MCTPTargetName": "HGX_ERoT_FPGA_1",
             "Name": "HGX_ERoT_FPGA_1_PLDM",
-            "Type": "PLDMFirmwareDevice",
-            "StaticEID": 21
+            "StaticEID": 21,
+            "Type": "PLDMFirmwareDevice"
         },
         {
             "Components": [
                 {
-                    "AssociationForward": [
-                        "inventory"
-                    ],
                     "AssociationBackward": [
                         "activation"
                     ],
                     "AssociationEndpoint": [
                         "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_BMC_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
                     ],
                     "ComponentIdentifier": 65280,
                     "Name": "HGX_FW_ERoT_BMC_0"
@@ -238,33 +408,33 @@
             ],
             "MCTPTargetName": "HGX_ERoT_BMC_0",
             "Name": "HGX_ERoT_BMC_0_PLDM",
-            "Type": "PLDMFirmwareDevice",
-            "StaticEID": 15
+            "StaticEID": 15,
+            "Type": "PLDMFirmwareDevice"
         },
         {
             "Components": [
                 {
-                    "AssociationForward": [
-                        "inventory"
-                    ],
                     "AssociationBackward": [
                         "activation"
                     ],
                     "AssociationEndpoint": [
                         "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_0"
                     ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
                     "ComponentIdentifier": 49152,
                     "Name": "HGX_FW_GPU_0"
                 },
                 {
-                    "AssociationForward": [
-                        "inventory"
-                    ],
                     "AssociationBackward": [
                         "active"
                     ],
                     "AssociationEndpoint": [
                         "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
                     ],
                     "ComponentIdentifier": 49168,
                     "Name": "HGX_InfoROM_GPU_0"
@@ -272,33 +442,33 @@
             ],
             "MCTPTargetName": "HGX_GPU_0",
             "Name": "HGX_GPU_0_PLDM",
-            "Type": "PLDMFirmwareDevice",
-            "StaticEID": 18
+            "StaticEID": 18,
+            "Type": "PLDMFirmwareDevice"
         },
         {
             "Components": [
                 {
-                    "AssociationForward": [
-                        "inventory"
-                    ],
                     "AssociationBackward": [
                         "activation"
                     ],
                     "AssociationEndpoint": [
                         "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_1"
                     ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
                     "ComponentIdentifier": 49152,
                     "Name": "HGX_FW_GPU_1"
                 },
                 {
-                    "AssociationForward": [
-                        "inventory"
-                    ],
                     "AssociationBackward": [
                         "active"
                     ],
                     "AssociationEndpoint": [
                         "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_1"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
                     ],
                     "ComponentIdentifier": 49168,
                     "Name": "HGX_InfoROM_GPU_1"
@@ -306,33 +476,33 @@
             ],
             "MCTPTargetName": "HGX_GPU_1",
             "Name": "HGX_GPU_1_PLDM",
-            "Type": "PLDMFirmwareDevice",
-            "StaticEID": 26
+            "StaticEID": 26,
+            "Type": "PLDMFirmwareDevice"
         },
         {
             "Components": [
                 {
-                    "AssociationForward": [
-                        "inventory"
-                    ],
                     "AssociationBackward": [
                         "activation"
                     ],
                     "AssociationEndpoint": [
                         "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_CPU_0"
                     ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
                     "ComponentIdentifier": 65280,
                     "Name": "HGX_FW_ERoT_CPU_0"
                 },
                 {
-                    "AssociationForward": [
-                        "inventory"
-                    ],
                     "AssociationBackward": [
                         "activation"
                     ],
                     "AssociationEndpoint": [
                         "/xyz/openbmc_project/inventory/system/component/HGX_CPU_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
                     ],
                     "ComponentIdentifier": 56,
                     "Name": "HGX_FW_CPU_0"
@@ -340,33 +510,33 @@
             ],
             "MCTPTargetName": "HGX_ERoT_CPU_0",
             "Name": "HGX_ERoT_CPU_0_PLDM",
-            "Type": "PLDMFirmwareDevice",
-            "StaticEID": 16
+            "StaticEID": 16,
+            "Type": "PLDMFirmwareDevice"
         },
         {
             "Components": [
                 {
-                    "AssociationForward": [
-                        "inventory"
-                    ],
                     "AssociationBackward": [
                         "activation"
                     ],
                     "AssociationEndpoint": [
                         "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_CPU_1"
                     ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
                     "ComponentIdentifier": 65280,
                     "Name": "HGX_FW_ERoT_CPU_1"
                 },
                 {
-                    "AssociationForward": [
-                        "inventory"
-                    ],
                     "AssociationBackward": [
                         "activation"
                     ],
                     "AssociationEndpoint": [
                         "/xyz/openbmc_project/inventory/system/component/HGX_CPU_1"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
                     ],
                     "ComponentIdentifier": 56,
                     "Name": "HGX_FW_CPU_1"
@@ -374,178 +544,8 @@
             ],
             "MCTPTargetName": "HGX_ERoT_CPU_1",
             "Name": "HGX_ERoT_CPU_1_PLDM",
-            "Type": "PLDMFirmwareDevice",
-            "StaticEID": 24
-        },
-        {
-            "Name": "HGX_ERoT_BMC_0",
-            "SupportedDumps": [
-                "RoT",
-                "FwAttrs",
-                "HwCheckout"
-            ],
-            "Type": "Dump"
-        },
-        {
-            "Name": "HGX_ERoT_FPGA_0",
-            "SupportedDumps": [
-                "RoT",
-                "FPGA"
-            ],
-            "Type": "Dump",
-            "Pages": [
-                {
-                    "Idx": "Module1_Page0",
-                    "Bus": 1,
-                    "SlaveAddr": "0x0b",
-                    "RegAddr": "0x00",
-                    "Size": 256
-                },
-                {
-                    "Idx": "Module1_Page0",
-                    "Bus": 1,
-                    "SlaveAddr": "0x11",
-                    "RegAddr": "0x00",
-                    "Page": "0x00",
-                    "Size": 256
-                },
-                {
-                    "Idx": "Module1_Page1",
-                    "Bus": 1,
-                    "SlaveAddr": "0x11",
-                    "RegAddr": "0x00",
-                    "Page": "0x01",
-                    "Size": 256
-                },
-                {
-                    "Idx": "Module1_Page2",
-                    "Bus": 1,
-                    "SlaveAddr": "0x11",
-                    "RegAddr": "0x00",
-                    "Page": "0x02",
-                    "Size": 256
-                },
-                {
-                    "Idx": "Module1_Page3",
-                    "Bus": 1,
-                    "SlaveAddr": "0x11",
-                    "RegAddr": "0x00",
-                    "Page": "0x03",
-                    "Size": 256
-                },
-                {
-                    "Idx": "Module1_Page4",
-                    "Bus": 1,
-                    "SlaveAddr": "0x11",
-                    "RegAddr": "0x00",
-                    "Page": "0x04",
-                    "Size": 256
-                },
-                {
-                    "Idx": "Module1_Page5",
-                    "Bus": 1,
-                    "SlaveAddr": "0x11",
-                    "RegAddr": "0x00",
-                    "Page": "0x05",
-                    "Size": 256
-                },
-                {
-                    "Idx": "Module0_Page0",
-                    "Bus": 2,
-                    "SlaveAddr": "0x0b",
-                    "RegAddr": "0x00",
-                    "Size": 256
-                },
-                {
-                    "Idx": "Module0_Page0",
-                    "Bus": 2,
-                    "SlaveAddr": "0x11",
-                    "RegAddr": "0x00",
-                    "Page": "0x00",
-                    "Size": 256
-                },
-                {
-                    "Idx": "Module0_Page1",
-                    "Bus": 2,
-                    "SlaveAddr": "0x11",
-                    "RegAddr": "0x00",
-                    "Page": "0x01",
-                    "Size": 256
-                },
-                {
-                    "Idx": "Module0_Page2",
-                    "Bus": 2,
-                    "SlaveAddr": "0x11",
-                    "RegAddr": "0x00",
-                    "Page": "0x02",
-                    "Size": 256
-                },
-                {
-                    "Idx": "Module0_Page3",
-                    "Bus": 2,
-                    "SlaveAddr": "0x11",
-                    "RegAddr": "0x00",
-                    "Page": "0x03",
-                    "Size": 256
-                },
-                {
-                    "Idx": "Module0_Page4",
-                    "Bus": 2,
-                    "SlaveAddr": "0x11",
-                    "RegAddr": "0x00",
-                    "Page": "0x04",
-                    "Size": 256
-                },
-                {
-                    "Idx": "Module0_Page5",
-                    "Bus": 2,
-                    "SlaveAddr": "0x11",
-                    "RegAddr": "0x00",
-                    "Page": "0x05",
-                    "Size": 256
-                }
-            ]
-        },
-        {
-            "Name": "HGX_ERoT_FPGA_1",
-            "SupportedDumps": [
-                "RoT"
-            ],
-            "Type": "Dump"
-        },
-        {
-            "Name": "HGX_CPU_0",
-            "SupportedDumps": [
-                "RoT"
-            ],
-            "Type": "Dump"
-        },
-        {
-            "Name": "HGX_CPU_1",
-            "SupportedDumps": [
-                "RoT"
-            ],
-            "Type": "Dump"
-        },
-        {
-            "Name": "HGX_GPU_0",
-            "DeviceType": "GPU_0",
-            "SupportedDumps": [
-                "RoT",
-                "GPUDiag",
-                "NetIR"
-            ],
-            "Type": "Dump"
-        },
-        {
-            "Name": "HGX_GPU_1",
-            "DeviceType": "GPU_1",
-            "SupportedDumps": [
-                "RoT",
-                "GPUDiag",
-                "NetIR"
-            ],
-            "Type": "Dump"
+            "StaticEID": 24,
+            "Type": "PLDMFirmwareDevice"
         }
     ],
     "Probe": "TRUE",

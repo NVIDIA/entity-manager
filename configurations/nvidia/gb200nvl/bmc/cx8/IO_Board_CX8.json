@@ -2,107 +2,104 @@
     {
         "Exposes": [
             {
+                "Address": 50,
+                "Bus": 16,
+                "EID": 101,
                 "Name": "IO_Board_0_CX8_0",
-                "Type": "I2CDeviceAssociation",
-                "Bus": 16,
-                "Address": 50,
-                "EID": 101
+                "Type": "I2CDeviceAssociation"
             },
             {
-                "Name": "IO_Board_0_CX8_0_Temp",
-                "Type": "SensorAuxName",
-                "SensorId": 300,
-                "Bus": 16,
                 "Address": 50,
-                "AuxNames": ["IO_Board_0_CX8_0_Temp"]
-            },
-            {
-                "Name": "IO_Board_0_CX8_0_Port_0_Temp",
-                "Type": "SensorAuxName",
-                "SensorId": 500,
-                "Bus": 16,
-                "Address": 50,
-                "AuxNames": ["IO_Board_0_CX8_0_Port_0_Temp"]
-            },
-            {
-                "Name": "IO_Board_0_CX8_0_Port_0_State",
-                "Type": "SensorAuxName",
-                "SensorId": 200,
-                "Bus": 16,
-                "Address": 50,
-                "AuxNames": ["Port_0"]
-            },
-            {
-                "Name": "IO_Board_0_CX8_0_Power_0",
-                "Type": "SensorAuxName",
-                "SensorId": 50,
-                "Bus": 16,
-                "Address": 50,
-                "AuxNames": ["IO_Board_0_CX8_0_Power_0"]
-            },
-            {
+                "Bus": 18,
+                "EID": 102,
                 "Name": "IO_Board_0_CX8_1",
-                "Type": "I2CDeviceAssociation",
-                "Bus": 18,
-                "Address": 50,
-                "EID": 102
+                "Type": "I2CDeviceAssociation"
             },
             {
-                "Name": "IO_Board_0_CX8_1_Temp",
-                "Type": "SensorAuxName",
+                "Address": 50,
+                "AuxNames": [
+                    "IO_Board_0_CX8_0_Temp"
+                ],
+                "Bus": 16,
+                "Name": "IO_Board_0_CX8_0_Temp",
                 "SensorId": 300,
-                "Bus": 18,
-                "Address": 50,
-                "AuxNames": ["IO_Board_0_CX8_1_Temp"]
+                "Type": "SensorAuxName"
             },
             {
-                "Name": "IO_Board_0_CX8_1_Port_0_Temp",
-                "Type": "SensorAuxName",
+                "Address": 50,
+                "AuxNames": [
+                    "IO_Board_0_CX8_0_Port_0_Temp"
+                ],
+                "Bus": 16,
+                "Name": "IO_Board_0_CX8_0_Port_0_Temp",
                 "SensorId": 500,
-                "Bus": 18,
-                "Address": 50,
-                "AuxNames": ["IO_Board_0_CX8_1_Port_0_Temp"]
+                "Type": "SensorAuxName"
             },
             {
-                "Name": "IO_Board_0_CX8_1_Port_0_State",
-                "Type": "SensorAuxName",
+                "Address": 50,
+                "AuxNames": [
+                    "Port_0"
+                ],
+                "Bus": 16,
+                "Name": "IO_Board_0_CX8_0_Port_0_State",
                 "SensorId": 200,
-                "Bus": 18,
-                "Address": 50,
-                "AuxNames": ["Port_0"]
+                "Type": "SensorAuxName"
             },
             {
-                "Name": "IO_Board_0_CX8_1_Power_0",
-                "Type": "SensorAuxName",
-                "SensorId": 50,
-                "Bus": 18,
                 "Address": 50,
-                "AuxNames": ["IO_Board_0_CX8_1_Power_0"]
+                "AuxNames": [
+                    "IO_Board_0_CX8_0_Power_0"
+                ],
+                "Bus": 16,
+                "Name": "IO_Board_0_CX8_0_Power_0",
+                "SensorId": 50,
+                "Type": "SensorAuxName"
+            },
+            {
+                "Address": 50,
+                "AuxNames": [
+                    "IO_Board_0_CX8_1_Temp"
+                ],
+                "Bus": 18,
+                "Name": "IO_Board_0_CX8_1_Temp",
+                "SensorId": 300,
+                "Type": "SensorAuxName"
+            },
+            {
+                "Address": 50,
+                "AuxNames": [
+                    "IO_Board_0_CX8_1_Port_0_Temp"
+                ],
+                "Bus": 18,
+                "Name": "IO_Board_0_CX8_1_Port_0_Temp",
+                "SensorId": 500,
+                "Type": "SensorAuxName"
+            },
+            {
+                "Address": 50,
+                "AuxNames": [
+                    "Port_0"
+                ],
+                "Bus": 18,
+                "Name": "IO_Board_0_CX8_1_Port_0_State",
+                "SensorId": 200,
+                "Type": "SensorAuxName"
+            },
+            {
+                "Address": 50,
+                "AuxNames": [
+                    "IO_Board_0_CX8_1_Power_0"
+                ],
+                "Bus": 18,
+                "Name": "IO_Board_0_CX8_1_Power_0",
+                "SensorId": 50,
+                "Type": "SensorAuxName"
             }
         ],
         "Name": "IO_Board_0",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 21, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '900-9X86E-00[6|C|S]X-.*'})",
         "Type": "Board",
-	"Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
-        "xyz.openbmc_project.Inventory.Decorator.Asset": {
-            "Manufacturer": "$BOARD_MANUFACTURER",
-            "Model": "$BOARD_PRODUCT_NAME",
-            "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER"
-        },
-        "xyz.openbmc_project.Inventory.Item.Chassis": {
-            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Location": {
-            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
-        },
-        "xyz.openbmc_project.State.Decorator.Health": {
-            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
-        },
-        "xyz.openbmc_project.Inventory.Item.NetworkInterface": {},
-        "xyz.openbmc_project.Inventory.Decorator.Instance": {
-            "InstanceNumber": 1
-        },
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
@@ -116,6 +113,25 @@
                     "/xyz/openbmc_project/inventory/system/assembly/IO_Board_0_Product_FRU_Assembly1"
                 ]
             ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 1
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.Inventory.Item.NetworkInterface": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
         }
     },
     {
@@ -123,11 +139,11 @@
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 21, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '900-9X86E-00[6|C|S]X-.*'})",
         "Type": "Assembly",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "BuildDate": "$BOARD_MANUFACTURE_DATE",
+            "Manufacturer": "$BOARD_MANUFACTURER",
             "Model": "$BOARD_PRODUCT_NAME",
             "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER",
-            "BuildDate": "$BOARD_MANUFACTURE_DATE",
-            "Manufacturer": "$BOARD_MANUFACTURER"
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
         },
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
@@ -141,16 +157,16 @@
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 21, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '900-9X86E-00[6|C|S]X-.*'})",
         "Type": "Assembly",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$PRODUCT_MANUFACTURER",
             "Model": "$PRODUCT_PRODUCT_NAME",
             "PartNumber": "$PRODUCT_PART_NUMBER",
-            "SerialNumber": "$PRODUCT_SERIAL_NUMBER",
-            "Manufacturer": "$PRODUCT_MANUFACTURER"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Revision": {
-            "Version": "$PRODUCT_VERSION"
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
         },
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Revision": {
+            "Version": "$PRODUCT_VERSION"
         },
         "xyz.openbmc_project.State.Decorator.Health": {
             "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
@@ -160,17 +176,6 @@
         "Name": "IO_Board_0_CX8_0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 21, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '900-9X86E-00[6|C|S]X-.*'})",
         "Type": "NetworkAdapter",
-        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-            "Bus": 16,
-            "Address": 50,
-            "Name": "I2CDeviceAssociation"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Asset": {
-            "Manufacturer": "$BOARD_MANUFACTURER",
-            "Model": "$BOARD_PRODUCT_NAME",
-            "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER"
-        },
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
@@ -190,23 +195,23 @@
                 ]
             ]
         },
-        "xyz.openbmc_project.Inventory.Item.NetworkInterface": {}
-    },
-    {
-        "Name": "IO_Board_0_CX8_1",
-        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 21, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '900-9X86E-00[6|C|S]X-.*'})",
-        "Type": "NetworkAdapter",
-        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-            "Bus": 18,
-            "Address": 50,
-            "Name": "I2CDeviceAssociation"
-        },
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
             "Manufacturer": "$BOARD_MANUFACTURER",
             "Model": "$BOARD_PRODUCT_NAME",
             "PartNumber": "$BOARD_PART_NUMBER",
             "SerialNumber": "$BOARD_SERIAL_NUMBER"
         },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": 50,
+            "Bus": 16,
+            "Name": "I2CDeviceAssociation"
+        },
+        "xyz.openbmc_project.Inventory.Item.NetworkInterface": {}
+    },
+    {
+        "Name": "IO_Board_0_CX8_1",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 21, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '900-9X86E-00[6|C|S]X-.*'})",
+        "Type": "NetworkAdapter",
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
@@ -226,112 +231,120 @@
                 ]
             ]
         },
-        "xyz.openbmc_project.Inventory.Item.NetworkInterface": {}
-    },
-    {
-        "Exposes": [
-            {
-                "Name": "IO_Board_1_CX8_0",
-                "Type": "I2CDeviceAssociation",
-                "Bus": 28,
-                "Address": 50,
-                "EID": 103
-            },
-            {
-                "Name": "IO_Board_1_CX8_0_Temp",
-                "Type": "SensorAuxName",
-                "SensorId": 300,
-                "Bus": 28,
-                "Address": 50,
-                "AuxNames": ["IO_Board_1_CX8_0_Temp"]
-            },
-            {
-                "Name": "IO_Board_1_CX8_0_Port_0_Temp",
-                "Type": "SensorAuxName",
-                "SensorId": 500,
-                "Bus": 28,
-                "Address": 50,
-                "AuxNames": ["IO_Board_1_CX8_0_Port_0_Temp"]
-            },
-            {
-                "Name": "IO_Board_1_CX8_0_Port_0_State",
-                "Type": "SensorAuxName",
-                "SensorId": 200,
-                "Bus": 28,
-                "Address": 50,
-                "AuxNames": ["Port_0"]
-            },
-            {
-                "Name": "IO_Board_1_CX8_0_Power_0",
-                "Type": "SensorAuxName",
-                "SensorId": 50,
-                "Bus": 28,
-                "Address": 50,
-                "AuxNames": ["IO_Board_1_CX8_0_Power_0"]
-            },
-            {
-                "Name": "IO_Board_1_CX8_1",
-                "Type": "I2CDeviceAssociation",
-                "Bus": 30,
-                "Address": 50,
-                "EID": 104
-            },
-            {
-                "Name": "IO_Board_1_CX8_1_Temp",
-                "Type": "SensorAuxName",
-                "SensorId": 300,
-                "Bus": 30,
-                "Address": 50,
-                "AuxNames": ["IO_Board_1_CX8_1_Temp"]
-            },
-            {
-                "Name": "IO_Board_1_CX8_1_Port_0_Temp",
-                "Type": "SensorAuxName",
-                "SensorId": 500,
-                "Bus": 30,
-                "Address": 50,
-                "AuxNames": ["IO_Board_1_CX8_1_Port_0_Temp"]
-            },
-            {
-                "Name": "IO_Board_1_CX8_1_Port_0_State",
-                "Type": "SensorAuxName",
-                "SensorId": 200,
-                "Bus": 30,
-                "Address": 50,
-                "AuxNames": ["Port_0"]
-            },
-            {
-                "Name": "IO_Board_1_CX8_1_Power_0",
-                "Type": "SensorAuxName",
-                "SensorId": 50,
-                "Bus": 30,
-                "Address": 50,
-                "AuxNames": ["IO_Board_1_CX8_1_Power_0"]
-            }
-        ],
-        "Name": "IO_Board_1",
-        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 33, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '900-9X86E-00[6|C|S]X-.*'})",
-        "Type": "Board",
-        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
             "Manufacturer": "$BOARD_MANUFACTURER",
             "Model": "$BOARD_PRODUCT_NAME",
             "PartNumber": "$BOARD_PART_NUMBER",
             "SerialNumber": "$BOARD_SERIAL_NUMBER"
         },
-        "xyz.openbmc_project.Inventory.Item.Chassis": {
-            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": 50,
+            "Bus": 18,
+            "Name": "I2CDeviceAssociation"
         },
-        "xyz.openbmc_project.Inventory.Decorator.Location": {
-            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
-        },
-        "xyz.openbmc_project.State.Decorator.Health": {
-            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
-        },
-        "xyz.openbmc_project.Inventory.Item.NetworkInterface": {},
-        "xyz.openbmc_project.Inventory.Decorator.Instance": {
-            "InstanceNumber": 1
-        },
+        "xyz.openbmc_project.Inventory.Item.NetworkInterface": {}
+    },
+    {
+        "Exposes": [
+            {
+                "Address": 50,
+                "Bus": 28,
+                "EID": 103,
+                "Name": "IO_Board_1_CX8_0",
+                "Type": "I2CDeviceAssociation"
+            },
+            {
+                "Address": 50,
+                "Bus": 30,
+                "EID": 104,
+                "Name": "IO_Board_1_CX8_1",
+                "Type": "I2CDeviceAssociation"
+            },
+            {
+                "Address": 50,
+                "AuxNames": [
+                    "IO_Board_1_CX8_0_Temp"
+                ],
+                "Bus": 28,
+                "Name": "IO_Board_1_CX8_0_Temp",
+                "SensorId": 300,
+                "Type": "SensorAuxName"
+            },
+            {
+                "Address": 50,
+                "AuxNames": [
+                    "IO_Board_1_CX8_0_Port_0_Temp"
+                ],
+                "Bus": 28,
+                "Name": "IO_Board_1_CX8_0_Port_0_Temp",
+                "SensorId": 500,
+                "Type": "SensorAuxName"
+            },
+            {
+                "Address": 50,
+                "AuxNames": [
+                    "Port_0"
+                ],
+                "Bus": 28,
+                "Name": "IO_Board_1_CX8_0_Port_0_State",
+                "SensorId": 200,
+                "Type": "SensorAuxName"
+            },
+            {
+                "Address": 50,
+                "AuxNames": [
+                    "IO_Board_1_CX8_0_Power_0"
+                ],
+                "Bus": 28,
+                "Name": "IO_Board_1_CX8_0_Power_0",
+                "SensorId": 50,
+                "Type": "SensorAuxName"
+            },
+            {
+                "Address": 50,
+                "AuxNames": [
+                    "IO_Board_1_CX8_1_Temp"
+                ],
+                "Bus": 30,
+                "Name": "IO_Board_1_CX8_1_Temp",
+                "SensorId": 300,
+                "Type": "SensorAuxName"
+            },
+            {
+                "Address": 50,
+                "AuxNames": [
+                    "IO_Board_1_CX8_1_Port_0_Temp"
+                ],
+                "Bus": 30,
+                "Name": "IO_Board_1_CX8_1_Port_0_Temp",
+                "SensorId": 500,
+                "Type": "SensorAuxName"
+            },
+            {
+                "Address": 50,
+                "AuxNames": [
+                    "Port_0"
+                ],
+                "Bus": 30,
+                "Name": "IO_Board_1_CX8_1_Port_0_State",
+                "SensorId": 200,
+                "Type": "SensorAuxName"
+            },
+            {
+                "Address": 50,
+                "AuxNames": [
+                    "IO_Board_1_CX8_1_Power_0"
+                ],
+                "Bus": 30,
+                "Name": "IO_Board_1_CX8_1_Power_0",
+                "SensorId": 50,
+                "Type": "SensorAuxName"
+            }
+        ],
+        "Name": "IO_Board_1",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 33, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '900-9X86E-00[6|C|S]X-.*'})",
+        "Type": "Board",
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
@@ -345,6 +358,25 @@
                     "/xyz/openbmc_project/inventory/system/assembly/IO_Board_1_Product_FRU_Assembly1"
                 ]
             ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 1
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.Inventory.Item.NetworkInterface": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
         }
     },
     {
@@ -352,11 +384,11 @@
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 33, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '900-9X86E-00[6|C|S]X-.*'})",
         "Type": "Assembly",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "BuildDate": "$BOARD_MANUFACTURE_DATE",
+            "Manufacturer": "$BOARD_MANUFACTURER",
             "Model": "$BOARD_PRODUCT_NAME",
             "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER",
-            "BuildDate": "$BOARD_MANUFACTURE_DATE",
-            "Manufacturer": "$BOARD_MANUFACTURER"
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
         },
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
@@ -370,16 +402,16 @@
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 33, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '900-9X86E-00[6|C|S]X-.*'})",
         "Type": "Assembly",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$PRODUCT_MANUFACTURER",
             "Model": "$PRODUCT_PRODUCT_NAME",
             "PartNumber": "$PRODUCT_PART_NUMBER",
-            "SerialNumber": "$PRODUCT_SERIAL_NUMBER",
-            "Manufacturer": "$PRODUCT_MANUFACTURER"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Revision": {
-            "Version": "$PRODUCT_VERSION"
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
         },
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Revision": {
+            "Version": "$PRODUCT_VERSION"
         },
         "xyz.openbmc_project.State.Decorator.Health": {
             "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
@@ -389,17 +421,6 @@
         "Name": "IO_Board_1_CX8_0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 33, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '900-9X86E-00[6|C|S]X-.*'})",
         "Type": "NetworkAdapter",
-        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-            "Bus": 28,
-            "Address": 50,
-            "Name": "I2CDeviceAssociation"
-        },
-        "xyz.openbmc_project.Inventory.Decorator.Asset": {
-            "Manufacturer": "$BOARD_MANUFACTURER",
-            "Model": "$BOARD_PRODUCT_NAME",
-            "PartNumber": "$BOARD_PART_NUMBER",
-            "SerialNumber": "$BOARD_SERIAL_NUMBER"
-        },
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
@@ -419,23 +440,23 @@
                 ]
             ]
         },
-        "xyz.openbmc_project.Inventory.Item.NetworkInterface": {}
-    },
-    {
-        "Name": "IO_Board_1_CX8_1",
-        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 33, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '900-9X86E-00[6|C|S]X-.*'})",
-        "Type": "NetworkAdapter",
-        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-            "Bus": 30,
-            "Address": 50,
-            "Name": "I2CDeviceAssociation"
-        },
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
             "Manufacturer": "$BOARD_MANUFACTURER",
             "Model": "$BOARD_PRODUCT_NAME",
             "PartNumber": "$BOARD_PART_NUMBER",
             "SerialNumber": "$BOARD_SERIAL_NUMBER"
         },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": 50,
+            "Bus": 28,
+            "Name": "I2CDeviceAssociation"
+        },
+        "xyz.openbmc_project.Inventory.Item.NetworkInterface": {}
+    },
+    {
+        "Name": "IO_Board_1_CX8_1",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 33, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '900-9X86E-00[6|C|S]X-.*'})",
+        "Type": "NetworkAdapter",
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
@@ -455,7 +476,17 @@
                 ]
             ]
         },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": 50,
+            "Bus": 30,
+            "Name": "I2CDeviceAssociation"
+        },
         "xyz.openbmc_project.Inventory.Item.NetworkInterface": {}
     }
 ]
-

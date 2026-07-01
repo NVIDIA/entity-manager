@@ -39,6 +39,46 @@
                 "Polarity",
                 "Level"
             ]
+        },
+        "VoltageLeakDetector": {
+            "additionalProperties": false,
+            "description": "Configuration for voltage/ADC based Leak Detector.",
+            "type": "object",
+            "properties": {
+                "Name": {
+                    "description": "The name of the leak detector.",
+                    "type": "string"
+                },
+                "Type": {
+                    "description": "The type of configuration object",
+                    "const": "VoltageLeakDetector"
+                },
+                "Device": {
+                    "description": "The list of ADC devices backing the detector.",
+                    "type": "array"
+                },
+                "LeakThresholdVolts": {
+                    "description": "Voltage at or below which a leak is declared.",
+                    "type": "number"
+                },
+                "MaxValidVolts": {
+                    "description": "Maximum voltage considered a valid reading.",
+                    "type": "number"
+                },
+                "MinValidVolts": {
+                    "description": "Minimum voltage considered a valid reading.",
+                    "type": "number"
+                },
+                "ShutdownOnLeak": {
+                    "description": "Whether a detected leak triggers a shutdown.",
+                    "type": "boolean"
+                },
+                "ShutdownDelaySeconds": {
+                    "description": "Delay before shutdown after a leak is detected.",
+                    "type": "integer"
+                }
+            },
+            "required": ["Name", "Type"]
         }
     }
 }

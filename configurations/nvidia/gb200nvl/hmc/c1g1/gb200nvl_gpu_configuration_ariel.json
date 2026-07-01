@@ -1,23 +1,23 @@
 {
-  "Exposes": [
-    {
-      "I2CAddress": 109,
-      "I2CBus": 1,
-      "Name": "HGX_FW_GPU_0",
-      "ChassisName": "HGX_IRoT_GPU_0",
-      "MctpEID": 18,
-      "Type": "OCPRecovery"
-    },
-    {
-      "I2CAddress": 109,
-      "I2CBus": 2,
-      "Name": "HGX_FW_GPU_1",
-      "ChassisName": "HGX_IRoT_GPU_1",
-      "MctpEID": 26,
-      "Type": "OCPRecovery"
-    }
-  ],
-  "Name": "OCP_Recovery_Devices",
-  "Probe": "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': 'GB200 1CPU: ?1GPU Board PC'})",
-  "Type": "Recovery_Config"
+    "Exposes": [
+        {
+            "ChassisName": "HGX_IRoT_GPU_0",
+            "I2CAddress": 109,
+            "I2CBus": 1,
+            "MctpEID": 18,
+            "Name": "HGX_FW_GPU_0",
+            "Type": "OCPRecovery"
+        },
+        {
+            "ChassisName": "HGX_IRoT_GPU_1",
+            "I2CAddress": 109,
+            "I2CBus": 2,
+            "MctpEID": 26,
+            "Name": "HGX_FW_GPU_1",
+            "Type": "OCPRecovery"
+        }
+    ],
+    "Name": "OCP_Recovery_Devices",
+    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': 'GB200 1CPU: ?1GPU Board PC'})",
+    "Type": "Recovery_Config"
 }

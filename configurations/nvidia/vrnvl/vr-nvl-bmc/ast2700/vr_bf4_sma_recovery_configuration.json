@@ -1,18 +1,18 @@
 {
-    "Exposes": [   
+    "Exposes": [
         {
-            "USBPort": "1-1.4.1",
-            "Name": "FW_Bay_C_SMA_0",
             "ChassisName": "Bay_C_SMA_0",
-            "ForceRecoveryChassisObject":"Bay_C_SMA_0",
-            "MctpEID" : 55,
+            "ForceRecoveryChassisObject": "Bay_C_SMA_0",
             "Interface": "USB",
-            "VendorId" : "0x0955",
-            "ProductId" : "0xCF11",
-            "ResetGpioName": "BF4_USB_MCU_RST_L",
+            "MctpEID": 55,
+            "Name": "FW_Bay_C_SMA_0",
+            "ProductId": "0xCF11",
             "RecoveryGpioName": "BF4_USB_MCU_RECOVERY_L",
+            "ResetGpioName": "BF4_USB_MCU_RST_L",
             "Target": "BF4",
-            "Type": "MCURecovery"
+            "Type": "MCURecovery",
+            "USBPort": "1-1.4.1",
+            "VendorId": "0x0955"
         }
     ],
     "Name": "BF4_SMA_Recovery_Devices",
