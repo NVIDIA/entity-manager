@@ -377,7 +377,7 @@ void handleInterfacesAdded(sdbusplus::message_t& msg)
         return;
     }
 
-    sdbusplus::message::object_path objPath;
+    sdbusplus::object_path objPath;
     boost::container::flat_map<
         std::string,
         boost::container::flat_map<std::string, DBusPropertyVariant>>
@@ -462,7 +462,7 @@ void handleInterfacesRemoved(sdbusplus::message_t& msg)
         return;
     }
 
-    sdbusplus::message::object_path objPath;
+    sdbusplus::object_path objPath;
     std::vector<std::string> interfaces;
 
     try

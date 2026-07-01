@@ -174,11 +174,12 @@ void findDbusObjects(
 }
 
 static std::string getRecordName(const DBusInterface& probe,
-                                 const std::string& probeName)
+                                 const std::string& probeName,
+                                 const std::string& probeType)
 {
     if (probe.empty())
     {
-        return probeName;
+        return probeType + ":" + probeName;
     }
 
     // use an array so alphabetical order from the flat_map is maintained
@@ -192,9 +193,10 @@ static std::string getRecordName(const DBusInterface& probe,
 
     // hashes are hard to distinguish, use the non-hashed version if we want
     // debug
-    // return probeName + device.dump();
+    // return probeType + ":" + probeName + device.dump();
 
-    return std::to_string(std::hash<std::string>{}(probeName + device.dump()));
+    return std::to_string(
+        std::hash<std::string>{}(probeType + ":" + probeName + device.dump()));
 }
 
 scan::PerformScan::PerformScan(
@@ -468,6 +470,8 @@ void scan::PerformScan::updateSystemConfiguration(
     _passed = true;
     passedProbes.push_back(probeName);
 
+    const std::string probeType = recordRef.value("Type", "");
+
     std::set<nlohmann::json> usedNames;
     std::list<size_t> indexes(foundDevices.size());
     std::iota(indexes.begin(), indexes.end(), 1);
@@ -476,7 +480,8 @@ void scan::PerformScan::updateSystemConfiguration(
     // indexes that are already used
     for (auto itr = foundDevices.begin(); itr != foundDevices.end();)
     {
-        std::string recordName = getRecordName(itr->interface, probeName);
+        std::string recordName =
+            getRecordName(itr->interface, probeName, probeType);
 
         auto record = _em.systemConfiguration.find(recordName);
         if (record == _em.systemConfiguration.end())
@@ -528,7 +533,8 @@ void scan::PerformScan::updateSystemConfiguration(
             continue;
         }
         nlohmann::json::object_t record = *recordPtr;
-        std::string recordName = getRecordName(foundDevice, probeName);
+        std::string recordName =
+            getRecordName(foundDevice, probeName, probeType);
         size_t foundDeviceIdx = indexes.front();
         indexes.pop_front();
 
