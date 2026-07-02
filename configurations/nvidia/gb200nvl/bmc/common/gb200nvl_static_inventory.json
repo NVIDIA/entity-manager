@@ -7,7 +7,7 @@
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_TYPE": 4,
             "INSTANCE_NUMBER": 0,
-            "UUID": "STATIC:4:0"
+            "UUID": "STATIC:4:0:MCTP_EID:10"
         }
     }
 ]
