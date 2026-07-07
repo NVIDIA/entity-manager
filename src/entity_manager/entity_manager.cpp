@@ -266,7 +266,7 @@ void EntityManager::postBoardToDBus(
 
                 dbus_interface.populateInterfaceFromJson(
                     systemConfiguration, jsonPointerPath + propName, iface,
-                    propValue);
+                    propValue, getPermission(propName));
             }
         }
     }
