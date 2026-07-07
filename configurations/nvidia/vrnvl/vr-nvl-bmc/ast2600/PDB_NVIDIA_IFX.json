@@ -78,7 +78,7 @@
                         "Label": "temp1",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 126.0
+                        "Value": 130.0
                     }
                 ],
                 "Type": "XDP710",
@@ -115,7 +115,7 @@
                         "Label": "temp1",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 126.0
+                        "Value": 130.0
                     }
                 ],
                 "Type": "XDP710",
@@ -152,7 +152,7 @@
                         "Label": "temp1",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 126.0
+                        "Value": 130.0
                     }
                 ],
                 "Type": "XDP710",
@@ -189,7 +189,7 @@
                         "Label": "temp1",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 126.0
+                        "Value": 130.0
                     }
                 ],
                 "Type": "XDP710",

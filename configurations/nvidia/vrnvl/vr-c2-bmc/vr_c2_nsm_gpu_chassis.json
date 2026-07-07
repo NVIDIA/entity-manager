@@ -45,6 +45,74 @@
                 "UUID": "$UUID"
             },
             {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0",
+                        "Backward": "all_sensors",
+                        "Forward": "processor"
+                    }
+                ],
+                "Name": "GPU_0 Energy_0",
+                "PhysicalContext": "GPU",
+                "Priority": true,
+                "SensorId": 0,
+                "Type": "NSM_Energy",
+                "UUID": "$UUID"
+            },
+            {
+                "ComputeInstance": 255,
+                "GpuInstance": 255,
+                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0",
+                "MemoryBandwidth": true,
+                "MemoryInventoryObjPath": "/xyz/openbmc_project/inventory/system/dimm/GPU_0_DRAM_0",
+                "MetricsBitfield": [
+                    255,
+                    255,
+                    31
+                ],
+                "Name": "GPU_0 GPM_Aggregated_Metrics",
+                "PerInstanceMetrics": [
+                    {
+                        "ComputeInstance": 255,
+                        "GpuInstance": 255,
+                        "InstanceBitfield": [
+                            255
+                        ],
+                        "InventoryObjPath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0",
+                        "Metric": "NVDEC",
+                        "MetricId": 14,
+                        "Name": "GPU_0 GPM_NVDEC_PerInstance_Metrics",
+                        "Priority": false,
+                        "RetrievalSource": 2,
+                        "Type": "NSM_GPMPerInstanceMetrics"
+                    },
+                    {
+                        "ComputeInstance": 255,
+                        "GpuInstance": 255,
+                        "InstanceBitfield": [
+                            255
+                        ],
+                        "InventoryObjPath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0",
+                        "Metric": "NVJPG",
+                        "MetricId": 15,
+                        "Name": "GPU_0 GPM_NVJPG_PerInstance_Metrics",
+                        "Priority": false,
+                        "RetrievalSource": 2,
+                        "Type": "NSM_GPMPerInstanceMetrics"
+                    }
+                ],
+                "Priority": false,
+                "RetrievalSource": 1,
+                "Type": "NSM_GPMMetrics",
+                "UUID": "$UUID"
+            },
+            {
                 "Associations": [
                     {
                         "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0",
@@ -52,7 +120,6 @@
                         "Forward": "parent_device"
                     }
                 ],
-                "ChasisPowerState": "xyz.openbmc_project.State.Chassis.PowerState.On",
                 "ClearableScalarGroup": [
                     2,
                     3,
@@ -87,11 +154,6 @@
                         "AbsolutePath": "/xyz/openbmc_project/sensors/temperature/GPU_0_DRAM_0_Temp_0",
                         "Backward": "memory",
                         "Forward": "all_sensors"
-                    },
-                    {
-                        "AbsolutePath": "/xyz/openbmc_project/sensors/power/GPU_0_DRAM_0_Power_0",
-                        "Backward": "memory",
-                        "Forward": "all_sensors"
                     }
                 ],
                 "DeviceType": "xyz.openbmc_project.Inventory.Item.Dimm.DeviceType.HBM",
@@ -102,6 +164,28 @@
                 },
                 "Name": "GPU_0 Memory",
                 "Type": "NSM_Memory",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0",
+                        "Backward": "all_sensors",
+                        "Forward": "processor"
+                    }
+                ],
+                "AveragingInterval": 0,
+                "Name": "GPU_0 Power_0",
+                "PhysicalContext": "GPU",
+                "Priority": true,
+                "SensorId": 0,
+                "Type": "NSM_Power",
                 "UUID": "$UUID"
             },
             {
@@ -125,6 +209,17 @@
                 "DEVICE_UUID": "$DEVICE_UUID",
                 "InventoryObjPath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0",
                 "Name": "GPU_0 Processor",
+                "ProcessorAttributes": {
+                    "CpuOperatingConfigSupported": true,
+                    "ECCModeSupported": true,
+                    "MemCapacityUtilSupported": true,
+                    "Type": "NSM_Processor_Attributes"
+                },
+                "ProcessorPerformance": {
+                    "DeviceId": 0,
+                    "Priority": false,
+                    "Type": "NSM_ProcessorPerformance"
+                },
                 "Type": "NSM_Processor",
                 "UUID": "$UUID"
             },
@@ -206,6 +301,60 @@
                 ],
                 "Type": "NSM_Temp",
                 "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0",
+                        "Backward": "all_sensors",
+                        "Forward": "processor"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/dimm/GPU_0_DRAM_0",
+                        "Backward": "all_sensors",
+                        "Forward": "memory"
+                    }
+                ],
+                "Name": "GPU_0 DRAM_0_Temp_0",
+                "PhysicalContext": "GPU",
+                "Priority": true,
+                "SensorId": 1,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": false,
+                        "Name": "UpperCaution",
+                        "Value": 105.0
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0",
+                        "Backward": "all_sensors",
+                        "Forward": "processor"
+                    }
+                ],
+                "Name": "GPU_0 Voltage_0",
+                "PhysicalContext": "GPU",
+                "Priority": false,
+                "SensorId": 0,
+                "Type": "NSM_Voltage",
+                "UUID": "$UUID"
             }
         ],
         "Name": "GPU_0",
@@ -274,6 +423,74 @@
                 "UUID": "$UUID"
             },
             {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_1",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1",
+                        "Backward": "all_sensors",
+                        "Forward": "processor"
+                    }
+                ],
+                "Name": "GPU_1 Energy_0",
+                "PhysicalContext": "GPU",
+                "Priority": true,
+                "SensorId": 0,
+                "Type": "NSM_Energy",
+                "UUID": "$UUID"
+            },
+            {
+                "ComputeInstance": 255,
+                "GpuInstance": 255,
+                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1",
+                "MemoryBandwidth": true,
+                "MemoryInventoryObjPath": "/xyz/openbmc_project/inventory/system/dimm/GPU_1_DRAM_0",
+                "MetricsBitfield": [
+                    255,
+                    255,
+                    31
+                ],
+                "Name": "GPU_1 GPM_Aggregated_Metrics",
+                "PerInstanceMetrics": [
+                    {
+                        "ComputeInstance": 255,
+                        "GpuInstance": 255,
+                        "InstanceBitfield": [
+                            255
+                        ],
+                        "InventoryObjPath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1",
+                        "Metric": "NVDEC",
+                        "MetricId": 14,
+                        "Name": "GPU_1 GPM_NVDEC_PerInstance_Metrics",
+                        "Priority": false,
+                        "RetrievalSource": 2,
+                        "Type": "NSM_GPMPerInstanceMetrics"
+                    },
+                    {
+                        "ComputeInstance": 255,
+                        "GpuInstance": 255,
+                        "InstanceBitfield": [
+                            255
+                        ],
+                        "InventoryObjPath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1",
+                        "Metric": "NVJPG",
+                        "MetricId": 15,
+                        "Name": "GPU_1 GPM_NVJPG_PerInstance_Metrics",
+                        "Priority": false,
+                        "RetrievalSource": 2,
+                        "Type": "NSM_GPMPerInstanceMetrics"
+                    }
+                ],
+                "Priority": false,
+                "RetrievalSource": 1,
+                "Type": "NSM_GPMMetrics",
+                "UUID": "$UUID"
+            },
+            {
                 "Associations": [
                     {
                         "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1",
@@ -281,7 +498,6 @@
                         "Forward": "parent_device"
                     }
                 ],
-                "ChasisPowerState": "xyz.openbmc_project.State.Chassis.PowerState.On",
                 "ClearableScalarGroup": [
                     2,
                     3,
@@ -316,11 +532,6 @@
                         "AbsolutePath": "/xyz/openbmc_project/sensors/temperature/GPU_1_DRAM_0_Temp_0",
                         "Backward": "memory",
                         "Forward": "all_sensors"
-                    },
-                    {
-                        "AbsolutePath": "/xyz/openbmc_project/sensors/power/GPU_1_DRAM_0_Power_0",
-                        "Backward": "memory",
-                        "Forward": "all_sensors"
                     }
                 ],
                 "DeviceType": "xyz.openbmc_project.Inventory.Item.Dimm.DeviceType.HBM",
@@ -331,6 +542,28 @@
                 },
                 "Name": "GPU_1 Memory",
                 "Type": "NSM_Memory",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_1",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1",
+                        "Backward": "all_sensors",
+                        "Forward": "processor"
+                    }
+                ],
+                "AveragingInterval": 0,
+                "Name": "GPU_1 Power_0",
+                "PhysicalContext": "GPU",
+                "Priority": true,
+                "SensorId": 0,
+                "Type": "NSM_Power",
                 "UUID": "$UUID"
             },
             {
@@ -354,6 +587,17 @@
                 "DEVICE_UUID": "$DEVICE_UUID",
                 "InventoryObjPath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1",
                 "Name": "GPU_1 Processor",
+                "ProcessorAttributes": {
+                    "CpuOperatingConfigSupported": true,
+                    "ECCModeSupported": true,
+                    "MemCapacityUtilSupported": true,
+                    "Type": "NSM_Processor_Attributes"
+                },
+                "ProcessorPerformance": {
+                    "DeviceId": 0,
+                    "Priority": false,
+                    "Type": "NSM_ProcessorPerformance"
+                },
                 "Type": "NSM_Processor",
                 "UUID": "$UUID"
             },
@@ -434,6 +678,60 @@
                     }
                 ],
                 "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_1",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1",
+                        "Backward": "all_sensors",
+                        "Forward": "processor"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/dimm/GPU_1_DRAM_0",
+                        "Backward": "all_sensors",
+                        "Forward": "memory"
+                    }
+                ],
+                "Name": "GPU_1 DRAM_0_Temp_0",
+                "PhysicalContext": "GPU",
+                "Priority": true,
+                "SensorId": 1,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": false,
+                        "Name": "UpperCaution",
+                        "Value": 105.0
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_1",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1",
+                        "Backward": "all_sensors",
+                        "Forward": "processor"
+                    }
+                ],
+                "Name": "GPU_1 Voltage_0",
+                "PhysicalContext": "GPU",
+                "Priority": false,
+                "SensorId": 0,
+                "Type": "NSM_Voltage",
                 "UUID": "$UUID"
             }
         ],

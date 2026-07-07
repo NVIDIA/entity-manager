@@ -656,6 +656,9 @@
                 "PerInstanceMetrics": {
                     "type": "array"
                 },
+                "Priority": {
+                    "type": "boolean"
+                },
                 "RetrievalSource": {
                     "type": "integer"
                 },

@@ -18,6 +18,7 @@
                 ],
                 "EID": 101,
                 "Name": "CX_0_Temp",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/board/CX_0",
                 "SensorId": 300,
                 "Type": "SensorAuxName"
             },
@@ -27,6 +28,7 @@
                 ],
                 "EID": 101,
                 "Name": "CX_0_Port_0_Temp",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/board/CX_0",
                 "SensorId": 500,
                 "Type": "SensorAuxName"
             },
@@ -36,6 +38,7 @@
                 ],
                 "EID": 101,
                 "Name": "CX_0_Port_0_State",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/board/CX_0",
                 "SensorId": 200,
                 "Type": "SensorAuxName"
             },
@@ -45,6 +48,7 @@
                 ],
                 "EID": 101,
                 "Name": "CX_0_Power_0",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/board/CX_0",
                 "SensorId": 50,
                 "Type": "SensorAuxName"
             }
@@ -182,6 +186,7 @@
                 ],
                 "EID": 102,
                 "Name": "CX_1_Temp",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/board/CX_1",
                 "SensorId": 300,
                 "Type": "SensorAuxName"
             },
@@ -191,6 +196,7 @@
                 ],
                 "EID": 102,
                 "Name": "CX_1_Port_0_Temp",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/board/CX_1",
                 "SensorId": 500,
                 "Type": "SensorAuxName"
             },
@@ -200,6 +206,7 @@
                 ],
                 "EID": 102,
                 "Name": "CX_1_Port_0_State",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/board/CX_1",
                 "SensorId": 200,
                 "Type": "SensorAuxName"
             },
@@ -209,6 +216,7 @@
                 ],
                 "EID": 102,
                 "Name": "CX_1_Power_0",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/board/CX_1",
                 "SensorId": 50,
                 "Type": "SensorAuxName"
             }

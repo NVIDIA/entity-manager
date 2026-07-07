@@ -24,7 +24,7 @@
                         "Label": "temp1",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 126.0
+                        "Value": 130.0
                     }
                 ],
                 "Type": "LM5066I",
@@ -61,7 +61,7 @@
                         "Label": "temp1",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 126.0
+                        "Value": 130.0
                     }
                 ],
                 "Type": "LM5066I",
@@ -98,7 +98,7 @@
                         "Label": "temp1",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 126.0
+                        "Value": 130.0
                     }
                 ],
                 "Type": "LM5066I",
@@ -135,7 +135,7 @@
                         "Label": "temp1",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 126.0
+                        "Value": 130.0
                     }
                 ],
                 "Type": "LM5066I",

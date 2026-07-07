@@ -399,6 +399,7 @@ configs = [
     'nvidia/vrnvl/vr-c2-bmc/vr_irot_cpu_chassis.json',
     'nvidia/vrnvl/vr-c2-bmc/vr_irot_hpm_sma_chassis.json',
     'nvidia/vrnvl/vr-c2-bmc/vr_mctp_bmc_target_configuration.json',
+    'nvidia/vrnvl/vr-c2-bmc/vr_rot_chassis.json',
     'nvidia/vrnvl/vr-c2-bmc/vr_sbios_spi_chassis.json',
     'nvidia/vrnvl/vr-c2-bmc/vr_static_inventory.json',
     'nvidia/vrnvl/vr-e5010-bmc/Cable_Backplane_Cartridge.json',
