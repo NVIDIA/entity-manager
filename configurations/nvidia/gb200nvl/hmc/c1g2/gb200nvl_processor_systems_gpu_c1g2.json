@@ -1,7 +1,7 @@
 [
     {
         "Name": "GPU_0",
-        "Probe": "FOUND('NSM_DEV_BIANCA_GPU_0')",
+        "Probe": "FOUND('NSM_DEV_C1G2_GPU_0')",
         "Type": "Accelerator",
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
@@ -21,7 +21,7 @@
     },
     {
         "Name": "GPU_1",
-        "Probe": "FOUND('NSM_DEV_BIANCA_GPU_1')",
+        "Probe": "FOUND('NSM_DEV_C1G2_GPU_1')",
         "Type": "Accelerator",
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
@@ -41,7 +41,7 @@
     },
     {
         "Name": "GPU_2",
-        "Probe": "FOUND('NSM_DEV_BIANCA_GPU_2')",
+        "Probe": "FOUND('NSM_DEV_C1G2_GPU_2')",
         "Type": "Accelerator",
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
@@ -61,7 +61,7 @@
     },
     {
         "Name": "GPU_3",
-        "Probe": "FOUND('NSM_DEV_BIANCA_GPU_3')",
+        "Probe": "FOUND('NSM_DEV_C1G2_GPU_3')",
         "Type": "Accelerator",
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"

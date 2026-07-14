@@ -55,11 +55,6 @@
                 "UUID": "$UUID"
             },
             {
-                "ComponentType": "AP",
-                "Name": "AP",
-                "Type": "NSM_FW_ComponentType"
-            },
-            {
                 "Associations": [
                     {
                         "AbsolutePath": "/xyz/openbmc_project/software/FW_GPU_SMA_$INSTANCE_NUMBER",

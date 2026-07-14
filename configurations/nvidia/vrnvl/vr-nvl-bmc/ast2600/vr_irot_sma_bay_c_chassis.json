@@ -31,11 +31,6 @@
                 "UUID": "$UUID"
             },
             {
-                "ComponentType": "AP",
-                "Name": "AP",
-                "Type": "NSM_FW_ComponentType"
-            },
-            {
                 "Associations": [
                     {
                         "AbsolutePath": "/xyz/openbmc_project/software/FW_Bay_C_SMA_0$INSTANCE_NUMBER",

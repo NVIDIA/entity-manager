@@ -13,16 +13,6 @@
                 "UUID": "$UUID"
             },
             {
-                "ComponentType": "AP",
-                "Name": "AP",
-                "Type": "NSM_FW_ComponentType"
-            },
-            {
-                "ComponentType": "EC",
-                "Name": "EC",
-                "Type": "NSM_FW_ComponentType"
-            },
-            {
                 "Associations": [
                     {
                         "AbsolutePath": "/xyz/openbmc_project/software/FW_ERoT_BMC_0",

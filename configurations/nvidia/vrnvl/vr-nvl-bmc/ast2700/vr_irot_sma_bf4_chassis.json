@@ -31,11 +31,6 @@
                 "UUID": "$UUID"
             },
             {
-                "ComponentType": "AP",
-                "Name": "AP",
-                "Type": "NSM_FW_ComponentType"
-            },
-            {
                 "Associations": [
                     {
                         "AbsolutePath": "/xyz/openbmc_project/software/FW_BlueField_SMA_$INSTANCE_NUMBER",

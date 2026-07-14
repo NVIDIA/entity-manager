@@ -1,5 +1,5 @@
 {
-    "Name": "Nvidia GB200 NVL HMC C1G1 Ariel",
+    "Name": "Nvidia GB200 NVL HMC C1G1",
     "PlatformExposes": [
         {
             "Name": "HGX_ERoT_BMC_0",

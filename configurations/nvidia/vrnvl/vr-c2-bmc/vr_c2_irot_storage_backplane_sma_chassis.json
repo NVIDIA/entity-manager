@@ -55,11 +55,6 @@
                 "UUID": "$UUID"
             },
             {
-                "ComponentType": "AP",
-                "Name": "AP",
-                "Type": "NSM_FW_ComponentType"
-            },
-            {
                 "Associations": [
                     {
                         "AbsolutePath": "/xyz/openbmc_project/software/FW_StorageBackplane_SMA_0",

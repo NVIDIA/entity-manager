@@ -647,7 +647,7 @@
         ],
         "Name": "HGX_GPU 0",
         "Parent_Chassis": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_0",
-        "Probe": "FOUND('NSM_DEV_ARIEL_GPU_0')",
+        "Probe": "FOUND('NSM_DEV_C1G1_GPU_0')",
         "Type": "Component",
         "xyz.openbmc_project.Configuration.NSMReady": {
             "C1G1_GPU_0_Ready": "Enabled"
@@ -1318,7 +1318,7 @@
         ],
         "Name": "HGX_GPU 1",
         "Parent_Chassis": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_1",
-        "Probe": "FOUND('NSM_DEV_ARIEL_GPU_1')",
+        "Probe": "FOUND('NSM_DEV_C1G1_GPU_1')",
         "Type": "Component",
         "xyz.openbmc_project.Configuration.NSMReady": {
             "C1G1_GPU_1_Ready": "Enabled"

@@ -13,11 +13,6 @@
                 "UUID": "STATIC:0:0:MCTP_EID:18"
             },
             {
-                "ComponentType": "AP",
-                "Name": "AP",
-                "Type": "NSM_FW_ComponentType"
-            },
-            {
                 "Associations": [
                     {
                         "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_GPU_0",
@@ -117,11 +112,6 @@
                 "SlotCount": 2,
                 "Type": "NSM_Chassis",
                 "UUID": "STATIC:0:1:MCTP_EID:19"
-            },
-            {
-                "ComponentType": "AP",
-                "Name": "AP",
-                "Type": "NSM_FW_ComponentType"
             },
             {
                 "Associations": [
@@ -225,11 +215,6 @@
                 "UUID": "STATIC:0:2:MCTP_EID:26"
             },
             {
-                "ComponentType": "AP",
-                "Name": "AP",
-                "Type": "NSM_FW_ComponentType"
-            },
-            {
                 "Associations": [
                     {
                         "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_GPU_2",
@@ -329,11 +314,6 @@
                 "SlotCount": 2,
                 "Type": "NSM_Chassis",
                 "UUID": "STATIC:0:3:MCTP_EID:27"
-            },
-            {
-                "ComponentType": "AP",
-                "Name": "AP",
-                "Type": "NSM_FW_ComponentType"
             },
             {
                 "Associations": [
