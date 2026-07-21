@@ -89,7 +89,7 @@
             "hasChassisPowerSource": true
         }
     ],
-    "Name": "CX9_Recovery_Devices",
+    "Name": "ConnectX_Recovery_Devices",
     "Probe": "TRUE",
     "Type": "Recovery_Config"
 }
