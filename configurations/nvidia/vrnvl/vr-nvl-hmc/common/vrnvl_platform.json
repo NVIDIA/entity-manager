@@ -270,6 +270,34 @@
             "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
         },
         {
+            "MCTPTargetName": "HGX_GPU_SMA_0",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_GPU_SMA_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_SMA_0"
+        },
+        {
+            "MCTPTargetName": "HGX_GPU_SMA_1",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_GPU_SMA_1_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_SMA_1"
+        },
+        {
+            "MCTPTargetName": "HGX_ProcessorModule_SMA_0",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_ProcessorModule_SMA_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ProcessorModule_SMA_0"
+        },
+        {
+            "MCTPTargetName": "HGX_ProcessorModule_SMA_1",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_ProcessorModule_SMA_1_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ProcessorModule_SMA_1"
+        },
+        {
             "Components": [
                 {
                     "AssociationBackward": [
