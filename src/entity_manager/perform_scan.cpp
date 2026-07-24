@@ -3,7 +3,9 @@
 
 #include "perform_scan.hpp"
 
+#include "object_mapper.hpp"
 #include "perform_probe.hpp"
+#include "probe_type.hpp"
 #include "utils.hpp"
 
 #include <boost/asio/steady_timer.hpp>
@@ -13,19 +15,27 @@
 #include <charconv>
 #include <flat_map>
 #include <flat_set>
-
-using GetSubTreeType = std::vector<
-    std::pair<std::string,
-              std::vector<std::pair<std::string, std::vector<std::string>>>>>;
-
-constexpr const int32_t maxMapperDepth = 0;
+#include <list>
 
 struct DBusInterfaceInstance
 {
     std::string busName;
-    std::string path;
+    sdbusplus::object_path path;
     std::string interface;
 };
+
+static void findDbusObjects(
+    std::vector<std::shared_ptr<probe::PerformProbe>> probeVector,
+    std::flat_set<std::string, std::less<>> interfaces,
+    const std::shared_ptr<scan::PerformScan>& scan, boost::asio::io_context& io,
+    size_t retries = 5);
+
+static void afterFindDBusObjects(
+    boost::asio::io_context& io,
+    std::flat_set<std::string, std::less<>> interfaces,
+    std::vector<std::shared_ptr<probe::PerformProbe>> probeVector,
+    const std::shared_ptr<scan::PerformScan>& scan, size_t retries,
+    boost::system::error_code ec, const GetSubTreeType& interfaceSubtree);
 
 void getInterfaces(
     const DBusInterfaceInstance& instance,
@@ -110,13 +120,50 @@ static void processDbusObjects(
     }
 }
 
+static void afterFindDBusObjects(
+    boost::asio::io_context& io,
+    std::flat_set<std::string, std::less<>> interfaces,
+    std::vector<std::shared_ptr<probe::PerformProbe>> probeVector,
+    const std::shared_ptr<scan::PerformScan>& scan, size_t retries,
+    boost::system::error_code ec, const GetSubTreeType& interfaceSubtree)
+{
+    if (ec)
+    {
+        if (ec.value() == ENOENT)
+        {
+            return; // wasn't found by mapper
+        }
+        lg2::error("Error communicating to mapper");
+
+        if (retries == 0U)
+        {
+            // if we can't communicate to the mapper something is very
+            // wrong
+            std::exit(EXIT_FAILURE);
+        }
+
+        auto timer = std::make_shared<boost::asio::steady_timer>(io);
+        timer->expires_after(std::chrono::seconds(10));
+
+        timer->async_wait([timer, interfaces{std::move(interfaces)}, scan,
+                           probeVector{std::move(probeVector)}, retries,
+                           &io](const boost::system::error_code&) mutable {
+            findDbusObjects(std::move(probeVector), std::move(interfaces), scan,
+                            io, retries - 1);
+        });
+        return;
+    }
+
+    processDbusObjects(probeVector, scan, interfaceSubtree, io);
+}
+
 // Populates scan->dbusProbeObjects with all interfaces and properties
 // for the paths that own the interfaces passed in.
-void findDbusObjects(
-    std::vector<std::shared_ptr<probe::PerformProbe>>&& probeVector,
-    std::flat_set<std::string, std::less<>>&& interfaces,
+static void findDbusObjects(
+    std::vector<std::shared_ptr<probe::PerformProbe>> probeVector,
+    std::flat_set<std::string, std::less<>> interfaces,
     const std::shared_ptr<scan::PerformScan>& scan, boost::asio::io_context& io,
-    size_t retries = 5)
+    size_t retries)
 {
     // Filter out interfaces already obtained.
     for (const auto& [path, probeInterfaces] : scan->dbusProbeObjects)
@@ -131,46 +178,18 @@ void findDbusObjects(
         return;
     }
 
+    std::move_only_function<void(boost::system::error_code&,
+                                 const GetSubTreeType& interfaceSubtree)>
+        cb = [probeVector{std::move(probeVector)}, scan, retries, &io,
+              interfaces](boost::system::error_code& ec,
+                          const GetSubTreeType& interfaceSubtree) mutable {
+            afterFindDBusObjects(io, interfaces, probeVector, scan, retries, ec,
+                                 interfaceSubtree);
+        };
+
     // find all connections in the mapper that expose a specific type
-    scan->_em.systemBus->async_method_call(
-        [interfaces, probeVector{std::move(probeVector)}, scan, retries,
-         &io](boost::system::error_code& ec,
-              const GetSubTreeType& interfaceSubtree) mutable {
-            if (ec)
-            {
-                if (ec.value() == ENOENT)
-                {
-                    return; // wasn't found by mapper
-                }
-                lg2::error("Error communicating to mapper.");
-
-                if (retries == 0U)
-                {
-                    // if we can't communicate to the mapper something is very
-                    // wrong
-                    std::exit(EXIT_FAILURE);
-                }
-
-                auto timer = std::make_shared<boost::asio::steady_timer>(io);
-                timer->expires_after(std::chrono::seconds(10));
-
-                timer->async_wait(
-                    [timer, interfaces{std::move(interfaces)}, scan,
-                     probeVector{std::move(probeVector)}, retries,
-                     &io](const boost::system::error_code&) mutable {
-                        findDbusObjects(std::move(probeVector),
-                                        std::move(interfaces), scan, io,
-                                        retries - 1);
-                    });
-                return;
-            }
-
-            processDbusObjects(probeVector, scan, interfaceSubtree, io);
-        },
-        "xyz.openbmc_project.ObjectMapper",
-        "/xyz/openbmc_project/object_mapper",
-        "xyz.openbmc_project.ObjectMapper", "GetSubTree", "/", maxMapperDepth,
-        interfaces);
+    object_mapper::getSubTree(*scan->_em.systemBus, "/", 0, interfaces,
+                              std::move(cb));
 }
 
 static std::string getRecordName(const DBusInterface& probe,
@@ -463,21 +482,13 @@ static void applyTemplateAndExposeActions(
     }
 };
 
-void scan::PerformScan::updateSystemConfiguration(
-    const nlohmann::json& recordRef, const std::string& probeName,
-    FoundDevices& foundDevices)
+void scan::PerformScan::restorePersistedConfigurations(
+    FoundDevices& foundDevices, const std::string& probeName,
+    const std::string& probeType, std::set<nlohmann::json>& usedNames,
+    std::list<size_t>& indexes)
 {
-    _passed = true;
-    passedProbes.push_back(probeName);
-
-    const std::string probeType = recordRef.value("Type", "");
-
-    std::set<nlohmann::json> usedNames;
-    std::list<size_t> indexes(foundDevices.size());
-    std::iota(indexes.begin(), indexes.end(), 1);
-
-    // copy over persisted configurations and make sure we remove
-    // indexes that are already used
+    // Copy over persisted configurations and make sure we remove indexes
+    // that are already used.
     for (auto itr = foundDevices.begin(); itr != foundDevices.end();)
     {
         std::string recordName =
@@ -499,11 +510,27 @@ void scan::PerformScan::updateSystemConfiguration(
         }
         _missingConfigurations.erase(recordName);
 
-        // We've processed the device, remove it and advance the
-        // iterator
+        // We've processed the device, remove it and advance the iterator.
         itr = foundDevices.erase(itr);
         recordDiscoveredIdentifiers(usedNames, indexes, probeName, *record);
     }
+}
+
+void scan::PerformScan::updateSystemConfiguration(
+    const nlohmann::json& recordRef, const std::string& probeName,
+    FoundDevices& foundDevices)
+{
+    _passed = true;
+    passedProbes.push_back(probeName);
+
+    const std::string probeType = recordRef.value("Type", "");
+
+    std::set<nlohmann::json> usedNames;
+    std::list<size_t> indexes(foundDevices.size());
+    std::iota(indexes.begin(), indexes.end(), 1);
+
+    restorePersistedConfigurations(foundDevices, probeName, probeType,
+                                   usedNames, indexes);
 
     std::optional<std::string> replaceStr;
 
@@ -621,6 +648,38 @@ void scan::PerformScan::updateSystemConfiguration(
     }
 }
 
+std::vector<std::string> scan::detail::parseProbeCommand(
+    const nlohmann::json& probeField)
+{
+    std::vector<std::string> probeCommand;
+    const nlohmann::json::array_t* probeCommandArrayPtr =
+        probeField.get_ptr<const nlohmann::json::array_t*>();
+    if (probeCommandArrayPtr != nullptr)
+    {
+        for (const auto& probe : *probeCommandArrayPtr)
+        {
+            const std::string* probeStr = probe.get_ptr<const std::string*>();
+            if (probeStr == nullptr)
+            {
+                lg2::error("Probe statement wasn't a string, can't parse");
+                return {};
+            }
+            probeCommand.push_back(*probeStr);
+        }
+    }
+    else
+    {
+        const std::string* probeStr = probeField.get_ptr<const std::string*>();
+        if (probeStr == nullptr)
+        {
+            lg2::error("Probe statement wasn't a string, can't parse");
+            return {};
+        }
+        probeCommand.push_back(*probeStr);
+    }
+    return probeCommand;
+}
+
 void scan::PerformScan::run()
 {
     std::flat_set<std::string, std::less<>> dbusProbeInterfaces;
@@ -663,33 +722,11 @@ void scan::PerformScan::run()
         }
 
         nlohmann::json& recordRef = *it;
-        std::vector<std::string> probeCommand;
-        nlohmann::json::array_t* probeCommandArrayPtr =
-            findProbe->get_ptr<nlohmann::json::array_t*>();
-        if (probeCommandArrayPtr != nullptr)
+        std::vector<std::string> probeCommand =
+            detail::parseProbeCommand(*findProbe);
+        if (probeCommand.empty())
         {
-            for (const auto& probe : *probeCommandArrayPtr)
-            {
-                const std::string* probeStr =
-                    probe.get_ptr<const std::string*>();
-                if (probeStr == nullptr)
-                {
-                    lg2::error("Probe statement wasn't a string, can't parse");
-                    return;
-                }
-                probeCommand.push_back(*probeStr);
-            }
-        }
-        else
-        {
-            const std::string* probeStr =
-                findProbe->get_ptr<const std::string*>();
-            if (probeStr == nullptr)
-            {
-                lg2::error("Probe statement wasn't a string, can't parse");
-                return;
-            }
-            probeCommand.push_back(*probeStr);
+            return;
         }
 
         // store reference to this to children to makes sure we don't get

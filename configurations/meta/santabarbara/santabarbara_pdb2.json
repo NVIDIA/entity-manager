@@ -7,6 +7,56 @@
             "Type": "EEPROM"
         },
         {
+            "Name": "PDB2_Cable_Sideband",
+            "PresencePinNames": [
+                "PDB1_SB_CONN_PRSNT_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "PDB2_FAN7",
+            "PresencePinNames": [
+                "FAN_4_PRSNT_R_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "PDB2_FAN6",
+            "PresencePinNames": [
+                "FAN_5_PRSNT_R_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "PDB2_FAN5",
+            "PresencePinNames": [
+                "FAN_6_PRSNT_R_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "PDB2_FAN4",
+            "PresencePinNames": [
+                "FAN_7_PRSNT_R_N"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
             "Address": "0x21",
             "Bus": 43,
             "Connector": {
@@ -551,10 +601,10 @@
             "Thresholds": [
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 2,
+                    "Hysteresis": 1.6,
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 100
+                    "Value": 80.0
                 },
                 {
                     "Direction": "less than",
@@ -573,10 +623,10 @@
             "Thresholds": [
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 2,
+                    "Hysteresis": 1.6,
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 100
+                    "Value": 80.0
                 },
                 {
                     "Direction": "less than",
@@ -706,7 +756,7 @@
         }
     ],
     "Name": "Santa Barbara PDB2",
-    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': 'Santa Barbara PDB2'})",
+    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': 'Santa Barbara PDB2', 'BOARD_MANUFACTURER': 'Quanta', 'BOARD_INFO_AM4': 'vr-mps'})",
     "Type": "Board",
     "xyz.openbmc_project.Inventory.Decorator.Asset": {
         "BuildDate": "$BOARD_MANUFACTURE_DATE",
@@ -718,6 +768,11 @@
     },
     "xyz.openbmc_project.Inventory.Decorator.AssetTag": {
         "AssetTag": "$PRODUCT_ASSET_TAG"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.Compatible": {
+        "Names": [
+            "com.meta.Hardware.Santabarbara.Boards.Power_Distribution_Board_2"
+        ]
     },
     "xyz.openbmc_project.Inventory.Decorator.Revision": {
         "Version": "$PRODUCT_VERSION"

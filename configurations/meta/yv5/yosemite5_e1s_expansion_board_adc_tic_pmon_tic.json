@@ -308,6 +308,7 @@
             "Address": "0x6a",
             "Bus": 20,
             "Name": "E1S_EB_E1S0_TEMP_C",
+            "PEC": "Required",
             "PowerState": "On",
             "Thresholds": [
                 {
@@ -331,6 +332,7 @@
             "Address": "0x6a",
             "Bus": 21,
             "Name": "E1S_EB_E1S1_TEMP_C",
+            "PEC": "Required",
             "PowerState": "On",
             "Thresholds": [
                 {
@@ -390,5 +392,8 @@
     },
     "xyz.openbmc_project.Inventory.Decorator.AssetTag": {
         "AssetTag": "$PRODUCT_ASSET_TAG"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.Revision": {
+        "Version": "$PRODUCT_VERSION"
     }
 }

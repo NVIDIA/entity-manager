@@ -3,7 +3,7 @@
 
 #include "entity_manager.hpp"
 
-#include "../dbus_regex.hpp"
+#include "../dbus_util.hpp"
 #include "../utils.hpp"
 #include "../variant_visitors.hpp"
 #include "configuration.hpp"
@@ -85,7 +85,7 @@ EntityManager::EntityManager(
 
 void EntityManager::postToDbus(const nlohmann::json& newConfiguration)
 {
-    std::map<std::string, std::string> newBoards; // path -> name
+    std::map<sdbusplus::object_path, std::string> newBoards; // path -> name
 
     // iterate through boards
     for (const auto& [boardId, boardConfig] : newConfiguration.items())
@@ -123,7 +123,7 @@ void EntityManager::postToDbus(const nlohmann::json& newConfiguration)
 
 void EntityManager::postBoardToDBus(
     const std::string& boardId, const nlohmann::json::object_t& boardConfig,
-    std::map<std::string, std::string>& newBoards)
+    std::map<sdbusplus::object_path, std::string>& newBoards)
 {
     auto boardNameIt = boardConfig.find("Name");
     if (boardNameIt == boardConfig.end())
@@ -149,7 +149,7 @@ void EntityManager::postBoardToDBus(
     if (findBoardType != boardValues.end() &&
         findBoardType->type() == nlohmann::json::value_t::string)
     {
-        boardType = dbus_regex::sanitizeForDBusMember(
+        boardType = dbus_util::sanitizeForDBusPathSegment(
             findBoardType->get<std::string>());
     }
     else
@@ -172,14 +172,15 @@ void EntityManager::postBoardToDBus(
         customNameEnabled = findCustomNameEnabled->get<bool>();
     }
 
-    std::string boardPath;
+    sdbusplus::object_path boardPath;
     if (customNameEnabled)
     {
         std::string boardTypeLower = boardType;
         std::transform(boardTypeLower.begin(), boardTypeLower.end(),
                        boardTypeLower.begin(), ::tolower);
-        boardPath = "/xyz/openbmc_project/inventory/system/" + boardTypeLower +
-                    "/" + boardName;
+        boardPath = sdbusplus::object_path(
+            "/xyz/openbmc_project/inventory/system/" + boardTypeLower + "/" +
+            boardName);
     }
     else
     {
@@ -314,8 +315,8 @@ void EntityManager::postBoardToDBus(
 void EntityManager::postExposesRecordsToDBus(
     nlohmann::json& item, size_t& exposesIndex,
     const std::string& boardNameOrig, std::string jsonPointerPath,
-    const std::string& jsonPointerPathBoard, const std::string& boardPath,
-    const std::string& boardType)
+    const std::string& jsonPointerPathBoard,
+    const sdbusplus::object_path& boardPath, const std::string& boardType)
 {
     exposesIndex++;
     jsonPointerPath = jsonPointerPathBoard;
@@ -340,16 +341,21 @@ void EntityManager::postExposesRecordsToDBus(
     std::string itemType = "unknown";
     if (findType != item.end())
     {
-        itemType =
-            dbus_regex::sanitizeForDBusPath(findType->get<std::string>());
+        itemType = findType->get<std::string>();
+    }
+
+    if (!dbus_util::validateDBusInterfaceSegments(itemType))
+    {
+        lg2::error(
+            "item Type '{TYPE}' is not a valid D-Bus interface segment(s)",
+            "TYPE", itemType);
+        return;
     }
 
     const std::string itemName =
-        dbus_regex::sanitizeForDBusMember(findName->get<std::string>());
+        dbus_util::sanitizeForDBusPathSegment(findName->get<std::string>());
 
-    std::string ifacePath = boardPath;
-    ifacePath += "/";
-    ifacePath += itemName;
+    const sdbusplus::object_path ifacePath = boardPath / itemName;
 
     if (itemType == "BMC")
     {
@@ -405,7 +411,7 @@ void EntityManager::postExposesRecordsToDBus(
 bool EntityManager::postConfigurationRecord(
     const std::string& name, nlohmann::json& config,
     const std::string& boardNameOrig, const std::string& itemType,
-    const std::string& jsonPointerPath, const std::string& ifacePath)
+    const std::string& jsonPointerPath, const sdbusplus::object_path& ifacePath)
 {
     if (config.type() == nlohmann::json::value_t::object)
     {
@@ -735,7 +741,7 @@ void EntityManager::handleCurrentConfigurationJson()
     }
 }
 
-void EntityManager::registerCallback(const std::string& path)
+void EntityManager::registerCallback(const sdbusplus::object_path& path)
 {
     if (dbusMatches.contains(path))
     {
@@ -747,9 +753,9 @@ void EntityManager::registerCallback(const std::string& path)
     std::function<void(sdbusplus::message_t & message)> eventHandler =
         [&](sdbusplus::message_t&) { propertiesChangedCallback(); };
 
-    sdbusplus::bus::match_t match(
+    sdbusplus::match match(
         static_cast<sdbusplus::bus_t&>(*systemBus),
-        "type='signal',member='PropertiesChanged',path='" + path + "'",
+        "type='signal',member='PropertiesChanged',path='" + path.string() + "'",
         eventHandler);
     dbusMatches.emplace(path, std::move(match));
 }
@@ -762,9 +768,9 @@ void EntityManager::registerCallback(const std::string& path)
 void EntityManager::initFilters(
     const std::unordered_set<std::string>& probeInterfaces)
 {
-    nameOwnerChangedMatch = std::make_unique<sdbusplus::bus::match_t>(
+    nameOwnerChangedMatch = std::make_unique<sdbusplus::match>(
         static_cast<sdbusplus::bus_t&>(*systemBus),
-        sdbusplus::bus::match::rules::nameOwnerChanged(),
+        sdbusplus::match_rules::nameOwnerChanged(),
         [this](sdbusplus::message_t& m) {
             auto [name, oldOwner,
                   newOwner] = m.unpack<std::string, std::string, std::string>();
@@ -780,9 +786,9 @@ void EntityManager::initFilters(
 
     // We also need a poke from DBus when new interfaces are created or
     // destroyed.
-    interfacesAddedMatch = std::make_unique<sdbusplus::bus::match_t>(
+    interfacesAddedMatch = std::make_unique<sdbusplus::match>(
         static_cast<sdbusplus::bus_t&>(*systemBus),
-        sdbusplus::bus::match::rules::interfacesAdded(),
+        sdbusplus::match_rules::interfacesAdded(),
         [this, probeInterfaces](sdbusplus::message_t& msg) {
             if (iaContainsProbeInterface(msg, probeInterfaces))
             {
@@ -790,9 +796,9 @@ void EntityManager::initFilters(
             }
         });
 
-    interfacesRemovedMatch = std::make_unique<sdbusplus::bus::match_t>(
+    interfacesRemovedMatch = std::make_unique<sdbusplus::match>(
         static_cast<sdbusplus::bus_t&>(*systemBus),
-        sdbusplus::bus::match::rules::interfacesRemoved(),
+        sdbusplus::match_rules::interfacesRemoved(),
         [this, probeInterfaces](sdbusplus::message_t& msg) {
             auto [path, interfaces] =
                 msg.unpack<sdbusplus::object_path, std::vector<std::string>>();
@@ -800,7 +806,7 @@ void EntityManager::initFilters(
             if (irContainsProbeInterface(interfaces, probeInterfaces))
             {
                 // Clean up match on probe interface removal to avoid leaks
-                dbusMatches.erase(path.str);
+                dbusMatches.erase(path);
                 propertiesChangedCallback();
             }
         });

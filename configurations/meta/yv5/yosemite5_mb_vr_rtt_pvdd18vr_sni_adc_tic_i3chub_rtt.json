@@ -178,6 +178,26 @@
             "Type": "EEPROM"
         },
         {
+            "Name": "MB_E1S0",
+            "PresencePinNames": [
+                "PRSNT_BOOT_N_FF"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
+            "Name": "MB_E1S1",
+            "PresencePinNames": [
+                "PRSNT_MCIO1A_N_FF"
+            ],
+            "PresencePinValues": [
+                0
+            ],
+            "Type": "GPIODeviceDetect"
+        },
+        {
             "Address": "0x40",
             "Bus": 11,
             "Labels": [
@@ -370,136 +390,6 @@
             "power1_Name": "MB_PMON_NIC_P12V_PWR_W"
         },
         {
-            "Address": "0x44",
-            "Bus": 13,
-            "Labels": [
-                "in1",
-                "curr1",
-                "power1"
-            ],
-            "Name": "MB_PMON_E1S0",
-            "PowerState": "On",
-            "Thresholds": [
-                {
-                    "Direction": "less than",
-                    "Hysteresis": 0.216,
-                    "Label": "in1",
-                    "Name": "lower critical",
-                    "Severity": 1,
-                    "Value": 10.8
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.264,
-                    "Label": "in1",
-                    "Name": "upper critical",
-                    "Severity": 1,
-                    "Value": 13.2
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.0367,
-                    "Label": "curr1",
-                    "Name": "upper critical",
-                    "Severity": 1,
-                    "Value": 1.837
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.044,
-                    "Label": "curr1",
-                    "Name": "upper non recoverable",
-                    "Severity": 4,
-                    "Value": 2.2
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.412,
-                    "Label": "power1",
-                    "Name": "upper critical",
-                    "Severity": 1,
-                    "Value": 20.6
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.5,
-                    "Label": "power1",
-                    "Name": "upper non recoverable",
-                    "Severity": 4,
-                    "Value": 25.0
-                }
-            ],
-            "Type": "INA230",
-            "curr1_Name": "MB_PMON_E1S0_P12V_CURR_A",
-            "in1_Name": "MB_PMON_E1S0_P12V_VOLT_V",
-            "power1_Name": "MB_PMON_E1S0_P12V_PWR_W"
-        },
-        {
-            "Address": "0x45",
-            "Bus": 13,
-            "Labels": [
-                "in1",
-                "curr1",
-                "power1"
-            ],
-            "Name": "MB_PMON_E1S1",
-            "PowerState": "On",
-            "Thresholds": [
-                {
-                    "Direction": "less than",
-                    "Hysteresis": 0.216,
-                    "Label": "in1",
-                    "Name": "lower critical",
-                    "Severity": 1,
-                    "Value": 10.8
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.264,
-                    "Label": "in1",
-                    "Name": "upper critical",
-                    "Severity": 1,
-                    "Value": 13.2
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.0367,
-                    "Label": "curr1",
-                    "Name": "upper critical",
-                    "Severity": 1,
-                    "Value": 1.837
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.044,
-                    "Label": "curr1",
-                    "Name": "upper non recoverable",
-                    "Severity": 4,
-                    "Value": 2.2
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.412,
-                    "Label": "power1",
-                    "Name": "upper critical",
-                    "Severity": 1,
-                    "Value": 20.6
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.5,
-                    "Label": "power1",
-                    "Name": "upper non recoverable",
-                    "Severity": 4,
-                    "Value": 25.0
-                }
-            ],
-            "Type": "INA230",
-            "curr1_Name": "MB_PMON_E1S1_P12V_CURR_A",
-            "in1_Name": "MB_PMON_E1S1_P12V_VOLT_V",
-            "power1_Name": "MB_PMON_E1S1_P12V_PWR_W"
-        },
-        {
             "Address": "0x48",
             "Bus": 13,
             "Name": "MB_INLET_TEMP_C",
@@ -513,10 +403,10 @@
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.9,
+                    "Hysteresis": 1.1,
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 45.0
+                    "Value": 55.0
                 }
             ],
             "Type": "LM75A"
@@ -535,10 +425,10 @@
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 1.5,
+                    "Hysteresis": 1.7,
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 75.0
+                    "Value": 85.0
                 }
             ],
             "Type": "LM75A"
@@ -552,52 +442,6 @@
             },
             "Name": "Yosemite5_MB_CPLD",
             "Type": "LatticeLCMXO3D_9400Firmware"
-        },
-        {
-            "Address": "0x6a",
-            "Bus": 13,
-            "Name": "MB_E1S0_TEMP_C",
-            "PowerState": "On",
-            "Thresholds": [
-                {
-                    "Direction": "less than",
-                    "Hysteresis": 0.1,
-                    "Name": "lower critical",
-                    "Severity": 1,
-                    "Value": 5.0
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 1.4,
-                    "Name": "upper critical",
-                    "Severity": 1,
-                    "Value": 70.0
-                }
-            ],
-            "Type": "NVME1000"
-        },
-        {
-            "Address": "0x6a",
-            "Bus": 5,
-            "Name": "MB_E1S1_TEMP_C",
-            "PowerState": "On",
-            "Thresholds": [
-                {
-                    "Direction": "less than",
-                    "Hysteresis": 0.1,
-                    "Name": "lower critical",
-                    "Severity": 1,
-                    "Value": 5.0
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 1.4,
-                    "Name": "upper critical",
-                    "Severity": 1,
-                    "Value": 70.0
-                }
-            ],
-            "Type": "NVME1000"
         },
         {
             "Address": "0x60",
@@ -657,11 +501,11 @@
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 2.5,
+                    "Hysteresis": 2,
                     "Label": "temp1",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 125.0
+                    "Value": 100
                 },
                 {
                     "Direction": "less than",
@@ -705,11 +549,11 @@
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 2.5,
+                    "Hysteresis": 2,
                     "Label": "temp2",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 125.0
+                    "Value": 100
                 }
             ],
             "Type": "RAA228228",
@@ -776,11 +620,11 @@
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 2.5,
+                    "Hysteresis": 2,
                     "Label": "temp1",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 125.0
+                    "Value": 100
                 }
             ],
             "Type": "RAA228228",
@@ -823,7 +667,7 @@
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 6.82,
+                    "Hysteresis": 8.2,
                     "Label": "iout1",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -831,7 +675,7 @@
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 8.184,
+                    "Hysteresis": 10.7448,
                     "Label": "pout1",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -847,11 +691,11 @@
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 2.5,
+                    "Hysteresis": 2,
                     "Label": "temp1",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 125.0
+                    "Value": 100
                 },
                 {
                     "Direction": "less than",
@@ -895,11 +739,11 @@
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 2.5,
+                    "Hysteresis": 2,
                     "Label": "temp2",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 125.0
+                    "Value": 100
                 }
             ],
             "Type": "RAA228228",
@@ -993,131 +837,131 @@
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.28,
+                    "Hysteresis": 0.36,
                     "Label": "power2",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.0
+                    "Value": 18.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.28,
+                    "Hysteresis": 0.36,
                     "Label": "power3",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.0
+                    "Value": 18.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.28,
+                    "Hysteresis": 0.36,
                     "Label": "power4",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.0
+                    "Value": 18.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.28,
+                    "Hysteresis": 0.36,
                     "Label": "power5",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.0
+                    "Value": 18.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.28,
+                    "Hysteresis": 0.36,
                     "Label": "power6",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.0
+                    "Value": 18.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.28,
+                    "Hysteresis": 0.36,
                     "Label": "power7",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.0
+                    "Value": 18.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.28,
+                    "Hysteresis": 0.36,
                     "Label": "power8",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.0
+                    "Value": 18.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.28,
+                    "Hysteresis": 0.36,
                     "Label": "power9",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.0
+                    "Value": 18.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.28,
+                    "Hysteresis": 0.36,
                     "Label": "power10",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.0
+                    "Value": 18.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.28,
+                    "Hysteresis": 0.36,
                     "Label": "power11",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.0
+                    "Value": 18.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.28,
+                    "Hysteresis": 0.36,
                     "Label": "power12",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.0
+                    "Value": 18.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.28,
+                    "Hysteresis": 0.36,
                     "Label": "power13",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.0
+                    "Value": 18.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.28,
+                    "Hysteresis": 0.36,
                     "Label": "power14",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.0
+                    "Value": 18.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.28,
+                    "Hysteresis": 0.36,
                     "Label": "power15",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.0
+                    "Value": 18.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.28,
+                    "Hysteresis": 0.36,
                     "Label": "power16",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.0
+                    "Value": 18.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.28,
+                    "Hysteresis": 0.36,
                     "Label": "power17",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.0
+                    "Value": 18.0
                 },
                 {
                     "Direction": "less than",
@@ -1426,17 +1270,17 @@
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 1.7,
+                    "Hysteresis": 1.8,
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 85.0
+                    "Value": 90.0
                 },
                 {
                     "Direction": "greater than",
                     "Hysteresis": 2,
                     "Name": "upper non recoverable",
                     "Severity": 4,
-                    "Value": 100.0
+                    "Value": 100
                 }
             ],
             "Type": "SBTSI"
@@ -1471,7 +1315,7 @@
             "Thresholds": [
                 {
                     "Direction": "less than",
-                    "Hysteresis": 0.0352,
+                    "Hysteresis": 0.0336,
                     "Label": "vout1",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -1479,7 +1323,7 @@
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.0366,
+                    "Hysteresis": 0.037,
                     "Label": "vout1",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -1511,11 +1355,11 @@
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 2.5,
+                    "Hysteresis": 2,
                     "Label": "temp1",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 125.0
+                    "Value": 100
                 }
             ],
             "Type": "TDA38640",
@@ -1550,6 +1394,14 @@
     },
     "xyz.openbmc_project.Inventory.Decorator.AssetTag": {
         "AssetTag": "$PRODUCT_ASSET_TAG"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.Compatible": {
+        "Names": [
+            "com.meta.Hardware.Yosemite5.Boards.MB"
+        ]
+    },
+    "xyz.openbmc_project.Inventory.Decorator.Revision": {
+        "Version": "$PRODUCT_VERSION"
     },
     "xyz.openbmc_project.Inventory.Item.Board.Motherboard": {}
 }

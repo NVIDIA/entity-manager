@@ -18,7 +18,7 @@
                 ]
             },
             "Index": 0,
-            "MaxReading": 47300,
+            "MaxReading": 50000,
             "Name": "FAN0_TACH_IL_SPEED_RPM",
             "PowerState": "Always",
             "Thresholds": [
@@ -32,7 +32,7 @@
                     "Direction": "greater than",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 42000
+                    "Value": 47500
                 }
             ],
             "Type": "I2CFan"
@@ -49,7 +49,7 @@
                 ]
             },
             "Index": 1,
-            "MaxReading": 44000,
+            "MaxReading": 47000,
             "Name": "FAN0_TACH_OL_SPEED_RPM",
             "PowerState": "Always",
             "Thresholds": [
@@ -63,7 +63,7 @@
                     "Direction": "greater than",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 41000
+                    "Value": 44500
                 }
             ],
             "Type": "I2CFan"
@@ -80,7 +80,7 @@
                 ]
             },
             "Index": 2,
-            "MaxReading": 47300,
+            "MaxReading": 50000,
             "Name": "FAN1_TACH_IL_SPEED_RPM",
             "PowerState": "Always",
             "Thresholds": [
@@ -94,7 +94,7 @@
                     "Direction": "greater than",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 42000
+                    "Value": 47500
                 }
             ],
             "Type": "I2CFan"
@@ -111,7 +111,7 @@
                 ]
             },
             "Index": 3,
-            "MaxReading": 44000,
+            "MaxReading": 47000,
             "Name": "FAN1_TACH_OL_SPEED_RPM",
             "PowerState": "Always",
             "Thresholds": [
@@ -125,7 +125,7 @@
                     "Direction": "greater than",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 41000
+                    "Value": 44500
                 }
             ],
             "Type": "I2CFan"
@@ -142,7 +142,7 @@
                 ]
             },
             "Index": 4,
-            "MaxReading": 47300,
+            "MaxReading": 50000,
             "Name": "FAN2_TACH_IL_SPEED_RPM",
             "PowerState": "Always",
             "Thresholds": [
@@ -156,7 +156,7 @@
                     "Direction": "greater than",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 42000
+                    "Value": 47500
                 }
             ],
             "Type": "I2CFan"
@@ -173,7 +173,7 @@
                 ]
             },
             "Index": 5,
-            "MaxReading": 44000,
+            "MaxReading": 47000,
             "Name": "FAN2_TACH_OL_SPEED_RPM",
             "PowerState": "Always",
             "Thresholds": [
@@ -187,7 +187,7 @@
                     "Direction": "greater than",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 41000
+                    "Value": 44500
                 }
             ],
             "Type": "I2CFan"
@@ -204,7 +204,7 @@
                 ]
             },
             "Index": 11,
-            "MaxReading": 44000,
+            "MaxReading": 47000,
             "Name": "FAN3_TACH_OL_SPEED_RPM",
             "PowerState": "Always",
             "Thresholds": [
@@ -218,7 +218,7 @@
                     "Direction": "greater than",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 41000
+                    "Value": 44500
                 }
             ],
             "Type": "I2CFan"
@@ -301,6 +301,7 @@
             ],
             "Type": "LTC4287",
             "iout1_Name": "PDB_L_P50V_HSC0_CURR_A",
+            "pin_Max": 5500,
             "pin_Name": "PDB_L_P50V_HSC0_PWR_W",
             "temp1_Name": "PDB_L_P50V_HSC0_TEMP_C",
             "vin_Name": "PDB_L_P50V_HSC0_VIN_VOLT_V",
@@ -384,6 +385,7 @@
             ],
             "Type": "LTC4287",
             "iout1_Name": "PDB_L_P50V_HSC1_CURR_A",
+            "pin_Max": 5500,
             "pin_Name": "PDB_L_P50V_HSC1_PWR_W",
             "temp1_Name": "PDB_L_P50V_HSC1_TEMP_C",
             "vin_Name": "PDB_L_P50V_HSC1_VIN_VOLT_V",
@@ -467,6 +469,7 @@
             ],
             "Type": "LTC4287",
             "iout1_Name": "PDB_L_P50V_HSC5_CURR_A",
+            "pin_Max": 5500,
             "pin_Name": "PDB_L_P50V_HSC5_PWR_W",
             "temp1_Name": "PDB_L_P50V_HSC5_TEMP_C",
             "vin_Name": "PDB_L_P50V_HSC5_VIN_VOLT_V",
@@ -477,7 +480,7 @@
             "Bus": "$bus",
             "Name": "PDB_L_EAM1_AMB_TEMP_C",
             "Name1": "PDB_L_EAM0_AMB_TEMP_C",
-            "Name2": "PDB_L_BUSBAR_TEMP_C",
+            "Name2": "PDB_L_BUSBAR_AMB_TEMP_C",
             "Thresholds": [
                 {
                     "Direction": "less than",

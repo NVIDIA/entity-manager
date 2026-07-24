@@ -21,7 +21,7 @@
                     "Direction": "greater than",
                     "Name": "upper non recoverable",
                     "Severity": 4,
-                    "Value": 16.4
+                    "Value": 15.6
                 }
             ],
             "Type": "ADC"
@@ -362,7 +362,7 @@
         {
             "Address": "0x4b",
             "Bus": 9,
-            "Name": "SCM_TEMP_C",
+            "Name": "INLET_SCM_TEMP_C",
             "Thresholds": [
                 {
                     "Direction": "less than",
@@ -378,10 +378,19 @@
                 }
             ],
             "Type": "TMP75"
+        },
+        {
+            "FirmwareInfo": {
+                "CompatibleHardware": "com.meta.Hardware.Anacapa.TPM.BMC",
+                "VendorIANA": 40981
+            },
+            "Name": "Anacapa_TPM",
+            "TPMIndex": 0,
+            "Type": "TPM2Firmware"
         }
     ],
     "Name": "Anacapa SCM",
-    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': 'Anacapa SCM', 'BOARD_MANUFACTURER': 'Quanta'})",
+    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': 'Anacapa SCM', 'BOARD_MANUFACTURER': '(Inventec|Quanta|Wiwynn)'})",
     "Type": "Board",
     "xyz.openbmc_project.Inventory.Decorator.Asset": {
         "BuildDate": "$BOARD_MANUFACTURE_DATE",

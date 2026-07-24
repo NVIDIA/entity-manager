@@ -1,6 +1,6 @@
 #include "utils.hpp"
 
-#include "../dbus_regex.hpp"
+#include "../dbus_util.hpp"
 #include "../utils.hpp"
 #include "../variant_visitors.hpp"
 #include "expression.hpp"
@@ -182,96 +182,96 @@ std::optional<std::string> templateCharReplace(
     return std::nullopt;
 }
 
-static bool templateCharReplaceLoop(
-    std::string*& strPtr, const DBusInterface& interface,
-    std::optional<std::string>& ret, nlohmann::json& value)
+static bool templateCharReplaceOneProperty(
+    std::string& str, const std::string& propName,
+    const DBusValueVariant& propValue, std::optional<std::string>& ret)
+{
+    std::string templateName = templateChar + propName;
+    std::ranges::subrange<std::string::const_iterator> find =
+        iFindFirst(str, templateName);
+    if (!find)
+    {
+        return false;
+    }
+
+    size_t start = find.begin() - str.begin();
+
+    // check for additional operations
+    if ((start == 0U) && find.end() == str.end())
+    {
+        str = std::visit(VariantToStringVisitor(), propValue);
+        return true;
+    }
+
+    constexpr const std::array<char, 5> mathChars = {'+', '-', '%', '*', '/'};
+    size_t nextItemIdx = start + templateName.size() + 1;
+
+    if (nextItemIdx >= str.size() ||
+        std::find(mathChars.begin(), mathChars.end(), str.at(nextItemIdx)) ==
+            mathChars.end())
+    {
+        std::string val = std::visit(VariantToStringVisitor(), propValue);
+        iReplaceAll(str, templateName, val);
+        return false;
+    }
+
+    // save the prefix
+    std::string prefix = str.substr(0, start);
+
+    // operate on the rest
+    std::string end = str.substr(nextItemIdx);
+
+    std::vector<std::string> splitResult = split(end, ' ');
+
+    // need at least 1 operation and number
+    if (splitResult.size() < 2)
+    {
+        lg2::error("Syntax error on template replacement of {STR}", "STR", str);
+        for (const std::string& data : splitResult)
+        {
+            lg2::error("{SPLIT} ", "SPLIT", data);
+        }
+        lg2::error("");
+        return false;
+    }
+
+    // we assume that the replacement is a number, because we can
+    // only do math on numbers.. we might concatenate strings in the
+    // future, but that's later
+    int number = std::visit(VariantToIntVisitor(), propValue);
+    auto exprBegin = splitResult.begin();
+    auto exprEnd = splitResult.end();
+
+    number = expression::evaluate(number, exprBegin, exprEnd);
+
+    std::string replaced(find.begin(), find.end());
+    while (exprBegin != exprEnd)
+    {
+        replaced.append(" ").append(*exprBegin++);
+    }
+    ret = replaced;
+
+    std::string result = prefix + std::to_string(number);
+    while (exprEnd != splitResult.end())
+    {
+        result.append(" ").append(*exprEnd++);
+    }
+    str = result;
+
+    return false;
+}
+
+static void templateCharReplaceLoop(std::string& str,
+                                    const DBusInterface& interface,
+                                    std::optional<std::string>& ret)
 {
     for (const auto& [propName, propValue] : interface)
     {
-        std::string templateName = templateChar + propName;
-        std::ranges::subrange<std::string::const_iterator> find =
-            iFindFirst(*strPtr, templateName);
-        if (!find)
+        if (templateCharReplaceOneProperty(str, propName, propValue, ret))
         {
-            continue;
-        }
-
-        size_t start = find.begin() - strPtr->begin();
-
-        // check for additional operations
-        if ((start == 0U) && find.end() == strPtr->end())
-        {
-            std::visit([&](auto&& val) { value = val; }, propValue);
-            return true;
-        }
-
-        constexpr const std::array<char, 5> mathChars = {'+', '-', '%', '*',
-                                                         '/'};
-        size_t nextItemIdx = start + templateName.size() + 1;
-
-        if (nextItemIdx >= strPtr->size() ||
-            std::find(mathChars.begin(), mathChars.end(),
-                      strPtr->at(nextItemIdx)) == mathChars.end())
-        {
-            std::string val = std::visit(VariantToStringVisitor(), propValue);
-            iReplaceAll(*strPtr, templateName, val);
-            continue;
-        }
-
-        // save the prefix
-        std::string prefix = strPtr->substr(0, start);
-
-        // operate on the rest
-        std::string end = strPtr->substr(nextItemIdx);
-
-        std::vector<std::string> splitResult = split(end, ' ');
-
-        // need at least 1 operation and number
-        if (splitResult.size() < 2)
-        {
-            lg2::error("Syntax error on template replacement of {STR}", "STR",
-                       *strPtr);
-            for (const std::string& data : splitResult)
-            {
-                lg2::error("{SPLIT} ", "SPLIT", data);
-            }
-            lg2::error("");
-            continue;
-        }
-
-        // we assume that the replacement is a number, because we can
-        // only do math on numbers.. we might concatenate strings in the
-        // future, but that's later
-        int number = std::visit(VariantToIntVisitor(), propValue);
-        auto exprBegin = splitResult.begin();
-        auto exprEnd = splitResult.end();
-
-        number = expression::evaluate(number, exprBegin, exprEnd);
-
-        std::string replaced(find.begin(), find.end());
-        while (exprBegin != exprEnd)
-        {
-            replaced.append(" ").append(*exprBegin++);
-        }
-        ret = replaced;
-
-        std::string result = prefix + std::to_string(number);
-        while (exprEnd != splitResult.end())
-        {
-            result.append(" ").append(*exprEnd++);
-        }
-        value = result;
-
-        // We probably just invalidated the pointer abovei,
-        // reset and continue to handle multiple templates
-        strPtr = value.get_ptr<std::string*>();
-        if (strPtr == nullptr)
-        {
-            break;
+            return;
         }
     }
-
-    return false;
 }
 
 static void templateCharReplaceObj(
@@ -318,6 +318,23 @@ static std::optional<uint64_t> parseAsNumber(std::string_view strView)
     return std::nullopt;
 }
 
+static std::optional<std::string> templateCharReplaceStr(
+    std::string& str, const DBusInterface& interface, const size_t index,
+    const std::optional<std::string>& replaceStr)
+{
+    std::optional<std::string> ret = std::nullopt;
+
+    if (replaceStr)
+    {
+        replaceAll(str, *replaceStr, std::to_string(index));
+    }
+
+    templateCharReplaceOneProperty(str, "index", index, ret);
+    templateCharReplaceLoop(str, interface, ret);
+
+    return ret;
+}
+
 // finds the template character (currently set to $) and replaces the value with
 // the field found in a dbus object i.e. $ADDRESS would get populated with the
 // ADDRESS field from a object on dbus
@@ -342,48 +359,39 @@ std::optional<std::string> templateCharReplace(
         return ret;
     }
 
-    std::string* strPtr = value.get_ptr<std::string*>();
+    const std::string* strPtr = value.get_ptr<std::string*>();
+
     if (strPtr == nullptr)
     {
         return ret;
     }
 
-    replaceAll(*strPtr, std::string(templateChar) + "index",
-               std::to_string(index));
-    if (replaceStr)
-    {
-        replaceAll(*strPtr, *replaceStr, std::to_string(index));
-    }
+    std::string str = *strPtr;
 
-    if (templateCharReplaceLoop(strPtr, interface, ret, value))
-    {
-        return ret;
-    }
+    templateCharReplaceStr(str, interface, index, replaceStr);
 
-    strPtr = value.get_ptr<std::string*>();
-    if (strPtr == nullptr)
-    {
-        return ret;
-    }
-
-    const std::optional<uint64_t> optNum = parseAsNumber(*strPtr);
+    const std::optional<uint64_t> optNum = parseAsNumber(str);
     if (optNum.has_value())
     {
         value = optNum.value();
+    }
+    else
+    {
+        value = str;
     }
 
     return ret;
 }
 
-std::string buildInventorySystemPath(std::string& boardName,
-                                     const std::string& boardType)
+sdbusplus::object_path buildInventorySystemPath(std::string& boardName,
+                                                const std::string& boardType)
 {
-    std::string path = "/xyz/openbmc_project/inventory/system/";
-    std::string boardTypeLower = toLowerCopy(boardType);
+    const sdbusplus::object_path basePath(
+        "/xyz/openbmc_project/inventory/system");
 
-    boardName = dbus_regex::sanitizeForDBusMember(boardName);
+    boardName = dbus_util::sanitizeForDBusPathSegment(boardName);
 
-    return std::format("{}{}/{}", path, boardTypeLower, boardName);
+    return basePath / toLowerCopy(boardType) / boardName;
 }
 
 std::string getExposesKey(const nlohmann::json& config)

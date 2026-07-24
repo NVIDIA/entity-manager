@@ -171,10 +171,10 @@
             "Thresholds": [
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.9,
+                    "Hysteresis": 2,
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 45
+                    "Value": 100
                 },
                 {
                     "Direction": "less than",
@@ -197,7 +197,7 @@
         }
     ],
     "Name": "SanMiguel SCM",
-    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': 'San Miguel SCM ', 'BOARD_MANUFACTURER': 'Quanta'})",
+    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': 'San Miguel SCM ', 'BOARD_MANUFACTURER': '(Ingrasys|Quanta)'})",
     "Type": "Board",
     "xyz.openbmc_project.Inventory.Decorator.Asset": {
         "BuildDate": "$BOARD_MANUFACTURE_DATE",
@@ -212,7 +212,8 @@
     },
     "xyz.openbmc_project.Inventory.Decorator.Compatible": {
         "Names": [
-            "com.meta.Hardware.BMC.Model.SanMiguel"
+            "com.meta.Hardware.BMC.Model.SanMiguel",
+            "com.meta.Hardware.SanMiguel.Boards.SCM"
         ]
     },
     "xyz.openbmc_project.Inventory.Decorator.Revision": {

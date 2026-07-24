@@ -1,6 +1,7 @@
 #include "configuration.hpp"
 
 #include "perform_probe.hpp"
+#include "probe_type.hpp"
 #include "utils.hpp"
 
 #include <nlohmann/json.hpp>
@@ -23,6 +24,41 @@ Configuration::Configuration(
 {
     loadConfigurations();
     filterProbeInterfaces();
+}
+
+void Configuration::loadSingleConfigFile(const std::filesystem::path& jsonPath,
+                                         const nlohmann::json& schema)
+{
+    std::ifstream jsonStream(jsonPath.c_str());
+    if (!jsonStream.good())
+    {
+        lg2::error("unable to open {PATH}", "PATH", jsonPath.string());
+        return;
+    }
+    auto data = nlohmann::json::parse(jsonStream, nullptr, false, true);
+    if (data.is_discarded())
+    {
+        lg2::error("syntax error in {PATH}", "PATH", jsonPath.string());
+        return;
+    }
+
+    if (ENABLE_RUNTIME_VALIDATE_JSON && !validateJson(schema, data))
+    {
+        lg2::error("Error validating {PATH}", "PATH", jsonPath.string());
+        return;
+    }
+
+    if (data.type() == nlohmann::json::value_t::array)
+    {
+        for (auto& d : data)
+        {
+            configurations.emplace_back(d);
+        }
+    }
+    else
+    {
+        configurations.emplace_back(data);
+    }
 }
 
 void Configuration::loadConfigurations()
@@ -65,36 +101,7 @@ void Configuration::loadConfigurations()
 
     for (auto& jsonPath : jsonPaths)
     {
-        std::ifstream jsonStream(jsonPath.c_str());
-        if (!jsonStream.good())
-        {
-            lg2::error("unable to open {PATH}", "PATH", jsonPath.string());
-            continue;
-        }
-        auto data = nlohmann::json::parse(jsonStream, nullptr, false, true);
-        if (data.is_discarded())
-        {
-            lg2::error("syntax error in {PATH}", "PATH", jsonPath.string());
-            continue;
-        }
-
-        if (ENABLE_RUNTIME_VALIDATE_JSON && !validateJson(schema, data))
-        {
-            lg2::error("Error validating {PATH}", "PATH", jsonPath.string());
-            continue;
-        }
-
-        if (data.type() == nlohmann::json::value_t::array)
-        {
-            for (auto& d : data)
-            {
-                configurations.emplace_back(d);
-            }
-        }
-        else
-        {
-            configurations.emplace_back(data);
-        }
+        loadSingleConfigFile(jsonPath, schema);
     }
 
     const auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(

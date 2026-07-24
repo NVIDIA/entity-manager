@@ -489,6 +489,62 @@ TEST(formatIPMIFRU, FullDecode)
             Pair("PRODUCT_VERSION", "AE.1")));
 }
 
+TEST(FormatIPMIFRUTest, ManufactureDateRolloverZero)
+{
+    const auto bmcFru = std::to_array<uint8_t>({
+        0x01, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0xfe, // Header
+        0x01, 0x01, 0x19, // Board version, length, language
+        0x00, 0x00, 0x00, // Minutes byte 0, 1, 2
+        0xc1,             // End of fields
+        0x24, // Checksum: (0x01 + 0x01 + 0x19 + 0x00 + 0x00 + 0x00 + 0xc1) =
+              // 0xdc
+        0x00  // Padding
+    });
+
+    std::flat_map<std::string, std::string, std::less<>> result;
+    // We expect resWarn because mandatory fields are missing, but date should
+    // be parsed.
+    ASSERT_EQ(formatIPMIFRU(bmcFru, result), resCodes::resWarn);
+    // 0 minutes (1/1/1996) -> Nov 24, 2027
+    EXPECT_EQ(result["BOARD_MANUFACTURE_DATE"], "2027-11-24T20:16:00Z");
+}
+
+TEST(FormatIPMIFRUTest, ManufactureDateRolloverBeforeDemarcation)
+{
+    // Just before demarcation: 1/1/2006 - 1 minute = 5260319 minutes
+    // 5260319 = 0x50441f
+    const auto bmcFru = std::to_array<uint8_t>({
+        0x01, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0xfe, // Header
+        0x01, 0x01, 0x19, // Board version, length, language
+        0x1f, 0x44, 0x50, // Minutes byte 0, 1, 2
+        0xc1,             // End of fields
+        0x71, // Checksum: (0x01 + 0x01 + 0x19 + 0x1f + 0x44 + 0x50 + 0xc1) =
+              // 0x18f
+        0x00  // Padding
+    });
+    std::flat_map<std::string, std::string, std::less<>> result;
+    ASSERT_EQ(formatIPMIFRU(bmcFru, result), resCodes::resWarn);
+    EXPECT_EQ(result["BOARD_MANUFACTURE_DATE"], "2037-11-24T20:15:00Z");
+}
+
+TEST(FormatIPMIFRUTest, ManufactureDateAtDemarcation)
+{
+    // At demarcation: 1/1/2006 = 5260320 minutes
+    // 5260320 = 0x504420
+    const auto bmcFru = std::to_array<uint8_t>({
+        0x01, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0xfe, // Header
+        0x01, 0x01, 0x19, // Board version, length, language
+        0x20, 0x44, 0x50, // Minutes byte 0, 1, 2
+        0xc1,             // End of fields
+        0x70, // Checksum: (0x01 + 0x01 + 0x19 + 0x20 + 0x44 + 0x50 + 0xc1) =
+              // 0x190
+        0x00  // Padding
+    });
+    std::flat_map<std::string, std::string, std::less<>> result;
+    ASSERT_EQ(formatIPMIFRU(bmcFru, result), resCodes::resWarn);
+    EXPECT_EQ(result["BOARD_MANUFACTURE_DATE"], "2006-01-01T00:00:00Z");
+}
+
 // Test for the `isFieldEditable` function
 TEST(IsFieldEditableTest, ValidField)
 {

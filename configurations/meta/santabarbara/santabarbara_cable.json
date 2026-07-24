@@ -41,7 +41,7 @@
         "Exposes": [],
         "Name": "$Name",
         "Probe": [
-            "xyz.openbmc_project.Inventory.Source.DevicePresence({'Name': 'Rainbow_Cable_1A', 'Compatible': 'com.meta.Hardware.BMC.Model.Santabarbara'})"
+            "xyz.openbmc_project.Inventory.Source.DevicePresence({'Name': 'Rainbow_Cable_P2_3', 'Compatible': 'com.meta.Hardware.BMC.Model.Santabarbara'})"
         ],
         "Type": "Cable",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
@@ -60,7 +60,7 @@
         "Exposes": [],
         "Name": "$Name",
         "Probe": [
-            "xyz.openbmc_project.Inventory.Source.DevicePresence({'Name': 'Rainbow_Cable_1B', 'Compatible': 'com.meta.Hardware.BMC.Model.Santabarbara'})"
+            "xyz.openbmc_project.Inventory.Source.DevicePresence({'Name': 'Rainbow_Cable_P3_3', 'Compatible': 'com.meta.Hardware.BMC.Model.Santabarbara'})"
         ],
         "Type": "Cable",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
@@ -79,7 +79,7 @@
         "Exposes": [],
         "Name": "$Name",
         "Probe": [
-            "xyz.openbmc_project.Inventory.Source.DevicePresence({'Name': 'Rainbow_Cable_2A', 'Compatible': 'com.meta.Hardware.BMC.Model.Santabarbara'})"
+            "xyz.openbmc_project.Inventory.Source.DevicePresence({'Name': 'Rainbow_Cable_P2_2', 'Compatible': 'com.meta.Hardware.BMC.Model.Santabarbara'})"
         ],
         "Type": "Cable",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
@@ -98,7 +98,7 @@
         "Exposes": [],
         "Name": "$Name",
         "Probe": [
-            "xyz.openbmc_project.Inventory.Source.DevicePresence({'Name': 'Rainbow_Cable_2B', 'Compatible': 'com.meta.Hardware.BMC.Model.Santabarbara'})"
+            "xyz.openbmc_project.Inventory.Source.DevicePresence({'Name': 'Rainbow_Cable_P3_2', 'Compatible': 'com.meta.Hardware.BMC.Model.Santabarbara'})"
         ],
         "Type": "Cable",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
@@ -117,7 +117,7 @@
         "Exposes": [],
         "Name": "$Name",
         "Probe": [
-            "xyz.openbmc_project.Inventory.Source.DevicePresence({'Name': 'Rainbow_Cable_3A', 'Compatible': 'com.meta.Hardware.BMC.Model.Santabarbara'})"
+            "xyz.openbmc_project.Inventory.Source.DevicePresence({'Name': 'Rainbow_Cable_P2_1', 'Compatible': 'com.meta.Hardware.BMC.Model.Santabarbara'})"
         ],
         "Type": "Cable",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
@@ -136,7 +136,7 @@
         "Exposes": [],
         "Name": "$Name",
         "Probe": [
-            "xyz.openbmc_project.Inventory.Source.DevicePresence({'Name': 'Rainbow_Cable_3B', 'Compatible': 'com.meta.Hardware.BMC.Model.Santabarbara'})"
+            "xyz.openbmc_project.Inventory.Source.DevicePresence({'Name': 'Rainbow_Cable_P3_1', 'Compatible': 'com.meta.Hardware.BMC.Model.Santabarbara'})"
         ],
         "Type": "Cable",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
@@ -155,7 +155,7 @@
         "Exposes": [],
         "Name": "$Name",
         "Probe": [
-            "xyz.openbmc_project.Inventory.Source.DevicePresence({'Name': 'Rainbow_Cable_4A', 'Compatible': 'com.meta.Hardware.BMC.Model.Santabarbara'})"
+            "xyz.openbmc_project.Inventory.Source.DevicePresence({'Name': 'Rainbow_Cable_P2_0', 'Compatible': 'com.meta.Hardware.BMC.Model.Santabarbara'})"
         ],
         "Type": "Cable",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
@@ -174,7 +174,7 @@
         "Exposes": [],
         "Name": "$Name",
         "Probe": [
-            "xyz.openbmc_project.Inventory.Source.DevicePresence({'Name': 'Rainbow_Cable_4B', 'Compatible': 'com.meta.Hardware.BMC.Model.Santabarbara'})"
+            "xyz.openbmc_project.Inventory.Source.DevicePresence({'Name': 'Rainbow_Cable_P3_0', 'Compatible': 'com.meta.Hardware.BMC.Model.Santabarbara'})"
         ],
         "Type": "Cable",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
@@ -414,6 +414,63 @@
         },
         "xyz.openbmc_project.Inventory.Decorator.Cable": {
             "Length": 0.06,
+            "Type": "Copper"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "$Name",
+        "Probe": [
+            "xyz.openbmc_project.Inventory.Source.DevicePresence({'Name': 'E1SBP_Cable_Power', 'Compatible': 'com.meta.Hardware.Santabarbara.Boards.MB'})"
+        ],
+        "Type": "Cable",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "Unknown",
+            "Model": "Unknown",
+            "PartNumber": "Unknown",
+            "SerialNumber": "Unknown",
+            "SparePartNumber": "07-101125"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Cable": {
+            "Length": 0.275,
+            "Type": "Copper"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "$Name",
+        "Probe": [
+            "xyz.openbmc_project.Inventory.Source.DevicePresence({'Name': 'PDB2_Cable_Sideband', 'Compatible': 'com.meta.Hardware.Santabarbara.Boards.Power_Distribution_Board_2'})"
+        ],
+        "Type": "Cable",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "Unknown",
+            "Model": "Unknown",
+            "PartNumber": "Unknown",
+            "SerialNumber": "Unknown",
+            "SparePartNumber": "07-100825"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Cable": {
+            "Length": 0.225,
+            "Type": "Copper"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "$Name",
+        "Probe": [
+            "xyz.openbmc_project.Inventory.Source.DevicePresence({'Name': 'Tray_Cable_SlotID', 'Compatible': 'com.meta.Hardware.Santabarbara.Boards.Power_Distribution_Board_1'})"
+        ],
+        "Type": "Cable",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "Unknown",
+            "Model": "Unknown",
+            "PartNumber": "Unknown",
+            "SerialNumber": "Unknown",
+            "SparePartNumber": "07-101196"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Cable": {
+            "Length": 0.24,
             "Type": "Copper"
         }
     }

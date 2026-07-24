@@ -51,25 +51,26 @@ class EntityManager
     void propertiesChangedCallbackDebounced(
         size_t count, const boost::system::error_code& ec);
 
-    void registerCallback(const std::string& path);
+    void registerCallback(const sdbusplus::object_path& path);
     void publishNewConfiguration(const size_t& instance, size_t count,
                                  boost::asio::steady_timer& timer,
                                  nlohmann::json newConfiguration);
     void postToDbus(const nlohmann::json& newConfiguration);
-    void postBoardToDBus(const std::string& boardId,
-                         const nlohmann::json::object_t& boardConfig,
-                         std::map<std::string, std::string>& newBoards);
+    void postBoardToDBus(
+        const std::string& boardId, const nlohmann::json::object_t& boardConfig,
+        std::map<sdbusplus::object_path, std::string>& newBoards);
     void postExposesRecordsToDBus(
         nlohmann::json& item, size_t& exposesIndex,
         const std::string& boardNameOrig, std::string jsonPointerPath,
-        const std::string& jsonPointerPathBoard, const std::string& boardPath,
-        const std::string& boardType);
+        const std::string& jsonPointerPathBoard,
+        const sdbusplus::object_path& boardPath, const std::string& boardType);
 
     // @returns false on error
     bool postConfigurationRecord(
         const std::string& name, nlohmann::json& config,
         const std::string& boardNameOrig, const std::string& itemType,
-        const std::string& jsonPointerPath, const std::string& ifacePath);
+        const std::string& jsonPointerPath,
+        const sdbusplus::object_path& ifacePath);
 
     void pruneConfiguration(bool powerOff, const std::string& name,
                             const nlohmann::json& device);
@@ -77,9 +78,9 @@ class EntityManager
     void handleCurrentConfigurationJson();
 
   private:
-    std::unique_ptr<sdbusplus::bus::match_t> nameOwnerChangedMatch = nullptr;
-    std::unique_ptr<sdbusplus::bus::match_t> interfacesAddedMatch = nullptr;
-    std::unique_ptr<sdbusplus::bus::match_t> interfacesRemovedMatch = nullptr;
+    std::unique_ptr<sdbusplus::match> nameOwnerChangedMatch = nullptr;
+    std::unique_ptr<sdbusplus::match> interfacesAddedMatch = nullptr;
+    std::unique_ptr<sdbusplus::match> interfacesRemovedMatch = nullptr;
 
     bool scannedPowerOff = false;
     bool scannedPowerOn = false;
@@ -88,7 +89,7 @@ class EntityManager
     boost::asio::steady_timer propertiesChangedTimer;
     size_t propertiesChangedInstance = 0;
 
-    std::flat_map<std::string, sdbusplus::bus::match_t, std::less<>>
+    std::flat_map<sdbusplus::object_path, sdbusplus::match, std::less<>>
         dbusMatches;
 
     void startRemovedTimer(boost::asio::steady_timer& timer);

@@ -10,6 +10,17 @@
 
 using namespace std::string_literals;
 
+TEST(TemplateCharReplace, replaceIndex)
+{
+    nlohmann::json j = {{"foo", "$index"}};
+    DBusInterface data;
+    data["BUS"] = 23;
+
+    em_utils::templateCharReplace(j, data, 3);
+
+    EXPECT_EQ(3, j["foo"]);
+}
+
 TEST(TemplateCharReplace, replaceOneInt)
 {
     nlohmann::json j = {{"foo", "$bus"}};
@@ -79,6 +90,17 @@ TEST(TemplateCharReplace, increment)
     em_utils::templateCharReplace(j, data, 0);
 
     nlohmann::json expected = "3 plus 1 equals 4";
+    EXPECT_EQ(expected, j["foo"]);
+}
+
+TEST(TemplateCharReplace, incrementIndex)
+{
+    nlohmann::json j = {{"foo", "$index + 3"}};
+    DBusInterface data;
+
+    em_utils::templateCharReplace(j, data, 2);
+
+    nlohmann::json expected = 5;
     EXPECT_EQ(expected, j["foo"]);
 }
 
@@ -1088,3 +1110,36 @@ TEST(ResolveArrayElementType, singleUintEqUint)
     EXPECT_EQ(*result, nlohmann::json::value_t::number_unsigned);
 }
 // Nvidia Added Code End
+
+TEST(BuildInventorySystemPath, noAdjustment)
+{
+    std::string boardName = "Tyan S8030";
+    auto path = em_utils::buildInventorySystemPath(boardName, "Board");
+
+    const auto expect = sdbusplus::object_path(
+        "/xyz/openbmc_project/inventory/system/board/Tyan_S8030");
+
+    EXPECT_EQ(expect, path);
+}
+
+TEST(BuildInventorySystemPath, needsSanitize)
+{
+    std::string name = "MBX 1.60";
+    auto path = em_utils::buildInventorySystemPath(name, "Chassis");
+
+    const auto expect = sdbusplus::object_path(
+        "/xyz/openbmc_project/inventory/system/chassis/MBX_1_60");
+
+    EXPECT_EQ(expect, path);
+}
+
+TEST(BuildInventorySystemPath, needsSanitizeUnderscores)
+{
+    std::string name = "Mt.Mitchell_Motherboard";
+    auto path = em_utils::buildInventorySystemPath(name, "Board");
+
+    const auto expect = sdbusplus::object_path(
+        "/xyz/openbmc_project/inventory/system/board/Mt_Mitchell_Motherboard");
+
+    EXPECT_EQ(expect, path);
+}

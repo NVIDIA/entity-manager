@@ -178,6 +178,7 @@
             "Address": "0x6a",
             "Bus": 20,
             "Name": "E1S_EB_E1S0_TEMP_C",
+            "PEC": "Required",
             "PowerState": "On",
             "Thresholds": [
                 {
@@ -201,6 +202,7 @@
             "Address": "0x6a",
             "Bus": 21,
             "Name": "E1S_EB_E1S1_TEMP_C",
+            "PEC": "Required",
             "PowerState": "On",
             "Thresholds": [
                 {
@@ -282,11 +284,11 @@
             ],
             "Type": "RTQ6056",
             "in_current3_Name": "E1S_EB_PMON_E1S1_P12V_CURR_A",
-            "in_current3_Scale": 2500,
+            "in_current3_Scale": 980,
             "in_power2_Name": "E1S_EB_PMON_E1S1_P12V_PWR_W",
-            "in_power2_Scale": 100,
+            "in_power2_Scale": 37.71,
             "in_voltage1_Name": "E1S_EB_PMON_E1S1_P12V_VOLT_V",
-            "in_voltage1_Scale": 800
+            "in_voltage1_Scale": 767
         },
         {
             "Address": "0x45",
@@ -350,11 +352,11 @@
             ],
             "Type": "RTQ6056",
             "in_current3_Name": "E1S_EB_PMON_E1S0_P12V_CURR_A",
-            "in_current3_Scale": 2500,
+            "in_current3_Scale": 980,
             "in_power2_Name": "E1S_EB_PMON_E1S0_P12V_PWR_W",
-            "in_power2_Scale": 100,
+            "in_power2_Scale": 37.71,
             "in_voltage1_Name": "E1S_EB_PMON_E1S0_P12V_VOLT_V",
-            "in_voltage1_Scale": 800
+            "in_voltage1_Scale": 767
         },
         {
             "Address": "0x49",
@@ -396,5 +398,8 @@
     },
     "xyz.openbmc_project.Inventory.Decorator.AssetTag": {
         "AssetTag": "$PRODUCT_ASSET_TAG"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.Revision": {
+        "Version": "$PRODUCT_VERSION"
     }
 }

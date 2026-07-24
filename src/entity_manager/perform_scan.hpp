@@ -11,6 +11,7 @@
 #include <flat_map>
 #include <functional>
 #include <list>
+#include <set>
 #include <vector>
 
 namespace scan
@@ -39,6 +40,11 @@ struct PerformScan final : std::enable_shared_from_this<PerformScan>
     std::vector<std::string> passedProbes;
 
   private:
+    void restorePersistedConfigurations(
+        FoundDevices& foundDevices, const std::string& probeName,
+        const std::string& probeType, std::set<nlohmann::json>& usedNames,
+        std::list<size_t>& indexes);
+
     nlohmann::json& _missingConfigurations;
     std::vector<nlohmann::json> _configurations;
     std::function<void()> _callback;
@@ -46,5 +52,13 @@ struct PerformScan final : std::enable_shared_from_this<PerformScan>
 
     boost::asio::io_context& io;
 };
+
+namespace detail
+{
+// Parse a config "Probe" field (an array of statements, or a single statement
+// string) into a list of probe statements. Returns an empty vector on error (a
+// non-string statement); a valid probe is never empty.
+std::vector<std::string> parseProbeCommand(const nlohmann::json& probeField);
+} // namespace detail
 
 } // namespace scan
