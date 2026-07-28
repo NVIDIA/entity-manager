@@ -21,6 +21,7 @@ entity_manager_lib = static_library(
     'perform_probe.cpp',
     'power_status_monitor.cpp',
     'overlay.cpp',
+    'shutdown_monitor.cpp',
     'topology.cpp',
     'utils.cpp',
     'log_device_inventory.cpp',

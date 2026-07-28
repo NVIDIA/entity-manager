@@ -11,6 +11,7 @@
 #include "log_device_inventory.hpp"
 #include "overlay.hpp"
 #include "perform_scan.hpp"
+#include "shutdown_monitor.hpp"
 #include "topology.hpp"
 #include "utils.hpp"
 
@@ -612,6 +613,12 @@ void EntityManager::propertiesChangedCallbackDebounced(
         return;
     }
 
+    // A rescan already queued when shutdown began must not run either.
+    if (shutdown_monitor::inProgress())
+    {
+        return;
+    }
+
     if (propertiesChangedInProgress)
     {
         propertiesChangedCallback();
@@ -659,6 +666,14 @@ void EntityManager::propertiesChangedCallbackDebounced(
 void EntityManager::propertiesChangedCallback()
 {
     lg2::debug("properties changed callback");
+
+    // Inventory disappearing during shutdown is transient, so rescanning would
+    // only prune entities that are about to come back on the next boot.
+    if (shutdown_monitor::inProgress())
+    {
+        return;
+    }
+
     propertiesChangedInstance++;
     size_t count = propertiesChangedInstance;
 
