@@ -9,6 +9,7 @@ executable(
     'perform_scan.cpp',
     'perform_probe.cpp',
     'overlay.cpp',
+    'shutdown_monitor.cpp',
     'topology.cpp',
     'utils.cpp',
     cpp_args: cpp_args + ['-DBOOST_ASIO_DISABLE_THREADS'],

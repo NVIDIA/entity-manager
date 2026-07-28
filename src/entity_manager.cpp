@@ -18,9 +18,13 @@
 #include "entity_manager.hpp"
 
 #include "overlay.hpp"
+#include "shutdown_monitor.hpp"
 #include "topology.hpp"
 #include "utils.hpp"
 #include "variant_visitors.hpp"
+
+#include <fcntl.h>
+#include <unistd.h>
 
 #include <boost/algorithm/string/case_conv.hpp>
 #include <boost/algorithm/string/classification.hpp>
@@ -173,17 +177,72 @@ static std::shared_ptr<sdbusplus::asio::dbus_interface> createInterface(
     return ptr;
 }
 
-// writes output files to persist data
-bool writeJsonFiles(const nlohmann::json& systemConfiguration)
+// fsync the file, or the directory entry when given a directory, so the
+// contents survive a power loss rather than only a process crash.
+static bool syncToDisk(const std::filesystem::path& path)
 {
-    std::filesystem::create_directory(configurationOutDir);
-    std::ofstream output(currentConfiguration);
-    if (!output.good())
+    int fd = ::open(path.c_str(), O_RDONLY | O_CLOEXEC);
+    if (fd < 0)
     {
         return false;
     }
-    output << systemConfiguration.dump(4);
-    output.close();
+    bool synced = ::fsync(fd) == 0;
+    ::close(fd);
+    return synced;
+}
+
+// writes output files to persist data
+bool writeJsonFiles(const nlohmann::json& systemConfiguration)
+{
+    if (shutdown_monitor::inProgress())
+    {
+        return true;
+    }
+
+    std::error_code ec;
+    std::filesystem::create_directory(configurationOutDir, ec);
+
+    // Persist by writing a temporary file and renaming it over the real one.
+    // rename(2) within a directory is atomic, so a reader sees either the whole
+    // previous file or the whole new one. Truncating the live file instead left
+    // it half written whenever the process died mid-write, and the resulting
+    // syntax error cost us every runtime configuration value it held.
+    std::filesystem::path tmpPath(currentConfiguration);
+    tmpPath += ".tmp";
+
+    {
+        std::ofstream output(tmpPath, std::ios::trunc);
+        if (!output.good())
+        {
+            return false;
+        }
+        output << systemConfiguration.dump(4);
+        output.close();
+        if (!output.good())
+        {
+            std::cerr << "failed to write " << tmpPath << "\n";
+            std::filesystem::remove(tmpPath, ec);
+            return false;
+        }
+    }
+
+    if (!syncToDisk(tmpPath))
+    {
+        std::cerr << "failed to sync " << tmpPath << "\n";
+        std::filesystem::remove(tmpPath, ec);
+        return false;
+    }
+
+    std::filesystem::rename(tmpPath, currentConfiguration, ec);
+    if (ec)
+    {
+        std::cerr << "failed to rename " << tmpPath << " to "
+                  << currentConfiguration << ": " << ec.message() << "\n";
+        std::filesystem::remove(tmpPath, ec);
+        return false;
+    }
+
+    syncToDisk(configurationOutDir);
     return true;
 }
 
@@ -1409,6 +1468,13 @@ static void publishNewConfiguration(
 void propertiesChangedCallback(nlohmann::json& systemConfiguration,
                                sdbusplus::asio::object_server& objServer)
 {
+    // Inventory disappearing during shutdown is transient, so rescanning would
+    // only prune entities that are about to come back on the next boot.
+    if (shutdown_monitor::inProgress())
+    {
+        return;
+    }
+
     static bool inProgress = false;
     static boost::asio::steady_timer timer(io);
     static size_t instance = 0;
@@ -1428,6 +1494,12 @@ void propertiesChangedCallback(nlohmann::json& systemConfiguration,
         if (ec)
         {
             std::cerr << "async wait error " << ec << "\n";
+            return;
+        }
+
+        // A rescan already queued when shutdown began must not run either.
+        if (shutdown_monitor::inProgress())
+        {
             return;
         }
 
@@ -1598,6 +1670,11 @@ int main()
     // See the discussion at
     // https://discord.com/channels/775381525260664832/1018929092009144380
     objServer.add_manager("/xyz/openbmc_project/inventory");
+
+    // Watch for shutdown before installing the inventory filters below, so a
+    // reboot that starts while we are still coming up is never mistaken for
+    // hardware going away.
+    shutdown_monitor::start(*systemBus);
 
     std::shared_ptr<sdbusplus::asio::dbus_interface> entityIface =
         objServer.add_interface("/xyz/openbmc_project/EntityManager",
