@@ -44,7 +44,7 @@
             },
             {
                 "ChassisAttributes": {
-                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Module",
                     "LocationCode": "Bay-C-Middle",
                     "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Bay",
                     "Type": "NSM_Chassis_Attributes"
