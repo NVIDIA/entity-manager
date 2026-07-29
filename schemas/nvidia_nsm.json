@@ -1276,6 +1276,9 @@
                 "Priority": {
                     "type": "boolean"
                 },
+                "SupportFECHistogram": {
+                    "type": "boolean"
+                },
                 "Type": {
                     "type": "string",
                     "const": "NSM_NVLinkWithNetworkPortAddresses"

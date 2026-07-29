@@ -72,6 +72,7 @@
                 "Name": "Port",
                 "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0/NetworkAdapters/BlueField_NIC_0",
                 "Priority": false,
+                "SupportFECHistogram": true,
                 "Type": "NSM_NVLinkWithNetworkPortAddresses",
                 "UUID": "$UUID"
             },

@@ -72,6 +72,7 @@
                 "OpticalModuleResetSupported": true,
                 "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/CX_$INSTANCE_NUMBER/NetworkAdapters/CX_NIC_$INSTANCE_NUMBER",
                 "Priority": false,
+                "SupportFECHistogram": true,
                 "Type": "NSM_NVLinkWithNetworkPortAddresses",
                 "UUID": "$UUID"
             },
