@@ -257,6 +257,15 @@
                 "Type": "SensorAuxName"
             },
             {
+                "AuxNames": [
+                    "CX_NIC_$INSTANCE_NUMBER_Port_0_Voltage_0"
+                ],
+                "Name": "CX_NIC_$INSTANCE_NUMBER_Port_0_Voltage_0",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/CX_$INSTANCE_NUMBER",
+                "SensorId": 400,
+                "Type": "SensorAuxName"
+            },
+            {
                 "Association": [
                     "associated_port",
                     "associated_port",

@@ -325,6 +325,24 @@
                 "Type": "SensorAuxName"
             },
             {
+                "AuxNames": [
+                    "BlueField_NIC_0_Port_0_Voltage_0"
+                ],
+                "Name": "BlueField_NIC_0_Port_0_Voltage_0",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+                "SensorId": 4496,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "BlueField_NIC_0_Port_1_Voltage_0"
+                ],
+                "Name": "BlueField_NIC_0_Port_1_Voltage_0",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+                "SensorId": 4497,
+                "Type": "SensorAuxName"
+            },
+            {
                 "Association": [
                     "associated_port",
                     "associated_port",

@@ -186,6 +186,24 @@
             },
             {
                 "AuxNames": [
+                    "Bay_C_CX_NIC_0_Port_0_Voltage_0"
+                ],
+                "Name": "Bay_C_CX_NIC_0_Port_0_Voltage_0",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_CX_0",
+                "SensorId": 400,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "Bay_C_CX_NIC_0_Port_1_Voltage_0"
+                ],
+                "Name": "Bay_C_CX_NIC_0_Port_1_Voltage_0",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_CX_0",
+                "SensorId": 401,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
                     "Bay_C_CX_0_Power_0"
                 ],
                 "Name": "Bay_C_CX_0_Power_0",
