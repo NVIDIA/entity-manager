@@ -252,7 +252,7 @@
                 "NVMe_E1S_IO0"
             ],
             "Configuration": 1,
-            "IgnoreEIDs": "61,63",
+            "IgnoreEIDs": "62,64",
             "InterfaceNum": 0,
             "Name": "IO_Board_SMA_0",
             "PollingInterval": "5",
@@ -270,7 +270,7 @@
                 "NVMe_E1S_IO1"
             ],
             "Configuration": 1,
-            "IgnoreEIDs": "71,73",
+            "IgnoreEIDs": "72,74",
             "InterfaceNum": 0,
             "Name": "IO_Board_SMA_1",
             "PollingInterval": "5",
@@ -288,7 +288,7 @@
                 "NVMe_E1S_IO2"
             ],
             "Configuration": 1,
-            "IgnoreEIDs": "81,83",
+            "IgnoreEIDs": "82,84",
             "InterfaceNum": 0,
             "Name": "IO_Board_SMA_2",
             "PollingInterval": "5",
@@ -306,7 +306,7 @@
                 "NVMe_E1S_IO3"
             ],
             "Configuration": 1,
-            "IgnoreEIDs": "91,93",
+            "IgnoreEIDs": "92,94",
             "InterfaceNum": 0,
             "Name": "IO_Board_SMA_3",
             "PollingInterval": "5",
