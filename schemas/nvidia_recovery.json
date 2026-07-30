@@ -61,6 +61,58 @@
             },
             "required": ["Name", "Type"]
         },
+        "GPIOERoTRecovery": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "APName": {
+                    "type": "string"
+                },
+                "GPIO": {
+                    "type": "string"
+                },
+                "HiddenByFPGA": {
+                    "type": "boolean"
+                },
+                "HideWhenHealthy": {
+                    "type": "boolean"
+                },
+                "I2CAddress": {
+                    "type": "integer"
+                },
+                "I2CBus": {
+                    "type": "integer"
+                },
+                "MctpEID": {
+                    "type": "integer"
+                },
+                "MonitorMode": {
+                    "type": "string",
+                    "enum": ["Interrupt", "Polling"]
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Polarity": {
+                    "type": "string",
+                    "enum": ["ActiveHigh", "ActiveLow"]
+                },
+                "PollingIntervalMs": {
+                    "type": "integer"
+                },
+                "Target": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "GPIOERoTRecovery"
+                },
+                "hasChassisPowerSource": {
+                    "type": "boolean"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
         "GlacierCrisisRecovery": {
             "type": "object",
             "additionalProperties": false,
