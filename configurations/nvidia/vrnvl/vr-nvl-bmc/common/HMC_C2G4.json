@@ -4,8 +4,8 @@
             {
                 "Address": "0x4f",
                 "Bus": 3,
-                "MaxValue": 1023,
-                "MinValue": 0,
+                "MaxValue": 2300,
+                "MinValue": 200,
                 "Name": "GPU_0_Pwr",
                 "Name1": "HGX_GPU_0_Power_0",
                 "OffsetValue": 75,
@@ -20,8 +20,8 @@
             {
                 "Address": "0x4f",
                 "Bus": 3,
-                "MaxValue": 1023,
-                "MinValue": 0,
+                "MaxValue": 2300,
+                "MinValue": 200,
                 "Name": "GPU_1_Pwr",
                 "Name1": "HGX_GPU_1_Power_0",
                 "OffsetValue": 79,
@@ -36,8 +36,8 @@
             {
                 "Address": "0x4f",
                 "Bus": 3,
-                "MaxValue": 1023,
-                "MinValue": 0,
+                "MaxValue": 2300,
+                "MinValue": 200,
                 "Name": "GPU_2_Pwr",
                 "Name1": "HGX_GPU_2_Power_0",
                 "OffsetValue": 83,
@@ -52,8 +52,8 @@
             {
                 "Address": "0x4f",
                 "Bus": 3,
-                "MaxValue": 1023,
-                "MinValue": 0,
+                "MaxValue": 2300,
+                "MinValue": 200,
                 "Name": "GPU_3_Pwr",
                 "Name1": "HGX_GPU_3_Power_0",
                 "OffsetValue": 87,
@@ -300,7 +300,7 @@
             {
                 "Address": "0x4f",
                 "Bus": 3,
-                "MaxValue": 1023,
+                "MaxValue": 800,
                 "MinValue": 0,
                 "Name": "GPU_0_DRAM_Pwr",
                 "Name1": "HGX_GPU_0_DRAM_0_Power_0",
@@ -316,7 +316,7 @@
             {
                 "Address": "0x4f",
                 "Bus": 3,
-                "MaxValue": 1023,
+                "MaxValue": 800,
                 "MinValue": 0,
                 "Name": "GPU_1_DRAM_Pwr",
                 "Name1": "HGX_GPU_1_DRAM_0_Power_0",
@@ -332,7 +332,7 @@
             {
                 "Address": "0x4f",
                 "Bus": 3,
-                "MaxValue": 1023,
+                "MaxValue": 800,
                 "MinValue": 0,
                 "Name": "GPU_2_DRAM_Pwr",
                 "Name1": "HGX_GPU_2_DRAM_0_Power_0",
@@ -348,7 +348,7 @@
             {
                 "Address": "0x4f",
                 "Bus": 3,
-                "MaxValue": 1023,
+                "MaxValue": 800,
                 "MinValue": 0,
                 "Name": "GPU_3_DRAM_Pwr",
                 "Name1": "HGX_GPU_3_DRAM_0_Power_0",
@@ -596,8 +596,8 @@
             {
                 "Address": "0x4f",
                 "Bus": 3,
-                "MaxValue": 10000,
-                "MinValue": 0,
+                "MaxValue": 900,
+                "MinValue": 50,
                 "Name": "M0_CPU_Pwr",
                 "Name1": "ProcessorModule_0_CPU_0_Power_0",
                 "OffsetValue": 648,
@@ -612,7 +612,7 @@
             {
                 "Address": "0x4f",
                 "Bus": 3,
-                "MaxValue": 10000,
+                "MaxValue": 900,
                 "MinValue": 0,
                 "Name": "M0_Vreg_CPU_Pwr",
                 "Name1": "ProcessorModule_0_Vreg_0_CpuPower_0",
@@ -628,7 +628,7 @@
             {
                 "Address": "0x4f",
                 "Bus": 3,
-                "MaxValue": 10000,
+                "MaxValue": 900,
                 "MinValue": 0,
                 "Name": "M0_Vreg_Soc_Pwr",
                 "Name1": "ProcessorModule_0_Vreg_0_SocPower_0",
@@ -776,8 +776,8 @@
             {
                 "Address": "0x4f",
                 "Bus": 3,
-                "MaxValue": 10000,
-                "MinValue": 0,
+                "MaxValue": 900,
+                "MinValue": 50,
                 "Name": "M1_CPU_Pwr",
                 "Name1": "ProcessorModule_1_CPU_0_Power_0",
                 "OffsetValue": 904,
@@ -792,7 +792,7 @@
             {
                 "Address": "0x4f",
                 "Bus": 3,
-                "MaxValue": 10000,
+                "MaxValue": 900,
                 "MinValue": 0,
                 "Name": "M1_Vreg_CPU_Pwr",
                 "Name1": "ProcessorModule_1_Vreg_0_CpuPower_0",
@@ -808,7 +808,7 @@
             {
                 "Address": "0x4f",
                 "Bus": 3,
-                "MaxValue": 10000,
+                "MaxValue": 900,
                 "MinValue": 0,
                 "Name": "M1_Vreg_Soc_Pwr",
                 "Name1": "ProcessorModule_1_Vreg_0_SocPower_0",
@@ -1290,7 +1290,7 @@
             {
                 "Address": "0x4f",
                 "Bus": 3,
-                "MaxValue": 1023,
+                "MaxValue": 4850,
                 "MinValue": 0,
                 "Name": "M0_HSCC_Pwr",
                 "Name1": "HGX_ProcessorModule_0_HSCC_Power_0",
@@ -1306,7 +1306,7 @@
             {
                 "Address": "0x4f",
                 "Bus": 3,
-                "MaxValue": 1023,
+                "MaxValue": 5000,
                 "MinValue": 0,
                 "Name": "M0_HSC_Pwr",
                 "Name1": "HGX_ProcessorModule_0_HSC_Power_0",
@@ -1322,7 +1322,7 @@
             {
                 "Address": "0x4f",
                 "Bus": 3,
-                "MaxValue": 1023,
+                "MaxValue": 4850,
                 "MinValue": 0,
                 "Name": "M1_HSCC_Pwr",
                 "Name1": "HGX_ProcessorModule_1_HSCC_Power_0",
@@ -1338,7 +1338,7 @@
             {
                 "Address": "0x4f",
                 "Bus": 3,
-                "MaxValue": 1023,
+                "MaxValue": 5000,
                 "MinValue": 0,
                 "Name": "M1_HSC_Pwr",
                 "Name1": "HGX_ProcessorModule_1_HSC_Power_0",
