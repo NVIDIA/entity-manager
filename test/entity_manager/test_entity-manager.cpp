@@ -45,6 +45,19 @@ TEST(TemplateCharReplace, replaceOneStr)
     EXPECT_EQ(expected, j["foo"]);
 }
 
+TEST(TemplateCharReplace, replaceOneAllDigitStrStaysString)
+{
+    nlohmann::json j = {{"foo", "$BOARD_SERIAL_NUMBER"}};
+    DBusInterface data;
+    data["BOARD_SERIAL_NUMBER"] = std::string("1640430000000");
+
+    em_utils::templateCharReplace(j, data, 0);
+
+    nlohmann::json expected = "1640430000000";
+    EXPECT_EQ(expected, j["foo"]);
+    EXPECT_TRUE(j["foo"].is_string());
+}
+
 TEST(TemplateCharReplace, replaceSecondStr)
 {
     nlohmann::json j = {{"foo", "the $TEST"}};

@@ -184,7 +184,8 @@ std::optional<std::string> templateCharReplace(
 
 static bool templateCharReplaceOneProperty(
     std::string& str, const std::string& propName,
-    const DBusValueVariant& propValue, std::optional<std::string>& ret)
+    const DBusValueVariant& propValue, std::optional<std::string>& ret,
+    bool& keepAsString)
 {
     std::string templateName = templateChar + propName;
     std::ranges::subrange<std::string::const_iterator> find =
@@ -199,6 +200,9 @@ static bool templateCharReplaceOneProperty(
     // check for additional operations
     if ((start == 0U) && find.end() == str.end())
     {
+        // Whole-value substitution carries the source type; re-parsing a
+        // string source would retype an all-digit serial as a number.
+        keepAsString = std::holds_alternative<std::string>(propValue);
         str = std::visit(VariantToStringVisitor(), propValue);
         return true;
     }
@@ -263,11 +267,13 @@ static bool templateCharReplaceOneProperty(
 
 static void templateCharReplaceLoop(std::string& str,
                                     const DBusInterface& interface,
-                                    std::optional<std::string>& ret)
+                                    std::optional<std::string>& ret,
+                                    bool& keepAsString)
 {
     for (const auto& [propName, propValue] : interface)
     {
-        if (templateCharReplaceOneProperty(str, propName, propValue, ret))
+        if (templateCharReplaceOneProperty(str, propName, propValue, ret,
+                                           keepAsString))
         {
             return;
         }
@@ -320,7 +326,7 @@ static std::optional<uint64_t> parseAsNumber(std::string_view strView)
 
 static std::optional<std::string> templateCharReplaceStr(
     std::string& str, const DBusInterface& interface, const size_t index,
-    const std::optional<std::string>& replaceStr)
+    const std::optional<std::string>& replaceStr, bool& keepAsString)
 {
     std::optional<std::string> ret = std::nullopt;
 
@@ -329,8 +335,8 @@ static std::optional<std::string> templateCharReplaceStr(
         replaceAll(str, *replaceStr, std::to_string(index));
     }
 
-    templateCharReplaceOneProperty(str, "index", index, ret);
-    templateCharReplaceLoop(str, interface, ret);
+    templateCharReplaceOneProperty(str, "index", index, ret, keepAsString);
+    templateCharReplaceLoop(str, interface, ret, keepAsString);
 
     return ret;
 }
@@ -368,9 +374,11 @@ std::optional<std::string> templateCharReplace(
 
     std::string str = *strPtr;
 
-    templateCharReplaceStr(str, interface, index, replaceStr);
+    bool keepAsString = false;
+    templateCharReplaceStr(str, interface, index, replaceStr, keepAsString);
 
-    const std::optional<uint64_t> optNum = parseAsNumber(str);
+    const std::optional<uint64_t> optNum =
+        keepAsString ? std::nullopt : parseAsNumber(str);
     if (optNum.has_value())
     {
         value = optNum.value();
