@@ -389,6 +389,7 @@ configs = [
     'nvidia/vrnvl/vr-c2-bmc/vr_c2_memory_systems.json',
     'nvidia/vrnvl/vr-c2-bmc/vr_c2_nsm_gpu_chassis.json',
     'nvidia/vrnvl/vr-c2-bmc/vr_c2_pdb.json',
+    'nvidia/vrnvl/vr-c2-bmc/vr_c2_pldm_sensoraux.json',
     'nvidia/vrnvl/vr-c2-bmc/vr_c2_processor_systems.json',
     'nvidia/vrnvl/vr-c2-bmc/vr_c2_storage_backplane.json',
     'nvidia/vrnvl/vr-c2-bmc/vr_c2_storage_backplane_sma_chassis.json',

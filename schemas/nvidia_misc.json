@@ -9,6 +9,11 @@
                 "Index": {
                     "type": "integer"
                 },
+                "IpmiName": {
+                    "description": "Short sensor name reported over IPMI by phosphor-host-ipmi.",
+                    "maxLength": 16,
+                    "type": "string"
+                },
                 "Name": {
                     "type": "string"
                 },
@@ -166,6 +171,11 @@
                 },
                 "Index": {
                     "type": "integer"
+                },
+                "IpmiName": {
+                    "description": "Short sensor name reported over IPMI by phosphor-host-ipmi.",
+                    "maxLength": 16,
+                    "type": "string"
                 },
                 "MaxReading": {
                     "type": "integer"

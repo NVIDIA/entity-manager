@@ -1,0 +1,2781 @@
+[
+    {
+        "Exposes": [
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_ComputeOvertTemp_0"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Comp_Overt",
+                "Name": "ProcessorModule_0_CPU_0_ComputeOvertTemp_0",
+                "ParentObjPath": "",
+                "SensorId": 34,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_0"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core0_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_0",
+                "ParentObjPath": "",
+                "SensorId": 256,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_1"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core1_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_1",
+                "ParentObjPath": "",
+                "SensorId": 257,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_10"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core10_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_10",
+                "ParentObjPath": "",
+                "SensorId": 266,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_11"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core11_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_11",
+                "ParentObjPath": "",
+                "SensorId": 267,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_12"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core12_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_12",
+                "ParentObjPath": "",
+                "SensorId": 268,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_13"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core13_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_13",
+                "ParentObjPath": "",
+                "SensorId": 269,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_14"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core14_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_14",
+                "ParentObjPath": "",
+                "SensorId": 270,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_15"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core15_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_15",
+                "ParentObjPath": "",
+                "SensorId": 271,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_16"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core16_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_16",
+                "ParentObjPath": "",
+                "SensorId": 272,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_17"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core17_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_17",
+                "ParentObjPath": "",
+                "SensorId": 273,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_18"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core18_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_18",
+                "ParentObjPath": "",
+                "SensorId": 274,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_19"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core19_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_19",
+                "ParentObjPath": "",
+                "SensorId": 275,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_2"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core2_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_2",
+                "ParentObjPath": "",
+                "SensorId": 258,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_20"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core20_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_20",
+                "ParentObjPath": "",
+                "SensorId": 276,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_21"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core21_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_21",
+                "ParentObjPath": "",
+                "SensorId": 277,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_22"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core22_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_22",
+                "ParentObjPath": "",
+                "SensorId": 278,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_23"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core23_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_23",
+                "ParentObjPath": "",
+                "SensorId": 279,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_24"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core24_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_24",
+                "ParentObjPath": "",
+                "SensorId": 280,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_25"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core25_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_25",
+                "ParentObjPath": "",
+                "SensorId": 281,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_26"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core26_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_26",
+                "ParentObjPath": "",
+                "SensorId": 282,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_27"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core27_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_27",
+                "ParentObjPath": "",
+                "SensorId": 283,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_28"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core28_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_28",
+                "ParentObjPath": "",
+                "SensorId": 284,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_29"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core29_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_29",
+                "ParentObjPath": "",
+                "SensorId": 285,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_3"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core3_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_3",
+                "ParentObjPath": "",
+                "SensorId": 259,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_30"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core30_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_30",
+                "ParentObjPath": "",
+                "SensorId": 286,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_31"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core31_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_31",
+                "ParentObjPath": "",
+                "SensorId": 287,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_32"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core32_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_32",
+                "ParentObjPath": "",
+                "SensorId": 288,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_33"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core33_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_33",
+                "ParentObjPath": "",
+                "SensorId": 289,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_34"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core34_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_34",
+                "ParentObjPath": "",
+                "SensorId": 290,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_35"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core35_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_35",
+                "ParentObjPath": "",
+                "SensorId": 291,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_36"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core36_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_36",
+                "ParentObjPath": "",
+                "SensorId": 292,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_37"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core37_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_37",
+                "ParentObjPath": "",
+                "SensorId": 293,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_38"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core38_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_38",
+                "ParentObjPath": "",
+                "SensorId": 294,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_39"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core39_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_39",
+                "ParentObjPath": "",
+                "SensorId": 295,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_4"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core4_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_4",
+                "ParentObjPath": "",
+                "SensorId": 260,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_40"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core40_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_40",
+                "ParentObjPath": "",
+                "SensorId": 296,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_41"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core41_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_41",
+                "ParentObjPath": "",
+                "SensorId": 297,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_42"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core42_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_42",
+                "ParentObjPath": "",
+                "SensorId": 298,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_43"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core43_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_43",
+                "ParentObjPath": "",
+                "SensorId": 299,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_44"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core44_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_44",
+                "ParentObjPath": "",
+                "SensorId": 300,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_45"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core45_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_45",
+                "ParentObjPath": "",
+                "SensorId": 301,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_46"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core46_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_46",
+                "ParentObjPath": "",
+                "SensorId": 302,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_47"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core47_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_47",
+                "ParentObjPath": "",
+                "SensorId": 303,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_48"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core48_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_48",
+                "ParentObjPath": "",
+                "SensorId": 304,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_49"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core49_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_49",
+                "ParentObjPath": "",
+                "SensorId": 305,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_5"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core5_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_5",
+                "ParentObjPath": "",
+                "SensorId": 261,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_50"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core50_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_50",
+                "ParentObjPath": "",
+                "SensorId": 306,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_51"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core51_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_51",
+                "ParentObjPath": "",
+                "SensorId": 307,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_52"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core52_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_52",
+                "ParentObjPath": "",
+                "SensorId": 308,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_53"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core53_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_53",
+                "ParentObjPath": "",
+                "SensorId": 309,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_54"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core54_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_54",
+                "ParentObjPath": "",
+                "SensorId": 310,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_55"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core55_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_55",
+                "ParentObjPath": "",
+                "SensorId": 311,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_56"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core56_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_56",
+                "ParentObjPath": "",
+                "SensorId": 312,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_57"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core57_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_57",
+                "ParentObjPath": "",
+                "SensorId": 313,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_58"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core58_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_58",
+                "ParentObjPath": "",
+                "SensorId": 314,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_59"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core59_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_59",
+                "ParentObjPath": "",
+                "SensorId": 315,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_6"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core6_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_6",
+                "ParentObjPath": "",
+                "SensorId": 262,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_60"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core60_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_60",
+                "ParentObjPath": "",
+                "SensorId": 316,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_61"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core61_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_61",
+                "ParentObjPath": "",
+                "SensorId": 317,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_62"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core62_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_62",
+                "ParentObjPath": "",
+                "SensorId": 318,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_63"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core63_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_63",
+                "ParentObjPath": "",
+                "SensorId": 319,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_64"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core64_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_64",
+                "ParentObjPath": "",
+                "SensorId": 320,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_65"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core65_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_65",
+                "ParentObjPath": "",
+                "SensorId": 321,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_66"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core66_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_66",
+                "ParentObjPath": "",
+                "SensorId": 322,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_67"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core67_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_67",
+                "ParentObjPath": "",
+                "SensorId": 323,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_68"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core68_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_68",
+                "ParentObjPath": "",
+                "SensorId": 324,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_69"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core69_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_69",
+                "ParentObjPath": "",
+                "SensorId": 325,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_7"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core7_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_7",
+                "ParentObjPath": "",
+                "SensorId": 263,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_70"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core70_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_70",
+                "ParentObjPath": "",
+                "SensorId": 326,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_71"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core71_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_71",
+                "ParentObjPath": "",
+                "SensorId": 327,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_72"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core72_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_72",
+                "ParentObjPath": "",
+                "SensorId": 328,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_73"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core73_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_73",
+                "ParentObjPath": "",
+                "SensorId": 329,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_74"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core74_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_74",
+                "ParentObjPath": "",
+                "SensorId": 330,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_75"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core75_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_75",
+                "ParentObjPath": "",
+                "SensorId": 331,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_76"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core76_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_76",
+                "ParentObjPath": "",
+                "SensorId": 332,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_77"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core77_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_77",
+                "ParentObjPath": "",
+                "SensorId": 333,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_78"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core78_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_78",
+                "ParentObjPath": "",
+                "SensorId": 334,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_79"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core79_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_79",
+                "ParentObjPath": "",
+                "SensorId": 335,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_8"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core8_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_8",
+                "ParentObjPath": "",
+                "SensorId": 264,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_80"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core80_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_80",
+                "ParentObjPath": "",
+                "SensorId": 336,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_81"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core81_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_81",
+                "ParentObjPath": "",
+                "SensorId": 337,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_82"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core82_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_82",
+                "ParentObjPath": "",
+                "SensorId": 338,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_83"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core83_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_83",
+                "ParentObjPath": "",
+                "SensorId": 339,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_84"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core84_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_84",
+                "ParentObjPath": "",
+                "SensorId": 340,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_85"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core85_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_85",
+                "ParentObjPath": "",
+                "SensorId": 341,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_86"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core86_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_86",
+                "ParentObjPath": "",
+                "SensorId": 342,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_87"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core87_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_87",
+                "ParentObjPath": "",
+                "SensorId": 343,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_88"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core88_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_88",
+                "ParentObjPath": "",
+                "SensorId": 344,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_89"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core89_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_89",
+                "ParentObjPath": "",
+                "SensorId": 345,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_9"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core9_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_9",
+                "ParentObjPath": "",
+                "SensorId": 265,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_90"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core90_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_90",
+                "ParentObjPath": "",
+                "SensorId": 346,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_91"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core91_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_91",
+                "ParentObjPath": "",
+                "SensorId": 347,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_92"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core92_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_92",
+                "ParentObjPath": "",
+                "SensorId": 348,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_93"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core93_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_93",
+                "ParentObjPath": "",
+                "SensorId": 349,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_94"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core94_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_94",
+                "ParentObjPath": "",
+                "SensorId": 350,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_95"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core95_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_95",
+                "ParentObjPath": "",
+                "SensorId": 351,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_96"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core96_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_96",
+                "ParentObjPath": "",
+                "SensorId": 352,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CoreUtil_97"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Core97_Util",
+                "Name": "ProcessorModule_0_CPU_0_CoreUtil_97",
+                "ParentObjPath": "",
+                "SensorId": 353,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_CpuFreq_0"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Freq",
+                "Name": "ProcessorModule_0_CPU_0_CpuFreq_0",
+                "ParentObjPath": "",
+                "SensorId": 192,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_Energy_0"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Engy",
+                "Name": "ProcessorModule_0_CPU_0_Energy_0",
+                "ParentObjPath": "",
+                "SensorId": 65,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_EnforcedEDPc_0"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_EDPc",
+                "Name": "ProcessorModule_0_CPU_0_EnforcedEDPc_0",
+                "ParentObjPath": "",
+                "SensorId": 50,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_EnforcedEDPp_0"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_EDPp",
+                "Name": "ProcessorModule_0_CPU_0_EnforcedEDPp_0",
+                "ParentObjPath": "",
+                "SensorId": 51,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_Power_0"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Pwr",
+                "Name": "ProcessorModule_0_CPU_0_Power_0",
+                "ParentObjPath": "",
+                "SensorId": 64,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_SystemOvertTemp_0"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Sys_Overt",
+                "Name": "ProcessorModule_0_CPU_0_SystemOvertTemp_0",
+                "ParentObjPath": "",
+                "SensorId": 35,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_TempAvg_0"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Temp_Avg",
+                "Name": "ProcessorModule_0_CPU_0_TempAvg_0",
+                "ParentObjPath": "",
+                "SensorId": 160,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_0_TempLimit_0"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_TLimit",
+                "Name": "ProcessorModule_0_CPU_0_TempLimit_0",
+                "ParentObjPath": "",
+                "SensorId": 161,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_ComputeOvertTemp_0"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Comp_Overt",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_ComputeOvertTemp_0",
+                "ParentObjPath": "",
+                "SensorId": 4130,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_0"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core0_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_0",
+                "ParentObjPath": "",
+                "SensorId": 4352,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_1"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core1_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_1",
+                "ParentObjPath": "",
+                "SensorId": 4353,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_10"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core10_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_10",
+                "ParentObjPath": "",
+                "SensorId": 4362,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_11"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core11_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_11",
+                "ParentObjPath": "",
+                "SensorId": 4363,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_12"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core12_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_12",
+                "ParentObjPath": "",
+                "SensorId": 4364,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_13"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core13_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_13",
+                "ParentObjPath": "",
+                "SensorId": 4365,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_14"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core14_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_14",
+                "ParentObjPath": "",
+                "SensorId": 4366,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_15"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core15_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_15",
+                "ParentObjPath": "",
+                "SensorId": 4367,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_16"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core16_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_16",
+                "ParentObjPath": "",
+                "SensorId": 4368,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_17"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core17_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_17",
+                "ParentObjPath": "",
+                "SensorId": 4369,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_18"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core18_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_18",
+                "ParentObjPath": "",
+                "SensorId": 4370,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_19"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core19_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_19",
+                "ParentObjPath": "",
+                "SensorId": 4371,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_2"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core2_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_2",
+                "ParentObjPath": "",
+                "SensorId": 4354,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_20"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core20_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_20",
+                "ParentObjPath": "",
+                "SensorId": 4372,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_21"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core21_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_21",
+                "ParentObjPath": "",
+                "SensorId": 4373,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_22"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core22_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_22",
+                "ParentObjPath": "",
+                "SensorId": 4374,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_23"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core23_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_23",
+                "ParentObjPath": "",
+                "SensorId": 4375,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_24"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core24_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_24",
+                "ParentObjPath": "",
+                "SensorId": 4376,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_25"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core25_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_25",
+                "ParentObjPath": "",
+                "SensorId": 4377,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_26"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core26_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_26",
+                "ParentObjPath": "",
+                "SensorId": 4378,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_27"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core27_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_27",
+                "ParentObjPath": "",
+                "SensorId": 4379,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_28"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core28_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_28",
+                "ParentObjPath": "",
+                "SensorId": 4380,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_29"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core29_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_29",
+                "ParentObjPath": "",
+                "SensorId": 4381,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_3"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core3_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_3",
+                "ParentObjPath": "",
+                "SensorId": 4355,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_30"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core30_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_30",
+                "ParentObjPath": "",
+                "SensorId": 4382,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_31"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core31_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_31",
+                "ParentObjPath": "",
+                "SensorId": 4383,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_32"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core32_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_32",
+                "ParentObjPath": "",
+                "SensorId": 4384,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_33"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core33_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_33",
+                "ParentObjPath": "",
+                "SensorId": 4385,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_34"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core34_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_34",
+                "ParentObjPath": "",
+                "SensorId": 4386,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_35"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core35_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_35",
+                "ParentObjPath": "",
+                "SensorId": 4387,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_36"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core36_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_36",
+                "ParentObjPath": "",
+                "SensorId": 4388,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_37"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core37_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_37",
+                "ParentObjPath": "",
+                "SensorId": 4389,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_38"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core38_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_38",
+                "ParentObjPath": "",
+                "SensorId": 4390,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_39"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core39_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_39",
+                "ParentObjPath": "",
+                "SensorId": 4391,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_4"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core4_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_4",
+                "ParentObjPath": "",
+                "SensorId": 4356,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_40"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core40_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_40",
+                "ParentObjPath": "",
+                "SensorId": 4392,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_41"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core41_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_41",
+                "ParentObjPath": "",
+                "SensorId": 4393,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_42"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core42_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_42",
+                "ParentObjPath": "",
+                "SensorId": 4394,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_43"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core43_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_43",
+                "ParentObjPath": "",
+                "SensorId": 4395,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_44"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core44_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_44",
+                "ParentObjPath": "",
+                "SensorId": 4396,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_45"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core45_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_45",
+                "ParentObjPath": "",
+                "SensorId": 4397,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_46"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core46_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_46",
+                "ParentObjPath": "",
+                "SensorId": 4398,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_47"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core47_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_47",
+                "ParentObjPath": "",
+                "SensorId": 4399,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_48"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core48_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_48",
+                "ParentObjPath": "",
+                "SensorId": 4400,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_49"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core49_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_49",
+                "ParentObjPath": "",
+                "SensorId": 4401,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_5"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core5_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_5",
+                "ParentObjPath": "",
+                "SensorId": 4357,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_50"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core50_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_50",
+                "ParentObjPath": "",
+                "SensorId": 4402,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_51"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core51_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_51",
+                "ParentObjPath": "",
+                "SensorId": 4403,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_52"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core52_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_52",
+                "ParentObjPath": "",
+                "SensorId": 4404,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_53"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core53_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_53",
+                "ParentObjPath": "",
+                "SensorId": 4405,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_54"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core54_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_54",
+                "ParentObjPath": "",
+                "SensorId": 4406,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_55"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core55_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_55",
+                "ParentObjPath": "",
+                "SensorId": 4407,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_56"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core56_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_56",
+                "ParentObjPath": "",
+                "SensorId": 4408,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_57"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core57_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_57",
+                "ParentObjPath": "",
+                "SensorId": 4409,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_58"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core58_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_58",
+                "ParentObjPath": "",
+                "SensorId": 4410,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_59"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core59_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_59",
+                "ParentObjPath": "",
+                "SensorId": 4411,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_6"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core6_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_6",
+                "ParentObjPath": "",
+                "SensorId": 4358,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_60"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core60_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_60",
+                "ParentObjPath": "",
+                "SensorId": 4412,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_61"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core61_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_61",
+                "ParentObjPath": "",
+                "SensorId": 4413,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_62"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core62_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_62",
+                "ParentObjPath": "",
+                "SensorId": 4414,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_63"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core63_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_63",
+                "ParentObjPath": "",
+                "SensorId": 4415,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_64"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core64_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_64",
+                "ParentObjPath": "",
+                "SensorId": 4416,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_65"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core65_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_65",
+                "ParentObjPath": "",
+                "SensorId": 4417,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_66"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core66_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_66",
+                "ParentObjPath": "",
+                "SensorId": 4418,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_67"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core67_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_67",
+                "ParentObjPath": "",
+                "SensorId": 4419,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_68"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core68_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_68",
+                "ParentObjPath": "",
+                "SensorId": 4420,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_69"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core69_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_69",
+                "ParentObjPath": "",
+                "SensorId": 4421,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_7"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core7_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_7",
+                "ParentObjPath": "",
+                "SensorId": 4359,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_70"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core70_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_70",
+                "ParentObjPath": "",
+                "SensorId": 4422,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_71"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core71_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_71",
+                "ParentObjPath": "",
+                "SensorId": 4423,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_72"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core72_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_72",
+                "ParentObjPath": "",
+                "SensorId": 4424,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_73"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core73_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_73",
+                "ParentObjPath": "",
+                "SensorId": 4425,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_74"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core74_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_74",
+                "ParentObjPath": "",
+                "SensorId": 4426,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_75"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core75_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_75",
+                "ParentObjPath": "",
+                "SensorId": 4427,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_76"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core76_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_76",
+                "ParentObjPath": "",
+                "SensorId": 4428,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_77"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core77_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_77",
+                "ParentObjPath": "",
+                "SensorId": 4429,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_78"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core78_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_78",
+                "ParentObjPath": "",
+                "SensorId": 4430,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_79"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core79_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_79",
+                "ParentObjPath": "",
+                "SensorId": 4431,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_8"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core8_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_8",
+                "ParentObjPath": "",
+                "SensorId": 4360,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_80"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core80_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_80",
+                "ParentObjPath": "",
+                "SensorId": 4432,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_81"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core81_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_81",
+                "ParentObjPath": "",
+                "SensorId": 4433,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_82"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core82_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_82",
+                "ParentObjPath": "",
+                "SensorId": 4434,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_83"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core83_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_83",
+                "ParentObjPath": "",
+                "SensorId": 4435,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_84"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core84_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_84",
+                "ParentObjPath": "",
+                "SensorId": 4436,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_85"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core85_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_85",
+                "ParentObjPath": "",
+                "SensorId": 4437,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_86"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core86_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_86",
+                "ParentObjPath": "",
+                "SensorId": 4438,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_87"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core87_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_87",
+                "ParentObjPath": "",
+                "SensorId": 4439,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_88"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core88_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_88",
+                "ParentObjPath": "",
+                "SensorId": 4440,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_89"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core89_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_89",
+                "ParentObjPath": "",
+                "SensorId": 4441,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_9"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core9_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_9",
+                "ParentObjPath": "",
+                "SensorId": 4361,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_90"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core90_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_90",
+                "ParentObjPath": "",
+                "SensorId": 4442,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_91"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core91_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_91",
+                "ParentObjPath": "",
+                "SensorId": 4443,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_92"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core92_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_92",
+                "ParentObjPath": "",
+                "SensorId": 4444,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_93"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core93_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_93",
+                "ParentObjPath": "",
+                "SensorId": 4445,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_94"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core94_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_94",
+                "ParentObjPath": "",
+                "SensorId": 4446,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_95"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core95_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_95",
+                "ParentObjPath": "",
+                "SensorId": 4447,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_96"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core96_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_96",
+                "ParentObjPath": "",
+                "SensorId": 4448,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_97"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Core97_Util",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CoreUtil_97",
+                "ParentObjPath": "",
+                "SensorId": 4449,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_CpuFreq_0"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Freq",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_CpuFreq_0",
+                "ParentObjPath": "",
+                "SensorId": 4288,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_Energy_0"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Engy",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_Energy_0",
+                "ParentObjPath": "",
+                "SensorId": 4161,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_EnforcedEDPc_0"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_EDPc",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_EnforcedEDPc_0",
+                "ParentObjPath": "",
+                "SensorId": 4146,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_EnforcedEDPp_0"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_EDPp",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_EnforcedEDPp_0",
+                "ParentObjPath": "",
+                "SensorId": 4147,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_Power_0"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Pwr",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_Power_0",
+                "ParentObjPath": "",
+                "SensorId": 4160,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_SystemOvertTemp_0"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Sys_Overt",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_SystemOvertTemp_0",
+                "ParentObjPath": "",
+                "SensorId": 4131,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_TempAvg_0"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Temp_Avg",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_TempAvg_0",
+                "ParentObjPath": "",
+                "SensorId": 4256,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_CPU_1_CPU_0_TempLimit_0"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_TLimit",
+                "Name": "ProcessorModule_0_CPU_1_CPU_0_TempLimit_0",
+                "ParentObjPath": "",
+                "SensorId": 4257,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_0_DramOvertTemp_0"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Dram_Overt",
+                "Name": "ProcessorModule_0_MemCntl_0_DramOvertTemp_0",
+                "ParentObjPath": "",
+                "SensorId": 40,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_0_DramTemp_0"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Dram_Temp_0",
+                "Name": "ProcessorModule_0_MemCntl_0_DramTemp_0",
+                "ParentObjPath": "",
+                "SensorId": 208,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_0_DramTemp_1"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Dram_Temp_1",
+                "Name": "ProcessorModule_0_MemCntl_0_DramTemp_1",
+                "ParentObjPath": "",
+                "SensorId": 209,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_0_DramTemp_2"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Dram_Temp_2",
+                "Name": "ProcessorModule_0_MemCntl_0_DramTemp_2",
+                "ParentObjPath": "",
+                "SensorId": 210,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_0_DramTemp_3"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Dram_Temp_3",
+                "Name": "ProcessorModule_0_MemCntl_0_DramTemp_3",
+                "ParentObjPath": "",
+                "SensorId": 211,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_0_DramTemp_4"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Dram_Temp_4",
+                "Name": "ProcessorModule_0_MemCntl_0_DramTemp_4",
+                "ParentObjPath": "",
+                "SensorId": 212,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_0_DramTemp_5"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Dram_Temp_5",
+                "Name": "ProcessorModule_0_MemCntl_0_DramTemp_5",
+                "ParentObjPath": "",
+                "SensorId": 213,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_0_DramTemp_6"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Dram_Temp_6",
+                "Name": "ProcessorModule_0_MemCntl_0_DramTemp_6",
+                "ParentObjPath": "",
+                "SensorId": 214,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_0_DramTemp_7"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Dram_Temp_7",
+                "Name": "ProcessorModule_0_MemCntl_0_DramTemp_7",
+                "ParentObjPath": "",
+                "SensorId": 215,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_0_Freq_0"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Mem_Freq",
+                "Name": "ProcessorModule_0_MemCntl_0_Freq_0",
+                "ParentObjPath": "",
+                "SensorId": 176,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_0_Mem0OvertTemp_0"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Mem0_Overt",
+                "Name": "ProcessorModule_0_MemCntl_0_Mem0OvertTemp_0",
+                "ParentObjPath": "",
+                "SensorId": 36,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_0_Mem1OvertTemp_0"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Mem1_Overt",
+                "Name": "ProcessorModule_0_MemCntl_0_Mem1OvertTemp_0",
+                "ParentObjPath": "",
+                "SensorId": 37,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_0_Mem2OvertTemp_0"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Mem2_Overt",
+                "Name": "ProcessorModule_0_MemCntl_0_Mem2OvertTemp_0",
+                "ParentObjPath": "",
+                "SensorId": 38,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_0_Mem3OvertTemp_0"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Mem3_Overt",
+                "Name": "ProcessorModule_0_MemCntl_0_Mem3OvertTemp_0",
+                "ParentObjPath": "",
+                "SensorId": 39,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_1_MemCntl_0_DramOvertTemp_0"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Dram_Overt",
+                "Name": "ProcessorModule_0_MemCntl_1_MemCntl_0_DramOvertTemp_0",
+                "ParentObjPath": "",
+                "SensorId": 4136,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_1_MemCntl_0_DramTemp_0"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Dram_Temp_0",
+                "Name": "ProcessorModule_0_MemCntl_1_MemCntl_0_DramTemp_0",
+                "ParentObjPath": "",
+                "SensorId": 4304,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_1_MemCntl_0_DramTemp_1"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Dram_Temp_1",
+                "Name": "ProcessorModule_0_MemCntl_1_MemCntl_0_DramTemp_1",
+                "ParentObjPath": "",
+                "SensorId": 4305,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_1_MemCntl_0_DramTemp_2"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Dram_Temp_2",
+                "Name": "ProcessorModule_0_MemCntl_1_MemCntl_0_DramTemp_2",
+                "ParentObjPath": "",
+                "SensorId": 4306,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_1_MemCntl_0_DramTemp_3"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Dram_Temp_3",
+                "Name": "ProcessorModule_0_MemCntl_1_MemCntl_0_DramTemp_3",
+                "ParentObjPath": "",
+                "SensorId": 4307,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_1_MemCntl_0_DramTemp_4"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Dram_Temp_4",
+                "Name": "ProcessorModule_0_MemCntl_1_MemCntl_0_DramTemp_4",
+                "ParentObjPath": "",
+                "SensorId": 4308,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_1_MemCntl_0_DramTemp_5"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Dram_Temp_5",
+                "Name": "ProcessorModule_0_MemCntl_1_MemCntl_0_DramTemp_5",
+                "ParentObjPath": "",
+                "SensorId": 4309,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_1_MemCntl_0_DramTemp_6"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Dram_Temp_6",
+                "Name": "ProcessorModule_0_MemCntl_1_MemCntl_0_DramTemp_6",
+                "ParentObjPath": "",
+                "SensorId": 4310,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_1_MemCntl_0_DramTemp_7"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Dram_Temp_7",
+                "Name": "ProcessorModule_0_MemCntl_1_MemCntl_0_DramTemp_7",
+                "ParentObjPath": "",
+                "SensorId": 4311,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_1_MemCntl_0_Freq_0"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Mem_Freq",
+                "Name": "ProcessorModule_0_MemCntl_1_MemCntl_0_Freq_0",
+                "ParentObjPath": "",
+                "SensorId": 4272,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_1_MemCntl_0_Mem0OvertTemp_0"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Mem0_Overt",
+                "Name": "ProcessorModule_0_MemCntl_1_MemCntl_0_Mem0OvertTemp_0",
+                "ParentObjPath": "",
+                "SensorId": 4132,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_1_MemCntl_0_Mem1OvertTemp_0"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Mem1_Overt",
+                "Name": "ProcessorModule_0_MemCntl_1_MemCntl_0_Mem1OvertTemp_0",
+                "ParentObjPath": "",
+                "SensorId": 4133,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_1_MemCntl_0_Mem2OvertTemp_0"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Mem2_Overt",
+                "Name": "ProcessorModule_0_MemCntl_1_MemCntl_0_Mem2OvertTemp_0",
+                "ParentObjPath": "",
+                "SensorId": 4134,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_1_MemCntl_0_Mem3OvertTemp_0"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Mem3_Overt",
+                "Name": "ProcessorModule_0_MemCntl_1_MemCntl_0_Mem3OvertTemp_0",
+                "ParentObjPath": "",
+                "SensorId": 4135,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_Vreg_0_CPUVRTemp_0"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_VR_Temp",
+                "Name": "ProcessorModule_0_Vreg_0_CPUVRTemp_0",
+                "ParentObjPath": "",
+                "SensorId": 18,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_Vreg_0_CpuPower_0"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_VR_Cpu_Pwr",
+                "Name": "ProcessorModule_0_Vreg_0_CpuPower_0",
+                "ParentObjPath": "",
+                "SensorId": 16,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_Vreg_0_CpuVoltage_0"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_VR_Cpu_Volt",
+                "Name": "ProcessorModule_0_Vreg_0_CpuVoltage_0",
+                "ParentObjPath": "",
+                "SensorId": 17,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_Vreg_0_SocPower_0"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_VR_Soc_Pwr",
+                "Name": "ProcessorModule_0_Vreg_0_SocPower_0",
+                "ParentObjPath": "",
+                "SensorId": 32,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_Vreg_0_SocVoltage_0"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_VR_Soc_Volt",
+                "Name": "ProcessorModule_0_Vreg_0_SocVoltage_0",
+                "ParentObjPath": "",
+                "SensorId": 33,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_Vreg_1_Vreg_0_CPUVRTemp_0"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_VR_Temp",
+                "Name": "ProcessorModule_0_Vreg_1_Vreg_0_CPUVRTemp_0",
+                "ParentObjPath": "",
+                "SensorId": 4114,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_Vreg_1_Vreg_0_CpuPower_0"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_VR_Cpu_Pwr",
+                "Name": "ProcessorModule_0_Vreg_1_Vreg_0_CpuPower_0",
+                "ParentObjPath": "",
+                "SensorId": 4112,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_Vreg_1_Vreg_0_CpuVoltage_0"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_VR_Cpu_Volt",
+                "Name": "ProcessorModule_0_Vreg_1_Vreg_0_CpuVoltage_0",
+                "ParentObjPath": "",
+                "SensorId": 4113,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_Vreg_1_Vreg_0_SocPower_0"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_VR_Soc_Pwr",
+                "Name": "ProcessorModule_0_Vreg_1_Vreg_0_SocPower_0",
+                "ParentObjPath": "",
+                "SensorId": 4128,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_Vreg_1_Vreg_0_SocVoltage_0"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_VR_Soc_Volt",
+                "Name": "ProcessorModule_0_Vreg_1_Vreg_0_SocVoltage_0",
+                "ParentObjPath": "",
+                "SensorId": 4129,
+                "Type": "SensorAuxName"
+            }
+        ],
+        "Name": "VR_C2_PLDM_Ipmi_Names",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80})",
+        "Type": "Component"
+    }
+]

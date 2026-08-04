@@ -95,6 +95,7 @@
                     }
                 ],
                 "Description": "Internal SMA temperature values",
+                "IpmiName": "HPM_SMA_Temp",
                 "Name": "ProcessorModule_SMA_0_Temp_0",
                 "PhysicalContext": "GPUSubsystem",
                 "Priority": true,
@@ -111,6 +112,7 @@
                         "Forward": "chassis"
                     }
                 ],
+                "IpmiName": "HPM_SMA_Ext_Temp",
                 "Name": "ProcessorModule_0_External_SMA_0_Temp_0",
                 "PhysicalContext": "GPUSubsystem",
                 "Priority": true,
@@ -136,6 +138,7 @@
                         "Forward": "chassis"
                     }
                 ],
+                "IpmiName": "PCB_Temp_0",
                 "Name": "ProcessorModule_0_PCB_Temp_0",
                 "PhysicalContext": "Board",
                 "Priority": true,
@@ -152,6 +155,7 @@
                         "Forward": "chassis"
                     }
                 ],
+                "IpmiName": "PCB_Temp_1",
                 "Name": "ProcessorModule_0_PCB_Temp_1",
                 "PhysicalContext": "Board",
                 "Priority": true,
@@ -168,6 +172,7 @@
                         "Forward": "chassis"
                     }
                 ],
+                "IpmiName": "CPU0_Die_Temp",
                 "Name": "ProcessorModule_0_CPU_0_Die_0_Temp_0",
                 "PhysicalContext": "CPU",
                 "Priority": true,
@@ -193,6 +198,7 @@
                         "Forward": "chassis"
                     }
                 ],
+                "IpmiName": "CPU0_Soc_Temp",
                 "Name": "ProcessorModule_0_CPU_0_SocTemp_0",
                 "PhysicalContext": "CPU",
                 "Priority": true,
@@ -218,6 +224,7 @@
                         "Forward": "chassis"
                     }
                 ],
+                "IpmiName": "CPU1_Die_Temp",
                 "Name": "ProcessorModule_0_CPU_1_Die_0_Temp_0",
                 "PhysicalContext": "CPU",
                 "Priority": true,
@@ -243,6 +250,7 @@
                         "Forward": "chassis"
                     }
                 ],
+                "IpmiName": "CPU1_Soc_Temp",
                 "Name": "ProcessorModule_0_CPU_1_SocTemp_0",
                 "PhysicalContext": "CPU",
                 "Priority": true,

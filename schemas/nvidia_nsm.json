@@ -1073,6 +1073,11 @@
                 "Implementation": {
                     "type": "string"
                 },
+                "IpmiName": {
+                    "description": "Short sensor name reported over IPMI by phosphor-host-ipmi.",
+                    "maxLength": 16,
+                    "type": "string"
+                },
                 "MaxAllowableOperatingValue": {
                     "type": "number"
                 },

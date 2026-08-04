@@ -341,6 +341,7 @@
                         "Forward": "memory"
                     }
                 ],
+                "IpmiName": "GPU0_DRAM_Temp",
                 "Name": "GPU_0 DRAM_0_Temp_0",
                 "PhysicalContext": "GPU",
                 "Priority": true,
@@ -741,6 +742,7 @@
                         "Forward": "memory"
                     }
                 ],
+                "IpmiName": "GPU1_DRAM_Temp",
                 "Name": "GPU_1 DRAM_0_Temp_0",
                 "PhysicalContext": "GPU",
                 "Priority": true,

@@ -16,6 +16,7 @@
                 "AuxNames": [
                     "BlueField_0_Temp_0"
                 ],
+                "IpmiName": "BF0_Temp",
                 "Name": "BlueField_0_Temp_0",
                 "ParentObjPath": "/xyz/openbmc_project/inventory/system/board/BlueField_0",
                 "SensorId": 1,
@@ -25,6 +26,7 @@
                 "AuxNames": [
                     "BlueField_0_Port_0_Temp_0"
                 ],
+                "IpmiName": "BF0_Port_0_Temp",
                 "Name": "BlueField_0_Port_0_Temp_0",
                 "ParentObjPath": "/xyz/openbmc_project/inventory/system/board/BlueField_0",
                 "SensorId": 8,
@@ -34,6 +36,7 @@
                 "AuxNames": [
                     "BlueField_0_Port_1_Temp_0"
                 ],
+                "IpmiName": "BF0_Port_1_Temp",
                 "Name": "BlueField_0_Port_1_Temp_0",
                 "ParentObjPath": "/xyz/openbmc_project/inventory/system/board/BlueField_0",
                 "SensorId": 9,

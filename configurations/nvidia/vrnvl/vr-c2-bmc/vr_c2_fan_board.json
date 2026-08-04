@@ -15,6 +15,7 @@
                     "PwmName": "FanBoard_0_Fan_1_PWM"
                 },
                 "Index": 0,
+                "IpmiName": "Fan1_Front",
                 "MaxReading": 37400,
                 "Name": "FanBoard_0_Fan_1_Front",
                 "PowerState": "On",
@@ -36,6 +37,7 @@
                     "PwmName": "FanBoard_0_Fan_1_PWM"
                 },
                 "Index": 1,
+                "IpmiName": "Fan1_Rear",
                 "MaxReading": 37400,
                 "Name": "FanBoard_0_Fan_1_Rear",
                 "PowerState": "On",
@@ -57,6 +59,7 @@
                     "PwmName": "FanBoard_0_Fan_2_PWM"
                 },
                 "Index": 2,
+                "IpmiName": "Fan2_Front",
                 "MaxReading": 37400,
                 "Name": "FanBoard_0_Fan_2_Front",
                 "PowerState": "On",
@@ -78,6 +81,7 @@
                     "PwmName": "FanBoard_0_Fan_2_PWM"
                 },
                 "Index": 3,
+                "IpmiName": "Fan2_Rear",
                 "MaxReading": 37400,
                 "Name": "FanBoard_0_Fan_2_Rear",
                 "PowerState": "On",
@@ -99,6 +103,7 @@
                     "PwmName": "FanBoard_0_Fan_3_PWM"
                 },
                 "Index": 4,
+                "IpmiName": "Fan3_Front",
                 "MaxReading": 37400,
                 "Name": "FanBoard_0_Fan_3_Front",
                 "PowerState": "On",
@@ -120,6 +125,7 @@
                     "PwmName": "FanBoard_0_Fan_3_PWM"
                 },
                 "Index": 5,
+                "IpmiName": "Fan3_Rear",
                 "MaxReading": 37400,
                 "Name": "FanBoard_0_Fan_3_Rear",
                 "PowerState": "On",
@@ -141,6 +147,7 @@
                     "PwmName": "FanBoard_0_Fan_4_PWM"
                 },
                 "Index": 0,
+                "IpmiName": "Fan4_Front",
                 "MaxReading": 37400,
                 "Name": "FanBoard_0_Fan_4_Front",
                 "PowerState": "On",
@@ -162,6 +169,7 @@
                     "PwmName": "FanBoard_0_Fan_4_PWM"
                 },
                 "Index": 1,
+                "IpmiName": "Fan4_Rear",
                 "MaxReading": 37400,
                 "Name": "FanBoard_0_Fan_4_Rear",
                 "PowerState": "On",
@@ -183,6 +191,7 @@
                     "PwmName": "FanBoard_0_Fan_5_PWM"
                 },
                 "Index": 2,
+                "IpmiName": "Fan5_Front",
                 "MaxReading": 37400,
                 "Name": "FanBoard_0_Fan_5_Front",
                 "PowerState": "On",
@@ -204,6 +213,7 @@
                     "PwmName": "FanBoard_0_Fan_5_PWM"
                 },
                 "Index": 3,
+                "IpmiName": "Fan5_Rear",
                 "MaxReading": 37400,
                 "Name": "FanBoard_0_Fan_5_Rear",
                 "PowerState": "On",
@@ -225,6 +235,7 @@
                     "PwmName": "FanBoard_0_Fan_6_PWM"
                 },
                 "Index": 4,
+                "IpmiName": "Fan6_Front",
                 "MaxReading": 37400,
                 "Name": "FanBoard_0_Fan_6_Front",
                 "PowerState": "On",
@@ -246,6 +257,7 @@
                     "PwmName": "FanBoard_0_Fan_6_PWM"
                 },
                 "Index": 5,
+                "IpmiName": "Fan6_Rear",
                 "MaxReading": 37400,
                 "Name": "FanBoard_0_Fan_6_Rear",
                 "PowerState": "On",
