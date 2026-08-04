@@ -4,7 +4,7 @@
             {
                 "Associations": [
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/IO_Board_$INSTANCE_NUMBER / 2",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/IO_Board_$INSTANCE_NUMBER",
                         "Backward": "chassis",
                         "Forward": "parent_chassis"
                     },
