@@ -1286,7 +1286,7 @@
             {
                 "Address": "0x4f",
                 "Bus": 12,
-                "MaxValue": 1023,
+                "MaxValue": 12125,
                 "MinValue": 0,
                 "Name": "M0_HSCC_Pwr",
                 "Name1": "HGX_ProcessorModule_0_HSCC_Power_0",
@@ -1300,7 +1300,7 @@
             {
                 "Address": "0x4f",
                 "Bus": 12,
-                "MaxValue": 1023,
+                "MaxValue": 12500,
                 "MinValue": 0,
                 "Name": "M0_HSC_Pwr",
                 "Name1": "HGX_ProcessorModule_0_HSC_Power_0",
@@ -1314,7 +1314,7 @@
             {
                 "Address": "0x4f",
                 "Bus": 12,
-                "MaxValue": 1023,
+                "MaxValue": 12125,
                 "MinValue": 0,
                 "Name": "M1_HSCC_Pwr",
                 "Name1": "HGX_ProcessorModule_1_HSCC_Power_0",
@@ -1328,7 +1328,7 @@
             {
                 "Address": "0x4f",
                 "Bus": 12,
-                "MaxValue": 1023,
+                "MaxValue": 12500,
                 "MinValue": 0,
                 "Name": "M1_HSC_Pwr",
                 "Name1": "HGX_ProcessorModule_1_HSC_Power_0",
