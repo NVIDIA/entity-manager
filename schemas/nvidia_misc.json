@@ -395,6 +395,9 @@
                 "pin_Name": {
                     "type": "string"
                 },
+                "pin_Max": {
+                    "type": "number"
+                },
                 "pin_Offset": {
                     "type": "number"
                 },
@@ -672,6 +675,9 @@
                 },
                 "pin_Name": {
                     "type": "string"
+                },
+                "pin_Max": {
+                    "type": "number"
                 },
                 "pin_Offset": {
                     "type": "number"
