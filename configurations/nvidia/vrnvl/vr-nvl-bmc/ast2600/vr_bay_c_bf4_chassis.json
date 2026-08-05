@@ -236,7 +236,7 @@
             },
             {
                 "AuxNames": [
-                    "BlueField_0_Core_Rail_Vdd_0_Power_0"
+                    "BlueField_0_Core_Rail_Vdd_Power_0"
                 ],
                 "Name": "BlueField_0_Core_Rail_Vdd_Power_0",
                 "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
