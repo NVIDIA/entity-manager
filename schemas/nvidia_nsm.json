@@ -1165,6 +1165,33 @@
             },
             "required": ["Name", "Type"]
         },
+        "MctpEndpointAssociation": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EID": {
+                    "oneOf": [
+                        {
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 255
+                        },
+                        {
+                            "type": "string",
+                            "const": "$EID"
+                        }
+                    ]
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "MctpEndpointAssociation"
+                }
+            },
+            "required": ["EID", "Name", "Type"]
+        },
         "NSM_MultiPortPCIeSwitchDevice": {
             "type": "object",
             "additionalProperties": false,

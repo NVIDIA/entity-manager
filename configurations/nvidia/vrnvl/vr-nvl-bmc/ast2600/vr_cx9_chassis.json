@@ -2,6 +2,11 @@
     {
         "Exposes": [
             {
+                "EID": "$EID",
+                "Name": "CX_$INSTANCE_NUMBER_Association",
+                "Type": "MctpEndpointAssociation"
+            },
+            {
                 "Associations": [
                     {
                         "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_$INSTANCE_NUMBER",
@@ -165,11 +170,6 @@
                 "Type": "NSM_PCIeRetimer_MultiPCIeLink",
                 "UUID": "$UUID",
                 "UpstreamPortName": "UP"
-            },
-            {
-                "Name": "CX_$INSTANCE_NUMBER_Association",
-                "Type": "NsmDeviceAssociation",
-                "UUID": "$UUID"
             },
             {
                 "AuxNames": [

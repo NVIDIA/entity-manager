@@ -2,6 +2,11 @@
     {
         "Exposes": [
             {
+                "EID": "$EID",
+                "Name": "Bay_C_CX_0_Association",
+                "Type": "MctpEndpointAssociation"
+            },
+            {
                 "Associations": [
                     {
                         "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_CX_0",
@@ -175,11 +180,6 @@
                     1,
                     2
                 ]
-            },
-            {
-                "Name": "Bay_C_CX_0_Association",
-                "Type": "NsmDeviceAssociation",
-                "UUID": "$UUID"
             },
             {
                 "AuxNames": [

@@ -18,6 +18,7 @@
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "CX9",
             "DEVICE_TYPE": 2,
+            "EID": 61,
             "INSTANCE_NUMBER": 0,
             "LOCATION_CONTEXT": "Chassis_0/Bay-B-Left-Bottom",
             "UUID": "STATIC:770:0:MCTP_EID:61"
@@ -31,6 +32,7 @@
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "CX9",
             "DEVICE_TYPE": 2,
+            "EID": 63,
             "INSTANCE_NUMBER": 1,
             "LOCATION_CONTEXT": "Chassis_0/Bay-B-Left-Bottom",
             "UUID": "STATIC:770:1:MCTP_EID:63"
@@ -44,6 +46,7 @@
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "CX9",
             "DEVICE_TYPE": 2,
+            "EID": 71,
             "INSTANCE_NUMBER": 2,
             "LOCATION_CONTEXT": "Chassis_0/Bay-B-Left-Top",
             "UUID": "STATIC:770:2:MCTP_EID:71"
@@ -57,6 +60,7 @@
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "CX9",
             "DEVICE_TYPE": 2,
+            "EID": 73,
             "INSTANCE_NUMBER": 3,
             "LOCATION_CONTEXT": "Chassis_0/Bay-B-Left-Top",
             "UUID": "STATIC:770:3:MCTP_EID:73"
@@ -70,6 +74,7 @@
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "CX9",
             "DEVICE_TYPE": 2,
+            "EID": 81,
             "INSTANCE_NUMBER": 4,
             "LOCATION_CONTEXT": "Chassis_0/Bay-B-Right-Bottom",
             "UUID": "STATIC:770:4:MCTP_EID:81"
@@ -83,6 +88,7 @@
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "CX9",
             "DEVICE_TYPE": 2,
+            "EID": 83,
             "INSTANCE_NUMBER": 5,
             "LOCATION_CONTEXT": "Chassis_0/Bay-B-Right-Bottom",
             "UUID": "STATIC:770:5:MCTP_EID:83"
@@ -96,6 +102,7 @@
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "CX9",
             "DEVICE_TYPE": 2,
+            "EID": 91,
             "INSTANCE_NUMBER": 6,
             "LOCATION_CONTEXT": "Chassis_0/Bay-B-Right-Top",
             "UUID": "STATIC:770:6:MCTP_EID:91"
@@ -109,6 +116,7 @@
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "CX9",
             "DEVICE_TYPE": 2,
+            "EID": 93,
             "INSTANCE_NUMBER": 7,
             "LOCATION_CONTEXT": "Chassis_0/Bay-B-Right-Top",
             "UUID": "STATIC:770:7:MCTP_EID:93"
@@ -122,6 +130,7 @@
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "BAYCB4",
             "DEVICE_TYPE": 2,
+            "EID": 56,
             "INSTANCE_NUMBER": 0,
             "UUID": "STATIC:1026:0:MCTP_EID:56"
         }
@@ -134,6 +143,7 @@
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "BAYCC9",
             "DEVICE_TYPE": 2,
+            "EID": 57,
             "INSTANCE_NUMBER": 0,
             "UUID": "STATIC:1026:0:MCTP_EID:57"
         }
