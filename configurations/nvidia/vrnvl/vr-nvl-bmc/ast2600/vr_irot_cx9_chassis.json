@@ -93,7 +93,7 @@
         ],
         "Name": "IRoT_CX_$INSTANCE_NUMBER",
         "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 2, 'DEVICE_ROLE': 'CX9'})",
-        "Type": "chassis",
+        "Type": "Chassis",
         "xyz.openbmc_project.Inventory.Decorator.Instance": {
             "InstanceNumber": "$INSTANCE_NUMBER"
         },
@@ -105,6 +105,9 @@
         },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/CX_$INSTANCE_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
         }
     }
 ]

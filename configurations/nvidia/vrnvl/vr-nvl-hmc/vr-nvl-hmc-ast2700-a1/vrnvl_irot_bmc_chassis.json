@@ -133,7 +133,7 @@
         ],
         "Name": "HGX_IRoT_BMC_0",
         "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 4, 'INSTANCE_NUMBER': 0})",
-        "Type": "chassis",
+        "Type": "Chassis",
         "xyz.openbmc_project.Inventory.Decorator.Instance": {
             "InstanceNumber": 0
         },
@@ -148,6 +148,9 @@
         },
         "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
             "FieldReplaceable": false
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
         }
     }
 ]
