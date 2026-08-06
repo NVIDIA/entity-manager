@@ -82,7 +82,7 @@
         },
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
             "Manufacturer": "$BOARD_MANUFACTURER",
-            "Model": "VR200 NVL",
+            "Model": "Vera MGX C2",
             "PartNumber": "$BOARD_PART_NUMBER",
             "SerialNumber": "$BOARD_SERIAL_NUMBER"
         },
