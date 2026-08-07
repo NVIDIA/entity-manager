@@ -90,6 +90,10 @@
         "xyz.openbmc_project.Common.UUID": {
             "UUID": ""
         },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "NVIDIA",
+            "SerialNumber": ""
+        },
         "xyz.openbmc_project.Inventory.Decorator.Instance": {
             "InstanceNumber": "$INSTANCE_NUMBER"
         },
