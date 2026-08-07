@@ -4,7 +4,7 @@
             {
                 "Associations": [
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_SMA_0$INSTANCE_NUMBER",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_SMA_0",
                         "Backward": "chassis",
                         "Forward": "parent_chassis"
                     }
@@ -33,12 +33,12 @@
             {
                 "Associations": [
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/software/FW_Bay_C_SMA_0$INSTANCE_NUMBER",
+                        "AbsolutePath": "/xyz/openbmc_project/software/FW_Bay_C_SMA_0",
                         "Backward": "ActiveSlot",
                         "Forward": "software"
                     }
                 ],
-                "ChassisName": "Bay_C_SMA_0$INSTANCE_NUMBER",
+                "ChassisName": "Bay_C_SMA_0",
                 "ComponentClassification": 10,
                 "ComponentIdentifier": 65282,
                 "ComponentIndex": 0,
@@ -50,12 +50,12 @@
             {
                 "Associations": [
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/software/FW_Bay_C_SMA_0$INSTANCE_NUMBER",
+                        "AbsolutePath": "/xyz/openbmc_project/software/FW_Bay_C_SMA_0",
                         "Backward": "InactiveSlot",
                         "Forward": "software"
                     }
                 ],
-                "ChassisName": "Bay_C_SMA_0$INSTANCE_NUMBER",
+                "ChassisName": "Bay_C_SMA_0",
                 "ComponentClassification": 10,
                 "ComponentIdentifier": 65282,
                 "ComponentIndex": 0,
@@ -66,24 +66,24 @@
             }
         ],
         "Name": "IRoT_Bay_C_SMA_0",
-        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'BFSMA'})",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'BAYCSMA'})",
         "Type": "Chassis",
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
                     "parent_chassis",
                     "all_chassis",
-                    "/xyz/openbmc_project/inventory/system/chassis/Bay_C_SMA_0$INSTANCE_NUMBER"
+                    "/xyz/openbmc_project/inventory/system/chassis/Bay_C_SMA_0"
                 ],
                 [
                     "inventory",
                     "associated_ROT",
-                    "/xyz/openbmc_project/inventory/system/chassis/Bay_C_SMA_0$INSTANCE_NUMBER"
+                    "/xyz/openbmc_project/inventory/system/chassis/Bay_C_SMA_0"
                 ],
                 [
                     "inventory_chassis",
                     "associated_chassis",
-                    "/xyz/openbmc_project/inventory/system/chassis/Bay_C_SMA_0$INSTANCE_NUMBER"
+                    "/xyz/openbmc_project/inventory/system/chassis/Bay_C_SMA_0"
                 ]
             ]
         },
