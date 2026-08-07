@@ -15,13 +15,13 @@
                 },
                 "DeviceType": "$DEVICE_TYPE",
                 "ImageCopyEnabled": true,
-                "Name": "IRoT_Bay_C_SMA_0$INSTANCE_NUMBER",
+                "Name": "IRoT_Bay_C_SMA_0",
                 "SlotCount": 2,
                 "Type": "NSM_Chassis",
                 "UUID": "$UUID"
             },
             {
-                "ChassisName": "IRoT_Bay_C_SMA_0$INSTANCE_NUMBER",
+                "ChassisName": "IRoT_Bay_C_SMA_0",
                 "DebugTokenDeviceType": "SMA",
                 "DebugTokenType": [
                     "Unified"
@@ -65,7 +65,7 @@
                 "Type": "NSM_RoT_Slot"
             }
         ],
-        "Name": "IRoT_Bay_C_SMA_0$INSTANCE_NUMBER",
+        "Name": "IRoT_Bay_C_SMA_0",
         "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'BFSMA'})",
         "Type": "Chassis",
         "xyz.openbmc_project.Association.Definitions": {
