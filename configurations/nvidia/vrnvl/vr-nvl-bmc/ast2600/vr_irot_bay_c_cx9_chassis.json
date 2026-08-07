@@ -94,6 +94,15 @@
         "Name": "IRoT_Bay_C_CX_0",
         "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 2, 'DEVICE_ROLE': 'BAYCC9'})",
         "Type": "Chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "BuildDate": "",
+            "Manufacturer": "NVIDIA",
+            "Model": "",
+            "PartNumber": "",
+            "SerialNumber": "",
+            "SparePartNumber": "",
+            "SubModel": ""
+        },
         "xyz.openbmc_project.Inventory.Decorator.Instance": {
             "InstanceNumber": "$INSTANCE_NUMBER"
         },

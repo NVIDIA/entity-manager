@@ -117,6 +117,15 @@
         "Name": "HGX_IRoT_ProcessorModule_SMA_$INSTANCE_NUMBER",
         "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'HPMSMA'})",
         "Type": "Chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "BuildDate": "",
+            "Manufacturer": "NVIDIA",
+            "Model": "",
+            "PartNumber": "",
+            "SerialNumber": "",
+            "SparePartNumber": "",
+            "SubModel": ""
+        },
         "xyz.openbmc_project.Inventory.Decorator.Instance": {
             "InstanceNumber": "$INSTANCE_NUMBER"
         },
