@@ -80,6 +80,11 @@
                     "all_managers",
                     "chassis",
                     "/xyz/openbmc_project/inventory/system/board/SMM_0"
+                ],
+                [
+                    "host_management_network_access",
+                    "chassis",
+                    "/xyz/openbmc_project/control/host0/HostManagementNetworkAccess"
                 ]
             ]
         },
