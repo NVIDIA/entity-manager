@@ -9,7 +9,7 @@
             },
             {
                 "Address": "0x4C",
-                "Bus": 9,
+                "Bus": 59,
                 "Labels": [
                     "temp1",
                     "temp2"
@@ -20,7 +20,7 @@
             },
             {
                 "Address": "0x4A",
-                "Bus": 9,
+                "Bus": 59,
                 "Name": "PDB_0_Temp_0",
                 "Type": "TMP75"
             },
@@ -33,7 +33,7 @@
         ],
         "Name": "PDB_0",
         "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
-        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 9, 'ADDRESS': 80})",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 59, 'ADDRESS': 80})",
         "Type": "Board",
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
@@ -75,7 +75,7 @@
     {
         "Exposes": [],
         "Name": "PDB Board FRU Assembly0",
-        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 9, 'ADDRESS': 80})",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 59, 'ADDRESS': 80})",
         "Type": "Assembly",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
             "BuildDate": "$BOARD_MANUFACTURE_DATE",
@@ -95,7 +95,7 @@
     {
         "Exposes": [],
         "Name": "PDB Product FRU Assembly1",
-        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 9, 'ADDRESS': 80})",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 59, 'ADDRESS': 80})",
         "Type": "Assembly",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
             "Manufacturer": "$PRODUCT_MANUFACTURER",
