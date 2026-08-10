@@ -941,6 +941,12 @@
                 "MaxAllowableOperatingValue": {
                     "type": "number"
                 },
+                "MaxValue": {
+                    "type": "number"
+                },
+                "MinValue": {
+                    "type": "number"
+                },
                 "Name": {
                     "type": "string"
                 },
@@ -1113,6 +1119,12 @@
                 },
                 "Associations": {
                     "type": "array"
+                },
+                "MaxValue": {
+                    "type": "number"
+                },
+                "MinValue": {
+                    "type": "number"
                 },
                 "Name": {
                     "type": "string"

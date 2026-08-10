@@ -181,6 +181,8 @@
                     }
                 ],
                 "AveragingInterval": 0,
+                "MaxValue": 600.0,
+                "MinValue": 300.0,
                 "Name": "GPU_0 Power_0",
                 "PhysicalContext": "GPU",
                 "Priority": true,
@@ -349,6 +351,8 @@
                         "Forward": "processor"
                     }
                 ],
+                "MaxValue": 13.0,
+                "MinValue": 0.0,
                 "Name": "GPU_0 Voltage_0",
                 "PhysicalContext": "GPU",
                 "Priority": false,
@@ -559,6 +563,8 @@
                     }
                 ],
                 "AveragingInterval": 0,
+                "MaxValue": 600.0,
+                "MinValue": 300.0,
                 "Name": "GPU_1 Power_0",
                 "PhysicalContext": "GPU",
                 "Priority": true,
@@ -727,6 +733,8 @@
                         "Forward": "processor"
                     }
                 ],
+                "MaxValue": 13.0,
+                "MinValue": 0.0,
                 "Name": "GPU_1 Voltage_0",
                 "PhysicalContext": "GPU",
                 "Priority": false,
