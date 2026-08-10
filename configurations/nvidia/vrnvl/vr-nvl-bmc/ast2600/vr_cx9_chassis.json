@@ -124,7 +124,9 @@
                     -1,
                     -1,
                     -1,
-                    2
+                    2,
+                    -1,
+                    1
                 ],
                 "InventoryObjPath": "/xyz/openbmc_project/inventory/system/chassis/CX_$INSTANCE_NUMBER/NetworkAdapters/",
                 "Name": "CX_NIC_$INSTANCE_NUMBER",
