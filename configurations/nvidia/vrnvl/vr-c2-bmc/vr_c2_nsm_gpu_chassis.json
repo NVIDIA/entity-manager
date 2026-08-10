@@ -245,17 +245,17 @@
                     {
                         "Dynamic": false,
                         "Name": "UpperFatal",
-                        "Value": 95.0
+                        "Value": 85.0
                     },
                     {
                         "Dynamic": false,
                         "Name": "UpperCritical",
-                        "Value": 92.0
+                        "Value": 83.0
                     },
                     {
                         "Dynamic": false,
                         "Name": "UpperCaution",
-                        "Value": 90.0
+                        "Value": 80.0
                     }
                 ],
                 "Type": "NSM_Temp",
@@ -623,17 +623,17 @@
                     {
                         "Dynamic": false,
                         "Name": "UpperFatal",
-                        "Value": 95.0
+                        "Value": 85.0
                     },
                     {
                         "Dynamic": false,
                         "Name": "UpperCritical",
-                        "Value": 92.0
+                        "Value": 83.0
                     },
                     {
                         "Dynamic": false,
                         "Name": "UpperCaution",
-                        "Value": 90.0
+                        "Value": 80.0
                     }
                 ],
                 "Type": "NSM_Temp",
