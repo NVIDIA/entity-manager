@@ -10,31 +10,31 @@
             {
                 "Address": "0x48",
                 "Bus": 10,
-                "Name": "BMC_0_DCSCM_Temp_0",
+                "Name": "BMC_0_Temp_0",
                 "Thresholds": [
                     {
                         "Direction": "greater than",
                         "Name": "upper non recoverable",
                         "Severity": 4,
-                        "Value": 95.0
+                        "Value": 130.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "soft shutdown",
                         "Severity": 3,
-                        "Value": 93.0
+                        "Value": 128.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 93.0
+                        "Value": 128.0
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 90.0
+                        "Value": 125.0
                     },
                     {
                         "Direction": "less than",
