@@ -863,6 +863,24 @@
                 "ParentObjPath": {
                     "type": "string"
                 },
+                "PortLocationCodeMap": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "PortLocationContext": {
+                    "type": "string"
+                },
+                "PortLocationReference": {
+                    "type": "string"
+                },
+                "PortNameMap": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "Priority": {
                     "type": "boolean"
                 },
@@ -1319,6 +1337,24 @@
                 },
                 "ParentObjPath": {
                     "type": "string"
+                },
+                "PortLocationCodeMap": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "PortLocationContext": {
+                    "type": "string"
+                },
+                "PortLocationReference": {
+                    "type": "string"
+                },
+                "PortNameMap": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "Priority": {
                     "type": "boolean"

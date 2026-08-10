@@ -71,12 +71,22 @@
                 "UUID": "$UUID"
             },
             {
-                "Count": 1,
+                "Count": 2,
                 "DeviceType": "$DEVICE_TYPE",
                 "Name": "Port",
                 "OpticalModuleResetSupported": true,
                 "OpticalModuleTelemetrySupported": true,
-                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/CX_$INSTANCE_NUMBER/NetworkAdapters/CX_NIC_$INSTANCE_NUMBER",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/CX_$INSTANCE_NUMBER/NetworkAdapters/NIC_0",
+                "PortLocationCodeMap": [
+                    "$PORT_NAME_0",
+                    "$PORT_NAME_1"
+                ],
+                "PortLocationContext": "$LOCATION_CONTEXT",
+                "PortLocationReference": "$PORT_LOCATION_REFERENCE",
+                "PortNameMap": [
+                    "$PORT_NAME_0",
+                    "$PORT_NAME_1"
+                ],
                 "Priority": false,
                 "SupportFECHistogram": true,
                 "Type": "NSM_NVLinkWithNetworkPortAddresses",
@@ -135,7 +145,7 @@
                     1
                 ],
                 "InventoryObjPath": "/xyz/openbmc_project/inventory/system/chassis/CX_$INSTANCE_NUMBER/NetworkAdapters/",
-                "Name": "CX_NIC_$INSTANCE_NUMBER",
+                "Name": "NIC_0",
                 "Type": "NSM_NetworkAdapter",
                 "UUID": "$UUID"
             },
@@ -197,6 +207,15 @@
                 "Name": "CX_NIC_$INSTANCE_NUMBER_Port_0_AUX",
                 "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/CX_$INSTANCE_NUMBER",
                 "SensorId": 200,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "Port_1"
+                ],
+                "Name": "CX_NIC_$INSTANCE_NUMBER_Port_1_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/CX_$INSTANCE_NUMBER",
+                "SensorId": 201,
                 "Type": "SensorAuxName"
             },
             {
@@ -273,17 +292,29 @@
                 "Association": [
                     "associated_port",
                     "associated_port",
-                    "/xyz/openbmc_project/inventory/system/chassis/CX_$INSTANCE_NUMBER/NetworkAdapters/CX_NIC_$INSTANCE_NUMBER/Ports/Port_0"
+                    "/xyz/openbmc_project/inventory/system/chassis/CX_$INSTANCE_NUMBER/NetworkAdapters/NIC_0/Ports/$PORT_NAME_0"
                 ],
                 "MaxSpeedMBps": 50000,
                 "Name": "CX_NIC_$INSTANCE_NUMBER_Port_0_INFO",
                 "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
                 "SensorId": 200,
                 "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/chassis/CX_$INSTANCE_NUMBER/NetworkAdapters/NIC_0/Ports/$PORT_NAME_1"
+                ],
+                "MaxSpeedMBps": 12500,
+                "Name": "CX_NIC_$INSTANCE_NUMBER_Port_1_INFO",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 201,
+                "Type": "SensorPortInfo"
             }
         ],
         "Name": "CX_$INSTANCE_NUMBER",
-        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/board/IO_Board_$INSTANCE_NUMBER / 2",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/board/IO_Board_$PARENT_IO_BOARD_INSTANCE",
         "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 2, 'DEVICE_ROLE': 'CX9'})",
         "Type": "chassis",
         "xyz.openbmc_project.Inventory.Decorator.Instance": {

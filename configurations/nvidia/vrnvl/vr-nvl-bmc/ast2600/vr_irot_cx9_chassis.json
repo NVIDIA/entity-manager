@@ -4,7 +4,7 @@
             {
                 "Associations": [
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_$INSTANCE_NUMBER/NetworkAdapters/CX_NIC_$INSTANCE_NUMBER",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_$INSTANCE_NUMBER/NetworkAdapters/NIC_0",
                         "Backward": "associated_ROT",
                         "Forward": "inventory"
                     },
