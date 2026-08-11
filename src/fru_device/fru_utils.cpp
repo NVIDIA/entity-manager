@@ -324,6 +324,12 @@ static void parseMultirecordUUID(
     }
 
     areaOffset *= fruBlockSize;
+    // Offset comes from an in-image byte; bail if it points past the buffer.
+    if (areaOffset >= device.size())
+    {
+        lg2::error("Multirecord area offset is out of range");
+        return;
+    }
     std::span<const uint8_t>::const_iterator fruBytesIter =
         device.begin() + areaOffset;
 
