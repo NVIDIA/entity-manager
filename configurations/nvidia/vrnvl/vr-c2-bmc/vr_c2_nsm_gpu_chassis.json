@@ -142,6 +142,24 @@
                 "Associations": [
                     {
                         "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0",
+                        "Backward": "software",
+                        "Forward": "inventory"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software",
+                        "Backward": "updateable",
+                        "Forward": "software_version"
+                    }
+                ],
+                "Manufacturer": "NVIDIA",
+                "Name": "Driver_GPU_0",
+                "Type": "NSM_GPU_SWInventory",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0",
                         "Backward": "all_memory",
                         "Forward": "parent_processor"
                     },
@@ -518,6 +536,24 @@
                     "Type": "NSM_PortInfo"
                 },
                 "Type": "NSM_GPU_PCIe_0",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1",
+                        "Backward": "software",
+                        "Forward": "inventory"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software",
+                        "Backward": "updateable",
+                        "Forward": "software_version"
+                    }
+                ],
+                "Manufacturer": "NVIDIA",
+                "Name": "Driver_GPU_1",
+                "Type": "NSM_GPU_SWInventory",
                 "UUID": "$UUID"
             },
             {
