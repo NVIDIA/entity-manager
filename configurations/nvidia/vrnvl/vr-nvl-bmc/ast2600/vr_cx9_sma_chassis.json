@@ -61,13 +61,6 @@
                 "PhysicalContext": "Board",
                 "Priority": true,
                 "SensorId": 17,
-                "ThermalParameters": [
-                    {
-                        "Dynamic": false,
-                        "Name": "UpperFatal",
-                        "Value": 100.0
-                    }
-                ],
                 "Type": "NSM_Temp",
                 "UUID": "$UUID"
             }
