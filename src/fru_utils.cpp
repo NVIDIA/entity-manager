@@ -504,6 +504,14 @@ resCodes formatIPMIFRU(
             return resCodes::resErr;
         }
 
+        // Reject an area whose declared extent runs past the buffer before it
+        // bounds the checksum and field walk below.
+        if (offset + fruAreaSize > fruBytes.size())
+        {
+            std::cerr << "FRU area extends past the end of FRU data\n";
+            return resCodes::resErr;
+        }
+
         std::span<const uint8_t>::const_iterator fruBytesIterEndArea =
             fruBytes.begin() + offset + fruAreaSize - 1;
         ++fruBytesIter;
