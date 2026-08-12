@@ -42,7 +42,7 @@
             "ChassisSerial": "$CHASSIS_SERIAL_NUMBER",
             "ChassisType": "$CHASSIS_TYPE",
             "Manufacturer": "NVIDIA",
-            "Model": "Vera MGX C2",
+            "Model": "Vera MGX",
             "PartNumber": "$BOARD_PART_NUMBER",
             "SerialNumber": "$BOARD_SERIAL_NUMBER"
         },
@@ -77,7 +77,7 @@
         "Type": "Assembly",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
             "Manufacturer": "NVIDIA",
-            "Model": "Vera MGX C2",
+            "Model": "Vera MGX",
             "PartNumber": "$CHASSIS_PART_NUMBER",
             "SerialNumber": "$CHASSIS_SERIAL_NUMBER"
         },
