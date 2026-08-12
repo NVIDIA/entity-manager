@@ -59,7 +59,7 @@
     {
         "Exposes": [],
         "Name": "NSM_GPU_SMA_0",
-        "Probe": "TRUE",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 42, 'ADDRESS': 80})",
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "GPUSMA",
@@ -71,7 +71,12 @@
     {
         "Exposes": [],
         "Name": "NSM_GPU_SMA_1",
-        "Probe": "TRUE",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 50, 'ADDRESS': 80})",
+            "OR",
+            "xyz.openbmc_project.FruDevice({'BUS': 40, 'ADDRESS': 80})",
+            "MATCH_ONE"
+        ],
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "GPUSMA",
@@ -83,7 +88,7 @@
     {
         "Exposes": [],
         "Name": "NSM_DEV_GPU_0",
-        "Probe": "TRUE",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 42, 'ADDRESS': 80})",
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_TYPE": 0,
@@ -94,7 +99,12 @@
     {
         "Exposes": [],
         "Name": "NSM_DEV_GPU_1",
-        "Probe": "TRUE",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 50, 'ADDRESS': 80})",
+            "OR",
+            "xyz.openbmc_project.FruDevice({'BUS': 40, 'ADDRESS': 80})",
+            "MATCH_ONE"
+        ],
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_TYPE": 0,

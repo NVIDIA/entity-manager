@@ -142,6 +142,24 @@
                 "Associations": [
                     {
                         "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0",
+                        "Backward": "software",
+                        "Forward": "inventory"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software",
+                        "Backward": "updateable",
+                        "Forward": "software_version"
+                    }
+                ],
+                "Manufacturer": "NVIDIA",
+                "Name": "Driver_GPU_0",
+                "Type": "NSM_GPU_SWInventory",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0",
                         "Backward": "all_memory",
                         "Forward": "parent_processor"
                     },
@@ -181,6 +199,8 @@
                     }
                 ],
                 "AveragingInterval": 0,
+                "MaxValue": 600.0,
+                "MinValue": 300.0,
                 "Name": "GPU_0 Power_0",
                 "PhysicalContext": "GPU",
                 "Priority": true,
@@ -245,17 +265,17 @@
                     {
                         "Dynamic": false,
                         "Name": "UpperFatal",
-                        "Value": 95.0
+                        "Value": 85.0
                     },
                     {
                         "Dynamic": false,
                         "Name": "UpperCritical",
-                        "Value": 92.0
+                        "Value": 83.0
                     },
                     {
                         "Dynamic": false,
                         "Name": "UpperCaution",
-                        "Value": 90.0
+                        "Value": 80.0
                     }
                 ],
                 "Type": "NSM_Temp",
@@ -349,6 +369,8 @@
                         "Forward": "processor"
                     }
                 ],
+                "MaxValue": 13.0,
+                "MinValue": 0.0,
                 "Name": "GPU_0 Voltage_0",
                 "PhysicalContext": "GPU",
                 "Priority": false,
@@ -520,6 +542,24 @@
                 "Associations": [
                     {
                         "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1",
+                        "Backward": "software",
+                        "Forward": "inventory"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software",
+                        "Backward": "updateable",
+                        "Forward": "software_version"
+                    }
+                ],
+                "Manufacturer": "NVIDIA",
+                "Name": "Driver_GPU_1",
+                "Type": "NSM_GPU_SWInventory",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1",
                         "Backward": "all_memory",
                         "Forward": "parent_processor"
                     },
@@ -559,6 +599,8 @@
                     }
                 ],
                 "AveragingInterval": 0,
+                "MaxValue": 600.0,
+                "MinValue": 300.0,
                 "Name": "GPU_1 Power_0",
                 "PhysicalContext": "GPU",
                 "Priority": true,
@@ -623,17 +665,17 @@
                     {
                         "Dynamic": false,
                         "Name": "UpperFatal",
-                        "Value": 95.0
+                        "Value": 85.0
                     },
                     {
                         "Dynamic": false,
                         "Name": "UpperCritical",
-                        "Value": 92.0
+                        "Value": 83.0
                     },
                     {
                         "Dynamic": false,
                         "Name": "UpperCaution",
-                        "Value": 90.0
+                        "Value": 80.0
                     }
                 ],
                 "Type": "NSM_Temp",
@@ -727,6 +769,8 @@
                         "Forward": "processor"
                     }
                 ],
+                "MaxValue": 13.0,
+                "MinValue": 0.0,
                 "Name": "GPU_1 Voltage_0",
                 "PhysicalContext": "GPU",
                 "Priority": false,

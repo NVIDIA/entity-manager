@@ -19,7 +19,7 @@
                 "Name": "Chassis_0_TotalHSC_Power_0",
                 "SensorParams": [
                     {
-                        "MaxValue": 16000.0,
+                        "MaxValue": 27500.0,
                         "MinValue": 0.0
                     }
                 ],

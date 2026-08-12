@@ -16,7 +16,7 @@
             "ChassisSerial": "$CHASSIS_SERIAL_NUMBER",
             "ChassisType": "$CHASSIS_TYPE",
             "Manufacturer": "NVIDIA",
-            "Model": "VR200 NVL",
+            "Model": "Vera MGX C2",
             "PartNumber": "$PRODUCT_PART_NUMBER",
             "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
         },

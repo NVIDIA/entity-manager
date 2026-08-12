@@ -567,7 +567,8 @@
                         "PowerSmoothingPrivilegeLevel2",
                         "EGMMode",
                         "InfoROMFileSystemRecreate",
-                        "RISTDiagnostic"
+                        "RISTDiagnostic",
+                        "AdaptiveTGPMode"
                     ],
                     "Type": "NSM_ReconfigPermissions"
                 },

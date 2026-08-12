@@ -10,16 +10,6 @@
                     },
                     {
                         "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
-                        "Backward": "associated_chassis",
-                        "Forward": "inventory_chassis"
-                    },
-                    {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
-                        "Backward": "associated_chassis",
-                        "Forward": "parent_chassis"
-                    },
-                    {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
                         "Backward": "all_chassis",
                         "Forward": "parent_chassis"
                     }

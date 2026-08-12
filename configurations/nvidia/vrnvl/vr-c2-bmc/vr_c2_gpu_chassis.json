@@ -6,6 +6,18 @@
                 "Bus": "$bus",
                 "Name": "$bus GPU_FRU",
                 "Type": "EEPROM_24C128"
+            },
+            {
+                "GpioLine": "GPU0_SMBUS_FRU_EEPROM_WP-O",
+                "Name": "GPU0_SMBUS_FRU_EEPROM_WP",
+                "Polarity": "active_high",
+                "Type": "WriteProtect"
+            },
+            {
+                "GpioLine": "GPU0_GLOBAL_WP-O",
+                "Name": "GPU0_GLOBAL_WP",
+                "Polarity": "active_high",
+                "Type": "WriteProtect"
             }
         ],
         "Name": "GPU_0",
@@ -76,6 +88,18 @@
                 "Bus": "$bus",
                 "Name": "$bus GPU_FRU",
                 "Type": "EEPROM_24C128"
+            },
+            {
+                "GpioLine": "GPU1_SMBUS_FRU_EEPROM_WP-O",
+                "Name": "GPU1_SMBUS_FRU_EEPROM_WP",
+                "Polarity": "active_high",
+                "Type": "WriteProtect"
+            },
+            {
+                "GpioLine": "GPU1_GLOBAL_WP-O",
+                "Name": "GPU1_GLOBAL_WP",
+                "Polarity": "active_high",
+                "Type": "WriteProtect"
             }
         ],
         "Name": "GPU_1",

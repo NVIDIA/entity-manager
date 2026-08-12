@@ -35,6 +35,25 @@
                 "Name": "StorageBackplane_SMA_0",
                 "Type": "NSM_Chassis",
                 "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/StorageBackplane_SMA_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Description": "Internal SMA temperature values",
+                "MaxValue": 127.0,
+                "MinValue": -128.0,
+                "Name": "StorageBackplane_SMA_0_Temp_0",
+                "PhysicalContext": "Backplane",
+                "Priority": true,
+                "SensorId": 17,
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
             }
         ],
         "Name": "StorageBackplane_SMA_0",

@@ -39,9 +39,6 @@
         },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
-        },
-        "xyz.openbmc_project.Inventory.Item": {
-            "Present": false
         }
     },
     {
@@ -54,9 +51,6 @@
         },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
-        },
-        "xyz.openbmc_project.Inventory.Item": {
-            "Present": false
         }
     },
     {
@@ -69,9 +63,6 @@
         },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
-        },
-        "xyz.openbmc_project.Inventory.Item": {
-            "Present": false
         }
     },
     {
@@ -84,9 +75,6 @@
         },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
-        },
-        "xyz.openbmc_project.Inventory.Item": {
-            "Present": false
         }
     },
     {
@@ -99,9 +87,6 @@
         },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
-        },
-        "xyz.openbmc_project.Inventory.Item": {
-            "Present": false
         }
     },
     {
@@ -114,9 +99,6 @@
         },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
-        },
-        "xyz.openbmc_project.Inventory.Item": {
-            "Present": false
         }
     },
     {
@@ -129,9 +111,6 @@
         },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
-        },
-        "xyz.openbmc_project.Inventory.Item": {
-            "Present": false
         }
     },
     {
@@ -144,9 +123,6 @@
         },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
-        },
-        "xyz.openbmc_project.Inventory.Item": {
-            "Present": false
         }
     },
     {
@@ -159,9 +135,6 @@
         },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
-        },
-        "xyz.openbmc_project.Inventory.Item": {
-            "Present": false
         }
     },
     {
@@ -174,9 +147,6 @@
         },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
-        },
-        "xyz.openbmc_project.Inventory.Item": {
-            "Present": false
         }
     },
     {
@@ -189,9 +159,6 @@
         },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
-        },
-        "xyz.openbmc_project.Inventory.Item": {
-            "Present": false
         }
     },
     {
@@ -204,9 +171,6 @@
         },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
-        },
-        "xyz.openbmc_project.Inventory.Item": {
-            "Present": false
         }
     },
     {
@@ -219,9 +183,6 @@
         },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
-        },
-        "xyz.openbmc_project.Inventory.Item": {
-            "Present": false
         }
     },
     {
@@ -234,9 +195,6 @@
         },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
-        },
-        "xyz.openbmc_project.Inventory.Item": {
-            "Present": false
         }
     },
     {
@@ -249,9 +207,6 @@
         },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
-        },
-        "xyz.openbmc_project.Inventory.Item": {
-            "Present": false
         }
     },
     {
@@ -264,9 +219,6 @@
         },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": "Chassis_0/ProcessorModule_0"
-        },
-        "xyz.openbmc_project.Inventory.Item": {
-            "Present": false
         }
     }
 ]

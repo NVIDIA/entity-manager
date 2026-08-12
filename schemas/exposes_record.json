@@ -439,6 +439,9 @@
                     "$ref": "nvidia_recovery.json#/$defs/GPIORecovery"
                 },
                 {
+                    "$ref": "nvidia_recovery.json#/$defs/GPIOERoTRecovery"
+                },
+                {
                     "$ref": "nvidia_recovery.json#/$defs/GlacierCrisisRecovery"
                 },
                 {

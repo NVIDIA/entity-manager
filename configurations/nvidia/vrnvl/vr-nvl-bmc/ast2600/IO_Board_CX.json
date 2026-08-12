@@ -106,7 +106,7 @@
             "FieldReplaceable": true
         },
         "xyz.openbmc_project.Inventory.Item.Chassis": {
-            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Module"
         },
         "xyz.openbmc_project.State.Decorator.Health": {
             "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
@@ -257,7 +257,7 @@
             "FieldReplaceable": true
         },
         "xyz.openbmc_project.Inventory.Item.Chassis": {
-            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Module"
         },
         "xyz.openbmc_project.State.Decorator.Health": {
             "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
@@ -408,7 +408,7 @@
             "FieldReplaceable": true
         },
         "xyz.openbmc_project.Inventory.Item.Chassis": {
-            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Module"
         },
         "xyz.openbmc_project.State.Decorator.Health": {
             "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
@@ -559,7 +559,7 @@
             "FieldReplaceable": true
         },
         "xyz.openbmc_project.Inventory.Item.Chassis": {
-            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Module"
         },
         "xyz.openbmc_project.State.Decorator.Health": {
             "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"

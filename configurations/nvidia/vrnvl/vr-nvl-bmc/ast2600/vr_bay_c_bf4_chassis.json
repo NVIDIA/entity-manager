@@ -44,7 +44,7 @@
             },
             {
                 "ChassisAttributes": {
-                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Module",
                     "LocationCode": "Bay-C-Middle",
                     "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Bay",
                     "Type": "NSM_Chassis_Attributes"
@@ -72,6 +72,7 @@
                 "Name": "Port",
                 "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0/NetworkAdapters/BlueField_NIC_0",
                 "Priority": false,
+                "SupportFECHistogram": true,
                 "Type": "NSM_NVLinkWithNetworkPortAddresses",
                 "UUID": "$UUID"
             },
@@ -236,7 +237,7 @@
             },
             {
                 "AuxNames": [
-                    "BlueField_0_Core_Rail_Vdd_0_Power_0"
+                    "BlueField_0_Core_Rail_Vdd_Power_0"
                 ],
                 "Name": "BlueField_0_Core_Rail_Vdd_Power_0",
                 "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
@@ -322,6 +323,24 @@
                 "Name": "BlueField_0_Total_Power_0",
                 "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
                 "SensorId": 7984,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "BlueField_NIC_0_Port_0_Voltage_0"
+                ],
+                "Name": "BlueField_NIC_0_Port_0_Voltage_0",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+                "SensorId": 4496,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "BlueField_NIC_0_Port_1_Voltage_0"
+                ],
+                "Name": "BlueField_NIC_0_Port_1_Voltage_0",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
+                "SensorId": 4497,
                 "Type": "SensorAuxName"
             },
             {
