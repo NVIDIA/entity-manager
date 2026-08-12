@@ -16,6 +16,7 @@
 /// \file fru_utils.hpp
 
 #pragma once
+
 #include "fru_reader.hpp"
 
 #include <boost/container/flat_map.hpp>
@@ -24,6 +25,7 @@
 #include <cstdint>
 #include <cstdio>
 #include <functional>
+#include <optional>
 #include <regex>
 #include <string>
 #include <utility>
@@ -155,10 +157,13 @@ bool findFRUHeader(FRUReader& reader, const std::string& errorHelp,
 /// \brief Read and validate FRU contents.
 /// \param reader the FRUReader to read via
 /// \param errorHelp and a helper string for failures
+/// \param storageSize optional size of the backing FRU storage. When supplied,
+/// the returned data includes bytes after the formatted FRU through this size.
 /// \return the FRU contents from the file and bool indicating if the FRU Header
 /// was found
 std::pair<std::vector<uint8_t>, bool> readFRUContents(
-    FRUReader& reader, const std::string& errorHelp);
+    FRUReader& reader, const std::string& errorHelp,
+    std::optional<size_t> storageSize = std::nullopt);
 
 /// \brief Validate an IPMI FRU common header
 /// \param blockData the bytes comprising the common header

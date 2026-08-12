@@ -394,6 +394,23 @@ TEST(FindFRUHeaderTest, TyanValidHeader)
     EXPECT_EQ(0x6000, offset);
 }
 
+TEST(ReadFRUContentsTest, IncludesBackingStorageTail)
+{
+    constexpr std::array<uint8_t, 8> header = {0x01, 0x00, 0x00, 0x00,
+                                               0x00, 0x00, 0x00, 0xff};
+    std::vector<uint8_t> data(32, 0xa5);
+    std::copy(header.begin(), header.end(), data.begin());
+    auto getData = [&data](auto offset, auto length, auto* buffer) {
+        return getDataTempl(data, offset, length, buffer);
+    };
+    FRUReader reader(getData);
+
+    auto result = readFRUContents(reader, "test FRU", data.size());
+
+    EXPECT_TRUE(result.second);
+    EXPECT_EQ(data, result.first);
+}
+
 TEST(formatIPMIFRU, FullDecode)
 {
     const std::array<uint8_t, 176> bmcFru = {
