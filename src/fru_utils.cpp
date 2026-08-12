@@ -27,6 +27,7 @@
 #include <iostream>
 #include <numeric>
 #include <set>
+#include <span>
 #include <sstream>
 #include <string>
 #include <vector>
@@ -928,9 +929,11 @@ std::pair<std::vector<uint8_t>, bool> readFRUContents(
         {
             const size_t readOffset = device.size();
             device.resize(availableSize);
+            const std::span<uint8_t> tail =
+                std::span<uint8_t>(device).subspan(readOffset);
             ssize_t bytesRead =
                 reader.read(baseOffset + static_cast<off_t>(readOffset),
-                            remaining, device.data() + readOffset);
+                            remaining, tail.data());
             if (bytesRead < 0 || static_cast<size_t>(bytesRead) != remaining)
             {
                 lg2::error(
