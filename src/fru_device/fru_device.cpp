@@ -391,8 +391,17 @@ static std::vector<uint8_t> processEeprom(int bus, int address)
         return readFromEeprom(file, offset, length, outbuf);
     };
     FRUReader reader(std::move(readFunc));
+
+    std::optional<size_t> storageSize;
+    std::error_code ec;
+    uintmax_t fileSize = fs::file_size(path, ec);
+    if (!ec && fileSize > 0 && fileSize <= maxFruSize)
+    {
+        storageSize = static_cast<size_t>(fileSize);
+    }
+
     std::pair<std::vector<uint8_t>, bool> pair =
-        readFRUContents(reader, errorMessage);
+        readFRUContents(reader, errorMessage, storageSize);
     if (pair.first.empty())
     {
         if (address == nvme::address) // Check for NVMe drive

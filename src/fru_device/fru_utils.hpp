@@ -2,6 +2,7 @@
 // SPDX-FileCopyrightText: Copyright 2018 Intel Corporation
 
 #pragma once
+
 #include "fru_reader.hpp"
 
 #include <sdbusplus/asio/object_server.hpp>
@@ -10,6 +11,7 @@
 #include <cstdio>
 #include <flat_map>
 #include <functional>
+#include <optional>
 #include <regex>
 #include <string>
 #include <utility>
@@ -148,10 +150,13 @@ std::optional<FruSections> findFRUHeader(
 /// \brief Read and validate FRU contents.
 /// \param reader the FRUReader to read via
 /// \param errorHelp and a helper string for failures
+/// \param storageSize optional size of the backing FRU storage. When supplied,
+/// the returned data includes bytes after the formatted FRU through this size.
 /// \return the FRU contents from the file and bool indicating if the FRU Header
 /// was found
 std::pair<std::vector<uint8_t>, bool> readFRUContents(
-    FRUReader& reader, const std::string& errorHelp);
+    FRUReader& reader, const std::string& errorHelp,
+    std::optional<size_t> storageSize = std::nullopt);
 
 /// \brief Validate an IPMI FRU common header
 /// \param blockData the bytes comprising the common header
