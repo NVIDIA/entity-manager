@@ -75,6 +75,7 @@
                 "DeviceType": "$DEVICE_TYPE",
                 "Name": "Port",
                 "OpticalModuleResetSupported": true,
+                "OpticalModuleTelemetrySupported": true,
                 "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/CX_$INSTANCE_NUMBER/NetworkAdapters/CX_NIC_$INSTANCE_NUMBER",
                 "Priority": false,
                 "SupportFECHistogram": true,
