@@ -1314,6 +1314,9 @@
                 "OpticalModuleResetSupported": {
                     "type": "boolean"
                 },
+                "OpticalModuleTelemetrySupported": {
+                    "type": "boolean"
+                },
                 "ParentObjPath": {
                     "type": "string"
                 },
