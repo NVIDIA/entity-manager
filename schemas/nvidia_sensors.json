@@ -96,6 +96,9 @@
                     "type": "string",
                     "const": "LM5066I"
                 },
+                "iin_Max": {
+                    "type": "number"
+                },
                 "iin_Name": {
                     "type": "string"
                 },
@@ -117,6 +120,12 @@
                 "pin_Scale": {
                     "type": "number"
                 },
+                "temp1_Max": {
+                    "type": "number"
+                },
+                "temp1_Min": {
+                    "type": "number"
+                },
                 "temp1_Name": {
                     "type": "string"
                 },
@@ -126,6 +135,9 @@
                 "temp1_Scale": {
                     "type": "number"
                 },
+                "vin_Max": {
+                    "type": "number"
+                },
                 "vin_Name": {
                     "type": "string"
                 },
@@ -133,6 +145,9 @@
                     "type": "number"
                 },
                 "vin_Scale": {
+                    "type": "number"
+                },
+                "vout1_Max": {
                     "type": "number"
                 },
                 "vout1_Name": {
