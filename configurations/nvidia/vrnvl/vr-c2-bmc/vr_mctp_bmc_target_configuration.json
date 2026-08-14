@@ -92,6 +92,7 @@
             {
                 "Interface": "$Interface",
                 "Name": "MCTPUSB_CPU0",
+                "RecoveryThreshold": "5",
                 "StaticEndpointID": "16",
                 "Type": "MCTPUSBDevice",
                 "USBPath": "1-1-3-1-4-1"
@@ -106,6 +107,7 @@
             {
                 "Interface": "$Interface",
                 "Name": "MCTPUSB_CPU1",
+                "RecoveryThreshold": "5",
                 "StaticEndpointID": "17",
                 "Type": "MCTPUSBDevice",
                 "USBPath": "1-1-3-1-4-2"
