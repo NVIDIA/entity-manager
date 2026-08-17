@@ -242,7 +242,12 @@ bool writeJsonFiles(const nlohmann::json& systemConfiguration)
         return false;
     }
 
-    syncToDisk(configurationOutDir);
+    if (!syncToDisk(configurationOutDir))
+    {
+        std::cerr << "failed to sync directory " << configurationOutDir
+                  << "\n";
+        return false;
+    }
     return true;
 }
 
