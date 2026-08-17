@@ -270,6 +270,11 @@ bool writeJsonFiles(const nlohmann::json& systemConfiguration)
         return false;
     }
 
-    syncToDisk(configurationOutDir);
+    if (!syncToDisk(configurationOutDir))
+    {
+        lg2::error("failed to sync directory {PATH}", "PATH",
+                   configurationOutDir);
+        return false;
+    }
     return true;
 }
