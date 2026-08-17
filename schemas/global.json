@@ -21,6 +21,10 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
+                "Custom_Name": {
+                    "description": "When true, the Name property is used verbatim in the D-Bus object path without member-name sanitization.",
+                    "type": "boolean"
+                },
                 "Exposes": {
                     "description": "The schema for the exposes property. The exposes property must be an array where elements are of type EMExposesElement.  The exposes property is the heterogeneous configuration data exported to DBus upon a probe match.",
                     "type": "array",
@@ -88,6 +92,7 @@
                         "Valve",
                         "bmc_0",
                         "chassis",
+                        "fabrics",
                         "pcie"
                     ]
                 },
@@ -190,6 +195,9 @@
                 "xyz.openbmc_project.Inventory.Item.Drive": {
                     "type": "object"
                 },
+                "xyz.openbmc_project.Inventory.Item.Fabric": {
+                    "type": "object"
+                },
                 "xyz.openbmc_project.Inventory.Item.ManagementService": {
                     "type": "object"
                 },
@@ -213,6 +221,9 @@
                 },
                 "xyz.openbmc_project.Inventory.Item.Valve": {
                     "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/Valve"
+                },
+                "xyz.openbmc_project.Inventory.Item.Zone": {
+                    "type": "object"
                 },
                 "xyz.openbmc_project.MCTP.Endpoint": {
                     "type": "object"

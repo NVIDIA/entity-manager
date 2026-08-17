@@ -1,0 +1,84 @@
+{
+    "Exposes": [
+        {
+            "ConnectsToName": "",
+            "DeviceAddress": "MCTP:9",
+            "DeviceType": "BMC",
+            "Name": "MGX_BMC_0",
+            "PhysicalInterface": "",
+            "RecoveryLayers": "",
+            "ResetGPIO": "",
+            "Type": "PlatformDevice",
+            "poweredInStandby": false
+        },
+        {
+            "ConnectsToName": "MGX_BMC_0",
+            "DeviceAddress": "MCTP:10",
+            "DeviceType": "ROT",
+            "Name": "MGX_ERoT_BMC_0",
+            "PhysicalInterface": "",
+            "RecoveryLayers": "",
+            "ResetGPIO": "",
+            "Type": "PlatformDevice",
+            "poweredInStandby": false
+        },
+        {
+            "ConnectsToName": "MGX_BMC_0",
+            "DeviceAddress": "MCTP:16",
+            "DeviceType": "MCTPEndpoint",
+            "Name": "MGX_ERoT_CPU_0",
+            "PhysicalInterface": "",
+            "RecoveryLayers": "",
+            "ResetGPIO": "",
+            "Type": "PlatformDevice",
+            "poweredInStandby": false
+        },
+        {
+            "ConnectsToName": "MGX_BMC_0",
+            "DeviceAddress": "MCTP:69",
+            "DeviceType": "MCTPBridge",
+            "Name": "MGX_NVSwitch_SMA_0",
+            "PhysicalInterface": "usb1:0x0955:0xcf11:1.1.2",
+            "RecoveryLayers": "",
+            "ResetGPIO": "",
+            "Type": "PlatformDevice",
+            "poweredInStandby": false
+        },
+        {
+            "ConnectsToName": "MGX_BMC_0",
+            "DeviceAddress": "MCTP:70",
+            "DeviceType": "MCTPBridge",
+            "Name": "MGX_NVSwitch_SMA_1",
+            "PhysicalInterface": "usb1:0x0955:0xcf11:1.1.3",
+            "RecoveryLayers": "",
+            "ResetGPIO": "",
+            "Type": "PlatformDevice",
+            "poweredInStandby": false
+        },
+        {
+            "ConnectsToName": "MGX_NVSwitch_SMA_0",
+            "DeviceAddress": "MCTP:69",
+            "DeviceType": "ROT",
+            "Name": "MGX_IRoT_NVSwitch_SMA_0",
+            "PhysicalInterface": "",
+            "RecoveryLayers": "",
+            "ResetGPIO": "",
+            "Type": "PlatformDevice",
+            "poweredInStandby": false
+        },
+        {
+            "ConnectsToName": "MGX_NVSwitch_SMA_1",
+            "DeviceAddress": "MCTP:70",
+            "DeviceType": "ROT",
+            "Name": "MGX_IRoT_NVSwitch_SMA_1",
+            "PhysicalInterface": "",
+            "RecoveryLayers": "",
+            "ResetGPIO": "",
+            "Type": "PlatformDevice",
+            "poweredInStandby": false
+        }
+    ],
+    "Name": "VR BMC Platform Recovery",
+    "Probe": "TRUE",
+    "Type": "PlatformRecoveryConfiguration"
+}

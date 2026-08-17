@@ -1,0 +1,28 @@
+{
+    "Exposes": [
+        {
+            "CriticalReactionType": "None",
+            "LeakDetectorName": "leakage1",
+            "Name": "leakage1_Policy",
+            "ReactionDelaySeconds": 0,
+            "Type": "LeakDetectionPolicy"
+        },
+        {
+            "CriticalReactionType": "None",
+            "LeakDetectorName": "leakage2",
+            "Name": "leakage2_Policy",
+            "ReactionDelaySeconds": 0,
+            "Type": "LeakDetectionPolicy"
+        },
+        {
+            "CriticalReactionType": "None",
+            "LeakDetectorName": "leakage_aggr",
+            "Name": "leakage_aggr_Policy",
+            "ReactionDelaySeconds": 0,
+            "Type": "LeakDetectionPolicy"
+        }
+    ],
+    "Name": "Leak_Policies",
+    "Probe": "TRUE",
+    "Type": "BMC"
+}

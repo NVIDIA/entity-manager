@@ -1,0 +1,148 @@
+[
+    {
+        "Exposes": [
+            {
+                "Bus": "0",
+                "ChipSelect": "2",
+                "Name": "MCTPSPI_10",
+                "StaticEndpointID": "10",
+                "Type": "MCTPSPIDevice"
+            }
+        ],
+        "Name": "MCTP_SPI_DEV",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpspi0_2'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "Bus": "2",
+                "ChipSelect": "0",
+                "Name": "MCTPSPI_16",
+                "StaticEndpointID": "16",
+                "Type": "MCTPSPIDevice"
+            }
+        ],
+        "Name": "MCTP_SPI_DEV",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpspi2_0'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgePoolEndEID": "54",
+                "BridgePoolStartEID": "53",
+                "Interface": "$Interface",
+                "Name": "MGX_NVSwitch_SMA_0",
+                "PollingInterval": "5",
+                "StaticEndpointID": "69",
+                "Type": "MCTPUSBTarget",
+                "USBPath": "1-1-2"
+            }
+        ],
+        "Name": "MCTP_USB_DEV1",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Alias': 'mctpusb1-1.2'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgePoolEndEID": "58",
+                "BridgePoolStartEID": "57",
+                "Interface": "$Interface",
+                "Name": "MGX_NVSwitch_SMA_1",
+                "PollingInterval": "5",
+                "StaticEndpointID": "70",
+                "Type": "MCTPUSBTarget",
+                "USBPath": "1-1-3"
+            }
+        ],
+        "Name": "MCTP_USB_DEV2",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Alias': 'mctpusb1-1.3'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "Address": [
+                    "0x01",
+                    "0x20",
+                    "0xd2",
+                    "0xf8",
+                    "0x15",
+                    "0xB3"
+                ],
+                "Bus": "2",
+                "Name": "NVSwitch_I3C_Device_X1",
+                "StaticEndpointID": "101",
+                "Type": "MCTPI3CTarget"
+            }
+        ],
+        "Name": "MCTP_I3C_DEV",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpi3c2'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "Address": [
+                    "0x01",
+                    "0x20",
+                    "0xd2",
+                    "0xf8",
+                    "0x15",
+                    "0xB3"
+                ],
+                "Bus": "3",
+                "Name": "NVSwitch_I3C_Device_X2",
+                "StaticEndpointID": "102",
+                "Type": "MCTPI3CTarget"
+            }
+        ],
+        "Name": "MCTP_I3C_DEV",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpi3c3'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "Address": [
+                    "0x01",
+                    "0x20",
+                    "0xd2",
+                    "0xf8",
+                    "0x15",
+                    "0xB3"
+                ],
+                "Bus": "4",
+                "Name": "NVSwitch_I3C_Device_X3",
+                "StaticEndpointID": "103",
+                "Type": "MCTPI3CTarget"
+            }
+        ],
+        "Name": "MCTP_I3C_DEV",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpi3c4'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "Address": [
+                    "0x01",
+                    "0x20",
+                    "0xd2",
+                    "0xf8",
+                    "0x15",
+                    "0xB3"
+                ],
+                "Bus": "5",
+                "Name": "NVSwitch_I3C_Device_X4",
+                "StaticEndpointID": "104",
+                "Type": "MCTPI3CTarget"
+            }
+        ],
+        "Name": "MCTP_I3C_DEV",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpi3c5'})",
+        "Type": "MCTPInterface"
+    }
+]

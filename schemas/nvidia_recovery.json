@@ -200,6 +200,10 @@
                 "ResetGpioName": {
                     "type": "string"
                 },
+                "ResetGpioPolarity": {
+                    "description": "Polarity of ResetGpioName. Optional; the MCU recovery tool defaults to ActiveLow when absent.",
+                    "enum": ["ActiveHigh", "ActiveLow"]
+                },
                 "Target": {
                     "type": "string"
                 },

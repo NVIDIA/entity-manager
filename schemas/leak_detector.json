@@ -79,6 +79,49 @@
                 }
             },
             "required": ["Name", "Type"]
+        },
+        "leakage": {
+            "additionalProperties": false,
+            "description": "Configuration for a discrete hwmon based Leak Detector.",
+            "type": "object",
+            "properties": {
+                "Name": {
+                    "description": "The name of the leak detector.",
+                    "type": "string"
+                },
+                "Type": {
+                    "description": "The type of configuration object",
+                    "const": "leakage"
+                },
+                "Bus": {
+                    "description": "The I2C bus the detector device is on.",
+                    "type": "integer"
+                },
+                "Address": {
+                    "description": "The I2C address of the detector device.",
+                    "type": "integer"
+                },
+                "Driver": {
+                    "description": "The hwmon driver backing the detector device.",
+                    "type": "string"
+                },
+                "DetectorType": {
+                    "description": "The type of leak detector.",
+                    "enum": ["FloatSwitch", "Moisture"]
+                },
+                "PollRate": {
+                    "description": "Poll interval in seconds. Defaults to 0.5 when absent.",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Name",
+                "Type",
+                "Bus",
+                "Address",
+                "Driver",
+                "DetectorType"
+            ]
         }
     }
 }
