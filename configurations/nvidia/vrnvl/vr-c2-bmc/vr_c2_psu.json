@@ -1,0 +1,315 @@
+[
+    {
+        "Exposes": [
+            {
+                "Address": "$address",
+                "Bus": "$bus",
+                "Name": "$bus PsuBoard_FRU",
+                "Type": "EEPROM_24C512"
+            },
+            {
+                "Address": "0x58",
+                "Bus": 58,
+                "Labels": [
+                    "pin",
+                    "pout1",
+                    "vin",
+                    "vout1",
+                    "iin",
+                    "iout1",
+                    "temp1",
+                    "temp2",
+                    "temp3",
+                    "fan1"
+                ],
+                "Name": "PSU_0",
+                "Type": "pmbus",
+                "fan1_Name": "PSU_0_Fan_0",
+                "iin_Name": "PSU_0_Current_In_0",
+                "iout1_Name": "PSU_0_Current_Out_0",
+                "pin_Name": "PSU_0_Power_In_0",
+                "pout1_Name": "PSU_0_Power_Out_0",
+                "temp1_Name": "PSU_0_Temp_0",
+                "temp2_Name": "PSU_0_Temp_1",
+                "temp3_Name": "PSU_0_Temp_2",
+                "vin_Name": "PSU_0_Voltage_In_0",
+                "vout1_Name": "PSU_0_Voltage_Out_0"
+            },
+            {
+                "Address": "0x59",
+                "Bus": 58,
+                "Labels": [
+                    "pin",
+                    "pout1",
+                    "vin",
+                    "vout1",
+                    "iin",
+                    "iout1",
+                    "temp1",
+                    "temp2",
+                    "temp3",
+                    "fan1"
+                ],
+                "Name": "PSU_1",
+                "Type": "pmbus",
+                "fan1_Name": "PSU_1_Fan_0",
+                "iin_Name": "PSU_1_Current_In_0",
+                "iout1_Name": "PSU_1_Current_Out_0",
+                "pin_Name": "PSU_1_Power_In_0",
+                "pout1_Name": "PSU_1_Power_Out_0",
+                "temp1_Name": "PSU_1_Temp_0",
+                "temp2_Name": "PSU_1_Temp_1",
+                "temp3_Name": "PSU_1_Temp_2",
+                "vin_Name": "PSU_1_Voltage_In_0",
+                "vout1_Name": "PSU_1_Voltage_Out_0"
+            },
+            {
+                "Address": "0x5a",
+                "Bus": 58,
+                "Labels": [
+                    "pin",
+                    "pout1",
+                    "vin",
+                    "vout1",
+                    "iin",
+                    "iout1",
+                    "temp1",
+                    "temp2",
+                    "temp3",
+                    "fan1"
+                ],
+                "Name": "PSU_2",
+                "Type": "pmbus",
+                "fan1_Name": "PSU_2_Fan_0",
+                "iin_Name": "PSU_2_Current_In_0",
+                "iout1_Name": "PSU_2_Current_Out_0",
+                "pin_Name": "PSU_2_Power_In_0",
+                "pout1_Name": "PSU_2_Power_Out_0",
+                "temp1_Name": "PSU_2_Temp_0",
+                "temp2_Name": "PSU_2_Temp_1",
+                "temp3_Name": "PSU_2_Temp_2",
+                "vin_Name": "PSU_2_Voltage_In_0",
+                "vout1_Name": "PSU_2_Voltage_Out_0"
+            },
+            {
+                "Address": "0x5b",
+                "Bus": 58,
+                "Labels": [
+                    "pin",
+                    "pout1",
+                    "vin",
+                    "vout1",
+                    "iin",
+                    "iout1",
+                    "temp1",
+                    "temp2",
+                    "temp3",
+                    "fan1"
+                ],
+                "Name": "PSU_3",
+                "Type": "pmbus",
+                "fan1_Name": "PSU_3_Fan_0",
+                "iin_Name": "PSU_3_Current_In_0",
+                "iout1_Name": "PSU_3_Current_Out_0",
+                "pin_Name": "PSU_3_Power_In_0",
+                "pout1_Name": "PSU_3_Power_Out_0",
+                "temp1_Name": "PSU_3_Temp_0",
+                "temp2_Name": "PSU_3_Temp_1",
+                "temp3_Name": "PSU_3_Temp_2",
+                "vin_Name": "PSU_3_Voltage_In_0",
+                "vout1_Name": "PSU_3_Voltage_Out_0"
+            }
+        ],
+        "Name": "PsuBoard_0",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 58, 'ADDRESS': 85})",
+        "Type": "Board",
+        "xyz.openbmc_project.Association.Definitions": {
+            "Associations": [
+                [
+                    "assembly",
+                    "parent_chassis",
+                    "/xyz/openbmc_project/inventory/system/assembly/PsuBoard_Board_FRU_Assembly0"
+                ],
+                [
+                    "assembly",
+                    "parent_chassis",
+                    "/xyz/openbmc_project/inventory/system/assembly/PsuBoard_Product_FRU_Assembly1"
+                ]
+            ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SKU": "$BOARD_SKU",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "$address",
+            "Bus": "$bus",
+            "Name": "PsuBoard_FRU"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Module"
+        },
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    },
+    {
+        "Name": "PsuBoard Board FRU Assembly0",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 58, 'ADDRESS': 85})",
+        "Type": "Assembly",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "BuildDate": "$BOARD_MANUFACTURE_DATE",
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Item.Assembly": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    },
+    {
+        "Name": "PsuBoard Product FRU Assembly1",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 58, 'ADDRESS': 85})",
+        "Type": "Assembly",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$PRODUCT_MANUFACTURER",
+            "Model": "$PRODUCT_PRODUCT_NAME",
+            "PartNumber": "$PRODUCT_PART_NUMBER",
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Revision": {
+            "Version": "$PRODUCT_VERSION"
+        },
+        "xyz.openbmc_project.Inventory.Item.Assembly": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Address": "$address",
+                "Bus": "$bus",
+                "Name": "PSU_0 FRU",
+                "Type": "EEPROM"
+            }
+        ],
+        "Name": "PSU_0",
+        "Probe": "xyz.openbmc_project.FruDevice({'PRODUCT_MANUFACTURER': 'DELTA', 'PRODUCT_PRODUCT_NAME': 'DPS-2000AB', 'BUS': 58, 'ADDRESS': 80})",
+        "Type": "PowerSupply",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$PRODUCT_MANUFACTURER",
+            "Model": "$PRODUCT_PRODUCT_NAME",
+            "PartNumber": "$PRODUCT_PART_NUMBER",
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "PSU_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "Chassis_0/PsuBoard_0"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Address": "$address",
+                "Bus": "$bus",
+                "Name": "PSU_1 FRU",
+                "Type": "EEPROM"
+            }
+        ],
+        "Name": "PSU_1",
+        "Probe": "xyz.openbmc_project.FruDevice({'PRODUCT_MANUFACTURER': 'DELTA', 'PRODUCT_PRODUCT_NAME': 'DPS-2000AB', 'BUS': 58, 'ADDRESS': 81})",
+        "Type": "PowerSupply",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$PRODUCT_MANUFACTURER",
+            "Model": "$PRODUCT_PRODUCT_NAME",
+            "PartNumber": "$PRODUCT_PART_NUMBER",
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "PSU_1"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "Chassis_0/PsuBoard_0"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Address": "$address",
+                "Bus": "$bus",
+                "Name": "PSU_2 FRU",
+                "Type": "EEPROM"
+            }
+        ],
+        "Name": "PSU_2",
+        "Probe": "xyz.openbmc_project.FruDevice({'PRODUCT_MANUFACTURER': 'DELTA', 'PRODUCT_PRODUCT_NAME': 'DPS-2000AB', 'BUS': 58, 'ADDRESS': 82})",
+        "Type": "PowerSupply",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$PRODUCT_MANUFACTURER",
+            "Model": "$PRODUCT_PRODUCT_NAME",
+            "PartNumber": "$PRODUCT_PART_NUMBER",
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "PSU_2"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "Chassis_0/PsuBoard_0"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Address": "$address",
+                "Bus": "$bus",
+                "Name": "PSU_3 FRU",
+                "Type": "EEPROM"
+            }
+        ],
+        "Name": "PSU_3",
+        "Probe": "xyz.openbmc_project.FruDevice({'PRODUCT_MANUFACTURER': 'DELTA', 'PRODUCT_PRODUCT_NAME': 'DPS-2000AB', 'BUS': 58, 'ADDRESS': 83})",
+        "Type": "PowerSupply",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$PRODUCT_MANUFACTURER",
+            "Model": "$PRODUCT_PRODUCT_NAME",
+            "PartNumber": "$PRODUCT_PART_NUMBER",
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "PSU_3"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "Chassis_0/PsuBoard_0"
+        }
+    }
+]
