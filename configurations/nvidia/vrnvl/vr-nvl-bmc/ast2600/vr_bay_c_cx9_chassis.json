@@ -54,7 +54,6 @@
                     "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Bay",
                     "Type": "NSM_Chassis_Attributes"
                 },
-                "DeviceResetSupported": true,
                 "Name": "Bay_C_CX_0",
                 "Type": "NSM_NVLinkMgmtNic_Chassis",
                 "UUID": "$UUID"
