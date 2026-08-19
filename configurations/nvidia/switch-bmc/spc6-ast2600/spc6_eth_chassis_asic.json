@@ -1,0 +1,109 @@
+[
+    {
+        "Exposes": [],
+        "Name": "MGX_EthLinkFabric_0",
+        "Probe": "TRUE",
+        "Type": "fabrics",
+        "xyz.openbmc_project.Inventory.Item.Fabric": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Fabric.FabricType.EthLink"
+        }
+    },
+    {
+        "Custom_Name": true,
+        "Exposes": [],
+        "Name": "MGX_EthLinkFabric_0/zones/0",
+        "Probe": "TRUE",
+        "Type": "fabrics",
+        "xyz.openbmc_project.Inventory.Item.Zone": {
+            "RoutingEnabled": true,
+            "Type": "xyz.openbmc_project.Inventory.Item.Zone.ZoneType.Default"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/MGX_EthSwitch_$INSTANCE_NUMBER",
+                        "Backward": "all_switches",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/MGX_EthLinkFabric_0",
+                        "Backward": "all_switches",
+                        "Forward": "fabrics"
+                    }
+                ],
+                "ChassisAttributes": {
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/fabrics/MGX_EthLinkFabric_0/Switches/",
+                "Name": "EthSwitch_$INSTANCE_NUMBER",
+                "Switch": {
+                    "Association": [
+                        "associated_switch_obj",
+                        "associated_switch_obj",
+                        "/xyz/openbmc_project/inventory/system/fabrics/MGX_EthLinkFabric_0/Switches/EthSwitch_$INSTANCE_NUMBER"
+                    ],
+                    "Name": "EthSwitch_$INSTANCE_NUMBER",
+                    "SwitchSupportedProtocols": [
+                        "xyz.openbmc_project.Inventory.Item.Switch.SwitchType.EthLink"
+                    ],
+                    "SwitchType": "xyz.openbmc_project.Inventory.Item.Switch.SwitchType.EthLink"
+                },
+                "Type": "NSM_NVSwitch",
+                "UUID": "$UUID"
+            },
+            {
+                "ChassisAttributes": {
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "PrettyNameForChassis": "EthSwitch_$INSTANCE_NUMBER",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "Name": "MGX_EthSwitch_$INSTANCE_NUMBER",
+                "Type": "NSM_NVSwitch_Chassis",
+                "UUID": "$UUID"
+            },
+            {
+                "ChassisAttributes": {
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "Name": "EthSwitch Board Assembly",
+                    "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.Board",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "ChassisName": "MGX_EthSwitch_$INSTANCE_NUMBER",
+                "Name": "Assembly0",
+                "Type": "NSM_NVSwitch_ChassisAssembly",
+                "UUID": "$UUID"
+            },
+            {
+                "Name": "MGX_EthSwitch_$INSTANCE_NUMBER_Association",
+                "Type": "NsmDeviceAssociation",
+                "UUID": "$UUID"
+            }
+        ],
+        "Name": "MGX_EthSwitch_$INSTANCE_NUMBER",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 1})",
+        "Type": "chassis",
+        "xyz.openbmc_project.Association.Definitions": {
+            "Associations": [
+                [
+                    "fabrics",
+                    "parent_chassis",
+                    "/xyz/openbmc_project/inventory/system/fabrics/MGX_EthLinkFabric_0"
+                ]
+            ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": "$INSTANCE_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Item": {
+            "PrettyName": "EthSwitch_$INSTANCE_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Item.Board": {}
+    }
+]

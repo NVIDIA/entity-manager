@@ -1,0 +1,57 @@
+[
+    {
+        "Exposes": [],
+        "Name": "NSM_DEV_SPC6_0",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 1,
+            "INSTANCE_NUMBER": 0,
+            "UUID": "STATIC:1:0:MCTP_EID:101"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_DEV_SPC6_1",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 1,
+            "INSTANCE_NUMBER": 1,
+            "UUID": "STATIC:1:1:MCTP_EID:102"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_DEV_SPC6_2",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 1,
+            "INSTANCE_NUMBER": 2,
+            "UUID": "STATIC:1:2:MCTP_EID:103"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_DEV_SPC6_3",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 1,
+            "INSTANCE_NUMBER": 3,
+            "UUID": "STATIC:1:3:MCTP_EID:104"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_ERoT_BMC_0",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 4,
+            "INSTANCE_NUMBER": 0,
+            "UUID": "STATIC:4:0:MCTP_EID:10"
+        }
+    }
+]
