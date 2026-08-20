@@ -1,0 +1,29 @@
+{
+    "Exposes": [
+        {
+            "APBootStatusType": "QueryBootStatus",
+            "ChassisName": "IRoT_BMC_0",
+            "MctpEID": 9,
+            "MctpUUID": "379085eb-e05d-4c86-8e00-79254939f582",
+            "Name": "FW_IRoT_BMC_0",
+            "Type": "GlacierCrisisRecovery",
+            "isRecoverable": false
+        },
+        {
+            "APBootStatusType": "QueryBootStatus",
+            "APEID": 16,
+            "APName": "FW_CPU_0",
+            "ChassisName": "ERoT_CPU_0",
+            "I2CAddress": 82,
+            "I2CBus": 32,
+            "MctpEID": 16,
+            "MctpUUID": "f72d6fc0-5675-11ed-9b6a-0242ac120002",
+            "Name": "FW_ERoT_CPU_0",
+            "Type": "GlacierCrisisRecovery",
+            "isRecoverable": false
+        }
+    ],
+    "Name": "Glacier_Crisis_Recovery_Devices",
+    "Probe": "TRUE",
+    "Type": "Recovery_Config"
+}

@@ -1,0 +1,37 @@
+[
+    {
+        "Exposes": [
+            {
+                "Chassis": {
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "DeviceType": "$DEVICE_TYPE",
+                "Name": "IRoT_NVSwitch_$INSTANCE_NUMBER",
+                "SlotCount": 2,
+                "Type": "NSM_Chassis",
+                "UUID": "$UUID"
+            },
+            {
+                "ChassisName": "IRoT_NVSwitch_$INSTANCE_NUMBER",
+                "DebugTokenType": [
+                    "Unified"
+                ],
+                "Name": "DebugToken",
+                "Type": "NSM_DebugToken",
+                "UUID": "$UUID"
+            },
+            {
+                "ComponentType": "AP",
+                "Name": "AP",
+                "Type": "NSM_FW_ComponentType"
+            }
+        ],
+        "Name": "IRoT_NVSwitch_$INSTANCE_NUMBER",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 1})",
+        "Type": "chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": "$INSTANCE_NUMBER"
+        }
+    }
+]

@@ -1,0 +1,70 @@
+{
+    "Exposes": [
+        {
+            "CriticalReactionType": "None",
+            "LeakDetectorName": "leakage1",
+            "Name": "leakage1_Policy",
+            "ReactionDelaySeconds": 0,
+            "Type": "LeakDetectionPolicy"
+        },
+        {
+            "CriticalReactionType": "None",
+            "LeakDetectorName": "leakage2",
+            "Name": "leakage2_Policy",
+            "ReactionDelaySeconds": 0,
+            "Type": "LeakDetectionPolicy"
+        },
+        {
+            "CriticalReactionType": "None",
+            "LeakDetectorName": "leakage3",
+            "Name": "leakage3_Policy",
+            "ReactionDelaySeconds": 0,
+            "Type": "LeakDetectionPolicy"
+        },
+        {
+            "CriticalReactionType": "None",
+            "LeakDetectorName": "leakage4",
+            "Name": "leakage4_Policy",
+            "ReactionDelaySeconds": 0,
+            "Type": "LeakDetectionPolicy"
+        },
+        {
+            "CriticalReactionType": "None",
+            "LeakDetectorName": "leakage5",
+            "Name": "leakage5_Policy",
+            "ReactionDelaySeconds": 0,
+            "Type": "LeakDetectionPolicy"
+        },
+        {
+            "CriticalReactionType": "None",
+            "LeakDetectorName": "leakage6",
+            "Name": "leakage6_Policy",
+            "ReactionDelaySeconds": 0,
+            "Type": "LeakDetectionPolicy"
+        },
+        {
+            "CriticalReactionType": "None",
+            "LeakDetectorName": "leakage7",
+            "Name": "leakage7_Policy",
+            "ReactionDelaySeconds": 0,
+            "Type": "LeakDetectionPolicy"
+        },
+        {
+            "CriticalReactionType": "None",
+            "LeakDetectorName": "leakage8",
+            "Name": "leakage8_Policy",
+            "ReactionDelaySeconds": 0,
+            "Type": "LeakDetectionPolicy"
+        },
+        {
+            "CriticalReactionType": "None",
+            "LeakDetectorName": "leakage_aggr",
+            "Name": "leakage_aggr_Policy",
+            "ReactionDelaySeconds": 0,
+            "Type": "LeakDetectionPolicy"
+        }
+    ],
+    "Name": "Leak_Policies",
+    "Probe": "TRUE",
+    "Type": "BMC"
+}

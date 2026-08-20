@@ -1,0 +1,63 @@
+{
+    "Exposes": [
+        {
+            "CriticalReactionType": "None",
+            "LeakDetectorName": "leakage_mgmt",
+            "Name": "leakage_mgmt_Policy",
+            "ReactionDelaySeconds": 0,
+            "Type": "LeakDetectionPolicy"
+        },
+        {
+            "CriticalReactionType": "None",
+            "LeakDetectorName": "leakage_csm1",
+            "Name": "leakage_csm1_Policy",
+            "ReactionDelaySeconds": 0,
+            "Type": "LeakDetectionPolicy"
+        },
+        {
+            "CriticalReactionType": "None",
+            "LeakDetectorName": "leakage_csm2",
+            "Name": "leakage_csm2_Policy",
+            "ReactionDelaySeconds": 0,
+            "Type": "LeakDetectionPolicy"
+        },
+        {
+            "CriticalReactionType": "None",
+            "LeakDetectorName": "leakage_csm3",
+            "Name": "leakage_csm3_Policy",
+            "ReactionDelaySeconds": 0,
+            "Type": "LeakDetectionPolicy"
+        },
+        {
+            "CriticalReactionType": "None",
+            "LeakDetectorName": "leakage_csm4",
+            "Name": "leakage_csm4_Policy",
+            "ReactionDelaySeconds": 0,
+            "Type": "LeakDetectionPolicy"
+        },
+        {
+            "CriticalReactionType": "None",
+            "LeakDetectorName": "leakage_csm5",
+            "Name": "leakage_csm5_Policy",
+            "ReactionDelaySeconds": 0,
+            "Type": "LeakDetectionPolicy"
+        },
+        {
+            "CriticalReactionType": "None",
+            "LeakDetectorName": "leakage_csm6",
+            "Name": "leakage_csm6_Policy",
+            "ReactionDelaySeconds": 0,
+            "Type": "LeakDetectionPolicy"
+        },
+        {
+            "CriticalReactionType": "None",
+            "LeakDetectorName": "leakage_aggr",
+            "Name": "leakage_aggr_Policy",
+            "ReactionDelaySeconds": 0,
+            "Type": "LeakDetectionPolicy"
+        }
+    ],
+    "Name": "Leak_Policies",
+    "Probe": "TRUE",
+    "Type": "BMC"
+}

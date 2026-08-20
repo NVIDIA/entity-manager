@@ -1,0 +1,156 @@
+[
+    {
+        "Exposes": [],
+        "Name": "NVLinkFabric_0",
+        "Probe": "TRUE",
+        "Type": "fabrics",
+        "xyz.openbmc_project.Association.Definitions": {
+            "Associations": [
+                [
+                    "parent_chassis",
+                    "fabrics",
+                    "/xyz/openbmc_project/inventory/system/chassis/NVSwitch_0"
+                ],
+                [
+                    "parent_chassis",
+                    "fabrics",
+                    "/xyz/openbmc_project/inventory/system/chassis/NVSwitch_1"
+                ],
+                [
+                    "parent_chassis",
+                    "fabrics",
+                    "/xyz/openbmc_project/inventory/system/chassis/NVSwitch_2"
+                ],
+                [
+                    "parent_chassis",
+                    "fabrics",
+                    "/xyz/openbmc_project/inventory/system/chassis/NVSwitch_3"
+                ],
+                [
+                    "all_switches",
+                    "fabrics",
+                    "/xyz/openbmc_project/inventory/system/fabrics/NVLinkFabric_0/Switches/NVSwitch_0"
+                ],
+                [
+                    "all_switches",
+                    "fabrics",
+                    "/xyz/openbmc_project/inventory/system/fabrics/NVLinkFabric_0/Switches/NVSwitch_1"
+                ],
+                [
+                    "all_switches",
+                    "fabrics",
+                    "/xyz/openbmc_project/inventory/system/fabrics/NVLinkFabric_0/Switches/NVSwitch_2"
+                ],
+                [
+                    "all_switches",
+                    "fabrics",
+                    "/xyz/openbmc_project/inventory/system/fabrics/NVLinkFabric_0/Switches/NVSwitch_3"
+                ]
+            ]
+        },
+        "xyz.openbmc_project.Inventory.Item.Fabric": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Fabric.FabricType.NVLink"
+        }
+    },
+    {
+        "Custom_Name": true,
+        "Exposes": [],
+        "Name": "NVLinkFabric_0/zones/0",
+        "Probe": "TRUE",
+        "Type": "fabrics",
+        "xyz.openbmc_project.Inventory.Item.Zone": {
+            "RoutingEnabled": true,
+            "Type": "xyz.openbmc_project.Inventory.Item.Zone.ZoneType.Default"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "ChassisName": "NVSwitch_$INSTANCE_NUMBER",
+                "DebugTokenType": [
+                    "NIC"
+                ],
+                "Name": "DebugToken",
+                "Type": "NSM_DebugToken",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/NVSwitch_$INSTANCE_NUMBER",
+                        "Backward": "all_switches",
+                        "Forward": "parent_chassis"
+                    }
+                ],
+                "ChassisAttributes": {
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/fabrics/NVLinkFabric_0/Switches/",
+                "Name": "NVSwitch_$INSTANCE_NUMBER",
+                "Switch": {
+                    "Association": [
+                        "associated_switch_obj",
+                        "associated_switch_obj",
+                        "/xyz/openbmc_project/inventory/system/fabrics/NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER"
+                    ],
+                    "Name": "NVSwitch_$INSTANCE_NUMBER",
+                    "SwitchSupportedProtocols": [
+                        "xyz.openbmc_project.Inventory.Item.Switch.SwitchType.NVLink"
+                    ],
+                    "SwitchType": "xyz.openbmc_project.Inventory.Item.Switch.SwitchType.NVLink"
+                },
+                "Type": "NSM_NVSwitch",
+                "UUID": "$UUID"
+            },
+            {
+                "ChassisAttributes": {
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "PrettyNameForChassis": "NVSwitch_$INSTANCE_NUMBER",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "Name": "NVSwitch_$INSTANCE_NUMBER",
+                "Type": "NSM_NVSwitch_Chassis",
+                "UUID": "$UUID"
+            },
+            {
+                "ChassisAttributes": {
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "Name": "NVSwitch Board Assembly",
+                    "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.Board",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "ChassisName": "NVSwitch_$INSTANCE_NUMBER",
+                "Name": "Assembly0",
+                "Type": "NSM_NVSwitch_ChassisAssembly",
+                "UUID": "$UUID"
+            },
+            {
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Association",
+                "Type": "NsmDeviceAssociation",
+                "UUID": "$UUID"
+            },
+            {
+                "AuxNames": [
+                    "NVSwitch_$INSTANCE_NUMBER_TEMP_0"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_TEMP_0",
+                "SensorId": 10700,
+                "Type": "SensorAuxName"
+            }
+        ],
+        "Name": "NVSwitch_$INSTANCE_NUMBER",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 1})",
+        "Type": "chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": "$INSTANCE_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Item": {
+            "PrettyName": "NVSwitch_$INSTANCE_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Item.Board": {}
+    }
+]

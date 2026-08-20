@@ -1,0 +1,71 @@
+[
+    {
+        "Exposes": [
+            {
+                "Chassis": {
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "DeviceType": "$DEVICE_TYPE",
+                "Name": "IRoT_NVSwitch_SMA_$INSTANCE_NUMBER",
+                "SlotCount": 2,
+                "Type": "NSM_Chassis",
+                "UUID": "$UUID"
+            },
+            {
+                "ChassisName": "IRoT_NVSwitch_SMA_$INSTANCE_NUMBER",
+                "DebugTokenType": [
+                    "Unified"
+                ],
+                "Name": "DebugToken",
+                "Type": "NSM_DebugToken",
+                "UUID": "$UUID"
+            },
+            {
+                "ComponentType": "EC",
+                "Name": "EC",
+                "Type": "NSM_FW_ComponentType"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/FW_NVSwitch_SMA_$INSTANCE_NUMBER",
+                        "Backward": "ActiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "IRoT_NVSwitch_SMA_$INSTANCE_NUMBER",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 65282,
+                "ComponentIndex": 0,
+                "FirmwareType": "EC",
+                "Name": "Slot1",
+                "SlotType": "Active",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/FW_NVSwitch_SMA_$INSTANCE_NUMBER",
+                        "Backward": "InactiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "IRoT_NVSwitch_SMA_$INSTANCE_NUMBER",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 65282,
+                "ComponentIndex": 0,
+                "FirmwareType": "EC",
+                "Name": "Slot2",
+                "SlotType": "InActive",
+                "Type": "NSM_RoT_Slot"
+            }
+        ],
+        "Name": "IRoT_NVSwitch_SMA_$INSTANCE_NUMBER",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'NVSSMA'})",
+        "Type": "chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": "$INSTANCE_NUMBER"
+        }
+    }
+]
