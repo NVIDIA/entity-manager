@@ -34,6 +34,11 @@
                     "activation",
                     "inventory",
                     "/xyz/openbmc_project/software/UEFI"
+                ],
+                [
+                    "computer_system",
+                    "chassis",
+                    "/xyz/openbmc_project/inventory/system/system/System_0"
                 ]
             ]
         },
