@@ -78,12 +78,12 @@
                 [
                     "inventory",
                     "associated_ROT",
-                    "/xyz/openbmc_project/inventory/system/chassis/BlueField_SMA_$INSTANCE_NUMBER"
+                    "/xyz/openbmc_project/inventory/system/chassis/Bay_C_SMA_$INSTANCE_NUMBER"
                 ],
                 [
                     "inventory_chassis",
                     "associated_chassis",
-                    "/xyz/openbmc_project/inventory/system/chassis/BlueField_SMA_$INSTANCE_NUMBER"
+                    "/xyz/openbmc_project/inventory/system/chassis/Bay_C_SMA_$INSTANCE_NUMBER"
                 ]
             ]
         },
@@ -100,7 +100,7 @@
             "LocationCode": "IRoT_0"
         },
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-            "LocationContext": "Chassis_0/BlueField_SMA_0"
+            "LocationContext": "Chassis_0/Bay_C_SMA_0"
         },
         "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
             "FieldReplaceable": false
