@@ -195,6 +195,7 @@
                 "Address": "0000:00:00.0",
                 "BridgePoolEndEID": "105",
                 "BridgePoolStartEID": "101",
+                "IndeterministicPoolSpace": "true",
                 "Interface": "mctppcie0",
                 "Name": "MCTPPCIe_Device",
                 "StaticEndpointID": "100",

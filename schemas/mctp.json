@@ -279,6 +279,10 @@
                     "description": "Health check interval in seconds. 0 to disable.",
                     "type": "string"
                 },
+                "IndeterministicPoolSpace": {
+                    "description": "Enable the use of an indeterministic pool space for the device. If IndeterministicPoolSpace is set to true, then the device will allocate a random endpoint ID to downstream devices from the dynamic pool.",
+                    "type": "string"
+                },
                 "Type": {
                     "type": "string",
                     "enum": ["MCTPPCIeTarget"]
