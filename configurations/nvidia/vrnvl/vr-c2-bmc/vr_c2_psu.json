@@ -205,18 +205,23 @@
             {
                 "Address": "$address",
                 "Bus": "$bus",
-                "Name": "PSU_0 FRU",
+                "Name": "PSU_0_FRU",
                 "Type": "EEPROM"
             }
         ],
         "Name": "PSU_0",
-        "Probe": "xyz.openbmc_project.FruDevice({'PRODUCT_MANUFACTURER': 'DELTA', 'PRODUCT_PRODUCT_NAME': 'DPS-2000AB', 'BUS': 58, 'ADDRESS': 80})",
+        "Probe": "xyz.openbmc_project.FruDevice({'PRODUCT_MANUFACTURER': 'DELTA', 'PRODUCT_PRODUCT_NAME': 'DPS-2000AB.*', 'BUS': 58, 'ADDRESS': 80})",
         "Type": "PowerSupply",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
             "Manufacturer": "$PRODUCT_MANUFACTURER",
             "Model": "$PRODUCT_PRODUCT_NAME",
             "PartNumber": "$PRODUCT_PART_NUMBER",
             "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "$address",
+            "Bus": "$bus",
+            "Name": "PSU_0_FRU"
         },
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
@@ -233,18 +238,23 @@
             {
                 "Address": "$address",
                 "Bus": "$bus",
-                "Name": "PSU_1 FRU",
+                "Name": "PSU_1_FRU",
                 "Type": "EEPROM"
             }
         ],
         "Name": "PSU_1",
-        "Probe": "xyz.openbmc_project.FruDevice({'PRODUCT_MANUFACTURER': 'DELTA', 'PRODUCT_PRODUCT_NAME': 'DPS-2000AB', 'BUS': 58, 'ADDRESS': 81})",
+        "Probe": "xyz.openbmc_project.FruDevice({'PRODUCT_MANUFACTURER': 'DELTA', 'PRODUCT_PRODUCT_NAME': 'DPS-2000AB.*', 'BUS': 58, 'ADDRESS': 81})",
         "Type": "PowerSupply",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
             "Manufacturer": "$PRODUCT_MANUFACTURER",
             "Model": "$PRODUCT_PRODUCT_NAME",
             "PartNumber": "$PRODUCT_PART_NUMBER",
             "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "$address",
+            "Bus": "$bus",
+            "Name": "PSU_1_FRU"
         },
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
@@ -261,18 +271,23 @@
             {
                 "Address": "$address",
                 "Bus": "$bus",
-                "Name": "PSU_2 FRU",
+                "Name": "PSU_2_FRU",
                 "Type": "EEPROM"
             }
         ],
         "Name": "PSU_2",
-        "Probe": "xyz.openbmc_project.FruDevice({'PRODUCT_MANUFACTURER': 'DELTA', 'PRODUCT_PRODUCT_NAME': 'DPS-2000AB', 'BUS': 58, 'ADDRESS': 82})",
+        "Probe": "xyz.openbmc_project.FruDevice({'PRODUCT_MANUFACTURER': 'DELTA', 'PRODUCT_PRODUCT_NAME': 'DPS-2000AB.*', 'BUS': 58, 'ADDRESS': 82})",
         "Type": "PowerSupply",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
             "Manufacturer": "$PRODUCT_MANUFACTURER",
             "Model": "$PRODUCT_PRODUCT_NAME",
             "PartNumber": "$PRODUCT_PART_NUMBER",
             "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "$address",
+            "Bus": "$bus",
+            "Name": "PSU_2_FRU"
         },
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
@@ -289,18 +304,23 @@
             {
                 "Address": "$address",
                 "Bus": "$bus",
-                "Name": "PSU_3 FRU",
+                "Name": "PSU_3_FRU",
                 "Type": "EEPROM"
             }
         ],
         "Name": "PSU_3",
-        "Probe": "xyz.openbmc_project.FruDevice({'PRODUCT_MANUFACTURER': 'DELTA', 'PRODUCT_PRODUCT_NAME': 'DPS-2000AB', 'BUS': 58, 'ADDRESS': 83})",
+        "Probe": "xyz.openbmc_project.FruDevice({'PRODUCT_MANUFACTURER': 'DELTA', 'PRODUCT_PRODUCT_NAME': 'DPS-2000AB.*', 'BUS': 58, 'ADDRESS': 83})",
         "Type": "PowerSupply",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
             "Manufacturer": "$PRODUCT_MANUFACTURER",
             "Model": "$PRODUCT_PRODUCT_NAME",
             "PartNumber": "$PRODUCT_PART_NUMBER",
             "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "$address",
+            "Bus": "$bus",
+            "Name": "PSU_3_FRU"
         },
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
