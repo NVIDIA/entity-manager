@@ -46,6 +46,7 @@
                     }
                 ],
                 "Description": "Internal SMA temperature values",
+                "IpmiName": "E1S_SMA0_Temp",
                 "MaxValue": 127.0,
                 "MinValue": -128.0,
                 "Name": "StorageBackplane_SMA_0_Temp_0",
