@@ -71,6 +71,11 @@
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
+                    "primary_temperature_sensor",
+                    "chassis",
+                    "/xyz/openbmc_project/sensors/temperature/BlueField_0_Temp_0"
+                ],
+                [
                     "assembly",
                     "parent_chassis",
                     "/xyz/openbmc_project/inventory/system/assembly/BlueField_Board_FRU_Assembly0"
