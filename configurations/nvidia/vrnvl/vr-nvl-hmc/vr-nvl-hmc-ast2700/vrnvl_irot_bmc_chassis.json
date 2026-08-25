@@ -9,12 +9,12 @@
                         "Forward": "inventory"
                     },
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_BMC_0",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/bmc/HGX_BMC_0",
                         "Backward": "associated_chassis",
                         "Forward": "inventory_chassis"
                     },
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_BMC_0",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/bmc/HGX_BMC_0",
                         "Backward": "associated_chassis",
                         "Forward": "parent_chassis"
                     }
@@ -72,7 +72,7 @@
                 ],
                 "ChassisName": "HGX_IRoT_BMC_0",
                 "ComponentClassification": 10,
-                "ComponentIdentifier": 65280,
+                "ComponentIdentifier": 11,
                 "ComponentIndex": 0,
                 "FirmwareType": "EC",
                 "Name": "Slot1",
@@ -89,7 +89,7 @@
                 ],
                 "ChassisName": "HGX_IRoT_BMC_0",
                 "ComponentClassification": 10,
-                "ComponentIdentifier": 65280,
+                "ComponentIdentifier": 11,
                 "ComponentIndex": 0,
                 "FirmwareType": "EC",
                 "Name": "Slot2",
@@ -105,8 +105,8 @@
                     }
                 ],
                 "ChassisName": "HGX_BMC_0",
-                "ComponentClassification": 10,
-                "ComponentIdentifier": 16,
+                "ComponentClassification": 13,
+                "ComponentIdentifier": 10,
                 "ComponentIndex": 0,
                 "FirmwareType": "AP",
                 "Name": "Slot3",
@@ -122,8 +122,8 @@
                     }
                 ],
                 "ChassisName": "HGX_BMC_0",
-                "ComponentClassification": 10,
-                "ComponentIdentifier": 16,
+                "ComponentClassification": 13,
+                "ComponentIdentifier": 10,
                 "ComponentIndex": 0,
                 "FirmwareType": "AP",
                 "Name": "Slot4",

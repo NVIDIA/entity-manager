@@ -6,6 +6,26 @@
                 "Bus": "$bus",
                 "Name": "ProcMod_0",
                 "Type": "EEPROM_24C64"
+            },
+            {
+                "FlashProtectedComponents": [
+                    "HGX_FW_GPU_0",
+                    "HGX_FW_GPU_1",
+                    "HGX_SBIOS_FMC_0",
+                    "HGX_SBIOS_FW_0"
+                ],
+                "Name": "HPM_0_WriteProtect",
+                "Sources": [
+                    "BRD0_Global_WriteProtect"
+                ],
+                "Type": "HardwareWriteProtectedControl"
+            },
+            {
+                "ActiveLow": false,
+                "LineName": "BRD0_GLOBAL_WP-I",
+                "Name": "BRD0_Global_WriteProtect",
+                "PollInterval": 5000,
+                "Type": "WriteProtectInput"
             }
         ],
         "Name": "HGX ProcessorModule 0",
@@ -149,6 +169,26 @@
                 "Bus": "$bus",
                 "Name": "ProcMod_1",
                 "Type": "EEPROM_24C64"
+            },
+            {
+                "FlashProtectedComponents": [
+                    "HGX_FW_GPU_2",
+                    "HGX_FW_GPU_3",
+                    "HGX_SBIOS_FMC_1",
+                    "HGX_SBIOS_FW_1"
+                ],
+                "Name": "HPM_1_WriteProtect",
+                "Sources": [
+                    "BRD1_Global_WriteProtect"
+                ],
+                "Type": "HardwareWriteProtectedControl"
+            },
+            {
+                "ActiveLow": false,
+                "LineName": "BRD1_GLOBAL_WP-I",
+                "Name": "BRD1_Global_WriteProtect",
+                "PollInterval": 5000,
+                "Type": "WriteProtectInput"
             }
         ],
         "Name": "HGX ProcessorModule 1",

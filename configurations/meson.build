@@ -561,6 +561,7 @@ configs = [
     'nvidia/vrnvl/vr-nvl-hmc/vr-nvl-hmc-ast2700/vrnvl_hpm_sma_recovery_configuration.json',
     'nvidia/vrnvl/vr-nvl-hmc/vr-nvl-hmc-ast2700/vrnvl_irot_bmc_chassis.json',
     'nvidia/vrnvl/vr-nvl-hmc/vr-nvl-hmc-ast2700/vrnvl_mctp_hmc_target_configuration.json',
+    'nvidia/vrnvl/vr-nvl-hmc/vr-nvl-hmc-ast2700/vrnvl_platform.json',
     'nvidia/vrnvl/vr-nvl-hmc/vr-nvl-hmc-ast2700/vrnvl_static_inventory.json',
     'nvidia/vrnvl/vr-nvl-hmc/vr-nvl-hmc-ast2700/vrnvl_usbrcm_recovery_configuration.json',
     'nvidia/vrnvl/vr-quark-bmc/CBC_FRU.json',
