@@ -11,7 +11,8 @@
             "Target": "GPU",
             "Type": "MCURecovery",
             "USBPort": "1-1.1.1",
-            "VendorId": "0x0955"
+            "VendorId": "0x0955",
+            "hasChassisPowerSource": false
         },
         {
             "ForceRecoveryChassisObject": "HGX_GPU_SMA_1",
@@ -24,7 +25,8 @@
             "Target": "GPU",
             "Type": "MCURecovery",
             "USBPort": "1-1.2.1",
-            "VendorId": "0x0955"
+            "VendorId": "0x0955",
+            "hasChassisPowerSource": false
         }
     ],
     "Name": "GPU_SMA_Recovery_Devices",

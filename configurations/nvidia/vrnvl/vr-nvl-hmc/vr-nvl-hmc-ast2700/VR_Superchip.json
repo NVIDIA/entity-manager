@@ -141,8 +141,15 @@
     {
         "Name": "HGX_CPU_0",
         "Parent_Chassis": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_0",
-        "Probe": "FOUND('HGX ProcessorModule 0')",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?'})",
         "Type": "Component",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "NVIDIA",
+            "PartNumber": "$BOARD_PART_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.AssetTag": {
+            "AssetTag": "$PRODUCT_ASSET_TAG"
+        },
         "xyz.openbmc_project.Inventory.Decorator.Instance": {
             "InstanceNumber": 0
         },
@@ -304,8 +311,15 @@
     {
         "Name": "HGX_CPU_1",
         "Parent_Chassis": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_1",
-        "Probe": "FOUND('HGX ProcessorModule 1')",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 8, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?'})",
         "Type": "Component",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "NVIDIA",
+            "PartNumber": "$BOARD_PART_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.AssetTag": {
+            "AssetTag": "$PRODUCT_ASSET_TAG"
+        },
         "xyz.openbmc_project.Inventory.Decorator.Instance": {
             "InstanceNumber": 1
         },

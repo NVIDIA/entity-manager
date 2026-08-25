@@ -11,7 +11,8 @@
             "RecoveryI2CAddress": "0x10",
             "ResetGpioName": "BRD0_MCU_RESET_L-O",
             "Target": "HPM",
-            "Type": "MCURecovery"
+            "Type": "MCURecovery",
+            "hasChassisPowerSource": false
         },
         {
             "ForceRecoveryChassisObject": "HGX_ProcessorModule_SMA_1",
@@ -24,7 +25,8 @@
             "RecoveryI2CAddress": "0x10",
             "ResetGpioName": "BRD1_MCU_RESET_L-O",
             "Target": "HPM",
-            "Type": "MCURecovery"
+            "Type": "MCURecovery",
+            "hasChassisPowerSource": false
         }
     ],
     "Name": "HPM_SMA_Recovery_Devices",

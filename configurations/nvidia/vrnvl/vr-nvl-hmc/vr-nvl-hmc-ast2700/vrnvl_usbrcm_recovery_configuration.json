@@ -12,7 +12,8 @@
             "MctpEID": 14,
             "Name": "HGX_FW_CPU_0",
             "Type": "USBRCMRecovery",
-            "USBPort": "1-1.1.2"
+            "USBPort": "1-1.1.2",
+            "hasChassisPowerSource": true
         },
         {
             "FMCComponentName": "HGX_SBIOS_FMC_1",
@@ -20,7 +21,8 @@
             "MctpEID": 24,
             "Name": "HGX_FW_CPU_1",
             "Type": "USBRCMRecovery",
-            "USBPort": "1-1.2.2"
+            "USBPort": "1-1.2.2",
+            "hasChassisPowerSource": true
         }
     ],
     "Name": "USBRCM_Recovery_Devices",
