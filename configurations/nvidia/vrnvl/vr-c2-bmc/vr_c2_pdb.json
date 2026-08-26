@@ -10,6 +10,8 @@
             {
                 "Address": "0x4C",
                 "Bus": 59,
+                "IpmiName": "PDB_Amb_Temp_0",
+                "IpmiName1": "PDB_Amb_Temp_1",
                 "Labels": [
                     "temp1",
                     "temp2"

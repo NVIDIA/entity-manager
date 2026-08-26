@@ -316,6 +316,16 @@
             "Type": "MCTPUSBDevice"
         },
         {
+            "Configuration": 1,
+            "IgnoreMessageTypes": "1,2,3,4,6,126,127",
+            "InterfaceNum": 0,
+            "Name": "HMC_MCTP_BRIDGE",
+            "Port": "1.3.2",
+            "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+            "StaticEndpointID": "8",
+            "Type": "MCTPUSBDevice"
+        },
+        {
             "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_Bay_C_SMA_0",
             "MCTPTargetName": "Bay_C_SMA_0",
             "Manufacturer": "NVIDIA",
@@ -460,7 +470,7 @@
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/CX_0"
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_0/NetworkAdapters/NIC_0"
                     ],
                     "AssociationForward": [
                         "inventory"
@@ -506,7 +516,7 @@
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/CX_1"
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_1/NetworkAdapters/NIC_0"
                     ],
                     "AssociationForward": [
                         "inventory"
@@ -572,7 +582,7 @@
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/CX_2"
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_2/NetworkAdapters/NIC_0"
                     ],
                     "AssociationForward": [
                         "inventory"
@@ -618,7 +628,7 @@
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/CX_3"
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_3/NetworkAdapters/NIC_0"
                     ],
                     "AssociationForward": [
                         "inventory"
@@ -684,7 +694,7 @@
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/CX_4"
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_4/NetworkAdapters/NIC_0"
                     ],
                     "AssociationForward": [
                         "inventory"
@@ -730,7 +740,7 @@
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/CX_5"
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_5/NetworkAdapters/NIC_0"
                     ],
                     "AssociationForward": [
                         "inventory"
@@ -796,7 +806,7 @@
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/CX_6"
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_6/NetworkAdapters/NIC_0"
                     ],
                     "AssociationForward": [
                         "inventory"
@@ -842,7 +852,7 @@
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/CX_7"
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_7/NetworkAdapters/NIC_0"
                     ],
                     "AssociationForward": [
                         "inventory"

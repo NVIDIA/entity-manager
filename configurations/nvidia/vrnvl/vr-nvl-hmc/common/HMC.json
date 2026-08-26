@@ -13,6 +13,11 @@
                     "all_managers",
                     "chassis",
                     "/xyz/openbmc_project/inventory/system/bmc/HGX_BMC_0"
+                ],
+                [
+                    "computer_system",
+                    "chassis",
+                    "/xyz/openbmc_project/inventory/system/system/HGX_Baseboard_0"
                 ]
             ]
         },

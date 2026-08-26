@@ -472,6 +472,9 @@
                     "$ref": "nvidia_nsm.json#/$defs/NsmDeviceAssociation"
                 },
                 {
+                    "$ref": "nvidia_nsm.json#/$defs/MctpEndpointAssociation"
+                },
+                {
                     "$ref": "nvidia_nsm.json#/$defs/NSM_MultiPortPCIeSwitchDevice"
                 },
                 {

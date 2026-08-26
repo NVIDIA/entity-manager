@@ -2,6 +2,11 @@
     {
         "Exposes": [
             {
+                "EID": "$EID",
+                "Name": "BlueField_0_Association",
+                "Type": "MctpEndpointAssociation"
+            },
+            {
                 "Associations": [
                     {
                         "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0",
@@ -109,7 +114,29 @@
                     -1,
                     -1,
                     1,
-                    5
+                    5,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    1
                 ],
                 "InventoryObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0/NetworkAdapters/",
                 "Name": "BlueField_NIC_0",
@@ -148,11 +175,6 @@
                 "Type": "NSM_PCIeRetimer_MultiPCIeLink",
                 "UUID": "$UUID",
                 "UpstreamPortName": "UP"
-            },
-            {
-                "Name": "BlueField_0_Association",
-                "Type": "NsmDeviceAssociation",
-                "UUID": "$UUID"
             },
             {
                 "AuxNames": [

@@ -2,6 +2,11 @@
     {
         "Exposes": [
             {
+                "EID": "$EID",
+                "Name": "CX_$INSTANCE_NUMBER_Association",
+                "Type": "MctpEndpointAssociation"
+            },
+            {
                 "Associations": [
                     {
                         "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_$INSTANCE_NUMBER",
@@ -70,6 +75,7 @@
                 "DeviceType": "$DEVICE_TYPE",
                 "Name": "Port",
                 "OpticalModuleResetSupported": true,
+                "OpticalModuleTelemetrySupported": true,
                 "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/CX_$INSTANCE_NUMBER/NetworkAdapters/CX_NIC_$INSTANCE_NUMBER",
                 "Priority": false,
                 "SupportFECHistogram": true,
@@ -124,7 +130,9 @@
                     -1,
                     -1,
                     -1,
-                    2
+                    2,
+                    -1,
+                    1
                 ],
                 "InventoryObjPath": "/xyz/openbmc_project/inventory/system/chassis/CX_$INSTANCE_NUMBER/NetworkAdapters/",
                 "Name": "CX_NIC_$INSTANCE_NUMBER",
@@ -163,11 +171,6 @@
                 "Type": "NSM_PCIeRetimer_MultiPCIeLink",
                 "UUID": "$UUID",
                 "UpstreamPortName": "UP"
-            },
-            {
-                "Name": "CX_$INSTANCE_NUMBER_Association",
-                "Type": "NsmDeviceAssociation",
-                "UUID": "$UUID"
             },
             {
                 "AuxNames": [

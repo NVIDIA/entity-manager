@@ -67,7 +67,7 @@
         ],
         "Name": "IRoT_IO_Board_SMA_$INSTANCE_NUMBER",
         "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'CXSMA'})",
-        "Type": "Chassis",
+        "Type": "chassis",
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
@@ -91,13 +91,8 @@
             "UUID": ""
         },
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
-            "BuildDate": "",
             "Manufacturer": "NVIDIA",
-            "Model": "",
-            "PartNumber": "",
-            "SerialNumber": "",
-            "SparePartNumber": "",
-            "SubModel": ""
+            "SerialNumber": ""
         },
         "xyz.openbmc_project.Inventory.Decorator.Instance": {
             "InstanceNumber": "$INSTANCE_NUMBER"
@@ -113,9 +108,6 @@
         },
         "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
             "FieldReplaceable": false
-        },
-        "xyz.openbmc_project.Inventory.Item.Chassis": {
-            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
         },
         "xyz.openbmc_project.Inventory.Item.SPDMResponder": {}
     }

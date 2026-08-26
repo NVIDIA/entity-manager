@@ -10,6 +10,7 @@
             {
                 "Address": "0x48",
                 "Bus": 10,
+                "IpmiName": "BMC0_Temp_0",
                 "Name": "BMC_0_DCSCM_Temp_0",
                 "Thresholds": [
                     {

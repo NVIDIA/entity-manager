@@ -3,6 +3,7 @@
         "Exposes": [
             {
                 "Index": 0,
+                "IpmiName": "RTC_Battery_Volt",
                 "Name": "RTC_Battery_Voltage_0",
                 "PollRate": 3600,
                 "ScaleFactor": 1,

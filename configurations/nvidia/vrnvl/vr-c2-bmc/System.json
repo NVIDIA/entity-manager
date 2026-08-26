@@ -16,7 +16,7 @@
             "ChassisSerial": "$CHASSIS_SERIAL_NUMBER",
             "ChassisType": "$CHASSIS_TYPE",
             "Manufacturer": "NVIDIA",
-            "Model": "Vera MGX C2",
+            "Model": "Vera MGX",
             "PartNumber": "$PRODUCT_PART_NUMBER",
             "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
         },

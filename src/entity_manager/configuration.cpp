@@ -2,7 +2,11 @@
 
 #include "perform_probe.hpp"
 #include "probe_type.hpp"
+#include "shutdown_monitor.hpp"
 #include "utils.hpp"
+
+#include <fcntl.h>
+#include <unistd.h>
 
 #include <nlohmann/json.hpp>
 #include <phosphor-logging/lg2.hpp>
@@ -197,9 +201,28 @@ void Configuration::filterProbeInterfaces()
     }
 }
 
+// fsync the file, or the directory entry when given a directory, so the
+// contents survive a power loss rather than only a process crash.
+static bool syncToDisk(const std::filesystem::path& path)
+{
+    int fd = ::open(path.c_str(), O_RDONLY | O_CLOEXEC);
+    if (fd < 0)
+    {
+        return false;
+    }
+    bool synced = ::fsync(fd) == 0;
+    ::close(fd);
+    return synced;
+}
+
 bool writeJsonFiles(const nlohmann::json& systemConfiguration)
 {
     if (!EM_CACHE_CONFIGURATION)
+    {
+        return true;
+    }
+
+    if (shutdown_monitor::inProgress())
     {
         return true;
     }
@@ -214,12 +237,51 @@ bool writeJsonFiles(const nlohmann::json& systemConfiguration)
     lg2::debug("writing system configuration to {PATH}", "PATH",
                currentConfiguration);
 
-    std::ofstream output(currentConfiguration);
-    if (!output.good())
+    // Persist by writing a temporary file and renaming it over the real one.
+    // rename(2) within a directory is atomic, so a reader sees either the whole
+    // previous file or the whole new one. Truncating the live file instead left
+    // it half written whenever the process died mid-write, and the resulting
+    // syntax error cost us every runtime configuration value it held.
+    std::filesystem::path tmpPath(currentConfiguration);
+    tmpPath += ".tmp";
+
     {
+        std::ofstream output(tmpPath, std::ios::trunc);
+        if (!output.good())
+        {
+            return false;
+        }
+        output << systemConfiguration.dump(4);
+        output.close();
+        if (!output.good())
+        {
+            lg2::error("failed to write {PATH}", "PATH", tmpPath);
+            std::filesystem::remove(tmpPath, ec);
+            return false;
+        }
+    }
+
+    if (!syncToDisk(tmpPath))
+    {
+        lg2::error("failed to sync {PATH}", "PATH", tmpPath);
+        std::filesystem::remove(tmpPath, ec);
         return false;
     }
-    output << systemConfiguration.dump(4);
-    output.close();
+
+    std::filesystem::rename(tmpPath, currentConfiguration, ec);
+    if (ec)
+    {
+        lg2::error("failed to rename {FROM} to {TO}: {ERR}", "FROM", tmpPath,
+                   "TO", currentConfiguration, "ERR", ec.message());
+        std::filesystem::remove(tmpPath, ec);
+        return false;
+    }
+
+    if (!syncToDisk(configurationOutDir))
+    {
+        lg2::error("failed to sync directory {PATH}", "PATH",
+                   configurationOutDir);
+        return false;
+    }
     return true;
 }

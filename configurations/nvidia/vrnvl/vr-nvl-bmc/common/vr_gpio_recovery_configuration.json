@@ -15,6 +15,20 @@
             "Target": "enable-hmc-recovery.service",
             "Type": "GPIOERoTRecovery",
             "hasChassisPowerSource": false
+        },
+        {
+            "APName": "FW_BF4_BMC_0",
+            "GPIO": "BF4_S_BMC_EROT_FATAL_ERROR_L-I",
+            "HiddenByFPGA": false,
+            "I2CAddress": 83,
+            "I2CBus": 77,
+            "MctpEID": 59,
+            "MonitorMode": "Polling",
+            "Name": "FW_BF4_ERoT_BMC_0",
+            "Polarity": "ActiveLow",
+            "PollingIntervalMs": 1000,
+            "Type": "GPIOERoTRecovery",
+            "hasChassisPowerSource": false
         }
     ],
     "Name": "GPIO_ERoT_Recovery_Devices",

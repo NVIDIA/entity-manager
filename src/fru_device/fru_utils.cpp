@@ -17,6 +17,7 @@
 #include <iomanip>
 #include <numeric>
 #include <set>
+#include <span>
 #include <sstream>
 #include <string>
 #include <vector>
@@ -832,7 +833,8 @@ std::optional<FruSections> findFRUHeader(
 }
 
 std::pair<std::vector<uint8_t>, bool> readFRUContents(
-    FRUReader& reader, const std::string& errorHelp)
+    FRUReader& reader, const std::string& errorHelp,
+    std::optional<size_t> storageSize)
 {
     std::array<uint8_t, I2C_SMBUS_BLOCK_MAX> blockData{};
     std::optional<FruSections> sections = findFRUHeader(reader, errorHelp, 0);
@@ -970,6 +972,47 @@ std::pair<std::vector<uint8_t>, bool> readFRUContents(
             // system to use it
             std::string mac = std::format("MAC: {}", macAddress);
             updateAddProperty(mac, "BOARD_INFO_AM2", device);
+        }
+    }
+
+    if (storageSize.has_value())
+    {
+        const size_t base = static_cast<size_t>(baseOffset);
+        if (*storageSize < base)
+        {
+            lg2::error(
+                "FRU storage size {SIZE} is smaller than base offset {OFFSET}",
+                "SIZE", *storageSize, "OFFSET", base);
+            return {{}, true};
+        }
+
+        const size_t availableSize = *storageSize - base;
+        if (availableSize < device.size())
+        {
+            lg2::error(
+                "FRU data size {FRU_SIZE} exceeds storage size {STORAGE_SIZE}",
+                "FRU_SIZE", device.size(), "STORAGE_SIZE", availableSize);
+            return {{}, true};
+        }
+
+        const size_t remaining = availableSize - device.size();
+        if (remaining != 0)
+        {
+            const size_t readOffset = device.size();
+            device.resize(availableSize);
+            const std::span<uint8_t> tail =
+                std::span<uint8_t>(device).subspan(readOffset);
+            ssize_t bytesRead =
+                reader.read(baseOffset + static_cast<off_t>(readOffset),
+                            remaining, tail.data());
+            if (bytesRead < 0 || static_cast<size_t>(bytesRead) != remaining)
+            {
+                lg2::error(
+                    "failed to read complete FRU storage for {ERR}: expected {EXPECTED}, got {ACTUAL}",
+                    "ERR", errorHelp, "EXPECTED", remaining, "ACTUAL",
+                    bytesRead);
+                return {{}, true};
+            }
         }
     }
 

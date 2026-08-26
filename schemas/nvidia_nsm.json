@@ -1073,6 +1073,11 @@
                 "Implementation": {
                     "type": "string"
                 },
+                "IpmiName": {
+                    "description": "Short sensor name reported over IPMI by phosphor-host-ipmi.",
+                    "maxLength": 16,
+                    "type": "string"
+                },
                 "MaxAllowableOperatingValue": {
                     "type": "number"
                 },
@@ -1164,6 +1169,33 @@
                 }
             },
             "required": ["Name", "Type"]
+        },
+        "MctpEndpointAssociation": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EID": {
+                    "oneOf": [
+                        {
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 255
+                        },
+                        {
+                            "type": "string",
+                            "const": "$EID"
+                        }
+                    ]
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "MctpEndpointAssociation"
+                }
+            },
+            "required": ["EID", "Name", "Type"]
         },
         "NSM_MultiPortPCIeSwitchDevice": {
             "type": "object",
@@ -1280,6 +1312,9 @@
                     "type": "string"
                 },
                 "OpticalModuleResetSupported": {
+                    "type": "boolean"
+                },
+                "OpticalModuleTelemetrySupported": {
                     "type": "boolean"
                 },
                 "ParentObjPath": {

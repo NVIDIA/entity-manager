@@ -2,7 +2,12 @@
     {
         "Exposes": [],
         "Name": "HMC_BRIDGE_EROT_0",
-        "Probe": "xyz.openbmc_project.MCTP.Endpoint({'EID': 9})",
+        "Probe": [
+            "xyz.openbmc_project.State.FeatureReady({'FeatureType': 'xyz.openbmc_project.State.FeatureReady.FeatureTypes.MC', 'State': 'xyz.openbmc_project.State.FeatureReady.States.Enabled'})",
+            "AND",
+            "xyz.openbmc_project.MCTP.Endpoint({'EID': 9})",
+            "MATCH_ONE"
+        ],
         "Type": "Chassis",
         "xyz.openbmc_project.Common.UUID": {
             "UUID": "$UUID"
@@ -24,7 +29,12 @@
     {
         "Exposes": [],
         "Name": "HMC_BRIDGE_GPU_SMA_0",
-        "Probe": "xyz.openbmc_project.MCTP.Endpoint({'EID': 10})",
+        "Probe": [
+            "xyz.openbmc_project.State.FeatureReady({'FeatureType': 'xyz.openbmc_project.State.FeatureReady.FeatureTypes.MC', 'State': 'xyz.openbmc_project.State.FeatureReady.States.Enabled'})",
+            "AND",
+            "xyz.openbmc_project.MCTP.Endpoint({'EID': 10})",
+            "MATCH_ONE"
+        ],
         "Type": "Chassis",
         "xyz.openbmc_project.Common.UUID": {
             "UUID": "$UUID"
@@ -46,7 +56,12 @@
     {
         "Exposes": [],
         "Name": "HMC_BRIDGE_IRoT_GPU_0",
-        "Probe": "xyz.openbmc_project.MCTP.Endpoint({'EID': 11})",
+        "Probe": [
+            "xyz.openbmc_project.State.FeatureReady({'FeatureType': 'xyz.openbmc_project.State.FeatureReady.FeatureTypes.MC', 'State': 'xyz.openbmc_project.State.FeatureReady.States.Enabled'})",
+            "AND",
+            "xyz.openbmc_project.MCTP.Endpoint({'EID': 11})",
+            "MATCH_ONE"
+        ],
         "Type": "Chassis",
         "xyz.openbmc_project.Common.UUID": {
             "UUID": "$UUID"
@@ -68,7 +83,12 @@
     {
         "Exposes": [],
         "Name": "HMC_BRIDGE_IRoT_GPU_1",
-        "Probe": "xyz.openbmc_project.MCTP.Endpoint({'EID': 12})",
+        "Probe": [
+            "xyz.openbmc_project.State.FeatureReady({'FeatureType': 'xyz.openbmc_project.State.FeatureReady.FeatureTypes.MC', 'State': 'xyz.openbmc_project.State.FeatureReady.States.Enabled'})",
+            "AND",
+            "xyz.openbmc_project.MCTP.Endpoint({'EID': 12})",
+            "MATCH_ONE"
+        ],
         "Type": "Chassis",
         "xyz.openbmc_project.Common.UUID": {
             "UUID": "$UUID"
@@ -90,7 +110,12 @@
     {
         "Exposes": [],
         "Name": "HMC_BRIDGE_GPU_SMA_1",
-        "Probe": "xyz.openbmc_project.MCTP.Endpoint({'EID': 20})",
+        "Probe": [
+            "xyz.openbmc_project.State.FeatureReady({'FeatureType': 'xyz.openbmc_project.State.FeatureReady.FeatureTypes.MC', 'State': 'xyz.openbmc_project.State.FeatureReady.States.Enabled'})",
+            "AND",
+            "xyz.openbmc_project.MCTP.Endpoint({'EID': 20})",
+            "MATCH_ONE"
+        ],
         "Type": "Chassis",
         "xyz.openbmc_project.Common.UUID": {
             "UUID": "$UUID"
@@ -112,7 +137,12 @@
     {
         "Exposes": [],
         "Name": "HMC_BRIDGE_IRoT_GPU_2",
-        "Probe": "xyz.openbmc_project.MCTP.Endpoint({'EID': 21})",
+        "Probe": [
+            "xyz.openbmc_project.State.FeatureReady({'FeatureType': 'xyz.openbmc_project.State.FeatureReady.FeatureTypes.MC', 'State': 'xyz.openbmc_project.State.FeatureReady.States.Enabled'})",
+            "AND",
+            "xyz.openbmc_project.MCTP.Endpoint({'EID': 21})",
+            "MATCH_ONE"
+        ],
         "Type": "Chassis",
         "xyz.openbmc_project.Common.UUID": {
             "UUID": "$UUID"
@@ -134,7 +164,12 @@
     {
         "Exposes": [],
         "Name": "HMC_BRIDGE_IRoT_GPU_3",
-        "Probe": "xyz.openbmc_project.MCTP.Endpoint({'EID': 22})",
+        "Probe": [
+            "xyz.openbmc_project.State.FeatureReady({'FeatureType': 'xyz.openbmc_project.State.FeatureReady.FeatureTypes.MC', 'State': 'xyz.openbmc_project.State.FeatureReady.States.Enabled'})",
+            "AND",
+            "xyz.openbmc_project.MCTP.Endpoint({'EID': 22})",
+            "MATCH_ONE"
+        ],
         "Type": "Chassis",
         "xyz.openbmc_project.Common.UUID": {
             "UUID": "$UUID"
@@ -156,7 +191,12 @@
     {
         "Exposes": [],
         "Name": "HMC_BRIDGE_CPU_0",
-        "Probe": "xyz.openbmc_project.MCTP.Endpoint({'EID': 14})",
+        "Probe": [
+            "xyz.openbmc_project.State.FeatureReady({'FeatureType': 'xyz.openbmc_project.State.FeatureReady.FeatureTypes.MC', 'State': 'xyz.openbmc_project.State.FeatureReady.States.Enabled'})",
+            "AND",
+            "xyz.openbmc_project.MCTP.Endpoint({'EID': 14})",
+            "MATCH_ONE"
+        ],
         "Type": "Chassis",
         "xyz.openbmc_project.Common.UUID": {
             "UUID": "$UUID"
@@ -178,7 +218,12 @@
     {
         "Exposes": [],
         "Name": "HMC_BRIDGE_CPU_1",
-        "Probe": "xyz.openbmc_project.MCTP.Endpoint({'EID': 24})",
+        "Probe": [
+            "xyz.openbmc_project.State.FeatureReady({'FeatureType': 'xyz.openbmc_project.State.FeatureReady.FeatureTypes.MC', 'State': 'xyz.openbmc_project.State.FeatureReady.States.Enabled'})",
+            "AND",
+            "xyz.openbmc_project.MCTP.Endpoint({'EID': 24})",
+            "MATCH_ONE"
+        ],
         "Type": "Chassis",
         "xyz.openbmc_project.Common.UUID": {
             "UUID": "$UUID"
@@ -200,7 +245,12 @@
     {
         "Exposes": [],
         "Name": "HMC_BRIDGE_IRoT_ProcessorModule_SMA_0",
-        "Probe": "xyz.openbmc_project.MCTP.Endpoint({'EID': 13})",
+        "Probe": [
+            "xyz.openbmc_project.State.FeatureReady({'FeatureType': 'xyz.openbmc_project.State.FeatureReady.FeatureTypes.MC', 'State': 'xyz.openbmc_project.State.FeatureReady.States.Enabled'})",
+            "AND",
+            "xyz.openbmc_project.MCTP.Endpoint({'EID': 13})",
+            "MATCH_ONE"
+        ],
         "Type": "Chassis",
         "xyz.openbmc_project.Common.UUID": {
             "UUID": "$UUID"
@@ -222,7 +272,12 @@
     {
         "Exposes": [],
         "Name": "HMC_BRIDGE_IRoT_ProcessorModule_SMA_1",
-        "Probe": "xyz.openbmc_project.MCTP.Endpoint({'EID': 23})",
+        "Probe": [
+            "xyz.openbmc_project.State.FeatureReady({'FeatureType': 'xyz.openbmc_project.State.FeatureReady.FeatureTypes.MC', 'State': 'xyz.openbmc_project.State.FeatureReady.States.Enabled'})",
+            "AND",
+            "xyz.openbmc_project.MCTP.Endpoint({'EID': 23})",
+            "MATCH_ONE"
+        ],
         "Type": "Chassis",
         "xyz.openbmc_project.Common.UUID": {
             "UUID": "$UUID"

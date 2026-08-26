@@ -2,6 +2,11 @@
     {
         "Exposes": [
             {
+                "EID": "$EID",
+                "Name": "Bay_C_CX_0_Association",
+                "Type": "MctpEndpointAssociation"
+            },
+            {
                 "Associations": [
                     {
                         "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_CX_0",
@@ -49,7 +54,6 @@
                     "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Bay",
                     "Type": "NSM_Chassis_Attributes"
                 },
-                "DeviceResetSupported": true,
                 "Name": "Bay_C_CX_0",
                 "Type": "NSM_NVLinkMgmtNic_Chassis",
                 "UUID": "$UUID"
@@ -99,6 +103,35 @@
                         "Forward": ""
                     }
                 ],
+                "DeviceModesSupported": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    2,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    2,
+                    -1,
+                    1
+                ],
                 "InventoryObjPath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_CX_0/NetworkAdapters/",
                 "Name": "Bay_C_CX_NIC_0",
                 "Type": "NSM_NetworkAdapter",
@@ -146,11 +179,6 @@
                     1,
                     2
                 ]
-            },
-            {
-                "Name": "Bay_C_CX_0_Association",
-                "Type": "NsmDeviceAssociation",
-                "UUID": "$UUID"
             },
             {
                 "AuxNames": [
