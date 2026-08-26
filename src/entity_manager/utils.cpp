@@ -265,10 +265,9 @@ static bool templateCharReplaceOneProperty(
     return false;
 }
 
-static void templateCharReplaceLoop(std::string& str,
-                                    const DBusInterface& interface,
-                                    std::optional<std::string>& ret,
-                                    bool& keepAsString)
+static void templateCharReplaceLoop(
+    std::string& str, const DBusInterface& interface,
+    std::optional<std::string>& ret, bool& keepAsString)
 {
     for (const auto& [propName, propValue] : interface)
     {
