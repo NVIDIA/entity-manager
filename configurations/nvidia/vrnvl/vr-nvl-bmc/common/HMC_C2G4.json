@@ -1606,38 +1606,6 @@
                 "StaleOffset": 587,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
-            },
-            {
-                "Address": "0x4f",
-                "Bus": 3,
-                "MaxValue": 127,
-                "MinValue": -127,
-                "Name": "M0_CPU_VR_Temp",
-                "Name1": "ProcessorModule_0_Vreg_0_CPUVRTemp_0",
-                "OffsetValue": 1480,
-                "PollRate": 1,
-                "PowerState": "On",
-                "SensorType": "Temperature",
-                "StaleBit": 0,
-                "StaleOffset": 589,
-                "Type": "Satellite",
-                "ValueType": "PLDM"
-            },
-            {
-                "Address": "0x4f",
-                "Bus": 3,
-                "MaxValue": 127,
-                "MinValue": -127,
-                "Name": "M1_CPU_VR_Temp",
-                "Name1": "ProcessorModule_1_Vreg_0_CPUVRTemp_0",
-                "OffsetValue": 1488,
-                "PollRate": 1,
-                "PowerState": "On",
-                "SensorType": "Temperature",
-                "StaleBit": 1,
-                "StaleOffset": 589,
-                "Type": "Satellite",
-                "ValueType": "PLDM"
             }
         ],
         "Name": "HMC_0",
