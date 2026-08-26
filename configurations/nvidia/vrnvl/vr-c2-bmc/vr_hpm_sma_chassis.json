@@ -8,7 +8,7 @@
                 },
                 "ChassisAttributes": {
                     "AssetInformationAvailable": false,
-                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Zone",
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Shelf",
                     "Type": "NSM_Chassis_Attributes"
                 },
                 "DeviceType": "3",
