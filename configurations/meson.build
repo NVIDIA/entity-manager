@@ -433,6 +433,7 @@ configs = [
     'nvidia/switch-bmc/nvl144/nvl144_mctp_bmc_target_configuration.json',
     'nvidia/switch-bmc/nvl144/nvl144_nvlink_chassis.json',
     'nvidia/switch-bmc/nvl144/nvl144_nvswitch_sma_recovery_configuration.json',
+    'nvidia/switch-bmc/nvl144/nvl144_platform.json',
     'nvidia/switch-bmc/nvl144/nvl144_qm4_sma_chassis.json',
     'nvidia/switch-bmc/nvl144/nvl144_static_inventory.json',
     'nvidia/switch-bmc/spc6-ast2600/BMC.json',
