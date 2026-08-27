@@ -12,9 +12,9 @@
                 "Type": "EEPROM_24C02"
             },
             {
-                "Address": "0x6a",
-                "Bus": "60",
-                "Name": "StorageBackplane_0_SSD_0_Temp_0",
+                "Address": "62",
+                "IpmiName": "NVMe_SSD0_Temp",
+                "Name": "NVMe_E1S_SSD0_Temp_0",
                 "PowerState": "On",
                 "Thresholds": [
                     {
@@ -51,9 +51,9 @@
                 "Type": "NVME1000"
             },
             {
-                "Address": "0x6a",
-                "Bus": "61",
-                "Name": "StorageBackplane_0_SSD_1_Temp_0",
+                "Address": "61",
+                "IpmiName": "NVMe_SSD1_Temp",
+                "Name": "NVMe_E1S_SSD1_Temp_0",
                 "PowerState": "On",
                 "Thresholds": [
                     {
@@ -90,9 +90,9 @@
                 "Type": "NVME1000"
             },
             {
-                "Address": "0x6a",
-                "Bus": "62",
-                "Name": "StorageBackplane_0_SSD_2_Temp_0",
+                "Address": "64",
+                "IpmiName": "NVMe_SSD2_Temp",
+                "Name": "NVMe_E1S_SSD2_Temp_0",
                 "PowerState": "On",
                 "Thresholds": [
                     {
@@ -129,9 +129,9 @@
                 "Type": "NVME1000"
             },
             {
-                "Address": "0x6a",
-                "Bus": "63",
-                "Name": "StorageBackplane_0_SSD_3_Temp_0",
+                "Address": "63",
+                "IpmiName": "NVMe_SSD3_Temp",
+                "Name": "NVMe_E1S_SSD3_Temp_0",
                 "PowerState": "On",
                 "Thresholds": [
                     {
@@ -168,9 +168,9 @@
                 "Type": "NVME1000"
             },
             {
-                "Address": "0x6a",
-                "Bus": "64",
-                "Name": "StorageBackplane_0_SSD_4_Temp_0",
+                "Address": "66",
+                "IpmiName": "NVMe_SSD4_Temp",
+                "Name": "NVMe_E1S_SSD4_Temp_0",
                 "PowerState": "On",
                 "Thresholds": [
                     {
@@ -207,9 +207,9 @@
                 "Type": "NVME1000"
             },
             {
-                "Address": "0x6a",
-                "Bus": "65",
-                "Name": "StorageBackplane_0_SSD_5_Temp_0",
+                "Address": "65",
+                "IpmiName": "NVMe_SSD5_Temp",
+                "Name": "NVMe_E1S_SSD5_Temp_0",
                 "PowerState": "On",
                 "Thresholds": [
                     {
@@ -246,9 +246,9 @@
                 "Type": "NVME1000"
             },
             {
-                "Address": "0x6a",
-                "Bus": "66",
-                "Name": "StorageBackplane_0_SSD_6_Temp_0",
+                "Address": "68",
+                "IpmiName": "NVMe_SSD6_Temp",
+                "Name": "NVMe_E1S_SSD6_Temp_0",
                 "PowerState": "On",
                 "Thresholds": [
                     {
@@ -285,9 +285,9 @@
                 "Type": "NVME1000"
             },
             {
-                "Address": "0x6a",
-                "Bus": "67",
-                "Name": "StorageBackplane_0_SSD_7_Temp_0",
+                "Address": "67",
+                "IpmiName": "NVMe_SSD7_Temp",
+                "Name": "NVMe_E1S_SSD7_Temp_0",
                 "PowerState": "On",
                 "Thresholds": [
                     {
@@ -322,6 +322,86 @@
                     }
                 ],
                 "Type": "NVME1000"
+            },
+            {
+                "Address": "62",
+                "EntityId": 4,
+                "EntityInstance": 3,
+                "IpmiName": "NVMe_SSD0_STS",
+                "Name": "NVMe_E1S_SSD0_STS_0",
+                "PollRate": 1,
+                "PowerState": "On",
+                "Type": "Nvmem2"
+            },
+            {
+                "Address": "61",
+                "EntityId": 4,
+                "EntityInstance": 4,
+                "IpmiName": "NVMe_SSD1_STS",
+                "Name": "NVMe_E1S_SSD1_STS_0",
+                "PollRate": 1,
+                "PowerState": "On",
+                "Type": "Nvmem2"
+            },
+            {
+                "Address": "64",
+                "EntityId": 4,
+                "EntityInstance": 5,
+                "IpmiName": "NVMe_SSD2_STS",
+                "Name": "NVMe_E1S_SSD2_STS_0",
+                "PollRate": 1,
+                "PowerState": "On",
+                "Type": "Nvmem2"
+            },
+            {
+                "Address": "63",
+                "EntityId": 4,
+                "EntityInstance": 6,
+                "IpmiName": "NVMe_SSD3_STS",
+                "Name": "NVMe_E1S_SSD3_STS_0",
+                "PollRate": 1,
+                "PowerState": "On",
+                "Type": "Nvmem2"
+            },
+            {
+                "Address": "66",
+                "EntityId": 4,
+                "EntityInstance": 7,
+                "IpmiName": "NVMe_SSD4_STS",
+                "Name": "NVMe_E1S_SSD4_STS_0",
+                "PollRate": 1,
+                "PowerState": "On",
+                "Type": "Nvmem2"
+            },
+            {
+                "Address": "65",
+                "EntityId": 4,
+                "EntityInstance": 8,
+                "IpmiName": "NVMe_SSD5_STS",
+                "Name": "NVMe_E1S_SSD5_STS_0",
+                "PollRate": 1,
+                "PowerState": "On",
+                "Type": "Nvmem2"
+            },
+            {
+                "Address": "68",
+                "EntityId": 4,
+                "EntityInstance": 9,
+                "IpmiName": "NVMe_SSD6_STS",
+                "Name": "NVMe_E1S_SSD6_STS_0",
+                "PollRate": 1,
+                "PowerState": "On",
+                "Type": "Nvmem2"
+            },
+            {
+                "Address": "67",
+                "EntityId": 4,
+                "EntityInstance": 10,
+                "IpmiName": "NVMe_SSD7_STS",
+                "Name": "NVMe_E1S_SSD7_STS_0",
+                "PollRate": 1,
+                "PowerState": "On",
+                "Type": "Nvmem2"
             }
         ],
         "Name": "StorageBackplane_0",
@@ -365,13 +445,11 @@
         "xyz.openbmc_project.Inventory.Item.Chassis": {
             "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Module"
         },
-        "xyz.openbmc_project.Inventory.Item.ManagementService": {},
         "xyz.openbmc_project.State.Decorator.Health": {
             "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
         }
     },
     {
-        "Exposes": [],
         "Name": "StorageBackplane Board FRU Assembly0",
         "Probe": [
             "xyz.openbmc_project.FruDevice({'BUS': 36, 'ADDRESS': 81})",
@@ -396,7 +474,6 @@
         }
     },
     {
-        "Exposes": [],
         "Name": "StorageBackplane Product FRU Assembly1",
         "Probe": [
             "xyz.openbmc_project.FruDevice({'BUS': 36, 'ADDRESS': 81})",
@@ -420,6 +497,222 @@
         "xyz.openbmc_project.Inventory.Item.Assembly": {},
         "xyz.openbmc_project.State.Decorator.Health": {
             "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "ConnectsToType": "Backplane0Port",
+                "Name": "BPNPort0",
+                "Type": "DownstreamPort"
+            }
+        ],
+        "Name": "NVMe_E1S_SSD0",
+        "Probe": "FOUND('StorageBackplane_0')",
+        "Type": "NVMe",
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "NVMe E1.S Slot 0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "Chassis_0/StorageBackplane_0"
+        },
+        "xyz.openbmc_project.Inventory.Item.Drive": {
+            "FormFactor": "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
+        },
+        "xyz.openbmc_project.MCTP.Endpoint": {
+            "EID": 62
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "ConnectsToType": "Backplane0Port",
+                "Name": "BPNPort0",
+                "Type": "DownstreamPort"
+            }
+        ],
+        "Name": "NVMe_E1S_SSD1",
+        "Probe": "FOUND('StorageBackplane_0')",
+        "Type": "NVMe",
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "NVMe E1.S Slot 1"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "Chassis_0/StorageBackplane_0"
+        },
+        "xyz.openbmc_project.Inventory.Item.Drive": {
+            "FormFactor": "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
+        },
+        "xyz.openbmc_project.MCTP.Endpoint": {
+            "EID": 61
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "ConnectsToType": "Backplane0Port",
+                "Name": "BPNPort0",
+                "Type": "DownstreamPort"
+            }
+        ],
+        "Name": "NVMe_E1S_SSD2",
+        "Probe": "FOUND('StorageBackplane_0')",
+        "Type": "NVMe",
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "NVMe E1.S Slot 2"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "Chassis_0/StorageBackplane_0"
+        },
+        "xyz.openbmc_project.Inventory.Item.Drive": {
+            "FormFactor": "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
+        },
+        "xyz.openbmc_project.MCTP.Endpoint": {
+            "EID": 64
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "ConnectsToType": "Backplane0Port",
+                "Name": "BPNPort0",
+                "Type": "DownstreamPort"
+            }
+        ],
+        "Name": "NVMe_E1S_SSD3",
+        "Probe": "FOUND('StorageBackplane_0')",
+        "Type": "NVMe",
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "NVMe E1.S Slot 3"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "Chassis_0/StorageBackplane_0"
+        },
+        "xyz.openbmc_project.Inventory.Item.Drive": {
+            "FormFactor": "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
+        },
+        "xyz.openbmc_project.MCTP.Endpoint": {
+            "EID": 63
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "ConnectsToType": "Backplane0Port",
+                "Name": "BPNPort0",
+                "Type": "DownstreamPort"
+            }
+        ],
+        "Name": "NVMe_E1S_SSD4",
+        "Probe": "FOUND('StorageBackplane_0')",
+        "Type": "NVMe",
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "NVMe E1.S Slot 4"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "Chassis_0/StorageBackplane_0"
+        },
+        "xyz.openbmc_project.Inventory.Item.Drive": {
+            "FormFactor": "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
+        },
+        "xyz.openbmc_project.MCTP.Endpoint": {
+            "EID": 66
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "ConnectsToType": "Backplane0Port",
+                "Name": "BPNPort0",
+                "Type": "DownstreamPort"
+            }
+        ],
+        "Name": "NVMe_E1S_SSD5",
+        "Probe": "FOUND('StorageBackplane_0')",
+        "Type": "NVMe",
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "NVMe E1.S Slot 5"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "Chassis_0/StorageBackplane_0"
+        },
+        "xyz.openbmc_project.Inventory.Item.Drive": {
+            "FormFactor": "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
+        },
+        "xyz.openbmc_project.MCTP.Endpoint": {
+            "EID": 65
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "ConnectsToType": "Backplane0Port",
+                "Name": "BPNPort0",
+                "Type": "DownstreamPort"
+            }
+        ],
+        "Name": "NVMe_E1S_SSD6",
+        "Probe": "FOUND('StorageBackplane_0')",
+        "Type": "NVMe",
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "NVMe E1.S Slot 6"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "Chassis_0/StorageBackplane_0"
+        },
+        "xyz.openbmc_project.Inventory.Item.Drive": {
+            "FormFactor": "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
+        },
+        "xyz.openbmc_project.MCTP.Endpoint": {
+            "EID": 68
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "ConnectsToType": "Backplane0Port",
+                "Name": "BPNPort0",
+                "Type": "DownstreamPort"
+            }
+        ],
+        "Name": "NVMe_E1S_SSD7",
+        "Probe": "FOUND('StorageBackplane_0')",
+        "Type": "NVMe",
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "NVMe E1.S Slot 7"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "Chassis_0/StorageBackplane_0"
+        },
+        "xyz.openbmc_project.Inventory.Item.Drive": {
+            "FormFactor": "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
+        },
+        "xyz.openbmc_project.MCTP.Endpoint": {
+            "EID": 67
         }
     }
 ]
