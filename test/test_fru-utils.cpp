@@ -765,3 +765,26 @@ TEST(GzipUtils, parseMacFromGzipXmlHeader)
     std::string mac = parseMacFromGzipXmlHeader(reader, 0);
     EXPECT_EQ(mac, "10:FF:E0:39:84:DC");
 }
+
+// A crafted multirecord-area offset byte points far past a tiny FRU buffer.
+// parseMultirecordUUID() (reached via formatIPMIFRU) must not read past the
+// end; the optional area simply yields no MULTIRECORD_UUID.
+TEST(formatIPMIFRU, MultirecordOffsetOutOfRange)
+{
+    const std::vector<uint8_t> fru = {0x01, 0x00, 0x00, 0x00, 0x00,
+                                      0xFF, 0x00, 0x00, 0x00};
+    std::flat_map<std::string, std::string, std::less<>> result;
+    EXPECT_EQ(formatIPMIFRU(fru, result), resCodes::resOK);
+    EXPECT_FALSE(result.contains("MULTIRECORD_UUID"));
+}
+
+// A board area whose in-image length byte declares an extent past the buffer
+// must be rejected before formatIPMIFRU() derives the area-end iterator.
+TEST(formatIPMIFRU, AreaExtentPastBufferRejected)
+{
+    const std::vector<uint8_t> fru = {
+        0x01, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x01, 0xFF, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+    std::flat_map<std::string, std::string, std::less<>> result;
+    EXPECT_EQ(formatIPMIFRU(fru, result), resCodes::resErr);
+}
