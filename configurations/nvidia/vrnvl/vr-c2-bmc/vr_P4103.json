@@ -90,23 +90,18 @@
         "Name": "SMM_0",
         "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 5, 'ADDRESS': 80})",
-        "Type": "BMC",
+        "Type": "Board",
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
                 [
                     "assembly",
                     "parent_chassis",
-                    "/xyz/openbmc_project/inventory/system/bmc/SMM_Board_FRU_Assembly0"
+                    "/xyz/openbmc_project/inventory/system/smm_0/SMM_Board_FRU_Assembly0"
                 ],
                 [
                     "assembly",
                     "parent_chassis",
-                    "/xyz/openbmc_project/inventory/system/bmc/SMM_Product_FRU_Assembly1"
-                ],
-                [
-                    "all_managers",
-                    "chassis",
-                    "/xyz/openbmc_project/inventory/system/bmc/SMM_0"
+                    "/xyz/openbmc_project/inventory/system/smm_0/SMM_Product_FRU_Assembly1"
                 ]
             ]
         },
@@ -137,7 +132,7 @@
         "Exposes": [],
         "Name": "SMM Board FRU Assembly0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 5, 'ADDRESS': 80})",
-        "Type": "BMC",
+        "Type": "SMM_0",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
             "BuildDate": "$BOARD_MANUFACTURE_DATE",
             "Manufacturer": "$BOARD_MANUFACTURER",
@@ -157,7 +152,7 @@
         "Exposes": [],
         "Name": "SMM Product FRU Assembly1",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 5, 'ADDRESS': 80})",
-        "Type": "BMC",
+        "Type": "SMM_0",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
             "Manufacturer": "$PRODUCT_MANUFACTURER",
             "Model": "$PRODUCT_PRODUCT_NAME",
