@@ -12,26 +12,5 @@
         "Name": "MCTP_SPI_DEV",
         "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpspi0_2'})",
         "Type": "MCTPInterface"
-    },
-    {
-        "Exposes": [
-            {
-                "Address": [
-                    "0x01",
-                    "0x20",
-                    "0xd2",
-                    "0xf8",
-                    "0x15",
-                    "0xB3"
-                ],
-                "Bus": "2",
-                "Name": "EthSwitch_I3C_Device_X1",
-                "StaticEndpointID": "101",
-                "Type": "MCTPI3CTarget"
-            }
-        ],
-        "Name": "MCTP_I3C_DEV",
-        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpi3c2'})",
-        "Type": "MCTPInterface"
     }
 ]
