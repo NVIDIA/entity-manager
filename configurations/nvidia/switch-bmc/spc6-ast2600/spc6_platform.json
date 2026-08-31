@@ -1,0 +1,18 @@
+{
+    "Name": "Nvidia SPC6 AST2600 Switch BMC",
+    "PlatformExposes": [
+        {
+            "Name": "MCTPSPI_10",
+            "SupportedDumps": [
+                "RoT"
+            ],
+            "Type": "Dump"
+        }
+    ],
+    "Probe": [
+        "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80})",
+        "AND",
+        "FOUND('MGX_BMC_0')"
+    ],
+    "Type": "Platform"
+}

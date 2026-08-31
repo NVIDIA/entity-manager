@@ -1,0 +1,18 @@
+{
+    "Name": "Nvidia NVL144 AST2700 Switch BMC",
+    "PlatformExposes": [
+        {
+            "Name": "MCTPSPI_16",
+            "SupportedDumps": [
+                "RoT"
+            ],
+            "Type": "Dump"
+        }
+    ],
+    "Probe": [
+        "xyz.openbmc_project.FruDevice({'BUS': 4, 'ADDRESS': 80})",
+        "AND",
+        "FOUND('BMC_0')"
+    ],
+    "Type": "Platform"
+}

@@ -2,6 +2,36 @@
     "Name": "Nvidia NVL144 Switch Tray BMC",
     "PlatformExposes": [
         {
+            "Name": "MCTPSPI_10",
+            "SupportedDumps": [
+                "RoT"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "Name": "MCTPSPI_16",
+            "SupportedDumps": [
+                "RoT"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "Name": "MGX_NVSwitch_SMA_0",
+            "SupportedDumps": [
+                "RoT",
+                "SMA"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "Name": "MGX_NVSwitch_SMA_1",
+            "SupportedDumps": [
+                "RoT",
+                "SMA"
+            ],
+            "Type": "Dump"
+        },
+        {
             "BridgeName": "MGX_NVSwitch_SMA_0",
             "Name": "MGX_NVSwitch_0",
             "PoolIndex": 0,
