@@ -9,7 +9,7 @@
                 "Type": "MCTPSPIDevice"
             }
         ],
-        "Name": "MCTP_SPI_DEV",
+        "Name": "MCTP_SPI_DEV_BMC_EROT",
         "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpspi0_2'})",
         "Type": "MCTPInterface"
     },
@@ -23,7 +23,7 @@
                 "Type": "MCTPSPIDevice"
             }
         ],
-        "Name": "MCTP_SPI_DEV",
+        "Name": "MCTP_SPI_DEV_CPU_EROT",
         "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpspi2_0'})",
         "Type": "MCTPInterface"
     },
