@@ -7,6 +7,279 @@
                 "RoT"
             ],
             "Type": "Dump"
+        },
+        {
+            "BridgeName": "NVSwitch_SMA_0",
+            "Name": "NVSwitch_0",
+            "PoolIndex": 0,
+            "Type": "MCTPBridgePoolDevice"
+        },
+        {
+            "BridgeName": "NVSwitch_SMA_0",
+            "Name": "NVSwitch_1",
+            "PoolIndex": 1,
+            "Type": "MCTPBridgePoolDevice"
+        },
+        {
+            "BridgeName": "NVSwitch_SMA_1",
+            "Name": "NVSwitch_2",
+            "PoolIndex": 0,
+            "Type": "MCTPBridgePoolDevice"
+        },
+        {
+            "BridgeName": "NVSwitch_SMA_1",
+            "Name": "NVSwitch_3",
+            "PoolIndex": 1,
+            "Type": "MCTPBridgePoolDevice"
+        },
+        {
+            "MCTPTargetName": "MCTPIROT_0",
+            "Manufacturer": "NVIDIA",
+            "Name": "IRoT_BMC_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/bmc/BMC_0"
+        },
+        {
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_NVSwitch_0",
+            "MCTPTargetName": "NVSwitch_0",
+            "Manufacturer": "NVIDIA",
+            "Name": "IRoT_NVSwitch_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/NVSwitch_0"
+        },
+        {
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_NVSwitch_1",
+            "MCTPTargetName": "NVSwitch_1",
+            "Manufacturer": "NVIDIA",
+            "Name": "IRoT_NVSwitch_1_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/NVSwitch_1"
+        },
+        {
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_NVSwitch_2",
+            "MCTPTargetName": "NVSwitch_2",
+            "Manufacturer": "NVIDIA",
+            "Name": "IRoT_NVSwitch_2_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/NVSwitch_2"
+        },
+        {
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_NVSwitch_3",
+            "MCTPTargetName": "NVSwitch_3",
+            "Manufacturer": "NVIDIA",
+            "Name": "IRoT_NVSwitch_3_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/NVSwitch_3"
+        },
+        {
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/ERoT_CPU_0",
+            "MCTPTargetName": "MCTPSPI_16",
+            "Manufacturer": "NVIDIA",
+            "Name": "ERoT_CPU_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/CPU_0"
+        },
+        {
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_NVSwitch_SMA_0",
+            "MCTPTargetName": "NVSwitch_SMA_0",
+            "Manufacturer": "NVIDIA",
+            "Name": "IRoT_NVSwitch_SMA_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/NVSwitch_SMA_0"
+        },
+        {
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_NVSwitch_SMA_1",
+            "MCTPTargetName": "NVSwitch_SMA_1",
+            "Manufacturer": "NVIDIA",
+            "Name": "IRoT_NVSwitch_SMA_1_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/NVSwitch_SMA_1"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/bmc/BMC_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 11,
+                    "Name": "FW_BMC_Caliptra_0"
+                },
+                {
+                    "ComponentIdentifier": 10,
+                    "Name": "FW_BMC_0",
+                    "UpdateOnly": true
+                }
+            ],
+            "MCTPTargetName": "MCTPIROT_0",
+            "Name": "IRoT_BMC_0_PLDM",
+            "StaticEID": 9,
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/NVSwitch_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 1,
+                    "Name": "FW_NVSwitch_0"
+                }
+            ],
+            "MCTPTargetName": "NVSwitch_0",
+            "Name": "NVSwitch_0_PLDM",
+            "StaticEID": 53,
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/NVSwitch_1"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 1,
+                    "Name": "FW_NVSwitch_1"
+                }
+            ],
+            "MCTPTargetName": "NVSwitch_1",
+            "Name": "NVSwitch_1_PLDM",
+            "StaticEID": 54,
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/NVSwitch_2"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 1,
+                    "Name": "FW_NVSwitch_2"
+                }
+            ],
+            "MCTPTargetName": "NVSwitch_2",
+            "Name": "NVSwitch_2_PLDM",
+            "StaticEID": 57,
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/NVSwitch_3"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 1,
+                    "Name": "FW_NVSwitch_3"
+                }
+            ],
+            "MCTPTargetName": "NVSwitch_3",
+            "Name": "NVSwitch_3_PLDM",
+            "StaticEID": 58,
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/ERoT_CPU_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65280,
+                    "Name": "FW_ERoT_CPU_0"
+                },
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/CPU_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 218,
+                    "Name": "FW_CPU_0"
+                }
+            ],
+            "MCTPTargetName": "MCTPSPI_16",
+            "Name": "ERoT_CPU_0_PLDM",
+            "StaticEID": 16,
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/NVSwitch_SMA_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65282,
+                    "Name": "FW_NVSwitch_SMA_0"
+                }
+            ],
+            "MCTPTargetName": "NVSwitch_SMA_0",
+            "Name": "NVSwitch_SMA_0_PLDM",
+            "StaticEID": 69,
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/NVSwitch_SMA_1"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65282,
+                    "Name": "FW_NVSwitch_SMA_1"
+                }
+            ],
+            "MCTPTargetName": "NVSwitch_SMA_1",
+            "Name": "NVSwitch_SMA_1_PLDM",
+            "StaticEID": 70,
+            "Type": "PLDMFirmwareDevice"
         }
     ],
     "Probe": [

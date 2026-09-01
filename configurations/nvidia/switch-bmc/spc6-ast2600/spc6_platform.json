@@ -7,6 +7,40 @@
                 "RoT"
             ],
             "Type": "Dump"
+        },
+        {
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/MGX_ERoT_BMC_0",
+            "MCTPTargetName": "MCTPSPI_10",
+            "Manufacturer": "NVIDIA",
+            "Name": "MGX_ERoT_BMC_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/bmc/MGX_BMC_0"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/MGX_ERoT_BMC_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65280,
+                    "Name": "MGX_FW_ERoT_BMC_0"
+                },
+                {
+                    "ComponentIdentifier": 16,
+                    "Name": "MGX_FW_BMC_0",
+                    "UpdateOnly": true
+                }
+            ],
+            "MCTPTargetName": "MCTPSPI_10",
+            "Name": "MGX_ERoT_BMC_0_PLDM",
+            "StaticEID": 10,
+            "Type": "PLDMFirmwareDevice"
         }
     ],
     "Probe": [
