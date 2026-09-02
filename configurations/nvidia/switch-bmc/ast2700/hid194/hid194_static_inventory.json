@@ -1,0 +1,37 @@
+[
+    {
+        "Exposes": [],
+        "Name": "NSM_IRoT_BMC_0",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 4,
+            "INSTANCE_NUMBER": 0,
+            "UUID": "STATIC:4:0:MCTP_EID:9"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_SMA_0",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_ROLE": "VRUSMA",
+            "DEVICE_TYPE": 5,
+            "INSTANCE_NUMBER": 0,
+            "UUID": "STATIC:261:0:MCTP_EID:69"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_SMA_1",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_ROLE": "VRUSMA",
+            "DEVICE_TYPE": 5,
+            "INSTANCE_NUMBER": 1,
+            "UUID": "STATIC:261:1:MCTP_EID:70"
+        }
+    }
+]

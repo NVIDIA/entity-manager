@@ -1,0 +1,46 @@
+[
+    {
+        "Exposes": [
+            {
+                "Interface": "$Interface",
+                "Name": "MCTPIROT_0",
+                "PollingInterval": "15",
+                "StaticEndpointID": "9",
+                "Type": "MCTPXROTTarget"
+            }
+        ],
+        "Name": "MCTP_XROT_DEV1",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpirot0'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "Interface": "$Interface",
+                "Name": "SMA_0",
+                "PollingInterval": "5",
+                "StaticEndpointID": "69",
+                "Type": "MCTPUSBTarget",
+                "USBPath": "1-1-2"
+            }
+        ],
+        "Name": "MCTP_USB_DEV1",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Alias': 'mctpusb1-1.2'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "Interface": "$Interface",
+                "Name": "SMA_1",
+                "PollingInterval": "5",
+                "StaticEndpointID": "70",
+                "Type": "MCTPUSBTarget",
+                "USBPath": "1-1-3"
+            }
+        ],
+        "Name": "MCTP_USB_DEV2",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Alias': 'mctpusb1-1.3'})",
+        "Type": "MCTPInterface"
+    }
+]
