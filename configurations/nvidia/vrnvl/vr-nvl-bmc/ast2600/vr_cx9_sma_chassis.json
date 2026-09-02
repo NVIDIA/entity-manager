@@ -25,7 +25,6 @@
                     }
                 ],
                 "Chassis": {
-                    "DEVICE_UUID": "$DEVICE_UUID",
                     "Type": "NSM_Chassis"
                 },
                 "ChassisAttributes": {
