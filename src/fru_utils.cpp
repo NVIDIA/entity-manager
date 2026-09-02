@@ -1102,6 +1102,15 @@ bool copyRestFRUArea(std::vector<uint8_t>& fruData,
     size_t fieldLoc = fruAreaParams.updateFieldLoc;
     size_t start = fruAreaParams.start;
     size_t fruAreaSize = fruAreaParams.size;
+    const size_t areaEnd = start + fruAreaSize;
+
+    // updateFieldLoc is walked field-by-field and may land past the buffer.
+    if (fieldLoc >= fruData.size())
+    {
+        std::cerr << "FRU field location for " << propertyName
+                  << " out of range\n";
+        return false;
+    }
 
     // Push post update fru field bytes to a vector
     ssize_t fieldLength = getFieldLength(fruData[fieldLoc]);
@@ -1117,18 +1126,23 @@ bool copyRestFRUArea(std::vector<uint8_t>& fruData,
     size_t restFRUFieldsLoc = fruDataIter;
     size_t endOfFieldsLoc = 0;
 
+    // Scan the remaining fields, staying strictly inside the area.
     if (fruDataIter < fruData.size())
     {
-        while ((fieldLength = getFieldLength(fruData[fruDataIter])) >= 0)
+        while (fruDataIter < areaEnd && fruDataIter < fruData.size() &&
+               (fieldLength = getFieldLength(fruData[fruDataIter])) >= 0)
         {
-            if (fruDataIter >= (start + fruAreaSize))
-            {
-                fruDataIter = start + fruAreaSize;
-                break;
-            }
             fruDataIter += 1 + fieldLength;
         }
         endOfFieldsLoc = fruDataIter;
+    }
+
+    if (restFRUFieldsLoc > endOfFieldsLoc || endOfFieldsLoc >= fruData.size() ||
+        endOfFieldsLoc >= areaEnd)
+    {
+        std::cerr << "FRU rest-field data for " << propertyName
+                  << " overruns the area\n";
+        return false;
     }
 
     std::copy_n(fruData.begin() + restFRUFieldsLoc,
