@@ -453,3 +453,82 @@ TEST(formatIPMIFRU, FullDecode)
             Pair("PRODUCT_SERIAL_NUMBER", "1583324800150"),
             Pair("PRODUCT_VERSION", "AE.1")));
 }
+
+// A crafted multirecord-area offset byte points far past a tiny FRU buffer.
+// parseMultirecordUUID() (reached via formatIPMIFRU) must not read past the
+// end; the optional area simply yields no MULTIRECORD_UUID.
+TEST(formatIPMIFRU, MultirecordOffsetOutOfRange)
+{
+    const std::vector<uint8_t> fru = {0x01, 0x00, 0x00, 0x00, 0x00,
+                                      0xFF, 0x00, 0x00, 0x00};
+    boost::container::flat_map<std::string, std::string> result;
+    EXPECT_EQ(formatIPMIFRU(fru, result), resCodes::resOK);
+    EXPECT_TRUE(result.find("MULTIRECORD_UUID") == result.end());
+}
+
+// A board area whose in-image length byte declares an extent past the buffer
+// must be rejected before formatIPMIFRU() derives the area-end iterator.
+TEST(formatIPMIFRU, AreaExtentPastBufferRejected)
+{
+    const std::vector<uint8_t> fru = {
+        0x01, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x01, 0xFF, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+    boost::container::flat_map<std::string, std::string> result;
+    EXPECT_EQ(formatIPMIFRU(fru, result), resCodes::resErr);
+}
+
+// A FRU image that formatIPMIFRU() accepts (resWarn, and with a
+// PRODUCT_ASSET_TAG entry) is exactly what causes addFruObjectToDbus() to
+// register the asset-tag setter that reaches updateFRUProperty(). Its last
+// custom field declares a length that runs past the product area, which is
+// what the rest-field walk below has to survive.
+static std::vector<uint8_t> makeAcceptedFruWithOverrunningField()
+{
+    std::vector<uint8_t> fru(24, 0x00);
+    fru[0] = 0x01;  // common header version
+    fru[4] = 0x01;  // product area at byte 8
+    fru[7] = 0xFA;  // header checksum
+
+    fru[8] = 0x01;  // product area version
+    fru[9] = 0x02;  // area length: 2 blocks, so the area ends at index 23
+    fru[10] = 0x00; // language code: English
+
+    fru[11] = 0xC0; // PRODUCT_MANUFACTURER, zero length
+    fru[12] = 0xC0; // PRODUCT_PRODUCT_NAME
+    fru[13] = 0xC0; // PRODUCT_PART_NUMBER
+    fru[14] = 0xC0; // PRODUCT_VERSION
+    fru[15] = 0xC0; // PRODUCT_SERIAL_NUMBER
+    fru[16] = 0xC0; // PRODUCT_ASSET_TAG, the updatable field
+    fru[17] = 0xC0; // PRODUCT_FRU_VERSION_ID
+    fru[18] = 0xFF; // custom field, declared length 63, overruns the area
+    return fru;
+}
+
+// A malformed custom field only downgrades the parse to resWarn, so the image
+// still reaches D-Bus and the asset-tag setter still gets registered.
+TEST(UpdateFruPropertyOob, MalformedCustomFieldStillReachesDbus)
+{
+    std::vector<uint8_t> fru = makeAcceptedFruWithOverrunningField();
+    boost::container::flat_map<std::string, std::string> result;
+
+    EXPECT_NE(formatIPMIFRU(fru, result), resCodes::resErr);
+    EXPECT_TRUE(result.find("PRODUCT_ASSET_TAG") != result.end());
+}
+
+// Walking the fields after PRODUCT_ASSET_TAG must stop at the area end. The
+// overrunning custom field otherwise pushes the iterator 64 bytes past the
+// buffer before the loop checks the bound.
+TEST(UpdateFruPropertyOob, RestFieldWalkStaysInsideArea)
+{
+    std::vector<uint8_t> fru = makeAcceptedFruWithOverrunningField();
+    FruArea params{};
+
+    ASSERT_TRUE(findFruAreaLocationAndField(fru, "PRODUCT_ASSET_TAG", params));
+    EXPECT_EQ(params.start, 8U);
+    EXPECT_EQ(params.size, 16U);
+    EXPECT_EQ(params.updateFieldLoc, 16U);
+
+    std::vector<uint8_t> restFRUAreaFieldsData;
+    copyRestFRUArea(fru, "PRODUCT_ASSET_TAG", params, restFRUAreaFieldsData);
+    EXPECT_LE(params.restFieldsEnd, params.end);
+}
