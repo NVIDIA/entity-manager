@@ -408,6 +408,8 @@ configs = [
     'nvidia/switch-bmc/ast2700/common/spc6_mctp_bmc_target_configuration.json',
     'nvidia/switch-bmc/ast2700/common/spc6_platform.json',
     'nvidia/switch-bmc/ast2700/common/spc6_static_inventory.json',
+    'nvidia/switch-bmc/ast2700/hid194/BMC.json',
+    'nvidia/switch-bmc/ast2700/hid194/Leakage_policy.json',
     'nvidia/switch-bmc/ast2700/hid194/hid194_cpld_chassis.json',
     'nvidia/switch-bmc/ast2700/hid194/hid194_irot_sma_chassis.json',
     'nvidia/switch-bmc/ast2700/hid194/hid194_mctp_bmc_target_configuration.json',

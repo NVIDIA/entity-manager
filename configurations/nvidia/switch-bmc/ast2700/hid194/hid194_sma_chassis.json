@@ -30,6 +30,20 @@
                 "Name": "SMA_$INSTANCE_NUMBER",
                 "Type": "NSM_Chassis",
                 "UUID": "$UUID"
+            },
+            {
+                "ChassisPath": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
+                "MaxValue": 3.3,
+                "MinValue": 0.0,
+                "Name": "Chassis_0_LeakDetector_$INSTANCE_NUMBER",
+                "SensorIdMap": [
+                    0
+                ],
+                "SensorNameMap": [
+                    "Chassis_0_LeakDetector_$INSTANCE_NUMBER"
+                ],
+                "Type": "NSM_LeakDetection",
+                "UUID": "$UUID"
             }
         ],
         "Name": "SMA_$INSTANCE_NUMBER",
