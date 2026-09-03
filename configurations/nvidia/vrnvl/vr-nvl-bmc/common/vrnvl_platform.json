@@ -193,6 +193,30 @@
             "Type": "MCTPBridgePoolDevice"
         },
         {
+            "BridgeName": "Bay_C_SMA_0",
+            "Name": "BF4_0",
+            "PoolIndex": 0,
+            "Type": "MCTPBridgePoolDevice"
+        },
+        {
+            "BridgeName": "Bay_C_SMA_0",
+            "Name": "BF4_1",
+            "PoolIndex": 1,
+            "Type": "MCTPBridgePoolDevice"
+        },
+        {
+            "BridgeName": "Bay_C_SMA_0",
+            "Name": "BF4_2",
+            "PoolIndex": 2,
+            "Type": "MCTPBridgePoolDevice"
+        },
+        {
+            "BridgeName": "Bay_C_SMA_0",
+            "Name": "BF4_3",
+            "PoolIndex": 3,
+            "Type": "MCTPBridgePoolDevice"
+        },
+        {
             "Address": "0x1D",
             "Bus": "13",
             "IgnoreMessageTypes": "1,5",
@@ -209,7 +233,14 @@
             "Type": "MCTPSPIDevice"
         },
         {
+            "BridgePoolEndEID": "59",
             "BridgePoolStartEID": "56",
+            "BridgedEndpoints": [
+                "BF4_0",
+                "BF4_1",
+                "BF4_2",
+                "BF4_3"
+            ],
             "Configuration": 1,
             "InterfaceNum": 0,
             "Name": "Bay_C_SMA_0",
