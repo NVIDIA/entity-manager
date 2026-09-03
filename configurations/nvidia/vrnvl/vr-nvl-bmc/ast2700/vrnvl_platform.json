@@ -208,7 +208,7 @@
             "Name": "Bay_C_SMA_0",
             "PollingInterval": "5",
             "Port": "1.4.1",
-            "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+            "RootHubPath": "/sys/devices/platform/soc@10000000/12063000.usb",
             "StaticEndpointID": "55",
             "Type": "MCTPUSBDevice"
         },
@@ -220,7 +220,7 @@
             "Name": "SMA_0",
             "PollingInterval": "5",
             "Port": "1.1.1",
-            "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+            "RootHubPath": "/sys/devices/platform/soc@14000000/14121000.usb",
             "StaticEndpointID": "45",
             "Type": "MCTPUSBDevice"
         },
@@ -232,7 +232,7 @@
             "Name": "SMA_1",
             "PollingInterval": "5",
             "Port": "1.2.1",
-            "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+            "RootHubPath": "/sys/devices/platform/soc@14000000/14121000.usb",
             "StaticEndpointID": "40",
             "Type": "MCTPUSBDevice"
         },
@@ -250,7 +250,7 @@
             "Name": "IO_Board_SMA_0",
             "PollingInterval": "5",
             "Port": "1.1.4.1",
-            "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+            "RootHubPath": "/sys/devices/platform/soc@14000000/14121000.usb",
             "StaticEndpointID": "60",
             "Type": "MCTPUSBDevice"
         },
@@ -268,7 +268,7 @@
             "Name": "IO_Board_SMA_1",
             "PollingInterval": "5",
             "Port": "1.1.3.1",
-            "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+            "RootHubPath": "/sys/devices/platform/soc@14000000/14121000.usb",
             "StaticEndpointID": "70",
             "Type": "MCTPUSBDevice"
         },
@@ -286,7 +286,7 @@
             "Name": "IO_Board_SMA_2",
             "PollingInterval": "5",
             "Port": "1.2.3.1",
-            "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+            "RootHubPath": "/sys/devices/platform/soc@14000000/14121000.usb",
             "StaticEndpointID": "80",
             "Type": "MCTPUSBDevice"
         },
@@ -304,7 +304,7 @@
             "Name": "IO_Board_SMA_3",
             "PollingInterval": "5",
             "Port": "1.2.4.1",
-            "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+            "RootHubPath": "/sys/devices/platform/soc@14000000/14121000.usb",
             "StaticEndpointID": "90",
             "Type": "MCTPUSBDevice"
         },
