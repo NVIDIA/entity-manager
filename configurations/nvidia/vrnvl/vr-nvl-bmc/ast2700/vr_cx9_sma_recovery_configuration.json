@@ -2,7 +2,7 @@
     "Exposes": [
         {
             "ChassisName": "IO_Board_SMA_0",
-            "ForceRecoveryChassisObject": "IO_Board_SMA_1",
+            "ForceRecoveryChassisObject": "IO_Board_SMA_0",
             "Interface": "USB",
             "MctpEID": 60,
             "Name": "FW_IO_Board_SMA_0",
