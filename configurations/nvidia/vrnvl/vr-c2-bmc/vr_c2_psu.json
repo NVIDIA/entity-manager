@@ -212,6 +212,25 @@
         "Name": "PSU_0",
         "Probe": "xyz.openbmc_project.FruDevice({'PRODUCT_MANUFACTURER': 'DELTA', 'PRODUCT_PRODUCT_NAME': 'DPS-2000AB.*', 'BUS': 58, 'ADDRESS': 80})",
         "Type": "PowerSupply",
+        "xyz.openbmc_project.Association.Definitions": {
+            "Associations": [
+                [
+                    "powering",
+                    "powered_by",
+                    "/xyz/openbmc_project/inventory/system/board/PsuBoard_0"
+                ],
+                [
+                    "all_sensors",
+                    "power_supply",
+                    "/xyz/openbmc_project/sensors/power/PSU_0_Power_Out_0"
+                ],
+                [
+                    "all_sensors",
+                    "power_supply",
+                    "/xyz/openbmc_project/sensors/temperature/PSU_0_Temp_0"
+                ]
+            ]
+        },
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
             "Manufacturer": "$PRODUCT_MANUFACTURER",
             "Model": "$PRODUCT_PRODUCT_NAME",
@@ -245,6 +264,25 @@
         "Name": "PSU_1",
         "Probe": "xyz.openbmc_project.FruDevice({'PRODUCT_MANUFACTURER': 'DELTA', 'PRODUCT_PRODUCT_NAME': 'DPS-2000AB.*', 'BUS': 58, 'ADDRESS': 81})",
         "Type": "PowerSupply",
+        "xyz.openbmc_project.Association.Definitions": {
+            "Associations": [
+                [
+                    "powering",
+                    "powered_by",
+                    "/xyz/openbmc_project/inventory/system/board/PsuBoard_0"
+                ],
+                [
+                    "all_sensors",
+                    "power_supply",
+                    "/xyz/openbmc_project/sensors/power/PSU_1_Power_Out_0"
+                ],
+                [
+                    "all_sensors",
+                    "power_supply",
+                    "/xyz/openbmc_project/sensors/temperature/PSU_1_Temp_0"
+                ]
+            ]
+        },
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
             "Manufacturer": "$PRODUCT_MANUFACTURER",
             "Model": "$PRODUCT_PRODUCT_NAME",
@@ -278,6 +316,25 @@
         "Name": "PSU_2",
         "Probe": "xyz.openbmc_project.FruDevice({'PRODUCT_MANUFACTURER': 'DELTA', 'PRODUCT_PRODUCT_NAME': 'DPS-2000AB.*', 'BUS': 58, 'ADDRESS': 82})",
         "Type": "PowerSupply",
+        "xyz.openbmc_project.Association.Definitions": {
+            "Associations": [
+                [
+                    "powering",
+                    "powered_by",
+                    "/xyz/openbmc_project/inventory/system/board/PsuBoard_0"
+                ],
+                [
+                    "all_sensors",
+                    "power_supply",
+                    "/xyz/openbmc_project/sensors/power/PSU_2_Power_Out_0"
+                ],
+                [
+                    "all_sensors",
+                    "power_supply",
+                    "/xyz/openbmc_project/sensors/temperature/PSU_2_Temp_0"
+                ]
+            ]
+        },
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
             "Manufacturer": "$PRODUCT_MANUFACTURER",
             "Model": "$PRODUCT_PRODUCT_NAME",
@@ -311,6 +368,25 @@
         "Name": "PSU_3",
         "Probe": "xyz.openbmc_project.FruDevice({'PRODUCT_MANUFACTURER': 'DELTA', 'PRODUCT_PRODUCT_NAME': 'DPS-2000AB.*', 'BUS': 58, 'ADDRESS': 83})",
         "Type": "PowerSupply",
+        "xyz.openbmc_project.Association.Definitions": {
+            "Associations": [
+                [
+                    "powering",
+                    "powered_by",
+                    "/xyz/openbmc_project/inventory/system/board/PsuBoard_0"
+                ],
+                [
+                    "all_sensors",
+                    "power_supply",
+                    "/xyz/openbmc_project/sensors/power/PSU_3_Power_Out_0"
+                ],
+                [
+                    "all_sensors",
+                    "power_supply",
+                    "/xyz/openbmc_project/sensors/temperature/PSU_3_Temp_0"
+                ]
+            ]
+        },
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
             "Manufacturer": "$PRODUCT_MANUFACTURER",
             "Model": "$PRODUCT_PRODUCT_NAME",
