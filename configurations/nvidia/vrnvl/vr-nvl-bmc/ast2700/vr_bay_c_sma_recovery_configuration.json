@@ -12,10 +12,11 @@
             "Target": "BF4",
             "Type": "MCURecovery",
             "USBPort": "1-1.4.1",
-            "VendorId": "0x0955"
+            "VendorId": "0x0955",
+            "hasChassisPowerSource": false
         }
     ],
-    "Name": "BF4_SMA_Recovery_Devices",
+    "Name": "BAY_C_SMA_Recovery_Devices",
     "Probe": "TRUE",
     "Type": "Recovery_Config"
 }

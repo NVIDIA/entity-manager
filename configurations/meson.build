@@ -490,7 +490,7 @@ configs = [
     'nvidia/vrnvl/vr-nvl-bmc/ast2700/System.json',
     'nvidia/vrnvl/vr-nvl-bmc/ast2700/VR200NVL_DCSCM.json',
     'nvidia/vrnvl/vr-nvl-bmc/ast2700/vr_P4103.json',
-    'nvidia/vrnvl/vr-nvl-bmc/ast2700/vr_bf4_sma_recovery_configuration.json',
+    'nvidia/vrnvl/vr-nvl-bmc/ast2700/vr_bay_c_sma_recovery_configuration.json',
     'nvidia/vrnvl/vr-nvl-bmc/ast2700/vr_cx9_sma_recovery_configuration.json',
     'nvidia/vrnvl/vr-nvl-bmc/ast2700/vr_gpio_recovery_configuration.json',
     'nvidia/vrnvl/vr-nvl-bmc/ast2700/vr_irot_bmc_chassis.json',

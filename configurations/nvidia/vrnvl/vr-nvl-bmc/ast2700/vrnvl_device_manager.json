@@ -57,7 +57,7 @@
         },
         {
             "ConnectsToName": "IO_Board_SMA_0",
-            "DeviceAddress": "MCTP:62",
+            "DeviceAddress": "MCTP:61",
             "DeviceType": "MCTPEndpoint",
             "Name": "CX_0",
             "PhysicalInterface": "",
@@ -68,7 +68,7 @@
         },
         {
             "ConnectsToName": "IO_Board_SMA_0",
-            "DeviceAddress": "MCTP:64",
+            "DeviceAddress": "MCTP:63",
             "DeviceType": "MCTPEndpoint",
             "Name": "CX_1",
             "PhysicalInterface": "",
@@ -90,7 +90,7 @@
         },
         {
             "ConnectsToName": "IO_Board_SMA_1",
-            "DeviceAddress": "MCTP:72",
+            "DeviceAddress": "MCTP:71",
             "DeviceType": "MCTPEndpoint",
             "Name": "CX_2",
             "PhysicalInterface": "",
@@ -101,7 +101,7 @@
         },
         {
             "ConnectsToName": "IO_Board_SMA_1",
-            "DeviceAddress": "MCTP:74",
+            "DeviceAddress": "MCTP:73",
             "DeviceType": "MCTPEndpoint",
             "Name": "CX_3",
             "PhysicalInterface": "",
@@ -123,7 +123,7 @@
         },
         {
             "ConnectsToName": "IO_Board_SMA_2",
-            "DeviceAddress": "MCTP:82",
+            "DeviceAddress": "MCTP:81",
             "DeviceType": "MCTPEndpoint",
             "Name": "CX_4",
             "PhysicalInterface": "",
@@ -134,7 +134,7 @@
         },
         {
             "ConnectsToName": "IO_Board_SMA_2",
-            "DeviceAddress": "MCTP:84",
+            "DeviceAddress": "MCTP:83",
             "DeviceType": "MCTPEndpoint",
             "Name": "CX_5",
             "PhysicalInterface": "",
@@ -156,7 +156,7 @@
         },
         {
             "ConnectsToName": "IO_Board_SMA_3",
-            "DeviceAddress": "MCTP:92",
+            "DeviceAddress": "MCTP:91",
             "DeviceType": "MCTPEndpoint",
             "Name": "CX_6",
             "PhysicalInterface": "",
@@ -167,7 +167,7 @@
         },
         {
             "ConnectsToName": "IO_Board_SMA_3",
-            "DeviceAddress": "MCTP:94",
+            "DeviceAddress": "MCTP:93",
             "DeviceType": "MCTPEndpoint",
             "Name": "CX_7",
             "PhysicalInterface": "",

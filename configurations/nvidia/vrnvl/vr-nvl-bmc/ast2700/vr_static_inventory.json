@@ -18,8 +18,14 @@
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "CX9",
             "DEVICE_TYPE": 2,
+            "EID": 61,
             "INSTANCE_NUMBER": 0,
-            "UUID": "STATIC:770:0:MCTP_EID:62"
+            "LOCATION_CONTEXT": "Chassis_0/Bay-B-Left-Bottom",
+            "PARENT_IO_BOARD_INSTANCE": 0,
+            "PORT_LOCATION_REFERENCE": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Left",
+            "PORT_NAME_0": "C3_1",
+            "PORT_NAME_1": "C4_2",
+            "UUID": "STATIC:770:0:MCTP_EID:61"
         }
     },
     {
@@ -30,8 +36,14 @@
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "CX9",
             "DEVICE_TYPE": 2,
+            "EID": 63,
             "INSTANCE_NUMBER": 1,
-            "UUID": "STATIC:770:1:MCTP_EID:64"
+            "LOCATION_CONTEXT": "Chassis_0/Bay-B-Left-Bottom",
+            "PARENT_IO_BOARD_INSTANCE": 0,
+            "PORT_LOCATION_REFERENCE": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Left",
+            "PORT_NAME_0": "C3_2",
+            "PORT_NAME_1": "C4_1",
+            "UUID": "STATIC:770:1:MCTP_EID:63"
         }
     },
     {
@@ -42,8 +54,14 @@
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "CX9",
             "DEVICE_TYPE": 2,
+            "EID": 71,
             "INSTANCE_NUMBER": 2,
-            "UUID": "STATIC:770:2:MCTP_EID:72"
+            "LOCATION_CONTEXT": "Chassis_0/Bay-B-Left-Top",
+            "PARENT_IO_BOARD_INSTANCE": 1,
+            "PORT_LOCATION_REFERENCE": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Left",
+            "PORT_NAME_0": "C1_1",
+            "PORT_NAME_1": "C2_2",
+            "UUID": "STATIC:770:2:MCTP_EID:71"
         }
     },
     {
@@ -54,8 +72,14 @@
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "CX9",
             "DEVICE_TYPE": 2,
+            "EID": 73,
             "INSTANCE_NUMBER": 3,
-            "UUID": "STATIC:770:3:MCTP_EID:74"
+            "LOCATION_CONTEXT": "Chassis_0/Bay-B-Left-Top",
+            "PARENT_IO_BOARD_INSTANCE": 1,
+            "PORT_LOCATION_REFERENCE": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Left",
+            "PORT_NAME_0": "C1_2",
+            "PORT_NAME_1": "C2_1",
+            "UUID": "STATIC:770:3:MCTP_EID:73"
         }
     },
     {
@@ -66,8 +90,14 @@
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "CX9",
             "DEVICE_TYPE": 2,
+            "EID": 81,
             "INSTANCE_NUMBER": 4,
-            "UUID": "STATIC:770:4:MCTP_EID:82"
+            "LOCATION_CONTEXT": "Chassis_0/Bay-B-Right-Bottom",
+            "PARENT_IO_BOARD_INSTANCE": 2,
+            "PORT_LOCATION_REFERENCE": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Right",
+            "PORT_NAME_0": "C7_1",
+            "PORT_NAME_1": "C8_2",
+            "UUID": "STATIC:770:4:MCTP_EID:81"
         }
     },
     {
@@ -78,8 +108,14 @@
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "CX9",
             "DEVICE_TYPE": 2,
+            "EID": 83,
             "INSTANCE_NUMBER": 5,
-            "UUID": "STATIC:770:5:MCTP_EID:84"
+            "LOCATION_CONTEXT": "Chassis_0/Bay-B-Right-Bottom",
+            "PARENT_IO_BOARD_INSTANCE": 2,
+            "PORT_LOCATION_REFERENCE": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Right",
+            "PORT_NAME_0": "C7_2",
+            "PORT_NAME_1": "C8_1",
+            "UUID": "STATIC:770:5:MCTP_EID:83"
         }
     },
     {
@@ -90,8 +126,14 @@
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "CX9",
             "DEVICE_TYPE": 2,
+            "EID": 91,
             "INSTANCE_NUMBER": 6,
-            "UUID": "STATIC:770:6:MCTP_EID:92"
+            "LOCATION_CONTEXT": "Chassis_0/Bay-B-Right-Top",
+            "PARENT_IO_BOARD_INSTANCE": 3,
+            "PORT_LOCATION_REFERENCE": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Right",
+            "PORT_NAME_0": "C5_1",
+            "PORT_NAME_1": "C6_2",
+            "UUID": "STATIC:770:6:MCTP_EID:91"
         }
     },
     {
@@ -102,8 +144,14 @@
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "CX9",
             "DEVICE_TYPE": 2,
+            "EID": 93,
             "INSTANCE_NUMBER": 7,
-            "UUID": "STATIC:770:7:MCTP_EID:94"
+            "LOCATION_CONTEXT": "Chassis_0/Bay-B-Right-Top",
+            "PARENT_IO_BOARD_INSTANCE": 3,
+            "PORT_LOCATION_REFERENCE": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Right",
+            "PORT_NAME_0": "C5_2",
+            "PORT_NAME_1": "C6_1",
+            "UUID": "STATIC:770:7:MCTP_EID:93"
         }
     },
     {
@@ -128,6 +176,7 @@
             "DEVICE_TYPE": 5,
             "INSTANCE_NUMBER": 0,
             "LEAK_DETECTION": false,
+            "LOCATION_CONTEXT": "Chassis_0/Bay-B-Left-Bottom",
             "UUID": "STATIC:517:0:MCTP_EID:60"
         }
     },
@@ -141,6 +190,7 @@
             "DEVICE_TYPE": 5,
             "INSTANCE_NUMBER": 1,
             "LEAK_DETECTION": true,
+            "LOCATION_CONTEXT": "Chassis_0/Bay-B-Left-Top",
             "UUID": "STATIC:517:1:MCTP_EID:70"
         }
     },
@@ -154,6 +204,7 @@
             "DEVICE_TYPE": 5,
             "INSTANCE_NUMBER": 2,
             "LEAK_DETECTION": false,
+            "LOCATION_CONTEXT": "Chassis_0/Bay-B-Right-Bottom",
             "UUID": "STATIC:517:2:MCTP_EID:80"
         }
     },
@@ -167,6 +218,7 @@
             "DEVICE_TYPE": 5,
             "INSTANCE_NUMBER": 3,
             "LEAK_DETECTION": true,
+            "LOCATION_CONTEXT": "Chassis_0/Bay-B-Right-Top",
             "UUID": "STATIC:517:3:MCTP_EID:90"
         }
     },
