@@ -193,7 +193,7 @@
             },
             {
                 "AuxNames": [
-                    "CX_NIC_$INSTANCE_NUMBER"
+                    "NIC_0"
                 ],
                 "Name": "CX_NIC_$INSTANCE_NUMBER_AUX",
                 "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/CX_$INSTANCE_NUMBER",
