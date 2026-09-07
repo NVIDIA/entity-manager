@@ -16,15 +16,16 @@
     {
         "Exposes": [
             {
-                "Bus": "2",
-                "ChipSelect": "0",
-                "Name": "MCTPSPI_16",
+                "Address": "0x58",
+                "Bus": "0",
+                "Name": "CPU_EROT",
+                "PollingInterval": "5",
                 "StaticEndpointID": "16",
-                "Type": "MCTPSPIDevice"
+                "Type": "MCTPI2CTarget"
             }
         ],
-        "Name": "MCTP_SPI_DEV",
-        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpspi2_0'})",
+        "Name": "MCTP_CPU_EROT",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpi2c0'})",
         "Type": "MCTPInterface"
     },
     {
