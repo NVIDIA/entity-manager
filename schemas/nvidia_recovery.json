@@ -364,6 +364,11 @@
                 "ChassisName": {
                     "type": "string"
                 },
+                "FunctionalUsbId": {
+                    "description": "USB vid:pid a normally booted HMC presents on the recovery link. Optional; without it the USB DFU recovery tool cannot tell a healthy HMC from a dead one and always attempts recovery.",
+                    "type": "string",
+                    "pattern": "^[0-9A-Fa-f]{4}:[0-9A-Fa-f]{4}$"
+                },
                 "Name": {
                     "type": "string"
                 },
@@ -387,6 +392,10 @@
                 "Type": {
                     "type": "string",
                     "const": "USBDFURecovery"
+                },
+                "UsbPort": {
+                    "description": "Kernel USB port path of the HMC (e.g. 2-1.1). Optional; restricts the status probe to that port on platforms with several USB devices.",
+                    "type": "string"
                 },
                 "hasChassisPowerSource": {
                     "type": "boolean"

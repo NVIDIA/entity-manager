@@ -1,6 +1,7 @@
 {
     "Exposes": [
         {
+            "FunctionalUsbId": "0525:a4a2",
             "Name": "FW_HMC_0",
             "RecoveryGpioName": "HMC_RECOVERY_R-O",
             "RecoveryGpioPolarity": "ActiveHigh",
