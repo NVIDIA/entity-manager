@@ -347,6 +347,41 @@
                 }
             },
             "required": ["Name", "Type"]
+        },
+        "USBDFURecovery": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChassisName": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "RecoveryGpioName": {
+                    "type": "string"
+                },
+                "ResetGpioName": {
+                    "type": "string"
+                },
+                "SpiMuxGpioName": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "USBDFURecovery"
+                },
+                "hasChassisPowerSource": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Name",
+                "Type",
+                "RecoveryGpioName",
+                "ResetGpioName",
+                "SpiMuxGpioName"
+            ]
         }
     }
 }

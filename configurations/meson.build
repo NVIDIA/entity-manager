@@ -556,6 +556,7 @@ configs = [
     'nvidia/vrnvl/vr-nvl-bmc/ast2700/vr_irot_sma_cx9_chassis.json',
     'nvidia/vrnvl/vr-nvl-bmc/ast2700/vr_sbios_spi_chassis.json',
     'nvidia/vrnvl/vr-nvl-bmc/ast2700/vr_static_inventory.json',
+    'nvidia/vrnvl/vr-nvl-bmc/ast2700/vr_usbdfu_recovery_configuration.json',
     'nvidia/vrnvl/vr-nvl-bmc/ast2700/vrnvl_device_manager.json',
     'nvidia/vrnvl/vr-nvl-bmc/ast2700/vrnvl_platform.json',
     'nvidia/vrnvl/vr-nvl-bmc/common/Chassis.json',

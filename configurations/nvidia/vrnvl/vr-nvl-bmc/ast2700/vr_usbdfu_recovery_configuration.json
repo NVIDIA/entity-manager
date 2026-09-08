@@ -1,0 +1,14 @@
+{
+    "Exposes": [
+        {
+            "Name": "FW_HMC_0",
+            "RecoveryGpioName": "HMC_RECOVERY_R-O",
+            "ResetGpioName": "HMC_RST_R_L-O",
+            "SpiMuxGpioName": "HMC_SPI_MUX_R_SEL-O",
+            "Type": "USBDFURecovery"
+        }
+    ],
+    "Name": "USBDFU_Recovery_Devices",
+    "Probe": "TRUE",
+    "Type": "Recovery_Config"
+}
