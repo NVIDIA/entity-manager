@@ -113,6 +113,21 @@
                         "AbsolutePath": "/xyz/openbmc_project/sensors/temperature/CX_NIC_$INSTANCE_NUMBER_Port_0_Temp_0",
                         "Backward": "network_adapter",
                         "Forward": ""
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/voltage/CX_NIC_$INSTANCE_NUMBER_Port_0_Voltage_0",
+                        "Backward": "network_adapter",
+                        "Forward": ""
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/temperature/CX_NIC_$INSTANCE_NUMBER_Port_1_Temp_0",
+                        "Backward": "network_adapter",
+                        "Forward": ""
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/voltage/CX_NIC_$INSTANCE_NUMBER_Port_1_Voltage_0",
+                        "Backward": "network_adapter",
+                        "Forward": ""
                     }
                 ],
                 "DeviceModesSupported": [
@@ -289,12 +304,47 @@
                 "Type": "SensorAuxName"
             },
             {
+                "AuxNames": [
+                    "CX_NIC_$INSTANCE_NUMBER_Port_1_Temp_0"
+                ],
+                "Name": "CX_NIC_$INSTANCE_NUMBER_Port_1_Temp_0",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/CX_$INSTANCE_NUMBER",
+                "SensorId": 501,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": false,
+                        "Name": "UpperFatal",
+                        "Value": 72.0
+                    },
+                    {
+                        "Dynamic": false,
+                        "Name": "UpperCritical",
+                        "Value": 70.0
+                    },
+                    {
+                        "Dynamic": false,
+                        "Name": "UpperCaution",
+                        "Value": 67.0
+                    }
+                ],
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "CX_NIC_$INSTANCE_NUMBER_Port_1_Voltage_0"
+                ],
+                "Name": "CX_NIC_$INSTANCE_NUMBER_Port_1_Voltage_0",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/CX_$INSTANCE_NUMBER",
+                "SensorId": 401,
+                "Type": "SensorAuxName"
+            },
+            {
                 "Association": [
                     "associated_port",
                     "associated_port",
                     "/xyz/openbmc_project/inventory/system/chassis/CX_$INSTANCE_NUMBER/NetworkAdapters/NIC_0/Ports/$PORT_NAME_0"
                 ],
-                "MaxSpeedMBps": 50000,
+                "MaxSpeedMBps": 100000,
                 "Name": "CX_NIC_$INSTANCE_NUMBER_Port_0_INFO",
                 "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
                 "SensorId": 200,
@@ -306,7 +356,7 @@
                     "associated_port",
                     "/xyz/openbmc_project/inventory/system/chassis/CX_$INSTANCE_NUMBER/NetworkAdapters/NIC_0/Ports/$PORT_NAME_1"
                 ],
-                "MaxSpeedMBps": 12500,
+                "MaxSpeedMBps": 100000,
                 "Name": "CX_NIC_$INSTANCE_NUMBER_Port_1_INFO",
                 "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
                 "SensorId": 201,
