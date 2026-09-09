@@ -21,11 +21,11 @@
                 "PollingInterval": "5",
                 "StaticEndpointID": "69",
                 "Type": "MCTPUSBTarget",
-                "USBPath": "1-1-2"
+                "USBPath": "swb"
             }
         ],
         "Name": "MCTP_USB_DEV1",
-        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Alias': 'mctpusb1-1.2'})",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'musbswb'})",
         "Type": "MCTPInterface"
     },
     {
@@ -38,11 +38,11 @@
                 "PollingInterval": "5",
                 "StaticEndpointID": "70",
                 "Type": "MCTPUSBTarget",
-                "USBPath": "1-1-3"
+                "USBPath": "mgmt"
             }
         ],
         "Name": "MCTP_USB_DEV2",
-        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Alias': 'mctpusb1-1.3'})",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'musbmgmt'})",
         "Type": "MCTPInterface"
     }
 ]
