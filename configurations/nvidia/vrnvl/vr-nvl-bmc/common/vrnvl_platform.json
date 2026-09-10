@@ -966,6 +966,13 @@
             "MCTPTargetName": "ERoT_BMC_0",
             "Name": "ERoT_BMC_0_PLDM",
             "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Name": "Platform_FwUpdate_Exclusion",
+            "Type": "PLDMExclusion",
+            "ExcludedInventory": [
+                "/xyz/openbmc_project/inventory/system/platform/Nvidia_VR_NVL72_BMC/BF4_0"
+            ]
         }
     ],
     "Probe": [
