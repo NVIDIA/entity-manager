@@ -2,46 +2,140 @@
     {
         "Exposes": [
             {
-                "BridgePoolStartEID": "21",
+                "BridgePoolStartEID": "56",
+                "IgnoreEIDs": "58",
                 "Interface": "$Interface",
-                "Name": "MCTPUSB_x1",
-                "StaticEndpointID": "20",
+                "Name": "Bay_C_SMA_0",
+                "PollingInterval": "5",
+                "StaticEndpointID": "55",
                 "Type": "MCTPUSBTarget",
-                "USBPath": "1-1-2-1-1"
+                "USBPath": "1-1-1-4-1"
             }
         ],
-        "Name": "MCTP_USB_DEV",
-        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpusb0'})",
+        "Name": "MCTP_USB_DEV_BAY_C_SMA",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'musb1_1_1_4_1'})",
         "Type": "MCTPInterface"
     },
     {
         "Exposes": [
             {
-                "BridgePoolStartEID": "21",
+                "BridgePoolStartEID": "46",
+                "IgnoreMessageTypes": "1,5",
                 "Interface": "$Interface",
-                "Name": "MCTPUSB_x1",
-                "StaticEndpointID": "20",
+                "Name": "SMA_0",
+                "PollingInterval": "5",
+                "StaticEndpointID": "45",
                 "Type": "MCTPUSBTarget",
                 "USBPath": "1-1-2-1-1"
             }
         ],
-        "Name": "MCTP_USB_DEV",
-        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Alias': 'mctpusb1-1.2.1.1'})",
+        "Name": "MCTP_USB_DEV_SMA0",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'musb1_1_2_1_1'})",
         "Type": "MCTPInterface"
     },
     {
         "Exposes": [
             {
-                "BridgePoolStartEID": "21",
+                "BridgePoolStartEID": "41",
+                "IgnoreMessageTypes": "1,5",
                 "Interface": "$Interface",
-                "Name": "MCTPUSB_x2",
-                "StaticEndpointID": "20",
+                "Name": "SMA_1",
+                "PollingInterval": "5",
+                "StaticEndpointID": "40",
                 "Type": "MCTPUSBTarget",
-                "USBPath": "1-1-2-1-1-1"
+                "USBPath": "1-1-2-2-1"
             }
         ],
-        "Name": "MCTP_USB_DEV",
-        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Alias': 'mctpusb1-1.2.1.1.1'})",
+        "Name": "MCTP_USB_DEV_SMA1",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'musb1_1_2_2_1'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgePoolEndEID": "65",
+                "BridgePoolStartEID": "61",
+                "IgnoreEIDs": "62,64",
+                "Interface": "$Interface",
+                "Name": "IO_Board_SMA_0,CX_0,CX_0,CX_1,CX_1,NVMe_E1S_IO0",
+                "PollingInterval": "5",
+                "StaticEndpointID": "60",
+                "Type": "MCTPUSBTarget",
+                "USBPath": "1-1-2-1-4-1"
+            }
+        ],
+        "Name": "MCTP_USB_CX9_SMA_B0_0",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'musb1_1_2_1_4_1'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgePoolEndEID": "75",
+                "BridgePoolStartEID": "71",
+                "IgnoreEIDs": "72,74",
+                "Interface": "$Interface",
+                "Name": "IO_Board_SMA_1,CX_2,CX_2,CX_3,CX_3,NVMe_E1S_IO1",
+                "PollingInterval": "5",
+                "StaticEndpointID": "70",
+                "Type": "MCTPUSBTarget",
+                "USBPath": "1-1-2-1-3-1"
+            }
+        ],
+        "Name": "MCTP_USB_CX9_SMA_B0_1",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'musb1_1_2_1_3_1'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgePoolEndEID": "85",
+                "BridgePoolStartEID": "81",
+                "IgnoreEIDs": "82,84",
+                "Interface": "$Interface",
+                "Name": "IO_Board_SMA_2,CX_4,CX_4,CX_5,CX_5,NVMe_E1S_IO2",
+                "PollingInterval": "5",
+                "StaticEndpointID": "80",
+                "Type": "MCTPUSBTarget",
+                "USBPath": "1-1-2-2-3-1"
+            }
+        ],
+        "Name": "MCTP_USB_CX9_SMA_B1_0",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'musb1_1_2_2_3_1'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgePoolEndEID": "95",
+                "BridgePoolStartEID": "91",
+                "IgnoreEIDs": "92,94",
+                "Interface": "$Interface",
+                "Name": "IO_Board_SMA_3,CX_6,CX_6,CX_7,CX_7,NVMe_E1S_IO3",
+                "PollingInterval": "5",
+                "StaticEndpointID": "90",
+                "Type": "MCTPUSBTarget",
+                "USBPath": "1-1-2-2-4-1"
+            }
+        ],
+        "Name": "MCTP_USB_CX9_SMA_B1_1",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'musb1_1_2_2_4_1'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "Address": "0x1D",
+                "Bus": "13",
+                "IgnoreMessageTypes": "1,5",
+                "Name": "NVMe_E1S_SMM",
+                "PollingInterval": "1",
+                "StaticEndpointID": "210",
+                "Type": "MCTPI2CTarget"
+            }
+        ],
+        "Name": "MCTP_I2C_DEV_13",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpi2c13'})",
         "Type": "MCTPInterface"
     }
 ]
