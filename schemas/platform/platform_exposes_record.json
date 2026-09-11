@@ -38,6 +38,10 @@
                 {
                     "$comment": "downstream-only: RoT chassis create + UUID update target consumed by entity-manager and pldmd.",
                     "$ref": "pldm_device_inventory.json#/$defs/PLDMDeviceInventory"
+                },
+                {
+                    "$comment": "downstream-only: PLDM firmware-update discovery exclusion list consumed by pldmd.",
+                    "$ref": "pldm_exclusion.json#/$defs/PLDMExclusion"
                 }
             ]
         },

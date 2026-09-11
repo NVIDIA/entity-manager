@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$defs": {
+        "PLDMExclusion": {
+            "description": "Downstream Exposes type. Names inventory objects that pldmd's PLDM firmware-update discovery should skip, even though they advertise PLDM type 5, because they are updated through another path.",
+            "properties": {
+                "Name": {
+                    "description": "A recognisable name for the PLDMExclusion entry.",
+                    "type": "string"
+                },
+                "ExcludedInventory": {
+                    "description": "Absolute D-Bus inventory paths pldmd should exclude from PLDM firmware-update discovery.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Type": {
+                    "type": "string",
+                    "enum": ["PLDMExclusion"]
+                }
+            },
+            "required": ["Name", "ExcludedInventory", "Type"],
+            "additionalProperties": false,
+            "type": "object"
+        }
+    },
+    "title": "PLDM Exclusion Exposes Record",
+    "description": "Downstream entity-manager Exposes schema declaring inventory objects excluded from pldmd's PLDM firmware-update discovery."
+}

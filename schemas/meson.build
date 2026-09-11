@@ -39,6 +39,7 @@ schemas = [
     'platform/mctp_bridge_pool_device.json',
     'platform/platform_exposes_record.json',
     'platform/pldm_device_inventory.json',
+    'platform/pldm_exclusion.json',
     'platform/pldm_firmware_device.json',
     'satellite_controller.json',
     'spdm_endpoint.json',
