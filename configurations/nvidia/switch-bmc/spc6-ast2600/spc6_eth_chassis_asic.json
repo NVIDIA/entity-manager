@@ -5,7 +5,7 @@
         "Probe": "TRUE",
         "Type": "fabrics",
         "xyz.openbmc_project.Inventory.Item.Fabric": {
-            "Type": "xyz.openbmc_project.Inventory.Item.Fabric.FabricType.EthLink"
+            "Type": "xyz.openbmc_project.Inventory.Item.Fabric.FabricType.Ethernet"
         }
     },
     {
