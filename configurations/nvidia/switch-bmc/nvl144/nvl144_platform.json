@@ -249,7 +249,7 @@
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/MGX_ERoT_CPU_0"
+                        "/xyz/openbmc_project/inventory/system/chassis/MGX_CPU_0"
                     ],
                     "AssociationForward": [
                         "inventory"
