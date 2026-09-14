@@ -962,6 +962,8 @@
                         "RAA229001",
                         "RAA229004",
                         "RAA229126",
+                        "RAA229140",
+                        "RRV97791",
                         "RTQ6056",
                         "SBRMI",
                         "smpro_hwmon",
@@ -973,7 +975,9 @@
                         "XDPE11280",
                         "XDPE12284",
                         "XDPE132G5C",
-                        "XDPE152C4"
+                        "XDPE152C4",
+                        "XDPE19284",
+                        "XDPE1A2G7C"
                     ]
                 }
             },
