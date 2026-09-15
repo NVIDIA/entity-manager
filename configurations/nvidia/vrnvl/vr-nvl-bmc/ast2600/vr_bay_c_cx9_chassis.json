@@ -74,6 +74,7 @@
                 "Count": 1,
                 "DeviceType": "$DEVICE_TYPE",
                 "Name": "Port",
+                "OpticalModuleTelemetrySupported": true,
                 "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/Bay_C_CX_0/NetworkAdapters/Bay_C_CX_NIC_0",
                 "Priority": false,
                 "SupportFECHistogram": true,

@@ -75,6 +75,7 @@
                 "Count": 2,
                 "DeviceType": "$DEVICE_TYPE",
                 "Name": "Port",
+                "OpticalModuleTelemetrySupported": true,
                 "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/BlueField_0/NetworkAdapters/BlueField_NIC_0",
                 "Priority": false,
                 "SupportFECHistogram": true,
