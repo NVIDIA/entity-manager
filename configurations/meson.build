@@ -326,6 +326,8 @@ configs = [
     'nvidia/common/vrot_mctp_configuration.json',
     'nvidia/cx7_mezzanine_module.json',
     'nvidia/cx8_mezzanine_module.json',
+    'nvidia/evb/ast2700/evb_static_inventory.json',
+    'nvidia/evb/ast2700/vrot_bmc_chassis.json',
     'nvidia/gb200.json',
     'nvidia/gb200nvl/bmc/common/BMC.json',
     'nvidia/gb200nvl/bmc/common/Cable_Backplane_Cartridge.json',

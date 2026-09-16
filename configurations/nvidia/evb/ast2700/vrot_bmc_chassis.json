@@ -1,0 +1,110 @@
+[
+    {
+        "Exposes": [],
+        "Name": "NSM_VRoT_CPU_0",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 4,
+            "INSTANCE_NUMBER": 1,
+            "UUID": "STATIC:4:1:MCTP_EID:100"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/component/CPU_0",
+                        "Backward": "associated_ROT",
+                        "Forward": "inventory"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/component/CPU_0",
+                        "Backward": "associated_chassis",
+                        "Forward": "inventory_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/component/CPU_0",
+                        "Backward": "all_chassis",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CPU_0",
+                        "Backward": "inventory_SKU",
+                        "Forward": "associated_SKU"
+                    }
+                ],
+                "ChassisAttributes": {
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "Name": "CPU_0 VRoT",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "Name": "VRoT_CPU_0",
+                "Type": "NSM_ChassisIRoTResponder",
+                "UUID": "$UUID"
+            },
+            {
+                "Chassis": {
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "DeviceType": "$DEVICE_TYPE",
+                "Name": "VRoT_CPU_0",
+                "SetRotPropertyList": [
+                    "FAILOVER_POLICY"
+                ],
+                "SlotCount": 2,
+                "Type": "NSM_ChassisRoT",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/FW_CPU_0",
+                        "Backward": "ActiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "CPU_0",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 250,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "IsRoT": true,
+                "Name": "Slot1",
+                "ReportSkuWithNsm": true,
+                "SetRotPropertyList": [
+                    "AP_SKU_ID"
+                ],
+                "SlotType": "Active",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/FW_CPU_0",
+                        "Backward": "InactiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "CPU_0",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 250,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "IsRoT": true,
+                "Name": "Slot2",
+                "SlotType": "InActive",
+                "Type": "NSM_RoT_Slot"
+            }
+        ],
+        "Name": "VRoT_CPU_0",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 4, 'INSTANCE_NUMBER': 1, 'UUID': 'STATIC:4:1:MCTP_EID:100'})",
+        "Type": "chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 0
+        }
+    }
+]
