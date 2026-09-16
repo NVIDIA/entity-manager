@@ -18,6 +18,7 @@
                     "Type": "NSM_Chassis"
                 },
                 "DeviceType": "$DEVICE_TYPE",
+                "ImageCopyEnabled": true,
                 "Name": "IRoT_NVSwitch_SMA_$INSTANCE_NUMBER",
                 "SlotCount": 2,
                 "Type": "NSM_ChassisRoT",
