@@ -679,7 +679,7 @@
             }
         ],
         "Name": "GPU",
-        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': 'GB[2-3]00 1CPU: ?2GPU .*'})",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.*1CPU: ?2GPU .*'})",
         "Type": "LinkTopology",
         "xyz.openbmc_project.Configuration.NSMReady": {
             "C1G2_NVLinkReady": "Enabled"
