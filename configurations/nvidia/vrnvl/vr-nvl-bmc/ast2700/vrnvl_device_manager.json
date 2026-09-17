@@ -175,17 +175,6 @@
             "ResetGPIO": "",
             "Type": "PlatformDevice",
             "poweredInStandby": true
-        },
-        {
-            "ConnectsToName": "BMC_0",
-            "DeviceAddress": "MCTP:55",
-            "DeviceType": "MCTPBridge",
-            "Name": "Bay_C_SMA_0",
-            "PhysicalInterface": "usb1:0x1d6b:0x0104:1.4.1",
-            "RecoveryLayers": "",
-            "ResetGPIO": "",
-            "Type": "PlatformDevice",
-            "poweredInStandby": true
         }
     ],
     "Name": "VRNVL BMC Platform Recovery",
