@@ -218,7 +218,7 @@
             "Type": "MCTPUSBGadgetTarget"
         },
         {
-            "MCTPTargetName": "MCTPIROT_0",
+            "MCTPTargetName": "HGX_IRoT_BMC_0",
             "Manufacturer": "NVIDIA",
             "Name": "HGX_IRoT_BMC_0_DevInv",
             "Type": "PLDMDeviceInventory",
@@ -282,7 +282,7 @@
                     "UpdateOnly": true
                 }
             ],
-            "MCTPTargetName": "MCTPIROT_0",
+            "MCTPTargetName": "HGX_IRoT_BMC_0",
             "Name": "HGX_IRoT_BMC_0_PLDM",
             "Type": "PLDMFirmwareDevice"
         },
