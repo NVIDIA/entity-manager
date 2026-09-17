@@ -157,7 +157,7 @@
     {
         "Exposes": [],
         "Name": "NSM_BAY_C_B4240_0",
-        "Probe": "TRUE",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'B4240V.*'})",
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "BAYCB4",
@@ -225,7 +225,7 @@
     {
         "Exposes": [],
         "Name": "NSM_SMA_BAY_C_0_Bridge",
-        "Probe": "TRUE",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80})",
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "BAYCSMA",
