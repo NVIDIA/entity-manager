@@ -156,11 +156,11 @@
     },
     {
         "Exposes": [],
-        "Name": "NSM_BF4_0",
+        "Name": "NSM_BAY_C_B4240_0",
         "Probe": "TRUE",
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
-            "DEVICE_ROLE": "BF4",
+            "DEVICE_ROLE": "BAYCB4",
             "DEVICE_TYPE": 2,
             "INSTANCE_NUMBER": 0,
             "UUID": "STATIC:770:8:MCTP_EID:56"
@@ -224,11 +224,11 @@
     },
     {
         "Exposes": [],
-        "Name": "NSM_SMA_BF4_0_Bridge",
+        "Name": "NSM_SMA_BAY_C_0_Bridge",
         "Probe": "TRUE",
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
-            "DEVICE_ROLE": "BFSMA",
+            "DEVICE_ROLE": "BAYCSMA",
             "DEVICE_TYPE": 5,
             "INSTANCE_NUMBER": 0,
             "UUID": "STATIC:517:4:MCTP_EID:55"
