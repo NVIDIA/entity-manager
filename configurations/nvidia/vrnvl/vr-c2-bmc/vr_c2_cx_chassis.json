@@ -86,7 +86,6 @@
         "xyz.openbmc_project.Inventory.Item.Chassis": {
             "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
         },
-        "xyz.openbmc_project.Inventory.Item.NetworkInterface": {},
         "xyz.openbmc_project.State.Decorator.Health": {
             "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
         }
@@ -254,7 +253,6 @@
         "xyz.openbmc_project.Inventory.Item.Chassis": {
             "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
         },
-        "xyz.openbmc_project.Inventory.Item.NetworkInterface": {},
         "xyz.openbmc_project.State.Decorator.Health": {
             "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
         }
