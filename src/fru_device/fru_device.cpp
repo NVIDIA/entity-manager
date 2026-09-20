@@ -74,6 +74,7 @@ struct FindDevicesWithCallback;
 
 static DBusIntfMap foundDevices;
 
+static std::flat_map<size_t, std::flat_set<size_t>> failedAddresses;
 static std::flat_map<size_t, std::flat_set<size_t>> fruAddresses;
 
 boost::asio::io_context io;
@@ -973,8 +974,9 @@ void addFruObjectToDbus(std::vector<uint8_t>& device, FruDetails& fruDetails,
         if (address == nvme::address)
         {
             // If fail on IPMI FRU detection, check NVMe drive vendor ID
-            addNvmeObjectToDbus(device, dbusInterfaceMap, bus, address,
-                                unknownBusObjectCount, objServer);
+            addNvmeObjectToDbus(device, fruDetails.dbusInterfaceMap, bus,
+                                address, fruDetails.unknownBusObjectCount,
+                                objServer);
         }
 
         return;
