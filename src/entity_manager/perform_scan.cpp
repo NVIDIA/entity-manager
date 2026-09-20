@@ -624,7 +624,9 @@ void scan::PerformScan::updateSystemConfigurationForDevice(
         return;
     }
     nlohmann::json::object_t record = *recordPtr;
-    std::string recordName = getRecordName(device.interface, probeName);
+    const std::string probeType = recordRef.value("Type", "");
+    std::string recordName =
+        getRecordName(device.interface, probeName, probeType);
     size_t foundDeviceIdx = indexes.front();
     indexes.pop_front();
 
@@ -689,116 +691,8 @@ void scan::PerformScan::updateSystemConfiguration(
 
     for (const DBusDeviceDescriptor& device : foundDevices)
     {
-<<<<<<< HEAD
-        // Need all interfaces on this path so that template
-        // substitutions can be done with any of the contained
-        // properties.  If the probe that passed didn't use an
-        // interface, such as if it was just TRUE, then
-        // templateCharReplace will just get passed in an empty
-        // map.
-        auto objectIt = dbusProbeObjects.find(path);
-        const DBusObject& dbusObject = (objectIt == dbusProbeObjects.end())
-                                           ? emptyObject
-                                           : objectIt->second;
-
-        const nlohmann::json::object_t* recordPtr =
-            recordRef.get_ptr<const nlohmann::json::object_t*>();
-        if (recordPtr == nullptr)
-        {
-            lg2::error("Failed to parse record {JSON}", "JSON",
-                       recordRef.dump());
-            continue;
-        }
-        nlohmann::json::object_t record = *recordPtr;
-        std::string recordName =
-            getRecordName(foundDevice, probeName, probeType);
-        size_t foundDeviceIdx = indexes.front();
-        indexes.pop_front();
-
-        // check name first so we have no duplicate names
-        auto getName = record.find("Name");
-        if (getName == record.end())
-        {
-            lg2::error("Record Missing Name! {JSON}", "JSON", recordRef.dump());
-            continue; // this should be impossible at this level
-        }
-
-        const std::string* name = getName->second.get_ptr<const std::string*>();
-        if (name == nullptr)
-        {
-            lg2::error("Name wasn't a string: {JSON}", "JSON",
-                       recordRef.dump());
-            continue;
-        }
-
-        std::string deviceName = generateDeviceName(
-            usedNames, dbusObject, foundDeviceIdx, *name, replaceStr);
-
-        record["Name"] = deviceName;
-
-        usedNames.insert(deviceName);
-
-        for (auto& keyPair : record)
-        {
-            if (keyPair.first != "Name")
-            {
-                // "Probe" string does not contain template variables
-                // Handle left-over variables for "Exposes" later below
-                const bool handleLeftOver =
-                    (keyPair.first != "Probe") && (keyPair.first != "Exposes");
-                em_utils::templateCharReplace(keyPair.second, dbusObject,
-                                              foundDeviceIdx, replaceStr,
-                                              handleLeftOver);
-            }
-        }
-
-        // insert into configuration temporarily to be able to
-        // reference ourselves
-
-        _em.systemConfiguration[recordName] = record;
-
-        auto findExpose = record.find("Exposes");
-        if (findExpose == record.end())
-        {
-            continue;
-        }
-
-        nlohmann::json::array_t* exposeArr =
-            findExpose->second.get_ptr<nlohmann::json::array_t*>();
-        if (exposeArr != nullptr)
-        {
-            for (auto& value : *exposeArr)
-            {
-                applyTemplateAndExposeActions(recordName, dbusObject,
-                                              foundDeviceIdx, replaceStr, value,
-                                              _em.systemConfiguration);
-            }
-        }
-        else
-        {
-            applyTemplateAndExposeActions(
-                recordName, dbusObject, foundDeviceIdx, replaceStr,
-                findExpose->second, _em.systemConfiguration);
-        }
-
-        // If we end up here and the path is empty, we have Probe: "True"
-        // and we dont want that to show up in the associations.
-        if (!path.empty())
-        {
-            auto boardType = record.find("Type")->second.get<std::string>();
-            auto boardName = record.find("Name")->second.get<std::string>();
-            std::string boardInventoryPath =
-                em_utils::buildInventorySystemPath(boardName, boardType);
-            _em.topology.addProbePath(boardInventoryPath, path);
-        }
-
-        // overwrite ourselves with cleaned up version
-        _em.systemConfiguration[recordName] = record;
-        _missingConfigurations.erase(recordName);
-=======
         updateSystemConfigurationForDevice(recordRef, probeName, device,
                                            usedNames, indexes, replaceStr);
->>>>>>> origin/master
     }
 }
 

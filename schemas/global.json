@@ -11,12 +11,8 @@
                     "type": "array",
                     "items": {
                         "type": "string"
-<<<<<<< HEAD
-                    }
-=======
                     },
                     "minItems": 1
->>>>>>> origin/master
                 }
             ]
         },
@@ -62,7 +58,6 @@
                         "Component",
                         "Cpu",
                         "Dimm",
-<<<<<<< HEAD
                         "DownstreamPort",
                         "EEPROM_24C02",
                         "EEPROM_24C256",
@@ -81,8 +76,6 @@
                         "MCTPInterface",
                         "Module",
                         "NSM_Configs",
-=======
->>>>>>> origin/master
                         "NVMe",
                         "NetworkAdapter",
                         "PlatformRecoveryConfiguration",
@@ -159,16 +152,8 @@
                 "xyz.openbmc_project.Inventory.Decorator.Slot": {
                     "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Decorator/Slot"
                 },
-<<<<<<< HEAD
                 "xyz.openbmc_project.Inventory.Decorator.VendorInformation": {
                     "type": "object"
-=======
-                "xyz.openbmc_project.Inventory.Item.Cable": {
-                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/Cable"
-                },
-                "xyz.openbmc_project.Inventory.Item.Chassis": {
-                    "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/Chassis"
->>>>>>> origin/master
                 },
                 "xyz.openbmc_project.Inventory.Item": {
                     "type": "object"
@@ -237,11 +222,7 @@
                     "type": "object"
                 }
             },
-<<<<<<< HEAD
             "required": ["Name", "Probe"]
-=======
-            "required": ["Exposes", "Name", "Probe", "Type"]
->>>>>>> origin/master
         },
         "EMPlatformConfig": {
             "title": "Entity Manager Platform Configuration",
@@ -249,13 +230,8 @@
             "additionalProperties": false,
             "type": "object",
             "properties": {
-<<<<<<< HEAD
                 "PlatformExposes": {
                     "description": "The schema for the platform exposes property. Must be an array where elements are of type PlatformExposesElement.",
-=======
-                "Exposes": {
-                    "description": "The exposes property for a platform configuration. Must be an array where elements are of type PlatformExposesElement.",
->>>>>>> origin/master
                     "type": "array",
                     "items": {
                         "$ref": "platform/platform_exposes_record.json#/$defs/PlatformExposesElement"
@@ -274,11 +250,7 @@
                     "enum": ["Platform"]
                 }
             },
-<<<<<<< HEAD
             "required": ["Name", "PlatformExposes", "Probe", "Type"]
-=======
-            "required": ["Exposes", "Name", "Probe", "Type"]
->>>>>>> origin/master
         }
     },
     "title": "Entity Manager Configuration File",

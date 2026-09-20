@@ -141,32 +141,6 @@ void EntityManager::postProbeConfig(
         dbus_interface.createInterface(
             objectPath, "xyz.openbmc_project.Configuration.Probe", configName);
 
-<<<<<<< HEAD
-    // Downstream: Custom_Name support - if enabled, use boardName as-is
-    // without D-Bus member sanitization for the path
-    auto findCustomNameEnabled = boardValues.find("Custom_Name");
-    bool customNameEnabled = false;
-    if (findCustomNameEnabled != boardValues.end() &&
-        findCustomNameEnabled->type() == nlohmann::json::value_t::boolean)
-    {
-        customNameEnabled = findCustomNameEnabled->get<bool>();
-    }
-
-    sdbusplus::object_path boardPath;
-    if (customNameEnabled)
-    {
-        std::string boardTypeLower = boardType;
-        std::transform(boardTypeLower.begin(), boardTypeLower.end(),
-                       boardTypeLower.begin(), ::tolower);
-        boardPath = sdbusplus::object_path(
-            "/xyz/openbmc_project/inventory/system/" + boardTypeLower + "/" +
-            boardName);
-    }
-    else
-    {
-        boardPath = em_utils::buildInventorySystemPath(boardName, boardType);
-    }
-=======
     iface->register_property("Name", configName);
     iface->register_property("Type", configType);
     iface->register_property("Probe", probeStatements);
@@ -215,9 +189,30 @@ void EntityManager::postBoardToDBus(
     lg2::debug("post {TYPE} '{NAME}' to DBus", "TYPE", configType, "NAME",
                configName);
 
-    const sdbusplus::object_path objectPath =
-        em_utils::buildInventorySystemPath(configName, configType);
->>>>>>> origin/master
+    // Custom_Name support - if enabled, use configName as-is
+    // without D-Bus member sanitization for the path
+    auto findCustomNameEnabled = configValues.find("Custom_Name");
+    bool customNameEnabled = false;
+    if (findCustomNameEnabled != configValues.end() &&
+        findCustomNameEnabled->type() == nlohmann::json::value_t::boolean)
+    {
+        customNameEnabled = findCustomNameEnabled->get<bool>();
+    }
+
+    sdbusplus::object_path objectPath;
+    if (customNameEnabled)
+    {
+        std::string configTypeLower = configType;
+        std::transform(configTypeLower.begin(), configTypeLower.end(),
+                       configTypeLower.begin(), ::tolower);
+        objectPath = sdbusplus::object_path(
+            "/xyz/openbmc_project/inventory/system/" + configTypeLower + "/" +
+            configName);
+    }
+    else
+    {
+        objectPath = em_utils::buildInventorySystemPath(configName, configType);
+    }
 
     std::shared_ptr<sdbusplus::asio::dbus_interface> inventoryIface =
         dbus_interface.createInterface(
@@ -228,45 +223,6 @@ void EntityManager::postBoardToDBus(
     dbus_interface.createAddObjectMethod(jsonPointerPath, objectPath,
                                          systemConfiguration, configNameOrig);
 
-<<<<<<< HEAD
-    std::shared_ptr<sdbusplus::asio::dbus_interface> boardIface =
-        dbus_interface.createInterface(boardPath, invItemIntf, boardNameOrig);
-
-    dbus_interface.createAddObjectMethod(jsonPointerPath, boardPath,
-                                         systemConfiguration, boardNameOrig);
-
-    // Downstream: iterate board properties to match boardIface == propIface
-    // and merge those properties into boardValues before populating
-    for (const auto& [propName, propValue] : boardValues.items())
-    {
-        if (propValue.type() == nlohmann::json::value_t::object &&
-            propName == invItemIntf)
-        {
-            nlohmann::json matchedProps = propValue;
-            for (const auto& [key, value] : matchedProps.items())
-            {
-                boardValues[key] = value;
-            }
-            boardValues.erase(invItemIntf);
-            break;
-        }
-    }
-
-    dbus_interface.populateInterfaceFromJson(
-        systemConfiguration, jsonPointerPath, boardIface, boardValues);
-
-    // Downstream: collect parent_chassis association
-    std::vector<Association> extraAssociations;
-    auto findBoardParent = boardValues.find("Parent_Chassis");
-    if (findBoardParent != boardValues.end() &&
-        findBoardParent->type() == nlohmann::json::value_t::string)
-    {
-        extraAssociations.emplace_back("parent_chassis", "all_chassis",
-                                       findBoardParent->get<std::string>());
-    }
-
-=======
->>>>>>> origin/master
     jsonPointerPath += "/";
 
     // A configuration type only gets a top-level interface if it is listed
@@ -300,13 +256,22 @@ void EntityManager::postBoardToDBus(
         postProbeConfig(objectPath, configNameOrig, configType, *findProbe);
     }
 
+    // collect parent_chassis association
+    std::vector<Association> extraAssociations;
+    auto findBoardParent = configValues.find("Parent_Chassis");
+    if (findBoardParent != configValues.end() &&
+        findBoardParent->type() == nlohmann::json::value_t::string)
+    {
+        extraAssociations.emplace_back("parent_chassis", "all_chassis",
+                                       findBoardParent->get<std::string>());
+    }
+
     // iterate through configuration properties
     for (const auto& [propName, propValue] : configValues.items())
     {
         if (propValue.type() == nlohmann::json::value_t::object)
         {
-<<<<<<< HEAD
-            // Downstream: handle Association.Definitions from JSON config
+            // handle Association.Definitions from JSON config
             if (propName == "xyz.openbmc_project.Association.Definitions")
             {
                 auto findAssoc = propValue.find("Associations");
@@ -324,13 +289,9 @@ void EntityManager::postBoardToDBus(
                         }
                     }
                 }
+                continue;
             }
-            else
-            {
-                std::shared_ptr<sdbusplus::asio::dbus_interface> iface =
-                    dbus_interface.createInterface(boardPath, propName,
-                                                   boardNameOrig);
-=======
+
             std::shared_ptr<sdbusplus::asio::dbus_interface> iface =
                 dbus_interface.createInterface(objectPath, propName,
                                                configNameOrig);
@@ -338,38 +299,18 @@ void EntityManager::postBoardToDBus(
             {
                 typeIface = iface;
             }
->>>>>>> origin/master
 
-                // Honour settableInterfaces for board-level interfaces too, so
-                // designated-settable decorators (SKU/UUID/Asset/AssetTag)
-                // declared on a board are writable — matching how Exposes-item
-                // interfaces are already populated. Lets runtime owners (e.g.
-                // pldmd) set the value; non-settable interfaces stay read-only.
-                dbus_interface.populateInterfaceFromJson(
-                    systemConfiguration, jsonPointerPath + propName, iface,
-                    propValue, getPermission(propName));
-            }
+            // Honour settableInterfaces for board-level interfaces too, so
+            // designated-settable decorators (SKU/UUID/Asset/AssetTag)
+            // declared on a board are writable — matching how Exposes-item
+            // interfaces are already populated. Lets runtime owners (e.g.
+            // pldmd) set the value; non-settable interfaces stay read-only.
+            dbus_interface.populateInterfaceFromJson(
+                systemConfiguration, jsonPointerPath + propName, iface,
+                propValue, getPermission(propName));
         }
     }
 
-<<<<<<< HEAD
-    if (!extraAssociations.empty())
-    {
-        auto assocIface = dbus_interface.createInterface(
-            boardPath,
-            sdbusplus::common::xyz::openbmc_project::association::Definitions::
-                interface,
-            boardNameOrig);
-        assocIface->register_property(
-            "Associations", extraAssociations,
-            sdbusplus::asio::PropertyPermission::readWrite);
-        dbus_interface::tryIfaceInitialize(assocIface);
-    }
-
-    const std::string exposesKey = em_utils::getExposesKey(boardValues);
-    nlohmann::json::iterator exposes = boardValues.find(exposesKey);
-    if (exposes == boardValues.end())
-=======
     if (typeIface == nullptr && !invItemIntf.empty())
     {
         // Name, Type and Probe say how the configuration was matched and
@@ -379,9 +320,22 @@ void EntityManager::postBoardToDBus(
         dbus_interface::tryIfaceInitialize(typeIface);
     }
 
-    nlohmann::json::iterator exposes = configValues.find("Exposes");
+    if (!extraAssociations.empty())
+    {
+        auto assocIface = dbus_interface.createInterface(
+            objectPath,
+            sdbusplus::common::xyz::openbmc_project::association::Definitions::
+                interface,
+            configNameOrig);
+        assocIface->register_property(
+            "Associations", extraAssociations,
+            sdbusplus::asio::PropertyPermission::readWrite);
+        dbus_interface::tryIfaceInitialize(assocIface);
+    }
+
+    const std::string exposesKey = em_utils::getExposesKey(configValues);
+    nlohmann::json::iterator exposes = configValues.find(exposesKey);
     if (exposes == configValues.end())
->>>>>>> origin/master
     {
         return;
     }

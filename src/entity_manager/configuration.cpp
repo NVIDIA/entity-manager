@@ -1,12 +1,8 @@
 #include "configuration.hpp"
 
 #include "perform_probe.hpp"
-<<<<<<< HEAD
-#include "probe_type.hpp"
-#include "shutdown_monitor.hpp"
-=======
 #include "probe_lexer.hpp"
->>>>>>> origin/master
+#include "shutdown_monitor.hpp"
 #include "utils.hpp"
 
 #include <fcntl.h>

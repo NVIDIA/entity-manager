@@ -143,7 +143,6 @@ static int busStrToInt(const std::string_view busName)
     return val;
 }
 
-<<<<<<< HEAD
 /**
  * @brief Retrieve the root I2C bus number for a muxed bus.
  *
@@ -158,9 +157,6 @@ static int busStrToInt(const std::string_view busName)
  * @return The root bus number, or -1 if the bus is not behind a mux
  *         or the symlink format is unexpected.
  */
-=======
-// @returns -1 on error
->>>>>>> origin/master
 static int getRootBus(size_t bus)
 {
     auto ec = std::error_code();
@@ -173,26 +169,7 @@ static int getRootBus(size_t bus)
         return -1;
     }
 
-<<<<<<< HEAD
-    std::string filename = path.filename();
-    auto findBus = filename.find('-');
-    if (findBus == std::string::npos)
-    {
-        return -1;
-    }
-
-    int rootBus = -1;
-    std::string_view busStr(filename.data(), findBus);
-    auto [ptr, errc] = std::from_chars(busStr.begin(), busStr.end(), rootBus);
-    if (errc != std::errc{} || ptr != busStr.end())
-    {
-        return -1;
-    }
-
-    return rootBus;
-=======
     return parseMuxDeviceRootBus(path.filename().string());
->>>>>>> origin/master
 }
 
 static bool isMuxBus(size_t bus)
@@ -551,6 +528,17 @@ static int getBusFRUsCallback(int file, int first, int last, int bus,
     std::flat_set<size_t>* rootFailures = nullptr;
     int rootBus = getRootBus(bus);
 
+    for (const auto& pair : addressBlacklist)
+    {
+        int busP = pair.first;
+        int addressP = pair.second;
+        if (busP == bus)
+        {
+            int address7bit = addressP >> 1;
+            skipList.insert(address7bit);
+        }
+    }
+
     if (rootBus >= 0)
     {
         auto rootBusFind = busBlocklist.find(rootBus);
@@ -661,7 +649,14 @@ static int getBusFRUsCallback(int file, int first, int last, int bus,
 
         if (pair.first.empty())
         {
-            continue;
+            if (ii == nvme::address) // Check for NVMe drive
+            {
+                pair = readNvmeContents(bus, file, errorMessage);
+            }
+            if (pair.first.empty())
+            {
+                continue;
+            }
         }
 
         devices->emplace(ii, pair.first);
@@ -676,159 +671,8 @@ int getBusFRUs(int file, int first, int last, int bus,
                sdbusplus::asio::object_server& objServer)
 {
     std::future<int> future = std::async(std::launch::async, [&]() {
-<<<<<<< HEAD
-        // NOTE: When reading the devices raw on the bus, it can interfere with
-        // the driver's ability to operate, therefore read eeproms first before
-        // scanning for devices without drivers. Several experiments were run
-        // and it was determined that if there were any devices on the bus
-        // before the eeprom was hit and read, the eeprom driver wouldn't open
-        // while the bus device was open. An experiment was not performed to see
-        // if this issue was resolved if the i2c bus device was closed, but
-        // hexdumps of the eeprom later were successful.
-
-        // Scan for i2c eeproms loaded on this bus.
-        std::set<size_t> skipList = findI2CEeproms(bus, devices);
-        std::flat_set<size_t>& foundItems = fruAddresses[bus];
-        foundItems.clear();
-
-        skipList.insert_range(addressBlocklist);
-
-        auto busFind = busBlocklist.find(bus);
-        if (busFind != busBlocklist.end())
-        {
-            if (busFind->second != std::nullopt)
-            {
-                for (const auto& address : *(busFind->second))
-                {
-                    skipList.insert(address);
-                }
-            }
-        }
-
-        int rootBus = getRootBus(bus);
-
-        for (const auto& pair : addressBlacklist)
-        {
-            int busP = pair.first;
-            int addressP = pair.second;
-            if (busP == bus)
-            {
-                int address7bit = addressP >> 1;
-                skipList.insert(address7bit);
-            }
-        }
-
-        if (rootBus >= 0)
-        {
-            auto rootBusFind = busBlocklist.find(rootBus);
-            if (rootBusFind != busBlocklist.end())
-            {
-                if (rootBusFind->second != std::nullopt)
-                {
-                    for (const auto& rootAddress : *(rootBusFind->second))
-                    {
-                        skipList.insert(rootAddress);
-                    }
-                }
-            }
-            foundItems = fruAddresses[rootBus];
-        }
-
-        constexpr int startSkipTargetAddr = 0;
-        constexpr int endSkipTargetAddr = 12;
-
-        for (int ii = first; ii <= last; ii++)
-        {
-            if (foundItems.contains(ii))
-            {
-                continue;
-            }
-            if (skipList.contains(ii))
-            {
-                lg2::debug("skipping bus: {BUS} address: 0x{ADDR}", "BUS", bus,
-                           "ADDR", ii);
-                continue;
-            }
-            // skipping since no device is present in this range
-            if (ii >= startSkipTargetAddr && ii <= endSkipTargetAddr)
-            {
-                continue;
-            }
-            // Set target address
-            if (ioctl(file, I2C_SLAVE, ii) < 0)
-            {
-                lg2::debug("device at bus {BUS} address {ADDR} busy", "BUS",
-                           bus, "ADDR", ii);
-                continue;
-            }
-            // probe
-            if (i2c_smbus_read_byte(file) < 0)
-            {
-                continue;
-            }
-
-            lg2::debug("something at bus {BUS}, addr {ADDR}", "BUS", bus,
-                       "ADDR", ii);
-
-            makeProbeInterface(bus, ii, objServer);
-
-            /* Check for Device type if it is 8 bit or 16 bit */
-            std::optional<bool> is16Bit = isDevice16Bit(file, ii);
-            if (!is16Bit.has_value())
-            {
-                lg2::error("failed to read bus {BUS} address {ADDR}", "BUS",
-                           bus, "ADDR", ii);
-                continue;
-            }
-            bool is16BitBool{*is16Bit};
-
-            auto readFunc = [is16BitBool, file,
-                             ii](off_t offset, size_t length, uint8_t* outbuf) {
-                return readData(is16BitBool, false, file, ii, offset, length,
-                                outbuf);
-            };
-            FRUReader reader(std::move(readFunc));
-            std::string errorMessage =
-                "bus " + std::to_string(bus) + " address " + std::to_string(ii);
-            std::pair<std::vector<uint8_t>, bool> pair =
-                readFRUContents(reader, errorMessage);
-            const bool foundHeader = pair.second;
-
-            if (!foundHeader && !is16BitBool)
-            {
-                // certain FRU eeproms require bytewise reading.
-                // otherwise garbage is read. e.g. SuperMicro PWS 920P-SQ
-
-                auto readFunc =
-                    [is16BitBool, file,
-                     ii](off_t offset, size_t length, uint8_t* outbuf) {
-                        return readData(is16BitBool, true, file, ii, offset,
-                                        length, outbuf);
-                    };
-                FRUReader readerBytewise(std::move(readFunc));
-                pair = readFRUContents(readerBytewise, errorMessage);
-            }
-
-            if (pair.first.empty())
-            {
-                if (ii == nvme::address) // Check for NVMe drive
-                {
-                    pair = readNvmeContents(bus, file, errorMessage);
-                    if (pair.first.empty())
-                    {
-                        continue;
-                    }
-                }
-            }
-
-            devices->emplace(ii, pair.first);
-            fruAddresses[bus].insert(ii);
-        }
-        return 1;
-=======
         return getBusFRUsCallback(file, first, last, bus, devices, powerIsOn,
                                   addressBlocklist, objServer);
->>>>>>> origin/master
     });
     std::future_status status =
         future.wait_for(std::chrono::seconds(busTimeoutSeconds));
@@ -1196,16 +1040,9 @@ void addFruObjectToDbus(std::vector<uint8_t>& device, FruDetails& fruDetails,
         {
             std::string propertyName = property.first;
             iface->register_property(
-<<<<<<< HEAD
                 key, value + '\0',
-                [bus, address, propertyName, &dbusInterfaceMap,
-                 &unknownBusObjectCount, &powerIsOn, &objServer,
-                 &addressBlocklist](const std::string& req, std::string& resp) {
-=======
-                key, property.second + '\0',
                 [bus, address, propertyName, &fruDetails,
                  &objServer](const std::string& req, std::string& resp) {
->>>>>>> origin/master
                     if (strcmp(req.c_str(), resp.c_str()) != 0)
                     {
                         // call the method which will update
@@ -1557,56 +1394,10 @@ void rescanOneBus(BusMap& busmap, uint16_t busNum, FruDetails& fruDetails,
     i2cBuses.emplace_back(busPath);
 
     auto scan = std::make_shared<FindDevicesWithCallback>(
-<<<<<<< HEAD
-        i2cBuses, busmap, powerIsOn, objServer, addressBlocklist,
-        [busNum, &busmap, &dbusInterfaceMap, &unknownBusObjectCount, &powerIsOn,
-         &objServer, &addressBlocklist]() {
-            for (auto busIface = dbusInterfaceMap.begin();
-                 busIface != dbusInterfaceMap.end();)
-            {
-                int rootBus = getRootBus(busNum);
-                if (busIface->first.first == static_cast<size_t>(busNum))
-                {
-                    objServer.remove_interface(busIface->second);
-                    // In case device under mux not detected in root bus
-                    // while rescanOneBus, updating dbusInterfaceMap along
-                    // with busMap to avoid getFRUInfo of not available device
-                    // and throw
-                    if (busIface->first.first == static_cast<size_t>(rootBus))
-                    {
-                        auto deviceMap = busmap.find(rootBus);
-                        if (deviceMap != busMap.end())
-                        {
-                            if (!deviceMap->second->contains(
-                                    busIface->first.second))
-                            {
-                                objServer.remove_interface(busIface->second);
-                                dbusInterfaceMap.erase(busIface->first);
-                                continue;
-                            }
-                        }
-                    }
-                }
-                busIface++;
-            }
-            auto found = busmap.find(busNum);
-            if (found == busmap.end() || found->second == nullptr)
-            {
-                return;
-            }
-            for (auto device : *(found->second))
-            {
-                addFruObjectToDbus(device.second, dbusInterfaceMap,
-                                   static_cast<uint32_t>(busNum), device.first,
-                                   unknownBusObjectCount, powerIsOn,
-                                   addressBlocklist, objServer);
-            }
-=======
         i2cBuses, busmap, fruDetails.powerIsOn, objServer,
         fruDetails.addressBlocklist,
         [busNum, &busmap, &fruDetails, &objServer]() {
             publishFrusOnBus(busmap, busNum, fruDetails, objServer);
->>>>>>> origin/master
         });
     scan->run();
 }
