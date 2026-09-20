@@ -3,6 +3,7 @@
 
 #include "entity_manager.hpp"
 #include "shutdown_monitor.hpp"
+#include "utils.hpp"
 
 #include <boost/asio/io_context.hpp>
 #include <boost/asio/post.hpp>
@@ -18,12 +19,13 @@ int main()
 
     boost::asio::io_context io;
     auto systemBus = std::make_shared<sdbusplus::asio::connection>(io);
-    systemBus->request_name("xyz.openbmc_project.EntityManager");
+    systemBus->request_name(emDbusName);
 
     // Watch for shutdown before the inventory filters are installed, so a
     // reboot that starts while we are still coming up is never mistaken for
     // hardware going away.
     shutdown_monitor::start(*systemBus);
+
 
     EntityManager em(systemBus, io, configurationDirectories, schemaDirectory);
 

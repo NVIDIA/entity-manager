@@ -1,6 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$defs": {
+<<<<<<< HEAD
         "PlatformConfigSchema": {
             "oneOf": [
                 {
@@ -42,14 +43,27 @@
                 {
                     "$comment": "downstream-only: PLDM firmware-update discovery exclusion list consumed by pldmd.",
                     "$ref": "pldm_exclusion.json#/$defs/PLDMExclusion"
+=======
+        "ConfigSchema": {
+            "oneOf": [
+                {
+                    "$ref": "mctp.json#/$defs/MCTPUSBDevice"
+>>>>>>> origin/master
                 }
             ]
         },
         "PlatformExposesElement": {
+<<<<<<< HEAD
             "description": "The platform exposes property element schema. An element of the PlatformExposes property. Used for configurations (e.g. MCTP USB topology) that span multiple entities.",
             "allOf": [
                 {
                     "$ref": "#/$defs/PlatformConfigSchema"
+=======
+            "description": "The platform exposes element schema. An element of a platform configuration's Exposes array. Used for configurations (e.g. MCTP USB topology) that span multiple entities.",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/ConfigSchema"
+>>>>>>> origin/master
                 },
                 {
                     "title": "Missing 'Name'",

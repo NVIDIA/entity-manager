@@ -48,8 +48,10 @@
                     "enum": [
                         "XDPE1X2XXFirmware",
                         "ISL69269Firmware",
+                        "MAX209XXFirmware",
                         "MP2X6XXFirmware",
                         "MP292XFirmware",
+                        "MP2940XFirmware",
                         "MP297XFirmware",
                         "MP5998Firmware",
                         "MP994XFirmware",
@@ -59,6 +61,7 @@
                         "RS31390Firmware",
                         "TDA38640AFirmware",
                         "TPS25990Firmware",
+                        "TPS544X27Firmware",
                         "XDP71XFirmware"
                     ]
                 },
@@ -74,14 +77,18 @@
             },
             "required": ["Name", "Type", "Bus", "Address", "FirmwareInfo"]
         },
-        "BIOS": {
+        "SPIFlashFirmware": {
             "description": "Required information to complete the host fw update process.",
             "type": "object",
             "additionalProperties": false,
             "properties": {
                 "Type": {
                     "description": "The type of configuration object. IntelSPIFlash implies Intel Flash Descriptor.",
-                    "enum": ["IntelSPIFlash", "SPIFlash"]
+                    "enum": [
+                        "IntelHostSPIFlash",
+                        "HostSPIFlash",
+                        "IntelE810SPIFlash"
+                    ]
                 },
                 "Name": {
                     "description": "The name of the firmware.",

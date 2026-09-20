@@ -6,7 +6,7 @@
 
 const AssocName assocContaining =
     AssocName("containing", "contained_by", {"Board", "Chassis"},
-              {"Board", "Chassis", "PowerSupply", "NVMe"});
+              {"Board", "Chassis", "Cpu", "Dimm", "PowerSupply", "NVMe"});
 const AssocName assocContainedBy = assocContaining.getReverse();
 
 // Topology tests say that a chassis can be powering another chassis.

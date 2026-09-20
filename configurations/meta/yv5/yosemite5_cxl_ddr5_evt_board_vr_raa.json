@@ -77,11 +77,17 @@
                 }
             ],
             "Type": "ADC128D818",
+            "in3_Max": 1.98,
+            "in3_Min": -0.3,
             "in3_Name": "CXL_ADC_P1V8_VDD_IO_VOLT_V",
             "in3_PowerState": "On",
             "in4_Name": "CXL_ADC_P1V8_STBY_VOLT_V",
+            "in5_Max": 4.3,
+            "in5_Min": -0.3,
             "in5_Name": "CXL_ADC_P3V3_STBY_VOLT_V",
             "in5_Scale": 500,
+            "in6_Max": 6,
+            "in6_Min": -0.3,
             "in6_Name": "CXL_ADC_P5V_STBY_VOLT_V",
             "in6_Scale": 281.293
         },
@@ -129,7 +135,11 @@
                 }
             ],
             "Type": "ADC128D818",
+            "in6_Max": 0.96,
+            "in6_Min": -0.3,
             "in6_Name": "CXL_ADC_P0V75_VDD_DIG_VOLT_V",
+            "in7_Max": 1.32,
+            "in7_Min": -0.3,
             "in7_Name": "CXL_ADC_P1V2_VDD_HA_VOLT_V"
         },
         {
@@ -176,8 +186,13 @@
                 }
             ],
             "Type": "INA230",
+            "curr1_Max": 20,
+            "curr1_Min": 0,
             "curr1_Name": "CXL_P12V_STBY_CURR_A",
+            "in1_Max": 30,
+            "in1_Min": -30,
             "in1_Name": "CXL_P12V_STBY_VOLT_V",
+            "power1_Max": 225,
             "power1_Name": "CXL_P12V_STBY_PWR_W"
         },
         {
@@ -243,7 +258,7 @@
             "OutLimitMin": 0,
             "PCoefficient": -3.0,
             "PositiveHysteresis": 0.0,
-            "SetPoint": 100.0,
+            "SetPoint": 93.0,
             "SlewNeg": 0.0,
             "SlewPos": 0.0,
             "Type": "Pid",
@@ -332,7 +347,7 @@
             "OutLimitMin": 0,
             "PCoefficient": -3.0,
             "PositiveHysteresis": 0.0,
-            "SetPoint": 100.0,
+            "SetPoint": 97.0,
             "SlewNeg": 0.0,
             "SlewPos": 0.0,
             "Type": "Pid",
@@ -358,43 +373,27 @@
             "Thresholds": [
                 {
                     "Direction": "less than",
-                    "Hysteresis": 0.012,
-                    "Label": "vout1",
-                    "Name": "lower non recoverable",
-                    "Severity": 4,
-                    "Value": 0.6
-                },
-                {
-                    "Direction": "less than",
-                    "Hysteresis": 0.014,
+                    "Hysteresis": 0.0134,
                     "Label": "vout1",
                     "Name": "lower critical",
                     "Severity": 1,
-                    "Value": 0.7
+                    "Value": 0.67
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.0187,
+                    "Hysteresis": 0.0192,
                     "Label": "vout1",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 0.935
+                    "Value": 0.959
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.019,
-                    "Label": "vout1",
-                    "Name": "upper non recoverable",
-                    "Severity": 4,
-                    "Value": 0.95
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 0.84,
+                    "Hysteresis": 0.92,
                     "Label": "iout1",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 42
+                    "Value": 46
                 },
                 {
                     "Direction": "greater than",
@@ -486,13 +485,29 @@
                 }
             ],
             "Type": "RAA228228",
+            "iout1_Max": 90,
+            "iout1_Min": 0,
             "iout1_Name": "CXL_VR_PVDD_CORE_CURR_A",
+            "iout2_Max": 90,
+            "iout2_Min": 0,
             "iout2_Name": "CXL_VR_P0V75_VDD_DIG_DDR_CURR_A",
+            "pout1_Max": 90,
+            "pout1_Min": 0,
             "pout1_Name": "CXL_VR_PVDD_CORE_PWR_W",
+            "pout2_Max": 90,
+            "pout2_Min": 0,
             "pout2_Name": "CXL_VR_P0V75_VDD_DIG_DDR_PWR_W",
+            "temp1_Max": 125,
+            "temp1_Min": -40,
             "temp1_Name": "CXL_VR_PVDD_CORE_TEMP_C",
+            "temp2_Max": 125,
+            "temp2_Min": -40,
             "temp2_Name": "CXL_VR_P0V75_VDD_DIG_DDR_TEMP_C",
+            "vout1_Max": 0.96,
+            "vout1_Min": -0.3,
             "vout1_Name": "CXL_VR_PVDD_CORE_VOLT_V",
+            "vout2_Max": 0.96,
+            "vout2_Min": -0.3,
             "vout2_Name": "CXL_VR_P0V75_VDD_DIG_DDR_VOLT_V"
         },
         {
@@ -514,15 +529,15 @@
             "Name": "Stepwise_CXL_VR",
             "NegativeHysteresis": 2.0,
             "Output": [
-                22.0,
-                30.0,
+                14.0,
+                20.0,
                 95.0
             ],
             "PositiveHysteresis": 0.0,
             "Reading": [
                 80.0,
                 90.0,
-                115.0
+                96.0
             ],
             "Type": "Stepwise",
             "Zones": [
@@ -574,15 +589,15 @@
             "Name": "Stepwise_CXL_VF_DIMM",
             "NegativeHysteresis": 2.0,
             "Output": [
-                22.0,
+                14.0,
+                20.0,
+                25.0,
                 30.0,
-                40.0,
-                45.0,
                 95.0
             ],
             "PositiveHysteresis": 0.0,
             "Reading": [
-                56.0,
+                55.0,
                 58.0,
                 65.0,
                 70.0,
@@ -601,15 +616,15 @@
             "Name": "Stepwise_CXL_VF_CHIP",
             "NegativeHysteresis": 2.0,
             "Output": [
-                22.0,
-                30.0,
+                14.0,
+                20.0,
                 95.0
             ],
             "PositiveHysteresis": 0.0,
             "Reading": [
                 80.0,
                 90.0,
-                115.0
+                101.0
             ],
             "Type": "Stepwise",
             "Zones": [

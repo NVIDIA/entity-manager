@@ -5,12 +5,13 @@
 
 #include "object_mapper.hpp"
 #include "perform_probe.hpp"
-#include "probe_type.hpp"
+#include "probe_lexer.hpp"
 #include "utils.hpp"
 
 #include <boost/asio/steady_timer.hpp>
 #include <phosphor-logging/lg2.hpp>
 
+#include <algorithm>
 #include <cerrno>
 #include <charconv>
 #include <flat_map>
@@ -104,16 +105,22 @@ static void processDbusObjects(
 
         for (const auto& [busname, ifaces] : object)
         {
-            for (const std::string& iface : ifaces)
+            // We should skip ourselve for probing to avoid circular
+            // probes / registrations when a configuration probe uses
+            // an interface that's also being populated by EM itself.
+            if (busname != emDbusName)
             {
-                // The 3 default org.freedeskstop interfaces (Peer,
-                // Introspectable, and Properties) are returned by
-                // the mapper but don't have properties, so don't bother
-                // with the GetAll call to save some cycles.
-                if (!iface.starts_with("org.freedesktop"))
+                for (const std::string& iface : ifaces)
                 {
-                    getInterfaces({busname, path, iface}, probeVector, scan,
-                                  io);
+                    // The 3 default org.freedeskstop interfaces (Peer,
+                    // Introspectable, and Properties) are returned by
+                    // the mapper but don't have properties, so don't bother
+                    // with the GetAll call to save some cycles.
+                    if (!iface.starts_with("org.freedesktop"))
+                    {
+                        getInterfaces({busname, path, iface}, probeVector, scan,
+                                      io);
+                    }
                 }
             }
         }
@@ -516,6 +523,152 @@ void scan::PerformScan::restorePersistedConfigurations(
     }
 }
 
+static void replaceTemplateFields(
+    nlohmann::json::object_t& record, const DBusObject& dbusObject,
+    size_t foundDeviceIdx, std::optional<std::string>& replaceStr)
+{
+    for (auto& keyPair : record)
+    {
+        if (keyPair.first != "Name")
+        {
+            // "Probe" string does not contain template variables
+            // Handle left-over variables for "Exposes" later below
+            const bool handleLeftOver =
+                (keyPair.first != "Probe") && (keyPair.first != "Exposes");
+            em_utils::templateCharReplace(keyPair.second, dbusObject,
+                                          foundDeviceIdx, replaceStr,
+                                          handleLeftOver);
+        }
+    }
+}
+
+static const std::string* configuredName(const nlohmann::json::object_t& record,
+                                         const nlohmann::json& recordRef)
+{
+    auto getName = record.find("Name");
+    if (getName == record.end())
+    {
+        lg2::error("Record Missing Name! {JSON}", "JSON", recordRef.dump());
+        return nullptr; // this should be impossible at this level
+    }
+
+    const std::string* name = getName->second.get_ptr<const std::string*>();
+    if (name == nullptr)
+    {
+        lg2::error("Name wasn't a string: {JSON}", "JSON", recordRef.dump());
+    }
+    return name;
+}
+
+static void applyExposes(const std::string& recordName, nlohmann::json& expose,
+                         const DBusObject& dbusObject, size_t foundDeviceIdx,
+                         std::optional<std::string>& replaceStr,
+                         nlohmann::json& systemConfiguration)
+{
+    nlohmann::json::array_t* exposeArr =
+        expose.get_ptr<nlohmann::json::array_t*>();
+    if (exposeArr == nullptr)
+    {
+        applyTemplateAndExposeActions(recordName, dbusObject, foundDeviceIdx,
+                                      replaceStr, expose, systemConfiguration);
+        return;
+    }
+
+    for (auto& value : *exposeArr)
+    {
+        applyTemplateAndExposeActions(recordName, dbusObject, foundDeviceIdx,
+                                      replaceStr, value, systemConfiguration);
+    }
+}
+
+static void addRecordProbePath(const nlohmann::json::object_t& record,
+                               const std::string& path, Topology& topology)
+{
+    // If we end up here and the path is empty, we have Probe: "True"
+    // and we dont want that to show up in the associations.
+    if (path.empty())
+    {
+        return;
+    }
+
+    auto boardType = record.find("Type")->second.get<std::string>();
+    auto boardName = record.find("Name")->second.get<std::string>();
+    std::string boardInventoryPath =
+        em_utils::buildInventorySystemPath(boardName, boardType);
+    topology.addProbePath(boardInventoryPath, path);
+}
+
+void scan::PerformScan::updateSystemConfigurationForDevice(
+    const nlohmann::json& recordRef, const std::string& probeName,
+    const DBusDeviceDescriptor& device, std::set<nlohmann::json>& usedNames,
+    std::list<size_t>& indexes, std::optional<std::string>& replaceStr)
+{
+    // Need all interfaces on this path so that template
+    // substitutions can be done with any of the contained
+    // properties.  If the probe that passed didn't use an
+    // interface, such as if it was just TRUE, then
+    // templateCharReplace will just get passed in an empty
+    // map.
+    DBusObject emptyObject;
+    emptyObject.emplace(std::string{}, DBusInterface{});
+
+    auto objectIt = dbusProbeObjects.find(device.path);
+    const DBusObject& dbusObject =
+        (objectIt == dbusProbeObjects.end()) ? emptyObject : objectIt->second;
+
+    const nlohmann::json::object_t* recordPtr =
+        recordRef.get_ptr<const nlohmann::json::object_t*>();
+    if (recordPtr == nullptr)
+    {
+        lg2::error("Failed to parse record {JSON}", "JSON", recordRef.dump());
+        return;
+    }
+    nlohmann::json::object_t record = *recordPtr;
+    std::string recordName = getRecordName(device.interface, probeName);
+    size_t foundDeviceIdx = indexes.front();
+    indexes.pop_front();
+
+    // check name first so we have no duplicate names
+    const std::string* name = configuredName(record, recordRef);
+    if (name == nullptr)
+    {
+        return;
+    }
+
+    std::string deviceName = generateDeviceName(
+        usedNames, dbusObject, foundDeviceIdx, *name, replaceStr);
+
+    record["Name"] = deviceName;
+
+    usedNames.insert(deviceName);
+
+    // So FOUND('resolved name') can match; we already added probeName
+    // (template) at the start
+    passedProbes.push_back(deviceName);
+
+    replaceTemplateFields(record, dbusObject, foundDeviceIdx, replaceStr);
+
+    // insert into configuration temporarily to be able to
+    // reference ourselves
+
+    _em.systemConfiguration[recordName] = record;
+
+    auto findExpose = record.find("Exposes");
+    if (findExpose == record.end())
+    {
+        return;
+    }
+
+    applyExposes(recordName, findExpose->second, dbusObject, foundDeviceIdx,
+                 replaceStr, _em.systemConfiguration);
+
+    addRecordProbePath(record, device.path, _em.topology);
+
+    // overwrite ourselves with cleaned up version
+    _em.systemConfiguration[recordName] = record;
+    _missingConfigurations.erase(recordName);
+}
+
 void scan::PerformScan::updateSystemConfiguration(
     const nlohmann::json& recordRef, const std::string& probeName,
     FoundDevices& foundDevices)
@@ -534,12 +687,9 @@ void scan::PerformScan::updateSystemConfiguration(
 
     std::optional<std::string> replaceStr;
 
-    DBusObject emptyObject;
-    DBusInterface emptyInterface;
-    emptyObject.emplace(std::string{}, emptyInterface);
-
-    for (const auto& [foundDevice, path] : foundDevices)
+    for (const DBusDeviceDescriptor& device : foundDevices)
     {
+<<<<<<< HEAD
         // Need all interfaces on this path so that template
         // substitutions can be done with any of the contained
         // properties.  If the probe that passed didn't use an
@@ -645,13 +795,18 @@ void scan::PerformScan::updateSystemConfiguration(
         // overwrite ourselves with cleaned up version
         _em.systemConfiguration[recordName] = record;
         _missingConfigurations.erase(recordName);
+=======
+        updateSystemConfigurationForDevice(recordRef, probeName, device,
+                                           usedNames, indexes, replaceStr);
+>>>>>>> origin/master
     }
 }
 
-std::vector<std::string> scan::detail::parseProbeCommand(
+std::vector<probe::Token> scan::detail::parseProbeCommand(
     const nlohmann::json& probeField)
 {
-    std::vector<std::string> probeCommand;
+    // Join the statements (array form) into a single string, then lex it.
+    std::string joined;
     const nlohmann::json::array_t* probeCommandArrayPtr =
         probeField.get_ptr<const nlohmann::json::array_t*>();
     if (probeCommandArrayPtr != nullptr)
@@ -664,7 +819,11 @@ std::vector<std::string> scan::detail::parseProbeCommand(
                 lg2::error("Probe statement wasn't a string, can't parse");
                 return {};
             }
-            probeCommand.push_back(*probeStr);
+            if (!joined.empty())
+            {
+                joined += ' ';
+            }
+            joined += *probeStr;
         }
     }
     else
@@ -675,16 +834,107 @@ std::vector<std::string> scan::detail::parseProbeCommand(
             lg2::error("Probe statement wasn't a string, can't parse");
             return {};
         }
-        probeCommand.push_back(*probeStr);
+        joined = *probeStr;
     }
-    return probeCommand;
+
+    std::optional<std::vector<probe::Token>> tokens = probe::lexProbe(joined);
+    if (!tokens)
+    {
+        lg2::error("Probe statement failed to parse: {PROBE}", "PROBE", joined);
+        return {};
+    }
+    if (tokens->empty())
+    {
+        lg2::error("Probe statement produced no tokens: {PROBE}", "PROBE",
+                   joined);
+    }
+    return *tokens;
 }
 
-void scan::PerformScan::run()
+// From a config's parsed probe statements, collect the D-Bus interface names
+// that need to be probed (discarding non-D-Bus probe types) and record that
+// this config's PerformProbe cares about each of them.
+static void collectDbusProbes(
+    const std::vector<probe::Token>& probeCommand,
+    const std::shared_ptr<probe::PerformProbe>& probePointer,
+    std::flat_set<std::string, std::less<>>& dbusProbeInterfaces,
+    std::vector<std::shared_ptr<probe::PerformProbe>>& dbusProbePointers)
 {
-    std::flat_set<std::string, std::less<>> dbusProbeInterfaces;
-    std::vector<std::shared_ptr<probe::PerformProbe>> dbusProbePointers;
+    for (const probe::Token& token : probeCommand)
+    {
+        if (token.type != probe::TokenType::dbusProbe)
+        {
+            continue;
+        }
+        // syntax requires the interface before the first open brace
+        auto findStart = token.value.find('(');
+        dbusProbeInterfaces.emplace(token.value.substr(0, findStart));
+        dbusProbePointers.emplace_back(probePointer);
+    }
+}
 
+static const std::string* pendingProbeName(
+    const nlohmann::json& config, const std::vector<std::string>& passedProbes)
+{
+    auto findName = config.find("Name");
+    if (findName == config.end())
+    {
+        lg2::error("configuration file missing name:\n {JSON}", "JSON", config);
+        return nullptr;
+    }
+
+    const std::string* probeName = findName->get_ptr<const std::string*>();
+    if (probeName == nullptr)
+    {
+        lg2::error("Name wasn't a string? {JSON}", "JSON", config);
+        return nullptr;
+    }
+
+    if (std::find(passedProbes.begin(), passedProbes.end(), *probeName) !=
+        passedProbes.end())
+    {
+        return nullptr;
+    }
+
+    return probeName;
+}
+
+void scan::detail::pruneMissingByName(nlohmann::json& missingConfigurations,
+                                      const std::vector<std::string>& names)
+{
+    for (const std::string& name : names)
+    {
+        for (auto mit = missingConfigurations.begin();
+             mit != missingConfigurations.end();)
+        {
+            const auto& dev = mit.value();
+            if (dev["Name"].get<std::string>() == name)
+            {
+                mit = missingConfigurations.erase(mit);
+            }
+            else
+            {
+                ++mit;
+            }
+        }
+    }
+}
+
+std::vector<std::string> scan::detail::collectConfiguredNames(
+    const nlohmann::json& systemConfiguration)
+{
+    std::vector<std::string> names;
+    for (const auto& [_, config] : systemConfiguration.items())
+    {
+        names.push_back(config["Name"].get<std::string>());
+    }
+    return names;
+}
+
+bool scan::PerformScan::processConfigurations(
+    std::flat_set<std::string, std::less<>>& dbusProbeInterfaces,
+    std::vector<std::shared_ptr<probe::PerformProbe>>& dbusProbePointers)
+{
     for (auto it = _configurations.begin(); it != _configurations.end();)
     {
         // check for poorly formatted fields, probe must be an array
@@ -697,36 +947,19 @@ void scan::PerformScan::run()
             continue;
         }
 
-        auto findName = it->find("Name");
-        if (findName == it->end())
-        {
-            lg2::error("configuration file missing name:\n {JSON}", "JSON",
-                       *it);
-            it = _configurations.erase(it);
-            continue;
-        }
-
-        const std::string* probeName = findName->get_ptr<const std::string*>();
+        const std::string* probeName = pendingProbeName(*it, passedProbes);
         if (probeName == nullptr)
-        {
-            lg2::error("Name wasn't a string? {JSON}", "JSON", *it);
-            it = _configurations.erase(it);
-            continue;
-        }
-
-        if (std::find(passedProbes.begin(), passedProbes.end(), *probeName) !=
-            passedProbes.end())
         {
             it = _configurations.erase(it);
             continue;
         }
 
         nlohmann::json& recordRef = *it;
-        std::vector<std::string> probeCommand =
+        std::vector<probe::Token> probeCommand =
             detail::parseProbeCommand(*findProbe);
         if (probeCommand.empty())
         {
-            return;
+            return false;
         }
 
         // store reference to this to children to makes sure we don't get
@@ -737,19 +970,30 @@ void scan::PerformScan::run()
 
         // parse out dbus probes by discarding other probe types, store in a
         // map
-        for (const std::string& probe : probeCommand)
-        {
-            if (probe::findProbeType(probe))
-            {
-                continue;
-            }
-            // syntax requires probe before first open brace
-            auto findStart = probe.find('(');
-            std::string interface = probe.substr(0, findStart);
-            dbusProbeInterfaces.emplace(interface);
-            dbusProbePointers.emplace_back(probePointer);
-        }
+        collectDbusProbes(probeCommand, probePointer, dbusProbeInterfaces,
+                          dbusProbePointers);
         it++;
+    }
+
+    return true;
+}
+
+void scan::PerformScan::run()
+{
+    // configs that are already applied are not missing
+    for (const std::string& name :
+         detail::collectConfiguredNames(_em.systemConfiguration))
+    {
+        passedProbes.push_back(name);
+    }
+    detail::pruneMissingByName(_missingConfigurations, passedProbes);
+
+    std::flat_set<std::string, std::less<>> dbusProbeInterfaces;
+    std::vector<std::shared_ptr<probe::PerformProbe>> dbusProbePointers;
+
+    if (!processConfigurations(dbusProbeInterfaces, dbusProbePointers))
+    {
+        return;
     }
 
     // probe vector stores a shared_ptr to each PerformProbe that cares

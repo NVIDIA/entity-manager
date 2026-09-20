@@ -876,6 +876,36 @@
             "Type": "LatticeLFMXO5_25Firmware"
         },
         {
+            "Address": "0x3d",
+            "Bus": 18,
+            "FirmwareInfo": {
+                "CompatibleHardware": "com.meta.Hardware.Santabarbara.VR.MAX20912_pvddcr_soc_p0",
+                "VendorIANA": 40981
+            },
+            "Name": "Santabarbara_MB_VR_pvddcr_soc_p0",
+            "Type": "MAX209XXFirmware"
+        },
+        {
+            "Address": "0x3e",
+            "Bus": 18,
+            "FirmwareInfo": {
+                "CompatibleHardware": "com.meta.Hardware.Santabarbara.VR.MAX20912_pvddcr_cpu1_p0",
+                "VendorIANA": 40981
+            },
+            "Name": "Santabarbara_MB_VR_pvddcr_cpu1_p0",
+            "Type": "MAX209XXFirmware"
+        },
+        {
+            "Address": "0x3f",
+            "Bus": 18,
+            "FirmwareInfo": {
+                "CompatibleHardware": "com.meta.Hardware.Santabarbara.VR.MAX20916_pvddcr_cpu0_p0",
+                "VendorIANA": 40981
+            },
+            "Name": "Santabarbara_MB_VR_pvddcr_cpu0_p0",
+            "Type": "MAX209XXFirmware"
+        },
+        {
             "Address": "0x46",
             "Bus": "18",
             "Labels": [
@@ -950,13 +980,6 @@
             "Name": "MB_E1S0_TEMP_C",
             "PowerState": "On",
             "Thresholds": [
-                {
-                    "Direction": "less than",
-                    "Hysteresis": 0.1,
-                    "Name": "lower critical",
-                    "Severity": 1,
-                    "Value": 5.0
-                },
                 {
                     "Direction": "greater than",
                     "Hysteresis": 1.4,
@@ -1174,7 +1197,7 @@
         {
             "AccumulateSetPoint": true,
             "CycleIntervalTimeMS": 1000,
-            "FailSafePercent": 100.0,
+            "FailSafePercent": 65.0,
             "MinThermalOutput": 30.0,
             "Name": "Zone 0",
             "Type": "Pid.Zone",
@@ -1232,131 +1255,131 @@
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.296,
+                    "Hysteresis": 0.32,
                     "Label": "power2",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.8
+                    "Value": 16.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.296,
+                    "Hysteresis": 0.32,
                     "Label": "power3",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.8
+                    "Value": 16.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.296,
+                    "Hysteresis": 0.32,
                     "Label": "power4",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.8
+                    "Value": 16.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.296,
+                    "Hysteresis": 0.32,
                     "Label": "power5",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.8
+                    "Value": 16.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.296,
+                    "Hysteresis": 0.32,
                     "Label": "power6",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.8
+                    "Value": 16.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.296,
+                    "Hysteresis": 0.32,
                     "Label": "power7",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.8
+                    "Value": 16.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.296,
+                    "Hysteresis": 0.32,
                     "Label": "power8",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.8
+                    "Value": 16.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.296,
+                    "Hysteresis": 0.32,
                     "Label": "power9",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.8
+                    "Value": 16.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.296,
+                    "Hysteresis": 0.32,
                     "Label": "power10",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.8
+                    "Value": 16.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.296,
+                    "Hysteresis": 0.32,
                     "Label": "power11",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.8
+                    "Value": 16.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.296,
+                    "Hysteresis": 0.32,
                     "Label": "power12",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.8
+                    "Value": 16.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.296,
+                    "Hysteresis": 0.32,
                     "Label": "power13",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.8
+                    "Value": 16.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.296,
+                    "Hysteresis": 0.32,
                     "Label": "power14",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.8
+                    "Value": 16.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.296,
+                    "Hysteresis": 0.32,
                     "Label": "power15",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.8
+                    "Value": 16.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.296,
+                    "Hysteresis": 0.32,
                     "Label": "power16",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.8
+                    "Value": 16.0
                 },
                 {
                     "Direction": "greater than",
-                    "Hysteresis": 0.296,
+                    "Hysteresis": 0.32,
                     "Label": "power17",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 14.8
+                    "Value": 16.0
                 },
                 {
                     "Direction": "greater than",
@@ -1529,25 +1552,11 @@
             "PowerState": "BiosPost",
             "Thresholds": [
                 {
-                    "Direction": "less than",
-                    "Hysteresis": 0.02,
-                    "Name": "lower critical",
-                    "Severity": 1,
-                    "Value": -1.0
-                },
-                {
                     "Direction": "greater than",
                     "Hysteresis": 2,
                     "Name": "upper critical",
                     "Severity": 1,
                     "Value": 100.0
-                },
-                {
-                    "Direction": "greater than",
-                    "Hysteresis": 1.9,
-                    "Name": "upper non critical",
-                    "Severity": 0,
-                    "Value": 95.0
                 }
             ],
             "Type": "SBTSI"
@@ -1729,7 +1738,7 @@
         {
             "Class": "temp",
             "Inputs": [
-                "FIOBOARD_REMOTE_INLET_TEMP_C"
+                "VIRTUAL_FIOBOARD_REMOTE_INLET_TEMP_C"
             ],
             "Name": "Stepwise_FIOBOARD_IL",
             "NegativeHysteresis": 0.0,
@@ -1881,13 +1890,6 @@
             "Name": "MB_OUTLET_TEMP_C",
             "Thresholds": [
                 {
-                    "Direction": "less than",
-                    "Hysteresis": 0.1,
-                    "Name": "lower critical",
-                    "Severity": 1,
-                    "Value": 5.0
-                },
-                {
                     "Direction": "greater than",
                     "Hysteresis": 1.6,
                     "Name": "upper critical",
@@ -1902,13 +1904,6 @@
             "Bus": 19,
             "Name": "MB_INLET_TEMP_C",
             "Thresholds": [
-                {
-                    "Direction": "less than",
-                    "Hysteresis": 0.1,
-                    "Name": "lower critical",
-                    "Severity": 1,
-                    "Value": 5.0
-                },
                 {
                     "Direction": "greater than",
                     "Hysteresis": 1.6,

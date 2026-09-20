@@ -138,7 +138,9 @@
             ],
             "Type": "LM5066I",
             "iin_Name": "PDB_HSC2_CURR_A",
+            "iin_Scale": 321,
             "pin_Name": "PDB_HSC2_PWR_W",
+            "pin_Scale": 321000,
             "temp1_Name": "PDB_HSC2_TEMP_C",
             "vin_Name": "PDB_HSC2_VIN_VOLT_V",
             "vout1_Name": "PDB_HSC2_VOUT_VOLT_V"
@@ -207,7 +209,9 @@
             ],
             "Type": "LM5066I",
             "iin_Name": "PDB_HSC3_CURR_A",
+            "iin_Scale": 321,
             "pin_Name": "PDB_HSC3_PWR_W",
+            "pin_Scale": 321000,
             "temp1_Name": "PDB_HSC3_TEMP_C",
             "vin_Name": "PDB_HSC3_VIN_VOLT_V",
             "vout1_Name": "PDB_HSC3_VOUT_VOLT_V"
@@ -276,7 +280,9 @@
             ],
             "Type": "LM5066I",
             "iin_Name": "PDB_HSC4_CURR_A",
+            "iin_Scale": 500,
             "pin_Name": "PDB_HSC4_PWR_W",
+            "pin_Scale": 500000,
             "temp1_Name": "PDB_HSC4_TEMP_C",
             "vin_Name": "PDB_HSC4_VIN_VOLT_V",
             "vout1_Name": "PDB_HSC4_VOUT_VOLT_V"
@@ -580,7 +586,7 @@
         }
     ],
     "Name": "SanMiguel PDB",
-    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': 'San Miguel PDB ', 'BOARD_MANUFACTURER': '(Ingrasys|Quanta)'})",
+    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': 'San Miguel PDB ', 'BOARD_MANUFACTURER': '(Ingrasys|Quanta)', 'PRODUCT_VERSION': '^(?:DVT|EVT)$'})",
     "Type": "Board",
     "xyz.openbmc_project.Inventory.Decorator.Asset": {
         "BuildDate": "$BOARD_MANUFACTURE_DATE",

@@ -357,8 +357,12 @@
             ],
             "Type": "INA230",
             "curr1_Name": "PDB2_P12V_FAN4_CURR_A",
+            "curr1_Offset": -0.0079,
+            "curr1_Scale": 198.894148534,
             "in1_Name": "PDB2_P12V_FAN4_VOLT_V",
-            "power1_Name": "PDB2_P12V_FAN4_PWR_W"
+            "power1_Name": "PDB2_P12V_FAN4_PWR_W",
+            "power1_Offset": -0.0869,
+            "power1_Scale": 198467.828365022
         },
         {
             "Address": "0x43",
@@ -405,8 +409,12 @@
             ],
             "Type": "INA230",
             "curr1_Name": "PDB2_P12V_FAN5_CURR_A",
+            "curr1_Offset": -0.0079,
+            "curr1_Scale": 198.894148534,
             "in1_Name": "PDB2_P12V_FAN5_VOLT_V",
-            "power1_Name": "PDB2_P12V_FAN5_PWR_W"
+            "power1_Name": "PDB2_P12V_FAN5_PWR_W",
+            "power1_Offset": -0.0869,
+            "power1_Scale": 198467.828365022
         },
         {
             "Address": "0x44",
@@ -453,8 +461,12 @@
             ],
             "Type": "INA230",
             "curr1_Name": "PDB2_P12V_FAN6_CURR_A",
+            "curr1_Offset": -0.0079,
+            "curr1_Scale": 198.894148534,
             "in1_Name": "PDB2_P12V_FAN6_VOLT_V",
-            "power1_Name": "PDB2_P12V_FAN6_PWR_W"
+            "power1_Name": "PDB2_P12V_FAN6_PWR_W",
+            "power1_Offset": -0.0869,
+            "power1_Scale": 198467.828365022
         },
         {
             "Address": "0x47",
@@ -501,8 +513,12 @@
             ],
             "Type": "INA230",
             "curr1_Name": "PDB2_P12V_FAN7_CURR_A",
+            "curr1_Offset": -0.0079,
+            "curr1_Scale": 198.894148534,
             "in1_Name": "PDB2_P12V_FAN7_VOLT_V",
-            "power1_Name": "PDB2_P12V_FAN7_PWR_W"
+            "power1_Name": "PDB2_P12V_FAN7_PWR_W",
+            "power1_Offset": -0.0869,
+            "power1_Scale": 198467.828365022
         },
         {
             "Address": "0x4a",
@@ -515,13 +531,6 @@
                     "Name": "upper critical",
                     "Severity": 1,
                     "Value": 80.0
-                },
-                {
-                    "Direction": "less than",
-                    "Hysteresis": 0.1,
-                    "Name": "lower critical",
-                    "Severity": 1,
-                    "Value": 5
                 }
             ],
             "Type": "TMP75"
@@ -537,13 +546,6 @@
                     "Name": "upper critical",
                     "Severity": 1,
                     "Value": 80.0
-                },
-                {
-                    "Direction": "less than",
-                    "Hysteresis": 0.1,
-                    "Name": "lower critical",
-                    "Severity": 1,
-                    "Value": 5
                 }
             ],
             "Type": "TMP75"
@@ -627,6 +629,16 @@
             "temp1_Name": "PDB2_P12V_AUX_HSC_TEMP_C",
             "vin_Name": "PDB2_P12V_AUX_HSC_VIN_VOLT_V",
             "vout1_Name": "PDB2_P12V_AUX_HSC_VOUT_VOLT_V"
+        },
+        {
+            "Address": "0x50",
+            "Bus": 42,
+            "FirmwareInfo": {
+                "CompatibleHardware": "com.meta.Hardware.Santabarbara.VR.TPS25990_p12v_aux",
+                "VendorIANA": 40981
+            },
+            "Name": "Santabarbara_PDB2_HSC_p12v_aux",
+            "Type": "TPS25990Firmware"
         },
         {
             "Address": "0x69",
@@ -746,7 +758,7 @@
         }
     ],
     "Name": "Santa Barbara PDB2",
-    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': 'Santa Barbara PDB2', 'BOARD_MANUFACTURER': 'Quanta', 'BOARD_INFO_AM4': 'vr-ti'})",
+    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': 'Santa Barbara PDB2', 'BOARD_MANUFACTURER': 'Quanta', 'BOARD_INFO_AM4': '^vr-ti$|^vr-ti brick-dta$'})",
     "Type": "Board",
     "xyz.openbmc_project.Inventory.Decorator.Asset": {
         "BuildDate": "$BOARD_MANUFACTURE_DATE",

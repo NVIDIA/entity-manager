@@ -38,6 +38,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.096,
                     "Label": "in1",
                     "Name": "lower non recoverable",
                     "Severity": 4,
@@ -45,6 +46,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.096,
                     "Label": "in1",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -52,6 +54,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.096,
                     "Label": "in1",
                     "Name": "lower non critical",
                     "Severity": 0,
@@ -59,6 +62,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.096,
                     "Label": "in1",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -66,6 +70,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.096,
                     "Label": "in1",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -73,6 +78,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.096,
                     "Label": "in1",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -80,6 +86,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.05325,
                     "Label": "in2",
                     "Name": "lower non recoverable",
                     "Severity": 4,
@@ -87,6 +94,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.05325,
                     "Label": "in2",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -94,6 +102,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.05325,
                     "Label": "in2",
                     "Name": "lower non critical",
                     "Severity": 0,
@@ -101,6 +110,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.05325,
                     "Label": "in2",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -108,6 +118,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.05325,
                     "Label": "in2",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -115,6 +126,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.05325,
                     "Label": "in2",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -143,6 +155,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.1815,
                     "Label": "in4",
                     "Name": "lower non recoverable",
                     "Severity": 4,
@@ -150,6 +163,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.1815,
                     "Label": "in4",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -157,6 +171,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.1815,
                     "Label": "in4",
                     "Name": "lower non critical",
                     "Severity": 0,
@@ -164,6 +179,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.1815,
                     "Label": "in4",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -171,6 +187,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.1815,
                     "Label": "in4",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -178,6 +195,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.1815,
                     "Label": "in4",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -185,6 +203,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.275,
                     "Label": "in5",
                     "Name": "lower non recoverable",
                     "Severity": 4,
@@ -192,6 +211,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.275,
                     "Label": "in5",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -199,6 +219,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.275,
                     "Label": "in5",
                     "Name": "lower non critical",
                     "Severity": 0,
@@ -206,6 +227,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.275,
                     "Label": "in5",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -213,6 +235,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.275,
                     "Label": "in5",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -220,6 +243,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.275,
                     "Label": "in5",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -227,6 +251,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.1815,
                     "Label": "in6",
                     "Name": "lower non recoverable",
                     "Severity": 4,
@@ -234,6 +259,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.1815,
                     "Label": "in6",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -241,6 +267,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.1815,
                     "Label": "in6",
                     "Name": "lower non critical",
                     "Severity": 0,
@@ -248,6 +275,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.1815,
                     "Label": "in6",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -255,6 +283,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.1815,
                     "Label": "in6",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -262,6 +291,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.1815,
                     "Label": "in6",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -269,6 +299,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.066,
                     "Label": "in7",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -276,6 +307,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.066,
                     "Label": "in7",
                     "Name": "lower non critical",
                     "Severity": 0,
@@ -283,6 +315,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.066,
                     "Label": "in7",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -290,6 +323,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.066,
                     "Label": "in7",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -297,22 +331,38 @@
                 }
             ],
             "Type": "ADC128D818",
+            "in0_Max": 16.02,
+            "in0_Min": 0,
             "in0_Name": "MB_P12V_STBY_VOLT_V",
             "in0_Scale": 83,
+            "in1_Max": 2.3985,
+            "in1_Min": 0,
             "in1_Name": "MB_P1V8_STBY_VOLT_V",
             "in1_Scale": 1000,
+            "in2_Max": 1.8,
+            "in2_Min": 0,
             "in2_Name": "MB_P1V0_STBY_VOLT_V",
             "in2_Scale": 1000,
+            "in3_Max": 16.02,
+            "in3_Min": 0,
             "in3_Name": "MB_P12V_VOLT_V",
             "in3_PowerState": "On",
             "in3_Scale": 83,
+            "in4_Max": 4.383,
+            "in4_Min": 0,
             "in4_Name": "MB_P3V3_VOLT_V",
             "in4_PowerState": "On",
             "in4_Scale": 312,
+            "in5_Max": 6.624,
+            "in5_Min": 0,
             "in5_Name": "MB_P5V_STBY_VOLT_V",
             "in5_Scale": 199,
+            "in6_Max": 4.383,
+            "in6_Min": 0,
             "in6_Name": "MB_P3V3_STBY_VOLT_V",
             "in6_Scale": 312,
+            "in7_Max": 1.8,
+            "in7_Min": 0,
             "in7_Name": "MB_P1V1_STBY_VOLT_V",
             "in7_Scale": 1000
         },
@@ -350,6 +400,7 @@
             "Thresholds": [
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 15,
                     "Label": "iout1",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -357,6 +408,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 15,
                     "Label": "iout1",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -364,6 +416,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 15,
                     "Label": "iout1",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -371,6 +424,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 15,
                     "Label": "iout2",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -378,6 +432,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 15,
                     "Label": "iout2",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -385,6 +440,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 15,
                     "Label": "iout2",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -392,13 +448,7 @@
                 },
                 {
                     "Direction": "greater than",
-                    "Label": "temp1",
-                    "Name": "upper non critical",
-                    "Severity": 0,
-                    "Value": 100
-                },
-                {
-                    "Direction": "greater than",
+                    "Hysteresis": 5.5,
                     "Label": "temp1",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -406,6 +456,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 5.5,
                     "Label": "temp1",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -413,13 +464,7 @@
                 },
                 {
                     "Direction": "greater than",
-                    "Label": "temp2",
-                    "Name": "upper non critical",
-                    "Severity": 0,
-                    "Value": 100
-                },
-                {
-                    "Direction": "greater than",
+                    "Hysteresis": 5.5,
                     "Label": "temp2",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -427,6 +472,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 5.5,
                     "Label": "temp2",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -434,6 +480,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.07,
                     "Label": "vout1",
                     "Name": "lower non recoverable",
                     "Severity": 4,
@@ -441,6 +488,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.07,
                     "Label": "vout1",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -448,6 +496,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.07,
                     "Label": "vout1",
                     "Name": "lower non critical",
                     "Severity": 0,
@@ -455,6 +504,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.07,
                     "Label": "vout1",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -462,6 +512,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.07,
                     "Label": "vout1",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -469,6 +520,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.07,
                     "Label": "vout1",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -476,6 +528,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.07,
                     "Label": "vout2",
                     "Name": "lower non recoverable",
                     "Severity": 4,
@@ -483,6 +536,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.07,
                     "Label": "vout2",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -490,6 +544,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.07,
                     "Label": "vout2",
                     "Name": "lower non critical",
                     "Severity": 0,
@@ -497,6 +552,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.07,
                     "Label": "vout2",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -504,6 +560,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.07,
                     "Label": "vout2",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -511,6 +568,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.07,
                     "Label": "vout2",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -526,7 +584,9 @@
             "pout2_Name": "MB_VR_CPU_PVDDIO_MEM_S3_P0_PWR_W",
             "temp1_Name": "MB_VR_CPU_PVDDCR_CPU0_P0_TEMP_C",
             "temp2_Name": "MB_VR_CPU_PVDDIO_MEM_S3_P0_TEMP_C",
+            "vout1_Max": 2.22,
             "vout1_Name": "MB_VR_CPU_PVDDCR_CPU0_P0_VOLT_V",
+            "vout2_Max": 1.98,
             "vout2_Name": "MB_VR_CPU_PVDDIO_MEM_S3_P0_VOLT_V"
         },
         {
@@ -543,6 +603,7 @@
             "Thresholds": [
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 25.8,
                     "Label": "iout1",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -550,6 +611,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 25.8,
                     "Label": "iout1",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -557,6 +619,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 25.8,
                     "Label": "iout1",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -564,13 +627,7 @@
                 },
                 {
                     "Direction": "greater than",
-                    "Label": "temp1",
-                    "Name": "upper non critical",
-                    "Severity": 0,
-                    "Value": 100
-                },
-                {
-                    "Direction": "greater than",
+                    "Hysteresis": 5.5,
                     "Label": "temp1",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -578,6 +635,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 5.5,
                     "Label": "temp1",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -585,6 +643,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.086,
                     "Label": "vout1",
                     "Name": "lower non recoverable",
                     "Severity": 4,
@@ -592,6 +651,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.086,
                     "Label": "vout1",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -599,6 +659,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.086,
                     "Label": "vout1",
                     "Name": "lower non critical",
                     "Severity": 0,
@@ -606,6 +667,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.086,
                     "Label": "vout1",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -613,6 +675,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.086,
                     "Label": "vout1",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -620,6 +683,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.086,
                     "Label": "vout1",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -631,6 +695,7 @@
             "iout1_Name": "MB_VR_CPU_PVDDCR_CPU1_P0_CURR_A",
             "pout1_Name": "MB_VR_CPU_PVDDCR_CPU1_P0_PWR_W",
             "temp1_Name": "MB_VR_CPU_PVDDCR_CPU1_P0_TEMP_C",
+            "vout1_Max": 2.22,
             "vout1_Name": "MB_VR_CPU_PVDDCR_CPU1_P0_VOLT_V"
         },
         {
@@ -652,6 +717,7 @@
             "Thresholds": [
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 22.35,
                     "Label": "iout1",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -659,6 +725,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 22.35,
                     "Label": "iout1",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -666,6 +733,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 22.35,
                     "Label": "iout1",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -673,6 +741,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 22.35,
                     "Label": "iout2",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -680,6 +749,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 22.35,
                     "Label": "iout2",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -687,6 +757,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 22.35,
                     "Label": "iout2",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -694,13 +765,7 @@
                 },
                 {
                     "Direction": "greater than",
-                    "Label": "temp1",
-                    "Name": "upper non critical",
-                    "Severity": 0,
-                    "Value": 100
-                },
-                {
-                    "Direction": "greater than",
+                    "Hysteresis": 5.5,
                     "Label": "temp1",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -708,6 +773,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 5.5,
                     "Label": "temp1",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -715,13 +781,7 @@
                 },
                 {
                     "Direction": "greater than",
-                    "Label": "temp2",
-                    "Name": "upper non critical",
-                    "Severity": 0,
-                    "Value": 100
-                },
-                {
-                    "Direction": "greater than",
+                    "Hysteresis": 5.5,
                     "Label": "temp2",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -729,6 +789,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 5.5,
                     "Label": "temp2",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -736,6 +797,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.067,
                     "Label": "vout1",
                     "Name": "lower non recoverable",
                     "Severity": 4,
@@ -743,6 +805,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.067,
                     "Label": "vout1",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -750,6 +813,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.067,
                     "Label": "vout1",
                     "Name": "lower non critical",
                     "Severity": 0,
@@ -757,6 +821,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.067,
                     "Label": "vout1",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -764,6 +829,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.067,
                     "Label": "vout1",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -771,6 +837,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.067,
                     "Label": "vout1",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -778,6 +845,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.067,
                     "Label": "vout2",
                     "Name": "lower non recoverable",
                     "Severity": 4,
@@ -785,6 +853,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.067,
                     "Label": "vout2",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -792,6 +861,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.067,
                     "Label": "vout2",
                     "Name": "lower non critical",
                     "Severity": 0,
@@ -799,6 +869,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.067,
                     "Label": "vout2",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -806,6 +877,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.067,
                     "Label": "vout2",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -813,6 +885,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.067,
                     "Label": "vout2",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -827,7 +900,9 @@
             "pout2_Name": "MB_VR_CPU_PVDDIO_P0_PWR_W",
             "temp1_Name": "MB_VR_CPU_PVDDCR_SOC_P0_TEMP_C",
             "temp2_Name": "MB_VR_CPU_PVDDIO_P0_TEMP_C",
+            "vout1_Max": 1.86,
             "vout1_Name": "MB_VR_CPU_PVDDCR_SOC_P0_VOLT_V",
+            "vout2_Max": 1.92,
             "vout2_Name": "MB_VR_CPU_PVDDIO_P0_VOLT_V"
         },
         {
@@ -873,6 +948,7 @@
             "Thresholds": [
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 1.7,
                     "Label": "iout1",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -880,6 +956,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 1.7,
                     "Label": "iout1",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -887,6 +964,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 1.7,
                     "Label": "iout1",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -894,6 +972,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 5.5,
                     "Label": "temp1",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -901,20 +980,23 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 5.5,
                     "Label": "temp1",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 125
+                    "Value": 110
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 5.5,
                     "Label": "temp1",
                     "Name": "upper non recoverable",
                     "Severity": 4,
-                    "Value": 140
+                    "Value": 125
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.72,
                     "Label": "vin",
                     "Name": "lower non recoverable",
                     "Severity": 4,
@@ -922,6 +1004,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.72,
                     "Label": "vin",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -929,6 +1012,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.72,
                     "Label": "vin",
                     "Name": "lower non critical",
                     "Severity": 0,
@@ -936,6 +1020,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.72,
                     "Label": "vin",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -943,6 +1028,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.72,
                     "Label": "vin",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -950,6 +1036,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.72,
                     "Label": "vin",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -957,6 +1044,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.099,
                     "Label": "vout1",
                     "Name": "lower non recoverable",
                     "Severity": 4,
@@ -964,6 +1052,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.099,
                     "Label": "vout1",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -971,6 +1060,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.099,
                     "Label": "vout1",
                     "Name": "lower non critical",
                     "Severity": 0,
@@ -978,6 +1068,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.099,
                     "Label": "vout1",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -985,6 +1076,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.099,
                     "Label": "vout1",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -992,6 +1084,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.099,
                     "Label": "vout1",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1002,7 +1095,9 @@
             "iout1_Name": "MB_VR_CPU_PVDD18_S5_P0_CURR_A",
             "temp1_Max": 180,
             "temp1_Name": "MB_VR_CPU_PVDD18_S5_P0_TEMP_C",
+            "vin_Max": 21.6,
             "vin_Name": "MB_VR_CPU_PVDD18_S5_P0_VIN_VOLT_V",
+            "vout1_Max": 2.916,
             "vout1_Name": "MB_VR_CPU_PVDD18_S5_P0_VOUT_VOLT_V"
         },
         {
@@ -1018,6 +1113,7 @@
             "Thresholds": [
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.27,
                     "Label": "iout1",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -1025,6 +1121,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.27,
                     "Label": "iout1",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -1032,6 +1129,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.27,
                     "Label": "iout1",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1039,6 +1137,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 5.5,
                     "Label": "temp1",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -1046,20 +1145,23 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 5.5,
                     "Label": "temp1",
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 125
+                    "Value": 110
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 5.5,
                     "Label": "temp1",
                     "Name": "upper non recoverable",
                     "Severity": 4,
-                    "Value": 140
+                    "Value": 125
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.72,
                     "Label": "vin",
                     "Name": "lower non recoverable",
                     "Severity": 4,
@@ -1067,6 +1169,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.72,
                     "Label": "vin",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -1074,6 +1177,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.72,
                     "Label": "vin",
                     "Name": "lower non critical",
                     "Severity": 0,
@@ -1081,6 +1185,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.72,
                     "Label": "vin",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -1088,6 +1193,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.72,
                     "Label": "vin",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -1095,6 +1201,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.72,
                     "Label": "vin",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1102,6 +1209,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.1815,
                     "Label": "vout1",
                     "Name": "lower non recoverable",
                     "Severity": 4,
@@ -1109,6 +1217,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.1815,
                     "Label": "vout1",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -1116,6 +1225,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 0.1815,
                     "Label": "vout1",
                     "Name": "lower non critical",
                     "Severity": 0,
@@ -1123,6 +1233,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.1815,
                     "Label": "vout1",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -1130,6 +1241,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.1815,
                     "Label": "vout1",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -1137,6 +1249,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 0.1815,
                     "Label": "vout1",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1147,7 +1260,9 @@
             "iout1_Name": "MB_VR_CPU_PVDD33_S5_P0_CURR_A",
             "temp1_Max": 180,
             "temp1_Name": "MB_VR_CPU_PVDD33_S5_P0_TEMP_C",
+            "vin_Max": 21.6,
             "vin_Name": "MB_VR_CPU_PVDD33_S5_P0_VIN_VOLT_V",
+            "vout1_Max": 5.34,
             "vout1_Name": "MB_VR_CPU_PVDD33_S5_P0_VOUT_VOLT_V"
         },
         {
@@ -1158,12 +1273,14 @@
             "Thresholds": [
                 {
                     "Direction": "less than",
+                    "Hysteresis": 3.5,
                     "Name": "lower critical",
                     "Severity": 1,
                     "Value": 0
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 3.5,
                     "Name": "upper critical",
                     "Severity": 1,
                     "Value": 70
@@ -1179,12 +1296,14 @@
             "Thresholds": [
                 {
                     "Direction": "less than",
+                    "Hysteresis": 3.5,
                     "Name": "lower critical",
                     "Severity": 1,
                     "Value": 0
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 3.5,
                     "Name": "upper critical",
                     "Severity": 1,
                     "Value": 70
@@ -1200,12 +1319,14 @@
             "Thresholds": [
                 {
                     "Direction": "less than",
+                    "Hysteresis": 3.5,
                     "Name": "lower critical",
                     "Severity": 1,
                     "Value": 0
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 3.5,
                     "Name": "upper critical",
                     "Severity": 1,
                     "Value": 70
@@ -1221,12 +1342,14 @@
             "Thresholds": [
                 {
                     "Direction": "less than",
+                    "Hysteresis": 3.5,
                     "Name": "lower critical",
                     "Severity": 1,
                     "Value": 0
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 3.5,
                     "Name": "upper critical",
                     "Severity": 1,
                     "Value": 70
@@ -1242,12 +1365,14 @@
             "Thresholds": [
                 {
                     "Direction": "less than",
+                    "Hysteresis": 3.5,
                     "Name": "lower critical",
                     "Severity": 1,
                     "Value": 0
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 3.5,
                     "Name": "upper critical",
                     "Severity": 1,
                     "Value": 70
@@ -1298,6 +1423,7 @@
             "Thresholds": [
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 76.25,
                     "Label": "power1",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1305,6 +1431,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 1.875,
                     "Label": "power2",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1312,6 +1439,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 1.875,
                     "Label": "power3",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1319,6 +1447,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 1.875,
                     "Label": "power4",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1326,6 +1455,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 1.875,
                     "Label": "power5",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1333,6 +1463,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 1.875,
                     "Label": "power6",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1340,6 +1471,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 1.875,
                     "Label": "power7",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1347,6 +1479,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 1.875,
                     "Label": "power8",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1354,6 +1487,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 1.875,
                     "Label": "power9",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1361,6 +1495,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 1.875,
                     "Label": "power10",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1368,6 +1503,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 1.875,
                     "Label": "power11",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1375,6 +1511,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 1.875,
                     "Label": "power12",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1382,6 +1519,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 1.875,
                     "Label": "power13",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1389,6 +1527,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 1.875,
                     "Label": "power14",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1396,6 +1535,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 1.875,
                     "Label": "power15",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1403,6 +1543,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 1.875,
                     "Label": "power16",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1410,6 +1551,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 1.875,
                     "Label": "power17",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1417,6 +1559,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 4.75,
                     "Label": "temp1",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -1424,6 +1567,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp1",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -1431,6 +1575,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp1",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -1438,6 +1583,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp1",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1445,6 +1591,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 4.75,
                     "Label": "temp2",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -1452,6 +1599,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp2",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -1459,6 +1607,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp2",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -1466,6 +1615,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp2",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1473,6 +1623,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 4.75,
                     "Label": "temp3",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -1480,6 +1631,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp3",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -1487,6 +1639,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp3",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -1494,6 +1647,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp3",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1501,6 +1655,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 4.75,
                     "Label": "temp4",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -1508,6 +1663,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp4",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -1515,6 +1671,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp4",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -1522,6 +1679,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp4",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1529,6 +1687,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 4.75,
                     "Label": "temp5",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -1536,6 +1695,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp5",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -1543,6 +1703,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp5",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -1550,6 +1711,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp5",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1557,6 +1719,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 4.75,
                     "Label": "temp6",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -1564,6 +1727,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp6",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -1571,6 +1735,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp6",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -1578,6 +1743,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp6",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1585,6 +1751,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 4.75,
                     "Label": "temp7",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -1592,6 +1759,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp7",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -1599,6 +1767,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp7",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -1606,6 +1775,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp7",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1613,6 +1783,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 4.75,
                     "Label": "temp8",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -1620,6 +1791,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp8",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -1627,6 +1799,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp8",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -1634,6 +1807,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp8",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1641,6 +1815,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 4.75,
                     "Label": "temp9",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -1648,6 +1823,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp9",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -1655,6 +1831,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp9",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -1662,6 +1839,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp9",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1669,6 +1847,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 4.75,
                     "Label": "temp10",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -1676,6 +1855,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp10",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -1683,6 +1863,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp10",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -1690,6 +1871,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp10",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1697,6 +1879,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 4.75,
                     "Label": "temp11",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -1704,6 +1887,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp11",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -1711,6 +1895,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp11",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -1718,6 +1903,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp11",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1725,6 +1911,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 4.75,
                     "Label": "temp12",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -1732,6 +1919,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp12",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -1739,6 +1927,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp12",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -1746,6 +1935,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp12",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1753,6 +1943,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 4.75,
                     "Label": "temp13",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -1760,6 +1951,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp13",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -1767,6 +1959,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp13",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -1774,6 +1967,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp13",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1781,6 +1975,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 4.75,
                     "Label": "temp14",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -1788,6 +1983,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp14",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -1795,6 +1991,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp14",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -1802,6 +1999,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp14",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1809,6 +2007,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 4.75,
                     "Label": "temp15",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -1816,6 +2015,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp15",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -1823,6 +2023,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp15",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -1830,6 +2031,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp15",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1837,6 +2039,7 @@
                 },
                 {
                     "Direction": "less than",
+                    "Hysteresis": 4.75,
                     "Label": "temp16",
                     "Name": "lower critical",
                     "Severity": 1,
@@ -1844,6 +2047,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp16",
                     "Name": "upper non critical",
                     "Severity": 0,
@@ -1851,6 +2055,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp16",
                     "Name": "upper critical",
                     "Severity": 1,
@@ -1858,6 +2063,7 @@
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Label": "temp16",
                     "Name": "upper non recoverable",
                     "Severity": 4,
@@ -1907,15 +2113,23 @@
             "Thresholds": [
                 {
                     "Direction": "less than",
+                    "Hysteresis": 4.75,
                     "Name": "lower critical",
                     "Severity": 1,
                     "Value": 0
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 4.75,
                     "Name": "upper critical",
                     "Severity": 1,
-                    "Value": 94
+                    "Value": 90
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non recoverable",
+                    "Severity": 4,
+                    "Value": 95
                 }
             ],
             "Type": "SBTSI"
@@ -1927,12 +2141,14 @@
             "Thresholds": [
                 {
                     "Direction": "less than",
+                    "Hysteresis": 2,
                     "Name": "lower critical",
                     "Severity": 1,
                     "Value": 0
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 2,
                     "Name": "upper critical",
                     "Severity": 1,
                     "Value": 40
@@ -1947,12 +2163,14 @@
             "Thresholds": [
                 {
                     "Direction": "less than",
+                    "Hysteresis": 3.25,
                     "Name": "lower critical",
                     "Severity": 1,
                     "Value": 0
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 3.25,
                     "Name": "upper critical",
                     "Severity": 1,
                     "Value": 65
@@ -1967,12 +2185,14 @@
             "Thresholds": [
                 {
                     "Direction": "less than",
+                    "Hysteresis": 3.25,
                     "Name": "lower critical",
                     "Severity": 1,
                     "Value": 0
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 3.25,
                     "Name": "upper critical",
                     "Severity": 1,
                     "Value": 65
@@ -1987,12 +2207,14 @@
             "Thresholds": [
                 {
                     "Direction": "less than",
+                    "Hysteresis": 3.25,
                     "Name": "lower critical",
                     "Severity": 1,
                     "Value": 0
                 },
                 {
                     "Direction": "greater than",
+                    "Hysteresis": 3.25,
                     "Name": "upper critical",
                     "Severity": 1,
                     "Value": 65

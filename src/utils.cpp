@@ -15,6 +15,7 @@
 #include <ranges>
 #include <regex>
 #include <string_view>
+#include <system_error>
 #include <utility>
 
 namespace fs = std::filesystem;
@@ -271,3 +272,22 @@ std::optional<nlohmann::json::value_t> resolveArrayElementType(
     return type;
 }
 // Nvidia Added Code End
+
+int parseMuxDeviceRootBus(std::string_view muxDeviceName)
+{
+    const auto findBus = muxDeviceName.find('-');
+    if (findBus == std::string_view::npos)
+    {
+        return -1;
+    }
+
+    int val = 0;
+    bool fullMatch = false;
+    const std::from_chars_result res =
+        fromCharsWrapper(muxDeviceName.substr(0, findBus), val, fullMatch);
+    if (res.ec != std::errc{} || !fullMatch)
+    {
+        return -1;
+    }
+    return val;
+}
