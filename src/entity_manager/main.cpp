@@ -26,7 +26,6 @@ int main()
     // hardware going away.
     shutdown_monitor::start(*systemBus);
 
-
     EntityManager em(systemBus, io, configurationDirectories, schemaDirectory);
 
     boost::asio::post(io, [&]() { em.propertiesChangedCallback(); });
