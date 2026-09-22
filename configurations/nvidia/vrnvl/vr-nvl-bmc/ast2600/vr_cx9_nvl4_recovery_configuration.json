@@ -1,0 +1,51 @@
+{
+    "Exposes": [
+        {
+            "ChassisName": "IRoT_CX_2",
+            "EID": 71,
+            "ForceRecoveryChassisObject": "IRoT_CX_2",
+            "I2CAddress": 72,
+            "I2CBus": 79,
+            "Name": "FW_CX_2",
+            "SMAEID": 70,
+            "Type": "ConnectXRecovery",
+            "hasChassisPowerSource": true
+        },
+        {
+            "ChassisName": "IRoT_CX_3",
+            "EID": 73,
+            "ForceRecoveryChassisObject": "IRoT_CX_3",
+            "I2CAddress": 74,
+            "I2CBus": 79,
+            "Name": "FW_CX_3",
+            "SMAEID": 70,
+            "Type": "ConnectXRecovery",
+            "hasChassisPowerSource": true
+        },
+        {
+            "ChassisName": "IRoT_CX_6",
+            "EID": 91,
+            "ForceRecoveryChassisObject": "IRoT_CX_6",
+            "I2CAddress": 72,
+            "I2CBus": 81,
+            "Name": "FW_CX_6",
+            "SMAEID": 90,
+            "Type": "ConnectXRecovery",
+            "hasChassisPowerSource": true
+        },
+        {
+            "ChassisName": "IRoT_CX_7",
+            "EID": 93,
+            "ForceRecoveryChassisObject": "IRoT_CX_7",
+            "I2CAddress": 74,
+            "I2CBus": 81,
+            "Name": "FW_CX_7",
+            "SMAEID": 90,
+            "Type": "ConnectXRecovery",
+            "hasChassisPowerSource": true
+        }
+    ],
+    "Name": "ConnectX_Recovery_Devices",
+    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 90, 'ADDRESS': 81, 'PRODUCT_PRODUCT_NAME': 'NVL4 1CPU: ?2GPU .*'})",
+    "Type": "Recovery_Config"
+}
