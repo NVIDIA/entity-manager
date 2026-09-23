@@ -230,14 +230,17 @@ void EntityManager::postBoardToDBus(
     // entity-manager claim an interface for it, which keeps us from exporting
     // interfaces that aren't defined in phosphor-dbus-interfaces.
     static const std::flat_map<std::string, std::string> typeToInterface = {
+        {"BMC", "xyz.openbmc_project.Inventory.Item.BMC"},
         {"Board", "xyz.openbmc_project.Inventory.Item.Board"},
         {"Cable", "xyz.openbmc_project.Inventory.Item.Cable"},
         {"Chassis", "xyz.openbmc_project.Inventory.Item.Chassis"},
         {"Cpu", "xyz.openbmc_project.Inventory.Item.Cpu"},
+        {"Dimm", "xyz.openbmc_project.Inventory.Item.Dimm"},
         // NVMe has no phosphor-dbus-interfaces definition, but is exported
         // today and consumers rely on it.
         {"NVMe", "xyz.openbmc_project.Inventory.Item.NVMe"},
         {"PowerSupply", "xyz.openbmc_project.Inventory.Item.PowerSupply"},
+        {"System", "xyz.openbmc_project.Inventory.Item.System"},
         {"Valve", "xyz.openbmc_project.Inventory.Item.Valve"},
         // A platform is not an inventory item, so it is named under the
         // Configuration namespace instead.
