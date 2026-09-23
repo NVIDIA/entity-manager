@@ -1,0 +1,20 @@
+{
+    "Exposes": [
+        {
+            "ChassisName": "HGX_IRoT_NVLinkManagementNIC_0",
+            "EID": 85,
+            "FlashNotPresentGPIO": "CX9_FNM_FNP_L-O",
+            "ForceRecoveryChassisObject": "HGX_NVLinkManagementNIC_0",
+            "I2CAddress": 72,
+            "I2CBus": 118,
+            "Name": "HGX_FW_NVLinkManagementNIC_0",
+            "ResetGPIO": "CX9_FNM_RESET_L-O",
+            "SMAEID": 84,
+            "Type": "NVLinkManagementNICRecovery",
+            "hasChassisPowerSource": true
+        }
+    ],
+    "Name": "NVLinkManagementNIC_Recovery_Devices",
+    "Probe": "TRUE",
+    "Type": "Recovery_Config"
+}

@@ -1,0 +1,235 @@
+[
+    {
+        "Exposes": [
+            {
+                "Name": "HGX_HW_WriteProtect",
+                "Sources": [
+                    "HGX_Global_WriteProtect"
+                ],
+                "Type": "HardwareWriteProtectedControl"
+            },
+            {
+                "DataIndex": 160,
+                "Name": "NSM_GPU_SPI_WriteProtect",
+                "Type": "NSM_WriteProtect",
+                "UUID": "STATIC:773:0:MCTP_EID:84"
+            },
+            {
+                "DataIndex": 129,
+                "Name": "NSM_Baseboard_FRU_WriteProtect",
+                "Type": "NSM_WriteProtect",
+                "UUID": "STATIC:773:0:MCTP_EID:84"
+            },
+            {
+                "Name": "Domain_0_GPU_SPI_WriteProtect",
+                "Sources": [
+                    "NSM_GPU_SPI_WriteProtect"
+                ],
+                "Type": "WriteProtectDomain"
+            },
+            {
+                "Name": "Domain_1_Baseboard_FRU_WriteProtect",
+                "Sources": [
+                    "NSM_Baseboard_FRU_WriteProtect"
+                ],
+                "Type": "WriteProtectDomain"
+            },
+            {
+                "FlashProtectedComponents": [
+                    "HGX_FW_GPU_0",
+                    "HGX_FW_GPU_1",
+                    "HGX_FW_GPU_2",
+                    "HGX_FW_GPU_3",
+                    "HGX_FW_GPU_4",
+                    "HGX_FW_GPU_5",
+                    "HGX_FW_GPU_6",
+                    "HGX_FW_GPU_7"
+                ],
+                "Name": "Domain_0_ProtectedComponents",
+                "Sources": [
+                    "HGX_HW_WriteProtect",
+                    "Domain_0_GPU_SPI_WriteProtect"
+                ],
+                "Type": "WriteProtectGroup"
+            },
+            {
+                "FlashProtectedComponents": [
+                    "HGX_FW_ConnectX_0",
+                    "HGX_FW_ConnectX_1",
+                    "HGX_FW_ConnectX_2",
+                    "HGX_FW_ConnectX_3",
+                    "HGX_FW_ConnectX_4",
+                    "HGX_FW_ConnectX_5",
+                    "HGX_FW_ConnectX_6",
+                    "HGX_FW_ConnectX_7",
+                    "HGX_FW_NVLinkManagementNIC_0"
+                ],
+                "Name": "ConnectX_ProtectedComponents",
+                "Sources": [],
+                "Type": "WriteProtectGroup"
+            },
+            {
+                "FlashProtectedComponents": [
+                    "HGX_FW_NVSwitch_0",
+                    "HGX_FW_NVSwitch_1",
+                    "HGX_FW_NVSwitch_2",
+                    "HGX_FW_NVSwitch_3"
+                ],
+                "Name": "NVSwitch_ProtectedComponents",
+                "Sources": [],
+                "Type": "WriteProtectGroup"
+            },
+            {
+                "FlashProtectedComponents": [
+                    "HGX_FW_BMC_0"
+                ],
+                "Name": "HMC_SPI_WriteProtect",
+                "Sources": [
+                    "HGX_HW_WriteProtect"
+                ],
+                "Type": "WriteProtectGroup"
+            },
+            {
+                "ActiveLow": false,
+                "LineName": "BB_GLOBAL_WP-I",
+                "Name": "HGX_Global_WriteProtect",
+                "PollInterval": 5000,
+                "Type": "WriteProtectInput"
+            }
+        ],
+        "Name": "HGX_Chassis_0",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 37, 'ADDRESS': 83})",
+        "Type": "Chassis",
+        "xyz.openbmc_project.Association.Definitions": {
+            "Associations": [
+                [
+                    "all_managers",
+                    "chassis",
+                    "/xyz/openbmc_project/inventory/system/bmc/HGX_BMC_0"
+                ],
+                [
+                    "all_chassis",
+                    "chassis",
+                    "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_BMC_0"
+                ],
+                [
+                    "assembly",
+                    "parent_chassis",
+                    "/xyz/openbmc_project/inventory/system/assembly/BOARD_FRU_ASSEMBLY"
+                ],
+                [
+                    "assembly",
+                    "parent_chassis",
+                    "/xyz/openbmc_project/inventory/system/assembly/PRODUCT_FRU_ASSEMBLY"
+                ],
+                [
+                    "assembly",
+                    "parent_chassis",
+                    "/xyz/openbmc_project/inventory/system/assembly/CHASSIS_FRU_ASSEMBLY"
+                ]
+            ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$PRODUCT_MANUFACTURER",
+            "Model": "$PRODUCT_PRODUCT_NAME",
+            "PartNumber": "$PRODUCT_PART_NUMBER",
+            "SKU": "$PRODUCT_VERSION",
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Backplane"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "HGX_Chassis_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": ""
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": false
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Zone"
+        }
+    },
+    {
+        "AssemblyID": 0,
+        "Name": "BOARD_FRU_ASSEMBLY",
+        "Probe": "xyz.openbmc_project.FruDevice({'ADDRESS': 83, 'BUS': 37})",
+        "Type": "Assembly",
+        "xyz.openbmc_project.Association.Definitions": {
+            "Associations": [
+                [
+                    "write_protected_by",
+                    "write_protects",
+                    "/xyz/openbmc_project/state/Domain_1_Baseboard_FRU_WriteProtect"
+                ]
+            ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Area": {
+            "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.GPUSubsystem"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "BuildDate": "$BOARD_MANUFACTURE_DATE",
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "Name": "Board FRU Assembly",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Item.Panel": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    },
+    {
+        "AssemblyID": 1,
+        "Name": "PRODUCT_FRU_ASSEMBLY",
+        "Probe": "xyz.openbmc_project.FruDevice({'ADDRESS': 83, 'BUS': 37})",
+        "Type": "Assembly",
+        "xyz.openbmc_project.Inventory.Decorator.Area": {
+            "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.GPUSubsystem"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$PRODUCT_MANUFACTURER",
+            "Model": "$PRODUCT_PRODUCT_NAME",
+            "Name": "Product FRU Assembly",
+            "PartNumber": "$PRODUCT_PART_NUMBER",
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Revision": {
+            "Version": "$PRODUCT_VERSION"
+        },
+        "xyz.openbmc_project.Inventory.Item.Panel": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    },
+    {
+        "AssemblyID": 2,
+        "Name": "CHASSIS_FRU_ASSEMBLY",
+        "Probe": "xyz.openbmc_project.FruDevice({'ADDRESS': 83, 'BUS': 37})",
+        "Type": "Assembly",
+        "xyz.openbmc_project.Inventory.Decorator.Area": {
+            "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.GPUSubsystem"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Name": "Chassis FRU Assembly",
+            "PartNumber": "$CHASSIS_PART_NUMBER",
+            "SerialNumber": "$CHASSIS_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Item.Panel": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    }
+]

@@ -64,6 +64,43 @@
                 }
             },
             "required": ["Name", "Type"]
+        },
+        "WriteProtectDomain": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Sources": {
+                    "type": "array"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "WriteProtectDomain"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "WriteProtectGroup": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FlashProtectedComponents": {
+                    "type": "array"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Sources": {
+                    "type": "array"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "WriteProtectGroup"
+                }
+            },
+            "required": ["Name", "Type"]
         }
     }
 }

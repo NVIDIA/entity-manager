@@ -1,0 +1,100 @@
+[
+    {
+        "Exposes": [
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVLinkManagementNIC_0/NetworkAdapters/NVLinkManagementNIC_0",
+                        "Backward": "associated_ROT",
+                        "Forward": "inventory"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVLinkManagementNIC_0",
+                        "Backward": "associated_chassis",
+                        "Forward": "inventory_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVLinkManagementNIC_0",
+                        "Backward": "associated_chassis",
+                        "Forward": "parent_chassis"
+                    }
+                ],
+                "ChassisAttributes": {
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "Name": "HGX_NVLinkManagementNIC_0 IRoT",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "Name": "HGX_IRoT_NVLinkManagementNIC_0",
+                "Type": "NSM_ChassisIRoTResponder",
+                "UUID": "$UUID"
+            },
+            {
+                "Chassis": {
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "DeviceType": "$DEVICE_TYPE",
+                "Name": "HGX_IRoT_NVLinkManagementNIC_0",
+                "SlotCount": 2,
+                "Type": "NSM_ChassisRoT",
+                "UUID": "$UUID"
+            },
+            {
+                "ChassisName": "HGX_IRoT_NVLinkManagementNIC_0",
+                "DebugTokenDeviceType": "NIC",
+                "DebugTokenType": [
+                    "Unified"
+                ],
+                "Name": "DebugToken",
+                "Type": "NSM_DebugToken",
+                "UUID": "$UUID"
+            },
+            {
+                "ComponentType": "AP",
+                "Name": "AP",
+                "Type": "NSM_FW_ComponentType"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_NVLinkManagementNIC_0",
+                        "Backward": "ActiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "NVLinkManagementNIC_0",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 1,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot1",
+                "SlotType": "Active",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/HGX_FW_NVLinkManagementNIC_0",
+                        "Backward": "InactiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "NVLinkManagementNIC_0",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 1,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot2",
+                "SlotType": "InActive",
+                "Type": "NSM_RoT_Slot"
+            }
+        ],
+        "Name": "HGX_IRoT_NVLinkManagementNIC_0",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 2, 'DEVICE_ROLE': 'CX9', 'INSTANCE_NUMBER': 8})",
+        "Type": "chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 0
+        }
+    }
+]

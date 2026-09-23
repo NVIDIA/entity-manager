@@ -194,6 +194,10 @@
                     "description": "Last EID in the pool delegated to this bridge device.",
                     "type": "string"
                 },
+                "IgnoreEIDs": {
+                    "description": "A comma separated list of endpoint IDs to be ignored by BusOwner.",
+                    "type": "string"
+                },
                 "Interface": {
                     "description": "MCTP interface name or template variable.",
                     "type": "string"

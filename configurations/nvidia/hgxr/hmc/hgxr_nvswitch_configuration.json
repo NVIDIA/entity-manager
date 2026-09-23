@@ -1,0 +1,59 @@
+{
+    "Exposes": [
+        {
+            "ChassisName": "HGX_IRoT_NVSwitch_0",
+            "EID": 79,
+            "FlashNotPresentGPIO": "QM4_1_FNP_L-O",
+            "ForceRecoveryChassisObject": "HGX_NVSwitch_0",
+            "I2CAddress": 72,
+            "I2CBus": 3,
+            "Name": "HGX_FW_NVSwitch_0",
+            "ResetGPIO": "QM4_1_RESET_L-O",
+            "SMAEID": 78,
+            "Type": "NVSwitchRecovery",
+            "hasChassisPowerSource": true
+        },
+        {
+            "ChassisName": "HGX_IRoT_NVSwitch_1",
+            "EID": 75,
+            "FlashNotPresentGPIO": "QM4_2_FNP_L-O",
+            "ForceRecoveryChassisObject": "HGX_NVSwitch_1",
+            "I2CAddress": 72,
+            "I2CBus": 7,
+            "Name": "HGX_FW_NVSwitch_1",
+            "ResetGPIO": "QM4_2_RESET_L-O",
+            "SMAEID": 72,
+            "Type": "NVSwitchRecovery",
+            "hasChassisPowerSource": true
+        },
+        {
+            "ChassisName": "HGX_IRoT_NVSwitch_2",
+            "EID": 73,
+            "FlashNotPresentGPIO": "QM4_3_FNP_L-O",
+            "ForceRecoveryChassisObject": "HGX_NVSwitch_2",
+            "I2CAddress": 72,
+            "I2CBus": 8,
+            "Name": "HGX_FW_NVSwitch_2",
+            "ResetGPIO": "QM4_3_RESET_L-O",
+            "SMAEID": 72,
+            "Type": "NVSwitchRecovery",
+            "hasChassisPowerSource": true
+        },
+        {
+            "ChassisName": "HGX_IRoT_NVSwitch_3",
+            "EID": 81,
+            "FlashNotPresentGPIO": "QM4_4_FNP_L-O",
+            "ForceRecoveryChassisObject": "HGX_NVSwitch_3",
+            "I2CAddress": 72,
+            "I2CBus": 10,
+            "Name": "HGX_FW_NVSwitch_3",
+            "ResetGPIO": "QM4_4_RESET_L-O",
+            "SMAEID": 78,
+            "Type": "NVSwitchRecovery",
+            "hasChassisPowerSource": true
+        }
+    ],
+    "Name": "NVSwitch_Recovery_Devices",
+    "Probe": "TRUE",
+    "Type": "Recovery_Config"
+}

@@ -129,6 +129,9 @@
                 "ChassisName": {
                     "type": "string"
                 },
+                "ForceRecoveryChassisObject": {
+                    "type": "string"
+                },
                 "HiddenByFPGA": {
                     "type": "boolean"
                 },
@@ -294,6 +297,9 @@
                 "EID": {
                     "type": "integer"
                 },
+                "FlashNotPresentGPIO": {
+                    "type": "string"
+                },
                 "ForceRecoveryChassisObject": {
                     "type": "string"
                 },
@@ -304,6 +310,9 @@
                     "type": "integer"
                 },
                 "Name": {
+                    "type": "string"
+                },
+                "ResetGPIO": {
                     "type": "string"
                 },
                 "SMAEID": {
@@ -390,6 +399,88 @@
                 "ResetGpioName",
                 "SpiMuxGpioName"
             ]
+        },
+        "NVLinkManagementNICRecovery": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChassisName": {
+                    "type": "string"
+                },
+                "EID": {
+                    "type": "integer"
+                },
+                "FlashNotPresentGPIO": {
+                    "type": "string"
+                },
+                "ForceRecoveryChassisObject": {
+                    "type": "string"
+                },
+                "I2CAddress": {
+                    "type": "integer"
+                },
+                "I2CBus": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ResetGPIO": {
+                    "type": "string"
+                },
+                "SMAEID": {
+                    "type": "integer"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NVLinkManagementNICRecovery"
+                },
+                "hasChassisPowerSource": {
+                    "type": "boolean"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NVSwitchRecovery": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChassisName": {
+                    "type": "string"
+                },
+                "EID": {
+                    "type": "integer"
+                },
+                "FlashNotPresentGPIO": {
+                    "type": "string"
+                },
+                "ForceRecoveryChassisObject": {
+                    "type": "string"
+                },
+                "I2CAddress": {
+                    "type": "integer"
+                },
+                "I2CBus": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ResetGPIO": {
+                    "type": "string"
+                },
+                "SMAEID": {
+                    "type": "integer"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NVSwitchRecovery"
+                },
+                "hasChassisPowerSource": {
+                    "type": "boolean"
+                }
+            },
+            "required": ["Name", "Type"]
         }
     }
 }

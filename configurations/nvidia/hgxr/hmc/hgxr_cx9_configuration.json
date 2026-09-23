@@ -1,0 +1,111 @@
+{
+    "Exposes": [
+        {
+            "ChassisName": "HGX_IRoT_ConnectX_0",
+            "EID": 17,
+            "FlashNotPresentGPIO": "CX9_1_FNP_L-O",
+            "ForceRecoveryChassisObject": "HGX_ConnectX_0",
+            "I2CAddress": 72,
+            "I2CBus": 110,
+            "Name": "HGX_FW_ConnectX_0",
+            "ResetGPIO": "CX9_1_RESET_L-O",
+            "SMAEID": 16,
+            "Type": "ConnectXRecovery",
+            "hasChassisPowerSource": true
+        },
+        {
+            "ChassisName": "HGX_IRoT_ConnectX_1",
+            "EID": 27,
+            "FlashNotPresentGPIO": "CX9_2_FNP_L-O",
+            "ForceRecoveryChassisObject": "HGX_ConnectX_1",
+            "I2CAddress": 72,
+            "I2CBus": 111,
+            "Name": "HGX_FW_ConnectX_1",
+            "ResetGPIO": "CX9_2_RESET_L-O",
+            "SMAEID": 24,
+            "Type": "ConnectXRecovery",
+            "hasChassisPowerSource": true
+        },
+        {
+            "ChassisName": "HGX_IRoT_ConnectX_2",
+            "EID": 19,
+            "FlashNotPresentGPIO": "CX9_3_FNP_L-O",
+            "ForceRecoveryChassisObject": "HGX_ConnectX_2",
+            "I2CAddress": 72,
+            "I2CBus": 112,
+            "Name": "HGX_FW_ConnectX_2",
+            "ResetGPIO": "CX9_3_RESET_L-O",
+            "SMAEID": 16,
+            "Type": "ConnectXRecovery",
+            "hasChassisPowerSource": true
+        },
+        {
+            "ChassisName": "HGX_IRoT_ConnectX_3",
+            "EID": 25,
+            "FlashNotPresentGPIO": "CX9_4_FNP_L-O",
+            "ForceRecoveryChassisObject": "HGX_ConnectX_3",
+            "I2CAddress": 72,
+            "I2CBus": 113,
+            "Name": "HGX_FW_ConnectX_3",
+            "ResetGPIO": "CX9_4_RESET_L-O",
+            "SMAEID": 24,
+            "Type": "ConnectXRecovery",
+            "hasChassisPowerSource": true
+        },
+        {
+            "ChassisName": "HGX_IRoT_ConnectX_4",
+            "EID": 43,
+            "FlashNotPresentGPIO": "CX9_5_FNP_L-O",
+            "ForceRecoveryChassisObject": "HGX_ConnectX_4",
+            "I2CAddress": 72,
+            "I2CBus": 114,
+            "Name": "HGX_FW_ConnectX_4",
+            "ResetGPIO": "CX9_5_RESET_L-O",
+            "SMAEID": 40,
+            "Type": "ConnectXRecovery",
+            "hasChassisPowerSource": true
+        },
+        {
+            "ChassisName": "HGX_IRoT_ConnectX_5",
+            "EID": 35,
+            "FlashNotPresentGPIO": "CX9_6_FNP_L-O",
+            "ForceRecoveryChassisObject": "HGX_ConnectX_5",
+            "I2CAddress": 72,
+            "I2CBus": 115,
+            "Name": "HGX_FW_ConnectX_5",
+            "ResetGPIO": "CX9_6_RESET_L-O",
+            "SMAEID": 32,
+            "Type": "ConnectXRecovery",
+            "hasChassisPowerSource": true
+        },
+        {
+            "ChassisName": "HGX_IRoT_ConnectX_6",
+            "EID": 41,
+            "FlashNotPresentGPIO": "CX9_7_FNP_L-O",
+            "ForceRecoveryChassisObject": "HGX_ConnectX_6",
+            "I2CAddress": 72,
+            "I2CBus": 116,
+            "Name": "HGX_FW_ConnectX_6",
+            "ResetGPIO": "CX9_7_RESET_L-O",
+            "SMAEID": 40,
+            "Type": "ConnectXRecovery",
+            "hasChassisPowerSource": true
+        },
+        {
+            "ChassisName": "HGX_IRoT_ConnectX_7",
+            "EID": 33,
+            "FlashNotPresentGPIO": "CX9_8_FNP_L-O",
+            "ForceRecoveryChassisObject": "HGX_ConnectX_7",
+            "I2CAddress": 72,
+            "I2CBus": 117,
+            "Name": "HGX_FW_ConnectX_7",
+            "ResetGPIO": "CX9_8_RESET_L-O",
+            "SMAEID": 32,
+            "Type": "ConnectXRecovery",
+            "hasChassisPowerSource": true
+        }
+    ],
+    "Name": "ConnectX_Recovery_Devices",
+    "Probe": "TRUE",
+    "Type": "Recovery_Config"
+}

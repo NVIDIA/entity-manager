@@ -117,6 +117,9 @@
                 "DEVICE_UUID": {
                     "type": "string"
                 },
+                "LTSSMState": {
+                    "type": "object"
+                },
                 "Name": {
                     "type": "string"
                 },
@@ -147,6 +150,9 @@
                     "type": "boolean"
                 },
                 "ImageCopyPolicyEnabled": {
+                    "type": "boolean"
+                },
+                "ImageCopyStateEnabled": {
                     "type": "boolean"
                 },
                 "InbandUpdatePolicyEnabled": {
@@ -469,6 +475,9 @@
                 "EventIds": {
                     "type": "array"
                 },
+                "ImpactedComponent": {
+                    "type": "string"
+                },
                 "LoggingNamespace": {
                     "type": "string"
                 },
@@ -579,6 +588,9 @@
             "properties": {
                 "EventIds": {
                     "type": "array"
+                },
+                "ImpactedComponent": {
+                    "type": "string"
                 },
                 "LoggingNamespace": {
                     "type": "string"
@@ -799,6 +811,9 @@
                 "Name": {
                     "type": "string"
                 },
+                "PhysicalContextMap": {
+                    "type": "array"
+                },
                 "SensorIdMap": {
                     "type": "array"
                 },
@@ -1005,6 +1020,9 @@
                 },
                 "Name": {
                     "type": "string"
+                },
+                "PCIe": {
+                    "type": "object"
                 },
                 "PowerCap": {
                     "type": "object"
@@ -1274,6 +1292,9 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
+                "Associations": {
+                    "type": "array"
+                },
                 "ChassisAttributes": {
                     "type": "object"
                 },
@@ -1343,6 +1364,21 @@
                 },
                 "PowerMode": {
                     "type": "object"
+                },
+                "SupportLTXMode": {
+                    "type": "boolean"
+                },
+                "SupportNvSwitchDeviceConfiguration": {
+                    "type": "boolean"
+                },
+                "SupportPowerCappingMode": {
+                    "type": "boolean"
+                },
+                "SupportTAVMode": {
+                    "type": "boolean"
+                },
+                "SupportUPhyMode": {
+                    "type": "boolean"
                 },
                 "Switch": {
                     "type": "object"
@@ -1700,6 +1736,139 @@
                 "Type": {
                     "type": "string",
                     "const": "NSM_WriteProtect"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_FabricsEndpoint": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Associations": {
+                    "type": "array"
+                },
+                "FabricsObjPath": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_FabricsEndpoint"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_FabricsZone": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FabricsObjPath": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_FabricsZone"
+                },
+                "UUID": {
+                    "type": "string"
+                },
+                "ZoneType": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_NVLinkManagementSWInventory": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Associations": {
+                    "type": "array"
+                },
+                "Manufacturer": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "boolean"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_NVLinkManagementSWInventory"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_PCIePort": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Associations": {
+                    "type": "array"
+                },
+                "Health": {
+                    "type": "string"
+                },
+                "InventoryObjPath": {
+                    "type": "string"
+                },
+                "LinkState": {
+                    "type": "string"
+                },
+                "LinkStatus": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PortProtocol": {
+                    "type": "string"
+                },
+                "PortType": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_PCIePort"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_PowerSupply": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Associations": {
+                    "type": "array"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PowerSupplyType": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_PowerSupply"
                 },
                 "UUID": {
                     "type": "string"

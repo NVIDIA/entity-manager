@@ -825,6 +825,12 @@
                 "Name": {
                     "type": "string"
                 },
+                "PhysicalContext": {
+                    "type": "string"
+                },
+                "PollRate": {
+                    "type": "number"
+                },
                 "Thresholds": {
                     "type": "array"
                 },

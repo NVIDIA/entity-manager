@@ -1,0 +1,2145 @@
+[
+    {
+        "Exposes": [],
+        "Name": "HGX_NVLinkFabric_0",
+        "Probe": "TRUE",
+        "Type": "fabrics",
+        "xyz.openbmc_project.Association.Definitions": {
+            "Associations": [
+                [
+                    "parent_chassis",
+                    "fabrics",
+                    "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_0"
+                ],
+                [
+                    "parent_chassis",
+                    "fabrics",
+                    "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_1"
+                ],
+                [
+                    "parent_chassis",
+                    "fabrics",
+                    "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_2"
+                ],
+                [
+                    "parent_chassis",
+                    "fabrics",
+                    "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_3"
+                ],
+                [
+                    "all_switches",
+                    "fabrics",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_0"
+                ],
+                [
+                    "all_switches",
+                    "fabrics",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_1"
+                ],
+                [
+                    "all_switches",
+                    "fabrics",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_2"
+                ],
+                [
+                    "all_switches",
+                    "fabrics",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_3"
+                ],
+                [
+                    "fabric_manager",
+                    "fabric",
+                    "/xyz/openbmc_project/inventory/system/managers/HGX_FabricManager_0"
+                ],
+                [
+                    "",
+                    "fabric",
+                    "/xyz/openbmc_project/sensors/temperature/HGX_NVSwitch_0_TEMP_0"
+                ],
+                [
+                    "",
+                    "fabric",
+                    "/xyz/openbmc_project/sensors/temperature/HGX_NVSwitch_1_TEMP_0"
+                ],
+                [
+                    "",
+                    "fabric",
+                    "/xyz/openbmc_project/sensors/temperature/HGX_NVSwitch_2_TEMP_0"
+                ],
+                [
+                    "",
+                    "fabric",
+                    "/xyz/openbmc_project/sensors/temperature/HGX_NVSwitch_3_TEMP_0"
+                ],
+                [
+                    "",
+                    "fabric",
+                    "/xyz/openbmc_project/sensors/power/HGX_NVSwitch_0_Power_0"
+                ],
+                [
+                    "",
+                    "fabric",
+                    "/xyz/openbmc_project/sensors/power/HGX_NVSwitch_1_Power_0"
+                ],
+                [
+                    "",
+                    "fabric",
+                    "/xyz/openbmc_project/sensors/power/HGX_NVSwitch_2_Power_0"
+                ],
+                [
+                    "",
+                    "fabric",
+                    "/xyz/openbmc_project/sensors/power/HGX_NVSwitch_3_Power_0"
+                ],
+                [
+                    "switch_config_updater",
+                    "fabrics",
+                    "/com/nvidia/NVSwitchConfig"
+                ]
+            ]
+        },
+        "xyz.openbmc_project.Inventory.Item.Fabric": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Fabric.FabricType.NVLink"
+        }
+    },
+    {
+        "Custom_Name": true,
+        "Exposes": [],
+        "Name": "HGX_NVLinkFabric_0/Endpoints/GPU_$INSTANCE_NUMBER",
+        "Probe": "xyz.openbmc_project.FruDevice({'DEVICE_TYPE': 0})",
+        "Type": "fabrics",
+        "xyz.openbmc_project.Association.Definitions": {
+            "Associations": [
+                [
+                    "zone",
+                    "zone_endpoints",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/zones/0"
+                ],
+                [
+                    "switch",
+                    "all_endpoints",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_0"
+                ],
+                [
+                    "switch",
+                    "all_endpoints",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_1"
+                ],
+                [
+                    "switch",
+                    "all_endpoints",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_2"
+                ],
+                [
+                    "switch",
+                    "all_endpoints",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_3"
+                ]
+            ]
+        },
+        "xyz.openbmc_project.Inventory.Item.Endpoint": {}
+    },
+    {
+        "Custom_Name": true,
+        "Exposes": [],
+        "Name": "HGX_NVLinkFabric_0/zones/0",
+        "Probe": "TRUE",
+        "Type": "fabrics",
+        "xyz.openbmc_project.Inventory.Item.Zone": {
+            "RoutingEnabled": true,
+            "Type": "xyz.openbmc_project.Inventory.Item.Zone.ZoneType.Default"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "EID": "$EID",
+                "Name": "HGX_NVSwitch_$INSTANCE_NUMBER_Association",
+                "Type": "MctpEndpointAssociation"
+            },
+            {
+                "ChassisName": "HGX_NVSwitch_$INSTANCE_NUMBER",
+                "DebugTokenType": [
+                    "NIC"
+                ],
+                "Name": "DebugToken",
+                "Type": "NSM_DebugToken",
+                "UUID": "$UUID"
+            },
+            {
+                "AcknowledgementEventIds": [],
+                "MessageType": 1,
+                "Name": "NetworkPortEventSetting",
+                "SubscribedEventIDs": [
+                    0
+                ],
+                "Type": "NSM_EventConfig",
+                "UUID": "$UUID"
+            },
+            {
+                "AcknowledgementEventIds": [],
+                "MessageType": 5,
+                "Name": "DeviceConfigurationRequestEventSetting",
+                "SubscribedEventIDs": [
+                    1
+                ],
+                "Type": "NSM_EventConfig",
+                "UUID": "$UUID"
+            },
+            {
+                "EventGenerationSetting": 2,
+                "Name": "GlobalEventSetting",
+                "Type": "NSM_EventSetting",
+                "UUID": "$UUID"
+            },
+            {
+                "LoggingNamespace": "NVSwitch $INSTANCE_NUMBER Threshold",
+                "MessageArgs": [
+                    "NVSwitch_$INSTANCE_NUMBER NVLink_$INSTANCE_NUMBER",
+                    "No Error"
+                ],
+                "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+                "Name": "ThresholdEventSetting",
+                "OriginOfCondition": "/redfish/v1/Fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER",
+                "Resolution": "Follow Debug and RAS Guide for NVIDIA Data Center Products (NVOnline: 1109712) for further actions.",
+                "Severity": "Critical",
+                "Type": "NSM_Event_Threshold",
+                "UUID": "$UUID"
+            },
+            {
+                "Count": 72,
+                "DeviceType": "$DEVICE_TYPE",
+                "Name": "NVLink",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER",
+                "Priority": false,
+                "Type": "NSM_NVLink",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                        "Backward": "all_switches",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/temperature/HGX_NVSwitch_$INSTANCE_NUMBER_TEMP_0",
+                        "Backward": "switch",
+                        "Forward": ""
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/power/HGX_NVSwitch_$INSTANCE_NUMBER_Power_0",
+                        "Backward": "switch",
+                        "Forward": ""
+                    }
+                ],
+                "ChassisAttributes": {
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "FabricManager": {
+                    "Description": "NVIDIA Fabric Manager (FM) state information reported by a software-based service managing the NVLink fabric",
+                    "InventoryObjPath": "/xyz/openbmc_project/inventory/system/managers/",
+                    "Name": "HGX_FabricManager_0",
+                    "Type": "NSM_FabricManager"
+                },
+                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/",
+                "Name": "NVSwitch_$INSTANCE_NUMBER",
+                "SupportLTXMode": true,
+                "SupportNvSwitchDeviceConfiguration": true,
+                "SupportPowerCappingMode": true,
+                "SupportTAVMode": true,
+                "SupportUPhyMode": true,
+                "Switch": {
+                    "Association": [
+                        "associated_switch_obj",
+                        "associated_switch_obj",
+                        "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER"
+                    ],
+                    "Name": "NVSwitch_$INSTANCE_NUMBER",
+                    "SwitchSupportedProtocols": [
+                        "xyz.openbmc_project.Inventory.Item.Switch.SwitchType.NVLink"
+                    ],
+                    "SwitchType": "xyz.openbmc_project.Inventory.Item.Switch.SwitchType.NVLink"
+                },
+                "Type": "NSM_NVSwitch",
+                "UUID": "$UUID"
+            },
+            {
+                "ChassisAttributes": {
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "PrettyNameForChassis": "NVSwitch_$INSTANCE_NUMBER",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "Name": "HGX_NVSwitch_$INSTANCE_NUMBER",
+                "Type": "NSM_NVSwitch_Chassis",
+                "UUID": "$UUID"
+            },
+            {
+                "ChassisAttributes": {
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "Name": "NVSwitch Board Assembly",
+                    "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.Board",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "ChassisName": "HGX_NVSwitch_$INSTANCE_NUMBER",
+                "Name": "Assembly0",
+                "Type": "NSM_NVSwitch_ChassisAssembly",
+                "UUID": "$UUID"
+            },
+            {
+                "AuxNames": [
+                    "HGX_NVSwitch_$INSTANCE_NUMBER"
+                ],
+                "Name": "HGX_NVSwitch_$INSTANCE_NUMBER_AUX",
+                "SensorId": 10,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVSwitch_$INSTANCE_NUMBER"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_AUX",
+                "SensorId": 200,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "HGX_NVSwitch_$INSTANCE_NUMBER_TEMP_0"
+                ],
+                "Name": "HGX_NVSwitch_$INSTANCE_NUMBER_TEMP_0",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 10700,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "HGX_NVSwitch_$INSTANCE_NUMBER_Power_0"
+                ],
+                "Name": "HGX_NVSwitch_$INSTANCE_NUMBER_Power_0",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 50,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_0"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_0_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5500,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_1"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_1_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5501,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_2"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_2_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5502,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_3"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_3_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5503,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_4"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_4_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5504,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_5"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_5_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5505,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_6"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_6_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5506,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_7"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_7_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5507,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_8"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_8_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5508,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_9"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_9_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5509,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_10"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_10_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5510,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_11"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_11_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5511,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_12"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_12_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5512,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_13"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_13_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5513,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_14"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_14_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5514,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_15"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_15_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5515,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_16"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_16_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5516,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_17"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_17_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5517,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_18"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_18_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5518,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_19"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_19_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5519,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_20"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_20_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5520,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_21"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_21_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5521,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_22"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_22_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5522,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_23"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_23_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5523,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_24"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_24_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5524,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_25"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_25_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5525,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_26"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_26_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5526,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_27"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_27_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5527,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_28"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_28_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5528,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_29"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_29_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5529,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_30"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_30_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5530,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_31"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_31_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5531,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_32"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_32_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5532,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_33"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_33_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5533,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_34"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_34_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5534,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_35"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_35_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5535,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_36"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_36_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5536,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_37"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_37_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5537,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_38"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_38_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5538,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_39"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_39_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5539,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_40"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_40_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5540,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_41"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_41_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5541,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_42"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_42_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5542,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_43"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_43_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5543,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_44"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_44_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5544,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_45"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_45_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5545,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_46"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_46_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5546,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_47"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_47_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5547,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_48"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_48_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5548,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_49"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_49_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5549,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_50"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_50_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5550,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_51"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_51_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5551,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_52"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_52_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5552,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_53"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_53_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5553,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_54"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_54_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5554,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_55"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_55_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5555,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_56"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_56_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5556,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_57"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_57_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5557,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_58"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_58_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5558,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_59"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_59_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5559,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_60"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_60_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5560,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_61"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_61_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5561,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_62"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_62_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5562,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_63"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_63_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5563,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_64"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_64_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5564,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_65"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_65_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5565,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_66"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_66_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5566,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_67"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_67_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5567,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_68"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_68_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5568,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_69"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_69_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5569,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_70"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_70_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5570,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLink_71"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_71_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5571,
+                "Type": "SensorAuxName"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_0"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_0_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5500,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_1"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_1_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5501,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_2"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_2_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5502,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_3"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_3_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5503,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_4"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_4_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5504,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_5"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_5_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5505,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_6"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_6_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5506,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_7"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_7_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5507,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_8"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_8_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5508,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_9"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_9_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5509,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_10"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_10_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5510,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_11"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_11_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5511,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_12"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_12_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5512,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_13"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_13_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5513,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_14"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_14_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5514,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_15"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_15_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5515,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_16"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_16_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5516,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_17"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_17_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5517,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_18"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_18_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5518,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_19"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_19_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5519,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_20"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_20_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5520,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_21"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_21_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5521,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_22"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_22_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5522,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_23"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_23_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5523,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_24"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_24_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5524,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_25"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_25_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5525,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_26"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_26_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5526,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_27"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_27_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5527,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_28"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_28_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5528,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_29"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_29_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5529,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_30"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_30_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5530,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_31"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_31_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5531,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_32"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_32_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5532,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_33"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_33_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5533,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_34"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_34_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5534,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_35"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_35_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5535,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_36"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_36_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5536,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_37"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_37_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5537,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_38"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_38_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5538,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_39"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_39_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5539,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_40"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_40_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5540,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_41"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_41_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5541,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_42"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_42_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5542,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_43"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_43_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5543,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_44"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_44_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5544,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_45"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_45_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5545,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_46"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_46_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5546,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_47"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_47_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5547,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_48"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_48_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5548,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_49"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_49_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5549,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_50"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_50_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5550,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_51"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_51_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5551,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_52"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_52_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5552,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_53"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_53_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5553,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_54"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_54_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5554,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_55"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_55_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5555,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_56"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_56_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5556,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_57"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_57_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5557,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_58"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_58_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5558,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_59"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_59_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5559,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_60"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_60_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5560,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_61"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_61_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5561,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_62"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_62_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5562,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_63"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_63_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5563,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_64"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_64_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5564,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_65"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_65_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5565,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_66"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_66_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5566,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_67"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_67_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5567,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_68"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_68_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5568,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_69"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_69_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5569,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_70"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_70_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5570,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLink_71"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_71_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 5571,
+                "Type": "SensorPortInfo"
+            }
+        ],
+        "Name": "HGX_NVSwitch_$INSTANCE_NUMBER",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 1})",
+        "Type": "chassis",
+        "xyz.openbmc_project.Association.Definitions": {
+            "Associations": [
+                [
+                    "all_sensors",
+                    "chassis",
+                    "/xyz/openbmc_project/sensors/temperature/HGX_NVSwitch_$INSTANCE_NUMBER_TEMP_0"
+                ],
+                [
+                    "all_sensors",
+                    "chassis",
+                    "/xyz/openbmc_project/sensors/power/HGX_NVSwitch_$INSTANCE_NUMBER_Power_0"
+                ]
+            ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": "$INSTANCE_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Item": {
+            "PrettyName": "NVSwitch_$INSTANCE_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Item.Board": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    },
+    {
+        "Custom_Name": true,
+        "Exposes": [
+            {
+                "Count": 2,
+                "DeviceType": "$DEVICE_TYPE",
+                "Name": "InterswitchPort",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER",
+                "Priority": false,
+                "Type": "NSM_NVLink",
+                "UUID": "$UUID"
+            },
+            {
+                "AuxNames": [
+                    "InterswitchPort_0"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_72_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5572,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "InterswitchPort_1"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_73_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5573,
+                "Type": "SensorAuxName"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/InterswitchPort_0"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_72_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.InterswitchPort",
+                "SensorId": 5572,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/InterswitchPort_1"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_73_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.InterswitchPort",
+                "SensorId": 5573,
+                "Type": "SensorPortInfo"
+            }
+        ],
+        "Name": "HGX_NVSwitch_$INSTANCE_NUMBER/Middle",
+        "Probe": [
+            "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 1, 'INSTANCE_NUMBER': 0})",
+            "OR",
+            "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 1, 'INSTANCE_NUMBER': 1})"
+        ],
+        "Type": "chassis"
+    },
+    {
+        "Custom_Name": true,
+        "Exposes": [
+            {
+                "Count": 1,
+                "DeviceType": "$DEVICE_TYPE",
+                "Name": "NVLinkManagement",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER",
+                "Priority": false,
+                "Type": "NSM_NVLink",
+                "UUID": "$UUID"
+            },
+            {
+                "Count": 1,
+                "DeviceType": "$DEVICE_TYPE",
+                "Name": "InterswitchPort",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER",
+                "Priority": false,
+                "Type": "NSM_NVLink",
+                "UUID": "$UUID"
+            },
+            {
+                "AuxNames": [
+                    "NVLinkManagement_0"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_72_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5572,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "InterswitchPort_0"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_73_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5573,
+                "Type": "SensorAuxName"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLinkManagement_0"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_72_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.ManagementPort",
+                "SensorId": 5572,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/InterswitchPort_0"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_73_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.InterswitchPort",
+                "SensorId": 5573,
+                "Type": "SensorPortInfo"
+            }
+        ],
+        "Name": "HGX_NVSwitch_$INSTANCE_NUMBER/End",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 1, 'INSTANCE_NUMBER': 3})",
+        "Type": "chassis"
+    },
+    {
+        "Custom_Name": true,
+        "Exposes": [
+            {
+                "Count": 1,
+                "DeviceType": "$DEVICE_TYPE",
+                "Name": "NVLinkManagement",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER",
+                "Priority": false,
+                "Type": "NSM_NVLink",
+                "UUID": "$UUID"
+            },
+            {
+                "Count": 1,
+                "DeviceType": "$DEVICE_TYPE",
+                "Name": "InterswitchPort",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER",
+                "Priority": false,
+                "Type": "NSM_NVLink",
+                "UUID": "$UUID"
+            },
+            {
+                "AuxNames": [
+                    "InterswitchPort_0"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_72_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5572,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "NVLinkManagement_0"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_73_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 5573,
+                "Type": "SensorAuxName"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/InterswitchPort_0"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_72_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.InterswitchPort",
+                "SensorId": 5572,
+                "Type": "SensorPortInfo"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/NVSwitch_$INSTANCE_NUMBER/Ports/NVLinkManagement_0"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Port_73_Info",
+                "PortProtocol": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortProtocol.NVLink",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.ManagementPort",
+                "SensorId": 5573,
+                "Type": "SensorPortInfo"
+            }
+        ],
+        "Name": "HGX_NVSwitch_$INSTANCE_NUMBER/End",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 1, 'INSTANCE_NUMBER': 2})",
+        "Type": "chassis"
+    }
+]

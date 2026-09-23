@@ -1,0 +1,87 @@
+{
+    "Exposes": [
+        {
+            "ChassisName": "HGX_IRoT_GPU_0",
+            "ForceRecoveryChassisObject": "HGX_GPU_0",
+            "I2CAddress": 105,
+            "MctpEID": 49,
+            "Name": "HGX_FW_GPU_0",
+            "Type": "OCPRecovery",
+            "USBPort": "1-1.2.1",
+            "hasChassisPowerSource": true
+        },
+        {
+            "ChassisName": "HGX_IRoT_GPU_1",
+            "ForceRecoveryChassisObject": "HGX_GPU_1",
+            "I2CAddress": 105,
+            "MctpEID": 52,
+            "Name": "HGX_FW_GPU_1",
+            "Type": "OCPRecovery",
+            "USBPort": "1-1.2.2",
+            "hasChassisPowerSource": true
+        },
+        {
+            "ChassisName": "HGX_IRoT_GPU_2",
+            "ForceRecoveryChassisObject": "HGX_GPU_2",
+            "I2CAddress": 105,
+            "MctpEID": 55,
+            "Name": "HGX_FW_GPU_2",
+            "Type": "OCPRecovery",
+            "USBPort": "1-1.2.3",
+            "hasChassisPowerSource": true
+        },
+        {
+            "ChassisName": "HGX_IRoT_GPU_3",
+            "ForceRecoveryChassisObject": "HGX_GPU_3",
+            "I2CAddress": 105,
+            "MctpEID": 58,
+            "Name": "HGX_FW_GPU_3",
+            "Type": "OCPRecovery",
+            "USBPort": "1-1.2.4",
+            "hasChassisPowerSource": true
+        },
+        {
+            "ChassisName": "HGX_IRoT_GPU_4",
+            "ForceRecoveryChassisObject": "HGX_GPU_4",
+            "I2CAddress": 105,
+            "MctpEID": 61,
+            "Name": "HGX_FW_GPU_4",
+            "Type": "OCPRecovery",
+            "USBPort": "1-1.3.1",
+            "hasChassisPowerSource": true
+        },
+        {
+            "ChassisName": "HGX_IRoT_GPU_5",
+            "ForceRecoveryChassisObject": "HGX_GPU_5",
+            "I2CAddress": 105,
+            "MctpEID": 64,
+            "Name": "HGX_FW_GPU_5",
+            "Type": "OCPRecovery",
+            "USBPort": "1-1.3.2",
+            "hasChassisPowerSource": true
+        },
+        {
+            "ChassisName": "HGX_IRoT_GPU_6",
+            "ForceRecoveryChassisObject": "HGX_GPU_6",
+            "I2CAddress": 105,
+            "MctpEID": 67,
+            "Name": "HGX_FW_GPU_6",
+            "Type": "OCPRecovery",
+            "USBPort": "1-1.3.3",
+            "hasChassisPowerSource": true
+        },
+        {
+            "ChassisName": "HGX_IRoT_GPU_7",
+            "ForceRecoveryChassisObject": "HGX_GPU_7",
+            "I2CAddress": 105,
+            "MctpEID": 70,
+            "Name": "HGX_FW_GPU_7",
+            "Type": "OCPRecovery",
+            "USBPort": "1-1.3.4",
+            "hasChassisPowerSource": true
+        }
+    ],
+    "Name": "OCP_Recovery_Devices",
+    "Probe": "TRUE",
+    "Type": "Recovery_Config"
+}

@@ -1,0 +1,1371 @@
+{
+    "Name": "Nvidia HGX-R NVL8 HMC",
+    "PlatformExposes": [
+        {
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_BMC_0",
+            "MCTPTargetName": "HGX_ERoT_BMC_0",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_ERoT_BMC_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/bmc/HGX_BMC_0"
+        },
+        {
+            "MCTPTargetName": "HGX_ConnectX_SMA_0",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_ConnectX_SMA_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_SMA_0"
+        },
+        {
+            "MCTPTargetName": "HGX_ConnectX_SMA_1",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_ConnectX_SMA_1_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_SMA_1"
+        },
+        {
+            "MCTPTargetName": "HGX_ConnectX_SMA_2",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_ConnectX_SMA_2_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_SMA_2"
+        },
+        {
+            "MCTPTargetName": "HGX_ConnectX_SMA_3",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_ConnectX_SMA_3_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_SMA_3"
+        },
+        {
+            "MCTPTargetName": "HGX_NVSwitch_SMA_0",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_NVSwitch_SMA_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_SMA_0"
+        },
+        {
+            "MCTPTargetName": "HGX_NVSwitch_SMA_1",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_NVSwitch_SMA_1_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_SMA_1"
+        },
+        {
+            "MCTPTargetName": "HGX_Baseboard_SMA_0",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_Baseboard_SMA_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Baseboard_SMA_0"
+        },
+        {
+            "MCTPTargetName": "HGX_SXM_SMA_0",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_SXM_SMA_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_SXM_SMA_0"
+        },
+        {
+            "MCTPTargetName": "HGX_SXM_SMA_1",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_SXM_SMA_1_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_SXM_SMA_1"
+        },
+        {
+            "MCTPTargetName": "HGX_SXM_SMA_2",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_SXM_SMA_2_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_SXM_SMA_2"
+        },
+        {
+            "MCTPTargetName": "HGX_SXM_SMA_3",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_SXM_SMA_3_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_SXM_SMA_3"
+        },
+        {
+            "MCTPTargetName": "HGX_SXM_SMA_4",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_SXM_SMA_4_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_SXM_SMA_4"
+        },
+        {
+            "MCTPTargetName": "HGX_SXM_SMA_5",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_SXM_SMA_5_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_SXM_SMA_5"
+        },
+        {
+            "MCTPTargetName": "HGX_SXM_SMA_6",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_SXM_SMA_6_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_SXM_SMA_6"
+        },
+        {
+            "MCTPTargetName": "HGX_SXM_SMA_7",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_SXM_SMA_7_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_SXM_SMA_7"
+        },
+        {
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_GPU_0",
+            "MCTPTargetName": "HGX_GPU_0",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_GPU_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_0"
+        },
+        {
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_GPU_1",
+            "MCTPTargetName": "HGX_GPU_1",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_GPU_1_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_1"
+        },
+        {
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_GPU_2",
+            "MCTPTargetName": "HGX_GPU_2",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_GPU_2_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_2"
+        },
+        {
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_GPU_3",
+            "MCTPTargetName": "HGX_GPU_3",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_GPU_3_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_3"
+        },
+        {
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_GPU_4",
+            "MCTPTargetName": "HGX_GPU_4",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_GPU_4_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_4"
+        },
+        {
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_GPU_5",
+            "MCTPTargetName": "HGX_GPU_5",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_GPU_5_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_5"
+        },
+        {
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_GPU_6",
+            "MCTPTargetName": "HGX_GPU_6",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_GPU_6_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_6"
+        },
+        {
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_GPU_7",
+            "MCTPTargetName": "HGX_GPU_7",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_GPU_7_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_7"
+        },
+        {
+            "MCTPTargetName": "HGX_ConnectX_0",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_ConnectX_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_0"
+        },
+        {
+            "MCTPTargetName": "HGX_ConnectX_2",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_ConnectX_2_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_2"
+        },
+        {
+            "MCTPTargetName": "HGX_ConnectX_3",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_ConnectX_3_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_3"
+        },
+        {
+            "MCTPTargetName": "HGX_ConnectX_1",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_ConnectX_1_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_1"
+        },
+        {
+            "MCTPTargetName": "HGX_ConnectX_7",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_ConnectX_7_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_7"
+        },
+        {
+            "MCTPTargetName": "HGX_ConnectX_5",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_ConnectX_5_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_5"
+        },
+        {
+            "MCTPTargetName": "HGX_ConnectX_6",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_ConnectX_6_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_6"
+        },
+        {
+            "MCTPTargetName": "HGX_ConnectX_4",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_ConnectX_4_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_4"
+        },
+        {
+            "MCTPTargetName": "HGX_NVLinkManagementNIC_0",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_NVLinkManagementNIC_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVLinkManagementNIC_0"
+        },
+        {
+            "MCTPTargetName": "HGX_NVSwitch_2",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_NVSwitch_2_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_2"
+        },
+        {
+            "MCTPTargetName": "HGX_NVSwitch_1",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_NVSwitch_1_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_1"
+        },
+        {
+            "MCTPTargetName": "HGX_NVSwitch_0",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_NVSwitch_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_0"
+        },
+        {
+            "MCTPTargetName": "HGX_NVSwitch_3",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_NVSwitch_3_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_3"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_BMC_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65280,
+                    "Name": "HGX_FW_ERoT_BMC_0"
+                },
+                {
+                    "ComponentIdentifier": 16,
+                    "Name": "HGX_FW_BMC_0",
+                    "UpdateOnly": true
+                }
+            ],
+            "MCTPTargetName": "HGX_ERoT_BMC_0",
+            "Name": "HGX_ERoT_BMC_0_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_SMA_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65282,
+                    "Name": "HGX_FW_ConnectX_SMA_0"
+                }
+            ],
+            "MCTPTargetName": "HGX_ConnectX_SMA_0",
+            "Name": "HGX_ConnectX_SMA_0_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_SMA_1"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65282,
+                    "Name": "HGX_FW_ConnectX_SMA_1"
+                }
+            ],
+            "MCTPTargetName": "HGX_ConnectX_SMA_1",
+            "Name": "HGX_ConnectX_SMA_1_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_SMA_2"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65282,
+                    "Name": "HGX_FW_ConnectX_SMA_2"
+                }
+            ],
+            "MCTPTargetName": "HGX_ConnectX_SMA_2",
+            "Name": "HGX_ConnectX_SMA_2_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_SMA_3"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65282,
+                    "Name": "HGX_FW_ConnectX_SMA_3"
+                }
+            ],
+            "MCTPTargetName": "HGX_ConnectX_SMA_3",
+            "Name": "HGX_ConnectX_SMA_3_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_SMA_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65282,
+                    "Name": "HGX_FW_NVSwitch_SMA_0"
+                }
+            ],
+            "MCTPTargetName": "HGX_NVSwitch_SMA_0",
+            "Name": "HGX_NVSwitch_SMA_0_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_SMA_1"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65282,
+                    "Name": "HGX_FW_NVSwitch_SMA_1"
+                }
+            ],
+            "MCTPTargetName": "HGX_NVSwitch_SMA_1",
+            "Name": "HGX_NVSwitch_SMA_1_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_Baseboard_SMA_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65282,
+                    "Name": "HGX_FW_Baseboard_SMA_0"
+                },
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/component/HGX_CPLD_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65283,
+                    "Name": "HGX_FW_CPLD_0"
+                }
+            ],
+            "MCTPTargetName": "HGX_Baseboard_SMA_0",
+            "Name": "HGX_Baseboard_SMA_0_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_SXM_SMA_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65282,
+                    "Name": "HGX_FW_SXM_SMA_0"
+                }
+            ],
+            "MCTPTargetName": "HGX_SXM_SMA_0",
+            "Name": "HGX_SXM_SMA_0_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_SXM_SMA_1"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65282,
+                    "Name": "HGX_FW_SXM_SMA_1"
+                }
+            ],
+            "MCTPTargetName": "HGX_SXM_SMA_1",
+            "Name": "HGX_SXM_SMA_1_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_SXM_SMA_2"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65282,
+                    "Name": "HGX_FW_SXM_SMA_2"
+                }
+            ],
+            "MCTPTargetName": "HGX_SXM_SMA_2",
+            "Name": "HGX_SXM_SMA_2_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_SXM_SMA_3"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65282,
+                    "Name": "HGX_FW_SXM_SMA_3"
+                }
+            ],
+            "MCTPTargetName": "HGX_SXM_SMA_3",
+            "Name": "HGX_SXM_SMA_3_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_SXM_SMA_4"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65282,
+                    "Name": "HGX_FW_SXM_SMA_4"
+                }
+            ],
+            "MCTPTargetName": "HGX_SXM_SMA_4",
+            "Name": "HGX_SXM_SMA_4_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_SXM_SMA_5"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65282,
+                    "Name": "HGX_FW_SXM_SMA_5"
+                }
+            ],
+            "MCTPTargetName": "HGX_SXM_SMA_5",
+            "Name": "HGX_SXM_SMA_5_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_SXM_SMA_6"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65282,
+                    "Name": "HGX_FW_SXM_SMA_6"
+                }
+            ],
+            "MCTPTargetName": "HGX_SXM_SMA_6",
+            "Name": "HGX_SXM_SMA_6_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_SXM_SMA_7"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65282,
+                    "Name": "HGX_FW_SXM_SMA_7"
+                }
+            ],
+            "MCTPTargetName": "HGX_SXM_SMA_7",
+            "Name": "HGX_SXM_SMA_7_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 49152,
+                    "Name": "HGX_FW_GPU_0"
+                },
+                {
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 49168,
+                    "Name": "HGX_InfoROM_GPU_0"
+                }
+            ],
+            "MCTPTargetName": "HGX_GPU_0",
+            "Name": "HGX_GPU_0_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_1"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 49152,
+                    "Name": "HGX_FW_GPU_1"
+                },
+                {
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_1"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 49168,
+                    "Name": "HGX_InfoROM_GPU_1"
+                }
+            ],
+            "MCTPTargetName": "HGX_GPU_1",
+            "Name": "HGX_GPU_1_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_2"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 49152,
+                    "Name": "HGX_FW_GPU_2"
+                },
+                {
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_2"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 49168,
+                    "Name": "HGX_InfoROM_GPU_2"
+                }
+            ],
+            "MCTPTargetName": "HGX_GPU_2",
+            "Name": "HGX_GPU_2_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_3"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 49152,
+                    "Name": "HGX_FW_GPU_3"
+                },
+                {
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_3"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 49168,
+                    "Name": "HGX_InfoROM_GPU_3"
+                }
+            ],
+            "MCTPTargetName": "HGX_GPU_3",
+            "Name": "HGX_GPU_3_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_4"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 49152,
+                    "Name": "HGX_FW_GPU_4"
+                },
+                {
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_4"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 49168,
+                    "Name": "HGX_InfoROM_GPU_4"
+                }
+            ],
+            "MCTPTargetName": "HGX_GPU_4",
+            "Name": "HGX_GPU_4_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_5"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 49152,
+                    "Name": "HGX_FW_GPU_5"
+                },
+                {
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_5"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 49168,
+                    "Name": "HGX_InfoROM_GPU_5"
+                }
+            ],
+            "MCTPTargetName": "HGX_GPU_5",
+            "Name": "HGX_GPU_5_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_6"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 49152,
+                    "Name": "HGX_FW_GPU_6"
+                },
+                {
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_6"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 49168,
+                    "Name": "HGX_InfoROM_GPU_6"
+                }
+            ],
+            "MCTPTargetName": "HGX_GPU_6",
+            "Name": "HGX_GPU_6_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_7"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 49152,
+                    "Name": "HGX_FW_GPU_7"
+                },
+                {
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_7"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 49168,
+                    "Name": "HGX_InfoROM_GPU_7"
+                }
+            ],
+            "MCTPTargetName": "HGX_GPU_7",
+            "Name": "HGX_GPU_7_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 1,
+                    "Name": "HGX_FW_ConnectX_0"
+                },
+                {
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 3,
+                    "Name": "HGX_Config_0_ConnectX_0"
+                },
+                {
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 4,
+                    "Name": "HGX_Config_1_ConnectX_0"
+                }
+            ],
+            "MCTPTargetName": "HGX_ConnectX_0",
+            "Name": "HGX_ConnectX_0_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_2"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 1,
+                    "Name": "HGX_FW_ConnectX_2"
+                },
+                {
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_2"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 3,
+                    "Name": "HGX_Config_0_ConnectX_2"
+                },
+                {
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_2"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 4,
+                    "Name": "HGX_Config_1_ConnectX_2"
+                }
+            ],
+            "MCTPTargetName": "HGX_ConnectX_2",
+            "Name": "HGX_ConnectX_2_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_3"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 1,
+                    "Name": "HGX_FW_ConnectX_3"
+                },
+                {
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_3"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 3,
+                    "Name": "HGX_Config_0_ConnectX_3"
+                },
+                {
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_3"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 4,
+                    "Name": "HGX_Config_1_ConnectX_3"
+                }
+            ],
+            "MCTPTargetName": "HGX_ConnectX_3",
+            "Name": "HGX_ConnectX_3_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_1"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 1,
+                    "Name": "HGX_FW_ConnectX_1"
+                },
+                {
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_1"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 3,
+                    "Name": "HGX_Config_0_ConnectX_1"
+                },
+                {
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_1"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 4,
+                    "Name": "HGX_Config_1_ConnectX_1"
+                }
+            ],
+            "MCTPTargetName": "HGX_ConnectX_1",
+            "Name": "HGX_ConnectX_1_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_7"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 1,
+                    "Name": "HGX_FW_ConnectX_7"
+                },
+                {
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_7"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 3,
+                    "Name": "HGX_Config_0_ConnectX_7"
+                },
+                {
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_7"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 4,
+                    "Name": "HGX_Config_1_ConnectX_7"
+                }
+            ],
+            "MCTPTargetName": "HGX_ConnectX_7",
+            "Name": "HGX_ConnectX_7_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_5"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 1,
+                    "Name": "HGX_FW_ConnectX_5"
+                },
+                {
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_5"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 3,
+                    "Name": "HGX_Config_0_ConnectX_5"
+                },
+                {
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_5"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 4,
+                    "Name": "HGX_Config_1_ConnectX_5"
+                }
+            ],
+            "MCTPTargetName": "HGX_ConnectX_5",
+            "Name": "HGX_ConnectX_5_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_6"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 1,
+                    "Name": "HGX_FW_ConnectX_6"
+                },
+                {
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_6"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 3,
+                    "Name": "HGX_Config_0_ConnectX_6"
+                },
+                {
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_6"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 4,
+                    "Name": "HGX_Config_1_ConnectX_6"
+                }
+            ],
+            "MCTPTargetName": "HGX_ConnectX_6",
+            "Name": "HGX_ConnectX_6_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_4"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 1,
+                    "Name": "HGX_FW_ConnectX_4"
+                },
+                {
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_4"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 3,
+                    "Name": "HGX_Config_0_ConnectX_4"
+                },
+                {
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_4"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 4,
+                    "Name": "HGX_Config_1_ConnectX_4"
+                }
+            ],
+            "MCTPTargetName": "HGX_ConnectX_4",
+            "Name": "HGX_ConnectX_4_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_NVLinkManagementNIC_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 1,
+                    "Name": "HGX_FW_NVLinkManagementNIC_0"
+                },
+                {
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_NVLinkManagementNIC_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 3,
+                    "Name": "HGX_Config_0_NVLinkManagementNIC_0"
+                },
+                {
+                    "AssociationBackward": [
+                        "active"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_NVLinkManagementNIC_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 4,
+                    "Name": "HGX_Config_1_NVLinkManagementNIC_0"
+                }
+            ],
+            "MCTPTargetName": "HGX_NVLinkManagementNIC_0",
+            "Name": "HGX_NVLinkManagementNIC_0_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_2"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 1,
+                    "Name": "HGX_FW_NVSwitch_2"
+                }
+            ],
+            "MCTPTargetName": "HGX_NVSwitch_2",
+            "Name": "HGX_NVSwitch_2_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_1"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 1,
+                    "Name": "HGX_FW_NVSwitch_1"
+                }
+            ],
+            "MCTPTargetName": "HGX_NVSwitch_1",
+            "Name": "HGX_NVSwitch_1_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 1,
+                    "Name": "HGX_FW_NVSwitch_0"
+                }
+            ],
+            "MCTPTargetName": "HGX_NVSwitch_0",
+            "Name": "HGX_NVSwitch_0_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/HGX_NVSwitch_3"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 1,
+                    "Name": "HGX_FW_NVSwitch_3"
+                }
+            ],
+            "MCTPTargetName": "HGX_NVSwitch_3",
+            "Name": "HGX_NVSwitch_3_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        }
+    ],
+    "Probe": "TRUE",
+    "Type": "Platform"
+}

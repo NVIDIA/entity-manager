@@ -1,0 +1,726 @@
+[
+    {
+        "Exposes": [
+            {
+                "CriticalReactionType": "None",
+                "LeakDetectorName": "HGX_Chassis_0_LeakDetector_0",
+                "Name": "HGX_Chassis_0_LeakDetector_0_Policy",
+                "ReactionDelaySeconds": 0,
+                "Type": "LeakDetectionPolicy",
+                "WarningReactionType": "None"
+            },
+            {
+                "CriticalReactionType": "None",
+                "LeakDetectorName": "HGX_Chassis_0_LeakDetector_1",
+                "Name": "HGX_Chassis_0_LeakDetector_1_Policy",
+                "ReactionDelaySeconds": 0,
+                "Type": "LeakDetectionPolicy",
+                "WarningReactionType": "None"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "chassis",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_Baseboard_SMA_0",
+                        "Backward": "chassis",
+                        "Forward": "all_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVLinkManagementNIC_0",
+                        "Backward": "bridged_Chassis",
+                        "Forward": "bridging_chassis"
+                    }
+                ],
+                "Chassis": {
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "ChassisAttributes": {
+                    "AssetInformationAvailable": true,
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "DeviceDiagnosticsSupported": true,
+                    "ErrorInjectionSupported": true,
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "ResetMetricsSupported": true,
+                    "SoCPowerSmoothingSupported": true,
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "DeviceType": "$DEVICE_TYPE",
+                "Name": "HGX_Baseboard_SMA_0",
+                "Type": "NSM_Chassis",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/power/HGX_Chassis_0_TotalGPU_Power_0",
+                        "Backward": "control",
+                        "Forward": "sensor"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "power_controls",
+                        "Forward": "chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "primary_power_control",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Name": "TotalGPU_Power_0",
+                "PhysicalContext": "GPU",
+                "Type": "NSM_ControlTotalGPUPower",
+                "UUID": "$UUID"
+            },
+            {
+                "ChassisPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                "CriticalThresholdsmV": [
+                    1650,
+                    1650
+                ],
+                "MaxThresholdsmV": [
+                    1815,
+                    1815
+                ],
+                "MinThresholdsmV": [
+                    165,
+                    165
+                ],
+                "Name": "HGX_Chassis_0_LeakDetection",
+                "PhysicalContextMap": [
+                    "Board",
+                    "Board"
+                ],
+                "SensorIdMap": [
+                    0,
+                    1
+                ],
+                "SensorNameMap": [
+                    "HGX_Chassis_0_LeakDetector_0",
+                    "HGX_Chassis_0_LeakDetector_1"
+                ],
+                "Type": "NSM_LeakDetection",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/processors/GPU_0",
+                        "Backward": "total_power",
+                        "Forward": "all_processors"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/processors/GPU_1",
+                        "Backward": "total_power",
+                        "Forward": "all_processors"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/processors/GPU_2",
+                        "Backward": "total_power",
+                        "Forward": "all_processors"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/processors/GPU_3",
+                        "Backward": "total_power",
+                        "Forward": "all_processors"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/processors/GPU_4",
+                        "Backward": "total_power",
+                        "Forward": "all_processors"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/processors/GPU_5",
+                        "Backward": "total_power",
+                        "Forward": "all_processors"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/processors/GPU_6",
+                        "Backward": "total_power",
+                        "Forward": "all_processors"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/processors/GPU_7",
+                        "Backward": "total_power",
+                        "Forward": "all_processors"
+                    }
+                ],
+                "Implementation": "Synthesized",
+                "Name": "HGX_Chassis_0_TotalGPU_Power_0",
+                "PhysicalContext": "GPU",
+                "SensorType": "power",
+                "Type": "NSM_NumericCompositeSensor",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/power/HGX_Chassis_0_HSC_0_Power_0",
+                        "Backward": "total_power",
+                        "Forward": "all_sensors"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/power/HGX_Chassis_0_HSC_1_Power_0",
+                        "Backward": "total_power",
+                        "Forward": "all_sensors"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/power/HGX_Chassis_0_HSC_2_Power_0",
+                        "Backward": "total_power",
+                        "Forward": "all_sensors"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/power/HGX_Chassis_0_HSC_3_Power_0",
+                        "Backward": "total_power",
+                        "Forward": "all_sensors"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/power/HGX_Chassis_0_StandbyHSC_0_Power_0",
+                        "Backward": "total_power",
+                        "Forward": "all_sensors"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/power/HGX_Chassis_0_HSCC_0_Power_0",
+                        "Backward": "total_power",
+                        "Forward": "all_sensors"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/power/HGX_Chassis_0_HSCC_1_Power_0",
+                        "Backward": "total_power",
+                        "Forward": "all_sensors"
+                    }
+                ],
+                "Implementation": "Synthesized",
+                "Name": "HGX_Chassis_0_TotalHSC_Power_0",
+                "PhysicalContext": "GPUSubsystem",
+                "SensorType": "power",
+                "Type": "NSM_NumericCompositeSensor",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "AveragingInterval": 0,
+                "CompositeNumericSensors": [
+                    "/xyz/openbmc_project/sensors/power/HGX_Chassis_0_TotalHSC_Power_0"
+                ],
+                "MaxAllowableOperatingValue": 2072.0,
+                "Name": "HGX_Chassis_0_HSC_0_Power_0",
+                "PhysicalContext": "GPUSubsystem",
+                "Priority": true,
+                "SensorId": 128,
+                "Type": "NSM_Power",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "AveragingInterval": 0,
+                "CompositeNumericSensors": [
+                    "/xyz/openbmc_project/sensors/power/HGX_Chassis_0_TotalHSC_Power_0"
+                ],
+                "MaxAllowableOperatingValue": 2072.0,
+                "Name": "HGX_Chassis_0_HSC_1_Power_0",
+                "PhysicalContext": "GPUSubsystem",
+                "Priority": true,
+                "SensorId": 129,
+                "Type": "NSM_Power",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "AveragingInterval": 0,
+                "CompositeNumericSensors": [
+                    "/xyz/openbmc_project/sensors/power/HGX_Chassis_0_TotalHSC_Power_0"
+                ],
+                "MaxAllowableOperatingValue": 2072.0,
+                "Name": "HGX_Chassis_0_HSC_2_Power_0",
+                "PhysicalContext": "GPUSubsystem",
+                "Priority": true,
+                "SensorId": 130,
+                "Type": "NSM_Power",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "AveragingInterval": 0,
+                "CompositeNumericSensors": [
+                    "/xyz/openbmc_project/sensors/power/HGX_Chassis_0_TotalHSC_Power_0"
+                ],
+                "MaxAllowableOperatingValue": 2072.0,
+                "Name": "HGX_Chassis_0_HSC_3_Power_0",
+                "PhysicalContext": "GPUSubsystem",
+                "Priority": true,
+                "SensorId": 131,
+                "Type": "NSM_Power",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "AveragingInterval": 0,
+                "CompositeNumericSensors": [
+                    "/xyz/openbmc_project/sensors/power/HGX_Chassis_0_TotalHSC_Power_0"
+                ],
+                "MaxAllowableOperatingValue": 2072.0,
+                "Name": "HGX_Chassis_0_StandbyHSC_0_Power_0",
+                "PhysicalContext": "GPUSubsystem",
+                "Priority": true,
+                "SensorId": 138,
+                "Type": "NSM_Power",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "AveragingInterval": 0,
+                "CompositeNumericSensors": [
+                    "/xyz/openbmc_project/sensors/power/HGX_Chassis_0_TotalHSC_Power_0"
+                ],
+                "MaxAllowableOperatingValue": 2072.0,
+                "Name": "HGX_Chassis_0_HSCC_0_Power_0",
+                "PhysicalContext": "GPUSubsystem",
+                "Priority": true,
+                "SensorId": 192,
+                "Type": "NSM_Power",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "AveragingInterval": 0,
+                "CompositeNumericSensors": [
+                    "/xyz/openbmc_project/sensors/power/HGX_Chassis_0_TotalHSC_Power_0"
+                ],
+                "MaxAllowableOperatingValue": 2072.0,
+                "Name": "HGX_Chassis_0_HSCC_1_Power_0",
+                "PhysicalContext": "GPUSubsystem",
+                "Priority": true,
+                "SensorId": 193,
+                "Type": "NSM_Power",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "powered_by",
+                        "Forward": "powering"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/temperature/HGX_Chassis_0_HSC_0_Temp_0",
+                        "Backward": "power_supply",
+                        "Forward": "all_sensors"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/power/HGX_Chassis_0_HSC_0_Power_0",
+                        "Backward": "power_supply",
+                        "Forward": "all_sensors"
+                    }
+                ],
+                "Name": "HSC_0",
+                "PowerSupplyType": "com.nvidia.PowerSupply.PowerSupplyInfo.PowerSupplyTypes.DCRegulator",
+                "Type": "NSM_PowerSupply",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "powered_by",
+                        "Forward": "powering"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/temperature/HGX_Chassis_0_StandbyHSC_0_Temp_0",
+                        "Backward": "power_supply",
+                        "Forward": "all_sensors"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/power/HGX_Chassis_0_StandbyHSC_0_Power_0",
+                        "Backward": "power_supply",
+                        "Forward": "all_sensors"
+                    }
+                ],
+                "Name": "StandbyHSC_0",
+                "PowerSupplyType": "com.nvidia.PowerSupply.PowerSupplyInfo.PowerSupplyTypes.DCRegulator",
+                "Type": "NSM_PowerSupply",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Baseboard_SMA_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Description": "Internal Chassis SMA temperature values",
+                "Name": "HGX_Baseboard_SMA_0_Temp_0",
+                "PhysicalContext": "Backplane",
+                "Priority": true,
+                "SensorId": 17,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": false,
+                        "Name": "UpperFatal",
+                        "Value": 100.0
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "MaxAllowableOperatingValue": 125.0,
+                "Name": "HGX_Chassis_0_PCB_0_Temp_0",
+                "PhysicalContext": "GPUSubsystem",
+                "Priority": true,
+                "SensorId": 144,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": true,
+                        "Name": "UpperCritical",
+                        "ParameterId": 144,
+                        "PeriodicUpdate": false,
+                        "Type": "NSM_ThermalParameter"
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "MaxAllowableOperatingValue": 125.0,
+                "Name": "HGX_Chassis_0_PCB_1_Temp_0",
+                "PhysicalContext": "GPUSubsystem",
+                "Priority": true,
+                "SensorId": 145,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": true,
+                        "Name": "UpperCritical",
+                        "ParameterId": 145,
+                        "PeriodicUpdate": false,
+                        "Type": "NSM_ThermalParameter"
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "MaxAllowableOperatingValue": 125.0,
+                "Name": "HGX_Chassis_0_PCB_2_Temp_0",
+                "PhysicalContext": "GPUSubsystem",
+                "Priority": true,
+                "SensorId": 146,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": true,
+                        "Name": "UpperCritical",
+                        "ParameterId": 146,
+                        "PeriodicUpdate": false,
+                        "Type": "NSM_ThermalParameter"
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "MaxAllowableOperatingValue": 125.0,
+                "Name": "HGX_Chassis_0_PCB_3_Temp_0",
+                "PhysicalContext": "GPUSubsystem",
+                "Priority": true,
+                "SensorId": 147,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": true,
+                        "Name": "UpperCritical",
+                        "ParameterId": 147,
+                        "PeriodicUpdate": false,
+                        "Type": "NSM_ThermalParameter"
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "MaxAllowableOperatingValue": 256.0,
+                "Name": "HGX_Chassis_0_HSC_0_Temp_0",
+                "PhysicalContext": "GPUSubsystem",
+                "Priority": true,
+                "SensorId": 192,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": true,
+                        "Name": "UpperCritical",
+                        "ParameterId": 192,
+                        "PeriodicUpdate": false,
+                        "Type": "NSM_ThermalParameter"
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "MaxAllowableOperatingValue": 256.0,
+                "Name": "HGX_Chassis_0_HSC_1_Temp_0",
+                "PhysicalContext": "GPUSubsystem",
+                "Priority": true,
+                "SensorId": 193,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": true,
+                        "Name": "UpperCritical",
+                        "ParameterId": 193,
+                        "PeriodicUpdate": false,
+                        "Type": "NSM_ThermalParameter"
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "MaxAllowableOperatingValue": 256.0,
+                "Name": "HGX_Chassis_0_HSC_2_Temp_0",
+                "PhysicalContext": "GPUSubsystem",
+                "Priority": true,
+                "SensorId": 194,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": true,
+                        "Name": "UpperCritical",
+                        "ParameterId": 194,
+                        "PeriodicUpdate": false,
+                        "Type": "NSM_ThermalParameter"
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "MaxAllowableOperatingValue": 256.0,
+                "Name": "HGX_Chassis_0_HSC_3_Temp_0",
+                "PhysicalContext": "GPUSubsystem",
+                "Priority": true,
+                "SensorId": 195,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": true,
+                        "Name": "UpperCritical",
+                        "ParameterId": 195,
+                        "PeriodicUpdate": false,
+                        "Type": "NSM_ThermalParameter"
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "MaxAllowableOperatingValue": 256.0,
+                "Name": "HGX_Chassis_0_StandbyHSC_0_Temp_0",
+                "PhysicalContext": "GPUSubsystem",
+                "Priority": true,
+                "SensorId": 196,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": true,
+                        "Name": "UpperCritical",
+                        "ParameterId": 196,
+                        "PeriodicUpdate": false,
+                        "Type": "NSM_ThermalParameter"
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "MaxAllowableOperatingValue": 256.0,
+                "Name": "HGX_Chassis_0_HSCC_0_Temp_0",
+                "PhysicalContext": "GPUSubsystem",
+                "Priority": true,
+                "SensorId": 168,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": true,
+                        "Name": "UpperCritical",
+                        "ParameterId": 168,
+                        "PeriodicUpdate": false,
+                        "Type": "NSM_ThermalParameter"
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "MaxAllowableOperatingValue": 256.0,
+                "Name": "HGX_Chassis_0_HSCC_1_Temp_0",
+                "PhysicalContext": "GPUSubsystem",
+                "Priority": true,
+                "SensorId": 169,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": true,
+                        "Name": "UpperCritical",
+                        "ParameterId": 169,
+                        "PeriodicUpdate": false,
+                        "Type": "NSM_ThermalParameter"
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            }
+        ],
+        "Name": "HGX_Baseboard_SMA_0",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'BBSMA'})",
+        "Type": "chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        }
+    }
+]

@@ -1,0 +1,360 @@
+{
+    "Name": "Nvidia HGX-R HMC",
+    "PlatformExposes": [
+        {
+            "Name": "HGX_ERoT_BMC_0",
+            "SupportedDumps": [
+                "RoT",
+                "FwAttrs",
+                "HwCheckout"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "HGX_ConnectX_SMA_0",
+            "Name": "HGX_ConnectX_SMA_0",
+            "SupportedDumps": [
+                "RoT",
+                "SMA",
+                "GPUDiag"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "HGX_ConnectX_SMA_1",
+            "Name": "HGX_ConnectX_SMA_1",
+            "SupportedDumps": [
+                "RoT",
+                "SMA",
+                "GPUDiag"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "HGX_ConnectX_SMA_2",
+            "Name": "HGX_ConnectX_SMA_2",
+            "SupportedDumps": [
+                "RoT",
+                "SMA",
+                "GPUDiag"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "HGX_ConnectX_SMA_3",
+            "Name": "HGX_ConnectX_SMA_3",
+            "SupportedDumps": [
+                "RoT",
+                "SMA",
+                "GPUDiag"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "HGX_SXM_SMA_0",
+            "Name": "HGX_SXM_SMA_0",
+            "SupportedDumps": [
+                "RoT",
+                "SMA",
+                "GPUDiag"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "HGX_SXM_SMA_1",
+            "Name": "HGX_SXM_SMA_1",
+            "SupportedDumps": [
+                "RoT",
+                "SMA",
+                "GPUDiag"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "HGX_SXM_SMA_2",
+            "Name": "HGX_SXM_SMA_2",
+            "SupportedDumps": [
+                "RoT",
+                "SMA",
+                "GPUDiag"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "HGX_SXM_SMA_3",
+            "Name": "HGX_SXM_SMA_3",
+            "SupportedDumps": [
+                "RoT",
+                "SMA",
+                "GPUDiag"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "HGX_SXM_SMA_4",
+            "Name": "HGX_SXM_SMA_4",
+            "SupportedDumps": [
+                "RoT",
+                "SMA",
+                "GPUDiag"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "HGX_SXM_SMA_5",
+            "Name": "HGX_SXM_SMA_5",
+            "SupportedDumps": [
+                "RoT",
+                "SMA",
+                "GPUDiag"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "HGX_SXM_SMA_6",
+            "Name": "HGX_SXM_SMA_6",
+            "SupportedDumps": [
+                "RoT",
+                "SMA",
+                "GPUDiag"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "HGX_SXM_SMA_7",
+            "Name": "HGX_SXM_SMA_7",
+            "SupportedDumps": [
+                "RoT",
+                "SMA",
+                "GPUDiag"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "HGX_NVSwitch_SMA_0",
+            "Name": "HGX_NVSwitch_SMA_0",
+            "SupportedDumps": [
+                "RoT",
+                "SMA",
+                "GPUDiag"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "HGX_NVSwitch_SMA_1",
+            "Name": "HGX_NVSwitch_SMA_1",
+            "SupportedDumps": [
+                "RoT",
+                "SMA",
+                "GPUDiag"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "HGX_Baseboard_SMA_0",
+            "Name": "HGX_Baseboard_SMA_0",
+            "Pages": [
+                {
+                    "Bus": 5,
+                    "Idx": "Page1",
+                    "RegAddr": "0x00",
+                    "Size": 256,
+                    "SlaveAddr": "0x0b"
+                },
+                {
+                    "Bus": 5,
+                    "Idx": "Page1",
+                    "Page": "0x00",
+                    "RegAddr": "0x00",
+                    "Size": 256,
+                    "SlaveAddr": "0x11"
+                }
+            ],
+            "SupportedDumps": [
+                "RoT",
+                "SMA",
+                "CPLD",
+                "GPUDiag"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "ConnectX_NIC_0",
+            "Name": "HGX_ConnectX_0",
+            "SupportedDumps": [
+                "NetIR"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "ConnectX_NIC_1",
+            "Name": "HGX_ConnectX_1",
+            "SupportedDumps": [
+                "NetIR"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "ConnectX_NIC_2",
+            "Name": "HGX_ConnectX_2",
+            "SupportedDumps": [
+                "NetIR"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "ConnectX_NIC_3",
+            "Name": "HGX_ConnectX_3",
+            "SupportedDumps": [
+                "NetIR"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "ConnectX_NIC_4",
+            "Name": "HGX_ConnectX_4",
+            "SupportedDumps": [
+                "NetIR"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "ConnectX_NIC_5",
+            "Name": "HGX_ConnectX_5",
+            "SupportedDumps": [
+                "NetIR"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "ConnectX_NIC_6",
+            "Name": "HGX_ConnectX_6",
+            "SupportedDumps": [
+                "NetIR"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "ConnectX_NIC_7",
+            "Name": "HGX_ConnectX_7",
+            "SupportedDumps": [
+                "NetIR"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "GPU_0",
+            "Name": "HGX_GPU_0",
+            "SupportedDumps": [
+                "GPUDiag",
+                "NetIR"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "GPU_1",
+            "Name": "HGX_GPU_1",
+            "SupportedDumps": [
+                "GPUDiag",
+                "NetIR"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "GPU_2",
+            "Name": "HGX_GPU_2",
+            "SupportedDumps": [
+                "GPUDiag",
+                "NetIR"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "GPU_3",
+            "Name": "HGX_GPU_3",
+            "SupportedDumps": [
+                "GPUDiag",
+                "NetIR"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "GPU_4",
+            "Name": "HGX_GPU_4",
+            "SupportedDumps": [
+                "GPUDiag",
+                "NetIR"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "GPU_5",
+            "Name": "HGX_GPU_5",
+            "SupportedDumps": [
+                "GPUDiag",
+                "NetIR"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "GPU_6",
+            "Name": "HGX_GPU_6",
+            "SupportedDumps": [
+                "GPUDiag",
+                "NetIR"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "GPU_7",
+            "Name": "HGX_GPU_7",
+            "SupportedDumps": [
+                "GPUDiag",
+                "NetIR"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "NVSwitch_0",
+            "Name": "HGX_NVSwitch_0",
+            "SupportedDumps": [
+                "NetIR"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "NVSwitch_1",
+            "Name": "HGX_NVSwitch_1",
+            "SupportedDumps": [
+                "NetIR"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "NVSwitch_2",
+            "Name": "HGX_NVSwitch_2",
+            "SupportedDumps": [
+                "NetIR"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "NVSwitch_3",
+            "Name": "HGX_NVSwitch_3",
+            "SupportedDumps": [
+                "NetIR"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "DeviceType": "NVLinkManagementNIC_0",
+            "Name": "HGX_NVLinkManagementNIC_0",
+            "SupportedDumps": [
+                "NetIR"
+            ],
+            "Type": "Dump"
+        }
+    ],
+    "Probe": "TRUE",
+    "Type": "Platform"
+}

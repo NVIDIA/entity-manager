@@ -1,0 +1,463 @@
+[
+    {
+        "Exposes": [
+            {
+                "BridgeName": "HGX_ConnectX_SMA_0",
+                "Name": "HGX_ConnectX_0",
+                "PoolIndex": 0,
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "BridgeName": "HGX_ConnectX_SMA_0",
+                "Name": "HGX_ConnectX_2",
+                "PoolIndex": 2,
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "BridgePoolEndEID": "20",
+                "BridgePoolStartEID": "17",
+                "BridgedEndpoints": [
+                    "HGX_ConnectX_0",
+                    "HGX_ConnectX_2"
+                ],
+                "IgnoreEIDs": "18,20,21,22,23",
+                "Interface": "$Interface",
+                "Name": "HGX_ConnectX_SMA_0",
+                "PollingInterval": "5",
+                "StaticEndpointID": "16",
+                "Type": "MCTPUSBDevice",
+                "USBPath": "1-1-1-1"
+            }
+        ],
+        "Name": "$interface",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mcusb1h1h1d1'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgeName": "HGX_ConnectX_SMA_1",
+                "Name": "HGX_ConnectX_3",
+                "PoolIndex": 0,
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "BridgeName": "HGX_ConnectX_SMA_1",
+                "Name": "HGX_ConnectX_1",
+                "PoolIndex": 2,
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "BridgePoolEndEID": "28",
+                "BridgePoolStartEID": "25",
+                "BridgedEndpoints": [
+                    "HGX_ConnectX_3",
+                    "HGX_ConnectX_1"
+                ],
+                "IgnoreEIDs": "26,28,29,30,31",
+                "Interface": "$Interface",
+                "Name": "HGX_ConnectX_SMA_1",
+                "PollingInterval": "5",
+                "StaticEndpointID": "24",
+                "Type": "MCTPUSBDevice",
+                "USBPath": "1-1-1-2"
+            }
+        ],
+        "Name": "$interface",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mcusb1h1h1d2'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgeName": "HGX_ConnectX_SMA_2",
+                "Name": "HGX_ConnectX_7",
+                "PoolIndex": 0,
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "BridgeName": "HGX_ConnectX_SMA_2",
+                "Name": "HGX_ConnectX_5",
+                "PoolIndex": 2,
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "BridgePoolEndEID": "36",
+                "BridgePoolStartEID": "33",
+                "BridgedEndpoints": [
+                    "HGX_ConnectX_7",
+                    "HGX_ConnectX_5"
+                ],
+                "IgnoreEIDs": "34,36,37,38,39",
+                "Interface": "$Interface",
+                "Name": "HGX_ConnectX_SMA_2",
+                "PollingInterval": "5",
+                "StaticEndpointID": "32",
+                "Type": "MCTPUSBDevice",
+                "USBPath": "1-1-1-3"
+            }
+        ],
+        "Name": "$interface",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mcusb1h1h1d3'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgeName": "HGX_ConnectX_SMA_3",
+                "Name": "HGX_ConnectX_6",
+                "PoolIndex": 0,
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "BridgeName": "HGX_ConnectX_SMA_3",
+                "Name": "HGX_ConnectX_4",
+                "PoolIndex": 2,
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "BridgePoolEndEID": "44",
+                "BridgePoolStartEID": "41",
+                "BridgedEndpoints": [
+                    "HGX_ConnectX_6",
+                    "HGX_ConnectX_4"
+                ],
+                "IgnoreEIDs": "42,44,45,46,47",
+                "Interface": "$Interface",
+                "Name": "HGX_ConnectX_SMA_3",
+                "PollingInterval": "5",
+                "StaticEndpointID": "40",
+                "Type": "MCTPUSBDevice",
+                "USBPath": "1-1-1-4"
+            }
+        ],
+        "Name": "$interface",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mcusb1h1h1d4'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgeName": "HGX_SXM_SMA_0",
+                "Name": "HGX_GPU_0",
+                "PoolIndex": 0,
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "BridgePoolEndEID": "49",
+                "BridgePoolStartEID": "49",
+                "BridgedEndpoints": [
+                    "HGX_GPU_0"
+                ],
+                "IgnoreEIDs": "50",
+                "Interface": "$Interface",
+                "Name": "HGX_SXM_SMA_0",
+                "PollingInterval": "5",
+                "StaticEndpointID": "48",
+                "Type": "MCTPUSBDevice",
+                "USBPath": "1-1-2-1"
+            }
+        ],
+        "Name": "$interface",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mcusb1h1h2d1'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgeName": "HGX_SXM_SMA_1",
+                "Name": "HGX_GPU_1",
+                "PoolIndex": 0,
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "BridgePoolEndEID": "52",
+                "BridgePoolStartEID": "52",
+                "BridgedEndpoints": [
+                    "HGX_GPU_1"
+                ],
+                "IgnoreEIDs": "53",
+                "Interface": "$Interface",
+                "Name": "HGX_SXM_SMA_1",
+                "PollingInterval": "5",
+                "StaticEndpointID": "51",
+                "Type": "MCTPUSBDevice",
+                "USBPath": "1-1-2-2"
+            }
+        ],
+        "Name": "$interface",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mcusb1h1h2d2'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgeName": "HGX_SXM_SMA_2",
+                "Name": "HGX_GPU_2",
+                "PoolIndex": 0,
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "BridgePoolEndEID": "55",
+                "BridgePoolStartEID": "55",
+                "BridgedEndpoints": [
+                    "HGX_GPU_2"
+                ],
+                "IgnoreEIDs": "56",
+                "Interface": "$Interface",
+                "Name": "HGX_SXM_SMA_2",
+                "PollingInterval": "5",
+                "StaticEndpointID": "54",
+                "Type": "MCTPUSBDevice",
+                "USBPath": "1-1-2-3"
+            }
+        ],
+        "Name": "$interface",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mcusb1h1h2d3'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgeName": "HGX_SXM_SMA_3",
+                "Name": "HGX_GPU_3",
+                "PoolIndex": 0,
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "BridgePoolEndEID": "58",
+                "BridgePoolStartEID": "58",
+                "BridgedEndpoints": [
+                    "HGX_GPU_3"
+                ],
+                "IgnoreEIDs": "59",
+                "Interface": "$Interface",
+                "Name": "HGX_SXM_SMA_3",
+                "PollingInterval": "5",
+                "StaticEndpointID": "57",
+                "Type": "MCTPUSBDevice",
+                "USBPath": "1-1-2-4"
+            }
+        ],
+        "Name": "$interface",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mcusb1h1h2d4'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgeName": "HGX_SXM_SMA_4",
+                "Name": "HGX_GPU_4",
+                "PoolIndex": 0,
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "BridgePoolEndEID": "61",
+                "BridgePoolStartEID": "61",
+                "BridgedEndpoints": [
+                    "HGX_GPU_4"
+                ],
+                "IgnoreEIDs": "62",
+                "Interface": "$Interface",
+                "Name": "HGX_SXM_SMA_4",
+                "PollingInterval": "5",
+                "StaticEndpointID": "60",
+                "Type": "MCTPUSBDevice",
+                "USBPath": "1-1-3-1"
+            }
+        ],
+        "Name": "$interface",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mcusb1h1h3d1'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgeName": "HGX_SXM_SMA_5",
+                "Name": "HGX_GPU_5",
+                "PoolIndex": 0,
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "BridgePoolEndEID": "64",
+                "BridgePoolStartEID": "64",
+                "BridgedEndpoints": [
+                    "HGX_GPU_5"
+                ],
+                "IgnoreEIDs": "65",
+                "Interface": "$Interface",
+                "Name": "HGX_SXM_SMA_5",
+                "PollingInterval": "5",
+                "StaticEndpointID": "63",
+                "Type": "MCTPUSBDevice",
+                "USBPath": "1-1-3-2"
+            }
+        ],
+        "Name": "$interface",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mcusb1h1h3d2'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgeName": "HGX_SXM_SMA_6",
+                "Name": "HGX_GPU_6",
+                "PoolIndex": 0,
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "BridgePoolEndEID": "67",
+                "BridgePoolStartEID": "67",
+                "BridgedEndpoints": [
+                    "HGX_GPU_6"
+                ],
+                "IgnoreEIDs": "68",
+                "Interface": "$Interface",
+                "Name": "HGX_SXM_SMA_6",
+                "PollingInterval": "5",
+                "StaticEndpointID": "66",
+                "Type": "MCTPUSBDevice",
+                "USBPath": "1-1-3-3"
+            }
+        ],
+        "Name": "$interface",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mcusb1h1h3d3'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgeName": "HGX_SXM_SMA_7",
+                "Name": "HGX_GPU_7",
+                "PoolIndex": 0,
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "BridgePoolEndEID": "70",
+                "BridgePoolStartEID": "70",
+                "BridgedEndpoints": [
+                    "HGX_GPU_7"
+                ],
+                "IgnoreEIDs": "71",
+                "Interface": "$Interface",
+                "Name": "HGX_SXM_SMA_7",
+                "PollingInterval": "5",
+                "StaticEndpointID": "69",
+                "Type": "MCTPUSBDevice",
+                "USBPath": "1-1-3-4"
+            }
+        ],
+        "Name": "$interface",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mcusb1h1h3d4'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgeName": "HGX_NVSwitch_SMA_0",
+                "Name": "HGX_NVSwitch_2",
+                "PoolIndex": 0,
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "BridgeName": "HGX_NVSwitch_SMA_0",
+                "Name": "HGX_NVSwitch_1",
+                "PoolIndex": 2,
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "BridgePoolEndEID": "76",
+                "BridgePoolStartEID": "73",
+                "BridgedEndpoints": [
+                    "HGX_NVSwitch_2",
+                    "HGX_NVSwitch_1"
+                ],
+                "IgnoreEIDs": "74,76,77",
+                "Interface": "$Interface",
+                "Name": "HGX_NVSwitch_SMA_0",
+                "PollingInterval": "5",
+                "StaticEndpointID": "72",
+                "Type": "MCTPUSBDevice",
+                "USBPath": "1-1-4-1"
+            }
+        ],
+        "Name": "$interface",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mcusb1h1h4d1'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgeName": "HGX_NVSwitch_SMA_1",
+                "Name": "HGX_NVSwitch_0",
+                "PoolIndex": 0,
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "BridgeName": "HGX_NVSwitch_SMA_1",
+                "Name": "HGX_NVSwitch_3",
+                "PoolIndex": 2,
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "BridgePoolEndEID": "82",
+                "BridgePoolStartEID": "79",
+                "BridgedEndpoints": [
+                    "HGX_NVSwitch_0",
+                    "HGX_NVSwitch_3"
+                ],
+                "IgnoreEIDs": "80,82,83",
+                "Interface": "$Interface",
+                "Name": "HGX_NVSwitch_SMA_1",
+                "PollingInterval": "5",
+                "StaticEndpointID": "78",
+                "Type": "MCTPUSBDevice",
+                "USBPath": "1-1-4-2"
+            }
+        ],
+        "Name": "$interface",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mcusb1h1h4d2'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgeName": "HGX_Baseboard_SMA_0",
+                "Name": "HGX_NVLinkManagementNIC_0",
+                "PoolIndex": 0,
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "BridgePoolEndEID": "86",
+                "BridgePoolStartEID": "85",
+                "BridgedEndpoints": [
+                    "HGX_NVLinkManagementNIC_0"
+                ],
+                "IgnoreEIDs": "86,87",
+                "Interface": "$Interface",
+                "Name": "HGX_Baseboard_SMA_0",
+                "PollingInterval": "5",
+                "StaticEndpointID": "84",
+                "Type": "MCTPUSBDevice",
+                "USBPath": "1-1-4-3"
+            }
+        ],
+        "Name": "$interface",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mcusb1h1h4d3'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "Bus": "0",
+                "ChipSelect": "2",
+                "Name": "HGX_ERoT_BMC_0",
+                "StaticEndpointID": "10",
+                "Type": "MCTPSPIDevice"
+            }
+        ],
+        "Name": "$interface",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mcspi0c2'})",
+        "Type": "MCTPInterface"
+    }
+]

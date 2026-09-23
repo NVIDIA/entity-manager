@@ -22,6 +22,9 @@
                 "Type": {
                     "type": "string",
                     "const": "LeakDetectionPolicy"
+                },
+                "WarningReactionType": {
+                    "type": "string"
                 }
             },
             "required": ["Name", "Type"]

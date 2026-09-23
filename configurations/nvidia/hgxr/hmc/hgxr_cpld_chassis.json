@@ -1,0 +1,23 @@
+{
+    "Name": "HGX_CPLD_0",
+    "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+    "Probe": "FOUND('HGX_Baseboard_SMA_0')",
+    "Type": "Component",
+    "xyz.openbmc_project.Inventory.Decorator.Asset": {
+        "Manufacturer": "Lattice",
+        "Model": "LCMXO3",
+        "PartNumber": "LCMXO3LF-9400C-5BG400I"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.Location": {
+        "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+        "LocationCode": "U1083"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+        "FieldReplaceable": false
+    },
+    "xyz.openbmc_project.Inventory.Item.Chassis": {
+        "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+    }
+}

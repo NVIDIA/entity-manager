@@ -1,0 +1,85 @@
+[
+    {
+        "Exposes": [
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "chassis",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_ConnectX_SMA_$INSTANCE_NUMBER",
+                        "Backward": "chassis",
+                        "Forward": "all_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_$BRIDGED_INSTANCE_NUM_0",
+                        "Backward": "bridged_Chassis",
+                        "Forward": "bridging_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_$BRIDGED_INSTANCE_NUM_1",
+                        "Backward": "bridged_Chassis",
+                        "Forward": "bridging_chassis"
+                    }
+                ],
+                "Chassis": {
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "ChassisAttributes": {
+                    "AssetInformationAvailable": true,
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "DeviceDiagnosticsSupported": true,
+                    "ErrorInjectionSupported": true,
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "ResetMetricsSupported": true,
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "DeviceType": "$DEVICE_TYPE",
+                "Name": "HGX_ConnectX_SMA_$INSTANCE_NUMBER",
+                "Type": "NSM_Chassis",
+                "UUID": "$UUID"
+            },
+            {
+                "Aggregated": true,
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_SMA_$INSTANCE_NUMBER",
+                        "Backward": "all_sensors",
+                        "Forward": "chassis"
+                    }
+                ],
+                "Description": "Internal SMA temperature values",
+                "Name": "HGX_ConnectX_SMA_$INSTANCE_NUMBER_Temp_0",
+                "PhysicalContext": "GPUSubsystem",
+                "Priority": true,
+                "SensorId": 17,
+                "ThermalParameters": [
+                    {
+                        "Dynamic": false,
+                        "Name": "UpperFatal",
+                        "Value": 100.0
+                    }
+                ],
+                "Type": "NSM_Temp",
+                "UUID": "$UUID"
+            },
+            {
+                "AuxNames": [
+                    "HGX_ConnectX_SMA_$INSTANCE_NUMBER_Temp_0"
+                ],
+                "Name": "HGX_ConnectX_SMA_$INSTANCE_NUMBER_Temp_0",
+                "SensorId": 17,
+                "Type": "SensorAuxName"
+            }
+        ],
+        "Name": "HGX_ConnectX_SMA_$INSTANCE_NUMBER",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'CXSMA'})",
+        "Type": "chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        }
+    }
+]

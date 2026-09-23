@@ -1,0 +1,16 @@
+[
+    {
+        "Exposes": [
+            {
+                "Name": "NSM Poll Readyness",
+                "Status": "Enabled",
+                "Type": "NSM_Poll_Ready"
+            }
+        ],
+        "Name": "NSM_Readiness",
+        "Probe": [
+            "xyz.openbmc_project.Configuration.NSMReady({'GPUReady': 'Enabled'})"
+        ],
+        "Type": "chassis"
+    }
+]

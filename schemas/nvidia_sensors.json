@@ -356,6 +356,9 @@
                 "Name": {
                     "type": "string"
                 },
+                "PortProtocol": {
+                    "type": "string"
+                },
                 "PortType": {
                     "type": "string"
                 },
@@ -419,6 +422,29 @@
                 "Type": {
                     "type": "string",
                     "const": "TMP75C"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "SensorEventInfo": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EventIds": {
+                    "type": "array"
+                },
+                "ImpactedComponent": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "SensorId": {
+                    "type": "integer"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "SensorEventInfo"
                 }
             },
             "required": ["Name", "Type"]

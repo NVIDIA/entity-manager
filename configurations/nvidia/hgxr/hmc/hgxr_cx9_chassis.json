@@ -1,0 +1,327 @@
+[
+    {
+        "Exposes": [
+            {
+                "EID": "$EID",
+                "Name": "HGX_ConnectX_$INSTANCE_NUMBER_Association",
+                "Type": "MctpEndpointAssociation"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_$INSTANCE_NUMBER",
+                        "Backward": "pciedevice",
+                        "Forward": "chassis"
+                    }
+                ],
+                "ChassisAttributes": {
+                    "Name": "HGX_ConnectX_$INSTANCE_NUMBER",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "ChassisName": "HGX_ConnectX_$INSTANCE_NUMBER",
+                "DEVICE_UUID": "$DEVICE_UUID",
+                "Name": "ConnectX_$INSTANCE_NUMBER",
+                "PCIeDevice": {
+                    "Type": "NSM_MultiPortPCIeDevice"
+                },
+                "Type": "NSM_ChassisPCIeDevice",
+                "UUID": "$UUID"
+            },
+            {
+                "ChassisName": "HGX_ConnectX_$INSTANCE_NUMBER",
+                "DebugTokenType": [
+                    "NIC"
+                ],
+                "Name": "DebugToken",
+                "Type": "NSM_DebugToken",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/processors/GPU_$CONNECTED_GPU_INSTANCE_NUM",
+                        "Backward": "endpoint",
+                        "Forward": "entity_link"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER/Switches/ConnectX_Switch_$INSTANCE_NUMBER",
+                        "Backward": "all_endpoints",
+                        "Forward": "switch"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER/zones/0",
+                        "Backward": "zone_endpoints",
+                        "Forward": "zone"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER/Switches/ConnectX_Switch_$INSTANCE_NUMBER/Ports/DOWN_0",
+                        "Backward": "associated_endpoint",
+                        "Forward": "connected_port"
+                    }
+                ],
+                "FabricsObjPath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER",
+                "Name": "GPU_$CONNECTED_GPU_INSTANCE_NUM",
+                "Type": "NSM_FabricsEndpoint",
+                "UUID": "$UUID"
+            },
+            {
+                "FabricsObjPath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER",
+                "Name": "Zone0",
+                "Type": "NSM_FabricsZone",
+                "UUID": "$UUID",
+                "ZoneType": "xyz.openbmc_project.Inventory.Item.Zone.ZoneType.Default"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_$INSTANCE_NUMBER",
+                        "Backward": "all_switches",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER",
+                        "Backward": "all_switches",
+                        "Forward": "fabrics"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/processors/GPU_$CONNECTED_GPU_INSTANCE_NUM",
+                        "Backward": "all_switches",
+                        "Forward": "processor"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER/Switches/ConnectX_Switch_$INSTANCE_NUMBER/Ports/UP_0",
+                        "Backward": "parent_device",
+                        "Forward": "all_states"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER/Switches/ConnectX_Switch_$INSTANCE_NUMBER/Ports/DOWN_0",
+                        "Backward": "parent_device",
+                        "Forward": "all_states"
+                    }
+                ],
+                "DeviceInstance": "$INSTANCE_NUMBER",
+                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER/Switches/",
+                "Name": "ConnectX_Switch_$INSTANCE_NUMBER",
+                "Priority": false,
+                "Type": "NSM_MultiPortPCIeSwitchDevice",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_ConnectX_$INSTANCE_NUMBER",
+                        "Backward": "chassis",
+                        "Forward": "all_chassis"
+                    }
+                ],
+                "ChassisAttributes": {
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "LocationCode": "ConnectX_$INSTANCE_NUMBER",
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "SKU": "8675304",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "Name": "HGX_ConnectX_$INSTANCE_NUMBER",
+                "Type": "NSM_NVLinkMgmtNic_Chassis",
+                "UUID": "$UUID"
+            },
+            {
+                "ChassisAttributes": {
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "Name": "HGX_ConnectX_$INSTANCE_NUMBER Device Assembly",
+                    "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.Board",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "ChassisName": "HGX_ConnectX_$INSTANCE_NUMBER",
+                "Name": "Assembly0",
+                "Type": "NSM_NVLinkMgmtNic_ChassisAssembly",
+                "UUID": "$UUID"
+            },
+            {
+                "Count": 1,
+                "DeviceType": "$DEVICE_TYPE",
+                "Name": "Port",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_$INSTANCE_NUMBER/NetworkAdapters/ConnectX_NIC_$INSTANCE_NUMBER",
+                "Priority": false,
+                "Type": "NSM_NVLinkWithNetworkPortAddresses",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_$INSTANCE_NUMBER",
+                        "Backward": "network_adapters",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/temperature/HGX_ConnectX_$INSTANCE_NUMBER_Temp_0",
+                        "Backward": "network_adapter",
+                        "Forward": ""
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/power/HGX_ConnectX_$INSTANCE_NUMBER_Power_0",
+                        "Backward": "network_adapter",
+                        "Forward": ""
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/sensors/temperature/HGX_OSFP_Board_0_OSFP_$INSTANCE_NUMBER_Temp_0",
+                        "Backward": "network_adapter",
+                        "Forward": ""
+                    }
+                ],
+                "DeviceModesSupported": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    2
+                ],
+                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_$INSTANCE_NUMBER/NetworkAdapters/",
+                "Name": "ConnectX_NIC_$INSTANCE_NUMBER",
+                "Type": "NSM_NetworkAdapter",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_$INSTANCE_NUMBER",
+                        "Backward": "fabrics",
+                        "Forward": "chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER/Switches/ConnectX_Switch_$INSTANCE_NUMBER",
+                        "Backward": "fabrics",
+                        "Forward": "all_switches"
+                    }
+                ],
+                "FabricType": "xyz.openbmc_project.Inventory.Item.Fabric.FabricType.PCIe",
+                "Name": "HGX_PCIeTopology_$INSTANCE_NUMBER",
+                "Type": "NSM_PCIeRetimer_Fabrics",
+                "UUID": "$UUID"
+            },
+            {
+                "DownstreamPortName": "DOWN",
+                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER/Switches/ConnectX_Switch_$INSTANCE_NUMBER/Ports/",
+                "Name": "PCIePorts",
+                "Type": "NSM_PCIeRetimer_MultiPCIeLink",
+                "UUID": "$UUID",
+                "UpstreamPortName": "UP"
+            },
+            {
+                "AuxNames": [
+                    "HGX_ConnectX_$INSTANCE_NUMBER"
+                ],
+                "Name": "HGX_ConnectX_$INSTANCE_NUMBER_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_$INSTANCE_NUMBER",
+                "SensorId": 5,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ConnectX_NIC_$INSTANCE_NUMBER"
+                ],
+                "Name": "ConnectX_NIC_$INSTANCE_NUMBER_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_$INSTANCE_NUMBER",
+                "SensorId": 60,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "Port_0"
+                ],
+                "Name": "ConnectX_NIC_$INSTANCE_NUMBER_Port_0_AUX",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_$INSTANCE_NUMBER/NetworkAdapters/ConnectX_NIC_$INSTANCE_NUMBER",
+                "SensorId": 200,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "HGX_ConnectX_$INSTANCE_NUMBER_Temp_0"
+                ],
+                "Name": "HGX_ConnectX_$INSTANCE_NUMBER_Temp_0",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_$INSTANCE_NUMBER",
+                "SensorId": 300,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "HGX_ConnectX_$INSTANCE_NUMBER_Power_0"
+                ],
+                "Name": "HGX_ConnectX_$INSTANCE_NUMBER_Power_0",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_$INSTANCE_NUMBER",
+                "SensorId": 50,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "HGX_OSFP_Board 0 OSFP $INSTANCE_NUMBER Temp_0"
+                ],
+                "Name": "HGX_ConnectX_NIC_$INSTANCE_NUMBER_Port_0_OSFP_Temp_0",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/HGX_OSFP_Board_0",
+                "SensorId": 500,
+                "Type": "SensorAuxName"
+            },
+            {
+                "Association": [
+                    "associated_port",
+                    "associated_port",
+                    "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_$INSTANCE_NUMBER/NetworkAdapters/ConnectX_NIC_$INSTANCE_NUMBER/Ports/Port_0"
+                ],
+                "MaxSpeedMBps": 50000,
+                "Name": "ConnectX_NIC_$INSTANCE_NUMBER_Port_0_INFO",
+                "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+                "SensorId": 200,
+                "Type": "SensorPortInfo"
+            }
+        ],
+        "Name": "HGX_ConnectX_$INSTANCE_NUMBER",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+        "Probe": [
+            "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 2, 'DEVICE_ROLE': 'CX9', 'INSTANCE_NUMBER': 0})",
+            "OR",
+            "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 2, 'DEVICE_ROLE': 'CX9', 'INSTANCE_NUMBER': 1})",
+            "OR",
+            "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 2, 'DEVICE_ROLE': 'CX9', 'INSTANCE_NUMBER': 2})",
+            "OR",
+            "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 2, 'DEVICE_ROLE': 'CX9', 'INSTANCE_NUMBER': 3})",
+            "OR",
+            "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 2, 'DEVICE_ROLE': 'CX9', 'INSTANCE_NUMBER': 4})",
+            "OR",
+            "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 2, 'DEVICE_ROLE': 'CX9', 'INSTANCE_NUMBER': 5})",
+            "OR",
+            "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 2, 'DEVICE_ROLE': 'CX9', 'INSTANCE_NUMBER': 6})",
+            "OR",
+            "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 2, 'DEVICE_ROLE': 'CX9', 'INSTANCE_NUMBER': 7})"
+        ],
+        "Type": "chassis",
+        "xyz.openbmc_project.Association.Definitions": {
+            "Associations": [
+                [
+                    "all_sensors",
+                    "chassis",
+                    "/xyz/openbmc_project/sensors/temperature/HGX_ConnectX_$INSTANCE_NUMBER_Temp_0"
+                ],
+                [
+                    "all_sensors",
+                    "chassis",
+                    "/xyz/openbmc_project/sensors/power/HGX_ConnectX_$INSTANCE_NUMBER_Power_0"
+                ],
+                [
+                    "containing",
+                    "contained_by",
+                    "/xyz/openbmc_project/inventory/system/chassis/HGX_IRoT_ConnectX_$INSTANCE_NUMBER"
+                ]
+            ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": "$INSTANCE_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Item.Board": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    }
+]

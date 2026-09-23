@@ -1,0 +1,314 @@
+[
+    {
+        "Exposes": [
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_0/Switches/ConnectX_Switch_0",
+                        "Backward": "endpoint",
+                        "Forward": "entity_link"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_8/Switches/ConnectX_Switch_$INSTANCE_NUMBER",
+                        "Backward": "all_endpoints",
+                        "Forward": "switch"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_8/zones/0",
+                        "Backward": "zone_endpoints",
+                        "Forward": "zone"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER/Switches/ConnectX_Switch_$INSTANCE_NUMBER/Ports/DOWN_1",
+                        "Backward": "associated_endpoint",
+                        "Forward": "connected_port"
+                    }
+                ],
+                "FabricsObjPath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_8",
+                "Name": "ConnectX_Switch_0",
+                "Type": "NSM_FabricsEndpoint",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_2/Switches/ConnectX_Switch_2",
+                        "Backward": "endpoint",
+                        "Forward": "entity_link"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_8/Switches/ConnectX_Switch_$INSTANCE_NUMBER",
+                        "Backward": "all_endpoints",
+                        "Forward": "switch"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_8/zones/0",
+                        "Backward": "zone_endpoints",
+                        "Forward": "zone"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER/Switches/ConnectX_Switch_$INSTANCE_NUMBER/Ports/DOWN_2",
+                        "Backward": "associated_endpoint",
+                        "Forward": "connected_port"
+                    }
+                ],
+                "FabricsObjPath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_8",
+                "Name": "ConnectX_Switch_2",
+                "Type": "NSM_FabricsEndpoint",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_3/Switches/ConnectX_Switch_3",
+                        "Backward": "endpoint",
+                        "Forward": "entity_link"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_8/Switches/ConnectX_Switch_$INSTANCE_NUMBER",
+                        "Backward": "all_endpoints",
+                        "Forward": "switch"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_8/zones/0",
+                        "Backward": "zone_endpoints",
+                        "Forward": "zone"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER/Switches/ConnectX_Switch_$INSTANCE_NUMBER/Ports/DOWN_3",
+                        "Backward": "associated_endpoint",
+                        "Forward": "connected_port"
+                    }
+                ],
+                "FabricsObjPath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_8",
+                "Name": "ConnectX_Switch_3",
+                "Type": "NSM_FabricsEndpoint",
+                "UUID": "$UUID"
+            },
+            {
+                "FabricsObjPath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_8",
+                "Name": "Zone0",
+                "Type": "NSM_FabricsZone",
+                "UUID": "$UUID",
+                "ZoneType": "xyz.openbmc_project.Inventory.Item.Zone.ZoneType.Default"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_$INSTANCE_NUMBER",
+                        "Backward": "all_switches",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_8",
+                        "Backward": "all_switches",
+                        "Forward": "fabrics"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER/Switches/ConnectX_Switch_$INSTANCE_NUMBER/Ports/UP_1",
+                        "Backward": "parent_device",
+                        "Forward": "all_states"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER/Switches/ConnectX_Switch_$INSTANCE_NUMBER/Ports/DOWN_1",
+                        "Backward": "parent_device",
+                        "Forward": "all_states"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER/Switches/ConnectX_Switch_$INSTANCE_NUMBER/Ports/DOWN_2",
+                        "Backward": "parent_device",
+                        "Forward": "all_states"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER/Switches/ConnectX_Switch_$INSTANCE_NUMBER/Ports/DOWN_3",
+                        "Backward": "parent_device",
+                        "Forward": "all_states"
+                    }
+                ],
+                "DeviceInstance": "$INSTANCE_NUMBER",
+                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_8/Switches/",
+                "Name": "ConnectX_Switch_$INSTANCE_NUMBER",
+                "Priority": false,
+                "Type": "NSM_MultiPortPCIeSwitchDevice",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_$INSTANCE_NUMBER",
+                        "Backward": "fabrics",
+                        "Forward": "chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_8/Switches/ConnectX_Switch_$INSTANCE_NUMBER",
+                        "Backward": "fabrics",
+                        "Forward": "all_switches"
+                    }
+                ],
+                "FabricType": "xyz.openbmc_project.Inventory.Item.Fabric.FabricType.PCIe",
+                "Name": "HGX_PCIeTopology_8",
+                "Type": "NSM_PCIeRetimer_Fabrics",
+                "UUID": "$UUID"
+            }
+        ],
+        "Name": "HGX_Astra_Topology_8",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 2, 'DEVICE_ROLE': 'CX9', 'INSTANCE_NUMBER': 1})",
+        "Type": "chassis"
+    },
+    {
+        "Exposes": [
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_4/Switches/ConnectX_Switch_4",
+                        "Backward": "endpoint",
+                        "Forward": "entity_link"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_9/Switches/ConnectX_Switch_$INSTANCE_NUMBER",
+                        "Backward": "all_endpoints",
+                        "Forward": "switch"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_9/zones/0",
+                        "Backward": "zone_endpoints",
+                        "Forward": "zone"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER/Switches/ConnectX_Switch_$INSTANCE_NUMBER/Ports/DOWN_2",
+                        "Backward": "associated_endpoint",
+                        "Forward": "connected_port"
+                    }
+                ],
+                "FabricsObjPath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_9",
+                "Name": "ConnectX_Switch_4",
+                "Type": "NSM_FabricsEndpoint",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_5/Switches/ConnectX_Switch_5",
+                        "Backward": "endpoint",
+                        "Forward": "entity_link"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_9/Switches/ConnectX_Switch_$INSTANCE_NUMBER",
+                        "Backward": "all_endpoints",
+                        "Forward": "switch"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_9/zones/0",
+                        "Backward": "zone_endpoints",
+                        "Forward": "zone"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER/Switches/ConnectX_Switch_$INSTANCE_NUMBER/Ports/DOWN_1",
+                        "Backward": "associated_endpoint",
+                        "Forward": "connected_port"
+                    }
+                ],
+                "FabricsObjPath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_9",
+                "Name": "ConnectX_Switch_5",
+                "Type": "NSM_FabricsEndpoint",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_6/Switches/ConnectX_Switch_6",
+                        "Backward": "endpoint",
+                        "Forward": "entity_link"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_9/Switches/ConnectX_Switch_$INSTANCE_NUMBER",
+                        "Backward": "all_endpoints",
+                        "Forward": "switch"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_9/zones/0",
+                        "Backward": "zone_endpoints",
+                        "Forward": "zone"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER/Switches/ConnectX_Switch_$INSTANCE_NUMBER/Ports/DOWN_3",
+                        "Backward": "associated_endpoint",
+                        "Forward": "connected_port"
+                    }
+                ],
+                "FabricsObjPath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_9",
+                "Name": "ConnectX_Switch_6",
+                "Type": "NSM_FabricsEndpoint",
+                "UUID": "$UUID"
+            },
+            {
+                "FabricsObjPath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_9",
+                "Name": "Zone0",
+                "Type": "NSM_FabricsZone",
+                "UUID": "$UUID",
+                "ZoneType": "xyz.openbmc_project.Inventory.Item.Zone.ZoneType.Default"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_$INSTANCE_NUMBER",
+                        "Backward": "all_switches",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_9",
+                        "Backward": "all_switches",
+                        "Forward": "fabrics"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER/Switches/ConnectX_Switch_$INSTANCE_NUMBER/Ports/UP_1",
+                        "Backward": "parent_device",
+                        "Forward": "all_states"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER/Switches/ConnectX_Switch_$INSTANCE_NUMBER/Ports/DOWN_1",
+                        "Backward": "parent_device",
+                        "Forward": "all_states"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER/Switches/ConnectX_Switch_$INSTANCE_NUMBER/Ports/DOWN_2",
+                        "Backward": "parent_device",
+                        "Forward": "all_states"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER/Switches/ConnectX_Switch_$INSTANCE_NUMBER/Ports/DOWN_3",
+                        "Backward": "parent_device",
+                        "Forward": "all_states"
+                    }
+                ],
+                "DeviceInstance": "$INSTANCE_NUMBER",
+                "InventoryObjPath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_9/Switches/",
+                "Name": "ConnectX_Switch_$INSTANCE_NUMBER",
+                "Priority": false,
+                "Type": "NSM_MultiPortPCIeSwitchDevice",
+                "UUID": "$UUID"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_ConnectX_$INSTANCE_NUMBER",
+                        "Backward": "fabrics",
+                        "Forward": "chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_9/Switches/ConnectX_Switch_$INSTANCE_NUMBER",
+                        "Backward": "fabrics",
+                        "Forward": "all_switches"
+                    }
+                ],
+                "FabricType": "xyz.openbmc_project.Inventory.Item.Fabric.FabricType.PCIe",
+                "Name": "HGX_PCIeTopology_9",
+                "Type": "NSM_PCIeRetimer_Fabrics",
+                "UUID": "$UUID"
+            }
+        ],
+        "Name": "HGX_Astra_Topology_9",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 2, 'DEVICE_ROLE': 'CX9', 'INSTANCE_NUMBER': 7})",
+        "Type": "chassis"
+    }
+]

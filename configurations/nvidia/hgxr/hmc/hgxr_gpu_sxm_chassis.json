@@ -1,0 +1,71 @@
+[
+    {
+        "Exposes": [
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+                        "Backward": "chassis",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_$INSTANCE_NUMBER",
+                        "Backward": "chassis",
+                        "Forward": "all_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_SXM_SMA_$INSTANCE_NUMBER",
+                        "Backward": "chassis",
+                        "Forward": "all_chassis"
+                    }
+                ],
+                "Chassis": {
+                    "Type": "NSM_Chassis"
+                },
+                "ChassisAttributes": {
+                    "AssetInformationAvailable": true,
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Module",
+                    "LocationCode": "SXM$INSTANCE_NUMBER + 1",
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "DeviceType": "$DEVICE_TYPE",
+                "Name": "HGX_GPU_SXM_$INSTANCE_NUMBER + 1",
+                "Type": "NSM_Chassis",
+                "UUID": "$UUID"
+            },
+            {
+                "AssemblyType": "Board",
+                "ChassisAttributes": {
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "Name": "GPU Board Assembly",
+                    "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.GPU",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "ChassisName": "HGX_GPU_SXM_$INSTANCE_NUMBER + 1",
+                "Name": "Assembly0",
+                "Type": "NSM_ChassisAssembly",
+                "UUID": "$UUID"
+            },
+            {
+                "AssemblyType": "FRU",
+                "ChassisAttributes": {
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "Name": "GPU FRU Assembly",
+                    "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.GPU",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "ChassisName": "HGX_GPU_SXM_$INSTANCE_NUMBER + 1",
+                "Name": "Assembly1",
+                "Type": "NSM_ChassisAssembly",
+                "UUID": "$UUID"
+            }
+        ],
+        "Name": "HGX_GPU_SXM_$INSTANCE_NUMBER + 1",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 0})",
+        "Type": "chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        }
+    }
+]
