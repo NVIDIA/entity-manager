@@ -230,6 +230,7 @@ void EntityManager::postBoardToDBus(
     // entity-manager claim an interface for it, which keeps us from exporting
     // interfaces that aren't defined in phosphor-dbus-interfaces.
     static const std::flat_map<std::string, std::string> typeToInterface = {
+        {"Assembly", "xyz.openbmc_project.Inventory.Item.Assembly"},
         {"BMC", "xyz.openbmc_project.Inventory.Item.BMC"},
         {"Board", "xyz.openbmc_project.Inventory.Item.Board"},
         {"Cable", "xyz.openbmc_project.Inventory.Item.Cable"},
