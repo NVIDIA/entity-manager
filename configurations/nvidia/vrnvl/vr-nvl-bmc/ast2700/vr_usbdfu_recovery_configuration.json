@@ -3,7 +3,9 @@
         {
             "Name": "FW_HMC_0",
             "RecoveryGpioName": "HMC_RECOVERY_R-O",
+            "RecoveryGpioPolarity": "ActiveHigh",
             "ResetGpioName": "HMC_RST_R_L-O",
+            "ResetGpioPolarity": "ActiveLow",
             "SpiMuxGpioName": "HMC_SPI_MUX_R_SEL-O",
             "Type": "USBDFURecovery"
         }

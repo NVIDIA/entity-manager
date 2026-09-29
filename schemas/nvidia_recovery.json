@@ -361,8 +361,16 @@
                 "RecoveryGpioName": {
                     "type": "string"
                 },
+                "RecoveryGpioPolarity": {
+                    "description": "Polarity of RecoveryGpioName. Optional; the USB DFU recovery tool defaults to ActiveHigh when absent.",
+                    "enum": ["ActiveHigh", "ActiveLow"]
+                },
                 "ResetGpioName": {
                     "type": "string"
+                },
+                "ResetGpioPolarity": {
+                    "description": "Polarity of ResetGpioName. Optional; the USB DFU recovery tool defaults to ActiveLow when absent.",
+                    "enum": ["ActiveHigh", "ActiveLow"]
                 },
                 "SpiMuxGpioName": {
                     "type": "string"
