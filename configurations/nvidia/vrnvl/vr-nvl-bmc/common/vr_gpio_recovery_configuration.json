@@ -20,6 +20,7 @@
             "APName": "FW_BF4_BMC_0",
             "GPIO": "BF4_S_BMC_EROT_FATAL_ERROR_L-I",
             "HiddenByFPGA": false,
+            "HideWhenHealthy": true,
             "I2CAddress": 83,
             "I2CBus": 77,
             "MctpEID": 59,
