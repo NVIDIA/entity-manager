@@ -1,0 +1,21 @@
+{
+    "Exposes": [
+        {
+            "CriticalReactionType": "ForceOff",
+            "LeakDetectorName": "Chassis_0_LeakDetector_0",
+            "Name": "Chassis_0_LeakDetector_0_Policy",
+            "ReactionDelaySeconds": 10,
+            "Type": "LeakDetectionPolicy"
+        },
+        {
+            "CriticalReactionType": "ForceOff",
+            "LeakDetectorName": "Chassis_0_LeakDetector_1",
+            "Name": "Chassis_0_LeakDetector_1_Policy",
+            "ReactionDelaySeconds": 10,
+            "Type": "LeakDetectionPolicy"
+        }
+    ],
+    "Name": "Leak_Policies",
+    "Probe": "TRUE",
+    "Type": "BMC"
+}

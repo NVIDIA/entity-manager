@@ -1,0 +1,33 @@
+{
+    "Exposes": [
+        {
+            "ForceRecoveryChassisObject": "HGX_ProcessorModule_SMA_0",
+            "I2CBus": 10,
+            "Interface": "I2C",
+            "MctpEID": 13,
+            "Name": "HGX_FW_ProcessorModule_SMA_0",
+            "NormalI2CAddress": "0x52",
+            "RecoveryGpioName": "BRD0_MCU_RECOVERY_L-O",
+            "RecoveryI2CAddress": "0x10",
+            "ResetGpioName": "BRD0_MCU_RESET_L-O",
+            "Target": "HPM",
+            "Type": "MCURecovery"
+        },
+        {
+            "ForceRecoveryChassisObject": "HGX_ProcessorModule_SMA_1",
+            "I2CBus": 8,
+            "Interface": "I2C",
+            "MctpEID": 23,
+            "Name": "HGX_FW_ProcessorModule_SMA_1",
+            "NormalI2CAddress": "0x52",
+            "RecoveryGpioName": "BRD1_MCU_RECOVERY_L-O",
+            "RecoveryI2CAddress": "0x10",
+            "ResetGpioName": "BRD1_MCU_RESET_L-O",
+            "Target": "HPM",
+            "Type": "MCURecovery"
+        }
+    ],
+    "Name": "HPM_SMA_Recovery_Devices",
+    "Probe": "TRUE",
+    "Type": "Recovery_Config"
+}

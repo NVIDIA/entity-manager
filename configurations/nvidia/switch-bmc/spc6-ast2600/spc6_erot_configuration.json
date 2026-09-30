@@ -1,0 +1,16 @@
+{
+    "Exposes": [
+        {
+            "APBootStatusType": "QueryBootStatus",
+            "ChassisName": "MGX_ERoT_BMC_0",
+            "MctpEID": 10,
+            "MctpUUID": "f72d6fa0-5675-11ed-9b6a-0242ac120002",
+            "Name": "MGX_FW_ERoT_BMC_0",
+            "Type": "GlacierCrisisRecovery",
+            "isRecoverable": false
+        }
+    ],
+    "Name": "Glacier_Crisis_Recovery_Devices",
+    "Probe": "TRUE",
+    "Type": "Recovery_Config"
+}

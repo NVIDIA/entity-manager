@@ -1,0 +1,144 @@
+{
+    "Name": "Nvidia VRU AST2700 Switch BMC",
+    "PlatformExposes": [
+        {
+            "MCTPTargetName": "MCTPIROT_0",
+            "Manufacturer": "NVIDIA",
+            "Name": "IRoT_BMC_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/bmc/BMC_0"
+        },
+        {
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SMA_0",
+            "MCTPTargetName": "SMA_0",
+            "Manufacturer": "NVIDIA",
+            "Name": "IRoT_SMA_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/SMA_0"
+        },
+        {
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SMA_1",
+            "MCTPTargetName": "SMA_1",
+            "Manufacturer": "NVIDIA",
+            "Name": "IRoT_SMA_1_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/SMA_1"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/bmc/BMC_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 11,
+                    "Name": "FW_BMC_Caliptra_0"
+                },
+                {
+                    "ComponentIdentifier": 10,
+                    "Name": "FW_BMC_0",
+                    "UpdateOnly": true
+                }
+            ],
+            "MCTPTargetName": "MCTPIROT_0",
+            "Name": "IRoT_BMC_0_PLDM",
+            "StaticEID": 9,
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/SMA_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65282,
+                    "Name": "FW_SMA_0"
+                },
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/CPLD_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65283,
+                    "Manufacturer": "Lattice",
+                    "Name": "FW_CPLD_0"
+                },
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/CPLD_1"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65284,
+                    "Manufacturer": "Lattice",
+                    "Name": "FW_CPLD_1"
+                }
+            ],
+            "MCTPTargetName": "SMA_0",
+            "Name": "SMA_0_PLDM",
+            "StaticEID": 69,
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/SMA_1"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65282,
+                    "Name": "FW_SMA_1"
+                },
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/CPLD_2"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65283,
+                    "Manufacturer": "Lattice",
+                    "Name": "FW_CPLD_2"
+                }
+            ],
+            "MCTPTargetName": "SMA_1",
+            "Name": "SMA_1_PLDM",
+            "StaticEID": 70,
+            "Type": "PLDMFirmwareDevice"
+        }
+    ],
+    "Probe": [
+        "xyz.openbmc_project.FruDevice({'BUS': 4, 'ADDRESS': 80})",
+        "AND",
+        "FOUND('BMC_0')"
+    ],
+    "Type": "Platform"
+}

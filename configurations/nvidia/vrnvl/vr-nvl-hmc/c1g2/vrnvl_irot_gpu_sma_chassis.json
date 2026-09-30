@@ -4,7 +4,7 @@
             {
                 "Associations": [
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_$INSTANCE_NUMBER",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_SMA_$INSTANCE_NUMBER",
                         "Backward": "all_chassis",
                         "Forward": "parent_chassis"
                     },

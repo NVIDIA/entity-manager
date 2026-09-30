@@ -1609,7 +1609,7 @@
             }
         ],
         "Name": "HMC_0",
-        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 90, 'ADDRESS': 81, 'PRODUCT_PRODUCT_NAME': 'NVL(72|144) 1CPU: ?2GPU .*'})",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 90, 'ADDRESS': 81, 'PRODUCT_PRODUCT_NAME': 'NVL(4|72|144) 1CPU: ?2GPU .*'})",
         "Type": "BMC"
     }
 ]

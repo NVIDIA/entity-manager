@@ -433,6 +433,9 @@
                     "$ref": "leak_detector.json#/$defs/VoltageLeakDetector"
                 },
                 {
+                    "$ref": "leak_detector.json#/$defs/leakage"
+                },
+                {
                     "$ref": "nvidia_misc.json#/$defs/GPIOCableSensing"
                 },
                 {
@@ -485,6 +488,15 @@
                 },
                 {
                     "$ref": "nvidia_nsm.json#/$defs/NSM_NVLinkMgmtNic_ChassisAssembly"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_NVSwitch"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_NVSwitch_Chassis"
+                },
+                {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_NVSwitch_ChassisAssembly"
                 },
                 {
                     "$ref": "nvidia_nsm.json#/$defs/NSM_NVLinkWithNetworkPortAddresses"

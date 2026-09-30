@@ -7,7 +7,8 @@
             "additionalProperties": false,
             "properties": {
                 "CriticalReactionType": {
-                    "type": "string"
+                    "type": "string",
+                    "enum": ["None", "ForceOff", "GracefulShutdown"]
                 },
                 "LeakDetectorName": {
                     "type": "string"

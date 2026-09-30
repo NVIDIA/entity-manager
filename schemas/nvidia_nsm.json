@@ -1316,6 +1316,93 @@
             },
             "required": ["Name", "Type"]
         },
+        "NSM_NVSwitch": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Asset": {
+                    "type": "object"
+                },
+                "Associations": {
+                    "type": "array"
+                },
+                "ChassisAttributes": {
+                    "type": "object"
+                },
+                "FabricManager": {
+                    "type": "object"
+                },
+                "InventoryObjPath": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PortDisableFuture": {
+                    "type": "object"
+                },
+                "PowerMode": {
+                    "type": "object"
+                },
+                "Switch": {
+                    "type": "object"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_NVSwitch"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_NVSwitch_Chassis": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChassisAttributes": {
+                    "type": "object"
+                },
+                "DeviceResetSupported": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_NVSwitch_Chassis"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
+        "NSM_NVSwitch_ChassisAssembly": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChassisAttributes": {
+                    "type": "object"
+                },
+                "ChassisName": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_NVSwitch_ChassisAssembly"
+                },
+                "UUID": {
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
         "NSM_NVLinkWithNetworkPortAddresses": {
             "type": "object",
             "additionalProperties": false,

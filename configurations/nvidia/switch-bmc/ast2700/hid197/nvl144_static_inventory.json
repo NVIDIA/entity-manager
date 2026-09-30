@@ -1,0 +1,92 @@
+[
+    {
+        "Exposes": [],
+        "Name": "NSM_IRoT_BMC_0",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 4,
+            "INSTANCE_NUMBER": 0,
+            "UUID": "STATIC:4:0:MCTP_EID:9"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_DEV_QM4_0",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 1,
+            "INSTANCE_NUMBER": 0,
+            "UUID": "STATIC:1:0:MCTP_EID:53"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_DEV_QM4_1",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 1,
+            "INSTANCE_NUMBER": 1,
+            "UUID": "STATIC:1:1:MCTP_EID:54"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_DEV_QM4_2",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 1,
+            "INSTANCE_NUMBER": 2,
+            "UUID": "STATIC:1:2:MCTP_EID:57"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_DEV_QM4_3",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 1,
+            "INSTANCE_NUMBER": 3,
+            "UUID": "STATIC:1:3:MCTP_EID:58"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_ERoT_CPU_0",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 4,
+            "INSTANCE_NUMBER": 2,
+            "UUID": "STATIC:4:2:MCTP_EID:16"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_NVSwitch_SMA_0",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_ROLE": "NVSSMA",
+            "DEVICE_TYPE": 5,
+            "INSTANCE_NUMBER": 0,
+            "UUID": "STATIC:261:0:MCTP_EID:69"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_NVSwitch_SMA_1",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_ROLE": "NVSSMA",
+            "DEVICE_TYPE": 5,
+            "INSTANCE_NUMBER": 1,
+            "UUID": "STATIC:261:1:MCTP_EID:70"
+        }
+    }
+]

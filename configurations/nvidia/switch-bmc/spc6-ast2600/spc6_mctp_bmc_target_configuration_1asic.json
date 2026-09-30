@@ -1,0 +1,16 @@
+[
+    {
+        "Exposes": [
+            {
+                "Bus": "0",
+                "ChipSelect": "2",
+                "Name": "MCTPSPI_10",
+                "StaticEndpointID": "10",
+                "Type": "MCTPSPIDevice"
+            }
+        ],
+        "Name": "MCTP_SPI_DEV",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpspi0_2'})",
+        "Type": "MCTPInterface"
+    }
+]

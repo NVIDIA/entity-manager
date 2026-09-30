@@ -1,0 +1,68 @@
+[
+    {
+        "Exposes": [
+            {
+                "Bus": "0",
+                "ChipSelect": "2",
+                "Name": "MCTPSPI_10",
+                "StaticEndpointID": "10",
+                "Type": "MCTPSPIDevice"
+            }
+        ],
+        "Name": "MCTP_SPI_DEV_BMC_EROT",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpspi0_2'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "Bus": "2",
+                "ChipSelect": "0",
+                "Name": "MCTPSPI_16",
+                "StaticEndpointID": "16",
+                "Type": "MCTPSPIDevice"
+            }
+        ],
+        "Name": "MCTP_SPI_DEV_CPU_EROT",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpspi2_0'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgePoolEndEID": "54",
+                "BridgePoolStartEID": "53",
+                "Configuration": 1,
+                "InterfaceNum": 0,
+                "Name": "MGX_NVSwitch_SMA_0",
+                "PollingInterval": "5",
+                "Port": "1.2",
+                "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+                "StaticEndpointID": "69",
+                "Type": "MCTPUSBDevice"
+            }
+        ],
+        "Name": "MCTP_USB_DEV1",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Alias': 'mctpusb1-1.2'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "BridgePoolEndEID": "58",
+                "BridgePoolStartEID": "57",
+                "Configuration": 1,
+                "InterfaceNum": 0,
+                "Name": "MGX_NVSwitch_SMA_1",
+                "PollingInterval": "5",
+                "Port": "1.3",
+                "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+                "StaticEndpointID": "70",
+                "Type": "MCTPUSBDevice"
+            }
+        ],
+        "Name": "MCTP_USB_DEV2",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Alias': 'mctpusb1-1.3'})",
+        "Type": "MCTPInterface"
+    }
+]
