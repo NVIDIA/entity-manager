@@ -60,6 +60,16 @@
                 "UUID": "$UUID"
             },
             {
+                "ChassisName": "VRoT_CPU_0",
+                "DebugTokenDeviceType": "BMCVRoT",
+                "DebugTokenType": [
+                    "Unified"
+                ],
+                "Name": "DebugToken",
+                "Type": "NSM_DebugToken",
+                "UUID": "$UUID"
+            },
+            {
                 "Associations": [
                     {
                         "AbsolutePath": "/xyz/openbmc_project/software/FW_CPU_0",
