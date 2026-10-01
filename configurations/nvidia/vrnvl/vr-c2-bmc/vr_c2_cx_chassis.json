@@ -24,7 +24,7 @@
             },
             {
                 "AuxNames": [
-                    "CX_0_Port_0_Temp_0"
+                    "CX_NIC_0_Port_0_Temp_0"
                 ],
                 "EID": 101,
                 "Name": "CX_0_Port_0_Temp",
@@ -191,7 +191,7 @@
             },
             {
                 "AuxNames": [
-                    "CX_1_Port_0_Temp_0"
+                    "CX_NIC_1_Port_0_Temp_0"
                 ],
                 "EID": 102,
                 "Name": "CX_1_Port_0_Temp",

@@ -24,7 +24,7 @@
             },
             {
                 "AuxNames": [
-                    "BlueField_0_Port_0_Temp_0"
+                    "BlueField_NIC_0_Port_0_Temp_0"
                 ],
                 "IpmiName": "BF0_Port_0_Temp",
                 "Name": "BlueField_0_Port_0_Temp_0",
@@ -34,7 +34,7 @@
             },
             {
                 "AuxNames": [
-                    "BlueField_0_Port_1_Temp_0"
+                    "BlueField_NIC_0_Port_1_Temp_0"
                 ],
                 "IpmiName": "BF0_Port_1_Temp",
                 "Name": "BlueField_0_Port_1_Temp_0",
