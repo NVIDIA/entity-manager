@@ -1,17 +1,6 @@
 [
     {
         "Exposes": [],
-        "Name": "NSM_DEV_SPC6_0",
-        "Probe": "TRUE",
-        "Type": "NSM_Configs",
-        "xyz.openbmc_project.NsmDevice": {
-            "DEVICE_TYPE": 1,
-            "INSTANCE_NUMBER": 0,
-            "UUID": "STATIC:1:0:MCTP_EID:101"
-        }
-    },
-    {
-        "Exposes": [],
         "Name": "NSM_ERoT_BMC_0",
         "Probe": "TRUE",
         "Type": "NSM_Configs",
