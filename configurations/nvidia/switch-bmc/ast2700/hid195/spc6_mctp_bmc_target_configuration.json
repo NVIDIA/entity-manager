@@ -17,7 +17,7 @@
         "Exposes": [
             {
                 "Interface": "$Interface",
-                "Name": "NVSwitch_SMA_0",
+                "Name": "SWB_SMA",
                 "PollingInterval": "5",
                 "StaticEndpointID": "69",
                 "Type": "MCTPUSBTarget",
@@ -34,7 +34,7 @@
                 "BridgePoolEndEID": "53",
                 "BridgePoolStartEID": "53",
                 "Interface": "$Interface",
-                "Name": "NVSwitch_SMA_1",
+                "Name": "MGMT_SMA",
                 "PollingInterval": "5",
                 "StaticEndpointID": "70",
                 "Type": "MCTPUSBTarget",

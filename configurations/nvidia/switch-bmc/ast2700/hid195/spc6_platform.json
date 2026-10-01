@@ -9,20 +9,20 @@
             "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/bmc/BMC_0"
         },
         {
-            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_NVSwitch_SMA_0",
-            "MCTPTargetName": "NVSwitch_SMA_0",
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SWB_SMA",
+            "MCTPTargetName": "SWB_SMA",
             "Manufacturer": "NVIDIA",
-            "Name": "IRoT_NVSwitch_SMA_0_DevInv",
+            "Name": "IRoT_SWB_SMA_DevInv",
             "Type": "PLDMDeviceInventory",
-            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/NVSwitch_SMA_0"
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/SWB_SMA"
         },
         {
-            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_NVSwitch_SMA_1",
-            "MCTPTargetName": "NVSwitch_SMA_1",
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_MGMT_SMA",
+            "MCTPTargetName": "MGMT_SMA",
             "Manufacturer": "NVIDIA",
-            "Name": "IRoT_NVSwitch_SMA_1_DevInv",
+            "Name": "IRoT_MGMT_SMA_DevInv",
             "Type": "PLDMDeviceInventory",
-            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/NVSwitch_SMA_1"
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/MGMT_SMA"
         },
         {
             "Components": [
@@ -57,17 +57,17 @@
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/NVSwitch_SMA_0"
+                        "/xyz/openbmc_project/inventory/system/chassis/SWB_SMA"
                     ],
                     "AssociationForward": [
                         "inventory"
                     ],
                     "ComponentIdentifier": 65282,
-                    "Name": "FW_NVSwitch_SMA_0"
+                    "Name": "FW_SWB_SMA"
                 }
             ],
-            "MCTPTargetName": "NVSwitch_SMA_0",
-            "Name": "NVSwitch_SMA_0_PLDM",
+            "MCTPTargetName": "SWB_SMA",
+            "Name": "SWB_SMA_PLDM",
             "StaticEID": 69,
             "Type": "PLDMFirmwareDevice"
         },
@@ -78,17 +78,17 @@
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/NVSwitch_SMA_1"
+                        "/xyz/openbmc_project/inventory/system/chassis/MGMT_SMA"
                     ],
                     "AssociationForward": [
                         "inventory"
                     ],
                     "ComponentIdentifier": 65282,
-                    "Name": "FW_NVSwitch_SMA_1"
+                    "Name": "FW_MGMT_SMA"
                 }
             ],
-            "MCTPTargetName": "NVSwitch_SMA_1",
-            "Name": "NVSwitch_SMA_1_PLDM",
+            "MCTPTargetName": "MGMT_SMA",
+            "Name": "MGMT_SMA_PLDM",
             "StaticEID": 70,
             "Type": "PLDMFirmwareDevice"
         }
