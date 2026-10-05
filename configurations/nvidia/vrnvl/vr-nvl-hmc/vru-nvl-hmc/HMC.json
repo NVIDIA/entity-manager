@@ -94,6 +94,16 @@
                 "Type": "EEPROM_24C02"
             },
             {
+                "FlashProtectedComponents": [
+                    "HGX_FW_BMC_0"
+                ],
+                "Name": "HMC_WriteProtect",
+                "Sources": [
+                    "HMC_Global_WriteProtect"
+                ],
+                "Type": "HardwareWriteProtectedControl"
+            },
+            {
                 "Address": "0x48",
                 "Bus": 4,
                 "Name": "HGX_BMC_0_Temp_0",
@@ -125,6 +135,13 @@
                     }
                 ],
                 "Type": "TMP75C"
+            },
+            {
+                "ActiveLow": false,
+                "LineName": "GLOBAL_WP_BUF-I",
+                "Name": "HMC_Global_WriteProtect",
+                "PollInterval": 5000,
+                "Type": "WriteProtectInput"
             }
         ],
         "Name": "HGX_BMC_0",

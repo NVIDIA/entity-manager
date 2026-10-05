@@ -10,7 +10,7 @@
         ],
         "Name": "HGX ProcessorModule 0",
         "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
-        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?'})",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 80, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?|.?PG568.?'})",
         "Type": "Board",
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
@@ -62,7 +62,7 @@
     },
     {
         "Name": "ProcMod_0 Board FRU Assembly0",
-        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?'})",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 80, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?|.?PG568.?'})",
         "Type": "ProcessorModule0",
         "xyz.openbmc_project.Inventory.Decorator.Area": {
             "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.GPUSubsystem"
@@ -90,7 +90,7 @@
     },
     {
         "Name": "ProcMod_0 Product FRU Assembly1",
-        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?'})",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 80, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?|.?PG568.?'})",
         "Type": "ProcessorModule0",
         "xyz.openbmc_project.Inventory.Decorator.Area": {
             "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.GPUSubsystem"
@@ -153,7 +153,7 @@
         ],
         "Name": "HGX ProcessorModule 1",
         "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
-        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 8, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?'})",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 81, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?|.?PG568.?'})",
         "Type": "Board",
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
@@ -205,7 +205,7 @@
     },
     {
         "Name": "ProcMod_1 Board FRU Assembly0",
-        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 8, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?'})",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 81, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?|.?PG568.?'})",
         "Type": "ProcessorModule1",
         "xyz.openbmc_project.Inventory.Decorator.Area": {
             "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.GPUSubsystem"
@@ -233,7 +233,7 @@
     },
     {
         "Name": "ProcMod_1 Product FRU Assembly1",
-        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 8, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?'})",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 81, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?|.?PG568.?'})",
         "Type": "ProcessorModule1",
         "xyz.openbmc_project.Inventory.Decorator.Area": {
             "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.GPUSubsystem"

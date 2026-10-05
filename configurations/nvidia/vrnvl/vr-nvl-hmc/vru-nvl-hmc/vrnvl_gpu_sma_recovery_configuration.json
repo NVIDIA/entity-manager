@@ -10,7 +10,7 @@
             "ResetGpioName": "BRD0_GPU_MCU_RESET_L_3V3-O",
             "Target": "GPU",
             "Type": "MCURecovery",
-            "USBPort": "2-1.2",
+            "USBPort": "1-1.2",
             "VendorId": "0x0955"
         },
         {
@@ -23,7 +23,7 @@
             "ResetGpioName": "BRD1_GPU_MCU_RESET_L_3V3-O",
             "Target": "GPU",
             "Type": "MCURecovery",
-            "USBPort": "1-1.2",
+            "USBPort": "2-1.2",
             "VendorId": "0x0955"
         }
     ],
