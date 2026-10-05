@@ -39,6 +39,16 @@
                         "type": "string"
                     }
                 },
+                "DownstreamDeviceIndex": {
+                    "description": "Index of the downstream device this entry describes, as reported by the firmware device proxy. Only used when ComponentIdentifier is 65535, which marks an entry as describing a downstream device rather than a component of the device itself.",
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "ManufacturerNameSource": {
+                    "description": "Various PLDM downstream device vendors could choose to expose their manufacturer name in a PLDM Device descriptor suitable for them. This field describes the source identifier to be used to identify the manufacturer name.",
+                    "type": "string",
+                    "enum": ["VendorPN", "IEEE_OUI", "SCSI_ID"]
+                },
                 "UpdateOnly": {
                     "description": "If true, the component's Software.Version object is owned by another service (e.g. BMC firmware, owned by the BMC inventory). pldmd only stamps SoftwareId on the existing object and does not create a competing object (which would carry Purpose=Other and shadow the real inventory entry).",
                     "type": "boolean"

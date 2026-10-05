@@ -544,6 +544,21 @@
                     ],
                     "ComponentIdentifier": 3,
                     "Name": "CX_NVConfig_OEM_0"
+                },
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_0/NetworkAdapters/NIC_0/Ports/C3_1"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65535,
+                    "DownstreamDeviceIndex": 0,
+                    "ManufacturerNameSource": "VendorPN",
+                    "Name": "Optical_Transceiver_0"
                 }
             ],
             "MCTPTargetName": "CX_0",
@@ -593,6 +608,21 @@
                     ],
                     "ComponentIdentifier": 3,
                     "Name": "CX_NVConfig_OEM_1"
+                },
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_1/NetworkAdapters/NIC_0/Ports/C4_1"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65535,
+                    "DownstreamDeviceIndex": 1,
+                    "ManufacturerNameSource": "VendorPN",
+                    "Name": "Optical_Transceiver_1"
                 }
             ],
             "MCTPTargetName": "CX_1",
@@ -662,6 +692,21 @@
                     ],
                     "ComponentIdentifier": 3,
                     "Name": "CX_NVConfig_OEM_2"
+                },
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_2/NetworkAdapters/NIC_0/Ports/C1_1"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65535,
+                    "DownstreamDeviceIndex": 0,
+                    "ManufacturerNameSource": "VendorPN",
+                    "Name": "Optical_Transceiver_2"
                 }
             ],
             "MCTPTargetName": "CX_2",
@@ -711,6 +756,21 @@
                     ],
                     "ComponentIdentifier": 3,
                     "Name": "CX_NVConfig_OEM_3"
+                },
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_3/NetworkAdapters/NIC_0/Ports/C2_1"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65535,
+                    "DownstreamDeviceIndex": 1,
+                    "ManufacturerNameSource": "VendorPN",
+                    "Name": "Optical_Transceiver_3"
                 }
             ],
             "MCTPTargetName": "CX_3",
@@ -780,6 +840,21 @@
                     ],
                     "ComponentIdentifier": 3,
                     "Name": "CX_NVConfig_OEM_4"
+                },
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_4/NetworkAdapters/NIC_0/Ports/C7_1"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65535,
+                    "DownstreamDeviceIndex": 0,
+                    "ManufacturerNameSource": "VendorPN",
+                    "Name": "Optical_Transceiver_4"
                 }
             ],
             "MCTPTargetName": "CX_4",
@@ -829,6 +904,21 @@
                     ],
                     "ComponentIdentifier": 3,
                     "Name": "CX_NVConfig_OEM_5"
+                },
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_5/NetworkAdapters/NIC_0/Ports/C8_1"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65535,
+                    "DownstreamDeviceIndex": 1,
+                    "ManufacturerNameSource": "VendorPN",
+                    "Name": "Optical_Transceiver_5"
                 }
             ],
             "MCTPTargetName": "CX_5",
@@ -898,6 +988,21 @@
                     ],
                     "ComponentIdentifier": 3,
                     "Name": "CX_NVConfig_OEM_6"
+                },
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_6/NetworkAdapters/NIC_0/Ports/C5_1"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65535,
+                    "DownstreamDeviceIndex": 0,
+                    "ManufacturerNameSource": "VendorPN",
+                    "Name": "Optical_Transceiver_6"
                 }
             ],
             "MCTPTargetName": "CX_6",
@@ -947,6 +1052,21 @@
                     ],
                     "ComponentIdentifier": 3,
                     "Name": "CX_NVConfig_OEM_7"
+                },
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_7/NetworkAdapters/NIC_0/Ports/C6_1"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65535,
+                    "DownstreamDeviceIndex": 1,
+                    "ManufacturerNameSource": "VendorPN",
+                    "Name": "Optical_Transceiver_7"
                 }
             ],
             "MCTPTargetName": "CX_7",
