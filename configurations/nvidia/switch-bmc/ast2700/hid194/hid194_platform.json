@@ -25,6 +25,14 @@
             "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/SMA_1"
         },
         {
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SMA_2",
+            "MCTPTargetName": "SMA_2",
+            "Manufacturer": "NVIDIA",
+            "Name": "IRoT_SMA_2_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/SMA_2"
+        },
+        {
             "Components": [
                 {
                     "AssociationBackward": [
@@ -132,6 +140,27 @@
             "MCTPTargetName": "SMA_1",
             "Name": "SMA_1_PLDM",
             "StaticEID": 70,
+            "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/SMA_2"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 65282,
+                    "Name": "FW_SMA_2"
+                }
+            ],
+            "MCTPTargetName": "SMA_2",
+            "Name": "SMA_2_PLDM",
+            "StaticEID": 71,
             "Type": "PLDMFirmwareDevice"
         }
     ],
