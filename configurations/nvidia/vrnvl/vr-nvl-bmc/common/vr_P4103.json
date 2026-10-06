@@ -51,6 +51,32 @@
                 "Address": "0x48",
                 "Bus": 5,
                 "Name": "SMM_0_Temp_0",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non recoverable",
+                        "Severity": 4,
+                        "Value": 100.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "soft shutdown",
+                        "Severity": 3,
+                        "Value": 98.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 98.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 95.0
+                    }
+                ],
                 "Type": "TMP75C"
             },
             {
