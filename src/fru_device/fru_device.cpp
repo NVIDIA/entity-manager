@@ -16,6 +16,7 @@
 #include <sdbusplus/asio/connection.hpp>
 #include <sdbusplus/asio/object_server.hpp>
 
+#include <algorithm>
 #include <array>
 #include <cerrno>
 #include <charconv>
@@ -38,6 +39,7 @@
 #include <string>
 #include <string_view>
 #include <thread>
+#include <unordered_map>
 #include <utility>
 #include <variant>
 #include <vector>
@@ -55,6 +57,7 @@ constexpr size_t busTimeoutSeconds = 10;
 
 constexpr const char* blocklistPath = PACKAGE_DIR "blacklist.json";
 constexpr const char* i2cPcieMappingPath = PACKAGE_DIR "i2cPcieMapping.json";
+constexpr const char* i2cFruSlotInfoPath = PACKAGE_DIR "i2cFruSlotInfo.json";
 const static constexpr char* baseboardFruLocation =
     "/etc/fru/baseboard.fru.bin";
 
@@ -68,6 +71,10 @@ static std::flat_map<size_t, std::optional<std::flat_set<size_t>>> busBlocklist;
 // Downstream: PCIe slot mapping support
 using VariantType = std::variant<uint32_t, std::string>;
 std::unordered_map<uint32_t, VariantType> i2cPcieMappings;
+// Downstream: FRU slot number support (i2cFruSlotInfo.json). An entry for a
+// bus and address wins over an entry for the bus alone.
+std::map<std::pair<uint32_t, uint32_t>, uint32_t> fruSlotByBusAddress;
+std::unordered_map<uint32_t, uint32_t> fruSlotByBus;
 // Downstream: per-(bus,address) blacklist (uses {bus,address} object format)
 static std::set<std::pair<int, int>> addressBlacklist;
 struct FindDevicesWithCallback;
@@ -749,6 +756,52 @@ void loadI2cPcieMappingTable(const char* path)
     }
 }
 
+// Downstream: FRU slot number support. The file is optional and has the layout
+// of i2cPcieMapping.json: {"i2cFruSlotInfo": [[bus, slot], [bus, address,
+// slot], ...]}. A malformed file or entry is reported and skipped; no slot
+// number is published for the FRUs it would have covered.
+void loadI2cFruSlotInfoTable(const char* path)
+{
+    std::ifstream stream(path);
+    if (!stream.good())
+    {
+        return;
+    }
+
+    nlohmann::json data = nlohmann::json::parse(stream, nullptr, false);
+    if (data.is_discarded() || !data.is_object() ||
+        !data.contains("i2cFruSlotInfo") || !data["i2cFruSlotInfo"].is_array())
+    {
+        lg2::error("illegal i2cFruSlotInfo.json: expected an i2cFruSlotInfo "
+                   "array");
+        return;
+    }
+
+    for (const auto& node : data["i2cFruSlotInfo"])
+    {
+        if (!node.is_array() || (node.size() != 2 && node.size() != 3) ||
+            !std::ranges::all_of(node, [](const nlohmann::json& v) {
+                return v.is_number_unsigned();
+            }))
+        {
+            lg2::error("illegal i2cFruSlotInfo.json entry {ENTRY}", "ENTRY",
+                       node.dump());
+            continue;
+        }
+
+        uint32_t slot = node.back().get<uint32_t>();
+        uint32_t bus = node[0].get<uint32_t>();
+        if (node.size() == 2)
+        {
+            fruSlotByBus[bus] = slot;
+        }
+        else
+        {
+            fruSlotByBusAddress[{bus, node[1].get<uint32_t>()}] = slot;
+        }
+    }
+}
+
 // once the bus blocklist is made non global,
 // return it here too.
 std::set<size_t> loadBlocklist(const char* path)
@@ -1093,6 +1146,18 @@ void addFruObjectToDbus(std::vector<uint8_t>& device, FruDetails& fruDetails,
                 iface->register_property("PCIE_LABEL", val);
             },
             i2cPcieMappings[bus]);
+    }
+
+    // slot number of the board the FRU is on, from i2cFruSlotInfo.json
+    if (auto slot = fruSlotByBusAddress.find({bus, address});
+        slot != fruSlotByBusAddress.end())
+    {
+        iface->register_property("SLOT_NUMBER", slot->second);
+    }
+    else if (auto slotByBus = fruSlotByBus.find(bus);
+             slotByBus != fruSlotByBus.end())
+    {
+        iface->register_property("SLOT_NUMBER", slotByBus->second);
     }
 
     // baseboard will be 0, 0
@@ -1519,6 +1584,7 @@ int main()
 
     // load I2C to PCIe mapping table
     loadI2cPcieMappingTable(i2cPcieMappingPath);
+    loadI2cFruSlotInfoTable(i2cFruSlotInfoPath);
 
     systemBus->request_name("xyz.openbmc_project.FruDevice");
 

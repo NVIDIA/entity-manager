@@ -1,0 +1,73 @@
+{
+  "Note": "Draft policy registry: the guide (POLICY-GUIDE.md) in a form tools/check_policy.py checks. Not an EM schema. A policy type is a use case owned by the daemons that consume it; each daemon subscribes to the types it needs. An entry of vrnvl-hmc-platform-policy.json is {Name: <label equal to Type>, Type: <UseCase>Policy, <Section>: {...}, ...} with one section per device kind; several entries (different types) for one target land on one D-Bus object, each type as its own interface xyz.openbmc_project.Configuration.<Type>. A type holds flat properties, or one level of nested sub-policy objects (each its own interface <Type>.<SubPolicy>). Targets: a device kind from the topology, a board sensor type, a board name, or the platform.",
+  "PolicyTypes": {
+    "NsmDeviceCapabilityPolicy": {
+      "Owners": ["nsmd"],
+      "Default": "every capability the entity describes is enabled",
+      "Variants": [
+        {
+          "Targets": { "kinds": ["gpu", "gpu_sma", "hpm_sma"] },
+          "Props": { "Disable": "names" },
+          "Required": [],
+          "Names": {
+            "gpu": {
+              "Attributes": [
+                "CPEREvent", "CpuOperatingConfig", "ECCMode", "EDPpScalingFactor", "EGMMode",
+                "GPUBasePowerLimit", "GPUCopyCPUPowerLimit", "GPUCopySwitchPowerLimit", "MIGMode",
+                "MNNVLTopology", "MctpNsmOperationalStatus", "MemCapacityUtil", "PortDisableFuture",
+                "PowerSmoothing", "SoCPowerSmoothing", "TotalNvLinksCount"
+              ],
+              "ReconfigFeatures": [
+                "InSystemTest", "FusingMode", "CCMode", "BAR0Firewall", "CCDevMode", "TGPCurrentLimit",
+                "TGPRatedLimit", "TGPMaxLimit", "TGPMinLimit", "ClockLimit", "NVLinkDisable", "ECCEnable",
+                "PCIeVFConfiguration", "RowRemappingAllowed", "RowRemappingFeature", "HBMFrequencyChange",
+                "HULKLicenseUpdate", "ForceTestCoupling", "BAR0TypeConfig", "EDPpScalingFactor",
+                "PowerSmoothingPrivilegeLevel1", "PowerSmoothingPrivilegeLevel2", "EGMMode",
+                "InfoROMFileSystemRecreate", "RISTDiagnostic", "AdaptiveTGPMode"
+              ],
+              "Chassis": ["Dimension", "PowerLimit"]
+            },
+            "gpu_sma": ["DeviceDiagnostics", "ErrorInjection", "ResetMetrics", "SoCPowerSmoothing"],
+            "hpm_sma": ["DeviceDiagnostics", "ErrorInjection", "GPIOState", "ResetMetrics", "ModuleWriteProtect"]
+          },
+          "Optional": true,
+          "Note": "absent means every capability the entity describes is enabled; a section lists only what the platform disables"
+        }
+      ]
+    },
+    "DeviceFirmwareUpgradePolicy": {
+      "Owners": ["nsmd", "pldm"],
+      "Default": "all false; nothing excluded",
+      "Variants": [
+        {
+          "Targets": { "kinds": ["gpu", "gpu_sma", "hpm_sma", "cpu", "bmc_rot", "bmc_erot"] },
+          "Props": { "ImageCopy": "bool", "ImageCopyPolicy": "bool", "InbandUpdate": "bool" },
+          "Required": ["ImageCopy", "ImageCopyPolicy", "InbandUpdate"]
+        },
+        {
+          "Targets": { "scope": "platform" },
+          "Props": { "Exclude": "names" },
+          "Required": [],
+          "Note": "an empty list is not published by EM; the interface existing is the declaration"
+        }
+      ]
+    },
+    "EndpointPollingPolicy": {
+      "Owners": ["dbus-sensors/mctpreactor"],
+      "Default": "reactor default (no polling)",
+      "Variants": [
+        {
+          "Targets": { "transports": ["usb", "i2c", "xrot"] },
+          "Props": { "IntervalSeconds": "int" },
+          "Required": ["IntervalSeconds"]
+        }
+      ],
+      "Note": "the poll interval is a setting of the bus, so the sections are transports; the USB recovery threshold differs between USB devices of one platform (CPU 5, GPU SMA none) and stays in the entity file"
+    }
+  },
+  "Naming": {
+    "Rule": "One entry per use case: {Name: <label equal to Type>, Type: <UseCase>Policy}. The device scope is in the structure: one nested section per device kind inside the entry (Gpu, GpuSma, HpmSma, Cpu, BmcRot, BmcErot), or per bus for a bus-level use case (Usb, I2c, Xrot), published by EM as the interface <Type>.<Section>. A property directly on the entry (not in a section) applies to the platform. Nothing is selected by the Name.",
+    "Sections": { "gpu": "Gpu", "gpu_sma": "GpuSma", "hpm_sma": "HpmSma", "cpu": "Cpu", "bmc_rot": "BmcRot", "bmc_erot": "BmcErot" },
+    "TransportSections": { "usb": "Usb", "i2c": "I2c", "xrot": "Xrot" }
+  }
+}

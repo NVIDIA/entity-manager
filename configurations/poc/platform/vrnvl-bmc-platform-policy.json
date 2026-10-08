@@ -1,0 +1,26 @@
+[
+  {
+    "Name": "Nvidia VR-NVL72 BMC Policy",
+    "Probe": [
+      "xyz.openbmc_project.FruDevice({'BUS': 9, 'ADDRESS': 80, 'BOARD_MANUFACTURER': 'NVIDIA'})",
+      "OR",
+      "xyz.openbmc_project.FruDevice({'BUS': 0, 'ADDRESS': 80})"
+    ],
+    "Type": "Platform",
+    "PlatformExposes": [
+      {
+        "Name": "EndpointPollingPolicy",
+        "Type": "EndpointPollingPolicy",
+        "Usb": {
+          "IntervalSeconds": 5
+        },
+        "I2c": {
+          "IntervalSeconds": 1
+        },
+        "Xrot": {
+          "IntervalSeconds": 15
+        }
+      }
+    ]
+  }
+]

@@ -8,8 +8,10 @@
 #include <phosphor-logging/lg2.hpp>
 #include <sdbusplus/bus/match.hpp>
 
+#include <algorithm>
 #include <fstream>
 #include <regex>
+#include <vector>
 
 namespace em_utils
 {
@@ -163,23 +165,78 @@ std::optional<std::string> templateCharReplace(
     nlohmann::json& value, const DBusObject& object, const size_t index,
     const std::optional<std::string>& replaceStr, bool handleLeftOver)
 {
+    // Substitute from one merged view of all interfaces, so that the longest
+    // variable name wins across interfaces as well. A property name that
+    // appears on more than one interface keeps the value of the first
+    // interface, as before.
+    DBusInterface merged;
     for (const auto& [_, interface] : object)
     {
-        auto ret = templateCharReplace(value, interface, index, replaceStr);
-        if (ret)
+        for (const auto& [name, propValue] : interface)
         {
-            if (handleLeftOver)
-            {
-                handleLeftOverTemplateVars(value);
-            }
-            return ret;
+            merged.emplace(name, propValue);
         }
     }
+
+    // fru_device publishes the slot of a FRU as SLOT_NUMBER
+    // (i2cFruSlotInfo.json, like the other FRU properties); configurations
+    // write it as $SlotNumber.
+    if (auto slot = merged.find("SLOT_NUMBER");
+        slot != merged.end() && !merged.contains("SlotNumber"))
+    {
+        merged.emplace("SlotNumber", slot->second);
+    }
+
+    auto ret = templateCharReplace(value, merged, index, replaceStr);
     if (handleLeftOver)
     {
         handleLeftOverTemplateVars(value);
     }
-    return std::nullopt;
+    return ret;
+}
+
+DBusInterface platformTemplateVariables(
+    const nlohmann::json& systemConfiguration)
+{
+    DBusInterface variables;
+    for (const auto& [_, record] : systemConfiguration.items())
+    {
+        if (!record.is_object() || record.value("Type", "") != "Platform")
+        {
+            continue;
+        }
+        for (const auto& [name, propValue] : record.items())
+        {
+            if (name == "Name" || name == "Type" || name == "Probe")
+            {
+                continue;
+            }
+            const std::string variable = "Platform." + name;
+            if (propValue.is_string())
+            {
+                variables.emplace(variable, propValue.get<std::string>());
+            }
+            else if (propValue.is_boolean())
+            {
+                variables.emplace(variable, propValue.get<bool>());
+            }
+            else if (propValue.is_number_unsigned())
+            {
+                variables.emplace(variable, propValue.get<uint64_t>());
+            }
+            else if (propValue.is_number_integer())
+            {
+                variables.emplace(variable, propValue.get<int64_t>());
+            }
+            else if (propValue.is_number_float())
+            {
+                variables.emplace(variable, propValue.get<double>());
+            }
+            // objects and arrays (Exposes, PlatformExposes, interface
+            // objects) are not variables
+        }
+    }
+    return variables;
 }
 
 static bool templateCharReplaceOneProperty(
@@ -269,12 +326,25 @@ static std::optional<DBusValueVariant> templateCharReplaceLoop(
     std::string& str, const DBusInterface& interface,
     std::optional<std::string>& ret, bool& keepAsString)
 {
+    // The longest names are tried first, so that a property whose name is the
+    // beginning of another property's name (Bridge and BridgeEID) cannot
+    // replace a part of the longer variable.
+    std::vector<std::pair<const std::string*, const DBusValueVariant*>> ordered;
+    ordered.reserve(interface.size());
     for (const auto& [propName, propValue] : interface)
     {
-        if (templateCharReplaceOneProperty(str, propName, propValue, ret,
+        ordered.emplace_back(&propName, &propValue);
+    }
+    std::ranges::stable_sort(ordered, [](const auto& a, const auto& b) {
+        return a.first->size() > b.first->size();
+    });
+
+    for (const auto& [propName, propValue] : ordered)
+    {
+        if (templateCharReplaceOneProperty(str, *propName, *propValue, ret,
                                            keepAsString))
         {
-            return propValue;
+            return *propValue;
         }
     }
     return std::nullopt;

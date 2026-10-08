@@ -37,6 +37,12 @@ std::optional<std::string> templateCharReplace(
     nlohmann::json& value, const DBusInterface& interface, size_t index,
     const std::optional<std::string>& replaceStr = std::nullopt);
 
+// The scalar properties of the Platform record(s) in systemConfiguration, as
+// the variables Platform.<Property> that are available to the templates of
+// every record (for example $Platform.NamePrefix).
+DBusInterface platformTemplateVariables(
+    const nlohmann::json& systemConfiguration);
+
 sdbusplus::object_path buildInventorySystemPath(std::string& boardName,
                                                 const std::string& boardType);
 

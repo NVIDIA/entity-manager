@@ -49,6 +49,8 @@ struct PerformScan final : std::enable_shared_from_this<PerformScan>
     std::vector<std::string> passedProbes;
 
   private:
+    void updateAssemblyRecords(const nlohmann::json& compactRecord,
+                               FoundDevices& foundDevices);
     void restorePersistedConfigurations(
         FoundDevices& foundDevices, const std::string& probeName,
         const std::string& probeType, std::set<nlohmann::json>& usedNames,

@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "$Name_Platform",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^nvme_e1s$', 'Generation': 'vr-bmc'})",
+    "Type": "Device_Configs",
+    "Exposes": [
+      {
+        "BridgeName": "$Bridge",
+        "Name": "$Name",
+        "PoolIndex": "$PoolIndex",
+        "Type": "MCTPBridgePoolDevice"
+      }
+    ]
+  }
+]

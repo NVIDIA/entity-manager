@@ -1,0 +1,540 @@
+[
+  {
+    "Name": "$Name",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^hpm_sma$', 'Generation': 'vr-hmc'})",
+    "Type": "Device_Configs",
+    "Exposes": [
+      {
+        "Chassis": {
+          "DEVICE_UUID": "STATIC:773:$Instance:MCTP_EID:$EID",
+          "Type": "NSM_Chassis"
+        },
+        "ChassisAttributes": {
+          "AssetInformationAvailable": false,
+          "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Module",
+          "Type": "NSM_Chassis_Attributes",
+          "WriteProtectSupported": false
+        },
+        "DeviceType": "3",
+        "InstanceNumber": "$Instance",
+        "Name": "$ParentChassis",
+        "Type": "NSM_Chassis",
+        "UUID": "STATIC:773:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/$ParentChassis",
+            "Backward": "chassis",
+            "Forward": "parent_chassis"
+          },
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/$Platform.NamePrefixIRoT_ProcessorModule_SMA_$Instance",
+            "Backward": "chassis",
+            "Forward": "all_chassis"
+          },
+          {
+            "Backward": "all_chassis",
+            "Forward": "parent_chassis",
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/$ParentChassis"
+          }
+        ],
+        "Chassis": {
+          "DEVICE_UUID": "",
+          "Type": "NSM_Chassis"
+        },
+        "ChassisAttributes": {
+          "AssetInformationAvailable": true,
+          "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+          "DeviceDiagnosticsSupported": false,
+          "ErrorInjectionSupported": true,
+          "FieldReplaceable": false,
+          "GPIOStateSupported": true,
+          "LocationCode": "HPM_SMA_$Position",
+          "LocationContext": "$LocationContext",
+          "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+          "ResetMetricsSupported": true,
+          "Type": "NSM_Chassis_Attributes"
+        },
+        "DeviceType": 5,
+        "Name": "$Name",
+        "Type": "NSM_Chassis",
+        "UUID": "STATIC:773:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "AcknowledgementEventIds": [],
+        "MessageType": 0,
+        "Name": "GPIOStateEventSetting",
+        "SubscribedEventIDs": [
+          3
+        ],
+        "Type": "NSM_EventConfig",
+        "UUID": "STATIC:773:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "EventGenerationSetting": 2,
+        "Name": "GlobalEventSetting",
+        "Type": "NSM_EventSetting",
+        "UUID": "STATIC:773:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "Aggregated": true,
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
+            "Backward": "all_sensors",
+            "Forward": "chassis"
+          }
+        ],
+        "Description": "Internal SMA temperature values",
+        "Name": "$Name_Temp_0",
+        "PhysicalContext": "GPUSubsystem",
+        "Priority": true,
+        "SensorId": 17,
+        "Type": "NSM_Temp",
+        "UUID": "STATIC:773:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "Aggregated": true,
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/$ParentChassis",
+            "Backward": "all_sensors",
+            "Forward": "chassis"
+          },
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/$ParentChassis",
+            "Backward": "primary_temperature_sensor",
+            "Forward": "chassis"
+          }
+        ],
+        "Name": "$ParentChassis_External_SMA_0_Temp_0",
+        "PhysicalContext": "GPUSubsystem",
+        "Priority": true,
+        "SensorId": 16,
+        "ThermalParameters": [
+          {
+            "Dynamic": true,
+            "Name": "UpperCaution",
+            "ParameterId": 16,
+            "PeriodicUpdate": false,
+            "Type": "NSM_ThermalParameter"
+          }
+        ],
+        "Type": "NSM_Temp",
+        "UUID": "STATIC:773:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "Aggregated": true,
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/$ParentChassis",
+            "Backward": "all_sensors",
+            "Forward": "chassis"
+          }
+        ],
+        "Name": "$ParentChassis_GPU_VR_Temp_0",
+        "PhysicalContext": "Board",
+        "Priority": true,
+        "SensorId": 18,
+        "ThermalParameters": [
+          {
+            "Dynamic": false,
+            "Name": "UpperFatal",
+            "Value": 135.0
+          },
+          {
+            "Dynamic": false,
+            "Name": "UpperCritical",
+            "Value": 130.0
+          },
+          {
+            "Dynamic": false,
+            "Name": "UpperCaution",
+            "Value": 120.0
+          }
+        ],
+        "Type": "NSM_Temp",
+        "UUID": "STATIC:773:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "Aggregated": true,
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/$ParentChassis",
+            "Backward": "all_sensors",
+            "Forward": "chassis"
+          }
+        ],
+        "Name": "$ParentChassis_BusBar_Temp_0",
+        "PhysicalContext": "DCBus",
+        "Priority": true,
+        "SensorId": 19,
+        "ThermalParameters": [
+          {
+            "Dynamic": false,
+            "Name": "UpperFatal",
+            "Value": 110.0
+          },
+          {
+            "Dynamic": false,
+            "Name": "UpperCritical",
+            "Value": 107.0
+          },
+          {
+            "Dynamic": false,
+            "Name": "UpperCaution",
+            "Value": 100.0
+          }
+        ],
+        "Type": "NSM_Temp",
+        "UUID": "STATIC:773:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "Aggregated": true,
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/$ParentChassis",
+            "Backward": "all_sensors",
+            "Forward": "chassis"
+          }
+        ],
+        "Name": "$ParentChassis_CPU_0_Die_0_Temp_0",
+        "PhysicalContext": "CPU",
+        "Priority": true,
+        "SensorId": 216,
+        "ThermalParameters": [
+          {
+            "Dynamic": true,
+            "Name": "UpperCaution",
+            "ParameterId": 216,
+            "PeriodicUpdate": false,
+            "Type": "NSM_ThermalParameter"
+          }
+        ],
+        "Type": "NSM_Temp",
+        "UUID": "STATIC:773:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "Aggregated": true,
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/$ParentChassis",
+            "Backward": "all_sensors",
+            "Forward": "chassis"
+          }
+        ],
+        "Name": "$ParentChassis_CPU_0_SocTemp_0",
+        "PhysicalContext": "CPU",
+        "Priority": true,
+        "SensorId": 217,
+        "ThermalParameters": [
+          {
+            "Dynamic": true,
+            "Name": "UpperCaution",
+            "ParameterId": 217,
+            "PeriodicUpdate": false,
+            "Type": "NSM_ThermalParameter"
+          }
+        ],
+        "Type": "NSM_Temp",
+        "UUID": "STATIC:773:$Instance:MCTP_EID:$EID"
+      }
+    ]
+  },
+  {
+    "Name": "$Name_TotalGPU_Power",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^hpm_sma$', 'Generation': 'vr-hmc', 'Instance': 0})",
+    "Type": "Device_Configs",
+    "Exposes": [
+      {
+        "Chassis": {
+          "DEVICE_UUID": "STATIC:773:$Instance:MCTP_EID:$EID",
+          "Type": "NSM_Chassis"
+        },
+        "ChassisAttributes": {
+          "AssetInformationAvailable": false,
+          "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Zone",
+          "Type": "NSM_Chassis_Attributes"
+        },
+        "DeviceType": "3",
+        "InstanceNumber": "0",
+        "Name": "$Platform.TopChassis",
+        "Type": "NSM_Chassis",
+        "UUID": "STATIC:773:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/$Platform.TopChassis",
+            "Backward": "all_sensors",
+            "Forward": "chassis"
+          },
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0",
+            "Backward": "total_power",
+            "Forward": "all_processors"
+          },
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1",
+            "Backward": "total_power",
+            "Forward": "all_processors"
+          },
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_2",
+            "Backward": "total_power",
+            "Forward": "all_processors"
+          },
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_3",
+            "Backward": "total_power",
+            "Forward": "all_processors"
+          }
+        ],
+        "Implementation": "Synthesized",
+        "Name": "$Platform.TopChassis_TotalGPU_Power_0",
+        "PhysicalContext": "GPU",
+        "SensorType": "power",
+        "Type": "NSM_NumericCompositeSensor",
+        "UUID": "STATIC:773:$Instance:MCTP_EID:$EID"
+      }
+    ]
+  },
+  {
+    "Name": "$Platform.NamePrefixIRoT_ProcessorModule_SMA_$Instance",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^hpm_sma$', 'Generation': 'vr-hmc'})",
+    "Type": "Chassis",
+    "xyz.openbmc_project.Inventory.Item.Chassis": {
+      "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+    },
+    "Exposes": [
+      {
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
+            "Backward": "all_chassis",
+            "Forward": "parent_chassis"
+          },
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
+            "Backward": "associated_ROT",
+            "Forward": "inventory"
+          },
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
+            "Backward": "associated_chassis",
+            "Forward": "inventory_chassis"
+          }
+        ],
+        "ChassisAttributes": {
+          "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+          "FieldReplaceable": false,
+          "LocationCode": "IRoT_$Position",
+          "LocationContext": "HGX_Chassis_0/ProcessorModule_$Instance/HPM_SMA_0",
+          "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+          "Name": "HGX_IRoT_ProcessorModule_SMA_$Instance IRoT",
+          "Type": "NSM_Chassis_Attributes",
+          "InstanceNumber": "$Instance"
+        },
+        "Name": "$Platform.NamePrefixIRoT_ProcessorModule_SMA_$Instance",
+        "Type": "NSM_ChassisIRoTResponder",
+        "UUID": "STATIC:773:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "Chassis": {
+          "DEVICE_UUID": "",
+          "Type": "NSM_Chassis"
+        },
+        "DeviceType": 5,
+        "ImageCopyEnabled": true,
+        "Name": "$Platform.NamePrefixIRoT_ProcessorModule_SMA_$Instance",
+        "SlotCount": 3,
+        "Type": "NSM_ChassisRoT",
+        "UUID": "STATIC:773:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "ChassisName": "$Platform.NamePrefixIRoT_ProcessorModule_SMA_$Instance",
+        "DebugTokenDeviceType": "SMA",
+        "DebugTokenType": [
+          "Unified"
+        ],
+        "Name": "DebugToken",
+        "Type": "NSM_DebugToken",
+        "UUID": "STATIC:773:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/software/$Platform.NamePrefixFW_ProcessorModule_SMA_$Instance",
+            "Backward": "ActiveSlot",
+            "Forward": "software"
+          }
+        ],
+        "ChassisName": "ProcessorModule_SMA_$Instance",
+        "ComponentClassification": 10,
+        "ComponentIdentifier": 65282,
+        "ComponentIndex": 0,
+        "FirmwareType": "AP",
+        "IsRoT": true,
+        "Name": "Slot1",
+        "SlotType": "Active",
+        "Type": "NSM_RoT_Slot"
+      },
+      {
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/software/$Platform.NamePrefixFW_ProcessorModule_SMA_$Instance",
+            "Backward": "InactiveSlot",
+            "Forward": "software"
+          }
+        ],
+        "ChassisName": "ProcessorModule_SMA_$Instance",
+        "ComponentClassification": 10,
+        "ComponentIdentifier": 65282,
+        "ComponentIndex": 0,
+        "FirmwareType": "AP",
+        "IsRoT": true,
+        "Name": "Slot2",
+        "SlotType": "InActive",
+        "Type": "NSM_RoT_Slot"
+      },
+      {
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/software/$Platform.NamePrefixFW_CPLD_$Instance",
+            "Backward": "ActiveSlot",
+            "Forward": "software"
+          },
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/component/$Platform.NamePrefixCPLD_$Instance",
+            "Backward": "associated_SKU",
+            "Forward": "inventory_SKU"
+          }
+        ],
+        "ChassisName": "CPLD_$Instance",
+        "ComponentClassification": 10,
+        "ComponentIdentifier": 65283,
+        "ComponentIndex": 0,
+        "FirmwareType": "AP",
+        "Name": "Slot3",
+        "ReportSkuWithNsm": true,
+        "SlotType": "Active",
+        "Type": "NSM_RoT_Slot"
+      }
+    ]
+  },
+  {
+    "Name": "$Name_Platform_Recovery",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^hpm_sma$', 'Generation': 'vr-hmc'})",
+    "Type": "PlatformRecoveryConfiguration",
+    "Exposes": [
+      {
+        "ConnectsToName": "$Platform.BmcName",
+        "DeviceAddress": "MCTP:$EID",
+        "DeviceType": "MCTPBridge",
+        "Name": "$Name",
+        "PhysicalInterface": "",
+        "RecoveryLayers": "",
+        "ResetGPIO": "",
+        "Type": "PlatformDevice",
+        "poweredInStandby": true
+      }
+    ]
+  },
+  {
+    "Name": "$Name_HPM_SMA_Recovery_Devices",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^hpm_sma$', 'Generation': 'vr-hmc'})",
+    "Type": "Recovery_Config",
+    "Exposes": [
+      {
+        "ForceRecoveryChassisObject": "$Name",
+        "I2CBus": "$Bus",
+        "Interface": "I2C",
+        "MctpEID": "$EID",
+        "Name": "$Platform.NamePrefixFW_ProcessorModule_SMA_$Instance",
+        "NormalI2CAddress": "0x52",
+        "RecoveryGpioName": "BRD$Instance_MCU_RECOVERY_L-O",
+        "RecoveryI2CAddress": "0x10",
+        "ResetGpioName": "BRD$Instance_MCU_RESET_L-O",
+        "Target": "HPM",
+        "Type": "MCURecovery",
+        "hasChassisPowerSource": false
+      }
+    ]
+  },
+  {
+    "Name": "$Name_Platform",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^hpm_sma$', 'Generation': 'vr-hmc'})",
+    "Type": "Device_Configs",
+    "Exposes": [
+      {
+        "Name": "$Name",
+        "Pages": [
+          {
+            "Bus": "$Bus",
+            "Idx": "Page1",
+            "RegAddr": "0x00",
+            "Size": 256,
+            "SlaveAddr": "0x0b"
+          },
+          {
+            "Bus": "$Bus",
+            "Idx": "Page1",
+            "Page": "0x00",
+            "RegAddr": "0x00",
+            "Size": 256,
+            "SlaveAddr": "0x11"
+          }
+        ],
+        "SupportedDumps": [
+          "RoT",
+          "SMA",
+          "CPLD"
+        ],
+        "Type": "Dump"
+      },
+      {
+        "Address": "$Address",
+        "Bus": "$Bus",
+        "Name": "$Name",
+        "PollingInterval": "1",
+        "StaticEndpointID": "$EID",
+        "Type": "MCTPI2CTarget"
+      },
+      {
+        "Components": [
+          {
+            "AssociationBackward": [
+              "activation"
+            ],
+            "AssociationEndpoint": [
+              "/xyz/openbmc_project/inventory/system/chassis/$Name"
+            ],
+            "AssociationForward": [
+              "inventory"
+            ],
+            "ComponentIdentifier": 65282,
+            "Name": "$Platform.NamePrefixFW_ProcessorModule_SMA_$Instance"
+          },
+          {
+            "AssociationBackward": [
+              "activation"
+            ],
+            "AssociationEndpoint": [
+              "/xyz/openbmc_project/inventory/system/component/$Platform.NamePrefixCPLD_$Instance"
+            ],
+            "AssociationForward": [
+              "inventory"
+            ],
+            "ComponentIdentifier": 65283,
+            "Manufacturer": "Lattice",
+            "Name": "$Platform.NamePrefixFW_CPLD_$Instance"
+          }
+        ],
+        "MCTPTargetName": "$Name",
+        "Name": "$Name_PLDM",
+        "Type": "PLDMFirmwareDevice"
+      }
+    ]
+  }
+]

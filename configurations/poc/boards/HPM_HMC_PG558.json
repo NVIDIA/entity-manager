@@ -1,0 +1,188 @@
+[
+  {
+    "Name": "HGX_Baseboard_0",
+    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?', 'SLOT_NUMBER': 0})",
+    "Type": "System",
+    "xyz.openbmc_project.Inventory.Decorator.Asset": {
+      "Manufacturer": "$BOARD_MANUFACTURER",
+      "Model": "VR NVL",
+      "PartNumber": "$BOARD_PART_NUMBER",
+      "SerialNumber": "$BOARD_SERIAL_NUMBER"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+      "Address": "$address",
+      "Bus": "$bus",
+      "Name": "HGX_Baseboard_0"
+    }
+  },
+  {
+    "Exposes": [
+      {
+        "Address": "$address",
+        "Bus": "$bus",
+        "Name": "ProcMod_$SlotNumber",
+        "Type": "EEPROM_24C64"
+      },
+      {
+        "FlashProtectedComponents": [
+          "HGX_FW_GPU_$SlotNumber * 2",
+          "HGX_FW_GPU_$SlotNumber * 2 + 1",
+          "HGX_SBIOS_FMC_$SlotNumber",
+          "HGX_SBIOS_FW_$SlotNumber"
+        ],
+        "Name": "HPM_$SlotNumber_WriteProtect",
+        "Sources": [
+          "BRD$SlotNumber_Global_WriteProtect"
+        ],
+        "Type": "HardwareWriteProtectedControl"
+      },
+      {
+        "ActiveLow": false,
+        "LineName": "BRD$SlotNumber_GLOBAL_WP-I",
+        "Name": "BRD$SlotNumber_Global_WriteProtect",
+        "PollInterval": 5000,
+        "Type": "WriteProtectInput"
+      }
+    ],
+    "Name": "HGX ProcessorModule $SlotNumber",
+    "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?', 'SLOT_NUMBER': 0})",
+    "Type": "Board",
+    "xyz.openbmc_project.Inventory.Decorator.Asset": {
+      "Manufacturer": "$BOARD_MANUFACTURER",
+      "Model": "$BOARD_PRODUCT_NAME",
+      "PartNumber": "$BOARD_PART_NUMBER",
+      "SerialNumber": "$BOARD_SERIAL_NUMBER"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+      "Address": "$address",
+      "Bus": "$bus",
+      "Name": "ProcMod_$SlotNumber"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.Instance": {
+      "InstanceNumber": "$SlotNumber"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.Location": {
+      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Backplane"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+      "LocationCode": "ProcessorModule_$SlotNumber-Left"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+      "LocationContext": "HGX_Chassis_0"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.LocationReference": {
+      "LocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Left"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+      "FieldReplaceable": true
+    },
+    "xyz.openbmc_project.Inventory.Item.Chassis": {
+      "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Module"
+    },
+    "xyz.openbmc_project.Inventory.Item.ProcessorModule": {}
+  },
+  {
+    "Exposes": [
+      {
+        "Address": "$address",
+        "Bus": "$bus",
+        "Name": "ProcMod_$SlotNumber",
+        "Type": "EEPROM_24C64"
+      },
+      {
+        "FlashProtectedComponents": [
+          "HGX_FW_GPU_$SlotNumber * 2",
+          "HGX_FW_GPU_$SlotNumber * 2 + 1",
+          "HGX_SBIOS_FMC_$SlotNumber",
+          "HGX_SBIOS_FW_$SlotNumber"
+        ],
+        "Name": "HPM_$SlotNumber_WriteProtect",
+        "Sources": [
+          "BRD$SlotNumber_Global_WriteProtect"
+        ],
+        "Type": "HardwareWriteProtectedControl"
+      },
+      {
+        "ActiveLow": false,
+        "LineName": "BRD$SlotNumber_GLOBAL_WP-I",
+        "Name": "BRD$SlotNumber_Global_WriteProtect",
+        "PollInterval": 5000,
+        "Type": "WriteProtectInput"
+      }
+    ],
+    "Name": "HGX ProcessorModule $SlotNumber",
+    "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?', 'SLOT_NUMBER': 1})",
+    "Type": "Board",
+    "xyz.openbmc_project.Inventory.Decorator.Asset": {
+      "Manufacturer": "$BOARD_MANUFACTURER",
+      "Model": "$BOARD_PRODUCT_NAME",
+      "PartNumber": "$BOARD_PART_NUMBER",
+      "SerialNumber": "$BOARD_SERIAL_NUMBER"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+      "Address": "$address",
+      "Bus": "$bus",
+      "Name": "ProcMod_$SlotNumber"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.Instance": {
+      "InstanceNumber": "$SlotNumber"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.Location": {
+      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Backplane"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+      "LocationCode": "ProcessorModule_$SlotNumber-Right"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+      "LocationContext": "HGX_Chassis_0"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.LocationReference": {
+      "LocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Right"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+      "FieldReplaceable": true
+    },
+    "xyz.openbmc_project.Inventory.Item.Chassis": {
+      "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Module"
+    },
+    "xyz.openbmc_project.Inventory.Item.ProcessorModule": {}
+  },
+  {
+    "Name": "ProcMod_$SlotNumber",
+    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?'})",
+    "Type": "Assembly",
+    "Board": "Board/HGX ProcessorModule $SlotNumber",
+    "LocationType": "Backplane",
+    "PhysicalContext": "GPUSubsystem",
+    "LocationCode": "ProcessorModule_$SlotNumber",
+    "LocationContext": "HGX_Chassis_0"
+  },
+  {
+    "Name": "HGX_CPLD_$SlotNumber",
+    "Parent_Chassis": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_$SlotNumber",
+    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?'})",
+    "Type": "Component",
+    "xyz.openbmc_project.Inventory.Decorator.Asset": {
+      "Manufacturer": "Lattice",
+      "Model": "LCMX02",
+      "PartNumber": "115-4525-000"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.Location": {
+      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+      "LocationCode": "CPLD_$SlotNumber"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+      "LocationContext": "HGX_Chassis_0/ProcessorModule_$SlotNumber"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+      "FieldReplaceable": false
+    },
+    "xyz.openbmc_project.Inventory.Item.Chassis": {
+      "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+    }
+  }
+]

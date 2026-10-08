@@ -1,0 +1,183 @@
+[
+    {
+        "Exposes": [
+            {
+                "Address": "$address",
+                "Bus": "$bus",
+                "Name": "System_0",
+                "Type": "EEPROM_24C02"
+            }
+        ],
+        "Name": "System_0",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 9, 'ADDRESS': 80, 'BOARD_MANUFACTURER': 'NVIDIA', 'CHASSIS_PART_NUMBER': '675-(24975-(0[034]00|2000|3[01]00)|24059-(1000|3100)|24132-0000).*'})",
+            "OR",
+            "xyz.openbmc_project.FruDevice({'BUS': 0, 'ADDRESS': 80})"
+        ],
+        "Type": "System",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "ChassisPartNumber": "$CHASSIS_PART_NUMBER",
+            "ChassisSerial": "$CHASSIS_SERIAL_NUMBER",
+            "ChassisType": "$CHASSIS_TYPE",
+            "Manufacturer": "NVIDIA",
+            "Model": "VR NVL",
+            "PartNumber": "$PRODUCT_PART_NUMBER",
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.AssetTag": {
+            "AssetTag": "$PRODUCT_ASSET_TAG"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "$address",
+            "Bus": "$bus",
+            "Name": "System_0"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Address": "0x50",
+                "Bus": "90",
+                "Name": "ProcessorModule 0",
+                "Type": "EEPROM_24C64"
+            },
+            {
+                "GpioLine": "B0_M0_GLOBAL_WP-O",
+                "Name": "B0_M0_GLOBAL_WP",
+                "Polarity": "active_high",
+                "Type": "WriteProtect"
+            }
+        ],
+        "Name": "ProcessorModule 0",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 90, 'ADDRESS': 80})",
+            "OR",
+            "xyz.openbmc_project.FruDevice({'BUS': 0, 'ADDRESS': 80})"
+        ],
+        "Type": "FRU_EEPROM",
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "0x50",
+            "Bus": "90",
+            "Name": "ProcMod_0"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Address": "0x51",
+                "Bus": "90",
+                "Name": "ProcessorModule 1",
+                "Type": "EEPROM_24C64"
+            },
+            {
+                "GpioLine": "B1_M0_GLOBAL_WP-O",
+                "Name": "B1_M0_GLOBAL_WP",
+                "Polarity": "active_high",
+                "Type": "WriteProtect"
+            }
+        ],
+        "Name": "ProcessorModule 1",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 90, 'ADDRESS': 81})",
+            "OR",
+            "xyz.openbmc_project.FruDevice({'BUS': 0, 'ADDRESS': 80})"
+        ],
+        "Type": "FRU_EEPROM",
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "0x51",
+            "Bus": "90",
+            "Name": "ProcMod_1"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Address": "0x53",
+                "Bus": "90",
+                "Name": "CBC00_FRU",
+                "Type": "EEPROM_24C02"
+            }
+        ],
+        "Name": "CBC00_FRU",
+        "Probe": "TRUE",
+        "Type": "FRU_EEPROM",
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "0x53",
+            "Bus": "90",
+            "Name": "CBC00_FRU"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Address": "0x54",
+                "Bus": "90",
+                "Name": "CBC01_FRU",
+                "Type": "EEPROM_24C02"
+            }
+        ],
+        "Name": "CBC01_FRU",
+        "Probe": "TRUE",
+        "Type": "FRU_EEPROM",
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "0x54",
+            "Bus": "90",
+            "Name": "CBC01_FRU"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Address": "0x55",
+                "Bus": "90",
+                "Name": "CBC10_FRU",
+                "Type": "EEPROM_24C02"
+            }
+        ],
+        "Name": "CBC10_FRU",
+        "Probe": "TRUE",
+        "Type": "FRU_EEPROM",
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "0x55",
+            "Bus": "90",
+            "Name": "CBC10_FRU"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Address": "0x56",
+                "Bus": "90",
+                "Name": "CBC11_FRU",
+                "Type": "EEPROM_24C02"
+            }
+        ],
+        "Name": "CBC11_FRU",
+        "Probe": "TRUE",
+        "Type": "FRU_EEPROM",
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "0x56",
+            "Bus": "90",
+            "Name": "CBC11_FRU"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Address": "0x52",
+                "Bus": "90",
+                "Name": "HMC_FRU",
+                "Type": "EEPROM_24C02"
+            }
+        ],
+        "Name": "HMC_FRU",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Baseboard_0",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 90, 'ADDRESS': 82})",
+        "Type": "FRU_EEPROM",
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "0x52",
+            "Bus": "90",
+            "Name": "HMC_FRU"
+        }
+    }
+]

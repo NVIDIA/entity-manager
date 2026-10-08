@@ -1,0 +1,589 @@
+[
+  {
+    "Name": "$Name",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vr-bmc'})",
+    "Exposes": [
+      {
+        "EID": "$EID",
+        "Name": "$Name_Association",
+        "Type": "MctpEndpointAssociation"
+      },
+      {
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
+            "Backward": "pciedevice",
+            "Forward": "chassis"
+          }
+        ],
+        "ChassisAttributes": {
+          "Name": "$Name",
+          "Type": "NSM_Chassis_Attributes"
+        },
+        "ChassisName": "$Name",
+        "DEVICE_UUID": "",
+        "Name": "$Name",
+        "PCIeDevice": {
+          "Type": "NSM_MultiPortPCIeDevice"
+        },
+        "Type": "NSM_ChassisPCIeDevice",
+        "UUID": "STATIC:770:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
+            "Backward": "all_switches",
+            "Forward": "parent_chassis"
+          },
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/PCIeTopology_$Name",
+            "Backward": "all_switches",
+            "Forward": "fabrics"
+          }
+        ],
+        "DeviceInstance": "$Instance",
+        "InventoryObjPath": "/xyz/openbmc_project/inventory/system/fabrics/PCIeTopology_$Name/Switches/",
+        "Name": "CX_Switch_$Instance",
+        "Priority": false,
+        "Type": "NSM_MultiPortPCIeSwitchDevice",
+        "UUID": "STATIC:770:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "ChassisAttributes": {
+          "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+          "LocationCode": "$Name",
+          "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+          "Type": "NSM_Chassis_Attributes"
+        },
+        "Name": "$Name",
+        "Type": "NSM_NVLinkMgmtNic_Chassis",
+        "UUID": "STATIC:770:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "ChassisAttributes": {
+          "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+          "Name": "$Name Device Assembly",
+          "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.Board",
+          "Type": "NSM_Chassis_Attributes"
+        },
+        "ChassisName": "$Name",
+        "Name": "Assembly0",
+        "Type": "NSM_NVLinkMgmtNic_ChassisAssembly",
+        "UUID": "STATIC:770:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "Count": 2,
+        "DeviceType": 2,
+        "Name": "Port",
+        "OpticalModuleResetSupported": true,
+        "OpticalModuleTelemetrySupported": true,
+        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name/NetworkAdapters/NIC_0",
+        "PortLocationCodeMap": [
+          "$PortName0",
+          "$PortName1"
+        ],
+        "PortLocationContext": "$LocationContext",
+        "PortNameMap": [
+          "$PortName0",
+          "$PortName1"
+        ],
+        "Priority": false,
+        "SupportFECHistogram": true,
+        "Type": "NSM_NVLinkWithNetworkPortAddresses",
+        "UUID": "STATIC:770:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
+            "Backward": "network_adapters",
+            "Forward": "parent_chassis"
+          },
+          {
+            "AbsolutePath": "/xyz/openbmc_project/sensors/temperature/$Name_Temp_0",
+            "Backward": "network_adapter",
+            "Forward": ""
+          },
+          {
+            "AbsolutePath": "/xyz/openbmc_project/sensors/power/$Name_Power_0",
+            "Backward": "network_adapter",
+            "Forward": ""
+          },
+          {
+            "AbsolutePath": "/xyz/openbmc_project/sensors/temperature/CX_NIC_$Instance_Port_0_Temp_0",
+            "Backward": "network_adapter",
+            "Forward": ""
+          },
+          {
+            "AbsolutePath": "/xyz/openbmc_project/sensors/voltage/CX_NIC_$Instance_Port_0_Voltage_0",
+            "Backward": "network_adapter",
+            "Forward": ""
+          },
+          {
+            "AbsolutePath": "/xyz/openbmc_project/sensors/temperature/CX_NIC_$Instance_Port_1_Temp_0",
+            "Backward": "network_adapter",
+            "Forward": ""
+          },
+          {
+            "AbsolutePath": "/xyz/openbmc_project/sensors/voltage/CX_NIC_$Instance_Port_1_Voltage_0",
+            "Backward": "network_adapter",
+            "Forward": ""
+          }
+        ],
+        "DeviceModesSupported": [
+          -1,
+          -1,
+          -1,
+          -1,
+          2,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          2,
+          -1,
+          1
+        ],
+        "InventoryObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name/NetworkAdapters/",
+        "Name": "NIC_0",
+        "Type": "NSM_NetworkAdapter",
+        "UUID": "STATIC:770:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
+            "Backward": "fabrics",
+            "Forward": "chassis"
+          },
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/PCIeTopology_$Name/Switches/CX_Switch_$Instance",
+            "Backward": "fabrics",
+            "Forward": "all_switches"
+          }
+        ],
+        "FabricType": "xyz.openbmc_project.Inventory.Item.Fabric.FabricType.PCIe",
+        "Name": "PCIeTopology_$Name",
+        "Type": "NSM_PCIeRetimer_Fabrics",
+        "UUID": "STATIC:770:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/PCIeTopology_$Name/Switches/CX_Switch_$Instance",
+            "Backward": "all_states",
+            "Forward": "parent_device"
+          }
+        ],
+        "DownstreamPortName": "DOWN",
+        "InventoryObjPath": "/xyz/openbmc_project/inventory/system/fabrics/PCIeTopology_$Name/Switches/CX_Switch_$Instance/Ports/",
+        "Name": "PCIePorts",
+        "Type": "NSM_PCIeRetimer_MultiPCIeLink",
+        "UUID": "STATIC:770:$Instance:MCTP_EID:$EID",
+        "UpstreamPortName": "UP"
+      },
+      {
+        "AuxNames": [
+          "$Name"
+        ],
+        "Name": "$Name_AUX",
+        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
+        "SensorId": 5,
+        "Type": "SensorAuxName"
+      },
+      {
+        "AuxNames": [
+          "NIC_0"
+        ],
+        "Name": "CX_NIC_$Instance_AUX",
+        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
+        "SensorId": 60,
+        "Type": "SensorAuxName"
+      },
+      {
+        "AuxNames": [
+          "Port_0"
+        ],
+        "Name": "CX_NIC_$Instance_Port_0_AUX",
+        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
+        "SensorId": 200,
+        "Type": "SensorAuxName"
+      },
+      {
+        "AuxNames": [
+          "Port_1"
+        ],
+        "Name": "CX_NIC_$Instance_Port_1_AUX",
+        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
+        "SensorId": 201,
+        "Type": "SensorAuxName"
+      },
+      {
+        "AuxNames": [
+          "$Name_Temp_0"
+        ],
+        "Name": "$Name_Temp_0",
+        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
+        "SensorId": 300,
+        "ThermalParameters": [
+          {
+            "Dynamic": false,
+            "Name": "UpperFatal",
+            "Value": 105.0
+          },
+          {
+            "Dynamic": false,
+            "Name": "UpperCritical",
+            "Value": 103.0
+          },
+          {
+            "Dynamic": false,
+            "Name": "UpperCaution",
+            "Value": 100.0
+          }
+        ],
+        "Type": "SensorAuxName"
+      },
+      {
+        "AuxNames": [
+          "$Name_Power_0"
+        ],
+        "Name": "$Name_Power_0",
+        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
+        "SensorId": 50,
+        "Type": "SensorAuxName"
+      },
+      {
+        "AuxNames": [
+          "CX_NIC_$Instance_Port_0_Temp_0"
+        ],
+        "Name": "CX_NIC_$Instance_Port_0_Temp_0",
+        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
+        "SensorId": 500,
+        "ThermalParameters": [
+          {
+            "Dynamic": false,
+            "Name": "UpperFatal",
+            "Value": 72.0
+          },
+          {
+            "Dynamic": false,
+            "Name": "UpperCritical",
+            "Value": 70.0
+          },
+          {
+            "Dynamic": false,
+            "Name": "UpperCaution",
+            "Value": 67.0
+          }
+        ],
+        "Type": "SensorAuxName"
+      },
+      {
+        "AuxNames": [
+          "CX_NIC_$Instance_Port_0_Voltage_0"
+        ],
+        "Name": "CX_NIC_$Instance_Port_0_Voltage_0",
+        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
+        "SensorId": 400,
+        "Type": "SensorAuxName"
+      },
+      {
+        "AuxNames": [
+          "CX_NIC_$Instance_Port_1_Temp_0"
+        ],
+        "Name": "CX_NIC_$Instance_Port_1_Temp_0",
+        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
+        "SensorId": 501,
+        "ThermalParameters": [
+          {
+            "Dynamic": false,
+            "Name": "UpperFatal",
+            "Value": 72.0
+          },
+          {
+            "Dynamic": false,
+            "Name": "UpperCritical",
+            "Value": 70.0
+          },
+          {
+            "Dynamic": false,
+            "Name": "UpperCaution",
+            "Value": 67.0
+          }
+        ],
+        "Type": "SensorAuxName"
+      },
+      {
+        "AuxNames": [
+          "CX_NIC_$Instance_Port_1_Voltage_0"
+        ],
+        "Name": "CX_NIC_$Instance_Port_1_Voltage_0",
+        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
+        "SensorId": 401,
+        "Type": "SensorAuxName"
+      },
+      {
+        "MaxSpeedMBps": 100000,
+        "Name": "CX_NIC_$Instance_Port_0_INFO",
+        "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+        "SensorId": 200,
+        "Type": "SensorPortInfo"
+      },
+      {
+        "MaxSpeedMBps": 100000,
+        "Name": "CX_NIC_$Instance_Port_1_INFO",
+        "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
+        "SensorId": 201,
+        "Type": "SensorPortInfo"
+      }
+    ],
+    "Parent_Chassis": "/xyz/openbmc_project/inventory/system/board/$ParentChassis",
+    "Type": "chassis",
+    "xyz.openbmc_project.Inventory.Decorator.Instance": {
+      "InstanceNumber": "$Instance"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.Location": {
+      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+      "LocationContext": "$LocationContext"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+      "FieldReplaceable": false
+    },
+    "xyz.openbmc_project.Inventory.Item.Board": {},
+    "xyz.openbmc_project.State.Decorator.Health": {
+      "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+    }
+  },
+  {
+    "Name": "IRoT_$Name",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vr-bmc'})",
+    "Exposes": [
+      {
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/$Name/NetworkAdapters/NIC_0",
+            "Backward": "associated_ROT",
+            "Forward": "inventory"
+          },
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
+            "Backward": "associated_chassis",
+            "Forward": "inventory_chassis"
+          },
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
+            "Backward": "associated_chassis",
+            "Forward": "parent_chassis"
+          },
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
+            "Backward": "all_chassis",
+            "Forward": "parent_chassis"
+          }
+        ],
+        "ChassisAttributes": {
+          "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+          "FieldReplaceable": false,
+          "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+          "Name": "$Name IRoT",
+          "Type": "NSM_Chassis_Attributes",
+          "InstanceNumber": "$Instance",
+          "LocationCode": "IRoT_$Position",
+          "LocationContext": "$Platform.TopChassis/$Name"
+        },
+        "Name": "IRoT_$Name",
+        "Type": "NSM_ChassisIRoTResponder",
+        "UUID": "STATIC:770:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "Chassis": {
+          "DEVICE_UUID": "",
+          "Type": "NSM_Chassis"
+        },
+        "DeviceType": 2,
+        "Name": "IRoT_$Name",
+        "SlotCount": 2,
+        "Type": "NSM_ChassisRoT",
+        "UUID": "STATIC:770:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "ChassisName": "IRoT_$Name",
+        "DebugTokenDeviceType": "NIC",
+        "DebugTokenType": [
+          "Unified"
+        ],
+        "Name": "DebugToken",
+        "Type": "NSM_DebugToken",
+        "UUID": "STATIC:770:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/software/FW_$Name",
+            "Backward": "ActiveSlot",
+            "Forward": "software"
+          }
+        ],
+        "ChassisName": "$Name",
+        "ComponentClassification": 10,
+        "ComponentIdentifier": 1,
+        "ComponentIndex": 0,
+        "FirmwareType": "AP",
+        "Name": "Slot1",
+        "SlotType": "Active",
+        "Type": "NSM_RoT_Slot"
+      },
+      {
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/software/FW_$Name",
+            "Backward": "InactiveSlot",
+            "Forward": "software"
+          }
+        ],
+        "ChassisName": "$Name",
+        "ComponentClassification": 10,
+        "ComponentIdentifier": 1,
+        "ComponentIndex": 0,
+        "FirmwareType": "AP",
+        "Name": "Slot2",
+        "SlotType": "InActive",
+        "Type": "NSM_RoT_Slot"
+      }
+    ],
+    "Type": "Chassis",
+    "xyz.openbmc_project.Inventory.Item.Chassis": {
+      "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+    }
+  },
+  {
+    "Name": "$Name_ConnectX_Recovery_Devices",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vr-bmc'})",
+    "Type": "Recovery_Config",
+    "Exposes": [
+      {
+        "ChassisName": "IRoT_$Name",
+        "EID": "$EID",
+        "ForceRecoveryChassisObject": "IRoT_$Name",
+        "I2CAddress": "$I2CAddress",
+        "I2CBus": "$I2CBus",
+        "Name": "FW_$Name",
+        "SMAEID": "$BridgeEID",
+        "Type": "ConnectXRecovery",
+        "hasChassisPowerSource": true
+      }
+    ]
+  },
+  {
+    "Name": "$Name_Platform",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vr-bmc'})",
+    "Type": "Device_Configs",
+    "Exposes": [
+      {
+        "DeviceType": "CX_NIC_$Instance",
+        "Name": "$Name",
+        "SupportedDumps": [
+          "NetIR"
+        ],
+        "Type": "Dump"
+      },
+      {
+        "BridgeName": "$Bridge",
+        "Name": "$Name",
+        "PoolIndex": "$PoolIndex",
+        "Type": "MCTPBridgePoolDevice"
+      },
+      {
+        "MCTPTargetName": "$Name",
+        "Manufacturer": "NVIDIA",
+        "Name": "$Name_DevInv",
+        "Type": "PLDMDeviceInventory",
+        "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
+        "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
+      },
+      {
+        "Components": [
+          {
+            "AssociationBackward": [
+              "activation"
+            ],
+            "AssociationEndpoint": [
+              "/xyz/openbmc_project/inventory/system/chassis/$Name/NetworkAdapters/NIC_0"
+            ],
+            "AssociationForward": [
+              "inventory"
+            ],
+            "ComponentIdentifier": 1,
+            "Name": "FW_$Name"
+          },
+          {
+            "AssociationBackward": [
+              "active"
+            ],
+            "AssociationEndpoint": [
+              "/xyz/openbmc_project/inventory/system/chassis/$Name"
+            ],
+            "AssociationForward": [
+              "inventory"
+            ],
+            "ComponentIdentifier": 4,
+            "Name": "CX_NVConfig_MLNX_$Instance"
+          },
+          {
+            "AssociationBackward": [
+              "active"
+            ],
+            "AssociationEndpoint": [
+              "/xyz/openbmc_project/inventory/system/chassis/$Name"
+            ],
+            "AssociationForward": [
+              "inventory"
+            ],
+            "ComponentIdentifier": 3,
+            "Name": "CX_NVConfig_OEM_$Instance"
+          }
+        ],
+        "MCTPTargetName": "$Name",
+        "Name": "$Name_PLDM",
+        "Type": "PLDMFirmwareDevice"
+      }
+    ]
+  },
+  {
+    "Name": "$Name_Platform_Recovery",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vr-bmc'})",
+    "Type": "PlatformRecoveryConfiguration",
+    "Exposes": [
+      {
+        "ConnectsToName": "$Bridge",
+        "DeviceAddress": "MCTP:$EID",
+        "DeviceType": "MCTPEndpoint",
+        "Name": "$Name",
+        "PhysicalInterface": "",
+        "RecoveryLayers": "",
+        "ResetGPIO": "",
+        "Type": "PlatformDevice",
+        "poweredInStandby": "$PoweredInStandby"
+      }
+    ]
+  }
+]

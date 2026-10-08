@@ -1,0 +1,60 @@
+[
+  {
+    "Name": "$Name",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^hpm_sma$', 'Generation': 'vr-bmc'})",
+    "Exposes": [
+      {
+        "ChassisPath": "/xyz/openbmc_project/inventory/system/chassis/$Platform.TopChassis",
+        "MaxValue": 3.3,
+        "MinValue": 0.0,
+        "Name": "$Platform.TopChassis_LeakDetector_$Instance",
+        "SensorIdMap": [
+          0
+        ],
+        "SensorNameMap": [
+          "$Platform.TopChassis_LeakDetector_$Instance"
+        ],
+        "Type": "NSM_LeakDetection",
+        "UUID": "STATIC:773:$Instance:MCTP_EID:$EID"
+      }
+    ],
+    "Type": "Device_Configs"
+  },
+  {
+    "Name": "$Name_Platform_Recovery",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^hpm_sma$', 'Generation': 'vr-bmc'})",
+    "Type": "PlatformRecoveryConfiguration",
+    "Exposes": [
+      {
+        "ConnectsToName": "$Platform.BmcName",
+        "DeviceAddress": "MCTP:$EID",
+        "DeviceType": "MCTPBridge",
+        "Name": "$Name",
+        "PhysicalInterface": "usb1:0x0955:0xcf11:$Port",
+        "RecoveryLayers": "",
+        "ResetGPIO": "",
+        "Type": "PlatformDevice",
+        "poweredInStandby": true
+      }
+    ]
+  },
+  {
+    "Name": "$Name_Platform",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^hpm_sma$', 'Generation': 'vr-bmc'})",
+    "Type": "Device_Configs",
+    "Exposes": [
+      {
+        "BridgePoolStartEID": "$PoolStartEID",
+        "Configuration": 1,
+        "IgnoreMessageTypes": "1,5",
+        "InterfaceNum": 0,
+        "Name": "SMA_$Instance",
+        "PollingInterval": "5",
+        "Port": "$Port",
+        "RootHubPath": "$RootHubPath",
+        "StaticEndpointID": "$EID",
+        "Type": "MCTPUSBDevice"
+      }
+    ]
+  }
+]

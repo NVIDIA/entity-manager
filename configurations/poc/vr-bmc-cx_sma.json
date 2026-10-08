@@ -1,0 +1,307 @@
+[
+  {
+    "Name": "$Name",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vr-bmc'})",
+    "Exposes": [
+      {
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/$ParentChassis",
+            "Backward": "chassis",
+            "Forward": "parent_chassis"
+          },
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_$Name",
+            "Backward": "chassis",
+            "Forward": "all_chassis"
+          },
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_$Instance * 2",
+            "Backward": "bridged_Chassis",
+            "Forward": "bridging_chassis"
+          },
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CX_$Instance * 2 + 1",
+            "Backward": "bridged_Chassis",
+            "Forward": "bridging_chassis"
+          },
+          {
+            "Backward": "all_chassis",
+            "Forward": "parent_chassis",
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/board/$ParentChassis"
+          }
+        ],
+        "Chassis": {
+          "Type": "NSM_Chassis"
+        },
+        "ChassisAttributes": {
+          "AssetInformationAvailable": true,
+          "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+          "DeviceDiagnosticsSupported": true,
+          "ErrorInjectionSupported": true,
+          "FieldReplaceable": false,
+          "LocationCode": "SMA_$Position",
+          "LocationContext": "$LocationContext",
+          "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+          "ResetMetricsSupported": true,
+          "Type": "NSM_Chassis_Attributes"
+        },
+        "DeviceType": 5,
+        "Name": "$Name",
+        "Type": "NSM_Chassis",
+        "UUID": "STATIC:517:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "Aggregated": true,
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
+            "Backward": "all_sensors",
+            "Forward": "chassis"
+          }
+        ],
+        "Description": "Internal SMA temperature values",
+        "MaxValue": 125.0,
+        "MinValue": -40.0,
+        "Name": "$Name_Temp_0",
+        "PhysicalContext": "Board",
+        "Priority": true,
+        "SensorId": 17,
+        "Type": "NSM_Temp",
+        "UUID": "STATIC:517:$Instance:MCTP_EID:$EID"
+      }
+    ],
+    "Type": "Device_Configs"
+  },
+  {
+    "Name": "$Name_LeakDetection",
+    "Probe": [
+      "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vr-bmc', 'Instance': 1})",
+      "OR",
+      "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vr-bmc', 'Instance': 3})"
+    ],
+    "Exposes": [
+      {
+        "CriticalReactionType": "None",
+        "LeakDetectorName": "$ParentChassis_LeakDetector_0",
+        "Name": "$ParentChassis_LeakDetector_0_Policy",
+        "ReactionDelaySeconds": 0,
+        "Type": "LeakDetectionPolicy"
+      },
+      {
+        "ChassisPath": "/xyz/openbmc_project/inventory/system/board/$ParentChassis",
+        "MaxValue": 3.3,
+        "MinValue": 0.0,
+        "Name": "$ParentChassis_LeakDetector",
+        "SensorIdMap": [
+          2
+        ],
+        "SensorNameMap": [
+          "$ParentChassis_LeakDetector_0"
+        ],
+        "Type": "NSM_LeakDetection",
+        "UUID": "STATIC:517:$Instance:MCTP_EID:$EID"
+      }
+    ],
+    "Type": "chassis"
+  },
+  {
+    "Name": "IRoT_$Name",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vr-bmc'})",
+    "Exposes": [
+      {
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
+            "Backward": "chassis",
+            "Forward": "parent_chassis"
+          },
+          {
+            "Backward": "all_chassis",
+            "Forward": "parent_chassis",
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/$ParentChassis"
+          },
+          {
+            "Backward": "associated_ROT",
+            "Forward": "inventory",
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/$Name"
+          },
+          {
+            "Backward": "associated_chassis",
+            "Forward": "inventory_chassis",
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/$Name"
+          }
+        ],
+        "Chassis": {
+          "DEVICE_UUID": "",
+          "Type": "NSM_Chassis"
+        },
+        "DeviceType": 5,
+        "ImageCopyEnabled": true,
+        "Name": "IRoT_$Name",
+        "SlotCount": 2,
+        "Type": "NSM_Chassis",
+        "UUID": "STATIC:517:$Instance:MCTP_EID:$EID",
+        "ChassisAttributes": {
+          "Type": "NSM_Chassis_Attributes",
+          "AssetInformationAvailable": true,
+          "InstanceNumber": "$Instance",
+          "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+          "LocationCode": "IRoT_$Position",
+          "LocationContext": "$LocationContext/SMA_$Position",
+          "FieldReplaceable": false,
+          "SPDMResponder": true,
+          "SKUUnsupported": true
+        }
+      },
+      {
+        "ChassisName": "IRoT_$Name",
+        "DebugTokenDeviceType": "SMA",
+        "DebugTokenType": [
+          "Unified"
+        ],
+        "Name": "DebugToken",
+        "Type": "NSM_DebugToken",
+        "UUID": "STATIC:517:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/software/FW_$Name",
+            "Backward": "ActiveSlot",
+            "Forward": "software"
+          }
+        ],
+        "ChassisName": "$Name",
+        "ComponentClassification": 10,
+        "ComponentIdentifier": 65282,
+        "ComponentIndex": 0,
+        "FirmwareType": "AP",
+        "Name": "Slot1",
+        "SlotType": "Active",
+        "Type": "NSM_RoT_Slot"
+      },
+      {
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/software/FW_$Name",
+            "Backward": "InactiveSlot",
+            "Forward": "software"
+          }
+        ],
+        "ChassisName": "$Name",
+        "ComponentClassification": 10,
+        "ComponentIdentifier": 65282,
+        "ComponentIndex": 0,
+        "FirmwareType": "AP",
+        "Name": "Slot2",
+        "SlotType": "InActive",
+        "Type": "NSM_RoT_Slot"
+      }
+    ],
+    "Type": "chassis"
+  },
+  {
+    "Name": "$Name_CX9_SMA_Recovery_Devices",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vr-bmc'})",
+    "Type": "Recovery_Config",
+    "Exposes": [
+      {
+        "ChassisName": "$Name",
+        "ForceRecoveryChassisObject": "$Name",
+        "Interface": "USB",
+        "MctpEID": "$EID",
+        "Name": "FW_$Name",
+        "ProductId": "0xCF11",
+        "RecoveryGpioName": "IOB$Instance_MCU_RECOVERY_L-O",
+        "ResetGpioName": "IOB$Instance_MCU_RST_L-O",
+        "Target": "CX9",
+        "Type": "MCURecovery",
+        "USBPort": ".*-$Port",
+        "VendorId": "0x0955",
+        "hasChassisPowerSource": false
+      }
+    ]
+  },
+  {
+    "Name": "$Name_Platform",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vr-bmc'})",
+    "Type": "Device_Configs",
+    "Exposes": [
+      {
+        "DeviceType": "$Name",
+        "Name": "$Name",
+        "SupportedDumps": [
+          "SMA",
+          "GPUDiag"
+        ],
+        "Type": "Dump"
+      },
+      {
+        "BridgePoolEndEID": "$PoolEndEID",
+        "BridgePoolStartEID": "$PoolStartEID",
+        "BridgedEndpoints": [
+          "CX_$Instance * 2",
+          "CX_$Instance * 2 + 1",
+          "NVMe_E1S_IO$Instance"
+        ],
+        "Configuration": 1,
+        "IgnoreEIDs": "$IgnoreEIDs",
+        "InterfaceNum": 0,
+        "Name": "$Name",
+        "PollingInterval": "5",
+        "Port": "$Port",
+        "RootHubPath": "$RootHubPath",
+        "StaticEndpointID": "$EID",
+        "Type": "MCTPUSBDevice"
+      },
+      {
+        "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_$Name",
+        "MCTPTargetName": "$Name",
+        "Manufacturer": "NVIDIA",
+        "Name": "$Name_DevInv",
+        "Type": "PLDMDeviceInventory",
+        "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
+        "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
+      },
+      {
+        "Components": [
+          {
+            "AssociationBackward": [
+              "activation"
+            ],
+            "AssociationEndpoint": [
+              "/xyz/openbmc_project/inventory/system/chassis/$Name"
+            ],
+            "AssociationForward": [
+              "inventory"
+            ],
+            "ComponentIdentifier": 65282,
+            "Name": "FW_$Name"
+          }
+        ],
+        "MCTPTargetName": "$Name",
+        "Name": "$Name_PLDM",
+        "Type": "PLDMFirmwareDevice"
+      }
+    ]
+  },
+  {
+    "Name": "$Name_Platform_Recovery",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vr-bmc'})",
+    "Type": "PlatformRecoveryConfiguration",
+    "Exposes": [
+      {
+        "ConnectsToName": "$Platform.BmcName",
+        "DeviceAddress": "MCTP:$EID",
+        "DeviceType": "MCTPBridge",
+        "Name": "$Name",
+        "PhysicalInterface": "usb1:0x0955:0xcf11:$Port",
+        "RecoveryLayers": "",
+        "ResetGPIO": "",
+        "Type": "PlatformDevice",
+        "poweredInStandby": true
+      }
+    ]
+  }
+]

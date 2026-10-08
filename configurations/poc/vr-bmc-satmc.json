@@ -1,0 +1,34 @@
+[
+  {
+    "Name": "BMC_SATMC",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bmc$', 'Generation': 'vr-bmc'})",
+    "Type": "Device_Configs",
+    "Exposes": [
+      {
+        "AuthType": "None",
+        "Hostname": "172.31.13.251",
+        "Name": "sat0",
+        "Port": "80",
+        "Type": "SatelliteController"
+      }
+    ]
+  },
+  {
+    "Name": "$Name_Platform_Recovery",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bmc$', 'Generation': 'vr-bmc'})",
+    "Type": "PlatformRecoveryConfiguration",
+    "Exposes": [
+      {
+        "ConnectsToName": "",
+        "DeviceAddress": "MCTP:$EID",
+        "DeviceType": "BMC",
+        "Name": "$Platform.BmcName",
+        "PhysicalInterface": "",
+        "RecoveryLayers": "",
+        "ResetGPIO": "",
+        "Type": "PlatformDevice",
+        "poweredInStandby": true
+      }
+    ]
+  }
+]

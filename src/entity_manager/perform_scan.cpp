@@ -17,6 +17,7 @@
 #include <flat_map>
 #include <flat_set>
 #include <list>
+#include <set>
 
 struct DBusInterfaceInstance
 {
@@ -610,6 +611,17 @@ void scan::PerformScan::updateSystemConfigurationForDevice(
     const DBusObject& dbusObject =
         (objectIt == dbusProbeObjects.end()) ? emptyObject : objectIt->second;
 
+    // The properties of the Platform record are variables of every record
+    // as $Platform.<Property>, on top of the properties of the matched
+    // object.
+    DBusObject templateObject = dbusObject;
+    DBusInterface platformVariables =
+        em_utils::platformTemplateVariables(_em.systemConfiguration);
+    if (!platformVariables.empty())
+    {
+        templateObject["Platform"] = std::move(platformVariables);
+    }
+
     const nlohmann::json::object_t* recordPtr =
         recordRef.get_ptr<const nlohmann::json::object_t*>();
     if (recordPtr == nullptr)
@@ -632,7 +644,7 @@ void scan::PerformScan::updateSystemConfigurationForDevice(
     }
 
     std::string deviceName = generateDeviceName(
-        usedNames, dbusObject, foundDeviceIdx, *name, replaceStr);
+        usedNames, templateObject, foundDeviceIdx, *name, replaceStr);
 
     record["Name"] = deviceName;
 
@@ -642,7 +654,7 @@ void scan::PerformScan::updateSystemConfigurationForDevice(
     // (template) at the start
     passedProbes.push_back(deviceName);
 
-    replaceTemplateFields(record, dbusObject, foundDeviceIdx, replaceStr);
+    replaceTemplateFields(record, templateObject, foundDeviceIdx, replaceStr);
 
     // insert into configuration temporarily to be able to
     // reference ourselves
@@ -655,7 +667,7 @@ void scan::PerformScan::updateSystemConfigurationForDevice(
         return;
     }
 
-    applyExposes(recordName, findExpose->second, dbusObject, foundDeviceIdx,
+    applyExposes(recordName, findExpose->second, templateObject, foundDeviceIdx,
                  replaceStr, _em.systemConfiguration);
 
     addRecordProbePath(record, device.path, _em.topology);
@@ -663,6 +675,183 @@ void scan::PerformScan::updateSystemConfigurationForDevice(
     // overwrite ourselves with cleaned up version
     _em.systemConfiguration[recordName] = record;
     _missingConfigurations.erase(recordName);
+}
+
+namespace
+{
+// One FRU area of a compact assembly record: the Asset properties and the
+// Revision version it takes from the FRU fields of that area.
+struct AssemblyArea
+{
+    const char* name;
+    std::vector<std::pair<const char*, const char*>> asset;
+    std::vector<std::pair<const char*, const char*>> revision;
+};
+
+const std::vector<AssemblyArea>& assemblyAreas()
+{
+    // in the order the assemblies are numbered
+    static const std::vector<AssemblyArea> areas = {
+        {"Chassis",
+         {{"PartNumber", "CHASSIS_PART_NUMBER"},
+          {"SerialNumber", "CHASSIS_SERIAL_NUMBER"}},
+         {}},
+        {"Board",
+         {{"BuildDate", "BOARD_MANUFACTURE_DATE"},
+          {"Manufacturer", "BOARD_MANUFACTURER"},
+          {"Model", "BOARD_PRODUCT_NAME"},
+          {"PartNumber", "BOARD_PART_NUMBER"},
+          {"SerialNumber", "BOARD_SERIAL_NUMBER"}},
+         {}},
+        {"Product",
+         {{"Manufacturer", "PRODUCT_MANUFACTURER"},
+          {"Model", "PRODUCT_PRODUCT_NAME"},
+          {"PartNumber", "PRODUCT_PART_NUMBER"},
+          {"SerialNumber", "PRODUCT_SERIAL_NUMBER"}},
+         {{"Version", "PRODUCT_VERSION"}}}};
+    return areas;
+}
+
+constexpr const char* invPrefix = "xyz.openbmc_project.Inventory.";
+} // namespace
+
+// A record {"Type": "Assembly", "Board": "<Type>/<Name>", ...} is the short
+// form of the FRU assembly records of a board: for each FRU area the matched
+// FRU has fields of (Chassis, Board, Product, numbered in that order among the
+// areas present) EM generates the record "<Name> <Area> FRU Assembly<n>" with
+// the Asset (and, for the product area, the Revision) of the fields that exist,
+// the location, and the association (parent_chassis, assembly) to the board
+// named by "Board". LocationType (default Embedded), PhysicalContext,
+// LocationCode and LocationContext are copied when present. Each generated
+// record then goes through the normal path, as if it had been probed.
+void scan::PerformScan::updateAssemblyRecords(
+    const nlohmann::json& compactRecord, FoundDevices& foundDevices)
+{
+    const std::string* board =
+        compactRecord["Board"].get_ptr<const std::string*>();
+    const std::string prefix = compactRecord.value("Name", "");
+    size_t split = (board == nullptr) ? std::string::npos : board->find('/');
+    if (split == std::string::npos || prefix.empty())
+    {
+        lg2::error(
+            "Assembly record needs a Name and Board <Type>/<Name>: {JSON}",
+            "JSON", compactRecord.dump());
+        return;
+    }
+    const std::string boardType = board->substr(0, split);
+    const std::string boardName = board->substr(split + 1);
+
+    size_t foundDeviceIdx = 0;
+    for (const DBusDeviceDescriptor& device : foundDevices)
+    {
+        foundDeviceIdx++;
+        auto objectIt = dbusProbeObjects.find(device.path);
+        DBusObject templateObject;
+        if (objectIt != dbusProbeObjects.end())
+        {
+            templateObject = objectIt->second;
+        }
+        DBusInterface platformVariables =
+            em_utils::platformTemplateVariables(_em.systemConfiguration);
+        if (!platformVariables.empty())
+        {
+            templateObject["Platform"] = std::move(platformVariables);
+        }
+
+        // the properties of the FRU, from every interface of the object
+        std::set<std::string, std::less<>> fruFields;
+        for (const auto& [_, iface] : templateObject)
+        {
+            for (const auto& [propName, propValue] : iface)
+            {
+                fruFields.insert(propName);
+            }
+        }
+
+        // the board path, with the variables of the board name replaced
+        nlohmann::json boardNameJson = boardName;
+        em_utils::templateCharReplace(boardNameJson, templateObject,
+                                      foundDeviceIdx, std::nullopt, true);
+        std::string resolvedBoardName =
+            boardNameJson.is_string() ? boardNameJson.get<std::string>()
+                                      : boardNameJson.dump();
+        std::string boardPath =
+            em_utils::buildInventorySystemPath(resolvedBoardName, boardType)
+                .str;
+
+        size_t n = 0;
+        for (const AssemblyArea& area : assemblyAreas())
+        {
+            nlohmann::json asset = nlohmann::json::object();
+            for (const auto& [prop, field] : area.asset)
+            {
+                if (fruFields.contains(field))
+                {
+                    asset[prop] = std::string("$") + field;
+                }
+            }
+            nlohmann::json revision = nlohmann::json::object();
+            for (const auto& [prop, field] : area.revision)
+            {
+                if (fruFields.contains(field))
+                {
+                    revision[prop] = std::string("$") + field;
+                }
+            }
+            // an area with none of its fields is not in the FRU
+            if (asset.empty() && revision.empty())
+            {
+                continue;
+            }
+
+            nlohmann::json generated = nlohmann::json::object();
+            const std::string name = prefix + " " + area.name +
+                                     " FRU Assembly" + std::to_string(n++);
+            generated["Name"] = name;
+            generated["Type"] = "Assembly";
+            generated["Probe"] = compactRecord["Probe"];
+            if (!asset.empty())
+            {
+                generated[std::string(invPrefix) + "Decorator.Asset"] = asset;
+            }
+            if (!revision.empty())
+            {
+                generated[std::string(invPrefix) + "Decorator.Revision"] =
+                    revision;
+            }
+            generated[std::string(invPrefix) + "Decorator.Location"] = {
+                {"LocationType",
+                 std::string(invPrefix) + "Decorator.Location.LocationTypes." +
+                     compactRecord.value("LocationType", "Embedded")}};
+            if (compactRecord.contains("PhysicalContext"))
+            {
+                generated[std::string(invPrefix) + "Decorator.Area"] = {
+                    {"PhysicalContext",
+                     std::string(invPrefix) +
+                         "Decorator.Area.PhysicalContextType." +
+                         compactRecord["PhysicalContext"].get<std::string>()}};
+            }
+            if (compactRecord.contains("LocationCode"))
+            {
+                generated[std::string(invPrefix) + "Decorator.LocationCode"] = {
+                    {"LocationCode", compactRecord["LocationCode"]}};
+            }
+            if (compactRecord.contains("LocationContext"))
+            {
+                generated[std::string(invPrefix) +
+                          "Decorator.LocationContext"] = {
+                    {"LocationContext", compactRecord["LocationContext"]}};
+            }
+            generated["xyz.openbmc_project.Association.Definitions"] = {
+                {"Associations",
+                 nlohmann::json::array({nlohmann::json::array(
+                     {"parent_chassis", "assembly", boardPath})})}};
+
+            FoundDevices single;
+            single.push_back(device);
+            updateSystemConfiguration(generated, name, single);
+        }
+    }
 }
 
 void scan::PerformScan::updateSystemConfiguration(
@@ -673,6 +862,12 @@ void scan::PerformScan::updateSystemConfiguration(
     passedProbes.push_back(probeName);
 
     const std::string probeType = recordRef.value("Type", "");
+
+    if (probeType == "Assembly" && recordRef.contains("Board"))
+    {
+        updateAssemblyRecords(recordRef, foundDevices);
+        return;
+    }
 
     std::set<nlohmann::json> usedNames;
     std::list<size_t> indexes(foundDevices.size());

@@ -1,0 +1,239 @@
+[
+  {
+    "Name": "$Name_MCTP_XROT_DEV1",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bmc_rot$', 'Generation': 'vr-hmc'})",
+    "Type": "MCTPInterface",
+    "Exposes": [
+      {
+        "Interface": "$Interface",
+        "Name": "$Name",
+        "PollingInterval": "15",
+        "StaticEndpointID": "$EID",
+        "Type": "MCTPXROTTarget"
+      }
+    ]
+  },
+  {
+    "Name": "$Name_Platform_Recovery",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bmc_rot$', 'Generation': 'vr-hmc'})",
+    "Type": "PlatformRecoveryConfiguration",
+    "Exposes": [
+      {
+        "ConnectsToName": "",
+        "DeviceAddress": "MCTP:$EID",
+        "DeviceType": "BMC",
+        "Name": "$Platform.BmcName",
+        "PhysicalInterface": "",
+        "RecoveryLayers": "",
+        "ResetGPIO": "",
+        "Type": "PlatformDevice",
+        "poweredInStandby": true
+      }
+    ]
+  },
+  {
+    "Name": "$Name",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bmc_rot$', 'Generation': 'vr-hmc'})",
+    "Type": "Chassis",
+    "xyz.openbmc_project.Inventory.Item.Chassis": {
+      "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+    },
+    "Exposes": [
+      {
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/bmc/$ParentChassis",
+            "Backward": "associated_ROT",
+            "Forward": "inventory"
+          },
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/bmc/$ParentChassis",
+            "Backward": "associated_chassis",
+            "Forward": "inventory_chassis"
+          },
+          {
+            "AbsolutePath": "/xyz/openbmc_project/inventory/system/bmc/$ParentChassis",
+            "Backward": "associated_chassis",
+            "Forward": "parent_chassis"
+          }
+        ],
+        "ChassisAttributes": {
+          "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+          "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+          "Name": "$ParentChassis IRoT",
+          "Type": "NSM_Chassis_Attributes",
+          "InstanceNumber": 0,
+          "LocationCode": "IRoT_BMC_$Instance",
+          "LocationContext": "$LocationContext",
+          "FieldReplaceable": false
+        },
+        "Name": "$Name",
+        "Type": "NSM_ChassisIRoTResponder",
+        "UUID": "STATIC:4:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "Chassis": {
+          "DEVICE_UUID": "",
+          "Type": "NSM_Chassis"
+        },
+        "DeviceType": 4,
+        "ImageCopyEnabled": true,
+        "ImageCopyPolicyEnabled": true,
+        "Name": "$Name",
+        "SlotCount": 4,
+        "Type": "NSM_ChassisRoT",
+        "UUID": "STATIC:4:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "ChassisName": "$Name",
+        "DebugTokenDeviceType": "ERoT",
+        "DebugTokenType": [
+          "Unified"
+        ],
+        "Name": "DebugToken",
+        "Type": "NSM_DebugToken",
+        "UUID": "STATIC:4:$Instance:MCTP_EID:$EID"
+      },
+      {
+        "ComponentType": "AP",
+        "Name": "AP",
+        "Type": "NSM_FW_ComponentType"
+      },
+      {
+        "ComponentType": "EC",
+        "Name": "EC",
+        "Type": "NSM_FW_ComponentType"
+      },
+      {
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/software/$Platform.NamePrefixFW_IRoT_BMC_$Instance",
+            "Backward": "ActiveSlot",
+            "Forward": "software"
+          }
+        ],
+        "ChassisName": "$Name",
+        "ComponentClassification": 10,
+        "ComponentIdentifier": 11,
+        "ComponentIndex": 0,
+        "FirmwareType": "EC",
+        "Name": "Slot1",
+        "SlotType": "Active",
+        "Type": "NSM_RoT_Slot"
+      },
+      {
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/software/$Platform.NamePrefixFW_IRoT_BMC_$Instance",
+            "Backward": "InactiveSlot",
+            "Forward": "software"
+          }
+        ],
+        "ChassisName": "$Name",
+        "ComponentClassification": 10,
+        "ComponentIdentifier": 11,
+        "ComponentIndex": 0,
+        "FirmwareType": "EC",
+        "Name": "Slot2",
+        "SlotType": "InActive",
+        "Type": "NSM_RoT_Slot"
+      },
+      {
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/software/$Platform.NamePrefixFW_BMC_$Instance",
+            "Backward": "ActiveSlot",
+            "Forward": "software"
+          }
+        ],
+        "ChassisName": "$Platform.BmcName",
+        "ComponentClassification": 13,
+        "ComponentIdentifier": 10,
+        "ComponentIndex": 0,
+        "FirmwareType": "AP",
+        "Name": "Slot3",
+        "SlotType": "Active",
+        "Type": "NSM_RoT_Slot"
+      },
+      {
+        "Associations": [
+          {
+            "AbsolutePath": "/xyz/openbmc_project/software/$Platform.NamePrefixFW_BMC_$Instance",
+            "Backward": "InactiveSlot",
+            "Forward": "software"
+          }
+        ],
+        "ChassisName": "$Platform.BmcName",
+        "ComponentClassification": 13,
+        "ComponentIdentifier": 10,
+        "ComponentIndex": 0,
+        "FirmwareType": "AP",
+        "Name": "Slot4",
+        "SlotType": "InActive",
+        "Type": "NSM_RoT_Slot"
+      }
+    ]
+  },
+  {
+    "Name": "$Name_Platform",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bmc_rot$', 'Generation': 'vr-hmc'})",
+    "Type": "Device_Configs",
+    "Exposes": [
+      {
+        "Name": "$Name",
+        "SupportedDumps": [
+          "RoT",
+          "FwAttrs",
+          "HwCheckout"
+        ],
+        "Type": "Dump"
+      },
+      {
+        "MCTPTargetName": "$Name",
+        "Manufacturer": "NVIDIA",
+        "Name": "$Name_DevInv",
+        "Type": "PLDMDeviceInventory",
+        "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/bmc/$ParentChassis",
+        "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
+      },
+      {
+        "Components": [
+          {
+            "AssociationBackward": [
+              "activation"
+            ],
+            "AssociationEndpoint": [
+              "/xyz/openbmc_project/inventory/system/bmc/$ParentChassis"
+            ],
+            "AssociationForward": [
+              "inventory"
+            ],
+            "ComponentIdentifier": 11,
+            "Name": "$Platform.NamePrefixFW_IRoT_BMC_$Instance"
+          },
+          {
+            "ComponentIdentifier": 10,
+            "Name": "$Platform.NamePrefixFW_BMC_$Instance",
+            "UpdateOnly": true
+          }
+        ],
+        "MCTPTargetName": "$Name",
+        "Name": "$Name_PLDM",
+        "Type": "PLDMFirmwareDevice"
+      }
+    ]
+  },
+  {
+    "Name": "$Name_USBRCM_Recovery_Devices",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bmc_rot$', 'Generation': 'vr-hmc'})",
+    "Type": "Recovery_Config",
+    "Exposes": [
+      {
+        "ConfigType": "$Platform.RecoveryStrap",
+        "ForceRecoveryChassisObject": "$Platform.TopChassis",
+        "Name": "$Platform.TopChassis_CPU_Recovery",
+        "Type": "USBRCMForceRecovery"
+      }
+    ]
+  }
+]

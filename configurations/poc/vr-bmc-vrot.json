@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "$Name_Platform",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^vrot$', 'Generation': 'vr-bmc'})",
+    "Type": "Device_Configs",
+    "Exposes": [
+      {
+        "Interface": "$Interface",
+        "Name": "MCTPVROT_$Instance",
+        "StaticEndpointID": "$EID",
+        "Type": "MCTPXROTTarget"
+      }
+    ]
+  }
+]

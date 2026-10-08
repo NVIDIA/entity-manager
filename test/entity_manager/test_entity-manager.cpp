@@ -1193,3 +1193,99 @@ TEST(BuildInventorySystemPath, needsSanitizeUnderscores)
 
     EXPECT_EQ(expect, path);
 }
+
+TEST(TemplateCharReplace, longestNameFirst)
+{
+    nlohmann::json j = {{"eid", "$BridgeEID"},
+                        {"name", "$Bridge"},
+                        {"both", "x_$Bridge_$BridgeEID"},
+                        {"port", "$BridgePort"}};
+    DBusInterface data;
+    data["Bridge"] = std::string("HGX_GPU_SMA_1");
+    data["BridgeEID"] = static_cast<uint64_t>(20);
+    data["BridgePort"] = std::string("1.2.1");
+
+    em_utils::templateCharReplace(j, data, 0);
+
+    EXPECT_EQ(nlohmann::json(20), j["eid"]);
+    EXPECT_EQ("HGX_GPU_SMA_1", j["name"]);
+    EXPECT_EQ("x_HGX_GPU_SMA_1_20", j["both"]);
+    EXPECT_EQ("1.2.1", j["port"]);
+}
+
+TEST(TemplateCharReplace, longestNameFirstAcrossInterfaces)
+{
+    // The shorter name is on the interface that is visited first.
+    nlohmann::json j = {{"foo", "$Bridge_$BridgeEID"}};
+    DBusObject object;
+    object["a.NvDevice.Transport"]["Bridge"] = std::string("SMA");
+    object["b.NvDevice.Transport"]["BridgeEID"] = static_cast<uint64_t>(20);
+
+    em_utils::templateCharReplace(j, object, 0);
+
+    EXPECT_EQ("SMA_20", j["foo"]);
+}
+
+TEST(TemplateCharReplace, repeatedNameKeepsTheFirstInterface)
+{
+    nlohmann::json j = {{"foo", "$Name"}};
+    DBusObject object;
+    object["a"]["Name"] = std::string("first");
+    object["b"]["Name"] = std::string("second");
+
+    em_utils::templateCharReplace(j, object, 0);
+
+    EXPECT_EQ("first", j["foo"]);
+}
+
+TEST(TemplateCharReplace, platformVariableInAName)
+{
+    nlohmann::json j = {{"foo", "$Platform.NamePrefixFW_GPU_$Instance"}};
+    DBusObject object;
+    object["xyz.openbmc_project.Configuration.NvDevice"]["Instance"] =
+        static_cast<uint64_t>(2);
+    object["Platform"]["Platform.NamePrefix"] = std::string("HGX_");
+
+    em_utils::templateCharReplace(j, object, 0);
+
+    EXPECT_EQ("HGX_FW_GPU_2", j["foo"]);
+}
+
+TEST(PlatformTemplateVariables, scalarsOfThePlatformRecord)
+{
+    nlohmann::json platform = nlohmann::json::object();
+    platform["Name"] = "Platform A";
+    platform["Type"] = "Platform";
+    platform["Probe"] = "TRUE";
+    platform["NamePrefix"] = "HGX_";
+    platform["Limit"] = 5;
+    platform["Enabled"] = true;
+    platform["PlatformExposes"] = nlohmann::json::array();
+    nlohmann::json other = nlohmann::json::object();
+    other["Name"] = "HGX_GPU_0";
+    other["Type"] = "Component";
+    other["NamePrefix"] = "ignored";
+    nlohmann::json config = nlohmann::json::object();
+    config["123"] = platform;
+    config["456"] = other;
+
+    const DBusInterface variables = em_utils::platformTemplateVariables(config);
+
+    EXPECT_EQ(3U, variables.size());
+    EXPECT_EQ("HGX_", std::get<std::string>(variables.at("Platform.NamePrefix")));
+    EXPECT_EQ(5U, std::get<uint64_t>(variables.at("Platform.Limit")));
+    EXPECT_TRUE(std::get<bool>(variables.at("Platform.Enabled")));
+    EXPECT_FALSE(variables.contains("Platform.PlatformExposes"));
+    EXPECT_FALSE(variables.contains("Platform.Name"));
+}
+
+TEST(PlatformTemplateVariables, noPlatformRecord)
+{
+    nlohmann::json chassis = nlohmann::json::object();
+    chassis["Name"] = "a";
+    chassis["Type"] = "Chassis";
+    nlohmann::json config = nlohmann::json::object();
+    config["1"] = chassis;
+
+    EXPECT_TRUE(em_utils::platformTemplateVariables(config).empty());
+}
