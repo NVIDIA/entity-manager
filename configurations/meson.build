@@ -452,6 +452,7 @@ configs = [
     'nvidia/switch-bmc/nvl144/nvl144_qm4_sma_chassis.json',
     'nvidia/switch-bmc/nvl144/nvl144_static_inventory.json',
     'nvidia/switch-bmc/spc6-ast2600/BMC.json',
+    'nvidia/switch-bmc/spc6-ast2600/Leakage_policy.json',
     'nvidia/switch-bmc/spc6-ast2600/spc6_erot_configuration.json',
     'nvidia/switch-bmc/spc6-ast2600/spc6_eth_chassis_asic.json',
     'nvidia/switch-bmc/spc6-ast2600/spc6_mctp_bmc_target_configuration_1asic.json',
