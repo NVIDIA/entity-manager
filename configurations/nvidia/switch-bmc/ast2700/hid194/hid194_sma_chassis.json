@@ -9,7 +9,7 @@
                         "Forward": "parent_chassis"
                     },
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SMA_$INSTANCE_NUMBER",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SMA_0",
                         "Backward": "chassis",
                         "Forward": "all_chassis"
                     }
@@ -27,30 +27,171 @@
                     "Type": "NSM_Chassis_Attributes"
                 },
                 "DeviceType": "$DEVICE_TYPE",
-                "Name": "SMA_$INSTANCE_NUMBER",
+                "Name": "SMA_0",
                 "Type": "NSM_Chassis",
                 "UUID": "$UUID"
             },
             {
                 "ChassisPath": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
+                "CriticalThresholdsmV": [
+                    800
+                ],
+                "MaxThresholdsmV": [
+                    1850
+                ],
                 "MaxValue": 3.3,
+                "MinThresholdsmV": [
+                    165
+                ],
                 "MinValue": 0.0,
-                "Name": "Chassis_0_LeakDetector_$INSTANCE_NUMBER",
+                "Name": "SWB1_LeakDetector_0",
                 "SensorIdMap": [
-                    0
+                    4
                 ],
                 "SensorNameMap": [
-                    "Chassis_0_LeakDetector_$INSTANCE_NUMBER"
+                    "SWB1_LeakDetector_0"
                 ],
                 "Type": "NSM_LeakDetection",
                 "UUID": "$UUID"
             }
         ],
-        "Name": "SMA_$INSTANCE_NUMBER",
-        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'NVSSMA'})",
+        "Name": "SMA_0",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'NVSSMA', 'INSTANCE_NUMBER': 0})",
         "Type": "chassis",
         "xyz.openbmc_project.Inventory.Decorator.Instance": {
-            "InstanceNumber": "$INSTANCE_NUMBER"
+            "InstanceNumber": 0
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
+                        "Backward": "chassis",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SMA_1",
+                        "Backward": "chassis",
+                        "Forward": "all_chassis"
+                    }
+                ],
+                "Chassis": {
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "ChassisAttributes": {
+                    "AssetInformationAvailable": true,
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "ErrorInjectionSupported": true,
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "ResetMetricsSupported": true,
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "DeviceType": "$DEVICE_TYPE",
+                "Name": "SMA_1",
+                "Type": "NSM_Chassis",
+                "UUID": "$UUID"
+            },
+            {
+                "ChassisPath": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
+                "CriticalThresholdsmV": [
+                    800
+                ],
+                "MaxThresholdsmV": [
+                    1850
+                ],
+                "MaxValue": 3.3,
+                "MinThresholdsmV": [
+                    165
+                ],
+                "MinValue": 0.0,
+                "Name": "SWB2_LeakDetector_0",
+                "SensorIdMap": [
+                    4
+                ],
+                "SensorNameMap": [
+                    "SWB2_LeakDetector_0"
+                ],
+                "Type": "NSM_LeakDetection",
+                "UUID": "$UUID"
+            }
+        ],
+        "Name": "SMA_1",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'NVSSMA', 'INSTANCE_NUMBER': 1})",
+        "Type": "chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 1
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
+                        "Backward": "chassis",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SMA_2",
+                        "Backward": "chassis",
+                        "Forward": "all_chassis"
+                    }
+                ],
+                "Chassis": {
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "ChassisAttributes": {
+                    "AssetInformationAvailable": true,
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "ErrorInjectionSupported": true,
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "ResetMetricsSupported": true,
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "DeviceType": "$DEVICE_TYPE",
+                "Name": "SMA_2",
+                "Type": "NSM_Chassis",
+                "UUID": "$UUID"
+            },
+            {
+                "ChassisPath": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
+                "CriticalThresholdsmV": [
+                    800
+                ],
+                "MaxThresholdsmV": [
+                    1850
+                ],
+                "MaxValue": 3.3,
+                "MinThresholdsmV": [
+                    165
+                ],
+                "MinValue": 0.0,
+                "Name": "MGMT_LeakDetector_0",
+                "SensorIdMap": [
+                    4
+                ],
+                "SensorNameMap": [
+                    "MGMT_LeakDetector_0"
+                ],
+                "Type": "NSM_LeakDetection",
+                "UUID": "$UUID"
+            }
+        ],
+        "Name": "SMA_2",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'NVSSMA', 'INSTANCE_NUMBER': 2})",
+        "Type": "chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 2
         },
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
