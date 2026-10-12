@@ -1053,6 +1053,65 @@
                 }
             }
         },
+        "SummationSensor": {
+            "description": "Calculated readings published by dbus-sensors synthesizedsensor.",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClampToRange": {
+                    "description": "Clamp calculated readings to SensorParams MinValue and MaxValue. Defaults to false.",
+                    "type": "boolean"
+                },
+                "Name": {
+                    "$ref": "#/$defs/Types/Name"
+                },
+                "PublishHysteresis": {
+                    "description": "D-Bus publication deadband. Defaults to 0.01% of the sensor range; zero publishes every change.",
+                    "type": "number",
+                    "minimum": 0
+                },
+                "SensorParams": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "MaxValue": {
+                                "type": "number"
+                            },
+                            "MinValue": {
+                                "type": "number"
+                            }
+                        }
+                    }
+                },
+                "SensorsToSum": {
+                    "description": "Input sensor names, optionally separated by + or - operators. One input creates an alias.",
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SensorType": {
+                    "description": "D-Bus namespace and unit for both inputs and output. Defaults to power.",
+                    "enum": ["power", "voltage"]
+                },
+                "TelemetryRefreshInterval": {
+                    "description": "Seconds between publications of cached readings through TAL. Zero or omitted disables periodic refresh.",
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 2147483647
+                },
+                "Thresholds": {
+                    "$ref": "#/$defs/Types/Thresholds"
+                },
+                "Type": {
+                    "const": "SummationSensor"
+                }
+            },
+            "required": ["Name", "SensorsToSum", "Type"]
+        },
         "BMC": {
             "additionalProperties": false,
             "properties": {
