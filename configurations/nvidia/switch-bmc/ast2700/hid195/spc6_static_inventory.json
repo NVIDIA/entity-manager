@@ -12,7 +12,7 @@
     },
     {
         "Exposes": [],
-        "Name": "NSM_NVSwitch_SMA_0",
+        "Name": "NSM_SWB_SMA",
         "Probe": "TRUE",
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
@@ -24,7 +24,7 @@
     },
     {
         "Exposes": [],
-        "Name": "NSM_NVSwitch_SMA_1",
+        "Name": "NSM_MGMT_SMA",
         "Probe": "TRUE",
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {

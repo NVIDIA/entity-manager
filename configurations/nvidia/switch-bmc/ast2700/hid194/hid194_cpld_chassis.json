@@ -3,7 +3,7 @@
         "Exposes": [],
         "Name": "CPLD_0",
         "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
-        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'VRUSMA', 'INSTANCE_NUMBER': 0})",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'NVSSMA', 'INSTANCE_NUMBER': 0})",
         "Type": "Chassis",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
             "Manufacturer": "Lattice"
@@ -28,7 +28,7 @@
         "Exposes": [],
         "Name": "CPLD_1",
         "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
-        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'VRUSMA', 'INSTANCE_NUMBER': 0})",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'NVSSMA', 'INSTANCE_NUMBER': 0})",
         "Type": "Chassis",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
             "Manufacturer": "Lattice"
@@ -53,7 +53,7 @@
         "Exposes": [],
         "Name": "CPLD_2",
         "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
-        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'VRUSMA', 'INSTANCE_NUMBER': 1})",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'NVSSMA', 'INSTANCE_NUMBER': 1})",
         "Type": "Chassis",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
             "Manufacturer": "Lattice"

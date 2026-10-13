@@ -460,6 +460,9 @@
                     "$ref": "nvidia_recovery.json#/$defs/USBRCMRecovery"
                 },
                 {
+                    "$ref": "nvidia_recovery.json#/$defs/USBDFURecovery"
+                },
+                {
                     "$ref": "nvidia_backplane2_port.json#/$defs/Backplane2Port"
                 },
                 {

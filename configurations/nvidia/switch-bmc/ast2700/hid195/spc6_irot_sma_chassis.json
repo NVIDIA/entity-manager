@@ -1,0 +1,158 @@
+[
+    {
+        "Exposes": [
+            {
+                "ChassisAttributes": {
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "Name": "SWB_SMA IRoT",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "Name": "IRoT_SWB_SMA",
+                "Type": "NSM_ChassisIRoTResponder",
+                "UUID": "$UUID"
+            },
+            {
+                "Chassis": {
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "DeviceType": "$DEVICE_TYPE",
+                "ImageCopyEnabled": true,
+                "Name": "IRoT_SWB_SMA",
+                "SlotCount": 2,
+                "Type": "NSM_ChassisRoT",
+                "UUID": "$UUID"
+            },
+            {
+                "ChassisName": "IRoT_SWB_SMA",
+                "DebugTokenType": [
+                    "Unified"
+                ],
+                "Name": "DebugToken",
+                "Type": "NSM_DebugToken",
+                "UUID": "$UUID"
+            },
+            {
+                "ComponentType": "EC",
+                "Name": "EC",
+                "Type": "NSM_FW_ComponentType"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/FW_SWB_SMA",
+                        "Backward": "ActiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "IRoT_SWB_SMA",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 65282,
+                "ComponentIndex": 0,
+                "FirmwareType": "EC",
+                "Name": "Slot1",
+                "SlotType": "Active",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/FW_SWB_SMA",
+                        "Backward": "InactiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "IRoT_SWB_SMA",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 65282,
+                "ComponentIndex": 0,
+                "FirmwareType": "EC",
+                "Name": "Slot2",
+                "SlotType": "InActive",
+                "Type": "NSM_RoT_Slot"
+            }
+        ],
+        "Name": "IRoT_SWB_SMA",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'NVSSMA', 'INSTANCE_NUMBER': 0})",
+        "Type": "chassis"
+    },
+    {
+        "Exposes": [
+            {
+                "ChassisAttributes": {
+                    "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
+                    "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+                    "Name": "MGMT_SMA IRoT",
+                    "Type": "NSM_Chassis_Attributes"
+                },
+                "Name": "IRoT_MGMT_SMA",
+                "Type": "NSM_ChassisIRoTResponder",
+                "UUID": "$UUID"
+            },
+            {
+                "Chassis": {
+                    "DEVICE_UUID": "$DEVICE_UUID",
+                    "Type": "NSM_Chassis"
+                },
+                "DeviceType": "$DEVICE_TYPE",
+                "ImageCopyEnabled": true,
+                "Name": "IRoT_MGMT_SMA",
+                "SlotCount": 2,
+                "Type": "NSM_ChassisRoT",
+                "UUID": "$UUID"
+            },
+            {
+                "ChassisName": "IRoT_MGMT_SMA",
+                "DebugTokenType": [
+                    "Unified"
+                ],
+                "Name": "DebugToken",
+                "Type": "NSM_DebugToken",
+                "UUID": "$UUID"
+            },
+            {
+                "ComponentType": "EC",
+                "Name": "EC",
+                "Type": "NSM_FW_ComponentType"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/FW_MGMT_SMA",
+                        "Backward": "ActiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "IRoT_MGMT_SMA",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 65282,
+                "ComponentIndex": 0,
+                "FirmwareType": "EC",
+                "Name": "Slot1",
+                "SlotType": "Active",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/FW_MGMT_SMA",
+                        "Backward": "InactiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "IRoT_MGMT_SMA",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 65282,
+                "ComponentIndex": 0,
+                "FirmwareType": "EC",
+                "Name": "Slot2",
+                "SlotType": "InActive",
+                "Type": "NSM_RoT_Slot"
+            }
+        ],
+        "Name": "IRoT_MGMT_SMA",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'NVSSMA', 'INSTANCE_NUMBER': 1})",
+        "Type": "chassis"
+    }
+]

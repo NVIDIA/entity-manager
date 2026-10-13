@@ -526,7 +526,7 @@
                     "EGMModeSupported": true,
                     "GPUBasePowerLimitSupported": true,
                     "GPUCopyCPUPowerLimitSupported": true,
-                    "GPUCopySwitchPowerLimitSupported": true,
+                    "GPUCopySwitchPowerLimitSupported": "$SWITCH_PRESENCE",
                     "MIGModeSupported": true,
                     "MNNVLTopologySupported": true,
                     "MctpNsmOperationalStatusSupported": true,

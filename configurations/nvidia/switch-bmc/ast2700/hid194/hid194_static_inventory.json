@@ -16,7 +16,7 @@
         "Probe": "TRUE",
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
-            "DEVICE_ROLE": "VRUSMA",
+            "DEVICE_ROLE": "NVSSMA",
             "DEVICE_TYPE": 5,
             "INSTANCE_NUMBER": 0,
             "UUID": "STATIC:261:0:MCTP_EID:69"
@@ -28,10 +28,22 @@
         "Probe": "TRUE",
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
-            "DEVICE_ROLE": "VRUSMA",
+            "DEVICE_ROLE": "NVSSMA",
             "DEVICE_TYPE": 5,
             "INSTANCE_NUMBER": 1,
             "UUID": "STATIC:261:1:MCTP_EID:70"
+        }
+    },
+    {
+        "Exposes": [],
+        "Name": "NSM_SMA_2",
+        "Probe": "TRUE",
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_ROLE": "NVSSMA",
+            "DEVICE_TYPE": 5,
+            "INSTANCE_NUMBER": 2,
+            "UUID": "STATIC:261:2:MCTP_EID:71"
         }
     }
 ]

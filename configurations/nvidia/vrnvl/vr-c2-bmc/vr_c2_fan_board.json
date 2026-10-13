@@ -759,12 +759,12 @@
                 "Class": "temp",
                 "InputUnavailableAsFailed": false,
                 "Inputs": [
-                    "CX_0_Port_0_Temp_0",
-                    "CX_1_Port_0_Temp_0"
+                    "CX_NIC_0_Port_0_Temp_0",
+                    "CX_NIC_1_Port_0_Temp_0"
                 ],
                 "MissingIsAcceptable": [
-                    "CX_0_Port_0_Temp_0",
-                    "CX_1_Port_0_Temp_0"
+                    "CX_NIC_0_Port_0_Temp_0",
+                    "CX_NIC_1_Port_0_Temp_0"
                 ],
                 "Name": "STEPWISE_CONNECTX_PORT",
                 "NegativeHysteresis": 4,
@@ -863,12 +863,12 @@
                 "Class": "temp",
                 "InputUnavailableAsFailed": false,
                 "Inputs": [
-                    "BlueField_0_Port_0_Temp_0",
-                    "BlueField_0_Port_1_Temp_0"
+                    "BlueField_NIC_0_Port_0_Temp_0",
+                    "BlueField_NIC_0_Port_1_Temp_0"
                 ],
                 "MissingIsAcceptable": [
-                    "BlueField_0_Port_0_Temp_0",
-                    "BlueField_0_Port_1_Temp_0"
+                    "BlueField_NIC_0_Port_0_Temp_0",
+                    "BlueField_NIC_0_Port_1_Temp_0"
                 ],
                 "Name": "STEPWISE_BLUEFIELD_PORT",
                 "NegativeHysteresis": 4,

@@ -7,13 +7,18 @@
                 "Type": "NvidiaFlightDataRecorder"
             }
         ],
-        "Name": "NSM_DEV_GPU_0",
-        "Probe": "FOUND('HGX ProcessorModule 0')",
+        "Name": "NSM_DEV_NVL72_GPU_0",
+        "Probe": [
+            "FOUND('HGX ProcessorModule 0')",
+            "AND",
+            "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.*NVL72.*'})"
+        ],
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_TYPE": 0,
             "INSTANCE_NUMBER": 0,
             "LOCATION_NUMBER": 0,
+            "SWITCH_PRESENCE": true,
             "UUID": "STATIC:0:0:MCTP_EID:11"
         }
     },
@@ -25,13 +30,18 @@
                 "Type": "NvidiaFlightDataRecorder"
             }
         ],
-        "Name": "NSM_DEV_GPU_1",
-        "Probe": "FOUND('HGX ProcessorModule 0')",
+        "Name": "NSM_DEV_NVL72_GPU_1",
+        "Probe": [
+            "FOUND('HGX ProcessorModule 0')",
+            "AND",
+            "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.*NVL72.*'})"
+        ],
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_TYPE": 0,
             "INSTANCE_NUMBER": 1,
             "LOCATION_NUMBER": 1,
+            "SWITCH_PRESENCE": true,
             "UUID": "STATIC:0:1:MCTP_EID:12"
         }
     },
@@ -43,13 +53,18 @@
                 "Type": "NvidiaFlightDataRecorder"
             }
         ],
-        "Name": "NSM_DEV_GPU_2",
-        "Probe": "FOUND('HGX ProcessorModule 1')",
+        "Name": "NSM_DEV_NVL72_GPU_2",
+        "Probe": [
+            "FOUND('HGX ProcessorModule 1')",
+            "AND",
+            "xyz.openbmc_project.FruDevice({'BUS': 7, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.*NVL72.*'})"
+        ],
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_TYPE": 0,
             "INSTANCE_NUMBER": 2,
             "LOCATION_NUMBER": 2,
+            "SWITCH_PRESENCE": true,
             "UUID": "STATIC:0:2:MCTP_EID:21"
         }
     },
@@ -61,13 +76,110 @@
                 "Type": "NvidiaFlightDataRecorder"
             }
         ],
-        "Name": "NSM_DEV_GPU_3",
-        "Probe": "FOUND('HGX ProcessorModule 1')",
+        "Name": "NSM_DEV_NVL72_GPU_3",
+        "Probe": [
+            "FOUND('HGX ProcessorModule 1')",
+            "AND",
+            "xyz.openbmc_project.FruDevice({'BUS': 7, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.*NVL72.*'})"
+        ],
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_TYPE": 0,
             "INSTANCE_NUMBER": 3,
             "LOCATION_NUMBER": 3,
+            "SWITCH_PRESENCE": true,
+            "UUID": "STATIC:0:3:MCTP_EID:22"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Model": "vrnvl_hmc_2GPU",
+                "Name": "FlightDataRecorder",
+                "Type": "NvidiaFlightDataRecorder"
+            }
+        ],
+        "Name": "NSM_DEV_NVL4_GPU_0",
+        "Probe": [
+            "FOUND('HGX ProcessorModule 0')",
+            "AND",
+            "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.*NVL4.*'})"
+        ],
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 0,
+            "INSTANCE_NUMBER": 0,
+            "LOCATION_NUMBER": 0,
+            "SWITCH_PRESENCE": false,
+            "UUID": "STATIC:0:0:MCTP_EID:11"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Model": "vrnvl_hmc_2GPU",
+                "Name": "FlightDataRecorder",
+                "Type": "NvidiaFlightDataRecorder"
+            }
+        ],
+        "Name": "NSM_DEV_NVL4_GPU_1",
+        "Probe": [
+            "FOUND('HGX ProcessorModule 0')",
+            "AND",
+            "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.*NVL4.*'})"
+        ],
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 0,
+            "INSTANCE_NUMBER": 1,
+            "LOCATION_NUMBER": 1,
+            "SWITCH_PRESENCE": false,
+            "UUID": "STATIC:0:1:MCTP_EID:12"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Model": "vrnvl_hmc_2GPU",
+                "Name": "FlightDataRecorder",
+                "Type": "NvidiaFlightDataRecorder"
+            }
+        ],
+        "Name": "NSM_DEV_NVL4_GPU_2",
+        "Probe": [
+            "FOUND('HGX ProcessorModule 1')",
+            "AND",
+            "xyz.openbmc_project.FruDevice({'BUS': 7, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.*NVL4.*'})"
+        ],
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 0,
+            "INSTANCE_NUMBER": 2,
+            "LOCATION_NUMBER": 2,
+            "SWITCH_PRESENCE": false,
+            "UUID": "STATIC:0:2:MCTP_EID:21"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Model": "vrnvl_hmc_2GPU",
+                "Name": "FlightDataRecorder",
+                "Type": "NvidiaFlightDataRecorder"
+            }
+        ],
+        "Name": "NSM_DEV_NVL4_GPU_3",
+        "Probe": [
+            "FOUND('HGX ProcessorModule 1')",
+            "AND",
+            "xyz.openbmc_project.FruDevice({'BUS': 7, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.*NVL4.*'})"
+        ],
+        "Type": "NSM_Configs",
+        "xyz.openbmc_project.NsmDevice": {
+            "DEVICE_TYPE": 0,
+            "INSTANCE_NUMBER": 3,
+            "LOCATION_NUMBER": 3,
+            "SWITCH_PRESENCE": false,
             "UUID": "STATIC:0:3:MCTP_EID:22"
         }
     },

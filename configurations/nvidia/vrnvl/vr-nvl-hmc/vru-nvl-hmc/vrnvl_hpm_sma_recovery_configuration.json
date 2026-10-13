@@ -2,29 +2,29 @@
     "Exposes": [
         {
             "ForceRecoveryChassisObject": "HGX_ProcessorModule_SMA_0",
-            "I2CBus": 10,
-            "Interface": "I2C",
+            "Interface": "USB",
             "MctpEID": 13,
             "Name": "HGX_FW_ProcessorModule_SMA_0",
-            "NormalI2CAddress": "0x52",
+            "ProductId": "0xCF11",
             "RecoveryGpioName": "BRD0_MCU_RECOVERY_L-O",
-            "RecoveryI2CAddress": "0x10",
             "ResetGpioName": "BRD0_MCU_RESET_L-O",
             "Target": "HPM",
-            "Type": "MCURecovery"
+            "Type": "MCURecovery",
+            "USBPort": "1-1.1",
+            "VendorId": "0x0955"
         },
         {
             "ForceRecoveryChassisObject": "HGX_ProcessorModule_SMA_1",
-            "I2CBus": 8,
-            "Interface": "I2C",
+            "Interface": "USB",
             "MctpEID": 23,
             "Name": "HGX_FW_ProcessorModule_SMA_1",
-            "NormalI2CAddress": "0x52",
+            "ProductId": "0xCF11",
             "RecoveryGpioName": "BRD1_MCU_RECOVERY_L-O",
-            "RecoveryI2CAddress": "0x10",
             "ResetGpioName": "BRD1_MCU_RESET_L-O",
             "Target": "HPM",
-            "Type": "MCURecovery"
+            "Type": "MCURecovery",
+            "USBPort": "2-1.1",
+            "VendorId": "0x0955"
         }
     ],
     "Name": "HPM_SMA_Recovery_Devices",

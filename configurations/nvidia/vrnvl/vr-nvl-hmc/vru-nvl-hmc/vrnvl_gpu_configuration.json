@@ -9,7 +9,7 @@
             "Name": "HGX_FW_GPU_0",
             "SMAEID": 10,
             "Type": "OCPRecovery",
-            "USBPort": "2-1.2"
+            "USBPort": "1-1.2"
         },
         {
             "ChassisName": "HGX_IRoT_GPU_1",
@@ -20,7 +20,7 @@
             "Name": "HGX_FW_GPU_1",
             "SMAEID": 10,
             "Type": "OCPRecovery",
-            "USBPort": "2-1.2"
+            "USBPort": "1-1.2"
         },
         {
             "ChassisName": "HGX_IRoT_GPU_2",
@@ -31,7 +31,7 @@
             "Name": "HGX_FW_GPU_2",
             "SMAEID": 20,
             "Type": "OCPRecovery",
-            "USBPort": "1-1.2"
+            "USBPort": "2-1.2"
         },
         {
             "ChassisName": "HGX_IRoT_GPU_3",
@@ -42,7 +42,7 @@
             "Name": "HGX_FW_GPU_3",
             "SMAEID": 20,
             "Type": "OCPRecovery",
-            "USBPort": "1-1.2"
+            "USBPort": "2-1.2"
         }
     ],
     "Name": "OCP_Recovery_Devices",

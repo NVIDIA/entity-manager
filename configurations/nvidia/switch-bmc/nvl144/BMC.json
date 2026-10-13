@@ -41,15 +41,6 @@
         "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80})",
         "Type": "BMC",
-        "xyz.openbmc_project.Association.Definitions": {
-            "Associations": [
-                [
-                    "all_managers",
-                    "chassis",
-                    "/xyz/openbmc_project/inventory/system/bmc/MGX_BMC_0"
-                ]
-            ]
-        },
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
             "Manufacturer": "$BOARD_MANUFACTURER",
             "Model": "$BOARD_PRODUCT_NAME",
@@ -66,10 +57,24 @@
         "xyz.openbmc_project.Inventory.Item.Chassis": {
             "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
         },
-        "xyz.openbmc_project.Inventory.Item.ManagementService": {},
         "xyz.openbmc_project.State.Decorator.Health": {
             "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
         }
+    },
+    {
+        "Name": "BMC_0",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80})",
+        "Type": "BMC",
+        "xyz.openbmc_project.Association.Definitions": {
+            "Associations": [
+                [
+                    "chassis",
+                    "all_managers",
+                    "/xyz/openbmc_project/inventory/system/bmc/MGX_BMC_0"
+                ]
+            ]
+        },
+        "xyz.openbmc_project.Inventory.Item.ManagementService": {}
     },
     {
         "Exposes": [
