@@ -404,13 +404,16 @@
             "Components": [
                 {
                     "AssociationBackward": [
+                        "activation",
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/CX_0/NetworkAdapters/NIC_0"
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_0/NetworkAdapters/NIC_0",
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_0"
                     ],
                     "AssociationForward": [
-                        "inventory"
+                        "inventory",
+                        "inventory_chassis"
                     ],
                     "ComponentIdentifier": 1,
                     "Name": "FW_CX_0"
@@ -424,13 +427,16 @@
             "Components": [
                 {
                     "AssociationBackward": [
+                        "activation",
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/CX_1/NetworkAdapters/NIC_0"
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_1/NetworkAdapters/NIC_0",
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_1"
                     ],
                     "AssociationForward": [
-                        "inventory"
+                        "inventory",
+                        "inventory_chassis"
                     ],
                     "ComponentIdentifier": 1,
                     "Name": "FW_CX_1"
@@ -464,13 +470,16 @@
             "Components": [
                 {
                     "AssociationBackward": [
+                        "activation",
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/CX_2/NetworkAdapters/NIC_0"
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_2/NetworkAdapters/NIC_0",
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_2"
                     ],
                     "AssociationForward": [
-                        "inventory"
+                        "inventory",
+                        "inventory_chassis"
                     ],
                     "ComponentIdentifier": 1,
                     "Name": "FW_CX_2"
@@ -484,13 +493,16 @@
             "Components": [
                 {
                     "AssociationBackward": [
+                        "activation",
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/CX_3/NetworkAdapters/NIC_0"
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_3/NetworkAdapters/NIC_0",
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_3"
                     ],
                     "AssociationForward": [
-                        "inventory"
+                        "inventory",
+                        "inventory_chassis"
                     ],
                     "ComponentIdentifier": 1,
                     "Name": "FW_CX_3"
@@ -524,13 +536,16 @@
             "Components": [
                 {
                     "AssociationBackward": [
+                        "activation",
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/CX_4/NetworkAdapters/NIC_0"
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_4/NetworkAdapters/NIC_0",
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_4"
                     ],
                     "AssociationForward": [
-                        "inventory"
+                        "inventory",
+                        "inventory_chassis"
                     ],
                     "ComponentIdentifier": 1,
                     "Name": "FW_CX_4"
@@ -544,13 +559,16 @@
             "Components": [
                 {
                     "AssociationBackward": [
+                        "activation",
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/CX_5/NetworkAdapters/NIC_0"
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_5/NetworkAdapters/NIC_0",
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_5"
                     ],
                     "AssociationForward": [
-                        "inventory"
+                        "inventory",
+                        "inventory_chassis"
                     ],
                     "ComponentIdentifier": 1,
                     "Name": "FW_CX_5"
@@ -584,13 +602,16 @@
             "Components": [
                 {
                     "AssociationBackward": [
+                        "activation",
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/CX_6/NetworkAdapters/NIC_0"
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_6/NetworkAdapters/NIC_0",
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_6"
                     ],
                     "AssociationForward": [
-                        "inventory"
+                        "inventory",
+                        "inventory_chassis"
                     ],
                     "ComponentIdentifier": 1,
                     "Name": "FW_CX_6"
@@ -604,13 +625,16 @@
             "Components": [
                 {
                     "AssociationBackward": [
+                        "activation",
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/CX_7/NetworkAdapters/NIC_0"
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_7/NetworkAdapters/NIC_0",
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_7"
                     ],
                     "AssociationForward": [
-                        "inventory"
+                        "inventory",
+                        "inventory_chassis"
                     ],
                     "ComponentIdentifier": 1,
                     "Name": "FW_CX_7"
