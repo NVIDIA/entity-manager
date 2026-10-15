@@ -30,48 +30,23 @@
         "Type": "Dump"
       },
       {
-        "Configuration": 1,
-        "InterfaceNum": 2,
-        "Name": "$Name",
-        "PollingInterval": "5",
-        "Port": "$Port",
-        "RecoveryThreshold": "5",
-        "RootHubPath": "$RootHubPath",
-        "StaticEndpointID": "$EID",
-        "Type": "MCTPUSBDevice"
+        "Name": "$Name_PLDM",
+        "Type": "PLDMDevice",
+        "Components": {
+          "2": "$Platform.NamePrefixSBIOS_FMC_$Instance",
+          "513": "$Platform.NamePrefixSBIOS_FW_$Instance"
+        }
       },
       {
-        "Components": [
-          {
-            "AssociationBackward": [
-              "activation"
-            ],
-            "AssociationEndpoint": [
-              "/xyz/openbmc_project/inventory/system/component/$Name"
-            ],
-            "AssociationForward": [
-              "inventory"
-            ],
-            "ComponentIdentifier": 2,
-            "Name": "$Platform.NamePrefixSBIOS_FMC_$Instance"
-          },
-          {
-            "AssociationBackward": [
-              "activation"
-            ],
-            "AssociationEndpoint": [
-              "/xyz/openbmc_project/inventory/system/component/$Name"
-            ],
-            "AssociationForward": [
-              "inventory"
-            ],
-            "ComponentIdentifier": 513,
-            "Name": "$Platform.NamePrefixSBIOS_FW_$Instance"
-          }
-        ],
-        "MCTPTargetName": "$Name",
-        "Name": "$Name_PLDM",
-        "Type": "PLDMFirmwareDevice"
+        "Name": "$Name_MCTP",
+        "Type": "MCTPEndpoint",
+        "InterfaceNum": 2,
+        "RecoveryThreshold": "5"
+      },
+      {
+        "Name": "$Name_Recovery",
+        "Type": "Recovery",
+        "Method": "USBRCM"
       }
     ]
   },
@@ -257,21 +232,5 @@
     "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
       "FieldReplaceable": false
     }
-  },
-  {
-    "Name": "$Name_USBRCM_Recovery_Devices",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin'})",
-    "Type": "Recovery_Config",
-    "Exposes": [
-      {
-        "FMCComponentName": "$Platform.NamePrefixSBIOS_FMC_$Instance",
-        "FWSComponentName": "$Platform.NamePrefixSBIOS_FW_$Instance",
-        "MctpEID": "$EID",
-        "Name": "$Platform.NamePrefixFW_CPU_$Instance",
-        "Type": "USBRCMRecovery",
-        "USBPort": "1-$Port",
-        "hasChassisPowerSource": true
-      }
-    ]
   }
 ]

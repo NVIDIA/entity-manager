@@ -51,67 +51,18 @@
         "Type": "Dump"
       },
       {
-        "Address": "$Address",
-        "Bus": "$Bus",
-        "Name": "$Name",
-        "PollingInterval": "1",
-        "StaticEndpointID": "$EID",
-        "Type": "MCTPI2CTarget"
+        "Name": "$Name_PLDM",
+        "Type": "PLDMDevice",
+        "Components": {
+          "65282": "$Platform.NamePrefixFW_ProcessorModule_SMA_$Instance",
+          "65283": "$Platform.NamePrefixFW_CPLD_$Instance"
+        }
       },
       {
-        "Components": [
-          {
-            "AssociationBackward": [
-              "activation"
-            ],
-            "AssociationEndpoint": [
-              "/xyz/openbmc_project/inventory/system/chassis/$Name"
-            ],
-            "AssociationForward": [
-              "inventory"
-            ],
-            "ComponentIdentifier": 65282,
-            "Name": "$Platform.NamePrefixFW_ProcessorModule_SMA_$Instance"
-          },
-          {
-            "AssociationBackward": [
-              "activation"
-            ],
-            "AssociationEndpoint": [
-              "/xyz/openbmc_project/inventory/system/component/$Platform.NamePrefixCPLD_$Instance"
-            ],
-            "AssociationForward": [
-              "inventory"
-            ],
-            "ComponentIdentifier": 65283,
-            "Manufacturer": "Lattice",
-            "Name": "$Platform.NamePrefixFW_CPLD_$Instance"
-          }
-        ],
-        "MCTPTargetName": "$Name",
-        "Name": "$Name_PLDM",
-        "Type": "PLDMFirmwareDevice"
-      }
-    ]
-  },
-  {
-    "Name": "$Name_HPM_SMA_Recovery_Devices",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^hmc_hpm_sma$', 'Generation': 'vera-rubin'})",
-    "Type": "Recovery_Config",
-    "Exposes": [
-      {
-        "ForceRecoveryChassisObject": "$Name",
-        "I2CBus": "$Bus",
-        "Interface": "I2C",
-        "MctpEID": "$EID",
-        "Name": "$Platform.NamePrefixFW_ProcessorModule_SMA_$Instance",
-        "NormalI2CAddress": "0x52",
-        "RecoveryGpioName": "BRD$Instance_MCU_RECOVERY_L-O",
-        "RecoveryI2CAddress": "0x10",
-        "ResetGpioName": "BRD$Instance_MCU_RESET_L-O",
-        "Target": "HPM",
-        "Type": "MCURecovery",
-        "hasChassisPowerSource": false
+        "Name": "$Name_Recovery",
+        "Type": "Recovery",
+        "Method": "MCU",
+        "Target": "HPM"
       }
     ]
   }

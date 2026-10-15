@@ -21,16 +21,9 @@
         "Type": "PlatformDevice"
       },
       {
-        "BridgePoolStartEID": "$PoolStartEID",
-        "Configuration": 1,
-        "IgnoreMessageTypes": "1,5",
-        "InterfaceNum": 0,
-        "Name": "SMA_$Instance",
-        "PollingInterval": "5",
-        "Port": "$Port",
-        "RootHubPath": "$RootHubPath",
-        "StaticEndpointID": "$EID",
-        "Type": "MCTPUSBDevice"
+        "Name": "$Name_MCTP",
+        "Type": "MCTPEndpoint",
+        "IgnoreMessageTypes": "1,5"
       }
     ]
   }

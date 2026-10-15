@@ -13,219 +13,6 @@
         "ParameterOverrides": {}
       },
       {
-        "AuxNames": [
-          "$Name"
-        ],
-        "Name": "$Name_AUX",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 4101,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "BlueField_NIC_$Instance"
-        ],
-        "Name": "BlueField_NIC_$Instance_AUX",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 4156,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "Port_0"
-        ],
-        "Name": "BlueField_NIC_$Instance_Port_0_AUX",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 4296,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "Port_1"
-        ],
-        "Name": "BlueField_NIC_$Instance_Port_1_AUX",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 4297,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "$Name_Temp_0"
-        ],
-        "Name": "$Name_Temp_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 4396,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "BlueField_NIC_$Instance_Port_0_Temp_0"
-        ],
-        "Name": "BlueField_NIC_$Instance_Port_0_Temp_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 4596,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "BlueField_NIC_$Instance_Port_1_Temp_0"
-        ],
-        "Name": "BlueField_NIC_$Instance_Port_1_Temp_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 4597,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "$Name_CPU_0_Temp_0"
-        ],
-        "Name": "$Name_CPU_0_Temp_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 7840,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "$Name_CPU_0_SSD_0_Temp_0"
-        ],
-        "Name": "$Name_CPU_0_SSD_0_Temp_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 7841,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "$Name_Core_Rail_Vdd_Power_0"
-        ],
-        "Name": "$Name_Core_Rail_Vdd_Power_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 4103,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "$Name_Analog_Rail_Vddp_Power_0"
-        ],
-        "Name": "$Name_Analog_Rail_Vddp_Power_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 4104,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "$Name_Digital_Rail_Dvdd_Power_0"
-        ],
-        "Name": "$Name_Digital_Rail_Dvdd_Power_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 4105,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "$Name_High_Voltage_Hvdd_Power_0"
-        ],
-        "Name": "$Name_High_Voltage_Hvdd_Power_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 4106,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "$Name_Power_0"
-        ],
-        "Name": "$Name_Power_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 4146,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "$Name_CPU_0_Rail_Power_0"
-        ],
-        "Name": "$Name_CPU_0_Rail_Power_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 7696,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "$Name_CPU_0_OsState_0"
-        ],
-        "Name": "$Name_CPU_0_OsState_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 7842,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "$Name_CPU_0_Power_0"
-        ],
-        "Name": "$Name_CPU_0_Power_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 7728,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "$Name_Stby_Rail_Power_0"
-        ],
-        "Name": "$Name_Stby_Rail_Power_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 7952,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "$Name_Total_Power_0"
-        ],
-        "Name": "$Name_Total_Power_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 7984,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "BlueField_NIC_$Instance_Port_0_Voltage_0"
-        ],
-        "Name": "BlueField_NIC_$Instance_Port_0_Voltage_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 4496,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "BlueField_NIC_$Instance_Port_1_Voltage_0"
-        ],
-        "Name": "BlueField_NIC_$Instance_Port_1_Voltage_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 4497,
-        "Type": "SensorAuxName"
-      },
-      {
-        "Association": [
-          "associated_port",
-          "associated_port",
-          "/xyz/openbmc_project/inventory/system/chassis/$Name/NetworkAdapters/BlueField_NIC_$Instance/Ports/Port_0"
-        ],
-        "MaxSpeedMBps": 50000,
-        "Name": "BlueField_NIC_$Instance_Port_0_INFO",
-        "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
-        "SensorId": 4296,
-        "Type": "SensorPortInfo"
-      },
-      {
-        "Association": [
-          "associated_port",
-          "associated_port",
-          "/xyz/openbmc_project/inventory/system/chassis/$Name/NetworkAdapters/BlueField_NIC_$Instance/Ports/Port_1"
-        ],
-        "MaxSpeedMBps": 50000,
-        "Name": "BlueField_NIC_$Instance_Port_1_INFO",
-        "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
-        "SensorId": 4297,
-        "Type": "SensorPortInfo"
-      },
-      {
         "GpioLine": "BF4_GLOBAL_WP",
         "Name": "BAY_C_GLOBAL_WP",
         "Polarity": "active_high",
@@ -360,10 +147,37 @@
     "Type": "vr_bmc_bluefield",
     "Exposes": [
       {
-        "BridgeName": "$Bridge",
-        "Name": "BF4_0",
-        "PoolIndex": 0,
-        "Type": "MCTPBridgePoolDevice"
+        "Name": "$Name_PLDM",
+        "Type": "PLDMDevice",
+        "NetworkAdapter": "BlueField_NIC_$Instance",
+        "SensorAuxNames": {
+          "4101": "$Name",
+          "4156": "BlueField_NIC_$Instance",
+          "4296": "Port_0",
+          "4297": "Port_1",
+          "4396": "$Name_Temp_0",
+          "4596": "BlueField_NIC_$Instance_Port_0_Temp_0",
+          "4597": "BlueField_NIC_$Instance_Port_1_Temp_0",
+          "7840": "$Name_CPU_0_Temp_0",
+          "7841": "$Name_CPU_0_SSD_0_Temp_0",
+          "4103": "$Name_Core_Rail_Vdd_Power_0",
+          "4104": "$Name_Analog_Rail_Vddp_Power_0",
+          "4105": "$Name_Digital_Rail_Dvdd_Power_0",
+          "4106": "$Name_High_Voltage_Hvdd_Power_0",
+          "4146": "$Name_Power_0",
+          "7696": "$Name_CPU_0_Rail_Power_0",
+          "7842": "$Name_CPU_0_OsState_0",
+          "7728": "$Name_CPU_0_Power_0",
+          "7952": "$Name_Stby_Rail_Power_0",
+          "7984": "$Name_Total_Power_0",
+          "4496": "BlueField_NIC_$Instance_Port_0_Voltage_0",
+          "4497": "BlueField_NIC_$Instance_Port_1_Voltage_0"
+        },
+        "Ports": {
+          "4296": "Port_0",
+          "4297": "Port_1"
+        },
+        "PortMaxSpeedMBps": 50000
       }
     ]
   }

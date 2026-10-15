@@ -14,7 +14,6 @@
         "Interface": "mctpusbg0",
         "LocalEID": 8
       },
-
       {
         "Name": "HGX_IRoT_BMC_0",
         "Type": "NvDevice",
@@ -96,7 +95,6 @@
           "OcpRecoveryI2cAddress": 106
         }
       },
-
       {
         "Name": "HGX_GPU_SMA_1",
         "Type": "NvDevice",
@@ -164,7 +162,6 @@
           "OcpRecoveryI2cAddress": 106
         }
       },
-
       {
         "Name": "HGX_CPU_0",
         "Type": "NvDevice",

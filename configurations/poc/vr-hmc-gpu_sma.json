@@ -30,40 +30,17 @@
         "Type": "Dump"
       },
       {
-        "BridgePoolEndEID": "$PoolEndEID",
-        "BridgePoolStartEID": "$PoolStartEID",
-        "BridgedEndpoints": [
-          "$Platform.NamePrefixGPU_$Instance * 2",
-          "$Platform.NamePrefixGPU_$Instance * 2 + 1"
-        ],
-        "Configuration": 1,
-        "InterfaceNum": 0,
-        "Name": "$Name",
-        "PollingInterval": "5",
-        "Port": "$Port",
-        "RootHubPath": "$RootHubPath",
-        "StaticEndpointID": "$EID",
-        "Type": "MCTPUSBDevice"
+        "Name": "$Name_PLDM",
+        "Type": "PLDMDevice",
+        "Components": {
+          "65282": "$Platform.NamePrefixFW_GPU_SMA_$Instance"
+        }
       },
       {
-        "Components": [
-          {
-            "AssociationBackward": [
-              "activation"
-            ],
-            "AssociationEndpoint": [
-              "/xyz/openbmc_project/inventory/system/chassis/$Name"
-            ],
-            "AssociationForward": [
-              "inventory"
-            ],
-            "ComponentIdentifier": 65282,
-            "Name": "$Platform.NamePrefixFW_GPU_SMA_$Instance"
-          }
-        ],
-        "MCTPTargetName": "$Name",
-        "Name": "$Name_PLDM",
-        "Type": "PLDMFirmwareDevice"
+        "Name": "$Name_Recovery",
+        "Type": "Recovery",
+        "Method": "MCU",
+        "Target": "GPU"
       }
     ]
   },
@@ -167,27 +144,6 @@
         "Name": "Slot2",
         "SlotType": "InActive",
         "Type": "NSM_RoT_Slot"
-      }
-    ]
-  },
-  {
-    "Name": "$Name_GPU_SMA_Recovery_Devices",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^gpu_sma$', 'Generation': 'vera-rubin'})",
-    "Type": "Recovery_Config",
-    "Exposes": [
-      {
-        "ForceRecoveryChassisObject": "$Name",
-        "Interface": "USB",
-        "MctpEID": "$EID",
-        "Name": "$Platform.NamePrefixFW_GPU_SMA_$Instance",
-        "ProductId": "0xCF11",
-        "RecoveryGpioName": "BRD$Instance_GPU_MCU_RECOVERY_L_3V3-O",
-        "ResetGpioName": "BRD$Instance_GPU_MCU_RESET_L_3V3-O",
-        "Target": "GPU",
-        "Type": "MCURecovery",
-        "USBPort": "1-$Port",
-        "VendorId": "0x0955",
-        "hasChassisPowerSource": false
       }
     ]
   }

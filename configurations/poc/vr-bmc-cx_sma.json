@@ -42,59 +42,25 @@
         "Type": "Dump"
       },
       {
-        "BridgePoolEndEID": "$PoolEndEID",
-        "BridgePoolStartEID": "$PoolStartEID",
-        "BridgedEndpoints": [
-          "CX_$Instance * 2",
-          "CX_$Instance * 2 + 1",
-          "NVMe_E1S_IO$Instance"
-        ],
-        "Configuration": 1,
-        "IgnoreEIDs": "$IgnoreEIDs",
-        "InterfaceNum": 0,
-        "Name": "$Name",
-        "PollingInterval": "5",
-        "Port": "$Port",
-        "RootHubPath": "$RootHubPath",
-        "StaticEndpointID": "$EID",
-        "Type": "MCTPUSBDevice"
-      },
-      {
-        "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_$Name",
-        "MCTPTargetName": "$Name",
-        "Manufacturer": "NVIDIA",
-        "Name": "$Name_DevInv",
-        "Type": "PLDMDeviceInventory",
-        "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
-      },
-      {
-        "Components": [
-          {
-            "AssociationBackward": [
-              "activation"
-            ],
-            "AssociationEndpoint": [
-              "/xyz/openbmc_project/inventory/system/chassis/$Name"
-            ],
-            "AssociationForward": [
-              "inventory"
-            ],
-            "ComponentIdentifier": 65282,
-            "Name": "FW_$Name"
-          }
-        ],
-        "MCTPTargetName": "$Name",
-        "Name": "$Name_PLDM",
-        "Type": "PLDMFirmwareDevice"
-      },
-      {
         "ConnectsToName": "$Platform.BmcName",
         "DeviceAddress": "MCTP:$EID",
         "DeviceType": "MCTPBridge",
         "Name": "$Name",
         "PhysicalInterface": "usb1:0x0955:0xcf11:$Port",
         "Type": "PlatformDevice"
+      },
+      {
+        "Name": "$Name_PLDM",
+        "Type": "PLDMDevice",
+        "Components": {
+          "65282": "FW_$Name"
+        }
+      },
+      {
+        "Name": "$Name_Recovery",
+        "Type": "Recovery",
+        "Method": "MCU",
+        "Target": "CX9"
       }
     ]
   },
@@ -115,27 +81,5 @@
       }
     ],
     "Type": "chassis"
-  },
-  {
-    "Name": "$Name_CX9_SMA_Recovery_Devices",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vera-rubin'})",
-    "Type": "Recovery_Config",
-    "Exposes": [
-      {
-        "ChassisName": "$Name",
-        "ForceRecoveryChassisObject": "$Name",
-        "Interface": "USB",
-        "MctpEID": "$EID",
-        "Name": "FW_$Name",
-        "ProductId": "0xCF11",
-        "RecoveryGpioName": "IOB$Instance_MCU_RECOVERY_L-O",
-        "ResetGpioName": "IOB$Instance_MCU_RST_L-O",
-        "Target": "CX9",
-        "Type": "MCURecovery",
-        "USBPort": ".*-$Port",
-        "VendorId": "0x0955",
-        "hasChassisPowerSource": false
-      }
-    ]
   }
 ]

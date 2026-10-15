@@ -11,92 +11,6 @@
         "Type": "NSM_Telemetry",
         "Disable": [],
         "ParameterOverrides": {}
-      },
-      {
-        "EID": "$EID",
-        "Name": "$Name_Association",
-        "Type": "MctpEndpointAssociation"
-      },
-      {
-        "AuxNames": [
-          "$Name"
-        ],
-        "Name": "$Name_AUX",
-        "SensorId": 5,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "Bay_C_CX_NIC_0"
-        ],
-        "Name": "Bay_C_CX_NIC_0_AUX",
-        "SensorId": 60,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "Port_0"
-        ],
-        "Name": "Bay_C_CX_NIC_0_Port_0_AUX",
-        "SensorId": 200,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "$Name_Temp_0"
-        ],
-        "Name": "$Name_Temp_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 300,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "Bay_C_CX_NIC_0_Port_0_Voltage_0"
-        ],
-        "Name": "Bay_C_CX_NIC_0_Port_0_Voltage_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 400,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "Bay_C_CX_NIC_0_Port_1_Voltage_0"
-        ],
-        "Name": "Bay_C_CX_NIC_0_Port_1_Voltage_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 401,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "$Name_Power_0"
-        ],
-        "Name": "$Name_Power_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 50,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "Bay_C_CX_NIC_0_Port_0_Temp_0"
-        ],
-        "Name": "Bay_C_CX_NIC_0_Port_0_Temp_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 500,
-        "Type": "SensorAuxName"
-      },
-      {
-        "Association": [
-          "associated_port",
-          "associated_port",
-          "/xyz/openbmc_project/inventory/system/chassis/$Name/NetworkAdapters/Bay_C_CX_NIC_0/Ports/Port_0"
-        ],
-        "MaxSpeedMBps": 50000,
-        "Name": "Bay_C_CX_NIC_0_Port_0_INFO",
-        "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
-        "SensorId": 200,
-        "Type": "SensorPortInfo"
       }
     ],
     "Associations": {
@@ -132,10 +46,23 @@
     "Type": "vr_bmc_cx9_nic",
     "Exposes": [
       {
-        "BridgeName": "$Bridge",
-        "Name": "BF4_1",
-        "PoolIndex": 1,
-        "Type": "MCTPBridgePoolDevice"
+        "Name": "$Name_PLDM",
+        "Type": "PLDMDevice",
+        "NetworkAdapter": "Bay_C_CX_NIC_0",
+        "SensorAuxNames": {
+          "5": "$Name",
+          "60": "Bay_C_CX_NIC_0",
+          "200": "Port_0",
+          "300": "$Name_Temp_0",
+          "400": "Bay_C_CX_NIC_0_Port_0_Voltage_0",
+          "401": "Bay_C_CX_NIC_0_Port_1_Voltage_0",
+          "50": "$Name_Power_0",
+          "500": "Bay_C_CX_NIC_0_Port_0_Temp_0"
+        },
+        "Ports": {
+          "200": "Port_0"
+        },
+        "PortMaxSpeedMBps": 50000
       }
     ]
   }

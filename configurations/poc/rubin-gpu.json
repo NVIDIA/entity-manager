@@ -58,71 +58,17 @@
         "Type": "Dump"
       },
       {
-        "BridgeName": "$Bridge",
-        "Name": "$Name",
-        "PoolIndex": "$PoolIndex",
-        "Type": "MCTPBridgePoolDevice"
-      },
-      {
-        "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/$Platform.NamePrefixIRoT_GPU_$Instance",
-        "MCTPTargetName": "$Name",
-        "Manufacturer": "NVIDIA",
-        "Name": "$Platform.NamePrefixIRoT_GPU_$Instance_DevInv",
-        "Type": "PLDMDeviceInventory",
-        "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
-      },
-      {
-        "Components": [
-          {
-            "AssociationBackward": [
-              "activation"
-            ],
-            "AssociationEndpoint": [
-              "/xyz/openbmc_project/inventory/system/chassis/$Name"
-            ],
-            "AssociationForward": [
-              "inventory"
-            ],
-            "ComponentIdentifier": 49152,
-            "Name": "$Platform.NamePrefixFW_GPU_$Instance"
-          },
-          {
-            "AssociationBackward": [
-              "active"
-            ],
-            "AssociationEndpoint": [
-              "/xyz/openbmc_project/inventory/system/chassis/$Name"
-            ],
-            "AssociationForward": [
-              "inventory"
-            ],
-            "ComponentIdentifier": 49168,
-            "Name": "$Platform.NamePrefixInfoROM_GPU_$Instance"
-          }
-        ],
-        "MCTPTargetName": "$Name",
         "Name": "$Name_PLDM",
-        "Type": "PLDMFirmwareDevice"
-      }
-    ]
-  },
-  {
-    "Name": "$Name_OCP_Recovery_Devices",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^gpu$', 'Generation': 'vera-rubin'})",
-    "Type": "Recovery_Config",
-    "Exposes": [
+        "Type": "PLDMDevice",
+        "Components": {
+          "49152": "$Platform.NamePrefixFW_GPU_$Instance",
+          "49168": "$Platform.NamePrefixInfoROM_GPU_$Instance"
+        }
+      },
       {
-        "ChassisName": "$Platform.NamePrefixIRoT_GPU_$Instance",
-        "ForceRecoveryChassisObject": "$Name",
-        "I2CAddress": "$OcpRecoveryI2cAddress",
-        "InfoRomName": "$Platform.NamePrefixInfoROM_GPU_$Instance",
-        "MctpEID": "$EID",
-        "Name": "$Platform.NamePrefixFW_GPU_$Instance",
-        "SMAEID": "$BridgeEID",
-        "Type": "OCPRecovery",
-        "USBPort": "1-$BridgePort",
-        "hasChassisPowerSource": true
+        "Name": "$Name_Recovery",
+        "Type": "Recovery",
+        "Method": "OCP"
       }
     ]
   }

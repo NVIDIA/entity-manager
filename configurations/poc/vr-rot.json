@@ -24,6 +24,14 @@
         "Type": "PlatformDevice"
       },
       {
+        "Name": "$Name_PLDM",
+        "Type": "PLDMDevice",
+        "Components": {
+          "11": "$Platform.NamePrefixFW_BMC_Caliptra_$Instance",
+          "10": "$Platform.NamePrefixFW_BMC_$Instance"
+        }
+      },
+      {
         "Name": "$Name",
         "SupportedDumps": [
           "RoT",
@@ -31,38 +39,6 @@
           "HwCheckout"
         ],
         "Type": "Dump"
-      },
-      {
-        "Interface": "$Interface",
-        "Name": "MCTPIROT_$Instance",
-        "PollingInterval": "15",
-        "StaticEndpointID": "$EID",
-        "Type": "MCTPXROTTarget"
-      },
-      {
-        "Components": [
-          {
-            "AssociationBackward": [
-              "activation"
-            ],
-            "AssociationEndpoint": [
-              "/xyz/openbmc_project/inventory/system/bmc/$Platform.BmcName"
-            ],
-            "AssociationForward": [
-              "inventory"
-            ],
-            "ComponentIdentifier": 11,
-            "Name": "$Platform.NamePrefixFW_BMC_Caliptra_$Instance"
-          },
-          {
-            "ComponentIdentifier": 10,
-            "Name": "$Platform.NamePrefixFW_BMC_$Instance",
-            "UpdateOnly": true
-          }
-        ],
-        "MCTPTargetName": "MCTPIROT_$Instance",
-        "Name": "$Name_PLDM",
-        "Type": "PLDMFirmwareDevice"
       }
     ]
   },
@@ -76,46 +52,6 @@
         "Name": "MCTPVROT_0",
         "StaticEndpointID": "100",
         "Type": "MCTPXROTTarget"
-      }
-    ]
-  },
-  {
-    "Name": "$Name_Recovery_Devices",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^irot$', 'Generation': 'vera-rubin', 'Name': '^IRoT_'})",
-    "Type": "Recovery_Config",
-    "Exposes": [
-      {
-        "FallingTarget": "hmc-not-ready.target",
-        "GPIO": "HMC_READY-I",
-        "HideWhenHealthy": true,
-        "IsERoT": false,
-        "MctpEID": 51,
-        "Name": "FW_RECOVERY_HGX_FW_$Platform.BmcName",
-        "Polarity": "ActiveHigh",
-        "RisingTarget": "hmc-ready.target",
-        "Type": "GPIORecovery"
-      },
-      {
-        "Name": "FW_HMC_0",
-        "RecoveryGpioName": "HMC_RECOVERY_R-O",
-        "RecoveryGpioPolarity": "ActiveHigh",
-        "ResetGpioName": "HMC_RST_R_L-O",
-        "ResetGpioPolarity": "ActiveLow",
-        "SpiMuxGpioName": "HMC_SPI_MUX_R_SEL-O",
-        "Type": "USBDFURecovery"
-      }
-    ]
-  },
-  {
-    "Name": "$Name_USBRCM_Recovery_Devices",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^irot$', 'Generation': 'vera-rubin', 'Name': '^HGX_'})",
-    "Type": "Recovery_Config",
-    "Exposes": [
-      {
-        "ConfigType": "$Platform.RecoveryStrap",
-        "ForceRecoveryChassisObject": "$Platform.TopChassis",
-        "Name": "$Platform.TopChassis_CPU_Recovery",
-        "Type": "USBRCMForceRecovery"
       }
     ]
   }

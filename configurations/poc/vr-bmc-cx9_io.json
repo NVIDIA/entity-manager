@@ -7,47 +7,6 @@
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vera-rubin'})",
     "Exposes": [
       {
-        "EID": "$EID",
-        "Name": "$Name_Association",
-        "Type": "MctpEndpointAssociation"
-      },
-      {
-        "AuxNames": [
-          "$Name"
-        ],
-        "Name": "$Name_AUX",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 5,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "NIC_0"
-        ],
-        "Name": "CX_NIC_$Instance_AUX",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 60,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "Port_0"
-        ],
-        "Name": "CX_NIC_$Instance_Port_0_AUX",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 200,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "Port_1"
-        ],
-        "Name": "CX_NIC_$Instance_Port_1_AUX",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 201,
-        "Type": "SensorAuxName"
-      },
-      {
         "AuxNames": [
           "$Name_Temp_0"
         ],
@@ -71,15 +30,6 @@
             "Value": 100.0
           }
         ],
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "$Name_Power_0"
-        ],
-        "Name": "$Name_Power_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 50,
         "Type": "SensorAuxName"
       },
       {
@@ -110,15 +60,6 @@
       },
       {
         "AuxNames": [
-          "CX_NIC_$Instance_Port_0_Voltage_0"
-        ],
-        "Name": "CX_NIC_$Instance_Port_0_Voltage_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 400,
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
           "CX_NIC_$Instance_Port_1_Temp_0"
         ],
         "Name": "CX_NIC_$Instance_Port_1_Temp_0",
@@ -142,39 +83,6 @@
           }
         ],
         "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "CX_NIC_$Instance_Port_1_Voltage_0"
-        ],
-        "Name": "CX_NIC_$Instance_Port_1_Voltage_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 401,
-        "Type": "SensorAuxName"
-      },
-      {
-        "Association": [
-          "associated_port",
-          "associated_port",
-          "/xyz/openbmc_project/inventory/system/chassis/$Name/NetworkAdapters/NIC_0/Ports/$PortName0"
-        ],
-        "MaxSpeedMBps": 100000,
-        "Name": "CX_NIC_$Instance_Port_0_INFO",
-        "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
-        "SensorId": 200,
-        "Type": "SensorPortInfo"
-      },
-      {
-        "Association": [
-          "associated_port",
-          "associated_port",
-          "/xyz/openbmc_project/inventory/system/chassis/$Name/NetworkAdapters/NIC_0/Ports/$PortName1"
-        ],
-        "MaxSpeedMBps": 100000,
-        "Name": "CX_NIC_$Instance_Port_1_INFO",
-        "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
-        "SensorId": 201,
-        "Type": "SensorPortInfo"
       }
     ],
     "Associations": {
@@ -226,24 +134,6 @@
     ]
   },
   {
-    "Name": "$Name_ConnectX_Recovery_Devices",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vera-rubin'})",
-    "Type": "Recovery_Config",
-    "Exposes": [
-      {
-        "ChassisName": "IRoT_$Name",
-        "EID": "$EID",
-        "ForceRecoveryChassisObject": "IRoT_$Name",
-        "I2CAddress": "$I2CAddress",
-        "I2CBus": "$I2CBus",
-        "Name": "FW_$Name",
-        "SMAEID": "$BridgeEID",
-        "Type": "ConnectXRecovery",
-        "hasChassisPowerSource": true
-      }
-    ]
-  },
-  {
     "Name": "$Name_Platform",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vera-rubin'})",
     "Type": "vr_bmc_cx9_io",
@@ -257,72 +147,41 @@
         "Type": "Dump"
       },
       {
-        "BridgeName": "$Bridge",
-        "Name": "$Name",
-        "PoolIndex": "$PoolIndex",
-        "Type": "MCTPBridgePoolDevice"
-      },
-      {
-        "MCTPTargetName": "$Name",
-        "Manufacturer": "NVIDIA",
-        "Name": "$Name_DevInv",
-        "Type": "PLDMDeviceInventory",
-        "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
-      },
-      {
-        "Components": [
-          {
-            "AssociationBackward": [
-              "activation"
-            ],
-            "AssociationEndpoint": [
-              "/xyz/openbmc_project/inventory/system/chassis/$Name/NetworkAdapters/NIC_0"
-            ],
-            "AssociationForward": [
-              "inventory"
-            ],
-            "ComponentIdentifier": 1,
-            "Name": "FW_$Name"
-          },
-          {
-            "AssociationBackward": [
-              "active"
-            ],
-            "AssociationEndpoint": [
-              "/xyz/openbmc_project/inventory/system/chassis/$Name"
-            ],
-            "AssociationForward": [
-              "inventory"
-            ],
-            "ComponentIdentifier": 4,
-            "Name": "CX_NVConfig_MLNX_$Instance"
-          },
-          {
-            "AssociationBackward": [
-              "active"
-            ],
-            "AssociationEndpoint": [
-              "/xyz/openbmc_project/inventory/system/chassis/$Name"
-            ],
-            "AssociationForward": [
-              "inventory"
-            ],
-            "ComponentIdentifier": 3,
-            "Name": "CX_NVConfig_OEM_$Instance"
-          }
-        ],
-        "MCTPTargetName": "$Name",
-        "Name": "$Name_PLDM",
-        "Type": "PLDMFirmwareDevice"
-      },
-      {
         "ConnectsToName": "$Bridge",
         "DeviceAddress": "MCTP:$EID",
         "DeviceType": "MCTPEndpoint",
         "Name": "$Name",
         "Type": "PlatformDevice",
         "poweredInStandby": false
+      },
+      {
+        "Name": "$Name_PLDM",
+        "Type": "PLDMDevice",
+        "Components": {
+          "1": "FW_$Name",
+          "4": "CX_NVConfig_MLNX_$Instance",
+          "3": "CX_NVConfig_OEM_$Instance"
+        },
+        "NetworkAdapter": "NIC_0",
+        "SensorAuxNames": {
+          "5": "$Name",
+          "60": "NIC_0",
+          "200": "Port_0",
+          "201": "Port_1",
+          "50": "$Name_Power_0",
+          "400": "CX_NIC_$Instance_Port_0_Voltage_0",
+          "401": "CX_NIC_$Instance_Port_1_Voltage_0"
+        },
+        "Ports": {
+          "200": "$PortName0",
+          "201": "$PortName1"
+        },
+        "PortMaxSpeedMBps": 100000
+      },
+      {
+        "Name": "$Name_Recovery",
+        "Type": "Recovery",
+        "Method": "ConnectX"
       }
     ]
   }

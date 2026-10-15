@@ -38,92 +38,17 @@
         "Type": "Dump"
       },
       {
-        "Bus": "0",
-        "ChipSelect": "$ChipSelect",
-        "Name": "$Name",
-        "StaticEndpointID": "$EID",
-        "Type": "MCTPSPIDevice"
-      },
-      {
-        "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "MCTPTargetName": "$Name",
-        "Manufacturer": "NVIDIA",
-        "Name": "$Name_DevInv",
-        "Type": "PLDMDeviceInventory",
-        "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/bmc/$Platform.BmcName",
-        "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
-      },
-      {
-        "Components": [
-          {
-            "AssociationBackward": [
-              "activation"
-            ],
-            "AssociationEndpoint": [
-              "/xyz/openbmc_project/inventory/system/chassis/$Name"
-            ],
-            "AssociationForward": [
-              "inventory"
-            ],
-            "ComponentIdentifier": 65280,
-            "Name": "FW_$Name"
-          },
-          {
-            "ComponentIdentifier": 16,
-            "Name": "FW_$Platform.BmcName",
-            "UpdateOnly": true
-          }
-        ],
-        "MCTPTargetName": "$Name",
         "Name": "$Name_PLDM",
-        "Type": "PLDMFirmwareDevice"
-      }
-    ]
-  },
-  {
-    "Name": "$Name_Recovery_Devices",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^erot$', 'Generation': 'vera-rubin'})",
-    "Type": "Recovery_Config",
-    "Exposes": [
-      {
-        "APName": "FW_RECOVERY_HGX_FW_$Platform.BmcName",
-        "GPIO": "HMC_EROT_FATAL_ERROR_L-I",
-        "HiddenByFPGA": false,
-        "HideWhenHealthy": true,
-        "I2CAddress": 82,
-        "I2CBus": 6,
-        "MctpEID": 51,
-        "MonitorMode": "Polling",
-        "Name": "FW_RECOVERY_HGX_FW_$Name",
-        "Polarity": "ActiveLow",
-        "PollingIntervalMs": 1000,
-        "Target": "enable-hmc-recovery.service",
-        "Type": "GPIOERoTRecovery",
-        "hasChassisPowerSource": false
+        "Type": "PLDMDevice",
+        "Components": {
+          "65280": "FW_$Name",
+          "16": "FW_$Platform.BmcName"
+        }
       },
       {
-        "APName": "FW_BF4_$Platform.BmcName",
-        "GPIO": "BF4_S_BMC_EROT_FATAL_ERROR_L-I",
-        "HiddenByFPGA": false,
-        "HideWhenHealthy": true,
-        "I2CAddress": 83,
-        "I2CBus": 77,
-        "MctpEID": 59,
-        "MonitorMode": "Polling",
-        "Name": "FW_BF4_$Name",
-        "Polarity": "ActiveLow",
-        "PollingIntervalMs": 1000,
-        "Type": "GPIOERoTRecovery",
-        "hasChassisPowerSource": false
-      },
-      {
-        "APBootStatusType": "QueryBootStatus",
-        "ChassisName": "$Name",
-        "MctpEID": "$EID",
-        "Name": "FW_$Name",
-        "Type": "GlacierCrisisRecovery",
-        "hasChassisPowerSource": false,
-        "isRecoverable": false
+        "Name": "$Name_Recovery",
+        "Type": "Recovery",
+        "Method": "GlacierCrisis"
       }
     ]
   }

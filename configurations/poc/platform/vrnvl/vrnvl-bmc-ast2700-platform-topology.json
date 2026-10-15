@@ -73,6 +73,10 @@
           "PoolStartEID": "61",
           "PoolEndEID": "65",
           "IgnoreEIDs": "62,64"
+        },
+        "Recovery": {
+          "RecoveryGpio": "IOB0_MCU_RECOVERY_L-O",
+          "ResetGpio": "IOB0_MCU_RST_L-O"
         }
       },
       {
@@ -91,6 +95,10 @@
           "PoolStartEID": "71",
           "PoolEndEID": "75",
           "IgnoreEIDs": "72,74"
+        },
+        "Recovery": {
+          "RecoveryGpio": "IOB1_MCU_RECOVERY_L-O",
+          "ResetGpio": "IOB1_MCU_RST_L-O"
         }
       },
       {
@@ -109,6 +117,10 @@
           "PoolStartEID": "81",
           "PoolEndEID": "85",
           "IgnoreEIDs": "82,84"
+        },
+        "Recovery": {
+          "RecoveryGpio": "IOB2_MCU_RECOVERY_L-O",
+          "ResetGpio": "IOB2_MCU_RST_L-O"
         }
       },
       {
@@ -127,6 +139,10 @@
           "PoolStartEID": "91",
           "PoolEndEID": "95",
           "IgnoreEIDs": "92,94"
+        },
+        "Recovery": {
+          "RecoveryGpio": "IOB3_MCU_RECOVERY_L-O",
+          "ResetGpio": "IOB3_MCU_RST_L-O"
         }
       },
       {
@@ -378,6 +394,13 @@
           "Bus": 7,
           "Address": "0x1D"
         }
+      },
+      {
+        "Name": "FW_HMC_0",
+        "RecoveryGpioName": "HMC_RECOVERY_R-O",
+        "ResetGpioName": "HMC_RST_R_L-O",
+        "SpiMuxGpioName": "HMC_SPI_MUX_R_SEL-O",
+        "Type": "USBDFURecovery"
       }
     ]
   }
