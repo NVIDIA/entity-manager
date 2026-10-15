@@ -146,6 +146,7 @@
         "PoweredInStandby": false,
         "PortName0": "C3_1",
         "PortName1": "C4_2",
+        "PortLocationReference": "Left",
         "Transport": {
           "Medium": "bridge",
           "Bridge": "IO_Board_SMA_0",
@@ -170,6 +171,7 @@
         "PoweredInStandby": false,
         "PortName0": "C3_2",
         "PortName1": "C4_1",
+        "PortLocationReference": "Left",
         "Transport": {
           "Medium": "bridge",
           "Bridge": "IO_Board_SMA_0",
@@ -194,6 +196,7 @@
         "PoweredInStandby": false,
         "PortName0": "C1_1",
         "PortName1": "C2_2",
+        "PortLocationReference": "Left",
         "Transport": {
           "Medium": "bridge",
           "Bridge": "IO_Board_SMA_1",
@@ -218,6 +221,7 @@
         "PoweredInStandby": false,
         "PortName0": "C1_2",
         "PortName1": "C2_1",
+        "PortLocationReference": "Left",
         "Transport": {
           "Medium": "bridge",
           "Bridge": "IO_Board_SMA_1",
@@ -242,6 +246,7 @@
         "PoweredInStandby": false,
         "PortName0": "C7_1",
         "PortName1": "C8_2",
+        "PortLocationReference": "Right",
         "Transport": {
           "Medium": "bridge",
           "Bridge": "IO_Board_SMA_2",
@@ -266,6 +271,7 @@
         "PoweredInStandby": false,
         "PortName0": "C7_2",
         "PortName1": "C8_1",
+        "PortLocationReference": "Right",
         "Transport": {
           "Medium": "bridge",
           "Bridge": "IO_Board_SMA_2",
@@ -290,6 +296,7 @@
         "PoweredInStandby": false,
         "PortName0": "C5_1",
         "PortName1": "C6_2",
+        "PortLocationReference": "Right",
         "Transport": {
           "Medium": "bridge",
           "Bridge": "IO_Board_SMA_3",
@@ -314,6 +321,7 @@
         "PoweredInStandby": false,
         "PortName0": "C5_2",
         "PortName1": "C6_1",
+        "PortLocationReference": "Right",
         "Transport": {
           "Medium": "bridge",
           "Bridge": "IO_Board_SMA_3",

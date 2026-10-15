@@ -42,7 +42,7 @@
             "Forward": "fabrics"
           }
         ],
-        "DeviceInstance": "0",
+        "DeviceInstance": 0,
         "InventoryObjPath": "/xyz/openbmc_project/inventory/system/fabrics/PCIeTopology_$Name/Switches/",
         "Name": "Bay_C_CX_Switch_0",
         "Priority": false,
@@ -73,8 +73,8 @@
         "UUID": "STATIC:1026:$IdentityInstance:MCTP_EID:$EID"
       },
       {
-        "Count": "1",
-        "DeviceType": "2",
+        "Count": 1,
+        "DeviceType": 2,
         "Name": "Port",
         "OpticalModuleTelemetrySupported": true,
         "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name/NetworkAdapters/Bay_C_CX_NIC_0",
@@ -107,33 +107,33 @@
           }
         ],
         "DeviceModesSupported": [
-          "-1",
-          "-1",
-          "-1",
-          "-1",
-          "2",
-          "-1",
-          "-1",
-          "-1",
-          "-1",
-          "-1",
-          "-1",
-          "-1",
-          "-1",
-          "-1",
-          "-1",
-          "-1",
-          "-1",
-          "-1",
-          "-1",
-          "-1",
-          "-1",
-          "-1",
-          "-1",
-          "-1",
-          "2",
-          "-1",
-          "1"
+          -1,
+          -1,
+          -1,
+          -1,
+          2,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          2,
+          -1,
+          1
         ],
         "InventoryObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name/NetworkAdapters/",
         "Name": "Bay_C_CX_NIC_0",
@@ -167,9 +167,9 @@
           }
         ],
         "Counts": [
-          "1",
-          "1",
-          "1"
+          1,
+          1,
+          1
         ],
         "InventoryObjPath": "/xyz/openbmc_project/inventory/system/fabrics/PCIeTopology_$Name/Switches/Bay_C_CX_Switch_0/Ports/",
         "Name": "UP",
@@ -178,9 +178,9 @@
         "Type": "NSM_PCIeRetimer_MultiPCIeLink",
         "UUID": "STATIC:1026:$IdentityInstance:MCTP_EID:$EID",
         "UpstreamPortNumbers": [
-          "0",
-          "1",
-          "2"
+          0,
+          1,
+          2
         ]
       },
       {
@@ -188,7 +188,7 @@
           "$Name"
         ],
         "Name": "$Name_AUX",
-        "SensorId": "5",
+        "SensorId": 5,
         "Type": "SensorAuxName"
       },
       {
@@ -196,7 +196,7 @@
           "Bay_C_CX_NIC_0"
         ],
         "Name": "Bay_C_CX_NIC_0_AUX",
-        "SensorId": "60",
+        "SensorId": 60,
         "Type": "SensorAuxName"
       },
       {
@@ -204,7 +204,7 @@
           "Port_0"
         ],
         "Name": "Bay_C_CX_NIC_0_Port_0_AUX",
-        "SensorId": "200",
+        "SensorId": 200,
         "Type": "SensorAuxName"
       },
       {
@@ -213,7 +213,7 @@
         ],
         "Name": "$Name_Temp_0",
         "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": "300",
+        "SensorId": 300,
         "Type": "SensorAuxName"
       },
       {
@@ -222,7 +222,7 @@
         ],
         "Name": "Bay_C_CX_NIC_0_Port_0_Voltage_0",
         "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": "400",
+        "SensorId": 400,
         "Type": "SensorAuxName"
       },
       {
@@ -231,7 +231,7 @@
         ],
         "Name": "Bay_C_CX_NIC_0_Port_1_Voltage_0",
         "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": "401",
+        "SensorId": 401,
         "Type": "SensorAuxName"
       },
       {
@@ -240,7 +240,7 @@
         ],
         "Name": "$Name_Power_0",
         "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": "50",
+        "SensorId": 50,
         "Type": "SensorAuxName"
       },
       {
@@ -249,14 +249,19 @@
         ],
         "Name": "Bay_C_CX_NIC_0_Port_0_Temp_0",
         "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": "500",
+        "SensorId": 500,
         "Type": "SensorAuxName"
       },
       {
-        "MaxSpeedMBps": "50000",
+        "Association": [
+          "associated_port",
+          "associated_port",
+          "/xyz/openbmc_project/inventory/system/chassis/$Name/NetworkAdapters/Bay_C_CX_NIC_0/Ports/Port_0"
+        ],
+        "MaxSpeedMBps": 50000,
         "Name": "Bay_C_CX_NIC_0_Port_0_INFO",
         "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
-        "SensorId": "200",
+        "SensorId": 200,
         "Type": "SensorPortInfo"
       },
       {
@@ -269,7 +274,7 @@
     "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/$Platform.TopChassis",
     "Type": "chassis",
     "xyz.openbmc_project.Inventory.Decorator.Instance": {
-      "InstanceNumber": "0"
+      "InstanceNumber": 0
     },
     "xyz.openbmc_project.Inventory.Decorator.Location": {
       "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Bay"
@@ -281,7 +286,7 @@
       "LocationContext": "$Platform.TopChassis"
     },
     "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal": {
-      "LocationOrdinalValue": "0",
+      "LocationOrdinalValue": 0,
       "Orientation": "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal.Orientations.BottomToTop"
     },
     "xyz.openbmc_project.Inventory.Decorator.LocationReference": {
@@ -325,7 +330,7 @@
           "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
           "Name": "$Name IRoT",
           "Type": "NSM_Chassis_Attributes",
-          "InstanceNumber": "0",
+          "InstanceNumber": 0,
           "LocationCode": "IRoT_0",
           "LocationContext": "$Platform.TopChassis/$Name"
         },
@@ -338,9 +343,9 @@
           "DEVICE_UUID": "",
           "Type": "NSM_Chassis"
         },
-        "DeviceType": "2",
+        "DeviceType": 2,
         "Name": "IRoT_$Name",
-        "SlotCount": "2",
+        "SlotCount": 2,
         "Type": "NSM_ChassisRoT",
         "UUID": "STATIC:1026:$IdentityInstance:MCTP_EID:$EID"
       },
@@ -363,9 +368,9 @@
           }
         ],
         "ChassisName": "$Name",
-        "ComponentClassification": "10",
-        "ComponentIdentifier": "1",
-        "ComponentIndex": "0",
+        "ComponentClassification": 10,
+        "ComponentIdentifier": 1,
+        "ComponentIndex": 0,
         "FirmwareType": "AP",
         "Name": "Slot1",
         "SlotType": "Active",
@@ -380,9 +385,9 @@
           }
         ],
         "ChassisName": "$Name",
-        "ComponentClassification": "10",
-        "ComponentIdentifier": "1",
-        "ComponentIndex": "0",
+        "ComponentClassification": 10,
+        "ComponentIdentifier": 1,
+        "ComponentIndex": 0,
         "FirmwareType": "AP",
         "Name": "Slot2",
         "SlotType": "InActive",
@@ -402,7 +407,7 @@
       {
         "BridgeName": "$Bridge",
         "Name": "BF4_1",
-        "PoolIndex": "1",
+        "PoolIndex": 1,
         "Type": "MCTPBridgePoolDevice"
       }
     ]

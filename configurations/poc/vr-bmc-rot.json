@@ -26,7 +26,7 @@
           "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
           "Name": "$Platform.BmcName IRoT",
           "Type": "NSM_Chassis_Attributes",
-          "InstanceNumber": "0"
+          "InstanceNumber": 0
         },
         "Name": "$Name",
         "Type": "NSM_ChassisIRoTResponder",
@@ -37,13 +37,13 @@
           "DEVICE_UUID": "",
           "Type": "NSM_Chassis"
         },
-        "DeviceType": "4",
+        "DeviceType": 4,
         "ImageCopyEnabled": true,
         "Name": "$Name",
         "SetRotPropertyList": [
           "FAILOVER_POLICY"
         ],
-        "SlotCount": "4",
+        "SlotCount": 4,
         "Type": "NSM_ChassisRoT",
         "UUID": "STATIC:4:$Instance:MCTP_EID:$EID"
       },
@@ -71,9 +71,9 @@
           }
         ],
         "ChassisName": "$Platform.BmcName",
-        "ComponentClassification": "13",
-        "ComponentIdentifier": "10",
-        "ComponentIndex": "0",
+        "ComponentClassification": 13,
+        "ComponentIdentifier": 10,
+        "ComponentIndex": 0,
         "FirmwareType": "AP",
         "IsRoT": true,
         "Name": "Slot1",
@@ -93,9 +93,9 @@
           }
         ],
         "ChassisName": "$Platform.BmcName",
-        "ComponentClassification": "13",
-        "ComponentIdentifier": "10",
-        "ComponentIndex": "0",
+        "ComponentClassification": 13,
+        "ComponentIdentifier": 10,
+        "ComponentIndex": 0,
         "FirmwareType": "AP",
         "IsRoT": true,
         "Name": "Slot2",
@@ -111,9 +111,9 @@
           }
         ],
         "ChassisName": "BMC_Caliptra_0",
-        "ComponentClassification": "10",
-        "ComponentIdentifier": "11",
-        "ComponentIndex": "0",
+        "ComponentClassification": 10,
+        "ComponentIdentifier": 11,
+        "ComponentIndex": 0,
         "FirmwareType": "AP",
         "Name": "Slot3",
         "SlotType": "Active",
@@ -128,9 +128,9 @@
           }
         ],
         "ChassisName": "BMC_Caliptra_0",
-        "ComponentClassification": "10",
-        "ComponentIdentifier": "11",
-        "ComponentIndex": "0",
+        "ComponentClassification": 10,
+        "ComponentIdentifier": 11,
+        "ComponentIndex": 0,
         "FirmwareType": "AP",
         "Name": "Slot4",
         "SlotType": "InActive",
@@ -193,11 +193,11 @@
             "AssociationForward": [
               "inventory"
             ],
-            "ComponentIdentifier": "11",
+            "ComponentIdentifier": 11,
             "Name": "FW_BMC_Caliptra_0"
           },
           {
-            "ComponentIdentifier": "10",
+            "ComponentIdentifier": 10,
             "Name": "FW_$Platform.BmcName",
             "UpdateOnly": true
           }

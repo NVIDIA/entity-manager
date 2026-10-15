@@ -1,7 +1,11 @@
 [
   {
     "Name": "HGX_Chassis_0",
-    "Probe": "xyz.openbmc_project.FruDevice({'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
+    "Probe": [
+      "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
+      "OR",
+      "xyz.openbmc_project.FruDevice({'BUS': 4, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})"
+    ],
     "Type": "Chassis",
     "xyz.openbmc_project.Association.Definitions": {
       "Associations": [
@@ -45,7 +49,11 @@
   {
     "Name": "HGX_SMM_0",
     "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
-    "Probe": "xyz.openbmc_project.FruDevice({'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
+    "Probe": [
+      "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
+      "OR",
+      "xyz.openbmc_project.FruDevice({'BUS': 4, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})"
+    ],
     "Type": "Module",
     "xyz.openbmc_project.Association.Definitions": {
       "Associations": [
@@ -142,7 +150,11 @@
     ],
     "Name": "HGX_BMC_0",
     "Parent_Chassis": "/xyz/openbmc_project/inventory/system/module/HGX_SMM_0",
-    "Probe": "xyz.openbmc_project.FruDevice({'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
+    "Probe": [
+      "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
+      "OR",
+      "xyz.openbmc_project.FruDevice({'BUS': 4, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})"
+    ],
     "Type": "BMC",
     "xyz.openbmc_project.Control.Power.Mode": {
       "AllowedPowerModes": [
@@ -188,7 +200,11 @@
   },
   {
     "Name": "HMC",
-    "Probe": "xyz.openbmc_project.FruDevice({'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
+    "Probe": [
+      "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
+      "OR",
+      "xyz.openbmc_project.FruDevice({'BUS': 4, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})"
+    ],
     "Type": "Assembly",
     "Board": "BMC/HGX_BMC_0",
     "LocationType": "Slot",

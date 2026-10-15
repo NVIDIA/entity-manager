@@ -8,11 +8,11 @@
           "DEVICE_UUID": "",
           "Type": "NSM_Chassis"
         },
-        "DeviceType": "4",
+        "DeviceType": 4,
         "ImageCopyEnabled": true,
         "ImageCopyPolicyEnabled": true,
         "Name": "$Name",
-        "SlotCount": "4",
+        "SlotCount": 4,
         "Type": "NSM_Chassis",
         "UUID": "STATIC:4:$Instance:MCTP_EID:$EID",
         "Associations": [
@@ -35,7 +35,7 @@
         "ChassisAttributes": {
           "Type": "NSM_Chassis_Attributes",
           "AssetInformationAvailable": true,
-          "InstanceNumber": "0",
+          "InstanceNumber": 0,
           "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
           "LocationCode": "$Name",
           "LocationContext": "$Platform.TopChassis/SMM_Interposer_0/SMM_0/$Platform.BmcName",
@@ -64,9 +64,9 @@
           }
         ],
         "ChassisName": "$Name",
-        "ComponentClassification": "10",
-        "ComponentIdentifier": "65280",
-        "ComponentIndex": "0",
+        "ComponentClassification": 10,
+        "ComponentIdentifier": 65280,
+        "ComponentIndex": 0,
         "FirmwareType": "EC",
         "Name": "Slot1",
         "SlotType": "Active",
@@ -81,9 +81,9 @@
           }
         ],
         "ChassisName": "$Name",
-        "ComponentClassification": "10",
-        "ComponentIdentifier": "65280",
-        "ComponentIndex": "0",
+        "ComponentClassification": 10,
+        "ComponentIdentifier": 65280,
+        "ComponentIndex": 0,
         "FirmwareType": "EC",
         "Name": "Slot2",
         "SlotType": "InActive",
@@ -98,9 +98,9 @@
           }
         ],
         "ChassisName": "$Platform.BmcName",
-        "ComponentClassification": "10",
-        "ComponentIdentifier": "16",
-        "ComponentIndex": "0",
+        "ComponentClassification": 10,
+        "ComponentIdentifier": 16,
+        "ComponentIndex": 0,
         "FirmwareType": "AP",
         "Name": "Slot3",
         "SlotType": "Active",
@@ -115,9 +115,9 @@
           }
         ],
         "ChassisName": "$Platform.BmcName",
-        "ComponentClassification": "10",
-        "ComponentIdentifier": "16",
-        "ComponentIndex": "0",
+        "ComponentClassification": 10,
+        "ComponentIdentifier": 16,
+        "ComponentIndex": 0,
         "FirmwareType": "AP",
         "Name": "Slot4",
         "SlotType": "InActive",
@@ -139,13 +139,13 @@
         "GPIO": "HMC_EROT_FATAL_ERROR_L-I",
         "HiddenByFPGA": false,
         "HideWhenHealthy": true,
-        "I2CAddress": "82",
-        "I2CBus": "6",
-        "MctpEID": "51",
+        "I2CAddress": 82,
+        "I2CBus": 6,
+        "MctpEID": 51,
         "MonitorMode": "Polling",
         "Name": "FW_RECOVERY_HGX_FW_$Name",
         "Polarity": "ActiveLow",
-        "PollingIntervalMs": "1000",
+        "PollingIntervalMs": 1000,
         "Target": "enable-hmc-recovery.service",
         "Type": "GPIOERoTRecovery",
         "hasChassisPowerSource": false
@@ -155,13 +155,13 @@
         "GPIO": "BF4_S_BMC_EROT_FATAL_ERROR_L-I",
         "HiddenByFPGA": false,
         "HideWhenHealthy": true,
-        "I2CAddress": "83",
-        "I2CBus": "77",
-        "MctpEID": "59",
+        "I2CAddress": 83,
+        "I2CBus": 77,
+        "MctpEID": 59,
         "MonitorMode": "Polling",
         "Name": "FW_BF4_$Name",
         "Polarity": "ActiveLow",
-        "PollingIntervalMs": "1000",
+        "PollingIntervalMs": 1000,
         "Type": "GPIOERoTRecovery",
         "hasChassisPowerSource": false
       }
@@ -227,11 +227,11 @@
             "AssociationForward": [
               "inventory"
             ],
-            "ComponentIdentifier": "65280",
+            "ComponentIdentifier": 65280,
             "Name": "FW_$Name"
           },
           {
-            "ComponentIdentifier": "16",
+            "ComponentIdentifier": 16,
             "Name": "FW_$Platform.BmcName",
             "UpdateOnly": true
           }

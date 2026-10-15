@@ -84,6 +84,7 @@
           "$PortName1"
         ],
         "PortLocationContext": "$LocationContext",
+        "PortLocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.$PortLocationReference",
         "PortNameMap": [
           "$PortName0",
           "$PortName1"
@@ -340,6 +341,11 @@
         "Type": "SensorAuxName"
       },
       {
+        "Association": [
+          "associated_port",
+          "associated_port",
+          "/xyz/openbmc_project/inventory/system/chassis/$Name/NetworkAdapters/NIC_0/Ports/$PortName0"
+        ],
         "MaxSpeedMBps": 100000,
         "Name": "CX_NIC_$Instance_Port_0_INFO",
         "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
@@ -347,6 +353,11 @@
         "Type": "SensorPortInfo"
       },
       {
+        "Association": [
+          "associated_port",
+          "associated_port",
+          "/xyz/openbmc_project/inventory/system/chassis/$Name/NetworkAdapters/NIC_0/Ports/$PortName1"
+        ],
         "MaxSpeedMBps": 100000,
         "Name": "CX_NIC_$Instance_Port_1_INFO",
         "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
