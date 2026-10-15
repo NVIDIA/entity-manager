@@ -177,7 +177,8 @@
           "4296": "Port_0",
           "4297": "Port_1"
         },
-        "PortMaxSpeedMBps": 50000
+        "PortMaxSpeedMBps": 50000,
+        "FirmwareName": "BF4_0"
       }
     ]
   }

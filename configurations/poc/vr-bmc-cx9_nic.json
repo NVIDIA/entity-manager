@@ -62,7 +62,8 @@
         "Ports": {
           "200": "Port_0"
         },
-        "PortMaxSpeedMBps": 50000
+        "PortMaxSpeedMBps": 50000,
+        "FirmwareName": "BF4_1"
       }
     ]
   }
