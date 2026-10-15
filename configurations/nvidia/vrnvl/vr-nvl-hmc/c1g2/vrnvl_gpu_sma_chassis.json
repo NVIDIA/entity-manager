@@ -35,7 +35,7 @@
                     "ErrorInjectionSupported": true,
                     "FieldReplaceable": false,
                     "LocationCode": "GPU_SMA_0",
-                    "LocationContext": "HGX_Chassis_0/ProcessorModule_$INSTANCE_NUMBER",
+                    "LocationContext": "HGX_Chassis_0/ProcessorModule_$INSTANCE_NUMBER$LOCATION_SIDE",
                     "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
                     "ResetMetricsSupported": true,
                     "SoCPowerSmoothingSupported": true,

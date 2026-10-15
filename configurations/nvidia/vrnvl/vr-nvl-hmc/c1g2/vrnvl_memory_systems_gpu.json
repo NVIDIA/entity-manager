@@ -4,7 +4,9 @@
         "Probe": [
             "FOUND('NSM_DEV_NVL72_GPU_0')",
             "OR",
-            "FOUND('NSM_DEV_NVL4_GPU_0')"
+            "FOUND('NSM_DEV_NVL4_GPU_0')",
+            "OR",
+            "FOUND('NSM_DEV_GPU_0')"
         ],
         "Type": "Dimm",
         "xyz.openbmc_project.Inventory.Decorator.Location": {
@@ -22,7 +24,9 @@
         "Probe": [
             "FOUND('NSM_DEV_NVL72_GPU_1')",
             "OR",
-            "FOUND('NSM_DEV_NVL4_GPU_1')"
+            "FOUND('NSM_DEV_NVL4_GPU_1')",
+            "OR",
+            "FOUND('NSM_DEV_GPU_1')"
         ],
         "Type": "Dimm",
         "xyz.openbmc_project.Inventory.Decorator.Location": {
@@ -40,7 +44,9 @@
         "Probe": [
             "FOUND('NSM_DEV_NVL72_GPU_2')",
             "OR",
-            "FOUND('NSM_DEV_NVL4_GPU_2')"
+            "FOUND('NSM_DEV_NVL4_GPU_2')",
+            "OR",
+            "FOUND('NSM_DEV_GPU_2')"
         ],
         "Type": "Dimm",
         "xyz.openbmc_project.Inventory.Decorator.Location": {
@@ -58,7 +64,9 @@
         "Probe": [
             "FOUND('NSM_DEV_NVL72_GPU_3')",
             "OR",
-            "FOUND('NSM_DEV_NVL4_GPU_3')"
+            "FOUND('NSM_DEV_NVL4_GPU_3')",
+            "OR",
+            "FOUND('NSM_DEV_GPU_3')"
         ],
         "Type": "Dimm",
         "xyz.openbmc_project.Inventory.Decorator.Location": {

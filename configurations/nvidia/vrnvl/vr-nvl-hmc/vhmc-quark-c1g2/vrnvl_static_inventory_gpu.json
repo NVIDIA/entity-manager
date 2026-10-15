@@ -80,6 +80,7 @@
             "DEVICE_ROLE": "HPMSMA",
             "DEVICE_TYPE": 5,
             "INSTANCE_NUMBER": 0,
+            "LOCATION_SIDE": "",
             "UUID": "STATIC:773:0:MCTP_EID:13"
         }
     },
@@ -92,6 +93,7 @@
             "DEVICE_ROLE": "GPUSMA",
             "DEVICE_TYPE": 5,
             "INSTANCE_NUMBER": 0,
+            "LOCATION_SIDE": "",
             "UUID": "STATIC:261:0:MCTP_EID:10"
         }
     }
