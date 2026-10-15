@@ -167,11 +167,6 @@
                         "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_0",
                         "Backward": "all_memory",
                         "Forward": "parent_chassis"
-                    },
-                    {
-                        "AbsolutePath": "/xyz/openbmc_project/sensors/temperature/GPU_0_DRAM_0_Temp_0",
-                        "Backward": "memory",
-                        "Forward": "all_sensors"
                     }
                 ],
                 "DeviceType": "xyz.openbmc_project.Inventory.Item.Dimm.DeviceType.HBM",
@@ -317,40 +312,6 @@
                         "Dynamic": false,
                         "Name": "LowerCaution",
                         "Value": -2.0
-                    }
-                ],
-                "Type": "NSM_Temp",
-                "UUID": "$UUID"
-            },
-            {
-                "Aggregated": true,
-                "Associations": [
-                    {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_0",
-                        "Backward": "all_sensors",
-                        "Forward": "chassis"
-                    },
-                    {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0",
-                        "Backward": "all_sensors",
-                        "Forward": "processor"
-                    },
-                    {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/dimm/GPU_0_DRAM_0",
-                        "Backward": "all_sensors",
-                        "Forward": "memory"
-                    }
-                ],
-                "IpmiName": "GPU0_DRAM_Temp",
-                "Name": "GPU_0 DRAM_0_Temp_0",
-                "PhysicalContext": "GPU",
-                "Priority": true,
-                "SensorId": 1,
-                "ThermalParameters": [
-                    {
-                        "Dynamic": false,
-                        "Name": "UpperCaution",
-                        "Value": 105.0
                     }
                 ],
                 "Type": "NSM_Temp",
@@ -568,11 +529,6 @@
                         "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_1",
                         "Backward": "all_memory",
                         "Forward": "parent_chassis"
-                    },
-                    {
-                        "AbsolutePath": "/xyz/openbmc_project/sensors/temperature/GPU_1_DRAM_0_Temp_0",
-                        "Backward": "memory",
-                        "Forward": "all_sensors"
                     }
                 ],
                 "DeviceType": "xyz.openbmc_project.Inventory.Item.Dimm.DeviceType.HBM",
@@ -718,40 +674,6 @@
                         "Dynamic": false,
                         "Name": "LowerCaution",
                         "Value": -2.0
-                    }
-                ],
-                "Type": "NSM_Temp",
-                "UUID": "$UUID"
-            },
-            {
-                "Aggregated": true,
-                "Associations": [
-                    {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/GPU_1",
-                        "Backward": "all_sensors",
-                        "Forward": "chassis"
-                    },
-                    {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1",
-                        "Backward": "all_sensors",
-                        "Forward": "processor"
-                    },
-                    {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/dimm/GPU_1_DRAM_0",
-                        "Backward": "all_sensors",
-                        "Forward": "memory"
-                    }
-                ],
-                "IpmiName": "GPU1_DRAM_Temp",
-                "Name": "GPU_1 DRAM_0_Temp_0",
-                "PhysicalContext": "GPU",
-                "Priority": true,
-                "SensorId": 1,
-                "ThermalParameters": [
-                    {
-                        "Dynamic": false,
-                        "Name": "UpperCaution",
-                        "Value": 105.0
                     }
                 ],
                 "Type": "NSM_Temp",
