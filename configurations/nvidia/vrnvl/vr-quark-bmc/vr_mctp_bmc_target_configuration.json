@@ -6,7 +6,7 @@
                 "Interface": "$Interface",
                 "Name": "MCTPUSB_x1",
                 "StaticEndpointID": "90",
-                "Type": "MCTPUSBTarget",
+                "Type": "MCTPUSBDevice",
                 "USBPath": "1-1-2-1-1"
             }
         ],
