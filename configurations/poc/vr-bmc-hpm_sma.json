@@ -2,23 +2,17 @@
   {
     "Name": "$Name",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^hpm_sma$', 'Generation': 'vr-bmc'})",
+    "Type": "Device_Configs",
+    "InstanceNumber": "$Instance",
+    "EID": "$EID",
     "Exposes": [
       {
-        "ChassisPath": "/xyz/openbmc_project/inventory/system/chassis/$Platform.TopChassis",
-        "MaxValue": 3.3,
-        "MinValue": 0.0,
-        "Name": "$Platform.TopChassis_LeakDetector_$Instance",
-        "SensorIdMap": [
-          0
-        ],
-        "SensorNameMap": [
-          "$Platform.TopChassis_LeakDetector_$Instance"
-        ],
-        "Type": "NSM_LeakDetection",
-        "UUID": "STATIC:773:$Instance:MCTP_EID:$EID"
+        "Name": "NSM_Telemetry",
+        "Type": "NSM_Telemetry",
+        "Disable": [],
+        "ParameterOverrides": {}
       }
-    ],
-    "Type": "Device_Configs"
+    ]
   },
   {
     "Name": "$Name_Platform_Recovery",

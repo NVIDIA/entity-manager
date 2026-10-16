@@ -1,146 +1,24 @@
 [
   {
     "Name": "$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^rot$', 'Generation': 'vr-bmc'})",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^rot$', 'Generation': 'AST2700'})",
+    "Type": "Device_Configs",
+    "InstanceNumber": "$Instance",
+    "EID": "$EID",
     "Exposes": [
       {
-        "Associations": [
-          {
-            "AbsolutePath": "/xyz/openbmc_project/inventory/system/bmc/$Platform.BmcName",
-            "Backward": "associated_ROT",
-            "Forward": "inventory"
-          },
-          {
-            "AbsolutePath": "/xyz/openbmc_project/inventory/system/bmc/$Platform.BmcName",
-            "Backward": "associated_chassis",
-            "Forward": "inventory_chassis"
-          },
-          {
-            "AbsolutePath": "/xyz/openbmc_project/inventory/system/bmc/$Platform.BmcName",
-            "Backward": "all_chassis",
-            "Forward": "parent_chassis"
-          }
+        "Name": "NSM_Telemetry",
+        "Type": "NSM_Telemetry",
+        "Disable": [
+          "Device.ChassisIRoTResponder"
         ],
-        "ChassisAttributes": {
-          "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
-          "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
-          "Name": "$Platform.BmcName IRoT",
-          "Type": "NSM_Chassis_Attributes",
-          "InstanceNumber": 0
-        },
-        "Name": "$Name",
-        "Type": "NSM_ChassisIRoTResponder",
-        "UUID": "STATIC:4:$Instance:MCTP_EID:$EID"
-      },
-      {
-        "Chassis": {
-          "DEVICE_UUID": "",
-          "Type": "NSM_Chassis"
-        },
-        "DeviceType": 4,
-        "ImageCopyEnabled": true,
-        "Name": "$Name",
-        "SetRotPropertyList": [
-          "FAILOVER_POLICY"
-        ],
-        "SlotCount": 4,
-        "Type": "NSM_ChassisRoT",
-        "UUID": "STATIC:4:$Instance:MCTP_EID:$EID"
-      },
-      {
-        "ChassisName": "$Name",
-        "DebugTokenDeviceType": "BMCIRoT",
-        "DebugTokenType": [
-          "Unified"
-        ],
-        "Name": "DebugToken",
-        "Type": "NSM_DebugToken",
-        "UUID": "STATIC:4:$Instance:MCTP_EID:$EID"
-      },
-      {
-        "Associations": [
-          {
-            "AbsolutePath": "/xyz/openbmc_project/software/FW_$Platform.BmcName",
-            "Backward": "ActiveSlot",
-            "Forward": "software"
-          },
-          {
-            "AbsolutePath": "/xyz/openbmc_project/inventory/system/bmc/$Platform.BmcName",
-            "Backward": "associated_SKU",
-            "Forward": "inventory_SKU"
-          }
-        ],
-        "ChassisName": "$Platform.BmcName",
-        "ComponentClassification": 13,
-        "ComponentIdentifier": 10,
-        "ComponentIndex": 0,
-        "FirmwareType": "AP",
-        "IsRoT": true,
-        "Name": "Slot1",
-        "ReportSkuWithNsm": true,
-        "SetRotPropertyList": [
-          "AP_SKU_ID"
-        ],
-        "SlotType": "Active",
-        "Type": "NSM_RoT_Slot"
-      },
-      {
-        "Associations": [
-          {
-            "AbsolutePath": "/xyz/openbmc_project/software/FW_$Platform.BmcName",
-            "Backward": "InactiveSlot",
-            "Forward": "software"
-          }
-        ],
-        "ChassisName": "$Platform.BmcName",
-        "ComponentClassification": 13,
-        "ComponentIdentifier": 10,
-        "ComponentIndex": 0,
-        "FirmwareType": "AP",
-        "IsRoT": true,
-        "Name": "Slot2",
-        "SlotType": "InActive",
-        "Type": "NSM_RoT_Slot"
-      },
-      {
-        "Associations": [
-          {
-            "AbsolutePath": "/xyz/openbmc_project/software/FW_BMC_Caliptra_0",
-            "Backward": "ActiveSlot",
-            "Forward": "software"
-          }
-        ],
-        "ChassisName": "BMC_Caliptra_0",
-        "ComponentClassification": 10,
-        "ComponentIdentifier": 11,
-        "ComponentIndex": 0,
-        "FirmwareType": "AP",
-        "Name": "Slot3",
-        "SlotType": "Active",
-        "Type": "NSM_RoT_Slot"
-      },
-      {
-        "Associations": [
-          {
-            "AbsolutePath": "/xyz/openbmc_project/software/FW_BMC_Caliptra_0",
-            "Backward": "InactiveSlot",
-            "Forward": "software"
-          }
-        ],
-        "ChassisName": "BMC_Caliptra_0",
-        "ComponentClassification": 10,
-        "ComponentIdentifier": 11,
-        "ComponentIndex": 0,
-        "FirmwareType": "AP",
-        "Name": "Slot4",
-        "SlotType": "InActive",
-        "Type": "NSM_RoT_Slot"
+        "ParameterOverrides": {
+          "LocationContext": "$LOCATION_CONTEXT",
+          "LocationCode": "$LOCATION_CODE",
+          "IRoT": "TRUE"
+        }
       }
-    ],
-    "Type": "Chassis",
-    "xyz.openbmc_project.Inventory.Item.Chassis": {
-      "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
-    }
+    ]
   },
   {
     "Name": "$Name_Platform_Recovery",

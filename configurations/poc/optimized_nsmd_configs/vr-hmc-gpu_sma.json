@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "$Name",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^gpu_sma$', 'Generation': 'vr-hmc'})",
+    "InstanceNumber": "$INSTANCE",
+    "EID": "$EID",
+    "Features": [
+      {
+        "Type": "Telemetry",
+        "Disable": [],
+        "PlatformLiterals": {}
+      }
+    ]
+  }
+]

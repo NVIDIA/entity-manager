@@ -1,0 +1,31 @@
+[
+  {
+    "Name": "$Name",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vr-bmc'})",
+    "InstanceNumber": "$INSTANCE",
+    "EID": "$EID",
+    "Features": [
+      {
+        "Type": "Telemetry",
+        "Disable": [
+          "Device.FabricsEndpoint",
+          "Device.FabricsZone",
+          "Device.DebugToken",
+          "IRoT.FW_ComponentType"
+        ],
+        "PlatformLiterals": {
+            "NVLinkWithNetworkPortAddresses": {
+              "Count": "$PORT_COUNT",
+              "PortLocationCodeMap": "$PORT_LOCATION_CODE_MAP",
+              "PortLocationContext": "$LOCATION_CONTEXT",
+              "PortLocationReference": "$PORT_LOCATION_REFERENCE",
+              "PortNameMap": "$PORT_NAME_MAP"
+            },
+            "NetworkAdapter": {
+              "Name": "$NETWORK_ADAPTER_NAME"
+            }
+          }
+        }
+      ]
+  }
+]
