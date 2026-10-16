@@ -40,7 +40,7 @@
       {
         "Name": "$Name_PLDM",
         "Type": "PLDMDevice",
-        "Components": {
+        "UpdateableComponents": {
           "65280": "FW_$Name",
           "16": "FW_$Platform.BmcName"
         }

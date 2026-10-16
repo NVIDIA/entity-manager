@@ -32,7 +32,7 @@
       {
         "Name": "$Name_PLDM",
         "Type": "PLDMDevice",
-        "Components": {
+        "UpdateableComponents": {
           "2": "$Platform.NamePrefixSBIOS_FMC_$Instance",
           "513": "$Platform.NamePrefixSBIOS_FW_$Instance"
         }

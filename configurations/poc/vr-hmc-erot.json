@@ -36,7 +36,7 @@
       {
         "Name": "$Name_PLDM",
         "Type": "PLDMDevice",
-        "Components": {
+        "UpdateableComponents": {
           "65280": "$Platform.NamePrefixFW_ERoT_BMC_$Instance",
           "16": "$Platform.NamePrefixFW_BMC_$Instance"
         }

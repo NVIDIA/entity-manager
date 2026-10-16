@@ -45,7 +45,7 @@
       {
         "Name": "$Name_PLDM",
         "Type": "PLDMDevice",
-        "Components": {
+        "UpdateableComponents": {
           "65282": "FW_$Name"
         }
       },

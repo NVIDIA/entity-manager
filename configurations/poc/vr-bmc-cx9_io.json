@@ -157,8 +157,10 @@
       {
         "Name": "$Name_PLDM",
         "Type": "PLDMDevice",
-        "Components": {
-          "1": "FW_$Name",
+        "UpdateableComponents": {
+          "1": "FW_$Name"
+        },
+        "FWInventoryOnlyComponent": {
           "4": "CX_NVConfig_MLNX_$Instance",
           "3": "CX_NVConfig_OEM_$Instance"
         },
