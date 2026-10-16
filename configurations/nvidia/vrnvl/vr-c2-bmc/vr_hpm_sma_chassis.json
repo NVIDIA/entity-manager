@@ -214,7 +214,18 @@
                 ],
                 "Type": "NSM_Temp",
                 "UUID": "$UUID"
-            },
+            }
+        ],
+        "Name": "ProcessorModule_SMA_0",
+        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/board/ProcessorModule_0",
+        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'HPMSMA', 'INSTANCE_NUMBER': 0})",
+        "Type": "chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "NVIDIA"
+        }
+    },
+    {
+        "Exposes": [
             {
                 "Aggregated": true,
                 "Associations": [
@@ -268,12 +279,12 @@
                 "UUID": "$UUID"
             }
         ],
-        "Name": "ProcessorModule_SMA_0",
-        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/board/ProcessorModule_0",
-        "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'HPMSMA', 'INSTANCE_NUMBER': 0})",
-        "Type": "chassis",
-        "xyz.openbmc_project.Inventory.Decorator.Asset": {
-            "Manufacturer": "NVIDIA"
-        }
+        "Name": "CPU_1_Temperature_Config",
+        "Probe": [
+            "FOUND('CPU_1')",
+            "AND",
+            "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'HPMSMA', 'INSTANCE_NUMBER': 0})"
+        ],
+        "Type": "NSM_Configs"
     }
 ]
