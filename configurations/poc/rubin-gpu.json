@@ -61,10 +61,10 @@
         "Name": "$Name_PLDM",
         "Type": "PLDMDevice",
         "UpdateableComponents": {
-          "49152": "$Platform.NamePrefixFW_GPU_$Instance"
+          "$Platform.NamePrefixFW_GPU_$Instance": 49152
         },
         "FWInventoryOnlyComponent": {
-          "49168": "$Platform.NamePrefixInfoROM_GPU_$Instance"
+          "$Platform.NamePrefixInfoROM_GPU_$Instance": 49168
         }
       },
       {

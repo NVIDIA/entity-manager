@@ -54,8 +54,8 @@
         "Name": "$Name_PLDM",
         "Type": "PLDMDevice",
         "UpdateableComponents": {
-          "65282": "$Platform.NamePrefixFW_ProcessorModule_SMA_$Instance",
-          "65283": "$Platform.NamePrefixFW_CPLD_$Instance"
+          "$Platform.NamePrefixFW_ProcessorModule_SMA_$Instance": 65282,
+          "$Platform.NamePrefixFW_CPLD_$Instance": 65283
         }
       },
       {

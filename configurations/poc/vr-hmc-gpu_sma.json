@@ -33,7 +33,7 @@
         "Name": "$Name_PLDM",
         "Type": "PLDMDevice",
         "UpdateableComponents": {
-          "65282": "$Platform.NamePrefixFW_GPU_SMA_$Instance"
+          "$Platform.NamePrefixFW_GPU_SMA_$Instance": 65282
         }
       },
       {

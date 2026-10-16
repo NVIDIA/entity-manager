@@ -158,21 +158,21 @@
         "Name": "$Name_PLDM",
         "Type": "PLDMDevice",
         "UpdateableComponents": {
-          "1": "FW_$Name"
+          "FW_$Name": 1
         },
         "FWInventoryOnlyComponent": {
-          "4": "CX_NVConfig_MLNX_$Instance",
-          "3": "CX_NVConfig_OEM_$Instance"
+          "CX_NVConfig_MLNX_$Instance": 4,
+          "CX_NVConfig_OEM_$Instance": 3
         },
         "NetworkAdapter": "NIC_0",
         "SensorAuxNames": {
-          "5": "$Name",
-          "60": "NIC_0",
-          "200": "Port_0",
-          "201": "Port_1",
-          "50": "$Name_Power_0",
-          "400": "CX_NIC_$Instance_Port_0_Voltage_0",
-          "401": "CX_NIC_$Instance_Port_1_Voltage_0"
+          "$Name": 5,
+          "NIC_0": 60,
+          "Port_0": 200,
+          "Port_1": 201,
+          "$Name_Power_0": 50,
+          "CX_NIC_$Instance_Port_0_Voltage_0": 400,
+          "CX_NIC_$Instance_Port_1_Voltage_0": 401
         },
         "Ports": {
           "200": "$PortName0",

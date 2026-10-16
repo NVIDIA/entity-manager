@@ -27,8 +27,8 @@
         "Name": "$Name_PLDM",
         "Type": "PLDMDevice",
         "UpdateableComponents": {
-          "11": "$Platform.NamePrefixFW_BMC_Caliptra_$Instance",
-          "10": "$Platform.NamePrefixFW_BMC_$Instance"
+          "$Platform.NamePrefixFW_BMC_Caliptra_$Instance": 11,
+          "$Platform.NamePrefixFW_BMC_$Instance": 10
         }
       },
       {
