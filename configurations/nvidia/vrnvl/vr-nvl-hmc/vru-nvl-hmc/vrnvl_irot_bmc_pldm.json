@@ -1,0 +1,40 @@
+{
+    "Name": "Nvidia VRU HMC IRoT",
+    "PlatformExposes": [
+        {
+            "MCTPTargetName": "MCTPIROT_0",
+            "Manufacturer": "NVIDIA",
+            "Name": "HGX_IRoT_BMC_0_DevInv",
+            "Type": "PLDMDeviceInventory",
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/bmc/HGX_BMC_0",
+            "xyz.openbmc_project.Inventory.Item.SPDMResponder": null
+        },
+        {
+            "Components": [
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/bmc/HGX_BMC_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 11,
+                    "Name": "HGX_FW_BMC_Caliptra_0"
+                },
+                {
+                    "ComponentIdentifier": 10,
+                    "Name": "HGX_FW_BMC_0",
+                    "UpdateOnly": true
+                }
+            ],
+            "MCTPTargetName": "MCTPIROT_0",
+            "Name": "HGX_IRoT_BMC_0_PLDM",
+            "Type": "PLDMFirmwareDevice"
+        }
+    ],
+    "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpirot0'})",
+    "Type": "Platform"
+}
