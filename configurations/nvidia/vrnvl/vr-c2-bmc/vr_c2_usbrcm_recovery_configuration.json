@@ -1,9 +1,35 @@
 {
     "Exposes": [
         {
-            "ConfigType": "c2",
             "ForceRecoveryChassisObject": "BMC_0",
             "Name": "Chassis_0_CPU_Recovery",
+            "ResetPins": [
+                "B0_M1_IST_SYS_RST_L-O"
+            ],
+            "StrapActiveValues": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                1
+            ],
+            "StrapDefaultValues": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                1
+            ],
+            "StrapPins": [
+                "B0_M1_CPU_FORCED_RECOVERY_L-O",
+                "B0_M1_CPU_BOOT_DEV_SEL0-O",
+                "B0_M1_CPU_BOOT_DEV_SEL1-O",
+                "B0_M1_CPU_BOOT_DEV_SEL2-O",
+                "B0_M1_CPU_RECOVERY_TYPE0-O",
+                "B0_M1_CPU_RECOVERY_TYPE1-O"
+            ],
             "Type": "USBRCMForceRecovery"
         },
         {

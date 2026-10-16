@@ -280,6 +280,32 @@
                 "Name": {
                     "type": "string"
                 },
+                "ResetPins": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "StrapActiveValues": {
+                    "type": "array",
+                    "items": {
+                        "enum": [0, 1],
+                        "type": "integer"
+                    }
+                },
+                "StrapDefaultValues": {
+                    "type": "array",
+                    "items": {
+                        "enum": [0, 1],
+                        "type": "integer"
+                    }
+                },
+                "StrapPins": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "Type": {
                     "type": "string",
                     "const": "USBRCMForceRecovery"

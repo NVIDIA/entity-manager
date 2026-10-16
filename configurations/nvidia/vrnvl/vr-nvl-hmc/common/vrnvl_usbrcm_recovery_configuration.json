@@ -1,9 +1,54 @@
 {
     "Exposes": [
         {
-            "ConfigType": "c2g4",
             "ForceRecoveryChassisObject": "HGX_Chassis_0",
             "Name": "HGX_Chassis_0_CPU_Recovery",
+            "ResetPins": [
+                "BRD0_IST_SYS_RST_L-O",
+                "BRD1_IST_SYS_RST_L-O"
+            ],
+            "StrapActiveValues": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1
+            ],
+            "StrapDefaultValues": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1
+            ],
+            "StrapPins": [
+                "BRD0_CPU_FORCED_RECOVERY_L-O",
+                "BRD0_CPU_BOOT_DEV_SEL0-O",
+                "BRD0_CPU_BOOT_DEV_SEL1-O",
+                "BRD0_CPU_BOOT_DEV_SEL2-O",
+                "BRD0_CPU_RECOVERY_TYPE0-O",
+                "BRD0_CPU_RECOVERY_TYPE1-O",
+                "BRD1_CPU_FORCED_RECOVERY_L-O",
+                "BRD1_CPU_BOOT_DEV_SEL0-O",
+                "BRD1_CPU_BOOT_DEV_SEL1-O",
+                "BRD1_CPU_BOOT_DEV_SEL2-O",
+                "BRD1_CPU_RECOVERY_TYPE0-O",
+                "BRD1_CPU_RECOVERY_TYPE1-O"
+            ],
             "Type": "USBRCMForceRecovery"
         },
         {
