@@ -9,7 +9,7 @@
                         "Forward": "parent_chassis"
                     },
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SMA_0",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SWB1_SMA",
                         "Backward": "chassis",
                         "Forward": "all_chassis"
                     }
@@ -27,7 +27,7 @@
                     "Type": "NSM_Chassis_Attributes"
                 },
                 "DeviceType": "$DEVICE_TYPE",
-                "Name": "SMA_0",
+                "Name": "SWB1_SMA",
                 "Type": "NSM_Chassis",
                 "UUID": "$UUID"
             },
@@ -55,7 +55,7 @@
                 "UUID": "$UUID"
             }
         ],
-        "Name": "SMA_0",
+        "Name": "SWB1_SMA",
         "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'NVSSMA', 'INSTANCE_NUMBER': 0})",
         "Type": "chassis",
         "xyz.openbmc_project.Inventory.Decorator.Instance": {
@@ -75,7 +75,7 @@
                         "Forward": "parent_chassis"
                     },
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SMA_1",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SWB2_SMA",
                         "Backward": "chassis",
                         "Forward": "all_chassis"
                     }
@@ -93,7 +93,7 @@
                     "Type": "NSM_Chassis_Attributes"
                 },
                 "DeviceType": "$DEVICE_TYPE",
-                "Name": "SMA_1",
+                "Name": "SWB2_SMA",
                 "Type": "NSM_Chassis",
                 "UUID": "$UUID"
             },
@@ -121,7 +121,7 @@
                 "UUID": "$UUID"
             }
         ],
-        "Name": "SMA_1",
+        "Name": "SWB2_SMA",
         "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'NVSSMA', 'INSTANCE_NUMBER': 1})",
         "Type": "chassis",
         "xyz.openbmc_project.Inventory.Decorator.Instance": {
@@ -141,7 +141,7 @@
                         "Forward": "parent_chassis"
                     },
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SMA_2",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_MGMT_SMA",
                         "Backward": "chassis",
                         "Forward": "all_chassis"
                     }
@@ -159,7 +159,7 @@
                     "Type": "NSM_Chassis_Attributes"
                 },
                 "DeviceType": "$DEVICE_TYPE",
-                "Name": "SMA_2",
+                "Name": "MGMT_SMA",
                 "Type": "NSM_Chassis",
                 "UUID": "$UUID"
             },
@@ -187,7 +187,7 @@
                 "UUID": "$UUID"
             }
         ],
-        "Name": "SMA_2",
+        "Name": "MGMT_SMA",
         "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'NVSSMA', 'INSTANCE_NUMBER': 2})",
         "Type": "chassis",
         "xyz.openbmc_project.Inventory.Decorator.Instance": {
