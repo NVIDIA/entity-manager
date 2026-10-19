@@ -1,0 +1,61 @@
+[
+    {
+        "Exposes": [
+            {
+                "Interface": "$Interface",
+                "Name": "MCTPIROT_0",
+                "PollingInterval": "15",
+                "StaticEndpointID": "9",
+                "Type": "MCTPXROTTarget"
+            }
+        ],
+        "Name": "MCTP_XROT_DEV1",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpirot0'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "Interface": "$Interface",
+                "Name": "SWB1_SMA",
+                "PollingInterval": "5",
+                "StaticEndpointID": "69",
+                "Type": "MCTPUSBTarget",
+                "USBPath": "swb1"
+            }
+        ],
+        "Name": "MCTP_USB_DEV1",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'musbswb1'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "Interface": "$Interface",
+                "Name": "SWB2_SMA",
+                "PollingInterval": "5",
+                "StaticEndpointID": "70",
+                "Type": "MCTPUSBTarget",
+                "USBPath": "swb2"
+            }
+        ],
+        "Name": "MCTP_USB_DEV2",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'musbswb2'})",
+        "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "Interface": "$Interface",
+                "Name": "MGMT_SMA",
+                "PollingInterval": "5",
+                "StaticEndpointID": "71",
+                "Type": "MCTPUSBTarget",
+                "USBPath": "mgmt"
+            }
+        ],
+        "Name": "MCTP_USB_DEV3",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'musbmgmt'})",
+        "Type": "MCTPInterface"
+    }
+]
