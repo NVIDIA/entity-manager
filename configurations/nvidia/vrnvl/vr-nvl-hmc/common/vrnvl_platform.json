@@ -445,6 +445,7 @@
             ],
             "MCTPTargetName": "HGX_CPU_0",
             "Name": "HGX_CPU_0_PLDM",
+            "TerminusName": "ProcessorModule_0",
             "Type": "PLDMFirmwareDevice"
         },
         {
@@ -598,6 +599,8 @@
             ],
             "MCTPTargetName": "HGX_CPU_1",
             "Name": "HGX_CPU_1_PLDM",
+            "TerminusInstance": 1,
+            "TerminusName": "ProcessorModule_1",
             "Type": "PLDMFirmwareDevice"
         }
     ],
