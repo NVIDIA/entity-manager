@@ -1,8 +1,8 @@
 [
   {
     "Name": "$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^rot$', 'Generation': 'AST2700'})",
-    "Type": "Device_Configs",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^irot$', 'Generation': 'vera-rubin'})",
+    "Type": "vr_rot",
     "InstanceNumber": "$Instance",
     "EID": "$EID",
     "Exposes": [
@@ -13,36 +13,16 @@
           "Device.ChassisIRoTResponder"
         ],
         "ParameterOverrides": {
-          "LocationContext": "$LOCATION_CONTEXT",
-          "LocationCode": "$LOCATION_CODE",
           "IRoT": "TRUE"
         }
-      }
-    ]
-  },
-  {
-    "Name": "$Name_Platform_Recovery",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^rot$', 'Generation': 'vr-bmc'})",
-    "Type": "PlatformRecoveryConfiguration",
-    "Exposes": [
+      },
       {
         "ConnectsToName": "$Platform.BmcName",
         "DeviceAddress": "MCTP:$EID",
         "DeviceType": "IROT",
         "Name": "IROT_$Platform.BmcName",
-        "PhysicalInterface": "",
-        "RecoveryLayers": "",
-        "ResetGPIO": "",
-        "Type": "PlatformDevice",
-        "poweredInStandby": true
-      }
-    ]
-  },
-  {
-    "Name": "$Name_Platform",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^rot$', 'Generation': 'vr-bmc'})",
-    "Type": "Device_Configs",
-    "Exposes": [
+        "Type": "PlatformDevice"
+      },
       {
         "Name": "$Name",
         "SupportedDumps": [
@@ -72,11 +52,11 @@
               "inventory"
             ],
             "ComponentIdentifier": 11,
-            "Name": "FW_BMC_Caliptra_0"
+            "Name": "$Platform.NamePrefixFW_BMC_Caliptra_$Instance"
           },
           {
             "ComponentIdentifier": 10,
-            "Name": "FW_$Platform.BmcName",
+            "Name": "$Platform.NamePrefixFW_BMC_$Instance",
             "UpdateOnly": true
           }
         ],
@@ -87,8 +67,21 @@
     ]
   },
   {
-    "Name": "GPIO_Recovery_Devices",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^rot$', 'Generation': 'vr-bmc'})",
+    "Name": "VRoT_MCTP",
+    "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpvrot0'})",
+    "Type": "vr_rot",
+    "Exposes": [
+      {
+        "Interface": "$Interface",
+        "Name": "MCTPVROT_0",
+        "StaticEndpointID": "100",
+        "Type": "MCTPXROTTarget"
+      }
+    ]
+  },
+  {
+    "Name": "$Name_Recovery_Devices",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^irot$', 'Generation': 'vera-rubin', 'Name': '^IRoT_'})",
     "Type": "Recovery_Config",
     "Exposes": [
       {
@@ -97,18 +90,11 @@
         "HideWhenHealthy": true,
         "IsERoT": false,
         "MctpEID": 51,
-        "Name": "FW_RECOVERY_HGX_FW_BMC_0",
+        "Name": "FW_RECOVERY_HGX_FW_$Platform.BmcName",
         "Polarity": "ActiveHigh",
         "RisingTarget": "hmc-ready.target",
         "Type": "GPIORecovery"
-      }
-    ]
-  },
-  {
-    "Name": "USBDFU_Recovery_Devices",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^rot$', 'Generation': 'vr-bmc'})",
-    "Type": "Recovery_Config",
-    "Exposes": [
+      },
       {
         "Name": "FW_HMC_0",
         "RecoveryGpioName": "HMC_RECOVERY_R-O",
@@ -117,6 +103,19 @@
         "ResetGpioPolarity": "ActiveLow",
         "SpiMuxGpioName": "HMC_SPI_MUX_R_SEL-O",
         "Type": "USBDFURecovery"
+      }
+    ]
+  },
+  {
+    "Name": "$Name_USBRCM_Recovery_Devices",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^irot$', 'Generation': 'vera-rubin', 'Name': '^HGX_'})",
+    "Type": "Recovery_Config",
+    "Exposes": [
+      {
+        "ConfigType": "$Platform.RecoveryStrap",
+        "ForceRecoveryChassisObject": "$Platform.TopChassis",
+        "Name": "$Platform.TopChassis_CPU_Recovery",
+        "Type": "USBRCMForceRecovery"
       }
     ]
   }

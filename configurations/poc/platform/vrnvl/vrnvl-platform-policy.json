@@ -1,0 +1,16 @@
+[
+  {
+    "Name": "Nvidia VR-NVL72 BMC AST2600 Policy",
+    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 9, 'ADDRESS': 80, 'BOARD_MANUFACTURER': 'NVIDIA'})",
+    "Type": "Platform",
+    "PlatformExposes": [
+      {
+        "Name": "Platform_FwUpdate_Exclusion",
+        "Type": "PLDMExclusion",
+        "ExcludedInventory": [
+          "BF4_0"
+        ]
+      }
+    ]
+  }
+]

@@ -29,12 +29,15 @@
 #include <xyz/openbmc_project/Inventory/Item/System/common.hpp>
 #include <xyz/openbmc_project/Inventory/Item/common.hpp>
 
+#include <array>
 #include <filesystem>
 #include <flat_map>
 #include <fstream>
 #include <functional>
 #include <map>
+#include <optional>
 #include <regex>
+#include <string_view>
 constexpr const char* tempConfigDir = "/tmp/configuration/";
 constexpr const char* lastConfiguration = "/tmp/configuration/last.json";
 
@@ -146,6 +149,89 @@ void EntityManager::postProbeConfig(
     iface->register_property("Probe", probeStatements);
 
     dbus_interface::tryIfaceInitialize(iface);
+}
+
+// Record-level associations are written as "Associations": {<relation>:
+// <target(s)>}. The relation is the forward name; the backward name follows
+// from the relation and, where it differs, the type of the record that holds
+// it. A row without a record type is the default for its relation.
+struct AssociationRelation
+{
+    std::string_view relation;
+    std::string_view recordType;
+    std::string_view backward;
+};
+
+static constexpr std::array<AssociationRelation, 14> associationRelations = {{
+    {"parent_chassis", "Dimm", "all_memory"},
+    {"parent_chassis", "", "all_chassis"},
+    {"parent_processor", "Dimm", "all_memory"},
+    {"parent_processor", "", "all_processors"},
+    {"chassis", "NVMe", "drive"},
+    {"chassis", "Cpu", "all_processors"},
+    {"all_managers", "", "chassis"},
+    {"all_chassis", "", "parent_chassis"},
+    {"computer_system", "", "chassis"},
+    {"assembly", "", "parent_chassis"},
+    {"downstream_chassis", "", "upstream_cable"},
+    {"activation", "", "inventory"},
+    {"all_states", "", "parent_device"},
+    {"host_management_network_access", "", "chassis"},
+}};
+
+static std::optional<std::string_view> associationBackward(
+    std::string_view relation, std::string_view recordType)
+{
+    std::optional<std::string_view> fallback;
+    for (const auto& row : associationRelations)
+    {
+        if (row.relation != relation)
+        {
+            continue;
+        }
+        if (row.recordType == recordType)
+        {
+            return row.backward;
+        }
+        if (row.recordType.empty())
+        {
+            fallback = row.backward;
+        }
+    }
+    return fallback;
+}
+
+// An association target is an absolute D-Bus path, or "<type>/<name>" for an
+// object of the system inventory, which expands to the path EM gives it:
+// /xyz/openbmc_project/inventory/system/<type in lower case>/<name>. The
+// name is sanitized the same way as in buildInventorySystemPath().
+static std::string resolveAssociationTarget(const std::string& target)
+{
+    const size_t slash = target.find('/');
+    if (target.empty() || target.front() == '/' ||
+        slash == std::string::npos || slash + 1 == target.size())
+    {
+        return target;
+    }
+
+    std::string type = target.substr(0, slash);
+    std::transform(type.begin(), type.end(), type.begin(), ::tolower);
+
+    sdbusplus::object_path path("/xyz/openbmc_project/inventory/system");
+    path /= type;
+    size_t start = slash + 1;
+    while (start <= target.size())
+    {
+        size_t end = target.find('/', start);
+        if (end == std::string::npos)
+        {
+            end = target.size();
+        }
+        path /= dbus_util::sanitizeForDBusPathSegment(
+            target.substr(start, end - start));
+        start = end + 1;
+    }
+    return path.str;
 }
 
 void EntityManager::postBoardToDBus(
@@ -260,14 +346,53 @@ void EntityManager::postBoardToDBus(
         postProbeConfig(objectPath, configNameOrig, configType, *findProbe);
     }
 
-    // collect parent_chassis association
+    // record-level associations. "Associations" maps a relation to one target
+    // or a list of targets and the backward name comes from the relation
+    // table; Parent_Chassis is the legacy spelling of
+    // Associations.parent_chassis.
     std::vector<Association> extraAssociations;
+    auto addRelation = [&](const std::string& relation,
+                           const nlohmann::json& targets) {
+        const auto backward = associationBackward(relation, configType);
+        if (!backward)
+        {
+            lg2::error("Unknown association relation {RELATION} on {CONFIG}",
+                       "RELATION", relation, "CONFIG", configName);
+            return;
+        }
+        auto add = [&](const nlohmann::json& target) {
+            if (target.is_string())
+            {
+                extraAssociations.emplace_back(
+                    relation, std::string(*backward),
+                    resolveAssociationTarget(target.get<std::string>()));
+            }
+        };
+        if (targets.is_array())
+        {
+            for (const auto& target : targets)
+            {
+                add(target);
+            }
+        }
+        else
+        {
+            add(targets);
+        }
+    };
     auto findBoardParent = configValues.find("Parent_Chassis");
     if (findBoardParent != configValues.end() &&
         findBoardParent->type() == nlohmann::json::value_t::string)
     {
-        extraAssociations.emplace_back("parent_chassis", "all_chassis",
-                                       findBoardParent->get<std::string>());
+        addRelation("parent_chassis", *findBoardParent);
+    }
+    auto findRelations = configValues.find("Associations");
+    if (findRelations != configValues.end() && findRelations->is_object())
+    {
+        for (const auto& [relation, targets] : findRelations->items())
+        {
+            addRelation(relation, targets);
+        }
     }
 
     // iterate through configuration properties
@@ -293,6 +418,11 @@ void EntityManager::postBoardToDBus(
                         }
                     }
                 }
+                continue;
+            }
+            if (propName == "Associations")
+            {
+                // Handled above: record-level relations
                 continue;
             }
 

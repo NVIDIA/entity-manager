@@ -1,8 +1,8 @@
 [
   {
     "Name": "$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vr-bmc'})",
-    "Type": "Device_Configs",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vera-rubin'})",
+    "Type": "chassis",
     "InstanceNumber": "$Instance",
     "EID": "$EID",
     "Exposes": [
@@ -232,8 +232,9 @@
         "Type": "WriteProtect"
       }
     ],
-    "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/$Platform.TopChassis",
-    "Type": "chassis",
+    "Associations": {
+      "parent_chassis": "chassis/$Platform.TopChassis"
+    },
     "xyz.openbmc_project.Inventory.Decorator.Instance": {
       "InstanceNumber": 0
     },
@@ -263,7 +264,7 @@
   },
   {
     "Name": "IRoT_$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vr-bmc'})",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vera-rubin'})",
     "Exposes": [
       {
         "Associations": [
@@ -285,7 +286,7 @@
           "Name": "$Name IRoT",
           "Type": "NSM_Chassis_Attributes",
           "InstanceNumber": 0,
-          "LocationCode": "IRoT_$Position",
+          "LocationCode": "IRoT_$Instance",
           "LocationContext": "$Platform.TopChassis/$Name"
         },
         "Name": "IRoT_$Name",
@@ -355,8 +356,8 @@
   },
   {
     "Name": "$Name_Platform",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vr-bmc'})",
-    "Type": "Device_Configs",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vera-rubin'})",
+    "Type": "vr_bmc_bluefield",
     "Exposes": [
       {
         "BridgeName": "$Bridge",

@@ -1,8 +1,8 @@
 [
   {
     "Name": "$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield_sma$', 'Generation': 'vr-bmc'})",
-    "Type": "Device_Configs",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield_sma$', 'Generation': 'vera-rubin'})",
+    "Type": "vr_bmc_bluefield_sma",
     "InstanceNumber": "$Instance",
     "EID": "$EID",
     "Exposes": [
@@ -11,32 +11,15 @@
         "Type": "NSM_Telemetry",
         "Disable": [],
         "ParameterOverrides": {}
-      }
-    ]
-  },
-  {
-    "Name": "$Name_Platform_Recovery",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield_sma$', 'Generation': 'vr-bmc'})",
-    "Type": "PlatformRecoveryConfiguration",
-    "Exposes": [
+      },
       {
         "ConnectsToName": "$Platform.BmcName",
         "DeviceAddress": "MCTP:$EID",
         "DeviceType": "MCTPBridge",
         "Name": "$Name",
         "PhysicalInterface": "usb1:0x1d6b:0x0104:$Port",
-        "RecoveryLayers": "",
-        "ResetGPIO": "",
-        "Type": "PlatformDevice",
-        "poweredInStandby": true
-      }
-    ]
-  },
-  {
-    "Name": "$Name_Platform",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield_sma$', 'Generation': 'vr-bmc'})",
-    "Type": "Device_Configs",
-    "Exposes": [
+        "Type": "PlatformDevice"
+      },
       {
         "DeviceType": "$Name",
         "Name": "$Name",
@@ -93,12 +76,24 @@
         "MCTPTargetName": "$Name",
         "Name": "$Name_PLDM",
         "Type": "PLDMFirmwareDevice"
+      },
+      {
+        "BridgeName": "$Name",
+        "Name": "BF4_2",
+        "PoolIndex": 2,
+        "Type": "MCTPBridgePoolDevice"
+      },
+      {
+        "BridgeName": "$Name",
+        "Name": "BF4_3",
+        "PoolIndex": 3,
+        "Type": "MCTPBridgePoolDevice"
       }
     ]
   },
   {
     "Name": "$Name_BAY_C_SMA_Recovery_Devices",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield_sma$', 'Generation': 'vr-bmc'})",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield_sma$', 'Generation': 'vera-rubin'})",
     "Type": "Recovery_Config",
     "Exposes": [
       {

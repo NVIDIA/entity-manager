@@ -1,67 +1,29 @@
 [
   {
     "Name": "$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^hpm_sma$', 'Generation': 'vr-hmc'})",
-    "Type": "Device_Configs",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^hmc_hpm_sma$', 'Generation': 'vera-rubin'})",
+    "Type": "vr_hmc_hpm_sma",
     "InstanceNumber": "$Instance",
     "EID": "$EID",
     "Exposes": [
-      {  
-      "Name": "NSM_Telemetry",
-      "Type": "NSM_Telemetry",
-      "Disable": [],
-      "ParameterOverrides": {
-        "TotalGpuPower": {
-          "enabled": "$TGP_ENABLED",
-          "GPU_Count": "$TGP_GPU_COUNT"
+      {
+        "Name": "NSM_Telemetry",
+        "Type": "NSM_Telemetry",
+        "Disable": [],
+        "ParameterOverrides": {
+          "TotalGpuPower": {
+            "enabled": "$TGP_ENABLED",
+            "GPU_Count": "$TGP_GPU_COUNT"
+          }
         }
-      }
-    }]
-  },
-  {
-    "Name": "$Name_Platform_Recovery",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^hpm_sma$', 'Generation': 'vr-hmc'})",
-    "Type": "PlatformRecoveryConfiguration",
-    "Exposes": [
+      },
       {
         "ConnectsToName": "$Platform.BmcName",
         "DeviceAddress": "MCTP:$EID",
         "DeviceType": "MCTPBridge",
         "Name": "$Name",
-        "PhysicalInterface": "",
-        "RecoveryLayers": "",
-        "ResetGPIO": "",
-        "Type": "PlatformDevice",
-        "poweredInStandby": true
-      }
-    ]
-  },
-  {
-    "Name": "$Name_HPM_SMA_Recovery_Devices",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^hpm_sma$', 'Generation': 'vr-hmc'})",
-    "Type": "Recovery_Config",
-    "Exposes": [
-      {
-        "ForceRecoveryChassisObject": "$Name",
-        "I2CBus": "$Bus",
-        "Interface": "I2C",
-        "MctpEID": "$EID",
-        "Name": "$Platform.NamePrefixFW_ProcessorModule_SMA_$Instance",
-        "NormalI2CAddress": "0x52",
-        "RecoveryGpioName": "BRD$Instance_MCU_RECOVERY_L-O",
-        "RecoveryI2CAddress": "0x10",
-        "ResetGpioName": "BRD$Instance_MCU_RESET_L-O",
-        "Target": "HPM",
-        "Type": "MCURecovery",
-        "hasChassisPowerSource": false
-      }
-    ]
-  },
-  {
-    "Name": "$Name_Platform",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^hpm_sma$', 'Generation': 'vr-hmc'})",
-    "Type": "Device_Configs",
-    "Exposes": [
+        "Type": "PlatformDevice"
+      },
       {
         "Name": "$Name",
         "Pages": [
@@ -129,6 +91,27 @@
         "MCTPTargetName": "$Name",
         "Name": "$Name_PLDM",
         "Type": "PLDMFirmwareDevice"
+      }
+    ]
+  },
+  {
+    "Name": "$Name_HPM_SMA_Recovery_Devices",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^hmc_hpm_sma$', 'Generation': 'vera-rubin'})",
+    "Type": "Recovery_Config",
+    "Exposes": [
+      {
+        "ForceRecoveryChassisObject": "$Name",
+        "I2CBus": "$Bus",
+        "Interface": "I2C",
+        "MctpEID": "$EID",
+        "Name": "$Platform.NamePrefixFW_ProcessorModule_SMA_$Instance",
+        "NormalI2CAddress": "0x52",
+        "RecoveryGpioName": "BRD$Instance_MCU_RECOVERY_L-O",
+        "RecoveryI2CAddress": "0x10",
+        "ResetGpioName": "BRD$Instance_MCU_RESET_L-O",
+        "Target": "HPM",
+        "Type": "MCURecovery",
+        "hasChassisPowerSource": false
       }
     ]
   }

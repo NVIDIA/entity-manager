@@ -41,6 +41,23 @@
                     "description": "The schema for the name property.  The name property identifies the configuration.  When exported, the configuration will be instantiated at: /xyz/openbmc_project/configuration/<Type>/<Name>",
                     "type": "string"
                 },
+                "Associations": {
+                    "description": "Record-level associations: the relation (forward name) mapped to one target or a list of targets. A target is an absolute D-Bus path or <type>/<name> for an object of the system inventory.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    }
+                },
                 "Parent_Chassis": {
                     "type": "string"
                 },

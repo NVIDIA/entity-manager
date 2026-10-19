@@ -1,8 +1,8 @@
 [
   {
     "Name": "$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^gpu_sma$', 'Generation': 'vr-hmc'})",
-    "Type": "Device_Configs",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^gpu_sma$', 'Generation': 'vera-rubin'})",
+    "Type": "vr_hmc_gpu_sma",
     "InstanceNumber": "$Instance",
     "EID": "$EID",
     "BridgedProcessors": "$BridgedProcessors",
@@ -12,12 +12,64 @@
         "Type": "NSM_Telemetry",
         "Disable": [],
         "ParameterOverrides": {}
+      },
+      {
+        "ConnectsToName": "$Platform.BmcName",
+        "DeviceAddress": "MCTP:$EID",
+        "DeviceType": "MCTPBridge",
+        "Name": "$Name",
+        "PhysicalInterface": "usb1:0x0955:0xcf11:$Port",
+        "Type": "PlatformDevice"
+      },
+      {
+        "Name": "$Name",
+        "SupportedDumps": [
+          "RoT",
+          "SMA"
+        ],
+        "Type": "Dump"
+      },
+      {
+        "BridgePoolEndEID": "$PoolEndEID",
+        "BridgePoolStartEID": "$PoolStartEID",
+        "BridgedEndpoints": [
+          "$Platform.NamePrefixGPU_$Instance * 2",
+          "$Platform.NamePrefixGPU_$Instance * 2 + 1"
+        ],
+        "Configuration": 1,
+        "InterfaceNum": 0,
+        "Name": "$Name",
+        "PollingInterval": "5",
+        "Port": "$Port",
+        "RootHubPath": "$RootHubPath",
+        "StaticEndpointID": "$EID",
+        "Type": "MCTPUSBDevice"
+      },
+      {
+        "Components": [
+          {
+            "AssociationBackward": [
+              "activation"
+            ],
+            "AssociationEndpoint": [
+              "/xyz/openbmc_project/inventory/system/chassis/$Name"
+            ],
+            "AssociationForward": [
+              "inventory"
+            ],
+            "ComponentIdentifier": 65282,
+            "Name": "$Platform.NamePrefixFW_GPU_SMA_$Instance"
+          }
+        ],
+        "MCTPTargetName": "$Name",
+        "Name": "$Name_PLDM",
+        "Type": "PLDMFirmwareDevice"
       }
     ]
   },
   {
     "Name": "$Platform.NamePrefixIRoT_GPU_SMA_$Instance",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^gpu_sma$', 'Generation': 'vr-hmc'})",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^gpu_sma$', 'Generation': 'vera-rubin'})",
     "Type": "Chassis",
     "xyz.openbmc_project.Inventory.Item.Chassis": {
       "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
@@ -44,7 +96,7 @@
         "ChassisAttributes": {
           "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
           "FieldReplaceable": false,
-          "LocationCode": "IRoT_$Position",
+          "LocationCode": "IRoT_$Instance",
           "LocationContext": "HGX_Chassis_0/ProcessorModule_$Instance/GPU_SMA_0",
           "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
           "Name": "HGX_IRoT_GPU_SMA_$Instance IRoT",
@@ -119,26 +171,8 @@
     ]
   },
   {
-    "Name": "$Name_Platform_Recovery",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^gpu_sma$', 'Generation': 'vr-hmc'})",
-    "Type": "PlatformRecoveryConfiguration",
-    "Exposes": [
-      {
-        "ConnectsToName": "$Platform.BmcName",
-        "DeviceAddress": "MCTP:$EID",
-        "DeviceType": "MCTPBridge",
-        "Name": "$Name",
-        "PhysicalInterface": "usb1:0x0955:0xcf11:$Port",
-        "RecoveryLayers": "",
-        "ResetGPIO": "",
-        "Type": "PlatformDevice",
-        "poweredInStandby": true
-      }
-    ]
-  },
-  {
     "Name": "$Name_GPU_SMA_Recovery_Devices",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^gpu_sma$', 'Generation': 'vr-hmc'})",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^gpu_sma$', 'Generation': 'vera-rubin'})",
     "Type": "Recovery_Config",
     "Exposes": [
       {
@@ -154,57 +188,6 @@
         "USBPort": "1-$Port",
         "VendorId": "0x0955",
         "hasChassisPowerSource": false
-      }
-    ]
-  },
-  {
-    "Name": "$Name_Platform",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^gpu_sma$', 'Generation': 'vr-hmc'})",
-    "Type": "Device_Configs",
-    "Exposes": [
-      {
-        "Name": "$Name",
-        "SupportedDumps": [
-          "RoT",
-          "SMA"
-        ],
-        "Type": "Dump"
-      },
-      {
-        "BridgePoolEndEID": "$PoolEndEID",
-        "BridgePoolStartEID": "$PoolStartEID",
-        "BridgedEndpoints": [
-          "$Platform.NamePrefixGPU_$Instance * 2",
-          "$Platform.NamePrefixGPU_$Instance * 2 + 1"
-        ],
-        "Configuration": 1,
-        "InterfaceNum": 0,
-        "Name": "$Name",
-        "PollingInterval": "5",
-        "Port": "$Port",
-        "RootHubPath": "$RootHubPath",
-        "StaticEndpointID": "$EID",
-        "Type": "MCTPUSBDevice"
-      },
-      {
-        "Components": [
-          {
-            "AssociationBackward": [
-              "activation"
-            ],
-            "AssociationEndpoint": [
-              "/xyz/openbmc_project/inventory/system/chassis/$Name"
-            ],
-            "AssociationForward": [
-              "inventory"
-            ],
-            "ComponentIdentifier": 65282,
-            "Name": "$Platform.NamePrefixFW_GPU_SMA_$Instance"
-          }
-        ],
-        "MCTPTargetName": "$Name",
-        "Name": "$Name_PLDM",
-        "Type": "PLDMFirmwareDevice"
       }
     ]
   }

@@ -11,14 +11,8 @@
     "Name": "HGX_CBC_$SlotNumber",
     "Probe": "xyz.openbmc_project.FruDevice({'BOARD_MANUFACTURER': 'Nvidia|NVIDIA', 'BOARD_PRODUCT_NAME': '.?CBC.?'})",
     "Type": "CableCartridge",
-    "xyz.openbmc_project.Association.Definitions": {
-      "Associations": [
-        [
-          "downstream_chassis",
-          "upstream_cable",
-          "/xyz/openbmc_project/inventory/system/chassis/HGX_GPU_$SlotNumber"
-        ]
-      ]
+    "Associations": {
+      "downstream_chassis": "chassis/HGX_GPU_$SlotNumber"
     },
     "xyz.openbmc_project.Inventory.Decorator.Asset": {
       "Manufacturer": "$BOARD_MANUFACTURER",

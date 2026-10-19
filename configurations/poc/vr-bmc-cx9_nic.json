@@ -1,8 +1,8 @@
 [
   {
     "Name": "$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_nic$', 'Generation': 'vr-bmc'})",
-    "Type": "Device_Configs",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_nic$', 'Generation': 'vera-rubin'})",
+    "Type": "chassis",
     "InstanceNumber": "$Instance",
     "EID": "$EID",
     "Exposes": [
@@ -97,16 +97,11 @@
         "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
         "SensorId": 200,
         "Type": "SensorPortInfo"
-      },
-      {
-        "GpioLine": "BF4_GLOBAL_WP",
-        "Name": "BAY_C_GLOBAL_WP",
-        "Polarity": "active_high",
-        "Type": "WriteProtect"
       }
     ],
-    "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/$Platform.TopChassis",
-    "Type": "chassis",
+    "Associations": {
+      "parent_chassis": "chassis/$Platform.TopChassis"
+    },
     "xyz.openbmc_project.Inventory.Decorator.Instance": {
       "InstanceNumber": 0
     },
@@ -133,8 +128,8 @@
   },
   {
     "Name": "$Name_Platform",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_nic$', 'Generation': 'vr-bmc'})",
-    "Type": "Device_Configs",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_nic$', 'Generation': 'vera-rubin'})",
+    "Type": "vr_bmc_cx9_nic",
     "Exposes": [
       {
         "BridgeName": "$Bridge",

@@ -1,8 +1,8 @@
 [
   {
     "Name": "$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vr-bmc'})",
-    "Type": "Device_Configs",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vera-rubin'})",
+    "Type": "vr_bmc_cx_sma",
     "InstanceNumber": "$Instance",
     "EID": "$EID",
     "Exposes": [
@@ -31,54 +31,7 @@
             }
           }
         }
-      }
-    ]
-  },
-  {
-    "Name": "$Name_LeakDetection",
-    "Probe": [
-      "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vr-bmc', 'Instance': 1})",
-      "OR",
-      "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vr-bmc', 'Instance': 3})"
-    ],
-    "Exposes": [
-      {
-        "CriticalReactionType": "None",
-        "LeakDetectorName": "$ParentChassis_LeakDetector_0",
-        "Name": "$ParentChassis_LeakDetector_0_Policy",
-        "ReactionDelaySeconds": 0,
-        "Type": "LeakDetectionPolicy"
-      }
-    ],
-    "Type": "chassis"
-  },
-  {
-    "Name": "$Name_CX9_SMA_Recovery_Devices",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vr-bmc'})",
-    "Type": "Recovery_Config",
-    "Exposes": [
-      {
-        "ChassisName": "$Name",
-        "ForceRecoveryChassisObject": "$Name",
-        "Interface": "USB",
-        "MctpEID": "$EID",
-        "Name": "FW_$Name",
-        "ProductId": "0xCF11",
-        "RecoveryGpioName": "IOB$Instance_MCU_RECOVERY_L-O",
-        "ResetGpioName": "IOB$Instance_MCU_RST_L-O",
-        "Target": "CX9",
-        "Type": "MCURecovery",
-        "USBPort": ".*-$Port",
-        "VendorId": "0x0955",
-        "hasChassisPowerSource": false
-      }
-    ]
-  },
-  {
-    "Name": "$Name_Platform",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vr-bmc'})",
-    "Type": "Device_Configs",
-    "Exposes": [
+      },
       {
         "DeviceType": "$Name",
         "Name": "$Name",
@@ -134,24 +87,54 @@
         "MCTPTargetName": "$Name",
         "Name": "$Name_PLDM",
         "Type": "PLDMFirmwareDevice"
-      }
-    ]
-  },
-  {
-    "Name": "$Name_Platform_Recovery",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vr-bmc'})",
-    "Type": "PlatformRecoveryConfiguration",
-    "Exposes": [
+      },
       {
         "ConnectsToName": "$Platform.BmcName",
         "DeviceAddress": "MCTP:$EID",
         "DeviceType": "MCTPBridge",
         "Name": "$Name",
         "PhysicalInterface": "usb1:0x0955:0xcf11:$Port",
-        "RecoveryLayers": "",
-        "ResetGPIO": "",
-        "Type": "PlatformDevice",
-        "poweredInStandby": true
+        "Type": "PlatformDevice"
+      }
+    ]
+  },
+  {
+    "Name": "$Name_LeakDetection",
+    "Probe": [
+      "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vera-rubin', 'Instance': 1})",
+      "OR",
+      "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vera-rubin', 'Instance': 3})"
+    ],
+    "Exposes": [
+      {
+        "CriticalReactionType": "None",
+        "LeakDetectorName": "$ParentChassis_LeakDetector_0",
+        "Name": "$ParentChassis_LeakDetector_0_Policy",
+        "ReactionDelaySeconds": 0,
+        "Type": "LeakDetectionPolicy"
+      }
+    ],
+    "Type": "chassis"
+  },
+  {
+    "Name": "$Name_CX9_SMA_Recovery_Devices",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vera-rubin'})",
+    "Type": "Recovery_Config",
+    "Exposes": [
+      {
+        "ChassisName": "$Name",
+        "ForceRecoveryChassisObject": "$Name",
+        "Interface": "USB",
+        "MctpEID": "$EID",
+        "Name": "FW_$Name",
+        "ProductId": "0xCF11",
+        "RecoveryGpioName": "IOB$Instance_MCU_RECOVERY_L-O",
+        "ResetGpioName": "IOB$Instance_MCU_RST_L-O",
+        "Target": "CX9",
+        "Type": "MCURecovery",
+        "USBPort": ".*-$Port",
+        "VendorId": "0x0955",
+        "hasChassisPowerSource": false
       }
     ]
   }

@@ -1,10 +1,10 @@
 [
   {
     "Name": "$Name",
-    "Type": "Device_Configs",
+    "Type": "chassis",
     "InstanceNumber": "$Instance",
     "EID": "$EID",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vr-bmc'})",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vera-rubin'})",
     "Exposes": [
       {
         "EID": "$EID",
@@ -177,8 +177,9 @@
         "Type": "SensorPortInfo"
       }
     ],
-    "Parent_Chassis": "/xyz/openbmc_project/inventory/system/board/$ParentChassis",
-    "Type": "chassis",
+    "Associations": {
+      "parent_chassis": "board/$ParentChassis"
+    },
     "xyz.openbmc_project.Inventory.Decorator.Instance": {
       "InstanceNumber": "$Instance"
     },
@@ -198,7 +199,7 @@
   },
   {
     "Name": "IRoT_$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vr-bmc'})",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vera-rubin'})",
     "Exposes": [
       {
         "Name": "NSM_Telemetry",
@@ -226,7 +227,7 @@
   },
   {
     "Name": "$Name_ConnectX_Recovery_Devices",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vr-bmc'})",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vera-rubin'})",
     "Type": "Recovery_Config",
     "Exposes": [
       {
@@ -244,8 +245,8 @@
   },
   {
     "Name": "$Name_Platform",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vr-bmc'})",
-    "Type": "Device_Configs",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vera-rubin'})",
+    "Type": "vr_bmc_cx9_io",
     "Exposes": [
       {
         "DeviceType": "CX_NIC_$Instance",
@@ -314,24 +315,14 @@
         "MCTPTargetName": "$Name",
         "Name": "$Name_PLDM",
         "Type": "PLDMFirmwareDevice"
-      }
-    ]
-  },
-  {
-    "Name": "$Name_Platform_Recovery",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vr-bmc'})",
-    "Type": "PlatformRecoveryConfiguration",
-    "Exposes": [
+      },
       {
         "ConnectsToName": "$Bridge",
         "DeviceAddress": "MCTP:$EID",
         "DeviceType": "MCTPEndpoint",
         "Name": "$Name",
-        "PhysicalInterface": "",
-        "RecoveryLayers": "",
-        "ResetGPIO": "",
         "Type": "PlatformDevice",
-        "poweredInStandby": "$PoweredInStandby"
+        "poweredInStandby": false
       }
     ]
   }

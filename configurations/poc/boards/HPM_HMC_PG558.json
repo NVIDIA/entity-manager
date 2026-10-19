@@ -45,7 +45,9 @@
       }
     ],
     "Name": "HGX ProcessorModule $SlotNumber",
-    "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+    "Associations": {
+      "parent_chassis": "chassis/HGX_Chassis_0"
+    },
     "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?', 'SLOT_NUMBER': 0})",
     "Type": "Board",
     "xyz.openbmc_project.Inventory.Decorator.Asset": {
@@ -112,7 +114,9 @@
       }
     ],
     "Name": "HGX ProcessorModule $SlotNumber",
-    "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
+    "Associations": {
+      "parent_chassis": "chassis/HGX_Chassis_0"
+    },
     "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?', 'SLOT_NUMBER': 1})",
     "Type": "Board",
     "xyz.openbmc_project.Inventory.Decorator.Asset": {
@@ -161,7 +165,9 @@
   },
   {
     "Name": "HGX_CPLD_$SlotNumber",
-    "Parent_Chassis": "/xyz/openbmc_project/inventory/system/board/HGX_ProcessorModule_$SlotNumber",
+    "Associations": {
+      "parent_chassis": "board/HGX_ProcessorModule_$SlotNumber"
+    },
     "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?'})",
     "Type": "Component",
     "xyz.openbmc_project.Inventory.Decorator.Asset": {

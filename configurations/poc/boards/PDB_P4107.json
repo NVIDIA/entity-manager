@@ -235,32 +235,20 @@
             }
         ],
         "Name": "PDB_0",
-        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
+        "Associations": {
+            "parent_chassis": "chassis/Chassis_0",
+            "assembly": [
+                "assembly/PDB_0_Chassis_FRU_Assembly0",
+                "assembly/PDB_0_Board_FRU_Assembly1",
+                "assembly/PDB_0_Product_FRU_Assembly2"
+            ]
+        },
         "Probe": [
             "xyz.openbmc_project.FruDevice({'BUS': 9, 'ADDRESS': 80})",
             "OR",
             "xyz.openbmc_project.FruDevice({'BUS': 0, 'ADDRESS': 80})"
         ],
         "Type": "Board",
-        "xyz.openbmc_project.Association.Definitions": {
-            "Associations": [
-                [
-                    "assembly",
-                    "parent_chassis",
-                    "/xyz/openbmc_project/inventory/system/assembly/PDB_0_Chassis_FRU_Assembly0"
-                ],
-                [
-                    "assembly",
-                    "parent_chassis",
-                    "/xyz/openbmc_project/inventory/system/assembly/PDB_0_Board_FRU_Assembly1"
-                ],
-                [
-                    "assembly",
-                    "parent_chassis",
-                    "/xyz/openbmc_project/inventory/system/assembly/PDB_0_Product_FRU_Assembly2"
-                ]
-            ]
-        },
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
             "ChassisPartNumber": "$CHASSIS_PART_NUMBER",
             "ChassisSerial": "$CHASSIS_SERIAL_NUMBER",

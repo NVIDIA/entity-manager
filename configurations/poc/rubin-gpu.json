@@ -1,8 +1,8 @@
 [
   {
     "Name": "$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^gpu$', 'Generation': 'rubin'})",
-    "Type": "Device_Configs",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^gpu$', 'Generation': 'vera-rubin'})",
+    "Type": "rubin_gpu",
     "InstanceNumber": "$Instance",
     "EID": "$EID",
     "Exposes": [
@@ -38,51 +38,15 @@
             }
           }
         }
-      }
-    ]
-  },
-  {
-    "Name": "$Name_Platform_Recovery",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^gpu$', 'Generation': 'rubin'})",
-    "Type": "PlatformRecoveryConfiguration",
-    "Exposes": [
+      },
       {
         "ConnectsToName": "$Bridge",
         "DeviceAddress": "MCTP:$EID",
         "DeviceType": "GPU",
         "Name": "$Name",
-        "PhysicalInterface": "",
-        "RecoveryLayers": "",
-        "ResetGPIO": "",
         "Type": "PlatformDevice",
         "poweredInStandby": false
-      }
-    ]
-  },
-  {
-    "Name": "$Name_OCP_Recovery_Devices",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^gpu$', 'Generation': 'rubin'})",
-    "Type": "Recovery_Config",
-    "Exposes": [
-      {
-        "ChassisName": "$Platform.NamePrefixIRoT_GPU_$Instance",
-        "ForceRecoveryChassisObject": "$Name",
-        "I2CAddress": "$OcpRecoveryI2cAddress",
-        "InfoRomName": "$Platform.NamePrefixInfoROM_GPU_$Instance",
-        "MctpEID": "$EID",
-        "Name": "$Platform.NamePrefixFW_GPU_$Instance",
-        "SMAEID": "$BridgeEID",
-        "Type": "OCPRecovery",
-        "USBPort": "1-$BridgePort",
-        "hasChassisPowerSource": true
-      }
-    ]
-  },
-  {
-    "Name": "$Name_Platform",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^gpu$', 'Generation': 'rubin'})",
-    "Type": "Device_Configs",
-    "Exposes": [
+      },
       {
         "DeviceType": "GPU_$Instance",
         "Name": "$Name",
@@ -96,7 +60,7 @@
       {
         "BridgeName": "$Bridge",
         "Name": "$Name",
-        "PoolIndex": "$Position",
+        "PoolIndex": "$PoolIndex",
         "Type": "MCTPBridgePoolDevice"
       },
       {
@@ -140,6 +104,25 @@
         "MCTPTargetName": "$Name",
         "Name": "$Name_PLDM",
         "Type": "PLDMFirmwareDevice"
+      }
+    ]
+  },
+  {
+    "Name": "$Name_OCP_Recovery_Devices",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^gpu$', 'Generation': 'vera-rubin'})",
+    "Type": "Recovery_Config",
+    "Exposes": [
+      {
+        "ChassisName": "$Platform.NamePrefixIRoT_GPU_$Instance",
+        "ForceRecoveryChassisObject": "$Name",
+        "I2CAddress": "$OcpRecoveryI2cAddress",
+        "InfoRomName": "$Platform.NamePrefixInfoROM_GPU_$Instance",
+        "MctpEID": "$EID",
+        "Name": "$Platform.NamePrefixFW_GPU_$Instance",
+        "SMAEID": "$BridgeEID",
+        "Type": "OCPRecovery",
+        "USBPort": "1-$BridgePort",
+        "hasChassisPowerSource": true
       }
     ]
   }

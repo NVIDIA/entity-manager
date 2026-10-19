@@ -1,195 +1,33 @@
 [
   {
     "Name": "$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^erot$', 'Generation': 'vr-bmc'})",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^erot$', 'Generation': 'vera-rubin'})",
+    "Type": "vr_bmc_erot",
+    "InstanceNumber": "$Instance",
+    "EID": "$EID",
     "Exposes": [
       {
-        "Chassis": {
-          "DEVICE_UUID": "",
-          "Type": "NSM_Chassis"
-        },
-        "DeviceType": 4,
-        "ImageCopyEnabled": true,
-        "ImageCopyPolicyEnabled": true,
-        "Name": "$Name",
-        "SlotCount": 4,
-        "Type": "NSM_Chassis",
-        "UUID": "STATIC:4:$Instance:MCTP_EID:$EID",
-        "Associations": [
-          {
-            "Backward": "all_chassis",
-            "Forward": "parent_chassis",
-            "AbsolutePath": "/xyz/openbmc_project/inventory/system/bmc/$Platform.BmcName"
-          },
-          {
-            "Backward": "associated_ROT",
-            "Forward": "inventory",
-            "AbsolutePath": "/xyz/openbmc_project/inventory/system/bmc/$Platform.BmcName"
-          },
-          {
-            "Backward": "associated_chassis",
-            "Forward": "inventory_chassis",
-            "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/$Name"
-          }
+        "Name": "NSM_Telemetry",
+        "Type": "NSM_Telemetry",
+        "Disable": [
+          "Device.ChassisIRoTResponder",
+          "Device.FW_ComponentType.AP",
+          "Device.FW_ComponentType.EC"
         ],
-        "ChassisAttributes": {
-          "Type": "NSM_Chassis_Attributes",
-          "AssetInformationAvailable": true,
-          "InstanceNumber": 0,
-          "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
+        "ParameterOverrides": {
+          "ImageCopyStateEnabled": false,
           "LocationCode": "$Name",
           "LocationContext": "$Platform.TopChassis/SMM_Interposer_0/SMM_0/$Platform.BmcName",
-          "FieldReplaceable": false,
-          "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
-          "SPDMResponder": true,
           "SKUUnsupported": true
         }
       },
-      {
-        "ChassisName": "$Name",
-        "DebugTokenDeviceType": "ERoT",
-        "DebugTokenType": [
-          "Unified"
-        ],
-        "Name": "DebugToken",
-        "Type": "NSM_DebugToken",
-        "UUID": "STATIC:4:$Instance:MCTP_EID:$EID"
-      },
-      {
-        "Associations": [
-          {
-            "AbsolutePath": "/xyz/openbmc_project/software/FW_$Name",
-            "Backward": "ActiveSlot",
-            "Forward": "software"
-          }
-        ],
-        "ChassisName": "$Name",
-        "ComponentClassification": 10,
-        "ComponentIdentifier": 65280,
-        "ComponentIndex": 0,
-        "FirmwareType": "EC",
-        "Name": "Slot1",
-        "SlotType": "Active",
-        "Type": "NSM_RoT_Slot"
-      },
-      {
-        "Associations": [
-          {
-            "AbsolutePath": "/xyz/openbmc_project/software/FW_$Name",
-            "Backward": "InactiveSlot",
-            "Forward": "software"
-          }
-        ],
-        "ChassisName": "$Name",
-        "ComponentClassification": 10,
-        "ComponentIdentifier": 65280,
-        "ComponentIndex": 0,
-        "FirmwareType": "EC",
-        "Name": "Slot2",
-        "SlotType": "InActive",
-        "Type": "NSM_RoT_Slot"
-      },
-      {
-        "Associations": [
-          {
-            "AbsolutePath": "/xyz/openbmc_project/software/FW_$Platform.BmcName",
-            "Backward": "ActiveSlot",
-            "Forward": "software"
-          }
-        ],
-        "ChassisName": "$Platform.BmcName",
-        "ComponentClassification": 10,
-        "ComponentIdentifier": 16,
-        "ComponentIndex": 0,
-        "FirmwareType": "AP",
-        "Name": "Slot3",
-        "SlotType": "Active",
-        "Type": "NSM_RoT_Slot"
-      },
-      {
-        "Associations": [
-          {
-            "AbsolutePath": "/xyz/openbmc_project/software/FW_$Platform.BmcName",
-            "Backward": "ActiveSlot",
-            "Forward": "software"
-          }
-        ],
-        "ChassisName": "$Platform.BmcName",
-        "ComponentClassification": 10,
-        "ComponentIdentifier": 16,
-        "ComponentIndex": 0,
-        "FirmwareType": "AP",
-        "Name": "Slot4",
-        "SlotType": "InActive",
-        "Type": "NSM_RoT_Slot"
-      }
-    ],
-    "Type": "Chassis",
-    "xyz.openbmc_project.Inventory.Item.Chassis": {
-      "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
-    }
-  },
-  {
-    "Name": "$Name_GPIO_ERoT_Recovery_Devices",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^erot$', 'Generation': 'vr-bmc'})",
-    "Type": "Recovery_Config",
-    "Exposes": [
-      {
-        "APName": "FW_RECOVERY_HGX_FW_$Platform.BmcName",
-        "GPIO": "HMC_EROT_FATAL_ERROR_L-I",
-        "HiddenByFPGA": false,
-        "HideWhenHealthy": true,
-        "I2CAddress": 82,
-        "I2CBus": 6,
-        "MctpEID": 51,
-        "MonitorMode": "Polling",
-        "Name": "FW_RECOVERY_HGX_FW_$Name",
-        "Polarity": "ActiveLow",
-        "PollingIntervalMs": 1000,
-        "Target": "enable-hmc-recovery.service",
-        "Type": "GPIOERoTRecovery",
-        "hasChassisPowerSource": false
-      },
-      {
-        "APName": "FW_BF4_$Platform.BmcName",
-        "GPIO": "BF4_S_BMC_EROT_FATAL_ERROR_L-I",
-        "HiddenByFPGA": false,
-        "HideWhenHealthy": true,
-        "I2CAddress": 83,
-        "I2CBus": 77,
-        "MctpEID": 59,
-        "MonitorMode": "Polling",
-        "Name": "FW_BF4_$Name",
-        "Polarity": "ActiveLow",
-        "PollingIntervalMs": 1000,
-        "Type": "GPIOERoTRecovery",
-        "hasChassisPowerSource": false
-      }
-    ]
-  },
-  {
-    "Name": "$Name_Platform_Recovery",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^erot$', 'Generation': 'vr-bmc'})",
-    "Type": "PlatformRecoveryConfiguration",
-    "Exposes": [
       {
         "ConnectsToName": "$Platform.BmcName",
         "DeviceAddress": "MCTP:$EID",
         "DeviceType": "EROT",
         "Name": "EROT_$Platform.BmcName",
-        "PhysicalInterface": "",
-        "RecoveryLayers": "",
-        "ResetGPIO": "",
-        "Type": "PlatformDevice",
-        "poweredInStandby": true
-      }
-    ]
-  },
-  {
-    "Name": "$Name_Platform",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^erot$', 'Generation': 'vr-bmc'})",
-    "Type": "Device_Configs",
-    "Exposes": [
+        "Type": "PlatformDevice"
+      },
       {
         "Name": "$Name",
         "SupportedDumps": [
@@ -243,10 +81,41 @@
     ]
   },
   {
-    "Name": "$Name_Glacier_Crisis_Recovery_Devices",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^erot$', 'Generation': 'vr-bmc'})",
+    "Name": "$Name_Recovery_Devices",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^erot$', 'Generation': 'vera-rubin'})",
     "Type": "Recovery_Config",
     "Exposes": [
+      {
+        "APName": "FW_RECOVERY_HGX_FW_$Platform.BmcName",
+        "GPIO": "HMC_EROT_FATAL_ERROR_L-I",
+        "HiddenByFPGA": false,
+        "HideWhenHealthy": true,
+        "I2CAddress": 82,
+        "I2CBus": 6,
+        "MctpEID": 51,
+        "MonitorMode": "Polling",
+        "Name": "FW_RECOVERY_HGX_FW_$Name",
+        "Polarity": "ActiveLow",
+        "PollingIntervalMs": 1000,
+        "Target": "enable-hmc-recovery.service",
+        "Type": "GPIOERoTRecovery",
+        "hasChassisPowerSource": false
+      },
+      {
+        "APName": "FW_BF4_$Platform.BmcName",
+        "GPIO": "BF4_S_BMC_EROT_FATAL_ERROR_L-I",
+        "HiddenByFPGA": false,
+        "HideWhenHealthy": true,
+        "I2CAddress": 83,
+        "I2CBus": 77,
+        "MctpEID": 59,
+        "MonitorMode": "Polling",
+        "Name": "FW_BF4_$Name",
+        "Polarity": "ActiveLow",
+        "PollingIntervalMs": 1000,
+        "Type": "GPIOERoTRecovery",
+        "hasChassisPowerSource": false
+      },
       {
         "APBootStatusType": "QueryBootStatus",
         "ChassisName": "$Name",

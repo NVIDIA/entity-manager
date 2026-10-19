@@ -171,7 +171,9 @@
             }
         ],
         "Name": "HMC_FRU",
-        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Baseboard_0",
+        "Associations": {
+            "parent_chassis": "chassis/Baseboard_0"
+        },
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 90, 'ADDRESS': 82})",
         "Type": "FRU_EEPROM",
         "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {

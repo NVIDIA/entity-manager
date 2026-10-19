@@ -18,10 +18,9 @@
       {
         "Name": "HGX_IRoT_BMC_0",
         "Type": "NvDevice",
-        "Kind": "bmc_rot",
+        "Kind": "irot",
         "Instance": 0,
-        "Position": 0,
-        "Generation": "vr-hmc",
+        "Generation": "vera-rubin",
         "ParentChassis": "HGX_BMC_0",
         "LocationContext": "HGX_Chassis_0/SMM_0/HMC_0",
         "EID": 9,
@@ -35,12 +34,11 @@
         "Type": "NvDevice",
         "Kind": "gpu_sma",
         "Instance": 0,
-        "Position": 0,
         "BridgedProcessors": [
           "HGX_GPU_0",
           "HGX_GPU_1"
         ],
-        "Generation": "vr-hmc",
+        "Generation": "vera-rubin",
         "ParentChassis": "HGX_ProcessorModule_0",
         "LocationContext": "HGX_Chassis_0/ProcessorModule_0",
         "EID": 10,
@@ -61,9 +59,8 @@
         "Type": "NvDevice",
         "Kind": "gpu",
         "Instance": 0,
-        "Position": 0,
         "SwitchPresence": true,
-        "Generation": "rubin",
+        "Generation": "vera-rubin",
         "ParentChassis": "HGX_ProcessorModule_0",
         "LocationContext": "HGX_Chassis_0/ProcessorModule_0",
         "EID": 11,
@@ -71,7 +68,8 @@
           "Medium": "bridge",
           "Bridge": "HGX_GPU_SMA_0",
           "BridgeEID": 10,
-          "BridgePort": "1.1.1"
+          "BridgePort": "1.1.1",
+          "PoolIndex": 0
         },
         "Recovery": {
           "OcpRecoveryI2cAddress": 105
@@ -82,9 +80,8 @@
         "Type": "NvDevice",
         "Kind": "gpu",
         "Instance": 1,
-        "Position": 1,
         "SwitchPresence": true,
-        "Generation": "rubin",
+        "Generation": "vera-rubin",
         "ParentChassis": "HGX_ProcessorModule_0",
         "LocationContext": "HGX_Chassis_0/ProcessorModule_0",
         "EID": 12,
@@ -92,7 +89,8 @@
           "Medium": "bridge",
           "Bridge": "HGX_GPU_SMA_0",
           "BridgeEID": 10,
-          "BridgePort": "1.1.1"
+          "BridgePort": "1.1.1",
+          "PoolIndex": 1
         },
         "Recovery": {
           "OcpRecoveryI2cAddress": 106
@@ -104,8 +102,7 @@
         "Type": "NvDevice",
         "Kind": "gpu_sma",
         "Instance": 1,
-        "Position": 0,
-        "Generation": "vr-hmc",
+        "Generation": "vera-rubin",
         "ParentChassis": "HGX_ProcessorModule_1",
         "LocationContext": "HGX_Chassis_0/ProcessorModule_1",
         "EID": 20,
@@ -130,9 +127,8 @@
         "Type": "NvDevice",
         "Kind": "gpu",
         "Instance": 2,
-        "Position": 0,
         "SwitchPresence": true,
-        "Generation": "rubin",
+        "Generation": "vera-rubin",
         "ParentChassis": "HGX_ProcessorModule_1",
         "LocationContext": "HGX_Chassis_0/ProcessorModule_1",
         "EID": 21,
@@ -140,7 +136,8 @@
           "Medium": "bridge",
           "Bridge": "HGX_GPU_SMA_1",
           "BridgeEID": 20,
-          "BridgePort": "1.2.1"
+          "BridgePort": "1.2.1",
+          "PoolIndex": 0
         },
         "Recovery": {
           "OcpRecoveryI2cAddress": 105
@@ -151,9 +148,8 @@
         "Type": "NvDevice",
         "Kind": "gpu",
         "Instance": 3,
-        "Position": 1,
         "SwitchPresence": true,
-        "Generation": "rubin",
+        "Generation": "vera-rubin",
         "ParentChassis": "HGX_ProcessorModule_1",
         "LocationContext": "HGX_Chassis_0/ProcessorModule_1",
         "EID": 22,
@@ -161,7 +157,8 @@
           "Medium": "bridge",
           "Bridge": "HGX_GPU_SMA_1",
           "BridgeEID": 20,
-          "BridgePort": "1.2.1"
+          "BridgePort": "1.2.1",
+          "PoolIndex": 1
         },
         "Recovery": {
           "OcpRecoveryI2cAddress": 106
@@ -173,8 +170,7 @@
         "Type": "NvDevice",
         "Kind": "cpu",
         "Instance": 0,
-        "Position": 0,
-        "Generation": "vera",
+        "Generation": "vera-rubin",
         "ParentChassis": "HGX_ProcessorModule_0",
         "LocationContext": "HGX_Chassis_0/ProcessorModule_0",
         "EID": 14,
@@ -190,8 +186,7 @@
         "Type": "NvDevice",
         "Kind": "cpu",
         "Instance": 1,
-        "Position": 0,
-        "Generation": "vera",
+        "Generation": "vera-rubin",
         "ParentChassis": "HGX_ProcessorModule_1",
         "LocationContext": "HGX_Chassis_0/ProcessorModule_1",
         "EID": 24,
@@ -205,12 +200,11 @@
       {
         "Name": "HGX_ProcessorModule_SMA_0",
         "Type": "NvDevice",
-        "Kind": "hpm_sma",
+        "Kind": "hmc_hpm_sma",
         "Instance": 0,
-        "Position": 0,
         "TGP_ENABLED": true,
         "TGP_GPU_COUNT": 4,
-        "Generation": "vr-hmc",
+        "Generation": "vera-rubin",
         "ParentChassis": "HGX_ProcessorModule_0",
         "LocationContext": "HGX_Chassis_0/ProcessorModule_0",
         "EID": 13,
@@ -227,10 +221,9 @@
       {
         "Name": "HGX_ProcessorModule_SMA_1",
         "Type": "NvDevice",
-        "Kind": "hpm_sma",
+        "Kind": "hmc_hpm_sma",
         "Instance": 1,
-        "Position": 0,
-        "Generation": "vr-hmc",
+        "Generation": "vera-rubin",
         "ParentChassis": "HGX_ProcessorModule_1",
         "LocationContext": "HGX_Chassis_0/ProcessorModule_1",
         "EID": 23,

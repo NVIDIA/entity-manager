@@ -1,8 +1,8 @@
 [
   {
     "Name": "$Name_Platform",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^nvme_e1s$', 'Generation': 'vr-bmc'})",
-    "Type": "Device_Configs",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^nvme_e1s$', 'Generation': 'vera-rubin'})",
+    "Type": "vr_bmc_nvme_e1s",
     "Exposes": [
       {
         "BridgeName": "$Bridge",

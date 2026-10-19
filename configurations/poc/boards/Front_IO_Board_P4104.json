@@ -2,7 +2,9 @@
     {
         "Exposes": [],
         "Name": "FIO_Board_0",
-        "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
+        "Associations": {
+            "parent_chassis": "chassis/Chassis_0"
+        },
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 23, 'ADDRESS': 87, 'PRODUCT_PRODUCT_NAME': '.?FIO.?'})",
         "Type": "Board",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
