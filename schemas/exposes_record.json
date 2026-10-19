@@ -254,6 +254,9 @@
                     "$ref": "nvidia_misc.json#/$defs/EEPROM_24C64"
                 },
                 {
+                    "$ref": "nvidia_misc.json#/$defs/HmcMailbox"
+                },
+                {
                     "$ref": "nvidia_misc.json#/$defs/I2CFan"
                 },
                 {

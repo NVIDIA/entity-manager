@@ -1606,6 +1606,14 @@
                 "StaleOffset": 587,
                 "Type": "Satellite",
                 "ValueType": "PLDM"
+            },
+            {
+                "ControlAddress": "0x45",
+                "ControlBus": 1,
+                "DataAddress": "0x4f",
+                "DataBus": 3,
+                "Name": "HMC_0_Mailbox",
+                "Type": "HmcMailbox"
             }
         ],
         "Name": "HMC_0",

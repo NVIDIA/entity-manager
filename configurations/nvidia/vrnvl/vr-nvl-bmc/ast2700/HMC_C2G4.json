@@ -2,6 +2,14 @@
     {
         "Exposes": [
             {
+                "ControlAddress": "0x45",
+                "ControlBus": 10,
+                "DataAddress": "0x4f",
+                "DataBus": 12,
+                "Name": "HMC_0_Mailbox",
+                "Type": "HmcMailbox"
+            },
+            {
                 "Address": "0x4f",
                 "Bus": 12,
                 "MaxValue": 127,

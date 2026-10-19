@@ -156,6 +156,40 @@
             },
             "required": ["Name", "Type"]
         },
+        "HmcMailbox": {
+            "description": "The BMC's I2C path to the HMC's mailbox EEPROMs: control (commands, dump requests) and data (status, dump blocks).",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ControlAddress": {
+                    "type": "string"
+                },
+                "ControlBus": {
+                    "type": "integer"
+                },
+                "DataAddress": {
+                    "type": "string"
+                },
+                "DataBus": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "HmcMailbox"
+                }
+            },
+            "required": [
+                "ControlAddress",
+                "ControlBus",
+                "DataAddress",
+                "DataBus",
+                "Name",
+                "Type"
+            ]
+        },
         "I2CFan": {
             "type": "object",
             "additionalProperties": false,
