@@ -186,6 +186,9 @@
                 "PowerState": {
                     "type": "string"
                 },
+                "Presence": {
+                    "$ref": "legacy.json#/$defs/Types/Presence"
+                },
                 "Thresholds": {
                     "type": "array"
                 },
