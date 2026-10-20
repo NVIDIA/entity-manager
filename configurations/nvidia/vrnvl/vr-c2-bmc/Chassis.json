@@ -69,7 +69,7 @@
             "LocationContext": ""
         },
         "xyz.openbmc_project.Inventory.Item.Chassis": {
-            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Shelf"
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.RackMount"
         },
         "xyz.openbmc_project.Inventory.Item.System": {}
     },
