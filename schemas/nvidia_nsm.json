@@ -1374,6 +1374,9 @@
                 "SupportPowerCappingMode": {
                     "type": "boolean"
                 },
+                "SupportPowerProfile": {
+                    "type": "boolean"
+                },
                 "SupportTAVMode": {
                     "type": "boolean"
                 },
