@@ -5,86 +5,7 @@
     "InstanceNumber": "$Instance",
     "EID": "$EID",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vera-rubin'})",
-    "Exposes": [
-      {
-        "AuxNames": [
-          "$Name_Temp_0"
-        ],
-        "Name": "$Name_Temp_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 300,
-        "ThermalParameters": [
-          {
-            "Dynamic": false,
-            "Name": "UpperFatal",
-            "Value": 105.0
-          },
-          {
-            "Dynamic": false,
-            "Name": "UpperCritical",
-            "Value": 103.0
-          },
-          {
-            "Dynamic": false,
-            "Name": "UpperCaution",
-            "Value": 100.0
-          }
-        ],
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "CX_NIC_$Instance_Port_0_Temp_0"
-        ],
-        "Name": "CX_NIC_$Instance_Port_0_Temp_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 500,
-        "ThermalParameters": [
-          {
-            "Dynamic": false,
-            "Name": "UpperFatal",
-            "Value": 72.0
-          },
-          {
-            "Dynamic": false,
-            "Name": "UpperCritical",
-            "Value": 70.0
-          },
-          {
-            "Dynamic": false,
-            "Name": "UpperCaution",
-            "Value": 67.0
-          }
-        ],
-        "Type": "SensorAuxName"
-      },
-      {
-        "AuxNames": [
-          "CX_NIC_$Instance_Port_1_Temp_0"
-        ],
-        "Name": "CX_NIC_$Instance_Port_1_Temp_0",
-        "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/$Name",
-        "SensorId": 501,
-        "ThermalParameters": [
-          {
-            "Dynamic": false,
-            "Name": "UpperFatal",
-            "Value": 72.0
-          },
-          {
-            "Dynamic": false,
-            "Name": "UpperCritical",
-            "Value": 70.0
-          },
-          {
-            "Dynamic": false,
-            "Name": "UpperCaution",
-            "Value": 67.0
-          }
-        ],
-        "Type": "SensorAuxName"
-      }
-    ],
+    "Exposes": [],
     "Associations": {
       "parent_chassis": "board/$ParentChassis"
     },
@@ -156,13 +77,31 @@
           "Port_1": 201,
           "$Name_Power_0": 50,
           "CX_NIC_$Instance_Port_0_Voltage_0": 400,
-          "CX_NIC_$Instance_Port_1_Voltage_0": 401
+          "CX_NIC_$Instance_Port_1_Voltage_0": 401,
+          "$Name_Temp_0": 300,
+          "CX_NIC_$Instance_Port_0_Temp_0": 500,
+          "CX_NIC_$Instance_Port_1_Temp_0": 501
         },
         "Ports": {
           "200": "$PortName0",
           "201": "$PortName1"
         },
-        "PortMaxSpeedMBps": 100000
+        "PortMaxSpeedMBps": 100000,
+        "UpperFatal": {
+          "$Name_Temp_0": 105.0,
+          "CX_NIC_$Instance_Port_0_Temp_0": 72.0,
+          "CX_NIC_$Instance_Port_1_Temp_0": 72.0
+        },
+        "UpperCritical": {
+          "$Name_Temp_0": 103.0,
+          "CX_NIC_$Instance_Port_0_Temp_0": 70.0,
+          "CX_NIC_$Instance_Port_1_Temp_0": 70.0
+        },
+        "UpperCaution": {
+          "$Name_Temp_0": 100.0,
+          "CX_NIC_$Instance_Port_0_Temp_0": 67.0,
+          "CX_NIC_$Instance_Port_1_Temp_0": 67.0
+        }
       },
       {
         "Name": "$Name_Recovery",
