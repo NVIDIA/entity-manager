@@ -108,6 +108,11 @@
                     "/xyz/openbmc_project/inventory/system/bmc/HGX_BMC_0"
                 ],
                 [
+                    "computer_system",
+                    "chassis",
+                    "/xyz/openbmc_project/inventory/system/system/system0"
+                ],
+                [
                     "all_chassis",
                     "chassis",
                     "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_BMC_0"
