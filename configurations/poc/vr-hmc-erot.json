@@ -9,12 +9,11 @@
       {
         "Name": "NSM_Telemetry",
         "Type": "NSM_Telemetry",
-        "Disable": [
-          "Device.ChassisIRoTResponder"
-        ],
+        "Disable": [],
         "ParameterOverrides": {
-          "ImageCopyStateEnabled": false,
-          "LocationCode": "ERoT_HMC_$Instance",
+          "ChassisIRoTResponder": "$ErotIRoTResponder",
+          "ChassisRoT": "$ErotChassisRoT",
+          "LocationCode": "$LocationCode",
           "LocationContext": "$LocationContext"
         }
       },

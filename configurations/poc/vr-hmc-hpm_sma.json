@@ -11,10 +11,10 @@
         "Type": "NSM_Telemetry",
         "Disable": [],
         "ParameterOverrides": {
-          "TotalGpuPower": {
-            "enabled": "$TGP_ENABLED",
-            "GPU_Count": "$TGP_GPU_COUNT"
-          }
+          "TotalGpuPower": "$TGP_ENABLED",
+          "TotalGpuPowerGpuCount": "$TGP_GPU_COUNT",
+          "ChassisType": "$ChassisType",
+          "BusBarTemp_0": "$EnableBusBarTemp_0"
         }
       },
       {

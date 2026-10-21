@@ -10,7 +10,15 @@
         "Name": "NSM_Telemetry",
         "Type": "NSM_Telemetry",
         "Disable": [],
-        "ParameterOverrides": {}
+        "ParameterOverrides": {
+          "SKU": "$SKU",
+          "PortCount": "$PortCount",
+          "BoardName": "$BoardName",
+          "OpticalModuleResetSupported": "$OpticalModuleResetSupported",
+          "OpticalModuleTelemetrySupported": "$OpticalModuleTelemetrySupported",
+          "PortNameMap": "$PortNameMap",
+          "PortLocationCodeMap": "$PortLocationCodeMap"
+        }
       }
     ],
     "Associations": {

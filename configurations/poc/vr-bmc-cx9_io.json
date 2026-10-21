@@ -112,24 +112,8 @@
       {
         "Name": "NSM_Telemetry",
         "Type": "NSM_Telemetry",
-        "Disable": [
-          "Device.FabricsEndpoint",
-          "Device.FabricsZone",
-          "Device.DebugToken",
-          "IRoT.FW_ComponentType"
-        ],
-        "ParameterOverrides": {
-          "NVLinkWithNetworkPortAddresses": {
-            "Count": "$PORT_COUNT",
-            "PortLocationCodeMap": "$PORT_LOCATION_CODE_MAP",
-            "PortLocationContext": "$LOCATION_CONTEXT",
-            "PortLocationReference": "$PORT_LOCATION_REFERENCE",
-            "PortNameMap": "$PORT_NAME_MAP"
-          },
-          "NetworkAdapter": {
-            "Name": "$NETWORK_ADAPTER_NAME"
-          }
-        }
+        "Disable": [],
+        "ParameterOverrides": {}
       }
     ]
   },

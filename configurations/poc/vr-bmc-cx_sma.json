@@ -9,27 +9,13 @@
       {
         "Name": "NSM_Telemetry",
         "Type": "NSM_Telemetry",
-        "Disable": [
-          "IRoT.ChassisIRoTResponder",
-          "IRoT.FW_ComponentType"
-        ],
+        "Disable": [],
         "ParameterOverrides": {
-          "Device": {
-            "Chassis": {
-              "ChassisAttributes.LocationCode": "$LOCATION_CODE",
-              "ChassisAttributes.LocationContext": "$LOCATION_CONTEXT"
-            },
-            "Temp": {
-              "Name": "IO_Board_SMA_$INSTANCE_NUMBER_Temp_0",
-              "MaxValue": 125.0,
-              "MinValue": -40.0,
-              "PhysicalContext": "Board"
-            },
-            "LeakDetection": {
-              "MaxValue": 3.3,
-              "MinValue": 0.0
-            }
-          }
+          "LocationContext": "$LocationContext",
+          "LeakDetection": "$LeakDetectionEnabled",
+          "ChassisIRoTResponder": "$EnableChassisIRoTResponder",
+          "ChassisRoT": "$EnableChassisRoT",
+          "AssociatedSKU": "$AssociatedSKU"
         }
       },
       {
