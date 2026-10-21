@@ -120,7 +120,7 @@
   {
     "Name": "$Name_Platform",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vera-rubin'})",
-    "Type": "vr_bmc_cx9_io",
+    "Type": "cx9_io",
     "Exposes": [
       {
         "DeviceType": "CX_NIC_$Instance",

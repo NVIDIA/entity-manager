@@ -65,9 +65,6 @@
         "Instance": 0,
         "LocationContext": "Chassis_0/Bay-B-Left-Bottom",
         "LeakDetectionEnabled": false,
-        "AssociatedSKU": "",
-        "EnableChassisIRoTResponder": false,
-        "EnableChassisRoT": false,
         "EID": 60,
         "ParentChassis": "IO_Board_0",
         "Transport": {
@@ -75,8 +72,7 @@
           "Port": "1.1.4.1",
           "RootHubPath": "/sys/devices/platform/soc@14000000/14121000.usb",
           "PoolStartEID": "61",
-          "PoolEndEID": "65",
-          "IgnoreEIDs": "62,64"
+          "PoolEndEID": "65"
         },
         "Recovery": {
           "RecoveryGpio": "IOB0_MCU_RECOVERY_L-O",
@@ -91,9 +87,6 @@
         "Instance": 1,
         "LocationContext": "Chassis_0/Bay-B-Left-Top",
         "LeakDetectionEnabled": true,
-        "AssociatedSKU": "",
-        "EnableChassisIRoTResponder": false,
-        "EnableChassisRoT": false,
         "EID": 70,
         "ParentChassis": "IO_Board_1",
         "Transport": {
@@ -101,8 +94,7 @@
           "Port": "1.1.3.1",
           "RootHubPath": "/sys/devices/platform/soc@14000000/14121000.usb",
           "PoolStartEID": "71",
-          "PoolEndEID": "75",
-          "IgnoreEIDs": "72,74"
+          "PoolEndEID": "75"
         },
         "Recovery": {
           "RecoveryGpio": "IOB1_MCU_RECOVERY_L-O",
@@ -117,9 +109,6 @@
         "Instance": 2,
         "LocationContext": "Chassis_0/Bay-B-Right-Bottom",
         "LeakDetectionEnabled": false,
-        "AssociatedSKU": "",
-        "EnableChassisIRoTResponder": false,
-        "EnableChassisRoT": false,
         "EID": 80,
         "ParentChassis": "IO_Board_2",
         "Transport": {
@@ -127,8 +116,7 @@
           "Port": "1.2.3.1",
           "RootHubPath": "/sys/devices/platform/soc@14000000/14121000.usb",
           "PoolStartEID": "81",
-          "PoolEndEID": "85",
-          "IgnoreEIDs": "82,84"
+          "PoolEndEID": "85"
         },
         "Recovery": {
           "RecoveryGpio": "IOB2_MCU_RECOVERY_L-O",
@@ -143,9 +131,6 @@
         "Instance": 3,
         "LocationContext": "Chassis_0/Bay-B-Right-Top",
         "LeakDetectionEnabled": true,
-        "AssociatedSKU": "",
-        "EnableChassisIRoTResponder": false,
-        "EnableChassisRoT": false,
         "EID": 90,
         "ParentChassis": "IO_Board_3",
         "Transport": {
@@ -153,8 +138,7 @@
           "Port": "1.2.4.1",
           "RootHubPath": "/sys/devices/platform/soc@14000000/14121000.usb",
           "PoolStartEID": "91",
-          "PoolEndEID": "95",
-          "IgnoreEIDs": "92,94"
+          "PoolEndEID": "95"
         },
         "Recovery": {
           "RecoveryGpio": "IOB3_MCU_RECOVERY_L-O",

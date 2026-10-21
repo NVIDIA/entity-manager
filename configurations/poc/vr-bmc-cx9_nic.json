@@ -11,13 +11,9 @@
         "Type": "NSM_Telemetry",
         "Disable": [],
         "ParameterOverrides": {
-          "SKU": "$SKU",
-          "PortCount": "$PortCount",
-          "BoardName": "$BoardName",
-          "OpticalModuleResetSupported": "$OpticalModuleResetSupported",
-          "OpticalModuleTelemetrySupported": "$OpticalModuleTelemetrySupported",
-          "PortNameMap": "$PortNameMap",
-          "PortLocationCodeMap": "$PortLocationCodeMap"
+          "PortCount": 1,
+          "OpticalModuleResetSupported": false,
+          "OpticalModuleTelemetrySupported": true
         }
       }
     ],
@@ -51,7 +47,7 @@
   {
     "Name": "$Name_Platform",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_nic$', 'Generation': 'vera-rubin'})",
-    "Type": "vr_bmc_cx9_nic",
+    "Type": "cx9_nic",
     "Exposes": [
       {
         "Name": "$Name_PLDM",

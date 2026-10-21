@@ -2,7 +2,7 @@
   {
     "Name": "BMC_SATMC",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bmc$', 'Generation': 'vera-rubin'})",
-    "Type": "vr_bmc_satmc",
+    "Type": "satmc",
     "Exposes": [
       {
         "AuthType": "None",

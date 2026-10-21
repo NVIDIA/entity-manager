@@ -2,7 +2,7 @@
   {
     "Name": "$Name",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^gpu_sma$', 'Generation': 'vera-rubin'})",
-    "Type": "vr_hmc_gpu_sma",
+    "Type": "gpu_sma",
     "InstanceNumber": "$Instance",
     "EID": "$EID",
     "BridgedProcessors": "$BridgedProcessors",

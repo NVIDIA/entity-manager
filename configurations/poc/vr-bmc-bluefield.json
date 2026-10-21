@@ -144,7 +144,7 @@
   {
     "Name": "$Name_Platform",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vera-rubin'})",
-    "Type": "vr_bmc_bluefield",
+    "Type": "bluefield",
     "Exposes": [
       {
         "Name": "$Name_PLDM",

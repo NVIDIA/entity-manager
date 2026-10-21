@@ -2,7 +2,7 @@
   {
     "Name": "$Name",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^gpu$', 'Generation': 'vera-rubin'})",
-    "Type": "rubin_gpu",
+    "Type": "gpu",
     "InstanceNumber": "$Instance",
     "EID": "$EID",
     "Exposes": [
@@ -14,18 +14,17 @@
           "DRAM_0_Temp_0"
         ],
         "ParameterOverrides": {
-          "BoardAssembly": "$GpuBoardAssembly",
-          "LTSSMState": "$GpuLTSSMState",
-          "NVLinkCount": "$GpuNVLinkCount",
-          "EGMModeSupported": "$GpuEGMModeSupported",
-          "MNNVLTopologySupported": "$GpuMNNVLTopologySupported",
-          "GPUBasePowerLimitSupported": "$GpuBasePowerLimitSupported",
-          "GPUCopyCPUPowerLimitSupported": "$GpuCopyCPUPowerLimitSupported",
-          "GPUCopySwitchPowerLimitSupported": "$SwitchPresence",
-          "DisabledPRCKnobs": "$GpuDisabledPRCKnobs",
-          "GPMMetricsBitfield": "$GpuMetricsBitfield",
-          "ChassisIRoTResponder": "$GpuIRoTResponder",
-          "ChassisRoT": "$GpuChassisRoT",
+          "BoardAssembly": true,
+          "LTSSMState": false,
+          "NVLinkCount": 36,
+          "EGMModeSupported": true,
+          "MNNVLTopologySupported": true,
+          "GPUBasePowerLimitSupported": true,
+          "GPUCopyCPUPowerLimitSupported": true,
+          "GPUCopySwitchPowerLimitSupported": true,
+          "GPMMetricsBitfield": "255,255,223,255",
+          "ChassisIRoTResponder": false,
+          "ChassisRoT": false,
           "LocationCode": "$LocationCode",
           "LocationContext": "$LocationContext"
         }

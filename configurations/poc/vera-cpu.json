@@ -2,7 +2,7 @@
   {
     "Name": "$Platform.NamePrefixIRoT_CPU_$Instance",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin'})",
-    "Type": "vera_cpu",
+    "Type": "cpu",
     "InstanceNumber": "$Instance",
     "EID": "$EID",
     "Exposes": [

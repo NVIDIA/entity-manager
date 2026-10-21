@@ -2,7 +2,7 @@
   {
     "Name": "$Name",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^irot$', 'Generation': 'vera-rubin'})",
-    "Type": "vr_rot",
+    "Type": "irot",
     "InstanceNumber": "$Instance",
     "EID": "$EID",
     "Exposes": [
@@ -45,7 +45,7 @@
   {
     "Name": "VRoT_MCTP",
     "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpvrot0'})",
-    "Type": "vr_rot",
+    "Type": "vrot",
     "Exposes": [
       {
         "Interface": "$Interface",

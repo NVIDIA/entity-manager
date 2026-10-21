@@ -75,7 +75,7 @@
   {
     "Name": "$Name_Platform",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^nvme_smm$', 'Generation': 'vera-rubin'})",
-    "Type": "vr_bmc_nvme_smm",
+    "Type": "nvme_smm",
     "Exposes": [
       {
         "Name": "$Name_MCTP",

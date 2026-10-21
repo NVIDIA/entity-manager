@@ -2,7 +2,7 @@
   {
     "Name": "$Name",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^erot$', 'Generation': 'vera-rubin'})",
-    "Type": "vr_bmc_erot",
+    "Type": "erot",
     "InstanceNumber": "$Instance",
     "EID": "$EID",
     "Exposes": [

@@ -2,7 +2,7 @@
   {
     "Name": "$Name",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bmc_hpm_sma$', 'Generation': 'vera-rubin'})",
-    "Type": "vr_bmc_hpm_sma",
+    "Type": "bmc_hpm_sma",
     "InstanceNumber": "$Instance",
     "EID": "$EID",
     "Exposes": [

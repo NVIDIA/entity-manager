@@ -2,7 +2,7 @@
   {
     "Name": "$Name",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vera-rubin'})",
-    "Type": "vr_bmc_cx_sma",
+    "Type": "cx_sma",
     "InstanceNumber": "$Instance",
     "EID": "$EID",
     "Exposes": [
@@ -13,9 +13,8 @@
         "ParameterOverrides": {
           "LocationContext": "$LocationContext",
           "LeakDetection": "$LeakDetectionEnabled",
-          "ChassisIRoTResponder": "$EnableChassisIRoTResponder",
-          "ChassisRoT": "$EnableChassisRoT",
-          "AssociatedSKU": "$AssociatedSKU"
+          "ChassisIRoTResponder": false,
+          "ChassisRoT": false
         }
       },
       {
@@ -66,6 +65,6 @@
         "Type": "LeakDetectionPolicy"
       }
     ],
-    "Type": "chassis"
+    "Type": "LeakDetection"
   }
 ]

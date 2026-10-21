@@ -2,7 +2,7 @@
   {
     "Name": "$Name",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^erot$', 'Generation': 'vera-rubin'})",
-    "Type": "vr_hmc_erot",
+    "Type": "erot",
     "InstanceNumber": "$Instance",
     "EID": "$EID",
     "Exposes": [
@@ -11,8 +11,8 @@
         "Type": "NSM_Telemetry",
         "Disable": [],
         "ParameterOverrides": {
-          "ChassisIRoTResponder": "$ErotIRoTResponder",
-          "ChassisRoT": "$ErotChassisRoT",
+          "ChassisIRoTResponder": true,
+          "ChassisRoT": true,
           "LocationCode": "$LocationCode",
           "LocationContext": "$LocationContext"
         }

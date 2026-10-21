@@ -2,7 +2,7 @@
   {
     "Name": "$Name",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield_sma$', 'Generation': 'vera-rubin'})",
-    "Type": "vr_bmc_bluefield_sma",
+    "Type": "bluefield_sma",
     "InstanceNumber": "$Instance",
     "EID": "$EID",
     "Exposes": [
