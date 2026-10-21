@@ -1920,6 +1920,11 @@
                     "all_sensors",
                     "chassis",
                     "/xyz/openbmc_project/sensors/power/HGX_NVSwitch_$INSTANCE_NUMBER_Power_0"
+                ],
+                [
+                    "parent_chassis",
+                    "chassis",
+                    "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0"
                 ]
             ]
         },
