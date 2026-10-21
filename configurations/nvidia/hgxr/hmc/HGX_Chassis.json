@@ -21,6 +21,12 @@
                 "UUID": "STATIC:773:0:MCTP_EID:84"
             },
             {
+                "DataIndex": 131,
+                "Name": "NSM_Quantum_SPI_WriteProtect",
+                "Type": "NSM_WriteProtect",
+                "UUID": "STATIC:773:0:MCTP_EID:84"
+            },
+            {
                 "Name": "Domain_0_GPU_SPI_WriteProtect",
                 "Sources": [
                     "NSM_GPU_SPI_WriteProtect"
@@ -31,6 +37,13 @@
                 "Name": "Domain_1_Baseboard_FRU_WriteProtect",
                 "Sources": [
                     "NSM_Baseboard_FRU_WriteProtect"
+                ],
+                "Type": "WriteProtectDomain"
+            },
+            {
+                "Name": "Domain_2_Quantum_SPI_WriteProtect",
+                "Sources": [
+                    "NSM_Quantum_SPI_WriteProtect"
                 ],
                 "Type": "WriteProtectDomain"
             },
@@ -76,7 +89,10 @@
                     "HGX_FW_NVSwitch_3"
                 ],
                 "Name": "NVSwitch_ProtectedComponents",
-                "Sources": [],
+                "Sources": [
+                    "Domain_2_Quantum_SPI_WriteProtect",
+                    "HGX_HW_WriteProtect"
+                ],
                 "Type": "WriteProtectGroup"
             },
             {

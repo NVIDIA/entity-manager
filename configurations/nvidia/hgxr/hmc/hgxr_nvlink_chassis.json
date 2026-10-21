@@ -231,6 +231,11 @@
                         "AbsolutePath": "/xyz/openbmc_project/sensors/power/HGX_NVSwitch_$INSTANCE_NUMBER_Power_0",
                         "Backward": "switch",
                         "Forward": ""
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/state/Domain_2_Quantum_SPI_WriteProtect",
+                        "Backward": "write_protects",
+                        "Forward": "write_protected_by"
                     }
                 ],
                 "ChassisAttributes": {
