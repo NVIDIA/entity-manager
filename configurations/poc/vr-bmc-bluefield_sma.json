@@ -53,7 +53,9 @@
         "Name": "$Name_Recovery",
         "Type": "Recovery",
         "Method": "MCU",
-        "Target": "BF4"
+        "Target": "BF4",
+        "VendorId": "0x0955",
+        "ProductId": "0xCF11"
       }
     ]
   }
