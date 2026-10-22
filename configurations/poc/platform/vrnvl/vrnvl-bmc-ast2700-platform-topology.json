@@ -401,6 +401,14 @@
         "ResetGpioName": "HMC_RST_R_L-O",
         "SpiMuxGpioName": "HMC_SPI_MUX_R_SEL-O",
         "Type": "USBDFURecovery"
+      },
+      {
+        "ControlAddress": "0x45",
+        "ControlBus": 10,
+        "DataAddress": "0x4f",
+        "DataBus": 12,
+        "Name": "HMC_0_Mailbox",
+        "Type": "HmcMailbox"
       }
     ]
   }

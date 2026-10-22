@@ -474,6 +474,14 @@
         "Name": "FW_BF4_ERoT_BMC_0",
         "Polarity": "ActiveLow",
         "Type": "GPIOERoTRecovery"
+      },
+      {
+        "ControlAddress": "0x45",
+        "ControlBus": 1,
+        "DataAddress": "0x4f",
+        "DataBus": 3,
+        "Name": "HMC_0_Mailbox",
+        "Type": "HmcMailbox"
       }
     ]
   },

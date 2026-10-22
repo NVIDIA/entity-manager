@@ -42,6 +42,10 @@
                 {
                     "$comment": "downstream-only: PLDM firmware-update discovery exclusion list consumed by pldmd.",
                     "$ref": "pldm_exclusion.json#/$defs/PLDMExclusion"
+                },
+                {
+                    "$comment": "downstream-only: the BMC's I2C path to the HMC mailbox, consumed by hmc-dump-client.",
+                    "$ref": "../nvidia_misc.json#/$defs/HmcMailbox"
                 }
             ]
         },
