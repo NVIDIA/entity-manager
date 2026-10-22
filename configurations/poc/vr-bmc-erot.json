@@ -15,10 +15,18 @@
           "Device.FW_ComponentType.EC"
         ],
         "ParameterOverrides": {
-          "ImageCopyStateEnabled": false,
-          "LocationCode": "$Name",
-          "LocationContext": "$Platform.TopChassis/SMM_Interposer_0/SMM_0/$Platform.BmcName",
-          "SKUUnsupported": true
+          "ImageCopyStateEnabled": {
+            "Enabled": false
+          },
+          "LocationCode": {
+            "Value": "$Name"
+          },
+          "LocationContext": {
+            "Value": "$Platform.TopChassis/SMM_Interposer_0/SMM_0/$Platform.BmcName"
+          },
+          "SKUUnsupported": {
+            "Enabled": true
+          }
         }
       },
       {

@@ -1,0 +1,93 @@
+[
+  {
+    "Name": "Nvidia HGX-R HMC Policy",
+    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 37, 'ADDRESS': 83})",
+    "Type": "Platform",
+    "PlatformExposes": [
+      {
+        "Name": "NSM_Policy_GPU",
+        "Type": "NSM_Policy",
+        "Kind": "gpu",
+        "Policy": [
+          {
+            "Devices": [
+              "HGX_GPU_0",
+              "HGX_GPU_1",
+              "HGX_GPU_2",
+              "HGX_GPU_3",
+              "HGX_GPU_4",
+              "HGX_GPU_5",
+              "HGX_GPU_6",
+              "HGX_GPU_7"
+            ],
+            "LTSSMState": {
+              "Enabled": false
+            },
+            "NVLinkCount": {
+              "Value": 36
+            },
+            "GPMMetricsBitfield": {
+              "Value": [
+                255,
+                255,
+                15,
+                255
+              ]
+            },
+            "ChassisIRoTResponder": {
+              "Enabled": false
+            },
+            "ChassisRoT": {
+              "Enabled": false
+            }
+          }
+        ]
+      },
+      {
+        "Name": "NSM_Policy_HPM_SMA",
+        "Type": "NSM_Policy",
+        "Kind": "hmc_hpm_sma",
+        "Policy": [
+          {
+            "Devices": [
+              "HGX_Baseboard_SMA_0"
+            ],
+            "ChassisType": {
+              "Value": "Component"
+            },
+            "TotalGpuPower": {
+              "Enabled": true
+            },
+            "TotalGpuPowerGpuCount": {
+              "Value": 8
+            },
+            "BusBarTemp_0": {
+              "Enabled": false
+            }
+          }
+        ]
+      },
+      {
+        "Name": "NSM_Policy_CX_SMA",
+        "Type": "NSM_Policy",
+        "Kind": "cx_sma",
+        "Policy": [
+          {
+            "Devices": [
+              "HGX_ConnectX_SMA_0",
+              "HGX_ConnectX_SMA_1",
+              "HGX_ConnectX_SMA_2",
+              "HGX_ConnectX_SMA_3"
+            ],
+            "ChassisIRoTResponder": {
+              "Enabled": false
+            },
+            "ChassisRoT": {
+              "Enabled": false
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

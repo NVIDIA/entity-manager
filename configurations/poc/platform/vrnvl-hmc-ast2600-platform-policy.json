@@ -1,0 +1,85 @@
+[
+  {
+    "Name": "Nvidia VR-NVL144 HMC AST2600 Policy",
+    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?'})",
+    "Type": "Platform",
+    "PlatformExposes": [
+      {
+        "Name": "NSM_Policy_GPU",
+        "Type": "NSM_Policy",
+        "Kind": "gpu",
+        "Policy": [
+          {
+            "Devices": [
+              "HGX_GPU_0",
+              "HGX_GPU_1",
+              "HGX_GPU_2",
+              "HGX_GPU_3"
+            ],
+            "LTSSMState": {
+              "Enabled": false
+            },
+            "NVLinkCount": {
+              "Value": 36
+            },
+            "GPMMetricsBitfield": {
+              "Value": [
+                255,
+                255,
+                223,
+                255
+              ]
+            },
+            "ChassisIRoTResponder": {
+              "Enabled": false
+            },
+            "ChassisRoT": {
+              "Enabled": false
+            }
+          }
+        ]
+      },
+      {
+        "Name": "NSM_Policy_HPM_SMA",
+        "Type": "NSM_Policy",
+        "Kind": "hmc_hpm_sma",
+        "Policy": [
+          {
+            "Devices": [
+              "HGX_ProcessorModule_SMA_0",
+              "HGX_ProcessorModule_SMA_1"
+            ],
+            "ChassisType": {
+              "Value": "Component"
+            }
+          },
+          {
+            "Devices": [
+              "HGX_ProcessorModule_SMA_0"
+            ],
+            "TotalGpuPower": {
+              "Enabled": true
+            },
+            "TotalGpuPowerGpuCount": {
+              "Value": 4
+            },
+            "BusBarTemp_0": {
+              "Enabled": false
+            }
+          },
+          {
+            "Devices": [
+              "HGX_ProcessorModule_SMA_1"
+            ],
+            "TotalGpuPower": {
+              "Enabled": false
+            },
+            "TotalGpuPowerGpuCount": {
+              "Value": 0
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

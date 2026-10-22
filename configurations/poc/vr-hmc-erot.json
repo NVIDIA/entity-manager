@@ -11,10 +11,12 @@
         "Type": "NSM_Telemetry",
         "Disable": [],
         "ParameterOverrides": {
-          "ChassisIRoTResponder": true,
-          "ChassisRoT": true,
-          "LocationCode": "$LocationCode",
-          "LocationContext": "$LocationContext"
+          "LocationCode": {
+            "Value": "$LocationCode"
+          },
+          "LocationContext": {
+            "Value": "$LocationContext"
+          }
         }
       },
       {

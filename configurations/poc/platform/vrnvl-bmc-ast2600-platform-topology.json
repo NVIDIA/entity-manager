@@ -64,7 +64,6 @@
         "Generation": "vera-rubin",
         "Instance": 0,
         "LocationContext": "Chassis_0/Bay-B-Left-Bottom",
-        "LeakDetectionEnabled": false,
         "EID": 60,
         "ParentChassis": "IO_Board_0",
         "Transport": {
@@ -86,7 +85,6 @@
         "Generation": "vera-rubin",
         "Instance": 1,
         "LocationContext": "Chassis_0/Bay-B-Left-Top",
-        "LeakDetectionEnabled": true,
         "EID": 70,
         "ParentChassis": "IO_Board_1",
         "Transport": {
@@ -108,7 +106,6 @@
         "Generation": "vera-rubin",
         "Instance": 2,
         "LocationContext": "Chassis_0/Bay-B-Right-Bottom",
-        "LeakDetectionEnabled": false,
         "EID": 80,
         "ParentChassis": "IO_Board_2",
         "Transport": {
@@ -130,7 +127,6 @@
         "Generation": "vera-rubin",
         "Instance": 3,
         "LocationContext": "Chassis_0/Bay-B-Right-Top",
-        "LeakDetectionEnabled": true,
         "EID": 90,
         "ParentChassis": "IO_Board_3",
         "Transport": {

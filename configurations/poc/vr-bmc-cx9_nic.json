@@ -10,11 +10,7 @@
         "Name": "NSM_Telemetry",
         "Type": "NSM_Telemetry",
         "Disable": [],
-        "ParameterOverrides": {
-          "PortCount": 1,
-          "OpticalModuleResetSupported": false,
-          "OpticalModuleTelemetrySupported": true
-        }
+        "ParameterOverrides": {}
       }
     ],
     "Associations": {

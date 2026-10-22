@@ -27,7 +27,7 @@
     }
   },
   {
-    "Name": "IRoT_$Name",
+    "Name": "$Name",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vera-rubin'})",
     "Exposes": [
       {

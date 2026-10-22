@@ -10,12 +10,7 @@
         "Name": "NSM_Telemetry",
         "Type": "NSM_Telemetry",
         "Disable": [],
-        "ParameterOverrides": {
-          "TotalGpuPower": "$TGP_ENABLED",
-          "TotalGpuPowerGpuCount": "$TGP_GPU_COUNT",
-          "ChassisType": "Component",
-          "BusBarTemp_0": "$EnableBusBarTemp_0"
-        }
+        "ParameterOverrides": {}
       },
       {
         "ConnectsToName": "$Platform.BmcName",

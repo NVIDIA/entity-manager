@@ -196,13 +196,10 @@
         "Name": "HGX_ProcessorModule_SMA_0",
         "Type": "NvDevice",
         "Kind": "hmc_hpm_sma",
-        "TGP_ENABLED": true,
-        "TGP_GPU_COUNT": 4,
         "Instance": 0,
         "Generation": "vera-rubin",
         "ParentChassis": "HGX_ProcessorModule_0",
         "LocationContext": "HGX_Chassis_0/ProcessorModule_0",
-        "EnableBusBarTemp_0": false,
         "EID": 13,
         "Transport": {
           "Medium": "i2c",
@@ -222,9 +219,6 @@
         "Generation": "vera-rubin",
         "ParentChassis": "HGX_ProcessorModule_1",
         "LocationContext": "HGX_Chassis_0/ProcessorModule_1",
-        "EnableBusBarTemp_0": true,
-        "TGP_ENABLED": false,
-        "TGP_GPU_COUNT": 0,
         "EID": 23,
         "Transport": {
           "Medium": "i2c",

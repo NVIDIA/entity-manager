@@ -11,10 +11,9 @@
         "Type": "NSM_Telemetry",
         "Disable": [],
         "ParameterOverrides": {
-          "LocationContext": "$LocationContext",
-          "LeakDetection": "$LeakDetectionEnabled",
-          "ChassisIRoTResponder": false,
-          "ChassisRoT": false
+          "LocationContext": {
+            "Value": "$LocationContext"
+          }
         }
       },
       {

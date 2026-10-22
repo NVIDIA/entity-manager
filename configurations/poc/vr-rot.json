@@ -13,7 +13,9 @@
           "Device.ChassisIRoTResponder"
         ],
         "ParameterOverrides": {
-          "IRoT": "TRUE"
+          "IRoT": {
+            "Value": "TRUE"
+          }
         }
       },
       {

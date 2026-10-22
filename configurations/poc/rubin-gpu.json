@@ -14,19 +14,12 @@
           "DRAM_0_Temp_0"
         ],
         "ParameterOverrides": {
-          "BoardAssembly": true,
-          "LTSSMState": false,
-          "NVLinkCount": 36,
-          "EGMModeSupported": true,
-          "MNNVLTopologySupported": true,
-          "GPUBasePowerLimitSupported": true,
-          "GPUCopyCPUPowerLimitSupported": true,
-          "GPUCopySwitchPowerLimitSupported": true,
-          "GPMMetricsBitfield": "255,255,223,255",
-          "ChassisIRoTResponder": false,
-          "ChassisRoT": false,
-          "LocationCode": "$LocationCode",
-          "LocationContext": "$LocationContext"
+          "LocationCode": {
+            "Value": "$LocationCode"
+          },
+          "LocationContext": {
+            "Value": "$LocationContext"
+          }
         }
       },
       {
