@@ -160,6 +160,7 @@
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': '(B4240V|B4180V).*'})",
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
+            "BOARD_PRODUCT_NAME": "$BOARD_PRODUCT_NAME",
             "DEVICE_ROLE": "BAYCB4",
             "DEVICE_TYPE": 2,
             "EID": 56,
