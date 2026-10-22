@@ -1928,7 +1928,7 @@
                 ],
                 [
                     "parent_chassis",
-                    "chassis",
+                    "all_chassis",
                     "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0"
                 ]
             ]
