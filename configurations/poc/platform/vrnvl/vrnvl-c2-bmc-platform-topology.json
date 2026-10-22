@@ -1,0 +1,212 @@
+[
+  {
+    "Name": "Nvidia VR-C2 BMC",
+    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.*MGX C2.*'})",
+    "Type": "Platform",
+    "BmcName": "BMC_0",
+    "TopChassis": "Chassis_0",
+    "PlatformExposes": [
+      {
+        "Name": "ERoT_BMC_0",
+        "Type": "NvDevice",
+        "Kind": "erot",
+        "Generation": "vera-rubin",
+        "Instance": 0,
+        "EID": 10,
+        "Transport": {
+          "Medium": "spi",
+          "Bus": 0,
+          "ChipSelect": 2
+        }
+      },
+      {
+        "Name": "BMC_Device_0",
+        "Type": "NvDevice",
+        "Kind": "bmc",
+        "Generation": "vera-rubin",
+        "Instance": 0
+      },
+      {
+        "Name": "ProcessorModule_SMA_0",
+        "Type": "NvDevice",
+        "Kind": "bmc_hpm_sma",
+        "Generation": "vera-rubin",
+        "Instance": 0,
+        "EID": 20,
+        "ParentChassis": "ProcessorModule_0",
+        "Transport": {
+          "Medium": "usb",
+          "Port": "1.2.1.1",
+          "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+          "PoolStartEID": "21"
+        },
+        "Recovery": {
+          "RecoveryGpio": "B0_M1_MCU_RECOVERY_L-O",
+          "ResetGpio": "B0_M1_MCU_RESET_L-O"
+        }
+      },
+      {
+        "Name": "CPU_0",
+        "Type": "NvDevice",
+        "Kind": "cpu",
+        "Generation": "vera-rubin",
+        "Instance": 0,
+        "EID": 16,
+        "ParentChassis": "ProcessorModule_0",
+        "Transport": {
+          "Medium": "usb",
+          "Port": "1.3.1.4.1",
+          "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb"
+        }
+      },
+      {
+        "Name": "CPU_1",
+        "Type": "NvDevice",
+        "Kind": "cpu",
+        "Generation": "vera-rubin",
+        "Instance": 1,
+        "EID": 17,
+        "ParentChassis": "ProcessorModule_0",
+        "Transport": {
+          "Medium": "usb",
+          "Port": "1.3.1.4.2",
+          "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb"
+        }
+      },
+      {
+        "Name": "GPU_SMA_0",
+        "Type": "NvDevice",
+        "Kind": "gpu_sma",
+        "Generation": "vera-rubin",
+        "Instance": 0,
+        "BridgedProcessors": [
+          "GPU_0"
+        ],
+        "EID": 70,
+        "ParentChassis": "GPU_0",
+        "Transport": {
+          "Medium": "usb",
+          "Port": "1.2.1.3.1",
+          "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+          "PoolStartEID": "71"
+        }
+      },
+      {
+        "Name": "GPU_0",
+        "Type": "NvDevice",
+        "Kind": "gpu",
+        "Generation": "vera-rubin",
+        "Instance": 0,
+        "EID": 71,
+        "ParentChassis": "Chassis_0",
+        "LocationContext": "Chassis_0/GPU_0",
+        "LocationCode": "GPU_0",
+        "Transport": {
+          "Medium": "bridge",
+          "Bridge": "GPU_SMA_0",
+          "BridgeEID": 70,
+          "BridgePort": "1.2.1.3.1",
+          "PoolIndex": 0
+        }
+      },
+      {
+        "Name": "GPU_SMA_1",
+        "Type": "NvDevice",
+        "Kind": "gpu_sma",
+        "Generation": "vera-rubin",
+        "Instance": 1,
+        "BridgedProcessors": [
+          "GPU_1"
+        ],
+        "EID": 80,
+        "ParentChassis": "GPU_1",
+        "Transport": {
+          "Medium": "usb",
+          "Port": "1.3.1.3.1",
+          "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+          "PoolStartEID": "81"
+        }
+      },
+      {
+        "Name": "GPU_1",
+        "Type": "NvDevice",
+        "Kind": "gpu",
+        "Generation": "vera-rubin",
+        "Instance": 1,
+        "EID": 81,
+        "ParentChassis": "Chassis_0",
+        "LocationContext": "Chassis_0/GPU_1",
+        "LocationCode": "GPU_1",
+        "Transport": {
+          "Medium": "bridge",
+          "Bridge": "GPU_SMA_1",
+          "BridgeEID": 80,
+          "BridgePort": "1.3.1.3.1",
+          "PoolIndex": 0
+        }
+      },
+      {
+        "Name": "StorageBackplane_SMA_0",
+        "Type": "NvDevice",
+        "Kind": "storage_backplane_sma",
+        "Generation": "vera-rubin",
+        "Instance": 0,
+        "EID": 60,
+        "ParentChassis": "StorageBackplane_0",
+        "Transport": {
+          "Medium": "usb",
+          "Port": "1.3.1.2.2",
+          "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb"
+        }
+      },
+      {
+        "Name": "CX_0",
+        "Type": "NvDevice",
+        "Kind": "cx9_nic",
+        "Generation": "vera-rubin",
+        "Instance": 0,
+        "EID": 101,
+        "Transport": {
+          "Medium": "i2c",
+          "Bus": 46,
+          "Address": "0x32"
+        }
+      },
+      {
+        "Name": "CX_1",
+        "Type": "NvDevice",
+        "Kind": "cx9_nic",
+        "Generation": "vera-rubin",
+        "Instance": 1,
+        "EID": 102,
+        "Transport": {
+          "Medium": "i2c",
+          "Bus": 56,
+          "Address": "0x32"
+        }
+      },
+      {
+        "Name": "BlueField_0",
+        "Type": "NvDevice",
+        "Kind": "bluefield",
+        "Generation": "vera-rubin",
+        "Instance": 0,
+        "EID": 105,
+        "Transport": {
+          "Medium": "i2c",
+          "Bus": 34,
+          "Address": "0x32"
+        }
+      },
+      {
+        "Name": "PCIE_MCTP_0",
+        "Type": "MCTPPCIeDevice",
+        "Interface": "mctppcie0",
+        "Address": "0000:00:00.0",
+        "StaticEndpointID": 100,
+        "PoolStartEID": 101,
+        "PoolEndEID": 105
+      }
+    ]
+  }
+]
