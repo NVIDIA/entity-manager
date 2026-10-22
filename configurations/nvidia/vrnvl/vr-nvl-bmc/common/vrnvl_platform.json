@@ -547,17 +547,20 @@
                 },
                 {
                     "AssociationBackward": [
+                        "activation",
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/CX_0/NetworkAdapters/NIC_0/Ports/C3_1"
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_0/NetworkAdapters/NIC_0/Ports/C3_1",
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_0/NetworkAdapters/NIC_0/Ports/C4_2"
                     ],
                     "AssociationForward": [
+                        "inventory",
                         "inventory"
                     ],
                     "ComponentIdentifier": 65535,
                     "DownstreamDeviceIndex": 0,
-                    "ManufacturerNameSource": "VendorPN",
+                    "ManufacturerNameSource": "IEEE_OUI",
                     "Name": "Optical_Transceiver_0"
                 }
             ],
@@ -611,17 +614,20 @@
                 },
                 {
                     "AssociationBackward": [
+                        "activation",
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/CX_1/NetworkAdapters/NIC_0/Ports/C4_1"
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_1/NetworkAdapters/NIC_0/Ports/C4_1",
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_1/NetworkAdapters/NIC_0/Ports/C3_2"
                     ],
                     "AssociationForward": [
+                        "inventory",
                         "inventory"
                     ],
                     "ComponentIdentifier": 65535,
                     "DownstreamDeviceIndex": 1,
-                    "ManufacturerNameSource": "VendorPN",
+                    "ManufacturerNameSource": "IEEE_OUI",
                     "Name": "Optical_Transceiver_1"
                 }
             ],
@@ -695,17 +701,20 @@
                 },
                 {
                     "AssociationBackward": [
+                        "activation",
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/CX_2/NetworkAdapters/NIC_0/Ports/C1_1"
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_2/NetworkAdapters/NIC_0/Ports/C1_1",
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_2/NetworkAdapters/NIC_0/Ports/C2_2"
                     ],
                     "AssociationForward": [
+                        "inventory",
                         "inventory"
                     ],
                     "ComponentIdentifier": 65535,
                     "DownstreamDeviceIndex": 0,
-                    "ManufacturerNameSource": "VendorPN",
+                    "ManufacturerNameSource": "IEEE_OUI",
                     "Name": "Optical_Transceiver_2"
                 }
             ],
@@ -759,17 +768,20 @@
                 },
                 {
                     "AssociationBackward": [
+                        "activation",
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/CX_3/NetworkAdapters/NIC_0/Ports/C2_1"
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_3/NetworkAdapters/NIC_0/Ports/C2_1",
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_3/NetworkAdapters/NIC_0/Ports/C1_2"
                     ],
                     "AssociationForward": [
+                        "inventory",
                         "inventory"
                     ],
                     "ComponentIdentifier": 65535,
                     "DownstreamDeviceIndex": 1,
-                    "ManufacturerNameSource": "VendorPN",
+                    "ManufacturerNameSource": "IEEE_OUI",
                     "Name": "Optical_Transceiver_3"
                 }
             ],
@@ -843,17 +855,20 @@
                 },
                 {
                     "AssociationBackward": [
+                        "activation",
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/CX_4/NetworkAdapters/NIC_0/Ports/C7_1"
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_4/NetworkAdapters/NIC_0/Ports/C7_1",
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_4/NetworkAdapters/NIC_0/Ports/C8_2"
                     ],
                     "AssociationForward": [
+                        "inventory",
                         "inventory"
                     ],
                     "ComponentIdentifier": 65535,
                     "DownstreamDeviceIndex": 0,
-                    "ManufacturerNameSource": "VendorPN",
+                    "ManufacturerNameSource": "IEEE_OUI",
                     "Name": "Optical_Transceiver_4"
                 }
             ],
@@ -907,17 +922,20 @@
                 },
                 {
                     "AssociationBackward": [
+                        "activation",
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/CX_5/NetworkAdapters/NIC_0/Ports/C8_1"
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_5/NetworkAdapters/NIC_0/Ports/C8_1",
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_5/NetworkAdapters/NIC_0/Ports/C7_2"
                     ],
                     "AssociationForward": [
+                        "inventory",
                         "inventory"
                     ],
                     "ComponentIdentifier": 65535,
                     "DownstreamDeviceIndex": 1,
-                    "ManufacturerNameSource": "VendorPN",
+                    "ManufacturerNameSource": "IEEE_OUI",
                     "Name": "Optical_Transceiver_5"
                 }
             ],
@@ -991,17 +1009,20 @@
                 },
                 {
                     "AssociationBackward": [
+                        "activation",
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/CX_6/NetworkAdapters/NIC_0/Ports/C5_1"
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_6/NetworkAdapters/NIC_0/Ports/C5_1",
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_6/NetworkAdapters/NIC_0/Ports/C6_2"
                     ],
                     "AssociationForward": [
+                        "inventory",
                         "inventory"
                     ],
                     "ComponentIdentifier": 65535,
                     "DownstreamDeviceIndex": 0,
-                    "ManufacturerNameSource": "VendorPN",
+                    "ManufacturerNameSource": "IEEE_OUI",
                     "Name": "Optical_Transceiver_6"
                 }
             ],
@@ -1055,17 +1076,20 @@
                 },
                 {
                     "AssociationBackward": [
+                        "activation",
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/CX_7/NetworkAdapters/NIC_0/Ports/C6_1"
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_7/NetworkAdapters/NIC_0/Ports/C6_1",
+                        "/xyz/openbmc_project/inventory/system/chassis/CX_7/NetworkAdapters/NIC_0/Ports/C5_2"
                     ],
                     "AssociationForward": [
+                        "inventory",
                         "inventory"
                     ],
                     "ComponentIdentifier": 65535,
                     "DownstreamDeviceIndex": 1,
-                    "ManufacturerNameSource": "VendorPN",
+                    "ManufacturerNameSource": "IEEE_OUI",
                     "Name": "Optical_Transceiver_7"
                 }
             ],
