@@ -1,0 +1,141 @@
+[
+  {
+    "Name": "Nvidia VR-NVL144 Switch BMC",
+    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80})",
+    "Type": "Platform",
+    "NamePrefix": "MGX_",
+    "BmcName": "MGX_BMC_0",
+    "PlatformExposes": [
+      {
+        "Name": "MGX_ERoT_BMC_0",
+        "Type": "NvDevice",
+        "Kind": "erot",
+        "Generation": "vera-rubin",
+        "Instance": 0,
+        "EID": 10,
+        "ParentChassis": "MGX_BMC_0",
+        "Transport": {
+          "Medium": "spi",
+          "Bus": 0,
+          "ChipSelect": 2
+        }
+      },
+      {
+        "Name": "MGX_ERoT_CPU_0",
+        "Type": "NvDevice",
+        "Kind": "erot",
+        "Generation": "vera-rubin",
+        "Instance": 2,
+        "EID": 16,
+        "ParentChassis": "MGX_CPU_0",
+        "Transport": {
+          "Medium": "spi",
+          "Bus": 2,
+          "ChipSelect": 0
+        },
+        "Recovery": {
+          "I2CAddress": 82,
+          "I2CBus": 32
+        }
+      },
+      {
+        "Name": "MGX_NVSwitch_SMA_0",
+        "Type": "NvDevice",
+        "Kind": "nvswitch_sma",
+        "Generation": "vera-rubin",
+        "Instance": 0,
+        "EID": 69,
+        "Transport": {
+          "Medium": "usb",
+          "Port": "1.2",
+          "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+          "PoolStartEID": "53",
+          "PoolEndEID": "54"
+        },
+        "Recovery": {
+          "RecoveryGpio": "GP_BMC_MCU1_RECOVERY_L",
+          "ResetGpio": "GP_BMC_MCU1_RESET_L"
+        }
+      },
+      {
+        "Name": "MGX_NVSwitch_SMA_1",
+        "Type": "NvDevice",
+        "Kind": "nvswitch_sma",
+        "Generation": "vera-rubin",
+        "Instance": 1,
+        "EID": 70,
+        "Transport": {
+          "Medium": "usb",
+          "Port": "1.3",
+          "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+          "PoolStartEID": "57",
+          "PoolEndEID": "58"
+        },
+        "Recovery": {
+          "RecoveryGpio": "GP_BMC_MCU2_RECOVERY_L",
+          "ResetGpio": "GP_BMC_MCU2_RESET_L"
+        }
+      },
+      {
+        "Name": "MGX_NVSwitch_0",
+        "Type": "NvDevice",
+        "Kind": "nvswitch",
+        "Generation": "vera-rubin",
+        "Instance": 0,
+        "EID": 53,
+        "ParentChassis": "Chassis_0",
+        "Transport": {
+          "Medium": "bridge",
+          "Bridge": "MGX_NVSwitch_SMA_0",
+          "BridgeEID": 69,
+          "PoolIndex": 0
+        }
+      },
+      {
+        "Name": "MGX_NVSwitch_1",
+        "Type": "NvDevice",
+        "Kind": "nvswitch",
+        "Generation": "vera-rubin",
+        "Instance": 1,
+        "EID": 54,
+        "ParentChassis": "Chassis_0",
+        "Transport": {
+          "Medium": "bridge",
+          "Bridge": "MGX_NVSwitch_SMA_0",
+          "BridgeEID": 69,
+          "PoolIndex": 1
+        }
+      },
+      {
+        "Name": "MGX_NVSwitch_2",
+        "Type": "NvDevice",
+        "Kind": "nvswitch",
+        "Generation": "vera-rubin",
+        "Instance": 2,
+        "EID": 57,
+        "ParentChassis": "Chassis_0",
+        "Transport": {
+          "Medium": "bridge",
+          "Bridge": "MGX_NVSwitch_SMA_1",
+          "BridgeEID": 70,
+          "PoolIndex": 0
+        }
+      },
+      {
+        "Name": "MGX_NVSwitch_3",
+        "Type": "NvDevice",
+        "Kind": "nvswitch",
+        "Generation": "vera-rubin",
+        "Instance": 3,
+        "EID": 58,
+        "ParentChassis": "Chassis_0",
+        "Transport": {
+          "Medium": "bridge",
+          "Bridge": "MGX_NVSwitch_SMA_1",
+          "BridgeEID": 70,
+          "PoolIndex": 1
+        }
+      }
+    ]
+  }
+]
