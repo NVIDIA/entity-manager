@@ -58,7 +58,7 @@
                         "Forward": "software_version"
                     }
                 ],
-                "Manufacturer": "Nvidia",
+                "Manufacturer": "NVIDIA",
                 "Name": "HGX_Driver_NVLinkManagementNIC_0",
                 "Priority": false,
                 "Type": "NSM_NVLinkManagementSWInventory",

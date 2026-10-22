@@ -409,7 +409,7 @@
                         "Forward": "software_version"
                     }
                 ],
-                "Manufacturer": "Nvidia",
+                "Manufacturer": "NVIDIA",
                 "Name": "HGX_Driver_GPU_$INSTANCE_NUMBER",
                 "Type": "NSM_GPU_SWInventory",
                 "UUID": "$UUID"
