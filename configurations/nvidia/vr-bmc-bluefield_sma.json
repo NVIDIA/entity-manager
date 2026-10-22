@@ -57,6 +57,24 @@
         "Target": "BF4",
         "VendorId": "0x0955",
         "ProductId": "0xCF11"
+      },
+      {
+        "BridgePoolEndEID": "$PoolEndEID",
+        "BridgePoolStartEID": "$PoolStartEID",
+        "BridgedEndpoints": [
+          "BF4_0",
+          "BF4_1",
+          "BF4_2",
+          "BF4_3"
+        ],
+        "Configuration": 1,
+        "InterfaceNum": 0,
+        "Name": "$Name",
+        "PollingInterval": "5",
+        "Port": "$Port",
+        "RootHubPath": "$RootHubPath",
+        "StaticEndpointID": "$EID",
+        "Type": "MCTPUSBDevice"
       }
     ]
   }

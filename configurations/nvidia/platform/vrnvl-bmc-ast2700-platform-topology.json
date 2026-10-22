@@ -157,7 +157,7 @@
           "Medium": "bridge",
           "Bridge": "IO_Board_SMA_0",
           "BridgeEID": 60,
-          "PoolIndex": 0
+          "PoolIndex": 1
         },
         "Recovery": {
           "I2CAddress": 72,
@@ -180,7 +180,7 @@
           "Medium": "bridge",
           "Bridge": "IO_Board_SMA_0",
           "BridgeEID": 60,
-          "PoolIndex": 2
+          "PoolIndex": 3
         },
         "Recovery": {
           "I2CAddress": 74,
@@ -203,7 +203,7 @@
           "Medium": "bridge",
           "Bridge": "IO_Board_SMA_1",
           "BridgeEID": 70,
-          "PoolIndex": 0
+          "PoolIndex": 1
         },
         "Recovery": {
           "I2CAddress": 72,
@@ -226,7 +226,7 @@
           "Medium": "bridge",
           "Bridge": "IO_Board_SMA_1",
           "BridgeEID": 70,
-          "PoolIndex": 2
+          "PoolIndex": 3
         },
         "Recovery": {
           "I2CAddress": 74,
@@ -249,7 +249,7 @@
           "Medium": "bridge",
           "Bridge": "IO_Board_SMA_2",
           "BridgeEID": 80,
-          "PoolIndex": 0
+          "PoolIndex": 1
         },
         "Recovery": {
           "I2CAddress": 72,
@@ -272,7 +272,7 @@
           "Medium": "bridge",
           "Bridge": "IO_Board_SMA_2",
           "BridgeEID": 80,
-          "PoolIndex": 2
+          "PoolIndex": 3
         },
         "Recovery": {
           "I2CAddress": 74,
@@ -295,7 +295,7 @@
           "Medium": "bridge",
           "Bridge": "IO_Board_SMA_3",
           "BridgeEID": 90,
-          "PoolIndex": 0
+          "PoolIndex": 1
         },
         "Recovery": {
           "I2CAddress": 72,
@@ -318,7 +318,7 @@
           "Medium": "bridge",
           "Bridge": "IO_Board_SMA_3",
           "BridgeEID": 90,
-          "PoolIndex": 2
+          "PoolIndex": 3
         },
         "Recovery": {
           "I2CAddress": 74,
@@ -388,7 +388,7 @@
         "Transport": {
           "Medium": "i2c",
           "Bus": 7,
-          "Address": "0x1D"
+          "Address": 29
         }
       },
       {

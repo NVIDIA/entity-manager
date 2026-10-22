@@ -11,6 +11,12 @@
         "Type": "NSM_Telemetry",
         "Disable": [],
         "ParameterOverrides": {}
+      },
+      {
+        "BridgeName": "$Bridge",
+        "Name": "BF4_1",
+        "PoolIndex": 1,
+        "Type": "MCTPBridgePoolDevice"
       }
     ],
     "Associations": {

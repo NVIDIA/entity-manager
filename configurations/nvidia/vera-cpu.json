@@ -39,10 +39,15 @@
         }
       },
       {
-        "Name": "$Name_MCTP",
-        "Type": "MCTPEndpoint",
+        "Configuration": 1,
         "InterfaceNum": 2,
-        "RecoveryThreshold": "5"
+        "Name": "$Name",
+        "PollingInterval": "5",
+        "Port": "$Port",
+        "RecoveryThreshold": "5",
+        "RootHubPath": "$RootHubPath",
+        "StaticEndpointID": "$EID",
+        "Type": "MCTPUSBDevice"
       },
       {
         "Name": "$Name_Recovery",

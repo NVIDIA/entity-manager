@@ -79,9 +79,13 @@
     "Kind": "nvme_smm",
     "Exposes": [
       {
-        "Name": "$Name_MCTP",
-        "Type": "MCTPEndpoint",
-        "IgnoreMessageTypes": "1,5"
+        "Address": "$Address",
+        "Bus": "$Bus",
+        "IgnoreMessageTypes": "1,5",
+        "Name": "$Name",
+        "PollingInterval": "1",
+        "StaticEndpointID": "$EID",
+        "Type": "MCTPI2CTarget"
       }
     ]
   }

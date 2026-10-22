@@ -202,7 +202,7 @@
         "Transport": {
           "Medium": "i2c",
           "Bus": 10,
-          "Address": "0x52"
+          "Address": 82
         },
         "Recovery": {
           "RecoveryGpio": "BRD0_MCU_RECOVERY_L-O",
@@ -221,12 +221,18 @@
         "Transport": {
           "Medium": "i2c",
           "Bus": 8,
-          "Address": "0x52"
+          "Address": 82
         },
         "Recovery": {
           "RecoveryGpio": "BRD1_MCU_RECOVERY_L-O",
           "ResetGpio": "BRD1_MCU_RESET_L-O"
         }
+      },
+      {
+        "Name": "HGX_BMC_0",
+        "Type": "PlatformDevice",
+        "DeviceAddress": "MCTP:9",
+        "DeviceType": "BMC"
       }
     ]
   }

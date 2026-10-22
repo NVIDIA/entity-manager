@@ -204,7 +204,7 @@
         "Transport": {
           "Medium": "i2c",
           "Bus": 1,
-          "Address": "0x52"
+          "Address": 82
         },
         "Recovery": {
           "RecoveryGpio": "BRD0_MCU_RECOVERY_L-O",
@@ -223,7 +223,7 @@
         "Transport": {
           "Medium": "i2c",
           "Bus": 7,
-          "Address": "0x52"
+          "Address": 82
         },
         "Recovery": {
           "RecoveryGpio": "BRD1_MCU_RECOVERY_L-O",

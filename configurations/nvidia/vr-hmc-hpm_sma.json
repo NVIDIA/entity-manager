@@ -60,6 +60,14 @@
         "Method": "MCU",
         "Target": "HPM",
         "RecoveryI2CAddress": "0x10"
+      },
+      {
+        "Address": "$Address",
+        "Bus": "$Bus",
+        "Name": "$Name",
+        "PollingInterval": "1",
+        "StaticEndpointID": "$EID",
+        "Type": "MCTPI2CTarget"
       }
     ]
   }

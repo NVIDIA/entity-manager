@@ -17,6 +17,12 @@
         "Name": "BAY_C_GLOBAL_WP",
         "Polarity": "active_high",
         "Type": "WriteProtect"
+      },
+      {
+        "BridgeName": "$Bridge",
+        "Name": "BF4_0",
+        "PoolIndex": 0,
+        "Type": "MCTPBridgePoolDevice"
       }
     ],
     "Associations": {
@@ -90,5 +96,19 @@
         "FirmwareName": "BF4_0"
       }
     ]
+  },
+  {
+    "Name": "$Name_LeakDetection",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vera-rubin'})",
+    "Exposes": [
+      {
+        "CriticalReactionType": "None",
+        "LeakDetectorName": "$Name_LeakDetector_0",
+        "Name": "$Name_LeakDetector_0_Policy",
+        "ReactionDelaySeconds": 0,
+        "Type": "LeakDetectionPolicy"
+      }
+    ],
+    "Type": "LeakDetection"
   }
 ]

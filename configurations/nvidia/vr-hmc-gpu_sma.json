@@ -44,6 +44,22 @@
         "Target": "GPU",
         "VendorId": "0x0955",
         "ProductId": "0xCF11"
+      },
+      {
+        "BridgePoolEndEID": "$PoolEndEID",
+        "BridgePoolStartEID": "$PoolStartEID",
+        "BridgedEndpoints": [
+          "$Platform.NamePrefixGPU_$Instance * 2",
+          "$Platform.NamePrefixGPU_$Instance * 2 + 1"
+        ],
+        "Configuration": 1,
+        "InterfaceNum": 0,
+        "Name": "$Name",
+        "PollingInterval": "5",
+        "Port": "$Port",
+        "RootHubPath": "$RootHubPath",
+        "StaticEndpointID": "$EID",
+        "Type": "MCTPUSBDevice"
       }
     ]
   }
