@@ -9,28 +9,28 @@
             "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/bmc/BMC_0"
         },
         {
-            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SWB1_SMA",
-            "MCTPTargetName": "SWB1_SMA",
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SMA_0",
+            "MCTPTargetName": "SMA_0",
             "Manufacturer": "NVIDIA",
-            "Name": "IRoT_SWB1_SMA_DevInv",
+            "Name": "IRoT_SMA_0_DevInv",
             "Type": "PLDMDeviceInventory",
-            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/SWB1_SMA"
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/SMA_0"
         },
         {
-            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SWB2_SMA",
-            "MCTPTargetName": "SWB2_SMA",
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SMA_1",
+            "MCTPTargetName": "SMA_1",
             "Manufacturer": "NVIDIA",
-            "Name": "IRoT_SWB2_SMA_DevInv",
+            "Name": "IRoT_SMA_1_DevInv",
             "Type": "PLDMDeviceInventory",
-            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/SWB2_SMA"
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/SMA_1"
         },
         {
-            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_MGMT_SMA",
-            "MCTPTargetName": "MGMT_SMA",
+            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SMA_2",
+            "MCTPTargetName": "SMA_2",
             "Manufacturer": "NVIDIA",
-            "Name": "IRoT_MGMT_SMA_DevInv",
+            "Name": "IRoT_SMA_2_DevInv",
             "Type": "PLDMDeviceInventory",
-            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/MGMT_SMA"
+            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/SMA_2"
         },
         {
             "Components": [
@@ -65,13 +65,13 @@
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/SWB1_SMA"
+                        "/xyz/openbmc_project/inventory/system/chassis/SMA_0"
                     ],
                     "AssociationForward": [
                         "inventory"
                     ],
                     "ComponentIdentifier": 65282,
-                    "Name": "FW_SWB1_SMA"
+                    "Name": "FW_SMA_0"
                 },
                 {
                     "AssociationBackward": [
@@ -102,8 +102,8 @@
                     "Name": "FW_CPLD_1"
                 }
             ],
-            "MCTPTargetName": "SWB1_SMA",
-            "Name": "SWB1_SMA_PLDM",
+            "MCTPTargetName": "SMA_0",
+            "Name": "SMA_0_PLDM",
             "StaticEID": 69,
             "Type": "PLDMFirmwareDevice"
         },
@@ -114,13 +114,13 @@
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/SWB2_SMA"
+                        "/xyz/openbmc_project/inventory/system/chassis/SMA_1"
                     ],
                     "AssociationForward": [
                         "inventory"
                     ],
                     "ComponentIdentifier": 65282,
-                    "Name": "FW_SWB2_SMA"
+                    "Name": "FW_SMA_1"
                 },
                 {
                     "AssociationBackward": [
@@ -137,8 +137,8 @@
                     "Name": "FW_CPLD_2"
                 }
             ],
-            "MCTPTargetName": "SWB2_SMA",
-            "Name": "SWB2_SMA_PLDM",
+            "MCTPTargetName": "SMA_1",
+            "Name": "SMA_1_PLDM",
             "StaticEID": 70,
             "Type": "PLDMFirmwareDevice"
         },
@@ -149,17 +149,17 @@
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/MGMT_SMA"
+                        "/xyz/openbmc_project/inventory/system/chassis/SMA_2"
                     ],
                     "AssociationForward": [
                         "inventory"
                     ],
                     "ComponentIdentifier": 65282,
-                    "Name": "FW_MGMT_SMA"
+                    "Name": "FW_SMA_2"
                 }
             ],
-            "MCTPTargetName": "MGMT_SMA",
-            "Name": "MGMT_SMA_PLDM",
+            "MCTPTargetName": "SMA_2",
+            "Name": "SMA_2_PLDM",
             "StaticEID": 71,
             "Type": "PLDMFirmwareDevice"
         }

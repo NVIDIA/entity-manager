@@ -9,7 +9,7 @@
                         "Forward": "parent_chassis"
                     },
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SWB_SMA",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SMA_0",
                         "Backward": "chassis",
                         "Forward": "all_chassis"
                     }
@@ -27,7 +27,7 @@
                     "Type": "NSM_Chassis_Attributes"
                 },
                 "DeviceType": "$DEVICE_TYPE",
-                "Name": "SWB_SMA",
+                "Name": "SMA_0",
                 "Type": "NSM_Chassis",
                 "UUID": "$UUID"
             },
@@ -35,13 +35,13 @@
                 "Aggregated": true,
                 "Associations": [
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/SWB_SMA",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/SMA_0",
                         "Backward": "all_sensors",
                         "Forward": "chassis"
                     }
                 ],
                 "Description": "Internal SMA temperature values",
-                "Name": "SWB_SMA_Temp_0",
+                "Name": "SMA_0_Temp_0",
                 "PhysicalContext": "NVSwitch",
                 "Priority": true,
                 "SensorId": 5,
@@ -56,7 +56,7 @@
                 "UUID": "$UUID"
             }
         ],
-        "Name": "SWB_SMA",
+        "Name": "SMA_0",
         "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'NVSSMA', 'INSTANCE_NUMBER': 0})",
         "Type": "chassis",
         "xyz.openbmc_project.Inventory.Decorator.Location": {
@@ -73,7 +73,7 @@
                         "Forward": "parent_chassis"
                     },
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_MGMT_SMA",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SMA_1",
                         "Backward": "chassis",
                         "Forward": "all_chassis"
                     }
@@ -91,7 +91,7 @@
                     "Type": "NSM_Chassis_Attributes"
                 },
                 "DeviceType": "$DEVICE_TYPE",
-                "Name": "MGMT_SMA",
+                "Name": "SMA_1",
                 "Type": "NSM_Chassis",
                 "UUID": "$UUID"
             },
@@ -99,13 +99,13 @@
                 "Aggregated": true,
                 "Associations": [
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/MGMT_SMA",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/SMA_1",
                         "Backward": "all_sensors",
                         "Forward": "chassis"
                     }
                 ],
                 "Description": "Internal SMA temperature values",
-                "Name": "MGMT_SMA_Temp_0",
+                "Name": "SMA_1_Temp_0",
                 "PhysicalContext": "NVSwitch",
                 "Priority": true,
                 "SensorId": 5,
@@ -120,7 +120,7 @@
                 "UUID": "$UUID"
             }
         ],
-        "Name": "MGMT_SMA",
+        "Name": "SMA_1",
         "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'NVSSMA', 'INSTANCE_NUMBER': 1})",
         "Type": "chassis",
         "xyz.openbmc_project.Inventory.Decorator.Location": {

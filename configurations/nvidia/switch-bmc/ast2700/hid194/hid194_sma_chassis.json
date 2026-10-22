@@ -9,7 +9,7 @@
                         "Forward": "parent_chassis"
                     },
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SWB1_SMA",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SMA_0",
                         "Backward": "chassis",
                         "Forward": "all_chassis"
                     }
@@ -27,7 +27,7 @@
                     "Type": "NSM_Chassis_Attributes"
                 },
                 "DeviceType": "$DEVICE_TYPE",
-                "Name": "SWB1_SMA",
+                "Name": "SMA_0",
                 "Type": "NSM_Chassis",
                 "UUID": "$UUID"
             },
@@ -44,18 +44,18 @@
                     165
                 ],
                 "MinValue": 0.0,
-                "Name": "SWB1_LeakDetector_0",
+                "Name": "SMA_0_LeakDetector_0",
                 "SensorIdMap": [
                     4
                 ],
                 "SensorNameMap": [
-                    "SWB1_LeakDetector_0"
+                    "SMA_0_LeakDetector_0"
                 ],
                 "Type": "NSM_LeakDetection",
                 "UUID": "$UUID"
             }
         ],
-        "Name": "SWB1_SMA",
+        "Name": "SMA_0",
         "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'NVSSMA', 'INSTANCE_NUMBER': 0})",
         "Type": "chassis",
         "xyz.openbmc_project.Inventory.Decorator.Instance": {
@@ -75,7 +75,7 @@
                         "Forward": "parent_chassis"
                     },
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SWB2_SMA",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SMA_1",
                         "Backward": "chassis",
                         "Forward": "all_chassis"
                     }
@@ -93,7 +93,7 @@
                     "Type": "NSM_Chassis_Attributes"
                 },
                 "DeviceType": "$DEVICE_TYPE",
-                "Name": "SWB2_SMA",
+                "Name": "SMA_1",
                 "Type": "NSM_Chassis",
                 "UUID": "$UUID"
             },
@@ -110,18 +110,18 @@
                     165
                 ],
                 "MinValue": 0.0,
-                "Name": "SWB2_LeakDetector_0",
+                "Name": "SMA_1_LeakDetector_0",
                 "SensorIdMap": [
                     4
                 ],
                 "SensorNameMap": [
-                    "SWB2_LeakDetector_0"
+                    "SMA_1_LeakDetector_0"
                 ],
                 "Type": "NSM_LeakDetection",
                 "UUID": "$UUID"
             }
         ],
-        "Name": "SWB2_SMA",
+        "Name": "SMA_1",
         "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'NVSSMA', 'INSTANCE_NUMBER': 1})",
         "Type": "chassis",
         "xyz.openbmc_project.Inventory.Decorator.Instance": {
@@ -141,7 +141,7 @@
                         "Forward": "parent_chassis"
                     },
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_MGMT_SMA",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SMA_2",
                         "Backward": "chassis",
                         "Forward": "all_chassis"
                     }
@@ -159,7 +159,7 @@
                     "Type": "NSM_Chassis_Attributes"
                 },
                 "DeviceType": "$DEVICE_TYPE",
-                "Name": "MGMT_SMA",
+                "Name": "SMA_2",
                 "Type": "NSM_Chassis",
                 "UUID": "$UUID"
             },
@@ -176,18 +176,18 @@
                     165
                 ],
                 "MinValue": 0.0,
-                "Name": "MGMT_LeakDetector_0",
+                "Name": "SMA_2_LeakDetector_0",
                 "SensorIdMap": [
                     4
                 ],
                 "SensorNameMap": [
-                    "MGMT_LeakDetector_0"
+                    "SMA_2_LeakDetector_0"
                 ],
                 "Type": "NSM_LeakDetection",
                 "UUID": "$UUID"
             }
         ],
-        "Name": "MGMT_SMA",
+        "Name": "SMA_2",
         "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'NVSSMA', 'INSTANCE_NUMBER': 2})",
         "Type": "chassis",
         "xyz.openbmc_project.Inventory.Decorator.Instance": {

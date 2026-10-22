@@ -26,7 +26,7 @@
             "ConnectsToName": "BMC_0",
             "DeviceAddress": "MCTP:69",
             "DeviceType": "MCTPBridge",
-            "Name": "SWB_SMA",
+            "Name": "SMA_0",
             "PhysicalInterface": "usb1:0x0955:0xcf11:1.1",
             "RecoveryLayers": "",
             "ResetGPIO": "",
@@ -37,7 +37,7 @@
             "ConnectsToName": "BMC_0",
             "DeviceAddress": "MCTP:70",
             "DeviceType": "MCTPBridge",
-            "Name": "MGMT_SMA",
+            "Name": "SMA_1",
             "PhysicalInterface": "usb3:0x0955:0xcf11:3.1",
             "RecoveryLayers": "",
             "ResetGPIO": "",
@@ -45,10 +45,10 @@
             "poweredInStandby": false
         },
         {
-            "ConnectsToName": "SWB_SMA",
+            "ConnectsToName": "SMA_0",
             "DeviceAddress": "MCTP:69",
             "DeviceType": "ROT",
-            "Name": "IRoT_SWB_SMA",
+            "Name": "IRoT_SMA_0",
             "PhysicalInterface": "",
             "RecoveryLayers": "",
             "ResetGPIO": "",
@@ -56,10 +56,10 @@
             "poweredInStandby": false
         },
         {
-            "ConnectsToName": "MGMT_SMA",
+            "ConnectsToName": "SMA_1",
             "DeviceAddress": "MCTP:70",
             "DeviceType": "ROT",
-            "Name": "IRoT_MGMT_SMA",
+            "Name": "IRoT_SMA_1",
             "PhysicalInterface": "",
             "RecoveryLayers": "",
             "ResetGPIO": "",

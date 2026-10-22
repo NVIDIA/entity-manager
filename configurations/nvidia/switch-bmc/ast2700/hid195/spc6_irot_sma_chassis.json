@@ -5,10 +5,10 @@
                 "ChassisAttributes": {
                     "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
                     "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
-                    "Name": "SWB_SMA IRoT",
+                    "Name": "SMA_0 IRoT",
                     "Type": "NSM_Chassis_Attributes"
                 },
-                "Name": "IRoT_SWB_SMA",
+                "Name": "IRoT_SMA_0",
                 "Type": "NSM_ChassisIRoTResponder",
                 "UUID": "$UUID"
             },
@@ -19,13 +19,13 @@
                 },
                 "DeviceType": "$DEVICE_TYPE",
                 "ImageCopyEnabled": true,
-                "Name": "IRoT_SWB_SMA",
+                "Name": "IRoT_SMA_0",
                 "SlotCount": 2,
                 "Type": "NSM_ChassisRoT",
                 "UUID": "$UUID"
             },
             {
-                "ChassisName": "IRoT_SWB_SMA",
+                "ChassisName": "IRoT_SMA_0",
                 "DebugTokenType": [
                     "Unified"
                 ],
@@ -41,12 +41,12 @@
             {
                 "Associations": [
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/software/FW_SWB_SMA",
+                        "AbsolutePath": "/xyz/openbmc_project/software/FW_SMA_0",
                         "Backward": "ActiveSlot",
                         "Forward": "software"
                     }
                 ],
-                "ChassisName": "IRoT_SWB_SMA",
+                "ChassisName": "IRoT_SMA_0",
                 "ComponentClassification": 10,
                 "ComponentIdentifier": 65282,
                 "ComponentIndex": 0,
@@ -58,12 +58,12 @@
             {
                 "Associations": [
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/software/FW_SWB_SMA",
+                        "AbsolutePath": "/xyz/openbmc_project/software/FW_SMA_0",
                         "Backward": "InactiveSlot",
                         "Forward": "software"
                     }
                 ],
-                "ChassisName": "IRoT_SWB_SMA",
+                "ChassisName": "IRoT_SMA_0",
                 "ComponentClassification": 10,
                 "ComponentIdentifier": 65282,
                 "ComponentIndex": 0,
@@ -73,7 +73,7 @@
                 "Type": "NSM_RoT_Slot"
             }
         ],
-        "Name": "IRoT_SWB_SMA",
+        "Name": "IRoT_SMA_0",
         "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'NVSSMA', 'INSTANCE_NUMBER': 0})",
         "Type": "chassis"
     },
@@ -83,10 +83,10 @@
                 "ChassisAttributes": {
                     "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
                     "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
-                    "Name": "MGMT_SMA IRoT",
+                    "Name": "SMA_1 IRoT",
                     "Type": "NSM_Chassis_Attributes"
                 },
-                "Name": "IRoT_MGMT_SMA",
+                "Name": "IRoT_SMA_1",
                 "Type": "NSM_ChassisIRoTResponder",
                 "UUID": "$UUID"
             },
@@ -97,13 +97,13 @@
                 },
                 "DeviceType": "$DEVICE_TYPE",
                 "ImageCopyEnabled": true,
-                "Name": "IRoT_MGMT_SMA",
+                "Name": "IRoT_SMA_1",
                 "SlotCount": 2,
                 "Type": "NSM_ChassisRoT",
                 "UUID": "$UUID"
             },
             {
-                "ChassisName": "IRoT_MGMT_SMA",
+                "ChassisName": "IRoT_SMA_1",
                 "DebugTokenType": [
                     "Unified"
                 ],
@@ -119,12 +119,12 @@
             {
                 "Associations": [
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/software/FW_MGMT_SMA",
+                        "AbsolutePath": "/xyz/openbmc_project/software/FW_SMA_1",
                         "Backward": "ActiveSlot",
                         "Forward": "software"
                     }
                 ],
-                "ChassisName": "IRoT_MGMT_SMA",
+                "ChassisName": "IRoT_SMA_1",
                 "ComponentClassification": 10,
                 "ComponentIdentifier": 65282,
                 "ComponentIndex": 0,
@@ -136,12 +136,12 @@
             {
                 "Associations": [
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/software/FW_MGMT_SMA",
+                        "AbsolutePath": "/xyz/openbmc_project/software/FW_SMA_1",
                         "Backward": "InactiveSlot",
                         "Forward": "software"
                     }
                 ],
-                "ChassisName": "IRoT_MGMT_SMA",
+                "ChassisName": "IRoT_SMA_1",
                 "ComponentClassification": 10,
                 "ComponentIdentifier": 65282,
                 "ComponentIndex": 0,
@@ -151,7 +151,7 @@
                 "Type": "NSM_RoT_Slot"
             }
         ],
-        "Name": "IRoT_MGMT_SMA",
+        "Name": "IRoT_SMA_1",
         "Probe": "xyz.openbmc_project.NsmDevice({'DEVICE_TYPE': 5, 'DEVICE_ROLE': 'NVSSMA', 'INSTANCE_NUMBER': 1})",
         "Type": "chassis"
     }

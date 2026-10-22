@@ -19,7 +19,7 @@
                 "BridgePoolEndEID": "54",
                 "BridgePoolStartEID": "53",
                 "Interface": "$Interface",
-                "Name": "SWB1_SMA",
+                "Name": "SMA_0",
                 "PollingInterval": "5",
                 "StaticEndpointID": "69",
                 "Type": "MCTPUSBTarget",
@@ -36,7 +36,7 @@
                 "BridgePoolEndEID": "58",
                 "BridgePoolStartEID": "57",
                 "Interface": "$Interface",
-                "Name": "SWB2_SMA",
+                "Name": "SMA_1",
                 "PollingInterval": "5",
                 "StaticEndpointID": "70",
                 "Type": "MCTPUSBTarget",
@@ -51,7 +51,7 @@
         "Exposes": [
             {
                 "Interface": "$Interface",
-                "Name": "MGMT_SMA",
+                "Name": "SMA_2",
                 "PollingInterval": "5",
                 "StaticEndpointID": "71",
                 "Type": "MCTPUSBTarget",
