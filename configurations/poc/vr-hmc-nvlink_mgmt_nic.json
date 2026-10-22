@@ -1,0 +1,55 @@
+[
+  {
+    "Name": "$Name",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^nvlink_mgmt_nic$', 'Generation': 'vera-rubin'})",
+    "Type": "nvlink_mgmt_nic",
+    "InstanceNumber": "$Instance",
+    "EID": "$EID",
+    "Exposes": [
+      {
+        "Name": "NSM_Telemetry",
+        "Type": "NSM_Telemetry",
+        "Disable": [],
+        "ParameterOverrides": {}
+      },
+      {
+        "DeviceType": "NVLinkManagementNIC_$Instance",
+        "Name": "$Name",
+        "SupportedDumps": [
+          "NetIR"
+        ],
+        "Type": "Dump"
+      },
+      {
+        "Name": "$Name_PLDM",
+        "Type": "PLDMDevice",
+        "UpdateableComponents": {
+          "$Platform.NamePrefixFW_NVLinkManagementNIC_$Instance": 1
+        },
+        "FWInventoryOnlyComponent": {
+          "$Platform.NamePrefixConfig_0_NVLinkManagementNIC_$Instance": 3,
+          "$Platform.NamePrefixConfig_1_NVLinkManagementNIC_$Instance": 4
+        },
+        "NetworkAdapter": "NVLinkManagementNIC_$Instance",
+        "SensorAuxNames": {
+          "$Name": 5,
+          "NVLinkManagementNIC_$Instance": 60,
+          "$Name_Temp_0": 300,
+          "$Name_Power_0": 50,
+          "NVLinkManagement_0": 200,
+          "NVLinkManagement_1": 201
+        },
+        "Ports": {
+          "200": "NVLinkManagement_0",
+          "201": "NVLinkManagement_1"
+        },
+        "PortMaxSpeedMBps": 50000
+      },
+      {
+        "Name": "$Name_Recovery",
+        "Type": "Recovery",
+        "Method": "NVLinkManagementNIC"
+      }
+    ]
+  }
+]

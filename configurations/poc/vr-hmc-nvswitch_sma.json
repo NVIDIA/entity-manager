@@ -1,0 +1,53 @@
+[
+  {
+    "Name": "$Name",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^nvswitch_sma$', 'Generation': 'vera-rubin'})",
+    "Type": "nvswitch_sma",
+    "InstanceNumber": "$Instance",
+    "EID": "$EID",
+    "Exposes": [
+      {
+        "Name": "NSM_Telemetry",
+        "Type": "NSM_Telemetry",
+        "Disable": [],
+        "ParameterOverrides": {}
+      },
+      {
+        "ConnectsToName": "$Platform.BmcName",
+        "DeviceAddress": "MCTP:$EID",
+        "DeviceType": "MCTPBridge",
+        "Name": "$Name",
+        "PhysicalInterface": "usb1:0x0955:0xcf11:$Port",
+        "Type": "PlatformDevice"
+      },
+      {
+        "DeviceType": "$Name",
+        "Name": "$Name",
+        "SupportedDumps": [
+          "RoT",
+          "SMA",
+          "GPUDiag"
+        ],
+        "Type": "Dump"
+      },
+      {
+        "Name": "$Name_PLDM",
+        "Type": "PLDMDevice",
+        "UpdateableComponents": {
+          "FW_$Name": 65282
+        },
+        "SensorAuxNames": {
+          "$Name_Temp_0": 17
+        }
+      },
+      {
+        "Name": "$Name_Recovery",
+        "Type": "Recovery",
+        "Method": "MCU",
+        "Target": "QM4",
+        "VendorId": "0x0955",
+        "ProductId": "0xCF11"
+      }
+    ]
+  }
+]
