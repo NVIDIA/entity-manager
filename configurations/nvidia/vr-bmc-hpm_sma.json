@@ -1,0 +1,31 @@
+[
+  {
+    "Name": "$Name",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bmc_hpm_sma$', 'Generation': 'vera-rubin'})",
+    "Type": "NvDevice",
+    "Kind": "bmc_hpm_sma",
+    "InstanceNumber": "$Instance",
+    "EID": "$EID",
+    "Exposes": [
+      {
+        "Name": "NSM_Telemetry",
+        "Type": "NSM_Telemetry",
+        "Disable": [],
+        "ParameterOverrides": {}
+      },
+      {
+        "ConnectsToName": "$Platform.BmcName",
+        "DeviceAddress": "MCTP:$EID",
+        "DeviceType": "MCTPBridge",
+        "Name": "$Name",
+        "PhysicalInterface": "usb1:0x0955:0xcf11:$Port",
+        "Type": "PlatformDevice"
+      },
+      {
+        "Name": "$Name_MCTP",
+        "Type": "MCTPEndpoint",
+        "IgnoreMessageTypes": "1,5"
+      }
+    ]
+  }
+]

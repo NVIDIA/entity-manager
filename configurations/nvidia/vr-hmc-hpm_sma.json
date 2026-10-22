@@ -1,0 +1,66 @@
+[
+  {
+    "Name": "$Name",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^hmc_hpm_sma$', 'Generation': 'vera-rubin'})",
+    "Type": "NvDevice",
+    "Kind": "hmc_hpm_sma",
+    "InstanceNumber": "$Instance",
+    "EID": "$EID",
+    "Exposes": [
+      {
+        "Name": "NSM_Telemetry",
+        "Type": "NSM_Telemetry",
+        "Disable": [],
+        "ParameterOverrides": {}
+      },
+      {
+        "ConnectsToName": "$Platform.BmcName",
+        "DeviceAddress": "MCTP:$EID",
+        "DeviceType": "MCTPBridge",
+        "Name": "$Name",
+        "Type": "PlatformDevice"
+      },
+      {
+        "Name": "$Name",
+        "Pages": [
+          {
+            "Bus": "$Bus",
+            "Idx": "Page1",
+            "RegAddr": "0x00",
+            "Size": 256,
+            "SlaveAddr": "0x0b"
+          },
+          {
+            "Bus": "$Bus",
+            "Idx": "Page1",
+            "Page": "0x00",
+            "RegAddr": "0x00",
+            "Size": 256,
+            "SlaveAddr": "0x11"
+          }
+        ],
+        "SupportedDumps": [
+          "RoT",
+          "SMA",
+          "CPLD"
+        ],
+        "Type": "Dump"
+      },
+      {
+        "Name": "$Name_PLDM",
+        "Type": "PLDMDevice",
+        "UpdateableComponents": {
+          "$Platform.NamePrefixFW_ProcessorModule_SMA_$Instance": 65282,
+          "$Platform.NamePrefixFW_CPLD_$Instance": 65283
+        }
+      },
+      {
+        "Name": "$Name_Recovery",
+        "Type": "Recovery",
+        "Method": "MCU",
+        "Target": "HPM",
+        "RecoveryI2CAddress": "0x10"
+      }
+    ]
+  }
+]

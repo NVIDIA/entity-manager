@@ -1,0 +1,23 @@
+[
+  {
+    "Name": "BMC_SATMC",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bmc$', 'Generation': 'vera-rubin'})",
+    "Type": "NvDevice",
+    "Kind": "satmc",
+    "Exposes": [
+      {
+        "AuthType": "None",
+        "Hostname": "172.31.13.251",
+        "Name": "sat0",
+        "Port": "80",
+        "Type": "SatelliteController"
+      },
+      {
+        "DeviceAddress": "MCTP:$EID",
+        "DeviceType": "BMC",
+        "Name": "$Platform.BmcName",
+        "Type": "PlatformDevice"
+      }
+    ]
+  }
+]

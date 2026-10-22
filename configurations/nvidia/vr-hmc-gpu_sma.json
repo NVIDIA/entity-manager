@@ -1,0 +1,50 @@
+[
+  {
+    "Name": "$Name",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^gpu_sma$', 'Generation': 'vera-rubin'})",
+    "Type": "NvDevice",
+    "Kind": "gpu_sma",
+    "InstanceNumber": "$Instance",
+    "EID": "$EID",
+    "BridgedProcessors": "$BridgedProcessors",
+    "Exposes": [
+      {
+        "Name": "NSM_Telemetry",
+        "Type": "NSM_Telemetry",
+        "Disable": [],
+        "ParameterOverrides": {}
+      },
+      {
+        "ConnectsToName": "$Platform.BmcName",
+        "DeviceAddress": "MCTP:$EID",
+        "DeviceType": "MCTPBridge",
+        "Name": "$Name",
+        "PhysicalInterface": "usb1:0x0955:0xcf11:$Port",
+        "Type": "PlatformDevice"
+      },
+      {
+        "Name": "$Name",
+        "SupportedDumps": [
+          "RoT",
+          "SMA"
+        ],
+        "Type": "Dump"
+      },
+      {
+        "Name": "$Name_PLDM",
+        "Type": "PLDMDevice",
+        "UpdateableComponents": {
+          "$Platform.NamePrefixFW_GPU_SMA_$Instance": 65282
+        }
+      },
+      {
+        "Name": "$Name_Recovery",
+        "Type": "Recovery",
+        "Method": "MCU",
+        "Target": "GPU",
+        "VendorId": "0x0955",
+        "ProductId": "0xCF11"
+      }
+    ]
+  }
+]
