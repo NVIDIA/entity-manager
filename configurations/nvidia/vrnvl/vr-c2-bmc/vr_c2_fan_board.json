@@ -1302,6 +1302,66 @@
                     "assembly",
                     "parent_chassis",
                     "/xyz/openbmc_project/inventory/system/assembly/FanBoard_Product_FRU_Assembly1"
+                ],
+                [
+                    "cooled_by",
+                    "cooling",
+                    "/xyz/openbmc_project/inventory/FanBoard_0_Fan_1_Front"
+                ],
+                [
+                    "cooled_by",
+                    "cooling",
+                    "/xyz/openbmc_project/inventory/FanBoard_0_Fan_1_Rear"
+                ],
+                [
+                    "cooled_by",
+                    "cooling",
+                    "/xyz/openbmc_project/inventory/FanBoard_0_Fan_2_Front"
+                ],
+                [
+                    "cooled_by",
+                    "cooling",
+                    "/xyz/openbmc_project/inventory/FanBoard_0_Fan_2_Rear"
+                ],
+                [
+                    "cooled_by",
+                    "cooling",
+                    "/xyz/openbmc_project/inventory/FanBoard_0_Fan_3_Front"
+                ],
+                [
+                    "cooled_by",
+                    "cooling",
+                    "/xyz/openbmc_project/inventory/FanBoard_0_Fan_3_Rear"
+                ],
+                [
+                    "cooled_by",
+                    "cooling",
+                    "/xyz/openbmc_project/inventory/FanBoard_0_Fan_4_Front"
+                ],
+                [
+                    "cooled_by",
+                    "cooling",
+                    "/xyz/openbmc_project/inventory/FanBoard_0_Fan_4_Rear"
+                ],
+                [
+                    "cooled_by",
+                    "cooling",
+                    "/xyz/openbmc_project/inventory/FanBoard_0_Fan_5_Front"
+                ],
+                [
+                    "cooled_by",
+                    "cooling",
+                    "/xyz/openbmc_project/inventory/FanBoard_0_Fan_5_Rear"
+                ],
+                [
+                    "cooled_by",
+                    "cooling",
+                    "/xyz/openbmc_project/inventory/FanBoard_0_Fan_6_Front"
+                ],
+                [
+                    "cooled_by",
+                    "cooling",
+                    "/xyz/openbmc_project/inventory/FanBoard_0_Fan_6_Rear"
                 ]
             ]
         },
