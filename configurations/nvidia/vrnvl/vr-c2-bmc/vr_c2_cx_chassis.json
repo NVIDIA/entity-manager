@@ -332,5 +332,22 @@
             "Name": "I2CDeviceAssociation"
         },
         "xyz.openbmc_project.Inventory.Item.NetworkInterface": {}
+    },
+    {
+        "Exposes": [
+            {
+                "ChassisName": "IRoT_CX_$INSTANCE_NUMBER",
+                "DebugTokenDeviceType": "NIC",
+                "DebugTokenType": [
+                    "Unified"
+                ],
+                "Name": "DebugToken",
+                "Type": "NSM_DebugToken",
+                "UUID": "$UUID"
+            }
+        ],
+        "Name": "CX8_DebugToken_$INSTANCE_NUMBER",
+        "Probe": "xyz.openbmc_project.FruDevice({'DEVICE_TYPE': 2, 'PRODUCT_NAME': '.*ConnectX-8.*'})",
+        "Type": "NSM_Configs"
     }
 ]
