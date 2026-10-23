@@ -6,22 +6,16 @@
     "Kind": "gpu",
     "InstanceNumber": "$Instance",
     "EID": "$EID",
+    "ParentChassis": "$ParentChassis",
+    "NvLinkCount": 36,
+    "LocationCode": "$LocationCode",
+    "LocationContext": "$LocationContext",
     "Exposes": [
       {
         "Name": "NSM_Telemetry",
         "Type": "NSM_Telemetry",
-        "Disable": [
-          "ModulePowerControl",
-          "DRAM_0_Temp_0"
-        ],
-        "ParameterOverrides": {
-          "LocationCode": {
-            "Value": "$LocationCode"
-          },
-          "LocationContext": {
-            "Value": "$LocationContext"
-          }
-        }
+        "Disable": [],
+        "ParameterOverrides": {}
       },
       {
         "ConnectsToName": "$Bridge",

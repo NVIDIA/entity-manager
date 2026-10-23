@@ -10,36 +10,8 @@
         "Kind": "gpu",
         "Policy": [
           {
-            "Devices": [
-              "HGX_GPU_0",
-              "HGX_GPU_1",
-              "HGX_GPU_2",
-              "HGX_GPU_3",
-              "HGX_GPU_4",
-              "HGX_GPU_5",
-              "HGX_GPU_6",
-              "HGX_GPU_7"
-            ],
-            "LTSSMState": {
-              "Enabled": false
-            },
-            "NVLinkCount": {
-              "Value": 36
-            },
-            "GPMMetricsBitfield": {
-              "Value": [
-                255,
-                255,
-                15,
-                255
-              ]
-            },
-            "ChassisIRoTResponder": {
-              "Enabled": false
-            },
-            "ChassisRoT": {
-              "Enabled": false
-            }
+            "Devices": [],
+            "GPMMetrics": { "AggregatedMetricsBitfield": [255, 255, 223, 15]}
           }
         ]
       },
@@ -49,12 +21,7 @@
         "Kind": "hmc_hpm_sma",
         "Policy": [
           {
-            "Devices": [
-              "HGX_Baseboard_SMA_0"
-            ],
-            "ChassisType": {
-              "Value": "Component"
-            },
+            "Devices": [],
             "TotalGpuPower": {
               "Enabled": true
             },
@@ -73,16 +40,8 @@
         "Kind": "cx_sma",
         "Policy": [
           {
-            "Devices": [
-              "HGX_ConnectX_SMA_0",
-              "HGX_ConnectX_SMA_1",
-              "HGX_ConnectX_SMA_2",
-              "HGX_ConnectX_SMA_3"
-            ],
+            "Devices": [],
             "ChassisIRoTResponder": {
-              "Enabled": false
-            },
-            "ChassisRoT": {
               "Enabled": false
             }
           }
