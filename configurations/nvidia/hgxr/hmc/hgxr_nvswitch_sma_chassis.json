@@ -53,7 +53,7 @@
                 ],
                 "Description": "Internal NVSwitch SMA temperature values",
                 "Name": "HGX_NVSwitch_SMA_$INSTANCE_NUMBER_Temp_0",
-                "PhysicalContext": "Board",
+                "PhysicalContext": "Backplane",
                 "Priority": true,
                 "SensorId": 17,
                 "ThermalParameters": [
