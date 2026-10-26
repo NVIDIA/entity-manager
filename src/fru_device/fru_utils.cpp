@@ -9,12 +9,14 @@
 #include <phosphor-logging/lg2.hpp>
 
 #include <array>
+#include <charconv>
 #include <chrono>
 #include <cstddef>
 #include <cstdint>
 #include <filesystem>
 #include <format>
 #include <iomanip>
+#include <memory>
 #include <numeric>
 #include <set>
 #include <span>
@@ -1219,7 +1221,7 @@ static std::optional<FieldInfo> findOrCreateField(
     std::vector<uint8_t>& areaData, const std::string& propertyName,
     const fruAreas& fruAreaToUpdate)
 {
-    int fieldIndex = 0;
+    size_t fieldIndex = 0;
     int fieldLength = 0;
     std::string areaName = propertyName.substr(0, propertyName.find('_'));
     std::string propertyNamePrefix = areaName + "_";
@@ -1247,11 +1249,22 @@ static std::optional<FieldInfo> findOrCreateField(
 
     for (const auto& field : *fruAreaFieldNames)
     {
+        if (fieldIndex >= areaData.size())
+        {
+            lg2::error("FRU area data too short for field {FIELD}", "FIELD",
+                       propertyNamePrefix + field);
+            return std::nullopt;
+        }
         fieldLength = getFieldLength(areaData[fieldIndex]);
         if (fieldLength < 0)
         {
             areaData.insert(areaData.begin() + fieldIndex, 0xc0);
             fieldLength = 0;
+        }
+
+        if (static_cast<size_t>(fieldLength) > areaData.size() - fieldIndex - 1)
+        {
+            return std::nullopt;
         }
 
         if (propertyNamePrefix + field == propertyName)
@@ -1272,27 +1285,41 @@ static std::optional<FieldInfo> findOrCreateField(
     std::string customFieldIdx =
         propertyName.substr(pos + fruCustomFieldName.size());
 
-    // Check if customFieldIdx is a number
-    if (!std::all_of(customFieldIdx.begin(), customFieldIdx.end(), ::isdigit))
+    size_t customFieldIndex = 0;
+    const char* last = std::to_address(customFieldIdx.cend());
+    const auto [end, ec] =
+        std::from_chars(customFieldIdx.data(), last, customFieldIndex);
+    if (ec != std::errc{} || end != last || customFieldIndex == 0 ||
+        customFieldIndex > areaData.size())
     {
         return std::nullopt;
     }
 
-    size_t customFieldIndex = std::stoi(customFieldIdx);
-
     // insert custom fields up to the index we want
     for (size_t i = 0; i < customFieldIndex; i++)
     {
+        if (fieldIndex >= areaData.size())
+        {
+            return std::nullopt;
+        }
         fieldLength = getFieldLength(areaData[fieldIndex]);
         if (fieldLength < 0)
         {
             areaData.insert(areaData.begin() + fieldIndex, 0xc0);
             fieldLength = 0;
         }
+        if (static_cast<size_t>(fieldLength) > areaData.size() - fieldIndex - 1)
+        {
+            return std::nullopt;
+        }
         fieldIndex += 1 + fieldLength;
     }
 
     fieldIndex -= (fieldLength + 1);
+    if (fieldIndex >= areaData.size())
+    {
+        return std::nullopt;
+    }
     fieldLength = getFieldLength(areaData[fieldIndex]);
     return FieldInfo{static_cast<size_t>(fieldLength),
                      static_cast<size_t>(fieldIndex)};
@@ -1345,6 +1372,14 @@ bool setField(const fruAreas& fruAreaToUpdate, std::vector<uint8_t>& areaData,
     if (!fieldInfo)
     {
         lg2::error("Field {FIELD} not found in area {AREA}", "FIELD",
+                   propertyName, "AREA", getFruAreaName(fruAreaToUpdate));
+        return false;
+    }
+
+    if (fieldInfo->index >= tmpBuffer.size() ||
+        fieldInfo->length > tmpBuffer.size() - fieldInfo->index - 1)
+    {
+        lg2::error("Field {FIELD} extends past the end of area {AREA}", "FIELD",
                    propertyName, "AREA", getFruAreaName(fruAreaToUpdate));
         return false;
     }
