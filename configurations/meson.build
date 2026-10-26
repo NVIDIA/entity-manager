@@ -380,6 +380,7 @@ configs = [
     'nvidia/platform/vrnvl-nvl144-sw-bmc-platform-topology.json',
     'nvidia/platform/vrnvl-platform-policy.json',
     'nvidia/platform/vrnvl-quark-bmc-platform-topology.json',
+    'nvidia/platform/vrnvl-vhmc-quark-platform-topology.json',
     'nvidia/rtx6000_pro.json',
     'nvidia/rubin-gpu.json',
     'nvidia/vera-cpu.json',
