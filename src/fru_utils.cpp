@@ -20,11 +20,13 @@
 #include <phosphor-logging/lg2.hpp>
 
 #include <array>
+#include <charconv>
 #include <cstddef>
 #include <cstdint>
 #include <filesystem>
 #include <iomanip>
 #include <iostream>
+#include <memory>
 #include <numeric>
 #include <set>
 #include <span>
@@ -1007,6 +1009,10 @@ bool findFruAreaLocationAndField(std::vector<uint8_t>& fruData,
         return false;
     }
     fruAreas fruAreaToUpdate = static_cast<fruAreas>(it - fruAreaNames.begin());
+    if (fruData.size() < fruBlockSize)
+    {
+        return false;
+    }
     fruAreaOffsetFieldValue =
         fruData[getHeaderAreaFieldOffset(fruAreaToUpdate)];
     switch (fruAreaToUpdate)
@@ -1036,8 +1042,20 @@ bool findFruAreaLocationAndField(std::vector<uint8_t>& fruData,
     }
 
     fruAreaParams.start = fruAreaOffsetFieldValue * fruBlockSize;
+    if (fruAreaParams.start >= fruData.size() ||
+        fruData.size() - fruAreaParams.start < 2)
+    {
+        return false;
+    }
     fruAreaParams.size = fruData[fruAreaParams.start + 1] * fruBlockSize;
+    if (fruAreaParams.size > fruData.size() - fruAreaParams.start ||
+        fruAreaParams.size <= offset + 1)
+    {
+        return false;
+    }
     fruAreaParams.end = fruAreaParams.start + fruAreaParams.size;
+    // The final area byte is the checksum, not a field header or payload.
+    const size_t fieldsEnd = fruAreaParams.end - 1;
     size_t fruDataIter = fruAreaParams.start + offset;
     size_t skipToFRUUpdateField = 0;
     ssize_t fieldLength = 0;
@@ -1063,8 +1081,12 @@ bool findFruAreaLocationAndField(std::vector<uint8_t>& fruData,
         }
         std::string fieldNumStr =
             propertyName.substr(pos + fruCustomFieldName.length());
-        size_t fieldNum = std::stoi(fieldNumStr);
-        if (fieldNum == 0)
+        size_t fieldNum = 0;
+        const char* first = fieldNumStr.data();
+        const char* last = std::to_address(fieldNumStr.cend());
+        const auto [end, error] = std::from_chars(first, last, fieldNum);
+        if (error != std::errc{} || end != last || fieldNum == 0 ||
+            fieldNum > fruAreaParams.size)
         {
             std::cerr << "PropertyName not recognized: " << propertyName
                       << "\n";
@@ -1073,16 +1095,20 @@ bool findFruAreaLocationAndField(std::vector<uint8_t>& fruData,
         skipToFRUUpdateField += fieldNum;
     }
 
-    for (size_t i = 1; i < skipToFRUUpdateField; i++)
+    for (size_t i = 0; i < skipToFRUUpdateField; i++)
     {
-        if (fruDataIter < fruData.size())
+        if (fruDataIter >= fieldsEnd)
         {
-            fieldLength = getFieldLength(fruData[fruDataIter]);
-
-            if (fieldLength < 0)
-            {
-                break;
-            }
+            return false;
+        }
+        fieldLength = getFieldLength(fruData[fruDataIter]);
+        if (fieldLength < 0 ||
+            static_cast<size_t>(fieldLength) > fieldsEnd - fruDataIter - 1)
+        {
+            return false;
+        }
+        if (i + 1 < skipToFRUUpdateField)
+        {
             fruDataIter += 1 + fieldLength;
         }
     }

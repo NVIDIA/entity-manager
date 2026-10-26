@@ -532,3 +532,146 @@ TEST(UpdateFruPropertyOob, RestFieldWalkStaysInsideArea)
     copyRestFRUArea(fru, "PRODUCT_ASSET_TAG", params, restFRUAreaFieldsData);
     EXPECT_LE(params.restFieldsEnd, params.end);
 }
+
+namespace
+{
+class ReleaseFieldBoundsTest : public testing::TestWithParam<fruAreas>
+{
+  protected:
+    static std::vector<uint8_t> makeFru()
+    {
+        std::vector<uint8_t> fru(32, 0);
+        fru[0] = 1;
+        fru[getHeaderAreaFieldOffset(GetParam())] = 1;
+        fru[8] = 1;
+        fru[9] = 3;
+        const auto first = GetParam() == fruAreas::fruAreaBoard ? 14U : 11U;
+        size_t count = 0;
+        switch (GetParam())
+        {
+            case fruAreas::fruAreaBoard:
+                count = 5;
+                break;
+            case fruAreas::fruAreaChassis:
+                count = 2;
+                break;
+            default:
+                count = 7;
+                break;
+        }
+        std::fill_n(fru.begin() + first, count + 1, 0xc0);
+        fru[first + count + 1] = 0xc1;
+        return fru;
+    }
+    static std::string namedProperty()
+    {
+        return getFruAreaName(GetParam()) +
+               (GetParam() == fruAreas::fruAreaChassis ? "_PART_NUMBER"
+                                                       : "_MANUFACTURER");
+    }
+};
+
+// This release implementation takes a complete FRU image, rather than the
+// area buffer accepted by develop's setField(). Exercise its corresponding
+// truncated-input boundary; this is not the develop reproducer entry point.
+TEST(ReleaseFieldBounds, RejectsTwoByteBuffer)
+{
+    std::vector<uint8_t> fru = {0x0a, 0x0a};
+    FruArea area{};
+    EXPECT_FALSE(findFruAreaLocationAndField(fru, "BOARD_MANUFACTURER", area));
+}
+
+TEST_P(ReleaseFieldBoundsTest, RejectsMissingAreaHeader)
+{
+    auto fru = makeFru();
+    fru.resize(9);
+    FruArea area{};
+    EXPECT_FALSE(findFruAreaLocationAndField(fru, namedProperty(), area));
+}
+
+TEST_P(ReleaseFieldBoundsTest, RejectsAreaPastBuffer)
+{
+    auto fru = makeFru();
+    fru[getHeaderAreaFieldOffset(GetParam())] = 255;
+    FruArea area{};
+    EXPECT_FALSE(findFruAreaLocationAndField(fru, namedProperty(), area));
+}
+
+TEST_P(ReleaseFieldBoundsTest, RejectsTruncatedArea)
+{
+    auto fru = makeFru();
+    fru.resize(16);
+    FruArea area{};
+    EXPECT_FALSE(findFruAreaLocationAndField(fru, namedProperty(), area));
+}
+
+TEST_P(ReleaseFieldBoundsTest, RejectsZeroLengthArea)
+{
+    auto fru = makeFru();
+    fru[9] = 0;
+    FruArea area{};
+    EXPECT_FALSE(findFruAreaLocationAndField(fru, namedProperty(), area));
+}
+
+TEST_P(ReleaseFieldBoundsTest, RejectsOverrunningSelectedField)
+{
+    auto fru = makeFru();
+    fru[GetParam() == fruAreas::fruAreaBoard ? 14 : 11] = 0xff;
+    FruArea area{};
+    EXPECT_FALSE(findFruAreaLocationAndField(fru, namedProperty(), area));
+}
+
+TEST_P(ReleaseFieldBoundsTest, RejectsOverrunningPriorField)
+{
+    auto fru = makeFru();
+    fru[GetParam() == fruAreas::fruAreaBoard ? 14 : 11] = 0xff;
+    FruArea area{};
+    EXPECT_FALSE(findFruAreaLocationAndField(
+        fru, getFruAreaName(GetParam()) + "_SERIAL_NUMBER", area));
+}
+
+TEST_P(ReleaseFieldBoundsTest, RejectsMissingField)
+{
+    auto fru = makeFru();
+    fru[GetParam() == fruAreas::fruAreaBoard ? 14 : 11] = 0xc1;
+    FruArea area{};
+    EXPECT_FALSE(findFruAreaLocationAndField(fru, namedProperty(), area));
+}
+
+TEST_P(ReleaseFieldBoundsTest, RejectsInvalidCustomIndexWithoutThrowing)
+{
+    auto fru = makeFru();
+    for (const std::string suffix :
+         {"", "0", "-1", "+1", "1x", " 1", "999999999999999999999999999"})
+    {
+        SCOPED_TRACE(suffix);
+        FruArea area{};
+        EXPECT_FALSE(findFruAreaLocationAndField(
+            fru, getFruAreaName(GetParam()) + "_INFO_AM" + suffix, area));
+    }
+}
+
+TEST_P(ReleaseFieldBoundsTest, AcceptsNamedAndCustomFields)
+{
+    auto fru = makeFru();
+    const auto original = fru;
+    FruArea area{};
+    ASSERT_TRUE(findFruAreaLocationAndField(fru, namedProperty(), area));
+    EXPECT_EQ(area.start, 8U);
+    EXPECT_EQ(area.end, 32U);
+    EXPECT_EQ(area.updateFieldLoc,
+              GetParam() == fruAreas::fruAreaBoard ? 14U : 11U);
+    ASSERT_TRUE(findFruAreaLocationAndField(
+        fru, getFruAreaName(GetParam()) + "_INFO_AM1", area));
+    std::vector<uint8_t> rest;
+    EXPECT_TRUE(copyRestFRUArea(fru, getFruAreaName(GetParam()) + "_INFO_AM1",
+                                area, rest));
+    EXPECT_EQ(rest, std::vector<uint8_t>({0xc1}));
+    EXPECT_EQ(fru, original);
+}
+
+INSTANTIATE_TEST_SUITE_P(AllAreas, ReleaseFieldBoundsTest,
+                         testing::Values(fruAreas::fruAreaChassis,
+                                         fruAreas::fruAreaBoard,
+                                         fruAreas::fruAreaProduct));
+} // namespace
