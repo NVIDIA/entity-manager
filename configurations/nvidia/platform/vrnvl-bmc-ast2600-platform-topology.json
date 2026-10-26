@@ -3,6 +3,7 @@
     "Name": "Nvidia VR-NVL72 BMC AST2600",
     "Probe": "xyz.openbmc_project.FruDevice({'BUS': 9, 'ADDRESS': 80, 'BOARD_MANUFACTURER': 'NVIDIA'})",
     "Type": "Platform",
+    "NamePrefix": "",
     "BmcName": "BMC_0",
     "TopChassis": "Chassis_0",
     "SmmParent": "board/SMM_Interposer_0",

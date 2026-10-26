@@ -1,0 +1,30 @@
+[
+  {
+    "Name": "Nvidia NVL144 Switch Tray BMC Policy",
+    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80})",
+    "Type": "Platform",
+    "PlatformExposes": [
+      {
+        "CriticalReactionType": "None",
+        "LeakDetectorName": "leakage1",
+        "Name": "leakage1_Policy",
+        "ReactionDelaySeconds": 0,
+        "Type": "LeakDetectionPolicy"
+      },
+      {
+        "CriticalReactionType": "None",
+        "LeakDetectorName": "leakage2",
+        "Name": "leakage2_Policy",
+        "ReactionDelaySeconds": 0,
+        "Type": "LeakDetectionPolicy"
+      },
+      {
+        "CriticalReactionType": "None",
+        "LeakDetectorName": "leakage_aggr",
+        "Name": "leakage_aggr_Policy",
+        "ReactionDelaySeconds": 0,
+        "Type": "LeakDetectionPolicy"
+      }
+    ]
+  }
+]

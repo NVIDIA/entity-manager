@@ -1,0 +1,52 @@
+[
+  {
+    "Name": "$Name",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu_erot$', 'Generation': 'vera-rubin'})",
+    "Type": "NvDevice",
+    "Kind": "cpu_erot",
+    "InstanceNumber": "$Instance",
+    "EID": "$EID",
+    "Exposes": [
+      {
+        "Name": "NSM_Telemetry",
+        "Type": "NSM_Telemetry",
+        "Disable": [],
+        "ParameterOverrides": {}
+      },
+      {
+        "ConnectsToName": "$Platform.BmcName",
+        "DeviceAddress": "MCTP:$EID",
+        "DeviceType": "MCTPEndpoint",
+        "Name": "$Name",
+        "Type": "PlatformDevice"
+      },
+      {
+        "Name": "$Name",
+        "SupportedDumps": [
+          "RoT"
+        ],
+        "Type": "Dump"
+      },
+      {
+        "Name": "$Name_PLDM",
+        "Type": "PLDMDevice",
+        "UpdateableComponents": {
+          "$Platform.NamePrefixFW_ERoT_CPU_0": 65280,
+          "$Platform.NamePrefixFW_CPU_0": 218
+        }
+      },
+      {
+        "Name": "$Name_Recovery",
+        "Type": "Recovery",
+        "Method": "GlacierCrisis"
+      },
+      {
+        "Bus": "$Bus",
+        "ChipSelect": "$ChipSelect",
+        "Name": "$Name",
+        "StaticEndpointID": "$EID",
+        "Type": "MCTPSPIDevice"
+      }
+    ]
+  }
+]

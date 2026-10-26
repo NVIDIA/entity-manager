@@ -18,12 +18,15 @@
           "Medium": "spi",
           "Bus": 0,
           "ChipSelect": 2
+        },
+        "Recovery": {
+          "MctpUUID": "f72d6fa0-5675-11ed-9b6a-0242ac120002"
         }
       },
       {
         "Name": "MGX_ERoT_CPU_0",
         "Type": "NvDevice",
-        "Kind": "erot",
+        "Kind": "cpu_erot",
         "Generation": "vera-rubin",
         "Instance": 2,
         "EID": 16,
@@ -35,7 +38,8 @@
         },
         "Recovery": {
           "I2CAddress": 82,
-          "I2CBus": 32
+          "I2CBus": 32,
+          "MctpUUID": "f72d6fc0-5675-11ed-9b6a-0242ac120002"
         }
       },
       {
@@ -135,6 +139,26 @@
           "BridgeEID": 70,
           "PoolIndex": 1
         }
+      },
+      {
+        "Name": "MGX_BMC_0",
+        "Type": "PlatformDevice",
+        "DeviceAddress": "MCTP:9",
+        "DeviceType": "BMC"
+      },
+      {
+        "Name": "MGX_IRoT_NVSwitch_SMA_0",
+        "Type": "PlatformDevice",
+        "ConnectsToName": "MGX_NVSwitch_SMA_0",
+        "DeviceAddress": "MCTP:69",
+        "DeviceType": "ROT"
+      },
+      {
+        "Name": "MGX_IRoT_NVSwitch_SMA_1",
+        "Type": "PlatformDevice",
+        "ConnectsToName": "MGX_NVSwitch_SMA_1",
+        "DeviceAddress": "MCTP:70",
+        "DeviceType": "ROT"
       }
     ]
   }

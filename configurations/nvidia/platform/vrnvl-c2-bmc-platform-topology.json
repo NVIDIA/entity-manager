@@ -3,6 +3,7 @@
     "Name": "Nvidia VR-C2 BMC",
     "Probe": "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.*MGX C2.*'})",
     "Type": "Platform",
+    "NamePrefix": "",
     "BmcName": "BMC_0",
     "TopChassis": "Chassis_0",
     "SmmParent": "chassis/Chassis_0",
