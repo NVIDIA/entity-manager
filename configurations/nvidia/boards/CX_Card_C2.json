@@ -1,0 +1,136 @@
+[
+    {
+        "Associations": {
+            "parent_chassis": "chassis/Chassis_0"
+        },
+        "Exposes": [
+            {
+                "Address": "$address",
+                "Bus": "$bus",
+                "Name": "$bus CX_FRU",
+                "Type": "EEPROM_24C128"
+            },
+            {
+                "EID": 101,
+                "Name": "CX_0",
+                "Type": "I2CDeviceAssociation"
+            }
+        ],
+        "Name": "CX_0",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 46, 'ADDRESS': 80})",
+        "Type": "Board",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 1
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    },
+    {
+        "Board": "Board/CX_0",
+        "Exposes": [],
+        "Name": "CX_0",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 46, 'ADDRESS': 80})",
+        "Type": "Assembly"
+    },
+    {
+        "Associations": {
+            "parent_chassis": "board/CX_0",
+            "parent_device": "board/CX_0"
+        },
+        "Exposes": [],
+        "Name": "CX_NIC_0",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 46, 'ADDRESS': 80})",
+        "Type": "NetworkAdapter",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "EID": 101,
+            "Name": "I2CDeviceAssociation"
+        },
+        "xyz.openbmc_project.Inventory.Item.NetworkInterface": {}
+    },
+    {
+        "Associations": {
+            "parent_chassis": "chassis/Chassis_0"
+        },
+        "Exposes": [
+            {
+                "Address": "$address",
+                "Bus": "$bus",
+                "Name": "$bus CX_FRU",
+                "Type": "EEPROM_24C128"
+            },
+            {
+                "EID": 102,
+                "Name": "CX_1",
+                "Type": "I2CDeviceAssociation"
+            }
+        ],
+        "Name": "CX_1",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 56, 'ADDRESS': 80})",
+        "Type": "Board",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 1
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    },
+    {
+        "Board": "Board/CX_1",
+        "Exposes": [],
+        "Name": "CX_1",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 56, 'ADDRESS': 80})",
+        "Type": "Assembly"
+    },
+    {
+        "Associations": {
+            "parent_chassis": "board/CX_1",
+            "parent_device": "board/CX_1"
+        },
+        "Exposes": [],
+        "Name": "CX_NIC_1",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 56, 'ADDRESS': 80})",
+        "Type": "NetworkAdapter",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "EID": 102,
+            "Name": "I2CDeviceAssociation"
+        },
+        "xyz.openbmc_project.Inventory.Item.NetworkInterface": {}
+    }
+]

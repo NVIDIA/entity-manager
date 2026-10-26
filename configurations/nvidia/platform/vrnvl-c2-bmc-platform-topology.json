@@ -5,6 +5,8 @@
     "Type": "Platform",
     "BmcName": "BMC_0",
     "TopChassis": "Chassis_0",
+    "SmmParent": "chassis/Chassis_0",
+    "SmmLocationContext": "Chassis_0",
     "PlatformExposes": [
       {
         "Name": "ERoT_BMC_0",
@@ -24,7 +26,8 @@
         "Type": "NvDevice",
         "Kind": "bmc",
         "Generation": "vera-rubin",
-        "Instance": 0
+        "Instance": 0,
+        "EID": 30
       },
       {
         "Name": "ProcessorModule_SMA_0",
@@ -74,78 +77,6 @@
         }
       },
       {
-        "Name": "GPU_SMA_0",
-        "Type": "NvDevice",
-        "Kind": "gpu_sma",
-        "Generation": "vera-rubin",
-        "Instance": 0,
-        "BridgedProcessors": [
-          "GPU_0"
-        ],
-        "EID": 70,
-        "ParentChassis": "GPU_0",
-        "Transport": {
-          "Medium": "usb",
-          "Port": "1.2.1.3.1",
-          "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
-          "PoolStartEID": "71"
-        }
-      },
-      {
-        "Name": "GPU_0",
-        "Type": "NvDevice",
-        "Kind": "gpu",
-        "Generation": "vera-rubin",
-        "Instance": 0,
-        "EID": 71,
-        "ParentChassis": "Chassis_0",
-        "LocationContext": "Chassis_0/GPU_0",
-        "LocationCode": "GPU_0",
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "GPU_SMA_0",
-          "BridgeEID": 70,
-          "BridgePort": "1.2.1.3.1",
-          "PoolIndex": 0
-        }
-      },
-      {
-        "Name": "GPU_SMA_1",
-        "Type": "NvDevice",
-        "Kind": "gpu_sma",
-        "Generation": "vera-rubin",
-        "Instance": 1,
-        "BridgedProcessors": [
-          "GPU_1"
-        ],
-        "EID": 80,
-        "ParentChassis": "GPU_1",
-        "Transport": {
-          "Medium": "usb",
-          "Port": "1.3.1.3.1",
-          "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
-          "PoolStartEID": "81"
-        }
-      },
-      {
-        "Name": "GPU_1",
-        "Type": "NvDevice",
-        "Kind": "gpu",
-        "Generation": "vera-rubin",
-        "Instance": 1,
-        "EID": 81,
-        "ParentChassis": "Chassis_0",
-        "LocationContext": "Chassis_0/GPU_1",
-        "LocationCode": "GPU_1",
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "GPU_SMA_1",
-          "BridgeEID": 80,
-          "BridgePort": "1.3.1.3.1",
-          "PoolIndex": 0
-        }
-      },
-      {
         "Name": "StorageBackplane_SMA_0",
         "Type": "NvDevice",
         "Kind": "storage_backplane_sma",
@@ -160,52 +91,125 @@
         }
       },
       {
+        "Name": "NVMe_E1S_SSD0",
+        "Type": "NvDevice",
+        "Kind": "nvme_e1s_backplane",
+        "Generation": "vera-rubin",
+        "Instance": 0,
+        "LocationCode": "NVMe E1.S Slot 0",
+        "EID": 62
+      },
+      {
+        "Name": "NVMe_E1S_SSD1",
+        "Type": "NvDevice",
+        "Kind": "nvme_e1s_backplane",
+        "Generation": "vera-rubin",
+        "Instance": 1,
+        "LocationCode": "NVMe E1.S Slot 1",
+        "EID": 61
+      },
+      {
+        "Name": "NVMe_E1S_SSD2",
+        "Type": "NvDevice",
+        "Kind": "nvme_e1s_backplane",
+        "Generation": "vera-rubin",
+        "Instance": 2,
+        "LocationCode": "NVMe E1.S Slot 2",
+        "EID": 64
+      },
+      {
+        "Name": "NVMe_E1S_SSD3",
+        "Type": "NvDevice",
+        "Kind": "nvme_e1s_backplane",
+        "Generation": "vera-rubin",
+        "Instance": 3,
+        "LocationCode": "NVMe E1.S Slot 3",
+        "EID": 63
+      },
+      {
+        "Name": "NVMe_E1S_SSD4",
+        "Type": "NvDevice",
+        "Kind": "nvme_e1s_backplane",
+        "Generation": "vera-rubin",
+        "Instance": 4,
+        "LocationCode": "NVMe E1.S Slot 4",
+        "EID": 66
+      },
+      {
+        "Name": "NVMe_E1S_SSD5",
+        "Type": "NvDevice",
+        "Kind": "nvme_e1s_backplane",
+        "Generation": "vera-rubin",
+        "Instance": 5,
+        "LocationCode": "NVMe E1.S Slot 5",
+        "EID": 65
+      },
+      {
+        "Name": "NVMe_E1S_SSD6",
+        "Type": "NvDevice",
+        "Kind": "nvme_e1s_backplane",
+        "Generation": "vera-rubin",
+        "Instance": 6,
+        "LocationCode": "NVMe E1.S Slot 6",
+        "EID": 68
+      },
+      {
+        "Name": "NVMe_E1S_SSD7",
+        "Type": "NvDevice",
+        "Kind": "nvme_e1s_backplane",
+        "Generation": "vera-rubin",
+        "Instance": 7,
+        "LocationCode": "NVMe E1.S Slot 7",
+        "EID": 67
+      },
+      {
         "Name": "CX_0",
         "Type": "NvDevice",
-        "Kind": "cx9_nic",
+        "Kind": "cx9_nic_i2c",
         "Generation": "vera-rubin",
         "Instance": 0,
         "EID": 101,
         "Transport": {
           "Medium": "i2c",
           "Bus": 46,
-          "Address": "0x32"
+          "Address": 50
         }
       },
       {
         "Name": "CX_1",
         "Type": "NvDevice",
-        "Kind": "cx9_nic",
+        "Kind": "cx9_nic_i2c",
         "Generation": "vera-rubin",
         "Instance": 1,
         "EID": 102,
         "Transport": {
           "Medium": "i2c",
           "Bus": 56,
-          "Address": "0x32"
+          "Address": 50
         }
       },
       {
         "Name": "BlueField_0",
         "Type": "NvDevice",
-        "Kind": "bluefield",
+        "Kind": "bluefield_lily",
         "Generation": "vera-rubin",
         "Instance": 0,
         "EID": 105,
         "Transport": {
           "Medium": "i2c",
           "Bus": 34,
-          "Address": "0x32"
+          "Address": 50
         }
       },
       {
-        "Name": "PCIE_MCTP_0",
-        "Type": "MCTPPCIeDevice",
+        "Name": "MCTPPCIe_Device",
+        "Type": "MCTPPCIeTarget",
         "Interface": "mctppcie0",
         "Address": "0000:00:00.0",
-        "StaticEndpointID": 100,
-        "PoolStartEID": 101,
-        "PoolEndEID": 105
+        "StaticEndpointID": "100",
+        "BridgePoolStartEID": "101",
+        "BridgePoolEndEID": "105",
+        "IndeterministicPoolSpace": "true"
       }
     ]
   }

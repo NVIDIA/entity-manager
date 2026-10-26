@@ -6,6 +6,8 @@
     "BmcName": "BMC_0",
     "NamePrefix": "",
     "TopChassis": "Chassis_0",
+    "SmmParent": "board/SMM_Interposer_0",
+    "SmmLocationContext": "Chassis_0/SMM_Interposer_0",
     "PlatformExposes": [
       {
         "Name": "IRoT_BMC_0",
@@ -25,7 +27,8 @@
         "Kind": "bmc",
         "Generation": "vera-rubin",
         "Instance": 0,
-        "EID": 30
+        "EID": 30,
+        "SatelliteHost": "172.31.13.251"
       },
       {
         "Name": "ProcessorModule_SMA_0",
@@ -331,6 +334,9 @@
         "Kind": "nvme_e1s",
         "Generation": "vera-rubin",
         "Instance": 0,
+        "LocationCode": "NVMe E1.S Slot 1",
+        "LocationContext": "Chassis_0/Bay-B-Left-Bottom",
+        "EID": 65,
         "Transport": {
           "Medium": "bridge",
           "Bridge": "IO_Board_SMA_0",
@@ -344,6 +350,9 @@
         "Kind": "nvme_e1s",
         "Generation": "vera-rubin",
         "Instance": 1,
+        "LocationCode": "NVMe E1.S Slot 2",
+        "LocationContext": "Chassis_0/Bay-B-Left-Top",
+        "EID": 75,
         "Transport": {
           "Medium": "bridge",
           "Bridge": "IO_Board_SMA_1",
@@ -357,6 +366,9 @@
         "Kind": "nvme_e1s",
         "Generation": "vera-rubin",
         "Instance": 2,
+        "LocationCode": "NVMe E1.S Slot 3",
+        "LocationContext": "Chassis_0/Bay-B-Right-Bottom",
+        "EID": 85,
         "Transport": {
           "Medium": "bridge",
           "Bridge": "IO_Board_SMA_2",
@@ -370,6 +382,9 @@
         "Kind": "nvme_e1s",
         "Generation": "vera-rubin",
         "Instance": 3,
+        "LocationCode": "NVMe E1.S Slot 4",
+        "LocationContext": "Chassis_0/Bay-B-Right-Top",
+        "EID": 95,
         "Transport": {
           "Medium": "bridge",
           "Bridge": "IO_Board_SMA_3",

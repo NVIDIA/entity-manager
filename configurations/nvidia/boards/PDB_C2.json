@@ -1,0 +1,71 @@
+[
+    {
+        "Associations": {
+            "parent_chassis": "chassis/Chassis_0"
+        },
+        "Exposes": [
+            {
+                "Address": "$address",
+                "Bus": "$bus",
+                "Name": "$bus PDB_FRU",
+                "Type": "EEPROM_24C512"
+            },
+            {
+                "Address": "0x4C",
+                "Bus": 59,
+                "IpmiName": "PDB_Amb_Temp_0",
+                "IpmiName1": "PDB_Amb_Temp_1",
+                "Labels": [
+                    "temp1",
+                    "temp2"
+                ],
+                "Name": "PDB_0_Ext_Ambient_Temp_0",
+                "Name1": "PDB_0_Ext_Ambient_Temp_1",
+                "Type": "TMP411"
+            },
+            {
+                "Address": "0x4A",
+                "Bus": 59,
+                "Name": "PDB_0_Temp_0",
+                "Type": "TMP75"
+            },
+            {
+                "GpioLine": "PDB_GLB_WP-O",
+                "Name": "PDB_GLB_WP",
+                "Polarity": "active_high",
+                "Type": "WriteProtect"
+            }
+        ],
+        "Name": "PDB_0",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 59, 'ADDRESS': 80})",
+        "Type": "Board",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SKU": "$BOARD_SKU",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "$address",
+            "Bus": "$bus",
+            "Name": "PDB_FRU"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Module"
+        },
+        "xyz.openbmc_project.Inventory.Item.ManagementService": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    },
+    {
+        "Board": "Board/PDB_0",
+        "Name": "PDB",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 59, 'ADDRESS': 80})",
+        "Type": "Assembly"
+    }
+]

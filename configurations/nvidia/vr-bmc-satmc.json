@@ -6,17 +6,25 @@
     "Kind": "satmc",
     "Exposes": [
       {
-        "AuthType": "None",
-        "Hostname": "172.31.13.251",
-        "Name": "sat0",
-        "Port": "80",
-        "Type": "SatelliteController"
-      },
-      {
         "DeviceAddress": "MCTP:$EID",
         "DeviceType": "BMC",
         "Name": "$Platform.BmcName",
         "Type": "PlatformDevice"
+      }
+    ]
+  },
+  {
+    "Name": "BMC_SATMC_Controller",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bmc$', 'Generation': 'vera-rubin', 'SatelliteHost': '.'})",
+    "Type": "NvDevice",
+    "Kind": "satmc",
+    "Exposes": [
+      {
+        "AuthType": "None",
+        "Hostname": "$SatelliteHost",
+        "Name": "sat0",
+        "Port": "80",
+        "Type": "SatelliteController"
       }
     ]
   }

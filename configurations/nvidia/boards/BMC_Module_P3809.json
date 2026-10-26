@@ -1,0 +1,94 @@
+[
+    {
+        "Associations": {
+            "all_chassis": "chassis/ERoT_BMC_0",
+            "all_managers": "bmc/BMC_0",
+            "parent_chassis": "chassis/Chassis_0"
+        },
+        "Exposes": [
+            {
+                "Address": "$address",
+                "Bus": "$bus",
+                "Name": "$bus BMC_FRU",
+                "Type": "EEPROM_24C02"
+            },
+            {
+                "Address": "0x48",
+                "Bus": 10,
+                "Name": "BMC_0_Temp_0",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non recoverable",
+                        "Severity": 4,
+                        "Value": 130.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "soft shutdown",
+                        "Severity": 3,
+                        "Value": 128.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 128.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 125.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    }
+                ],
+                "Type": "TMP75C"
+            },
+            {
+                "GpioLine": "BMC_FRU_WP-O",
+                "Name": "BMC_FRU_WP",
+                "Polarity": "active_high",
+                "Type": "WriteProtect"
+            }
+        ],
+        "Name": "BMC_0",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80})",
+        "Type": "BMC",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "Vera MGX",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "$address",
+            "Bus": "$bus",
+            "Name": "BMC_FRU"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.SKU": {
+            "SKU": ""
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Module"
+        },
+        "xyz.openbmc_project.Inventory.Item.ManagementService": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    },
+    {
+        "Board": "BMC/BMC_0",
+        "Name": "BMC",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80})",
+        "Type": "Assembly"
+    }
+]

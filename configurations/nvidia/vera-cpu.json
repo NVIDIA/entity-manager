@@ -58,7 +58,7 @@
   },
   {
     "Name": "ProcessorModule_$Instance_Memory_0",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin'})",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
     "Type": "Dimm",
     "Associations": {
       "parent_chassis": "board/$ParentChassis",
@@ -73,7 +73,7 @@
   },
   {
     "Name": "ProcessorModule_$Instance_Memory_1",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin'})",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
     "Type": "Dimm",
     "Associations": {
       "parent_chassis": "board/$ParentChassis",
@@ -88,7 +88,7 @@
   },
   {
     "Name": "ProcessorModule_$Instance_Memory_2",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin'})",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
     "Type": "Dimm",
     "Associations": {
       "parent_chassis": "board/$ParentChassis",
@@ -103,7 +103,7 @@
   },
   {
     "Name": "ProcessorModule_$Instance_Memory_3",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin'})",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
     "Type": "Dimm",
     "Associations": {
       "parent_chassis": "board/$ParentChassis",
@@ -118,7 +118,7 @@
   },
   {
     "Name": "ProcessorModule_$Instance_Memory_4",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin'})",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
     "Type": "Dimm",
     "Associations": {
       "parent_chassis": "board/$ParentChassis",
@@ -133,7 +133,7 @@
   },
   {
     "Name": "ProcessorModule_$Instance_Memory_5",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin'})",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
     "Type": "Dimm",
     "Associations": {
       "parent_chassis": "board/$ParentChassis",
@@ -148,7 +148,7 @@
   },
   {
     "Name": "ProcessorModule_$Instance_Memory_6",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin'})",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
     "Type": "Dimm",
     "Associations": {
       "parent_chassis": "board/$ParentChassis",
@@ -163,7 +163,7 @@
   },
   {
     "Name": "ProcessorModule_$Instance_Memory_7",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin'})",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
     "Type": "Dimm",
     "Associations": {
       "parent_chassis": "board/$ParentChassis",
