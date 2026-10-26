@@ -70,10 +70,10 @@
           "CX_NVConfig_MLNX_$Instance": 4,
           "CX_NVConfig_OEM_$Instance": 3
         },
-        "NetworkAdapter": "NIC_0",
+        "NetworkAdapter": "ConnectX_NIC_$Instance",
         "SensorAuxNames": {
           "$Name": 5,
-          "NIC_0": 60,
+          "ConnectX_NIC_$Instance": 60,
           "Port_0": 200,
           "Port_1": 201,
           "$Name_Power_0": 50,

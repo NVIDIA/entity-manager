@@ -162,7 +162,7 @@ struct AssociationRelation
     std::string_view backward;
 };
 
-static constexpr std::array<AssociationRelation, 19> associationRelations = {{
+static constexpr std::array<AssociationRelation, 20> associationRelations = {{
     {"parent_chassis", "Dimm", "all_memory"},
     {"parent_chassis", "NetworkAdapter", "network_adapters"},
     {"parent_chassis", "", "all_chassis"},
@@ -180,6 +180,7 @@ static constexpr std::array<AssociationRelation, 19> associationRelations = {{
     {"parent_device", "", "all_states"},
     {"powering", "", "powered_by"},
     {"all_sensors", "PowerSupply", "power_supply"},
+    {"all_sensors", "", "chassis"},
     {"cooled_by", "", "cooling"},
     {"host_management_network_access", "", "chassis"},
 }};

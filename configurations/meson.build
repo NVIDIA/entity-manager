@@ -363,6 +363,7 @@ configs = [
     'nvidia/cx9_mezzanine_module.json',
     'nvidia/gb200.json',
     'nvidia/gb300.json',
+    'nvidia/hgxr-hpm_sma.json',
     'nvidia/imgx_connectx8_supernic_switch.json',
     'nvidia/p3809-hmc.json',
     'nvidia/p4764-hmc.json',

@@ -21,6 +21,7 @@
         "DeviceType": "$Name",
         "Name": "$Name",
         "SupportedDumps": [
+          "RoT",
           "SMA",
           "GPUDiag"
         ],
@@ -45,18 +46,35 @@
         "Name": "$Name_Recovery",
         "Type": "Recovery",
         "Method": "MCU",
-        "Target": "CX9",
         "VendorId": "0x0955",
         "ProductId": "0xCF11"
+      },
+      {
+        "BridgePoolEndEID": "$PoolEndEID",
+        "BridgePoolStartEID": "$PoolStartEID",
+        "BridgedEndpoints": [
+          "CX_$Instance * 2",
+          "CX_$Instance * 2 + 1",
+          "NVMe_E1S_IO$Instance"
+        ],
+        "Configuration": 1,
+        "IgnoreEIDs": "$IgnoreEIDs",
+        "InterfaceNum": 0,
+        "Name": "$Name",
+        "PollingInterval": "5",
+        "Port": "$Port",
+        "RootHubPath": "$RootHubPath",
+        "StaticEndpointID": "$EID",
+        "Type": "MCTPUSBDevice"
       }
     ]
   },
   {
     "Name": "$Name_LeakDetection",
     "Probe": [
-      "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vera-rubin', 'Instance': 1})",
+      "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vera-rubin', 'ParentChassis': '.', 'Instance': 1})",
       "OR",
-      "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vera-rubin', 'Instance': 3})"
+      "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vera-rubin', 'ParentChassis': '.', 'Instance': 3})"
     ],
     "Exposes": [
       {
@@ -68,109 +86,5 @@
       }
     ],
     "Type": "LeakDetection"
-  },
-  {
-    "Name": "$Name_MCTP_Inst0",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vera-rubin', 'Instance': 0})",
-    "Type": "NvDevice",
-    "Kind": "cx_sma",
-    "Exposes": [
-      {
-        "BridgePoolEndEID": "$PoolEndEID",
-        "BridgePoolStartEID": "$PoolStartEID",
-        "BridgedEndpoints": [
-          "CX_$Instance * 2",
-          "CX_$Instance * 2 + 1",
-          "NVMe_E1S_IO$Instance"
-        ],
-        "Configuration": 1,
-        "IgnoreEIDs": "62,64",
-        "InterfaceNum": 0,
-        "Name": "$Name",
-        "PollingInterval": "5",
-        "Port": "$Port",
-        "RootHubPath": "$RootHubPath",
-        "StaticEndpointID": "$EID",
-        "Type": "MCTPUSBDevice"
-      }
-    ]
-  },
-  {
-    "Name": "$Name_MCTP_Inst1",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vera-rubin', 'Instance': 1})",
-    "Type": "NvDevice",
-    "Kind": "cx_sma",
-    "Exposes": [
-      {
-        "BridgePoolEndEID": "$PoolEndEID",
-        "BridgePoolStartEID": "$PoolStartEID",
-        "BridgedEndpoints": [
-          "CX_$Instance * 2",
-          "CX_$Instance * 2 + 1",
-          "NVMe_E1S_IO$Instance"
-        ],
-        "Configuration": 1,
-        "IgnoreEIDs": "72,74",
-        "InterfaceNum": 0,
-        "Name": "$Name",
-        "PollingInterval": "5",
-        "Port": "$Port",
-        "RootHubPath": "$RootHubPath",
-        "StaticEndpointID": "$EID",
-        "Type": "MCTPUSBDevice"
-      }
-    ]
-  },
-  {
-    "Name": "$Name_MCTP_Inst2",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vera-rubin', 'Instance': 2})",
-    "Type": "NvDevice",
-    "Kind": "cx_sma",
-    "Exposes": [
-      {
-        "BridgePoolEndEID": "$PoolEndEID",
-        "BridgePoolStartEID": "$PoolStartEID",
-        "BridgedEndpoints": [
-          "CX_$Instance * 2",
-          "CX_$Instance * 2 + 1",
-          "NVMe_E1S_IO$Instance"
-        ],
-        "Configuration": 1,
-        "IgnoreEIDs": "82,84",
-        "InterfaceNum": 0,
-        "Name": "$Name",
-        "PollingInterval": "5",
-        "Port": "$Port",
-        "RootHubPath": "$RootHubPath",
-        "StaticEndpointID": "$EID",
-        "Type": "MCTPUSBDevice"
-      }
-    ]
-  },
-  {
-    "Name": "$Name_MCTP_Inst3",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vera-rubin', 'Instance': 3})",
-    "Type": "NvDevice",
-    "Kind": "cx_sma",
-    "Exposes": [
-      {
-        "BridgePoolEndEID": "$PoolEndEID",
-        "BridgePoolStartEID": "$PoolStartEID",
-        "BridgedEndpoints": [
-          "CX_$Instance * 2",
-          "CX_$Instance * 2 + 1",
-          "NVMe_E1S_IO$Instance"
-        ],
-        "Configuration": 1,
-        "IgnoreEIDs": "92,94",
-        "InterfaceNum": 0,
-        "Name": "$Name",
-        "PollingInterval": "5",
-        "Port": "$Port",
-        "RootHubPath": "$RootHubPath",
-        "StaticEndpointID": "$EID",
-        "Type": "MCTPUSBDevice"
-      }
-    ]
   }
 ]

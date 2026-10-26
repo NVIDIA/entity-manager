@@ -35,7 +35,7 @@
         "Name": "$Name_PLDM",
         "Type": "PLDMDevice",
         "UpdateableComponents": {
-          "FW_$Name": 65282
+          "$Platform.NamePrefixFW_NVSwitch_SMA_$Instance": 65282
         },
         "SensorAuxNames": {
           "$Name_Temp_0": 17
@@ -45,9 +45,21 @@
         "Name": "$Name_Recovery",
         "Type": "Recovery",
         "Method": "MCU",
-        "Target": "QM4",
         "VendorId": "0x0955",
         "ProductId": "0xCF11"
+      },
+      {
+        "BridgePoolEndEID": "$PoolEndEID",
+        "BridgePoolStartEID": "$PoolStartEID",
+        "Configuration": 1,
+        "IgnoreEIDs": "$IgnoreEIDs",
+        "InterfaceNum": 0,
+        "Name": "$Name",
+        "PollingInterval": "5",
+        "Port": "$Port",
+        "RootHubPath": "$RootHubPath",
+        "StaticEndpointID": "$EID",
+        "Type": "MCTPUSBDevice"
       }
     ]
   }

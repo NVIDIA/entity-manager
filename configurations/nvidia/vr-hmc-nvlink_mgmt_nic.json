@@ -50,6 +50,46 @@
         "Name": "$Name_Recovery",
         "Type": "Recovery",
         "Method": "NVLinkManagementNIC"
+      },
+      {
+        "BridgeName": "$Bridge",
+        "Name": "$Name",
+        "PoolIndex": "$PoolIndex",
+        "Type": "MCTPBridgePoolDevice"
+      },
+      {
+        "EventIds": [
+          "PLDM_SENSOR_UPPERWARNING",
+          "CX9_Temperature_UPPER_NON_CRITICAL-EVENT",
+          "PLDM_SENSOR_UPPERCRITICAL",
+          "CX9_Temperature_UPPER_CRITICAL-EVENT",
+          "PLDM_SENSOR_UPPERFATAL",
+          "CX9_Temperature_UPPER_FATAL-EVENT"
+        ],
+        "ImpactedComponent": "CX9",
+        "Name": "$Name_Temp_0_EVENT_INFO",
+        "SensorId": 300,
+        "Type": "SensorEventInfo"
+      },
+      {
+        "EventIds": [
+          "LinkDown",
+          "CX9_NVLINK_Link_Down_Event"
+        ],
+        "ImpactedComponent": "CX9",
+        "Name": "NVLinkManagementNIC_$Instance_Port_0_EVENT_INFO",
+        "SensorId": 200,
+        "Type": "SensorEventInfo"
+      },
+      {
+        "EventIds": [
+          "LinkDown",
+          "CX9_NVLINK_Link_Down_Event"
+        ],
+        "ImpactedComponent": "CX9",
+        "Name": "NVLinkManagementNIC_$Instance_Port_1_EVENT_INFO",
+        "SensorId": 201,
+        "Type": "SensorEventInfo"
       }
     ]
   }

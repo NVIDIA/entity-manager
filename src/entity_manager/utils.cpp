@@ -9,6 +9,7 @@
 #include <sdbusplus/bus/match.hpp>
 
 #include <algorithm>
+#include <cctype>
 #include <fstream>
 #include <regex>
 #include <vector>
@@ -65,6 +66,100 @@ bool fwVersionIsSame()
     return false;
 }
 
+// A variable that is still in a string after the substitution (the platform
+// does not define it) is a variable to skip: the map entry, the property or
+// the array element that holds it is not published, and a map or array that
+// is left empty by this is not published either. Name, Type and Probe keep
+// the old behavior (the variable is removed from the string).
+static bool hasLeftOverVar(const std::string& value)
+{
+    for (size_t pos = value.find(templateChar); pos != std::string::npos;
+         pos = value.find(templateChar, pos + 1))
+    {
+        if (pos + 1 < value.size() &&
+            (std::isalpha(static_cast<unsigned char>(value[pos + 1])) != 0 ||
+             value[pos + 1] == '_'))
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+static bool keepsLeftOverVar(const std::string& key)
+{
+    return key == "Name" || key == "Type" || key == "Probe";
+}
+
+static bool skipLeftOverTemplateVars(nlohmann::json& value);
+
+// @returns true if something was skipped and nothing is left
+static bool skipLeftOverTemplateVars(nlohmann::json::object_t& obj)
+{
+    bool skipped = false;
+    for (auto it = obj.begin(); it != obj.end();)
+    {
+        bool drop = false;
+        if (keepsLeftOverVar(it->first))
+        {
+            handleLeftOverTemplateVars(it->second);
+        }
+        else if (hasLeftOverVar(it->first))
+        {
+            drop = true;
+        }
+        else
+        {
+            const std::string* str = it->second.get_ptr<const std::string*>();
+            drop = (str != nullptr && hasLeftOverVar(*str)) ||
+                   skipLeftOverTemplateVars(it->second);
+        }
+        if (drop)
+        {
+            it = obj.erase(it);
+            skipped = true;
+        }
+        else
+        {
+            ++it;
+        }
+    }
+    return skipped && obj.empty();
+}
+
+static bool skipLeftOverTemplateVars(nlohmann::json::array_t& arr)
+{
+    bool skipped = false;
+    for (auto it = arr.begin(); it != arr.end();)
+    {
+        const std::string* str = it->get_ptr<const std::string*>();
+        if ((str != nullptr && hasLeftOverVar(*str)) ||
+            skipLeftOverTemplateVars(*it))
+        {
+            it = arr.erase(it);
+            skipped = true;
+        }
+        else
+        {
+            ++it;
+        }
+    }
+    return skipped && arr.empty();
+}
+
+static bool skipLeftOverTemplateVars(nlohmann::json& value)
+{
+    if (auto* objPtr = value.get_ptr<nlohmann::json::object_t*>())
+    {
+        return skipLeftOverTemplateVars(*objPtr);
+    }
+    if (auto* arrPtr = value.get_ptr<nlohmann::json::array_t*>())
+    {
+        return skipLeftOverTemplateVars(*arrPtr);
+    }
+    return false;
+}
+
 void handleLeftOverTemplateVars(nlohmann::json& value)
 {
     nlohmann::json::object_t* objPtr =
@@ -92,18 +187,12 @@ void handleLeftOverTemplateVars(nlohmann::json& value)
 
 void handleLeftOverTemplateVars(nlohmann::json::object_t& value)
 {
-    for (auto& nextLayer : value)
-    {
-        handleLeftOverTemplateVars(nextLayer.second);
-    }
+    skipLeftOverTemplateVars(value);
 }
 
 void handleLeftOverTemplateVars(nlohmann::json::array_t& value)
 {
-    for (auto& nextLayer : value)
-    {
-        handleLeftOverTemplateVars(nextLayer);
-    }
+    skipLeftOverTemplateVars(value);
 }
 
 // @brief    finds a template var in a string
@@ -350,14 +439,31 @@ static std::optional<DBusValueVariant> templateCharReplaceLoop(
     return std::nullopt;
 }
 
+static std::optional<DBusValueVariant> templateCharReplaceStr(
+    std::string& str, const DBusInterface& interface, const size_t index,
+    const std::optional<std::string>& replaceStr, bool& keepAsString);
+
+// The keys of an object are template targets too: the maps of a PLDMDevice
+// item are keyed by names built from $Name or $Instance.
 static void templateCharReplaceObj(
     nlohmann::json::object_t& objPtr, const DBusInterface& interface,
     const size_t index, const std::optional<std::string>& replaceStr)
 {
+    nlohmann::json::object_t replaced;
     for (auto& [key, value] : objPtr)
     {
         templateCharReplace(value, interface, index, replaceStr);
+
+        std::string newKey = key;
+        if (newKey.find(templateChar) != std::string::npos)
+        {
+            bool keepAsString = false;
+            templateCharReplaceStr(newKey, interface, index, replaceStr,
+                                   keepAsString);
+        }
+        replaced.insert_or_assign(std::move(newKey), std::move(value));
     }
+    objPtr = std::move(replaced);
 }
 
 static void templateCharReplaceArray(

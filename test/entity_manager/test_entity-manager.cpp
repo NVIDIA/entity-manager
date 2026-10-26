@@ -1289,3 +1289,153 @@ TEST(PlatformTemplateVariables, noPlatformRecord)
 
     EXPECT_TRUE(em_utils::platformTemplateVariables(config).empty());
 }
+
+TEST(TemplateCharReplace, replaceObjectKey)
+{
+    nlohmann::json j = {{"Map", {{"$Name_Temp_0", 17}, {"Port_0", 200}}}};
+    DBusInterface data;
+    data["Name"] = std::string("GPU_0");
+
+    em_utils::templateCharReplace(j, data, 0);
+
+    EXPECT_EQ(17, j["Map"]["GPU_0_Temp_0"]);
+    EXPECT_EQ(200, j["Map"]["Port_0"]);
+    EXPECT_EQ(2U, j["Map"].size());
+}
+
+TEST(TemplateCharReplace, replaceObjectKeyLongestNameFirst)
+{
+    nlohmann::json j = {{"Map", {{"$BridgeEID", 1}}}};
+    DBusInterface data;
+    data["Bridge"] = std::string("wrong");
+    data["BridgeEID"] = std::string("right");
+
+    em_utils::templateCharReplace(j, data, 0);
+
+    EXPECT_TRUE(j["Map"].contains("right"));
+    EXPECT_FALSE(j["Map"].contains("wrong"));
+}
+
+TEST(HandleLeftOverTemplateVars, skipsMapEntryWithMissingValueVariable)
+{
+    nlohmann::json j = {{"Map", {{"a", 1}, {"b", "$Missing"}}}};
+
+    em_utils::handleLeftOverTemplateVars(j);
+
+    EXPECT_EQ(1U, j["Map"].size());
+    EXPECT_EQ(1, j["Map"]["a"]);
+}
+
+TEST(HandleLeftOverTemplateVars, skipsMapEntryWithMissingKeyVariable)
+{
+    nlohmann::json j = {{"Map", {{"$Missing_Temp_0", 17}, {"ok", 2}}}};
+
+    em_utils::handleLeftOverTemplateVars(j);
+
+    EXPECT_EQ(1U, j["Map"].size());
+    EXPECT_EQ(2, j["Map"]["ok"]);
+}
+
+TEST(HandleLeftOverTemplateVars, skipsPartialStringValue)
+{
+    nlohmann::json j = {{"Item", {{"Prefix", "HGX_$Missing"}, {"Port", 1}}}};
+
+    em_utils::handleLeftOverTemplateVars(j);
+
+    EXPECT_FALSE(j["Item"].contains("Prefix"));
+    EXPECT_EQ(1, j["Item"]["Port"]);
+}
+
+TEST(HandleLeftOverTemplateVars, skipsPropertyOfItemOnly)
+{
+    nlohmann::json j = {{"Type", "MCTPUSBDevice"},
+                        {"Port", "1.2"},
+                        {"IgnoreEIDs", "$IgnoreEIDs"}};
+
+    em_utils::handleLeftOverTemplateVars(j);
+
+    EXPECT_FALSE(j.contains("IgnoreEIDs"));
+    EXPECT_EQ("1.2", j["Port"]);
+    EXPECT_EQ("MCTPUSBDevice", j["Type"]);
+}
+
+TEST(HandleLeftOverTemplateVars, dropsMapEmptiedBySkipping)
+{
+    nlohmann::json j = {
+        {"Type", "PLDMDevice"},
+        {"SensorAuxNames", {{"$Name_Temp_0", "$TempSensorId"}}},
+        {"Other", {{"x", {{"y", "$Missing"}}}}}};
+
+    em_utils::handleLeftOverTemplateVars(j);
+
+    EXPECT_FALSE(j.contains("SensorAuxNames"));
+    EXPECT_FALSE(j.contains("Other"));
+    EXPECT_EQ("PLDMDevice", j["Type"]);
+}
+
+TEST(HandleLeftOverTemplateVars, keepsMapThatWasAlreadyEmpty)
+{
+    nlohmann::json j = {{"ParameterOverrides", nlohmann::json::object()},
+                        {"Disable", nlohmann::json::array()}};
+
+    em_utils::handleLeftOverTemplateVars(j);
+
+    EXPECT_TRUE(j.contains("ParameterOverrides"));
+    EXPECT_TRUE(j.contains("Disable"));
+}
+
+TEST(HandleLeftOverTemplateVars, skipsArrayElement)
+{
+    nlohmann::json j = {{"List", {"a", "$Missing", "b"}}};
+
+    em_utils::handleLeftOverTemplateVars(j);
+
+    ASSERT_EQ(2U, j["List"].size());
+    EXPECT_EQ("a", j["List"][0]);
+    EXPECT_EQ("b", j["List"][1]);
+}
+
+TEST(HandleLeftOverTemplateVars, dropsArrayEmptiedBySkipping)
+{
+    nlohmann::json j = {{"List", {"$Missing", "$Other"}}, {"Keep", 1}};
+
+    em_utils::handleLeftOverTemplateVars(j);
+
+    EXPECT_FALSE(j.contains("List"));
+    EXPECT_EQ(1, j["Keep"]);
+}
+
+TEST(HandleLeftOverTemplateVars, nameTypeAndProbeKeepTheOldBehavior)
+{
+    nlohmann::json j = {{"Name", "$Missing"},
+                        {"Type", "$Missing2"},
+                        {"Probe", "iface({'Kind': '^a$'}) $Missing3"}};
+
+    em_utils::handleLeftOverTemplateVars(j);
+
+    ASSERT_TRUE(j.contains("Name"));
+    ASSERT_TRUE(j.contains("Type"));
+    ASSERT_TRUE(j.contains("Probe"));
+    EXPECT_EQ("", j["Name"]);
+    EXPECT_EQ("", j["Type"]);
+}
+
+TEST(HandleLeftOverTemplateVars, dollarWithoutVariableNameIsNotAVariable)
+{
+    nlohmann::json j = {{"Regex", "^abc$"}, {"Price", "5 $ each"}};
+
+    em_utils::handleLeftOverTemplateVars(j);
+
+    EXPECT_EQ("^abc$", j["Regex"]);
+    EXPECT_EQ("5 $ each", j["Price"]);
+}
+
+TEST(HandleLeftOverTemplateVars, resolvedValuesAreKept)
+{
+    nlohmann::json j = {{"Map", {{"GPU_0_Temp_0", 17}}}, {"List", {"a", "b"}}};
+    const nlohmann::json before = j;
+
+    em_utils::handleLeftOverTemplateVars(j);
+
+    EXPECT_EQ(before, j);
+}
