@@ -6,7 +6,6 @@
     "Kind": "gpu_sma",
     "InstanceNumber": "$Instance",
     "EID": "$EID",
-    "BridgedProcessors": "$BridgedProcessors",
     "Exposes": [
       {
         "Name": "NSM_Telemetry",
