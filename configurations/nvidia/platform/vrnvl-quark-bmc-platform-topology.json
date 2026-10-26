@@ -28,7 +28,6 @@
         "Instance": 0,
         "EID": 90,
         "ParentChassis": "ProcessorModule_0",
-        "LeakDetectionEnabled": true,
         "Transport": {
           "Medium": "usb",
           "Port": "1.2.1.1",
