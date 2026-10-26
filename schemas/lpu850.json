@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$defs": {
+        "LPU850": {
+            "description": "Sixteen PG613 PVT temperatures published by HwmonTempSensor.",
+            "additionalProperties": false,
+            "patternProperties": {
+                "^Name([1-9]|1[0-5])?$": {
+                    "$ref": "legacy.json#/$defs/Types/Name"
+                }
+            },
+            "properties": {
+                "Name": {
+                    "$ref": "legacy.json#/$defs/Types/Name"
+                },
+                "Type": {
+                    "const": "LPU850"
+                },
+                "Bus": {
+                    "$ref": "legacy.json#/$defs/Types/Bus"
+                },
+                "Address": {
+                    "$ref": "legacy.json#/$defs/Types/Address"
+                },
+                "PollRate": {
+                    "$ref": "legacy.json#/$defs/Types/PollRate"
+                },
+                "PhysicalContext": {
+                    "const": "Accelerator"
+                },
+                "Processor": {
+                    "description": "D-Bus inventory path of the LPU measured by these PVT channels.",
+                    "type": "string",
+                    "pattern": "^/xyz/openbmc_project/inventory/system/accelerator/LPU_([0-9]|1[0-5])$"
+                }
+            },
+            "required": ["Name", "Type", "Bus", "Address"],
+            "type": "object"
+        }
+    }
+}

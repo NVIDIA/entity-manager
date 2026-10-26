@@ -97,6 +97,7 @@ endforeach
 schemas = [
     'global.json',
     'legacy.json',
+    'lpu850.json',
     'openbmc-dbus.json',
     'ibm.json',
     'intel.json',

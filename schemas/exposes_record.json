@@ -115,6 +115,9 @@
                     "$ref": "legacy.json#/$defs/TempSensor"
                 },
                 {
+                    "$ref": "lpu850.json#/$defs/LPU850"
+                },
+                {
                     "$ref": "legacy.json#/$defs/NVME1000"
                 },
                 {
