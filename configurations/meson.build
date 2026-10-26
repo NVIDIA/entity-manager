@@ -354,6 +354,7 @@ configs = [
     'nvidia/boards/PDB_P4107.json',
     'nvidia/boards/Processor_Module_P5032.json',
     'nvidia/boards/PSU_Board_C2.json',
+    'nvidia/boards/QUARK_E5074.json',
     'nvidia/boards/SMM_Carrier_P4103.json',
     'nvidia/boards/SMM_Interposer_P4176.json',
     'nvidia/boards/Storage_Backplane_P4546.json',
