@@ -28,6 +28,32 @@
                 "UUID": "$UUID"
             },
             {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER",
+                        "Backward": "pcieslot",
+                        "Forward": "fabric_link"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER/Switches/ConnectX_Switch_$INSTANCE_NUMBER",
+                        "Backward": "pcieslot",
+                        "Forward": "switch_link"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_PCIeTopology_$INSTANCE_NUMBER/Switches/ConnectX_Switch_$INSTANCE_NUMBER/Ports/UP_0",
+                        "Backward": "pcieslot",
+                        "Forward": "port_link"
+                    }
+                ],
+                "ChassisName": "HGX_Chassis_0",
+                "Name": "PCIeSlots$INSTANCE_NUMBER",
+                "Priority": false,
+                "SlotType": "xyz.openbmc_project.Inventory.Item.PCIeSlot.SlotTypes.OEM",
+                "Type": "NSM_ChassisPCIeSlot",
+                "UUID": "$UUID",
+                "UpstreamPortCount": 1
+            },
+            {
                 "ChassisName": "HGX_ConnectX_$INSTANCE_NUMBER",
                 "DebugTokenType": [
                     "NIC"
