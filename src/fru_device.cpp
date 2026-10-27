@@ -1263,31 +1263,15 @@ void rescanOneBus(
             for (auto busIface = dbusInterfaceMap.begin();
                  busIface != dbusInterfaceMap.end();)
             {
-                int rootBus = getRootBus(busNum);
                 if (busIface->first.first == static_cast<size_t>(busNum))
                 {
                     objServer.remove_interface(busIface->second);
-                    // In case device under mux not detected in root bus
-                    // while rescanOneBus, updating dbusInterfaceMap along
-                    // with busMap to avoid getFRUInfo of not available device
-                    // and throw
-                    if (busIface->first.first == static_cast<size_t>(rootBus))
-                    {
-                        auto deviceMap = busmap.find(rootBus);
-                        if (deviceMap != busMap.end())
-                        {
-                            if (deviceMap->second->find(
-                                    busIface->first.second) ==
-                                deviceMap->second->end())
-                            {
-                                objServer.remove_interface(busIface->second);
-                                dbusInterfaceMap.erase(busIface->first);
-                                continue;
-                            }
-                        }
-                    }
+                    busIface = dbusInterfaceMap.erase(busIface);
                 }
-                busIface++;
+                else
+                {
+                    busIface++;
+                }
             }
             auto found = busmap.find(busNum);
             if (found == busmap.end() || found->second == nullptr)
