@@ -59,7 +59,11 @@
             }
         ],
         "Name": "MCTP_XROT_DEV2",
-        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpvrot0'})",
+        "Probe": [
+            "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpvrot0'})",
+            "AND",
+            "FOUND('Nvidia VRU AST2700 Switch BMC')"
+        ],
         "Type": "MCTPInterface"
     }
 ]

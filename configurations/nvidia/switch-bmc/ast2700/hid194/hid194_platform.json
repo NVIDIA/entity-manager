@@ -2,6 +2,20 @@
     "Name": "Nvidia VRU AST2700 Switch BMC",
     "PlatformExposes": [
         {
+            "Name": "MCTPIROT_0",
+            "SupportedDumps": [
+                "RoT"
+            ],
+            "Type": "Dump"
+        },
+        {
+            "Name": "MCTPVROT_0",
+            "SupportedDumps": [
+                "RoT"
+            ],
+            "Type": "Dump"
+        },
+        {
             "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SMA_0",
             "MCTPTargetName": "SMA_0",
             "Manufacturer": "NVIDIA",
@@ -133,12 +147,22 @@
         {
             "Components": [
                 {
-                    "ComponentIdentifier": 250,
-                    "Name": "VROT_0"
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/component/CPU_0"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 0,
+                    "Manufacturer": "NVIDIA",
+                    "Name": "FW_CPU_0"
                 }
             ],
             "MCTPTargetName": "MCTPVROT_0",
-            "Name": "VROT_0_PLDM",
+            "Name": "VRoT_CPU_0_PLDM",
             "StaticEID": 100,
             "Type": "PLDMFirmwareDevice"
         }

@@ -475,6 +475,7 @@ configs = [
     'nvidia/switch-bmc/ast2700/hid194/hid194_platform.json',
     'nvidia/switch-bmc/ast2700/hid194/hid194_sma_chassis.json',
     'nvidia/switch-bmc/ast2700/hid194/hid194_static_inventory.json',
+    'nvidia/switch-bmc/ast2700/hid194/hid194_vrot_cpu0_chassis.json',
     'nvidia/switch-bmc/ast2700/hid195/device_manager.json',
     'nvidia/switch-bmc/ast2700/hid195/spc6_irot_sma_chassis.json',
     'nvidia/switch-bmc/ast2700/hid195/spc6_mctp_bmc_target_configuration.json',
