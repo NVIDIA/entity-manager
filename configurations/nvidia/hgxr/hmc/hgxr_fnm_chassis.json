@@ -28,6 +28,32 @@
                 "UUID": "$UUID"
             },
             {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVLinkManagementNIC_0",
+                        "Backward": "pcieslot",
+                        "Forward": "chassis_link"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVLinkManagementNIC_0/NetworkAdapters/NVLinkManagementNIC_0",
+                        "Backward": "pcieslot",
+                        "Forward": "network_adapter_link"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_NVLinkManagementNIC_0/NetworkAdapters/NVLinkManagementNIC_0/Ports/PCIe_0",
+                        "Backward": "pcieslot",
+                        "Forward": "port_link"
+                    }
+                ],
+                "ChassisName": "HGX_Chassis_0",
+                "Name": "PCIeSlots8",
+                "Priority": false,
+                "SlotType": "xyz.openbmc_project.Inventory.Item.PCIeSlot.SlotTypes.OEM",
+                "Type": "NSM_ChassisPCIeSlot",
+                "UUID": "$UUID",
+                "UpstreamPortCount": 1
+            },
+            {
                 "ChassisName": "HGX_NVLinkManagementNIC_0",
                 "DebugTokenType": [
                     "NIC"
