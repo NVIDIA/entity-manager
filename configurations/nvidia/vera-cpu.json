@@ -40,7 +40,6 @@
       },
       {
         "Configuration": 1,
-        "Interface": "$Interface",
         "InterfaceNum": 2,
         "Name": "$Name",
         "PollingInterval": "5",

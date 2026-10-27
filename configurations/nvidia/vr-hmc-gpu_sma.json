@@ -46,7 +46,6 @@
         "BridgePoolStartEID": "$PoolStartEID",
         "Configuration": 1,
         "IgnoreEIDs": "$IgnoreEIDs",
-        "Interface": "$Interface",
         "InterfaceNum": 0,
         "Name": "$Name",
         "PollingInterval": "5",
