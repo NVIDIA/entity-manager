@@ -340,7 +340,7 @@
                     "associated_port",
                     "/xyz/openbmc_project/inventory/system/chassis/BlueField_0/NetworkAdapters/BlueField_NIC_0/Ports/Port_0"
                 ],
-                "MaxSpeedMBps": 50000,
+                "MaxSpeedMBps": 100000,
                 "Name": "BlueField_NIC_0_Port_0_INFO",
                 "PortType": "xyz.openbmc_project.Inventory.Decorator.PortInfo.PortType.BidirectionalPort",
                 "SensorId": 4296,
