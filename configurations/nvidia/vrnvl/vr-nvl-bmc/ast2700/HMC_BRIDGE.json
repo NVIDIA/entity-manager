@@ -1,0 +1,272 @@
+[
+    {
+        "Exposes": [],
+        "Name": "HMC_BRIDGE_GPU_SMA_0",
+        "Probe": [
+            "xyz.openbmc_project.State.FeatureReady({'FeatureType': 'xyz.openbmc_project.State.FeatureReady.FeatureTypes.MC', 'State': 'xyz.openbmc_project.State.FeatureReady.States.Enabled'})",
+            "AND",
+            "xyz.openbmc_project.MCTP.Endpoint({'EID': 10})",
+            "MATCH_ONE"
+        ],
+        "Type": "Chassis",
+        "xyz.openbmc_project.Common.UUID": {
+            "UUID": "$UUID"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 0
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "HMC_BRIDGE_GPU_SMA_0"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.Inventory.Item.SPDMResponder": {}
+    },
+    {
+        "Exposes": [],
+        "Name": "HMC_BRIDGE_IRoT_GPU_0",
+        "Probe": [
+            "xyz.openbmc_project.State.FeatureReady({'FeatureType': 'xyz.openbmc_project.State.FeatureReady.FeatureTypes.MC', 'State': 'xyz.openbmc_project.State.FeatureReady.States.Enabled'})",
+            "AND",
+            "xyz.openbmc_project.MCTP.Endpoint({'EID': 11})",
+            "MATCH_ONE"
+        ],
+        "Type": "Chassis",
+        "xyz.openbmc_project.Common.UUID": {
+            "UUID": "$UUID"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 0
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "HMC_BRIDGE_IRoT_GPU_0"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.Inventory.Item.SPDMResponder": {}
+    },
+    {
+        "Exposes": [],
+        "Name": "HMC_BRIDGE_IRoT_GPU_1",
+        "Probe": [
+            "xyz.openbmc_project.State.FeatureReady({'FeatureType': 'xyz.openbmc_project.State.FeatureReady.FeatureTypes.MC', 'State': 'xyz.openbmc_project.State.FeatureReady.States.Enabled'})",
+            "AND",
+            "xyz.openbmc_project.MCTP.Endpoint({'EID': 12})",
+            "MATCH_ONE"
+        ],
+        "Type": "Chassis",
+        "xyz.openbmc_project.Common.UUID": {
+            "UUID": "$UUID"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 0
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "HMC_BRIDGE_IRoT_GPU_1"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.Inventory.Item.SPDMResponder": {}
+    },
+    {
+        "Exposes": [],
+        "Name": "HMC_BRIDGE_GPU_SMA_1",
+        "Probe": [
+            "xyz.openbmc_project.State.FeatureReady({'FeatureType': 'xyz.openbmc_project.State.FeatureReady.FeatureTypes.MC', 'State': 'xyz.openbmc_project.State.FeatureReady.States.Enabled'})",
+            "AND",
+            "xyz.openbmc_project.MCTP.Endpoint({'EID': 20})",
+            "MATCH_ONE"
+        ],
+        "Type": "Chassis",
+        "xyz.openbmc_project.Common.UUID": {
+            "UUID": "$UUID"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 0
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "HMC_BRIDGE_GPU_SMA_1"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.Inventory.Item.SPDMResponder": {}
+    },
+    {
+        "Exposes": [],
+        "Name": "HMC_BRIDGE_IRoT_GPU_2",
+        "Probe": [
+            "xyz.openbmc_project.State.FeatureReady({'FeatureType': 'xyz.openbmc_project.State.FeatureReady.FeatureTypes.MC', 'State': 'xyz.openbmc_project.State.FeatureReady.States.Enabled'})",
+            "AND",
+            "xyz.openbmc_project.MCTP.Endpoint({'EID': 21})",
+            "MATCH_ONE"
+        ],
+        "Type": "Chassis",
+        "xyz.openbmc_project.Common.UUID": {
+            "UUID": "$UUID"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 0
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "HMC_BRIDGE_IRoT_GPU_2"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.Inventory.Item.SPDMResponder": {}
+    },
+    {
+        "Exposes": [],
+        "Name": "HMC_BRIDGE_IRoT_GPU_3",
+        "Probe": [
+            "xyz.openbmc_project.State.FeatureReady({'FeatureType': 'xyz.openbmc_project.State.FeatureReady.FeatureTypes.MC', 'State': 'xyz.openbmc_project.State.FeatureReady.States.Enabled'})",
+            "AND",
+            "xyz.openbmc_project.MCTP.Endpoint({'EID': 22})",
+            "MATCH_ONE"
+        ],
+        "Type": "Chassis",
+        "xyz.openbmc_project.Common.UUID": {
+            "UUID": "$UUID"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 0
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "HMC_BRIDGE_IRoT_GPU_3"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.Inventory.Item.SPDMResponder": {}
+    },
+    {
+        "Exposes": [],
+        "Name": "HMC_BRIDGE_CPU_0",
+        "Probe": [
+            "xyz.openbmc_project.State.FeatureReady({'FeatureType': 'xyz.openbmc_project.State.FeatureReady.FeatureTypes.MC', 'State': 'xyz.openbmc_project.State.FeatureReady.States.Enabled'})",
+            "AND",
+            "xyz.openbmc_project.MCTP.Endpoint({'EID': 14})",
+            "MATCH_ONE"
+        ],
+        "Type": "Chassis",
+        "xyz.openbmc_project.Common.UUID": {
+            "UUID": "$UUID"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 0
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "HMC_BRIDGE_CPU_0"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.Inventory.Item.SPDMResponder": {}
+    },
+    {
+        "Exposes": [],
+        "Name": "HMC_BRIDGE_CPU_1",
+        "Probe": [
+            "xyz.openbmc_project.State.FeatureReady({'FeatureType': 'xyz.openbmc_project.State.FeatureReady.FeatureTypes.MC', 'State': 'xyz.openbmc_project.State.FeatureReady.States.Enabled'})",
+            "AND",
+            "xyz.openbmc_project.MCTP.Endpoint({'EID': 24})",
+            "MATCH_ONE"
+        ],
+        "Type": "Chassis",
+        "xyz.openbmc_project.Common.UUID": {
+            "UUID": "$UUID"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 0
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "HMC_BRIDGE_CPU_1"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.Inventory.Item.SPDMResponder": {}
+    },
+    {
+        "Exposes": [],
+        "Name": "HMC_BRIDGE_IRoT_ProcessorModule_SMA_0",
+        "Probe": [
+            "xyz.openbmc_project.State.FeatureReady({'FeatureType': 'xyz.openbmc_project.State.FeatureReady.FeatureTypes.MC', 'State': 'xyz.openbmc_project.State.FeatureReady.States.Enabled'})",
+            "AND",
+            "xyz.openbmc_project.MCTP.Endpoint({'EID': 13})",
+            "MATCH_ONE"
+        ],
+        "Type": "Chassis",
+        "xyz.openbmc_project.Common.UUID": {
+            "UUID": "$UUID"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 0
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "HMC_BRIDGE_IRoT_ProcessorModule_SMA_0"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.Inventory.Item.SPDMResponder": {}
+    },
+    {
+        "Exposes": [],
+        "Name": "HMC_BRIDGE_IRoT_ProcessorModule_SMA_1",
+        "Probe": [
+            "xyz.openbmc_project.State.FeatureReady({'FeatureType': 'xyz.openbmc_project.State.FeatureReady.FeatureTypes.MC', 'State': 'xyz.openbmc_project.State.FeatureReady.States.Enabled'})",
+            "AND",
+            "xyz.openbmc_project.MCTP.Endpoint({'EID': 23})",
+            "MATCH_ONE"
+        ],
+        "Type": "Chassis",
+        "xyz.openbmc_project.Common.UUID": {
+            "UUID": "$UUID"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 0
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "HMC_BRIDGE_IRoT_ProcessorModule_SMA_1"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.Inventory.Item.SPDMResponder": {}
+    }
+]

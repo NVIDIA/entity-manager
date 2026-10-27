@@ -606,6 +606,7 @@ configs = [
     'nvidia/vrnvl/vr-nvl-bmc/ast2600/vr_mctp_bmc_target_configuration_erotless.json',
     'nvidia/vrnvl/vr-nvl-bmc/ast2600/vr_rot_chassis.json',
     'nvidia/vrnvl/vr-nvl-bmc/ast2700/Chassis.json',
+    'nvidia/vrnvl/vr-nvl-bmc/ast2700/HMC_BRIDGE.json',
     'nvidia/vrnvl/vr-nvl-bmc/ast2700/HMC_C2G4.json',
     'nvidia/vrnvl/vr-nvl-bmc/ast2700/PCIe_Cards.json',
     'nvidia/vrnvl/vr-nvl-bmc/ast2700/PDB_NVIDIA.json',
