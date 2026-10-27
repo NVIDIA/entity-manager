@@ -65,6 +65,9 @@
     "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
       "LocationContext": "$LocationContext"
     },
+    "xyz.openbmc_project.Inventory.Item.NVMe": {
+      "Name": "$Name"
+    },
     "xyz.openbmc_project.Inventory.Item.Drive": {
       "FormFactor": "xyz.openbmc_project.Inventory.Item.Drive.DriveFormFactor.EDSFF_1U_Short"
     },
