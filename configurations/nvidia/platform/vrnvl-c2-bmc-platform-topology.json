@@ -212,6 +212,8 @@
         "BridgePoolEndEID": "105",
         "IndeterministicPoolSpace": "true"
       }
-    ]
+    ],
+    "CpuRecoveryConfig": "c2",
+    "CpuRecoveryChassis": "BMC_0"
   }
 ]

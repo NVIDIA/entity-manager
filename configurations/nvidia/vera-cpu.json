@@ -49,11 +49,6 @@
         "RootHubPath": "$RootHubPath",
         "StaticEndpointID": "$EID",
         "Type": "MCTPUSBDevice"
-      },
-      {
-        "Name": "$Name_Recovery",
-        "Type": "Recovery",
-        "Method": "USBRCM"
       }
     ]
   },

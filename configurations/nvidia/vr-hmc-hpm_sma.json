@@ -55,12 +55,6 @@
         }
       },
       {
-        "Name": "$Name_Recovery",
-        "Type": "Recovery",
-        "Method": "MCU",
-        "RecoveryI2CAddress": "0x10"
-      },
-      {
         "Address": "$Address",
         "Bus": "$Bus",
         "Name": "$Name",

@@ -230,6 +230,8 @@
           "ResetGpio": "BRD1_MCU_RESET_L-O"
         }
       }
-    ]
+    ],
+    "CpuRecoveryConfig": "c2g4",
+    "CpuRecoveryChassis": "HGX_Chassis_0"
   }
 ]

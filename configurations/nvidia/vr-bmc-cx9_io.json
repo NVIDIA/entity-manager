@@ -103,11 +103,6 @@
           "CX_NIC_$Instance_Port_0_Temp_0": 67.0,
           "CX_NIC_$Instance_Port_1_Temp_0": 67.0
         }
-      },
-      {
-        "Name": "$Name_Recovery",
-        "Type": "Recovery",
-        "Method": "ConnectX"
       }
     ]
   }

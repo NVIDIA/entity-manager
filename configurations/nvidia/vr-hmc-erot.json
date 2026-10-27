@@ -44,11 +44,6 @@
         }
       },
       {
-        "Name": "$Name_Recovery",
-        "Type": "Recovery",
-        "Method": "GlacierCrisis"
-      },
-      {
         "Bus": "$Bus",
         "ChipSelect": "$ChipSelect",
         "Name": "$Name",

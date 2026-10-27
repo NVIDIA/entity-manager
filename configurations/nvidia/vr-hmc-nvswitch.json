@@ -186,11 +186,6 @@
         "PortMaxSpeedMBps": 50000
       },
       {
-        "Name": "$Name_Recovery",
-        "Type": "Recovery",
-        "Method": "NVSwitch"
-      },
-      {
         "BridgeName": "$Bridge",
         "Name": "$Name",
         "PoolIndex": "$PoolIndex",

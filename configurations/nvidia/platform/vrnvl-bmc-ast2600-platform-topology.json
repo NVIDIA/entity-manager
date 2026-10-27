@@ -463,33 +463,53 @@
         }
       },
       {
+        "Name": "BF4_ERoT_BMC_0",
+        "Type": "NvDevice",
+        "Kind": "bf4_erot",
+        "EID": 59,
+        "Transport": {
+          "Medium": "bridge",
+          "Bridge": "Bay_C_SMA_0",
+          "BridgeEID": 55,
+          "PoolIndex": 3
+        },
+        "Recovery": {
+          "ApName": "FW_BF4_BMC_0",
+          "FatalErrorGpio": "BF4_S_BMC_EROT_FATAL_ERROR_L-I",
+          "FatalErrorPolarity": "ActiveLow",
+          "I2CAddress": 83,
+          "I2CBus": 77,
+          "Method": "GPIOERoT"
+        }
+      },
+      {
+        "Name": "HMC_ERoT_BMC_0",
+        "Type": "NvDevice",
+        "Kind": "hmc_erot",
+        "EID": 51,
+        "Transport": {
+          "Medium": "spi",
+          "Bus": 2,
+          "ChipSelect": 0
+        },
+        "Recovery": {
+          "ApName": "FW_RECOVERY_HGX_FW_BMC_0",
+          "FatalErrorGpio": "HMC_EROT_FATAL_ERROR_L-I",
+          "FatalErrorPolarity": "ActiveLow",
+          "I2CAddress": 82,
+          "I2CBus": 6,
+          "Method": "GPIOERoT",
+          "SoftwareName": "FW_RECOVERY_HGX_FW_ERoT_BMC_0",
+          "Target": "enable-hmc-recovery.service"
+        }
+      },
+      {
         "IgnoreMessageTypes": "1,2,3,4,6,126,127",
         "Name": "HMC_MCTP_BRIDGE",
         "Port": "1.3.2",
         "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
         "StaticEndpointID": "8",
         "Type": "MCTPUSBDevice"
-      },
-      {
-        "APName": "FW_RECOVERY_HGX_FW_BMC_0",
-        "GPIO": "HMC_EROT_FATAL_ERROR_L-I",
-        "I2CAddress": 82,
-        "I2CBus": 6,
-        "MctpEID": 51,
-        "Name": "FW_RECOVERY_HGX_FW_ERoT_BMC_0",
-        "Polarity": "ActiveLow",
-        "Target": "enable-hmc-recovery.service",
-        "Type": "GPIOERoTRecovery"
-      },
-      {
-        "APName": "FW_BF4_BMC_0",
-        "GPIO": "BF4_S_BMC_EROT_FATAL_ERROR_L-I",
-        "I2CAddress": 83,
-        "I2CBus": 77,
-        "MctpEID": 59,
-        "Name": "FW_BF4_ERoT_BMC_0",
-        "Polarity": "ActiveLow",
-        "Type": "GPIOERoTRecovery"
       },
       {
         "ControlAddress": "0x45",

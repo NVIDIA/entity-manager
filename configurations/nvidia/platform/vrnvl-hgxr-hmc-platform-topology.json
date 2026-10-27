@@ -18,9 +18,6 @@
           "Medium": "spi",
           "Bus": 0,
           "ChipSelect": 2
-        },
-        "Recovery": {
-          "MctpUUID": "5f7f6a60-3f28-4cc0-be5d-4985d4c52a0c"
         }
       },
       {
@@ -41,7 +38,8 @@
         "IgnoreEIDs": "86,87",
         "Recovery": {
           "RecoveryGpio": "BB_MCU_RECOV_L-O",
-          "ResetGpio": "BB_MCU_RESET_L-O"
+          "ResetGpio": "BB_MCU_RESET_L-O",
+          "Target": "SMA"
         }
       },
       {
@@ -144,7 +142,8 @@
         "IgnoreEIDs": "50",
         "Recovery": {
           "RecoveryGpio": "SXM_1_MCU_RECOV_L-O",
-          "ResetGpio": "SXM_1_MCU_RESET_L-O"
+          "ResetGpio": "SXM_1_MCU_RESET_L-O",
+          "Target": "SXM"
         }
       },
       {
@@ -167,7 +166,8 @@
         "IgnoreEIDs": "53",
         "Recovery": {
           "RecoveryGpio": "SXM_2_MCU_RECOV_L-O",
-          "ResetGpio": "SXM_2_MCU_RESET_L-O"
+          "ResetGpio": "SXM_2_MCU_RESET_L-O",
+          "Target": "SXM"
         }
       },
       {
@@ -190,7 +190,8 @@
         "IgnoreEIDs": "56",
         "Recovery": {
           "RecoveryGpio": "SXM_3_MCU_RECOV_L-O",
-          "ResetGpio": "SXM_3_MCU_RESET_L-O"
+          "ResetGpio": "SXM_3_MCU_RESET_L-O",
+          "Target": "SXM"
         }
       },
       {
@@ -213,7 +214,8 @@
         "IgnoreEIDs": "59",
         "Recovery": {
           "RecoveryGpio": "SXM_4_MCU_RECOV_L-O",
-          "ResetGpio": "SXM_4_MCU_RESET_L-O"
+          "ResetGpio": "SXM_4_MCU_RESET_L-O",
+          "Target": "SXM"
         }
       },
       {
@@ -236,7 +238,8 @@
         "IgnoreEIDs": "62",
         "Recovery": {
           "RecoveryGpio": "SXM_5_MCU_RECOV_L-O",
-          "ResetGpio": "SXM_5_MCU_RESET_L-O"
+          "ResetGpio": "SXM_5_MCU_RESET_L-O",
+          "Target": "SXM"
         }
       },
       {
@@ -259,7 +262,8 @@
         "IgnoreEIDs": "65",
         "Recovery": {
           "RecoveryGpio": "SXM_6_MCU_RECOV_L-O",
-          "ResetGpio": "SXM_6_MCU_RESET_L-O"
+          "ResetGpio": "SXM_6_MCU_RESET_L-O",
+          "Target": "SXM"
         }
       },
       {
@@ -282,7 +286,8 @@
         "IgnoreEIDs": "68",
         "Recovery": {
           "RecoveryGpio": "SXM_7_MCU_RECOV_L-O",
-          "ResetGpio": "SXM_7_MCU_RESET_L-O"
+          "ResetGpio": "SXM_7_MCU_RESET_L-O",
+          "Target": "SXM"
         }
       },
       {
@@ -305,7 +310,8 @@
         "IgnoreEIDs": "71",
         "Recovery": {
           "RecoveryGpio": "SXM_8_MCU_RECOV_L-O",
-          "ResetGpio": "SXM_8_MCU_RESET_L-O"
+          "ResetGpio": "SXM_8_MCU_RESET_L-O",
+          "Target": "SXM"
         }
       },
       {
@@ -485,7 +491,8 @@
         "IgnoreEIDs": "74,76,77",
         "Recovery": {
           "RecoveryGpio": "QM4_32_MCU_RECOV_L-O",
-          "ResetGpio": "QM4_32_MCU_RESET_L-O"
+          "ResetGpio": "QM4_32_MCU_RESET_L-O",
+          "Target": "QM4"
         }
       },
       {
@@ -505,7 +512,8 @@
         "IgnoreEIDs": "80,82,83",
         "Recovery": {
           "RecoveryGpio": "QM4_14_MCU_RECOV_L-O",
-          "ResetGpio": "QM4_14_MCU_RESET_L-O"
+          "ResetGpio": "QM4_14_MCU_RESET_L-O",
+          "Target": "QM4"
         }
       },
       {
@@ -524,10 +532,10 @@
           "PoolIndex": 0
         },
         "Recovery": {
+          "FlashNotPresentGpio": "CX9_1_FNP_L-O",
           "I2CAddress": 72,
           "I2CBus": 110,
-          "ResetGpio": "CX9_1_RESET_L-O",
-          "FlashNotPresentGpio": "CX9_1_FNP_L-O"
+          "ResetGpio": "CX9_1_RESET_L-O"
         }
       },
       {
@@ -546,10 +554,10 @@
           "PoolIndex": 2
         },
         "Recovery": {
+          "FlashNotPresentGpio": "CX9_2_FNP_L-O",
           "I2CAddress": 72,
           "I2CBus": 111,
-          "ResetGpio": "CX9_2_RESET_L-O",
-          "FlashNotPresentGpio": "CX9_2_FNP_L-O"
+          "ResetGpio": "CX9_2_RESET_L-O"
         }
       },
       {
@@ -568,10 +576,10 @@
           "PoolIndex": 2
         },
         "Recovery": {
+          "FlashNotPresentGpio": "CX9_3_FNP_L-O",
           "I2CAddress": 72,
           "I2CBus": 112,
-          "ResetGpio": "CX9_3_RESET_L-O",
-          "FlashNotPresentGpio": "CX9_3_FNP_L-O"
+          "ResetGpio": "CX9_3_RESET_L-O"
         }
       },
       {
@@ -590,10 +598,10 @@
           "PoolIndex": 0
         },
         "Recovery": {
+          "FlashNotPresentGpio": "CX9_4_FNP_L-O",
           "I2CAddress": 72,
           "I2CBus": 113,
-          "ResetGpio": "CX9_4_RESET_L-O",
-          "FlashNotPresentGpio": "CX9_4_FNP_L-O"
+          "ResetGpio": "CX9_4_RESET_L-O"
         }
       },
       {
@@ -612,10 +620,10 @@
           "PoolIndex": 2
         },
         "Recovery": {
+          "FlashNotPresentGpio": "CX9_5_FNP_L-O",
           "I2CAddress": 72,
           "I2CBus": 114,
-          "ResetGpio": "CX9_5_RESET_L-O",
-          "FlashNotPresentGpio": "CX9_5_FNP_L-O"
+          "ResetGpio": "CX9_5_RESET_L-O"
         }
       },
       {
@@ -634,10 +642,10 @@
           "PoolIndex": 2
         },
         "Recovery": {
+          "FlashNotPresentGpio": "CX9_6_FNP_L-O",
           "I2CAddress": 72,
           "I2CBus": 115,
-          "ResetGpio": "CX9_6_RESET_L-O",
-          "FlashNotPresentGpio": "CX9_6_FNP_L-O"
+          "ResetGpio": "CX9_6_RESET_L-O"
         }
       },
       {
@@ -656,10 +664,10 @@
           "PoolIndex": 0
         },
         "Recovery": {
+          "FlashNotPresentGpio": "CX9_7_FNP_L-O",
           "I2CAddress": 72,
           "I2CBus": 116,
-          "ResetGpio": "CX9_7_RESET_L-O",
-          "FlashNotPresentGpio": "CX9_7_FNP_L-O"
+          "ResetGpio": "CX9_7_RESET_L-O"
         }
       },
       {
@@ -678,10 +686,10 @@
           "PoolIndex": 0
         },
         "Recovery": {
+          "FlashNotPresentGpio": "CX9_8_FNP_L-O",
           "I2CAddress": 72,
           "I2CBus": 117,
-          "ResetGpio": "CX9_8_RESET_L-O",
-          "FlashNotPresentGpio": "CX9_8_FNP_L-O"
+          "ResetGpio": "CX9_8_RESET_L-O"
         }
       },
       {
@@ -699,10 +707,10 @@
           "PoolIndex": 0
         },
         "Recovery": {
+          "FlashNotPresentGpio": "CX9_FNM_FNP_L-O",
           "I2CAddress": 72,
           "I2CBus": 118,
-          "ResetGpio": "CX9_FNM_RESET_L-O",
-          "FlashNotPresentGpio": "CX9_FNM_FNP_L-O"
+          "ResetGpio": "CX9_FNM_RESET_L-O"
         }
       },
       {
@@ -720,10 +728,10 @@
           "PoolIndex": 0
         },
         "Recovery": {
+          "FlashNotPresentGpio": "QM4_1_FNP_L-O",
           "I2CAddress": 72,
           "I2CBus": 3,
-          "ResetGpio": "QM4_1_RESET_L-O",
-          "FlashNotPresentGpio": "QM4_1_FNP_L-O"
+          "ResetGpio": "QM4_1_RESET_L-O"
         }
       },
       {
@@ -741,10 +749,10 @@
           "PoolIndex": 2
         },
         "Recovery": {
+          "FlashNotPresentGpio": "QM4_2_FNP_L-O",
           "I2CAddress": 72,
           "I2CBus": 7,
-          "ResetGpio": "QM4_2_RESET_L-O",
-          "FlashNotPresentGpio": "QM4_2_FNP_L-O"
+          "ResetGpio": "QM4_2_RESET_L-O"
         }
       },
       {
@@ -762,10 +770,10 @@
           "PoolIndex": 0
         },
         "Recovery": {
+          "FlashNotPresentGpio": "QM4_3_FNP_L-O",
           "I2CAddress": 72,
           "I2CBus": 8,
-          "ResetGpio": "QM4_3_RESET_L-O",
-          "FlashNotPresentGpio": "QM4_3_FNP_L-O"
+          "ResetGpio": "QM4_3_RESET_L-O"
         }
       },
       {
@@ -783,12 +791,15 @@
           "PoolIndex": 2
         },
         "Recovery": {
+          "FlashNotPresentGpio": "QM4_4_FNP_L-O",
           "I2CAddress": 72,
           "I2CBus": 10,
-          "ResetGpio": "QM4_4_RESET_L-O",
-          "FlashNotPresentGpio": "QM4_4_FNP_L-O"
+          "ResetGpio": "QM4_4_RESET_L-O"
         }
       }
-    ]
+    ],
+    "ConnectXForceRecoveryOnIRoT": false,
+    "OcpInfoRom": false,
+    "OcpSmaEid": false
   }
 ]

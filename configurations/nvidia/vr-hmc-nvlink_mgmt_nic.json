@@ -47,11 +47,6 @@
         "PortMaxSpeedMBps": 50000
       },
       {
-        "Name": "$Name_Recovery",
-        "Type": "Recovery",
-        "Method": "NVLinkManagementNIC"
-      },
-      {
         "BridgeName": "$Bridge",
         "Name": "$Name",
         "PoolIndex": "$PoolIndex",

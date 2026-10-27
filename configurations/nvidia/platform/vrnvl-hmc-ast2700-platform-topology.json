@@ -234,6 +234,8 @@
         "DeviceAddress": "MCTP:9",
         "DeviceType": "BMC"
       }
-    ]
+    ],
+    "CpuRecoveryConfig": "c2g4",
+    "CpuRecoveryChassis": "HGX_Chassis_0"
   }
 ]

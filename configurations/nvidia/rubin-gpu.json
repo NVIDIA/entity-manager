@@ -46,11 +46,6 @@
         }
       },
       {
-        "Name": "$Name_Recovery",
-        "Type": "Recovery",
-        "Method": "OCP"
-      },
-      {
         "BridgeName": "$Bridge",
         "Name": "$Name",
         "PoolIndex": "$PoolIndex",
