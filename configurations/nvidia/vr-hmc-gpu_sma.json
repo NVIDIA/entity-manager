@@ -35,7 +35,7 @@
         "Name": "$Name_PLDM",
         "Type": "PLDMDevice",
         "UpdateableComponents": {
-          "FW_$Name": 65282
+          "$Platform.NamePrefixFW_GPU_SMA_$Instance": 65282
         },
         "SensorAuxNames": {
           "$Name_Temp_0": 17
