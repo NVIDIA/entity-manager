@@ -7,6 +7,14 @@
     "BmcName": "HGX_BMC_0",
     "PlatformExposes": [
       {
+        "Name": "RecoveryPolicy",
+        "Type": "RecoveryPolicy",
+        "NamePrefix": "HGX_",
+        "ConnectXForceRecoveryOnIRoT": false,
+        "OcpInfoRom": false,
+        "OcpSmaEid": false
+      },
+      {
         "Name": "HGX_ERoT_BMC_0",
         "Type": "NvDevice",
         "Kind": "erot",
@@ -797,9 +805,6 @@
           "ResetGpio": "QM4_4_RESET_L-O"
         }
       }
-    ],
-    "ConnectXForceRecoveryOnIRoT": false,
-    "OcpInfoRom": false,
-    "OcpSmaEid": false
+    ]
   }
 ]

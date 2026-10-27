@@ -10,6 +10,13 @@
     "SmmLocationContext": "Chassis_0",
     "PlatformExposes": [
       {
+        "Name": "RecoveryPolicy",
+        "Type": "RecoveryPolicy",
+        "TopChassis": "Chassis_0",
+        "CpuRecoveryConfig": "c2",
+        "CpuRecoveryChassis": "BMC_0"
+      },
+      {
         "Name": "ERoT_BMC_0",
         "Type": "NvDevice",
         "Kind": "erot",
@@ -212,8 +219,6 @@
         "BridgePoolEndEID": "105",
         "IndeterministicPoolSpace": "true"
       }
-    ],
-    "CpuRecoveryConfig": "c2",
-    "CpuRecoveryChassis": "BMC_0"
+    ]
   }
 ]

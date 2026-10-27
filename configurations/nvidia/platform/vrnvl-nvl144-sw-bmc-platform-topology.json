@@ -7,6 +7,11 @@
     "BmcName": "MGX_BMC_0",
     "PlatformExposes": [
       {
+        "Name": "RecoveryPolicy",
+        "Type": "RecoveryPolicy",
+        "NamePrefix": "MGX_"
+      },
+      {
         "Name": "MGX_ERoT_BMC_0",
         "Type": "NvDevice",
         "Kind": "erot",
