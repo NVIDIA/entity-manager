@@ -691,7 +691,7 @@
         }
     ],
     "Probe": [
-        "xyz.openbmc_project.FruDevice({'BUS': 0, 'ADDRESS': 80})"
+        "xyz.openbmc_project.FruDevice({'BUS': 4, 'ADDRESS': 80})"
     ],
     "Type": "Platform"
 }
