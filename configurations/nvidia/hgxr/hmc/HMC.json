@@ -2,6 +2,11 @@
     {
         "Exposes": [
             {
+                "Name": "DevicePrefix",
+                "Prefix": "HGX_",
+                "Type": "DevicePrefix"
+            },
+            {
                 "Address": "72",
                 "Bus": 14,
                 "Name": "HGX_BMC_0_Temp_0",

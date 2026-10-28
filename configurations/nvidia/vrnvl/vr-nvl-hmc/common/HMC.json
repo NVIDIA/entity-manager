@@ -258,5 +258,17 @@
         "xyz.openbmc_project.State.Decorator.Health": {
             "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
         }
+    },
+    {
+        "Name": "HGX DevicePrefix",
+        "PlatformExposes": [
+            {
+                "Name": "DevicePrefix",
+                "Prefix": "HGX_",
+                "Type": "DevicePrefix"
+            }
+        ],
+        "Probe": "xyz.openbmc_project.FruDevice({'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
+        "Type": "Platform"
     }
 ]

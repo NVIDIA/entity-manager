@@ -206,6 +206,9 @@
                     "$ref": "nvidia_cpld_gpio_monitor.json#/$defs/CPLDGPIOMonitor"
                 },
                 {
+                    "$ref": "platform/device_prefix.json#/$defs/DevicePrefix"
+                },
+                {
                     "$ref": "nvidia_eeprom_24c512.json#/$defs/EEPROM_24C512"
                 },
                 {

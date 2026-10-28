@@ -35,6 +35,7 @@ schemas = [
     'openbmc-dbus.json',
     'pid.json',
     'pid_zone.json',
+    'platform/device_prefix.json',
     'platform/dump.json',
     'platform/mctp.json',
     'platform/mctp_bridge_pool_device.json',

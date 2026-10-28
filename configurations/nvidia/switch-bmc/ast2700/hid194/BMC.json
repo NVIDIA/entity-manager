@@ -2,6 +2,11 @@
     {
         "Exposes": [
             {
+                "Name": "DevicePrefix",
+                "Prefix": "MGX_",
+                "Type": "DevicePrefix"
+            },
+            {
                 "Address": "0x48",
                 "Bus": 4,
                 "Name": "BMC_TEMP",
