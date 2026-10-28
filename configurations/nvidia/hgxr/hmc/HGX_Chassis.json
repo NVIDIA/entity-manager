@@ -147,6 +147,21 @@
                     "assembly",
                     "parent_chassis",
                     "/xyz/openbmc_project/inventory/system/assembly/CHASSIS_FRU_ASSEMBLY"
+                ],
+                [
+                    "associated_fru",
+                    "associated_chassis",
+                    "/xyz/openbmc_project/FruDevice/P7612_A00"
+                ],
+                [
+                    "associated_fru",
+                    "associated_chassis",
+                    "/xyz/openbmc_project/FruDevice/P7612_A01"
+                ],
+                [
+                    "associated_fru",
+                    "associated_chassis",
+                    "/xyz/openbmc_project/FruDevice/P7612_A02"
                 ]
             ]
         },
