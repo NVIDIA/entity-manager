@@ -61,5 +61,19 @@
         "Name": "MCTP_USB_DEV3",
         "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'musbmgmt'})",
         "Type": "MCTPInterface"
+    },
+    {
+        "Exposes": [
+            {
+                "Interface": "$Interface",
+                "Name": "MCTPVROT_0",
+                "PollingInterval": "15",
+                "StaticEndpointID": "100",
+                "Type": "MCTPXROTTarget"
+            }
+        ],
+        "Name": "MCTP_XROT_DEV2",
+        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpvrot0'})",
+        "Type": "MCTPInterface"
     }
 ]

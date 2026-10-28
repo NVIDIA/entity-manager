@@ -162,6 +162,18 @@
             "Name": "SMA_2_PLDM",
             "StaticEID": 71,
             "Type": "PLDMFirmwareDevice"
+        },
+        {
+            "Components": [
+                {
+                    "ComponentIdentifier": 250,
+                    "Name": "VROT_0"
+                }
+            ],
+            "MCTPTargetName": "MCTPVROT_0",
+            "Name": "VROT_0_PLDM",
+            "StaticEID": 100,
+            "Type": "PLDMFirmwareDevice"
         }
     ],
     "Probe": [
