@@ -318,6 +318,12 @@
                 "SMAEID": {
                     "type": "integer"
                 },
+                "SMAName": {
+                    "type": "string"
+                },
+                "SMAUSBPort": {
+                    "type": "string"
+                },
                 "Type": {
                     "type": "string",
                     "const": "ConnectXRecovery"
@@ -440,6 +446,12 @@
                 "SMAEID": {
                     "type": "integer"
                 },
+                "SMAName": {
+                    "type": "string"
+                },
+                "SMAUSBPort": {
+                    "type": "string"
+                },
                 "Type": {
                     "type": "string",
                     "const": "NVLinkManagementNICRecovery"
@@ -490,6 +502,50 @@
                 }
             },
             "required": ["Name", "Type"]
+        },
+        "MSTRecoveryPolicy": {
+            "description": "Platform facts for code-manager mst-recovery; the other settings of each DeviceType and RecoveryFlow are compiled in. Device records live on the same board as this record.",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeviceType": {
+                    "type": "string",
+                    "enum": ["ConnectX", "NVSwitch", "NVLinkManagementNIC"]
+                },
+                "HealthyEvent": {
+                    "description": "Mst flow: post FirmwareNotInRecovery for a healthy device. Default true for NVSwitch and NVLinkManagementNIC.",
+                    "type": "boolean"
+                },
+                "I2CForce": {
+                    "description": "Mst flow: read GIS even when a kernel driver owns the address. Default false for NVSwitch and NVLinkManagementNIC.",
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "RecoveryFlow": {
+                    "description": "Mst: device groups in parallel; Legacy: CX8 devices one by one; Hold: the one device of this board found through the mapper, FNP held. Default Mst for NVSwitch and NVLinkManagementNIC.",
+                    "type": "string",
+                    "enum": ["Mst", "Legacy", "Hold"]
+                },
+                "RecoveryGroups": {
+                    "description": "Mst and Legacy flows: device record names of this board; the names in one entry are recovered in parallel, the entries one after the other.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "minItems": 1
+                },
+                "SMAPresenceCheck": {
+                    "description": "Mst flow: report the SMA MCU state when a device bus is missing. Default true for NVSwitch and NVLinkManagementNIC.",
+                    "type": "boolean"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "MSTRecoveryPolicy"
+                }
+            },
+            "required": ["Name", "Type", "DeviceType"]
         }
     }
 }

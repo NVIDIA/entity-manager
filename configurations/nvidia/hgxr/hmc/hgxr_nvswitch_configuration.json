@@ -1,6 +1,14 @@
 {
     "Exposes": [
         {
+            "DeviceType": "NVSwitch",
+            "Name": "NVSwitch_MST_Recovery_Policy",
+            "RecoveryGroups": [
+                "HGX_FW_NVSwitch_0 HGX_FW_NVSwitch_1 HGX_FW_NVSwitch_2 HGX_FW_NVSwitch_3"
+            ],
+            "Type": "MSTRecoveryPolicy"
+        },
+        {
             "ChassisName": "HGX_IRoT_NVSwitch_0",
             "EID": 79,
             "FlashNotPresentGPIO": "QM4_1_FNP_L-O",

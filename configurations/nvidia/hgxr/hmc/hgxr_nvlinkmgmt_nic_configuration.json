@@ -1,6 +1,14 @@
 {
     "Exposes": [
         {
+            "DeviceType": "NVLinkManagementNIC",
+            "Name": "NVLinkManagementNIC_MST_Recovery_Policy",
+            "RecoveryGroups": [
+                "HGX_FW_NVLinkManagementNIC_0"
+            ],
+            "Type": "MSTRecoveryPolicy"
+        },
+        {
             "ChassisName": "HGX_IRoT_NVLinkManagementNIC_0",
             "EID": 85,
             "FlashNotPresentGPIO": "CX9_FNM_FNP_L-O",
@@ -10,6 +18,8 @@
             "Name": "HGX_FW_NVLinkManagementNIC_0",
             "ResetGPIO": "CX9_FNM_RESET_L-O",
             "SMAEID": 84,
+            "SMAName": "HGX_Baseboard_SMA_0",
+            "SMAUSBPort": "1-1.4.3",
             "Type": "NVLinkManagementNICRecovery",
             "hasChassisPowerSource": true
         }

@@ -103,6 +103,19 @@
             "SMAEID": 90,
             "Type": "ConnectXRecovery",
             "hasChassisPowerSource": true
+        },
+        {
+            "DeviceType": "ConnectX",
+            "HealthyEvent": false,
+            "I2CForce": true,
+            "Name": "ConnectX_MST_Recovery_Policy",
+            "RecoveryFlow": "Mst",
+            "RecoveryGroups": [
+                "FW_CX_0 FW_CX_2 FW_CX_4 FW_CX_6",
+                "FW_CX_1 FW_CX_3 FW_CX_5 FW_CX_7"
+            ],
+            "SMAPresenceCheck": false,
+            "Type": "MSTRecoveryPolicy"
         }
     ],
     "Name": "ConnectX_Recovery_Devices",
