@@ -2456,6 +2456,17 @@
             },
             {
                 "AuxNames": [
+                    "ProcessorModule_0_MemCntl_0_SocammPower_0"
+                ],
+                "EID": 16,
+                "IpmiName": "CPU0_Socamm_Pwr",
+                "Name": "ProcessorModule_0_MemCntl_0_SocammPower_0",
+                "ParentObjPath": "",
+                "SensorId": 67,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
                     "ProcessorModule_0_MemCntl_0_Freq_0"
                 ],
                 "EID": 16,
@@ -2606,6 +2617,17 @@
                 "Name": "ProcessorModule_0_MemCntl_1_DramTemp_7",
                 "ParentObjPath": "",
                 "SensorId": 4311,
+                "Type": "SensorAuxName"
+            },
+            {
+                "AuxNames": [
+                    "ProcessorModule_0_MemCntl_1_SocammPower_0"
+                ],
+                "EID": 17,
+                "IpmiName": "CPU1_Socamm_Pwr",
+                "Name": "ProcessorModule_0_MemCntl_1_SocammPower_0",
+                "ParentObjPath": "",
+                "SensorId": 4163,
                 "Type": "SensorAuxName"
             },
             {
