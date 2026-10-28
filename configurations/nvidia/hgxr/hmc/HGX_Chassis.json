@@ -181,6 +181,9 @@
         "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
             "LocationContext": ""
         },
+        "xyz.openbmc_project.Inventory.Decorator.PCIeRefClock": {
+            "PCIeReferenceClockCount": 1
+        },
         "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
             "FieldReplaceable": false
         },
