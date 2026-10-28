@@ -566,6 +566,7 @@
                     "CpuOperatingConfigSupported": true,
                     "ECCModeSupported": true,
                     "EDPpScalingFactorSupported": true,
+                    "GPUBasePowerLimitSupported": true,
                     "LocationCode": "GPU$INSTANCE_NUMBER",
                     "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
                     "MIGModeSupported": true,
