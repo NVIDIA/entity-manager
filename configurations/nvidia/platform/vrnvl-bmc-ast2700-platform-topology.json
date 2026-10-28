@@ -429,6 +429,11 @@
         "DataBus": 12,
         "Name": "HMC_0_Mailbox",
         "Type": "HmcMailbox"
+      },
+      {
+        "Interface": "hmcusb0",
+        "Name": "HMC_0_UsbLink",
+        "Type": "HmcUsbLink"
       }
     ]
   }

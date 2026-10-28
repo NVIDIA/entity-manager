@@ -190,6 +190,25 @@
                 "Type"
             ]
         },
+        "HmcUsbLink": {
+            "description": "The BMC's USB network link to the HMC it manages.",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Interface": {
+                    "description": "Network interface name of the link on the BMC.",
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "HmcUsbLink"
+                }
+            },
+            "required": ["Interface", "Name", "Type"]
+        },
         "I2CFan": {
             "type": "object",
             "additionalProperties": false,
