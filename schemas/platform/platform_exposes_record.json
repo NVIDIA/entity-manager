@@ -46,10 +46,6 @@
                 {
                     "$comment": "downstream-only: the BMC's I2C path to the HMC mailbox, consumed by hmc-dump-client.",
                     "$ref": "../nvidia_misc.json#/$defs/HmcMailbox"
-                },
-                {
-                    "$comment": "downstream-only: the BMC's USB network link to the HMC, consumed by hmc-usb-monitor.",
-                    "$ref": "../nvidia_misc.json#/$defs/HmcUsbLink"
                 }
             ]
         },

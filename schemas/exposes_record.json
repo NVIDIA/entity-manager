@@ -257,9 +257,6 @@
                     "$ref": "nvidia_misc.json#/$defs/HmcMailbox"
                 },
                 {
-                    "$ref": "nvidia_misc.json#/$defs/HmcUsbLink"
-                },
-                {
                     "$ref": "nvidia_misc.json#/$defs/I2CFan"
                 },
                 {
