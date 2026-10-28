@@ -3,10 +3,12 @@
         {
             "ChassisName": "IRoT_CX_2",
             "EID": 71,
-            "ForceRecoveryChassisObject": "IRoT_CX_2",
+            "FlashNotPresentGPIO": "IOB1_CX0_FNP_L-O",
+            "ForceRecoveryChassisObject": "CX_2",
             "I2CAddress": 72,
             "I2CBus": 79,
             "Name": "FW_CX_2",
+            "ResetGPIO": "IOB1_CX0_RST_L-O",
             "SMAEID": 70,
             "Type": "ConnectXRecovery",
             "hasChassisPowerSource": true
@@ -14,10 +16,12 @@
         {
             "ChassisName": "IRoT_CX_3",
             "EID": 73,
-            "ForceRecoveryChassisObject": "IRoT_CX_3",
+            "FlashNotPresentGPIO": "IOB1_CX1_FNP_L-O",
+            "ForceRecoveryChassisObject": "CX_3",
             "I2CAddress": 74,
             "I2CBus": 79,
             "Name": "FW_CX_3",
+            "ResetGPIO": "IOB1_CX1_RST_L-O",
             "SMAEID": 70,
             "Type": "ConnectXRecovery",
             "hasChassisPowerSource": true
@@ -25,10 +29,12 @@
         {
             "ChassisName": "IRoT_CX_6",
             "EID": 91,
-            "ForceRecoveryChassisObject": "IRoT_CX_6",
+            "FlashNotPresentGPIO": "IOB3_CX0_FNP_L-O",
+            "ForceRecoveryChassisObject": "CX_6",
             "I2CAddress": 72,
             "I2CBus": 81,
             "Name": "FW_CX_6",
+            "ResetGPIO": "IOB3_CX0_RST_L-O",
             "SMAEID": 90,
             "Type": "ConnectXRecovery",
             "hasChassisPowerSource": true
@@ -36,10 +42,12 @@
         {
             "ChassisName": "IRoT_CX_7",
             "EID": 93,
-            "ForceRecoveryChassisObject": "IRoT_CX_7",
+            "FlashNotPresentGPIO": "IOB3_CX1_FNP_L-O",
+            "ForceRecoveryChassisObject": "CX_7",
             "I2CAddress": 74,
             "I2CBus": 81,
             "Name": "FW_CX_7",
+            "ResetGPIO": "IOB3_CX1_RST_L-O",
             "SMAEID": 90,
             "Type": "ConnectXRecovery",
             "hasChassisPowerSource": true
