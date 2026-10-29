@@ -1,0 +1,113 @@
+[
+  {
+    "Name": "ConnectX_Recovery_Devices",
+    "Probe": "xyz.openbmc_project.Configuration.Platform({'Name': '^Nvidia VR-NVL72 BMC AST2[67]00$'})",
+    "Type": "Recovery_Config",
+    "Exposes": [
+      {
+        "Name": "FW_CX_0",
+        "ChassisName": "IRoT_CX_0",
+        "ForceRecoveryChassisObject": "CX_0",
+        "EID": 61,
+        "SMAEID": 60,
+        "I2CBus": 78,
+        "I2CAddress": 72,
+        "hasChassisPowerSource": true,
+        "FlashNotPresentGPIO": "IOB0_CX0_FNP_L-O",
+        "ResetGPIO": "IOB0_CX0_RST_L-O",
+        "Type": "ConnectXRecovery"
+      },
+      {
+        "Name": "FW_CX_1",
+        "ChassisName": "IRoT_CX_1",
+        "ForceRecoveryChassisObject": "CX_1",
+        "EID": 63,
+        "SMAEID": 60,
+        "I2CBus": 78,
+        "I2CAddress": 74,
+        "hasChassisPowerSource": true,
+        "FlashNotPresentGPIO": "IOB0_CX1_FNP_L-O",
+        "ResetGPIO": "IOB0_CX1_RST_L-O",
+        "Type": "ConnectXRecovery"
+      },
+      {
+        "Name": "FW_CX_2",
+        "ChassisName": "IRoT_CX_2",
+        "ForceRecoveryChassisObject": "CX_2",
+        "EID": 71,
+        "SMAEID": 70,
+        "I2CBus": 79,
+        "I2CAddress": 72,
+        "hasChassisPowerSource": true,
+        "FlashNotPresentGPIO": "IOB1_CX0_FNP_L-O",
+        "ResetGPIO": "IOB1_CX0_RST_L-O",
+        "Type": "ConnectXRecovery"
+      },
+      {
+        "Name": "FW_CX_3",
+        "ChassisName": "IRoT_CX_3",
+        "ForceRecoveryChassisObject": "CX_3",
+        "EID": 73,
+        "SMAEID": 70,
+        "I2CBus": 79,
+        "I2CAddress": 74,
+        "hasChassisPowerSource": true,
+        "FlashNotPresentGPIO": "IOB1_CX1_FNP_L-O",
+        "ResetGPIO": "IOB1_CX1_RST_L-O",
+        "Type": "ConnectXRecovery"
+      },
+      {
+        "Name": "FW_CX_4",
+        "ChassisName": "IRoT_CX_4",
+        "ForceRecoveryChassisObject": "CX_4",
+        "EID": 81,
+        "SMAEID": 80,
+        "I2CBus": 80,
+        "I2CAddress": 72,
+        "hasChassisPowerSource": true,
+        "FlashNotPresentGPIO": "IOB2_CX0_FNP_L-O",
+        "ResetGPIO": "IOB2_CX0_RST_L-O",
+        "Type": "ConnectXRecovery"
+      },
+      {
+        "Name": "FW_CX_5",
+        "ChassisName": "IRoT_CX_5",
+        "ForceRecoveryChassisObject": "CX_5",
+        "EID": 83,
+        "SMAEID": 80,
+        "I2CBus": 80,
+        "I2CAddress": 74,
+        "hasChassisPowerSource": true,
+        "FlashNotPresentGPIO": "IOB2_CX1_FNP_L-O",
+        "ResetGPIO": "IOB2_CX1_RST_L-O",
+        "Type": "ConnectXRecovery"
+      },
+      {
+        "Name": "FW_CX_6",
+        "ChassisName": "IRoT_CX_6",
+        "ForceRecoveryChassisObject": "CX_6",
+        "EID": 91,
+        "SMAEID": 90,
+        "I2CBus": 81,
+        "I2CAddress": 72,
+        "hasChassisPowerSource": true,
+        "FlashNotPresentGPIO": "IOB3_CX0_FNP_L-O",
+        "ResetGPIO": "IOB3_CX0_RST_L-O",
+        "Type": "ConnectXRecovery"
+      },
+      {
+        "Name": "FW_CX_7",
+        "ChassisName": "IRoT_CX_7",
+        "ForceRecoveryChassisObject": "CX_7",
+        "EID": 93,
+        "SMAEID": 90,
+        "I2CBus": 81,
+        "I2CAddress": 74,
+        "hasChassisPowerSource": true,
+        "FlashNotPresentGPIO": "IOB3_CX1_FNP_L-O",
+        "ResetGPIO": "IOB3_CX1_RST_L-O",
+        "Type": "ConnectXRecovery"
+      }
+    ]
+  }
+]
