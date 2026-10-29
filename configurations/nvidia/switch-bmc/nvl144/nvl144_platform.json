@@ -56,14 +56,6 @@
             "Type": "MCTPBridgePoolDevice"
         },
         {
-            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/MGX_ERoT_BMC_0",
-            "MCTPTargetName": "MCTPSPI_10",
-            "Manufacturer": "NVIDIA",
-            "Name": "MGX_ERoT_BMC_0_DevInv",
-            "Type": "PLDMDeviceInventory",
-            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/bmc/MGX_BMC_0"
-        },
-        {
             "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/MGX_IRoT_NVSwitch_0",
             "MCTPTargetName": "MGX_NVSwitch_0",
             "Manufacturer": "NVIDIA",
@@ -96,14 +88,6 @@
             "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/MGX_NVSwitch_3"
         },
         {
-            "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/MGX_ERoT_CPU_0",
-            "MCTPTargetName": "MCTPSPI_16",
-            "Manufacturer": "NVIDIA",
-            "Name": "MGX_ERoT_CPU_0_DevInv",
-            "Type": "PLDMDeviceInventory",
-            "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/MGX_CPU_0"
-        },
-        {
             "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/MGX_IRoT_NVSwitch_SMA_0",
             "MCTPTargetName": "MGX_NVSwitch_SMA_0",
             "Manufacturer": "NVIDIA",
@@ -118,32 +102,6 @@
             "Name": "MGX_IRoT_NVSwitch_SMA_1_DevInv",
             "Type": "PLDMDeviceInventory",
             "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/MGX_NVSwitch_SMA_1"
-        },
-        {
-            "Components": [
-                {
-                    "AssociationBackward": [
-                        "activation"
-                    ],
-                    "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/MGX_ERoT_BMC_0"
-                    ],
-                    "AssociationForward": [
-                        "inventory"
-                    ],
-                    "ComponentIdentifier": 65280,
-                    "Name": "MGX_FW_ERoT_BMC_0"
-                },
-                {
-                    "ComponentIdentifier": 16,
-                    "Name": "MGX_FW_BMC_0",
-                    "UpdateOnly": true
-                }
-            ],
-            "MCTPTargetName": "MCTPSPI_10",
-            "Name": "MGX_ERoT_BMC_0_PLDM",
-            "StaticEID": 10,
-            "Type": "PLDMFirmwareDevice"
         },
         {
             "Components": [
@@ -227,40 +185,6 @@
             "MCTPTargetName": "MGX_NVSwitch_3",
             "Name": "MGX_NVSwitch_3_PLDM",
             "StaticEID": 58,
-            "Type": "PLDMFirmwareDevice"
-        },
-        {
-            "Components": [
-                {
-                    "AssociationBackward": [
-                        "activation"
-                    ],
-                    "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/MGX_ERoT_CPU_0"
-                    ],
-                    "AssociationForward": [
-                        "inventory"
-                    ],
-                    "ComponentIdentifier": 65280,
-                    "Name": "MGX_FW_ERoT_CPU_0"
-                },
-                {
-                    "AssociationBackward": [
-                        "activation"
-                    ],
-                    "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/MGX_CPU_0"
-                    ],
-                    "AssociationForward": [
-                        "inventory"
-                    ],
-                    "ComponentIdentifier": 218,
-                    "Name": "MGX_FW_CPU_0"
-                }
-            ],
-            "MCTPTargetName": "MCTPSPI_16",
-            "Name": "MGX_ERoT_CPU_0_PLDM",
-            "StaticEID": 16,
             "Type": "PLDMFirmwareDevice"
         },
         {

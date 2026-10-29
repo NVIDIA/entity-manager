@@ -152,5 +152,65 @@
         "xyz.openbmc_project.State.Decorator.Health": {
             "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
         }
+    },
+    {
+        "Name": "ERoT_CPU_0_MCTP",
+        "PlatformExposes": [
+            {
+                "Bus": "2",
+                "ChipSelect": "0",
+                "Name": "MCTPSPI_16",
+                "StaticEndpointID": "16",
+                "Type": "MCTPSPIDevice"
+            },
+            {
+                "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/MGX_ERoT_CPU_0",
+                "MCTPTargetName": "MCTPSPI_16",
+                "Manufacturer": "NVIDIA",
+                "Name": "MGX_ERoT_CPU_0_DevInv",
+                "Type": "PLDMDeviceInventory",
+                "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/MGX_CPU_0"
+            },
+            {
+                "Components": [
+                    {
+                        "AssociationBackward": [
+                            "activation"
+                        ],
+                        "AssociationEndpoint": [
+                            "/xyz/openbmc_project/inventory/system/chassis/MGX_ERoT_CPU_0"
+                        ],
+                        "AssociationForward": [
+                            "inventory"
+                        ],
+                        "ComponentIdentifier": 65280,
+                        "Name": "MGX_FW_ERoT_CPU_0"
+                    },
+                    {
+                        "AssociationBackward": [
+                            "activation"
+                        ],
+                        "AssociationEndpoint": [
+                            "/xyz/openbmc_project/inventory/system/chassis/MGX_CPU_0"
+                        ],
+                        "AssociationForward": [
+                            "inventory"
+                        ],
+                        "ComponentIdentifier": 218,
+                        "Name": "MGX_FW_CPU_0"
+                    }
+                ],
+                "MCTPTargetName": "MCTPSPI_16",
+                "Name": "MGX_ERoT_CPU_0_PLDM",
+                "StaticEID": 16,
+                "Type": "PLDMFirmwareDevice"
+            }
+        ],
+        "Probe": [
+            "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpspi2_0'})",
+            "AND",
+            "FOUND('MGX_BMC_0')"
+        ],
+        "Type": "Platform"
     }
 ]

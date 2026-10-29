@@ -2,34 +2,6 @@
     {
         "Exposes": [
             {
-                "Bus": "0",
-                "ChipSelect": "2",
-                "Name": "MCTPSPI_10",
-                "StaticEndpointID": "10",
-                "Type": "MCTPSPIDevice"
-            }
-        ],
-        "Name": "MCTP_SPI_DEV_BMC_EROT",
-        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpspi0_2'})",
-        "Type": "MCTPInterface"
-    },
-    {
-        "Exposes": [
-            {
-                "Bus": "2",
-                "ChipSelect": "0",
-                "Name": "MCTPSPI_16",
-                "StaticEndpointID": "16",
-                "Type": "MCTPSPIDevice"
-            }
-        ],
-        "Name": "MCTP_SPI_DEV_CPU_EROT",
-        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpspi2_0'})",
-        "Type": "MCTPInterface"
-    },
-    {
-        "Exposes": [
-            {
                 "BridgePoolEndEID": "54",
                 "BridgePoolStartEID": "53",
                 "Configuration": 1,
