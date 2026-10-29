@@ -57,7 +57,11 @@
   },
   {
     "Name": "$Name_Platform",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vera-rubin'})",
+    "Probe": [
+      "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vera-rubin'})",
+      "AND",
+      "FOUND('BlueField_4_B4240V_FRU')"
+    ],
     "Type": "NvDevice",
     "Kind": "bluefield",
     "Exposes": [
@@ -93,6 +97,48 @@
           "4297": "Port_1"
         },
         "PortMaxSpeedMBps": 50000,
+        "FirmwareName": "BF4_0"
+      }
+    ]
+  },
+  {
+    "Name": "$Name_Platform_B4180V",
+    "Probe": [
+      "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vera-rubin'})",
+      "AND",
+      "FOUND('BlueField_4_B4180V_FRU')"
+    ],
+    "Type": "NvDevice",
+    "Kind": "bluefield",
+    "Exposes": [
+      {
+        "Name": "$Name_PLDM",
+        "Type": "PLDMDevice",
+        "NetworkAdapter": "BlueField_NIC_$Instance",
+        "SensorAuxNames": {
+          "$Name": 4101,
+          "BlueField_NIC_$Instance": 4156,
+          "Port_0": 4296,
+          "$Name_Temp_0": 4396,
+          "BlueField_NIC_$Instance_Port_0_Temp_0": 4596,
+          "$Name_CPU_0_Temp_0": 7840,
+          "$Name_CPU_0_SSD_0_Temp_0": 7841,
+          "$Name_Core_Rail_Vdd_Power_0": 4103,
+          "$Name_Analog_Rail_Vddp_Power_0": 4104,
+          "$Name_Digital_Rail_Dvdd_Power_0": 4105,
+          "$Name_High_Voltage_Hvdd_Power_0": 4106,
+          "$Name_Power_0": 4146,
+          "$Name_CPU_0_Rail_Power_0": 7696,
+          "$Name_CPU_0_OsState_0": 7842,
+          "$Name_CPU_0_Power_0": 7728,
+          "$Name_Stby_Rail_Power_0": 7952,
+          "$Name_Total_Power_0": 7984,
+          "BlueField_NIC_$Instance_Port_0_Voltage_0": 4496
+        },
+        "Ports": {
+          "4296": "Port_0"
+        },
+        "PortMaxSpeedMBps": 100000,
         "FirmwareName": "BF4_0"
       }
     ]
