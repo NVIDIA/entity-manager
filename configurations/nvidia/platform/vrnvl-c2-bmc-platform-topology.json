@@ -14,7 +14,7 @@
         "Type": "RecoveryPolicy",
         "TopChassis": "Chassis_0",
         "CpuRecoveryGPIOStraps": "c2",
-        "CpuRecoveryChassis": "BMC_0"
+        "CpuRecoveryActionRedfishChassis": "BMC_0"
       },
       {
         "Name": "ERoT_BMC_0",
