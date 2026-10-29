@@ -40,6 +40,10 @@
                     "$ref": "pldm_device_inventory.json#/$defs/PLDMDeviceInventory"
                 },
                 {
+                    "$comment": "downstream-only: PLDM T2 (monitoring) platform policy consumed by pldmd.",
+                    "$ref": "pldm_device.json#/$defs/PLDM_Policy"
+                },
+                {
                     "$comment": "downstream-only: PLDM firmware-update discovery exclusion list consumed by pldmd.",
                     "$ref": "pldm_exclusion.json#/$defs/PLDMExclusion"
                 },

@@ -305,6 +305,10 @@
                     "$ref": "nvidia_misc.json#/$defs/TMP75"
                 },
                 {
+                    "$comment": "downstream-only: the PLDM record of an entity (T5 firmware components and T2 monitoring facts), consumed by pldmd.",
+                    "$ref": "platform/pldm_device.json#/$defs/PLDMDevice"
+                },
+                {
                     "$ref": "nvidia_nsm.json#/$defs/NSM_Chassis"
                 },
                 {

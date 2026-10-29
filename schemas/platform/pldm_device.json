@@ -1,0 +1,167 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$defs": {
+        "PLDMDevice": {
+            "description": "The PLDM record of an entity, consumed by pldmd for both PLDM Type 5 (firmware components) and Type 2 (monitoring: names, ports, roles, events, thresholds). Topology supplies device identity and wiring.",
+            "properties": {
+                "Name": {
+                    "description": "A recognisable name for the PLDMDevice entry, normally the device name followed by _PLDM.",
+                    "type": "string"
+                },
+                "Type": {
+                    "description": "Identifies a PLDMDevice entity Exposes record.",
+                    "type": "string",
+                    "const": "PLDMDevice"
+                },
+                "UpdateableComponents": {
+                    "description": "Firmware inventory names mapped to PLDM component identifiers for updateable components.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 65535
+                    }
+                },
+                "FWInventoryOnlyComponent": {
+                    "description": "Firmware inventory names mapped to PLDM component identifiers for inventory-only components.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 65535
+                    }
+                },
+                "FirmwareName": {
+                    "description": "Name of the firmware device whose component inventory is shared by this device.",
+                    "type": "string"
+                },
+                "NetworkAdapter": {
+                    "description": "Name of the inventory object under the device to which its NetworkController PDR entity binds.",
+                    "type": "string"
+                },
+                "SensorAuxNames": {
+                    "description": "Names for sensors the device leaves unnamed; a device Auxiliary Names PDR takes precedence. Maps auxiliary names to sensor identifiers.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 65535
+                    }
+                },
+                "EffecterAuxNames": {
+                    "description": "Names for effecters the device leaves unnamed; a device Auxiliary Names PDR takes precedence. Maps auxiliary names to effecter identifiers.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 65535
+                    }
+                },
+                "Ports": {
+                    "description": "Fallback mapping from sensor identifiers to port inventory names, used only when the device publishes no Port entity PDRs.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "PortMaxSpeedMBps": {
+                    "description": "Maximum port speed in megabytes per second, used for port metadata.",
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "PortType": {
+                    "description": "Inventory port type used for port metadata; defaults to BidirectionalPort.",
+                    "type": "string",
+                    "default": "BidirectionalPort"
+                },
+                "Roles": {
+                    "description": "Sensor or effecter auxiliary names mapped to role associations, such as primary_temperature_sensor. Values are strings because entity-manager flattens only one level.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "EventIds": {
+                    "description": "Sensor names as used in SensorAuxNames mapped to event identifier arrays, with the same ordering and semantics as SensorEventInfo.EventIds. Values are arrays of strings, not nested objects.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "ImpactedComponent": {
+                    "description": "Impacted component reported for events from this device, as in SensorEventInfo.",
+                    "type": "string"
+                },
+                "LoggingNamespace": {
+                    "description": "Optional logging namespace for events from this device, as in SensorEventInfo.",
+                    "type": "string"
+                },
+                "UpperFatal": {
+                    "description": "Upper fatal threshold overrides mapped by sensor auxiliary name.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "number"
+                    }
+                },
+                "UpperCritical": {
+                    "description": "Upper critical threshold overrides mapped by sensor auxiliary name.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "number"
+                    }
+                },
+                "UpperCaution": {
+                    "description": "Upper caution threshold overrides mapped by sensor auxiliary name.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "number"
+                    }
+                }
+            },
+            "required": ["Name", "Type"],
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "PLDM_Policy": {
+            "description": "Downstream PlatformExposes record carrying a platform's PLDM T2 behaviour choices for an NvDevice firmware family.",
+            "properties": {
+                "Name": {
+                    "description": "A recognisable name for the PLDM policy entry.",
+                    "type": "string"
+                },
+                "Type": {
+                    "description": "Identifies a PLDM monitoring policy PlatformExposes record.",
+                    "type": "string",
+                    "const": "PLDM_Policy"
+                },
+                "Kind": {
+                    "description": "NvDevice kind identifying the firmware family to which this policy applies.",
+                    "type": "string"
+                },
+                "Devices": {
+                    "description": "Device names to which this policy applies; an empty array selects all devices of Kind.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "LinkStateOnNetworkAdapter": {
+                    "description": "Bind port link-state sensors to the NetworkAdapter inventory object instead of the port.",
+                    "type": "boolean"
+                },
+                "PlugParent": {
+                    "description": "Name of the inventory object the device's plug/cable sensors are associated to instead of the port; resolved by name by pldmd.",
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type", "Kind"],
+            "additionalProperties": false,
+            "type": "object"
+        }
+    },
+    "title": "PLDM Device and Monitoring Policy Records",
+    "description": "Downstream entity-manager schemas for PLDMDevice entity Exposes and PLDM_Policy PlatformExposes records consumed by pldmd."
+}
