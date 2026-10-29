@@ -36,6 +36,12 @@
         "UpdateableComponents": {
           "$Platform.NamePrefixSBIOS_FMC_$Instance": 2,
           "$Platform.NamePrefixSBIOS_FW_$Instance": 513
+        },
+        "Roles": {
+          "TempLimit_0": "primary_temperature_sensor",
+          "TDPPowerNonvolatile_0": "primary_power_control",
+          "EnforcedEDPc_0": "primary_power_sensor",
+          "CpuPower_0": "primary_cpupower_sensor"
         }
       },
       {

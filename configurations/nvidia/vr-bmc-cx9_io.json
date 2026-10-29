@@ -76,12 +76,18 @@
           "ConnectX_NIC_$Instance": 60,
           "Port_0": 200,
           "Port_1": 201,
+          "Port_2": 202,
+          "Port_3": 203,
+          "CX_NIC_$Instance_Port_0_Speed_0": 100,
+          "CX_NIC_$Instance_Port_1_Speed_0": 101,
           "$Name_Power_0": 50,
           "CX_NIC_$Instance_Port_0_Voltage_0": 400,
           "CX_NIC_$Instance_Port_1_Voltage_0": 401,
           "$Name_Temp_0": 300,
           "CX_NIC_$Instance_Port_0_Temp_0": 500,
-          "CX_NIC_$Instance_Port_1_Temp_0": 501
+          "CX_NIC_$Instance_Port_1_Temp_0": 501,
+          "CX_NIC_$Instance_Port_0_Plug": 700,
+          "CX_NIC_$Instance_Port_1_Plug": 701
         },
         "Ports": {
           "200": "$PortName0",

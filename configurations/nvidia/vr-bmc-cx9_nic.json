@@ -55,16 +55,16 @@
       {
         "Name": "$Name_PLDM",
         "Type": "PLDMDevice",
-        "NetworkAdapter": "Bay_C_CX_NIC_0",
+        "NetworkAdapter": "Bay_C_CX_NIC_$Instance",
         "SensorAuxNames": {
           "$Name": 5,
-          "Bay_C_CX_NIC_0": 60,
+          "Bay_C_CX_NIC_$Instance": 60,
           "Port_0": 200,
           "$Name_Temp_0": 300,
-          "Bay_C_CX_NIC_0_Port_0_Voltage_0": 400,
-          "Bay_C_CX_NIC_0_Port_1_Voltage_0": 401,
+          "Bay_C_CX_NIC_$Instance_Port_0_Voltage_0": 400,
+          "Bay_C_CX_NIC_$Instance_Port_1_Voltage_0": 401,
           "$Name_Power_0": 50,
-          "Bay_C_CX_NIC_0_Port_0_Temp_0": 500
+          "Bay_C_CX_NIC_$Instance_Port_0_Temp_0": 500
         },
         "Ports": {
           "200": "Port_0"

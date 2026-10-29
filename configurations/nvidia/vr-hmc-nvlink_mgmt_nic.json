@@ -38,13 +38,34 @@
           "$Name_Temp_0": 300,
           "$Name_Power_0": 50,
           "NVLinkManagement_0": 200,
-          "NVLinkManagement_1": 201
+          "NVLinkManagement_1": 201,
+          "Port_0": 200,
+          "Port_1": 201
         },
         "Ports": {
           "200": "NVLinkManagement_0",
           "201": "NVLinkManagement_1"
         },
-        "PortMaxSpeedMBps": 50000
+        "PortMaxSpeedMBps": 50000,
+        "EventIds": {
+          "$Name_Temp_0": [
+            "PLDM_SENSOR_UPPERWARNING",
+            "CX9_Temperature_UPPER_NON_CRITICAL-EVENT",
+            "PLDM_SENSOR_UPPERCRITICAL",
+            "CX9_Temperature_UPPER_CRITICAL-EVENT",
+            "PLDM_SENSOR_UPPERFATAL",
+            "CX9_Temperature_UPPER_FATAL-EVENT"
+          ],
+          "Port_0": [
+            "LinkDown",
+            "CX9_NVLINK_Link_Down_Event"
+          ],
+          "Port_1": [
+            "LinkDown",
+            "CX9_NVLINK_Link_Down_Event"
+          ]
+        },
+        "ImpactedComponent": "CX9"
       },
       {
         "BridgeName": "$Bridge",
