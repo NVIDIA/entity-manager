@@ -1615,6 +1615,9 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
+                "Associations": {
+                    "type": "array"
+                },
                 "ChassisName": {
                     "type": "string"
                 },
@@ -1636,6 +1639,9 @@
                 },
                 "UUID": {
                     "type": "string"
+                },
+                "UpstreamPortCount": {
+                    "type": "integer"
                 }
             },
             "required": ["Name", "Type"]

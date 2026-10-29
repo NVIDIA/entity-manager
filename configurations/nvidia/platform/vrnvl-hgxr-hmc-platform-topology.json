@@ -21,7 +21,7 @@
         "Generation": "vera-rubin",
         "Instance": 0,
         "EID": 10,
-        "ParentChassis": "HGX_BMC_0",
+        "ParentChassis": "HGX_Chassis_0",
         "Transport": {
           "Medium": "spi",
           "Bus": 0,

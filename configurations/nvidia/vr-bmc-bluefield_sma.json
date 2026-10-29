@@ -18,7 +18,7 @@
         "DeviceAddress": "MCTP:$EID",
         "DeviceType": "MCTPBridge",
         "Name": "$Name",
-        "PhysicalInterface": "usb1:0x1d6b:0x0104:$Port",
+        "PhysicalInterface": "usb1:0x0955:0xcf11:$Port",
         "Type": "PlatformDevice"
       },
       {
