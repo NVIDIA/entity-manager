@@ -1,7 +1,7 @@
 [
   {
     "Name": "ConnectX_Recovery_Devices",
-    "Probe": "xyz.openbmc_project.Configuration.Platform({'Name': '^Nvidia VR-NVL72 BMC AST2[67]00$'})",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Name': '^CX_0$', 'Kind': '^cx9_io$', 'Generation': 'vera-rubin'})",
     "Type": "Recovery_Config",
     "Exposes": [
       {
