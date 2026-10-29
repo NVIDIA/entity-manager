@@ -182,7 +182,7 @@
             "LocationContext": ""
         },
         "xyz.openbmc_project.Inventory.Decorator.PCIeRefClock": {
-            "PCIeReferenceClockCount": 1
+            "PCIeReferenceClockCount": 3
         },
         "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
             "FieldReplaceable": false
