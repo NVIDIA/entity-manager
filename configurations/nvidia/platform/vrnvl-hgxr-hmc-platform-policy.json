@@ -46,6 +46,14 @@
             }
           }
         ]
+      },
+      {
+        "Name": "PLDM_Policy_CX9",
+        "Type": "PLDM_Policy",
+        "Kind": "cx9_io",
+        "Devices": [],
+        "LinkStateOnNetworkAdapter": true,
+        "PlugParent": "HGX_OSFP_Board_0"
       }
     ]
   }
