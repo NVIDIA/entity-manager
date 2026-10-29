@@ -142,9 +142,10 @@
         }
     },
     {
-        "Exposes": [
+        "Name": "IRoT_BMC_0_MCTP",
+        "PlatformExposes": [
             {
-                "Interface": "$Interface",
+                "Interface": "mctpirot0",
                 "Name": "MCTPIROT_0",
                 "PollingInterval": "15",
                 "StaticEndpointID": "9",
@@ -184,12 +185,11 @@
                 "Type": "PLDMFirmwareDevice"
             }
         ],
-        "Name": "MCTP_XROT_DEV1",
         "Probe": [
             "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpirot0'})",
             "AND",
             "FOUND('BMC_0')"
         ],
-        "Type": "MCTPInterface"
+        "Type": "Platform"
     }
 ]
