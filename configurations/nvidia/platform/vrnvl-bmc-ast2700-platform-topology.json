@@ -10,9 +10,8 @@
     "SmmLocationContext": "Chassis_0/SMM_Interposer_0",
     "PlatformExposes": [
       {
-        "Name": "RecoveryPolicy",
-        "Type": "RecoveryPolicy",
-        "TopChassis": "Chassis_0"
+        "Name": "GlobalRecoveryConfig",
+        "Type": "GlobalRecoveryConfig"
       },
       {
         "Name": "IRoT_BMC_0",

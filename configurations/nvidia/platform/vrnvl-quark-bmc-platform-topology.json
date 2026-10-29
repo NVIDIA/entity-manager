@@ -8,9 +8,8 @@
     "TopChassis": "Chassis_0",
     "PlatformExposes": [
       {
-        "Name": "RecoveryPolicy",
-        "Type": "RecoveryPolicy",
-        "TopChassis": "Chassis_0"
+        "Name": "GlobalRecoveryConfig",
+        "Type": "GlobalRecoveryConfig"
       },
       {
         "Name": "ERoT_BMC_0",

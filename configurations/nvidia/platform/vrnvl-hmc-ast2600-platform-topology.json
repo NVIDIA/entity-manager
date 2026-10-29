@@ -7,12 +7,9 @@
     "BmcName": "HGX_BMC_0",
     "PlatformExposes": [
       {
-        "Name": "RecoveryPolicy",
-        "Type": "RecoveryPolicy",
-        "NamePrefix": "HGX_",
-        "CpuRecoveryGPIOStraps": "c2g4",
-        "CpuRecoveryActionRedfishChassis": "HGX_Chassis_0",
-        "McuChassisName": false
+        "Name": "GlobalRecoveryConfig",
+        "Type": "GlobalRecoveryConfig",
+        "NamePrefix": "HGX_"
       },
       {
         "Name": "HMC_USB_GADGET_0",
@@ -183,6 +180,16 @@
           "Medium": "usb",
           "Port": "1.1.1.2",
           "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb"
+        },
+        "Recovery": {
+          "ActionRedfishChassis": "HGX_Chassis_0",
+          "SystemResetGpio": "BRD0_IST_SYS_RST_L-O",
+          "ForcedRecoveryGpio": "BRD0_CPU_FORCED_RECOVERY_L-O",
+          "BootDevSel0Gpio": "BRD0_CPU_BOOT_DEV_SEL0-O",
+          "BootDevSel1Gpio": "BRD0_CPU_BOOT_DEV_SEL1-O",
+          "BootDevSel2Gpio": "BRD0_CPU_BOOT_DEV_SEL2-O",
+          "RecoveryType0Gpio": "BRD0_CPU_RECOVERY_TYPE0-O",
+          "RecoveryType1Gpio": "BRD0_CPU_RECOVERY_TYPE1-O"
         }
       },
       {
@@ -198,6 +205,16 @@
           "Medium": "usb",
           "Port": "1.1.2.2",
           "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb"
+        },
+        "Recovery": {
+          "ActionRedfishChassis": "HGX_Chassis_0",
+          "SystemResetGpio": "BRD1_IST_SYS_RST_L-O",
+          "ForcedRecoveryGpio": "BRD1_CPU_FORCED_RECOVERY_L-O",
+          "BootDevSel0Gpio": "BRD1_CPU_BOOT_DEV_SEL0-O",
+          "BootDevSel1Gpio": "BRD1_CPU_BOOT_DEV_SEL1-O",
+          "BootDevSel2Gpio": "BRD1_CPU_BOOT_DEV_SEL2-O",
+          "RecoveryType0Gpio": "BRD1_CPU_RECOVERY_TYPE0-O",
+          "RecoveryType1Gpio": "BRD1_CPU_RECOVERY_TYPE1-O"
         }
       },
       {

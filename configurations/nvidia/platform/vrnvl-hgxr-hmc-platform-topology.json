@@ -7,8 +7,8 @@
     "BmcName": "HGX_BMC_0",
     "PlatformExposes": [
       {
-        "Name": "RecoveryPolicy",
-        "Type": "RecoveryPolicy",
+        "Name": "GlobalRecoveryConfig",
+        "Type": "GlobalRecoveryConfig",
         "NamePrefix": "HGX_",
         "ConnectXForceRecoveryOnIRoT": false,
         "OcpInfoRom": false,
