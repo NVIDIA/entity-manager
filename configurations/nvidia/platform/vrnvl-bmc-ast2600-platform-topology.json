@@ -24,6 +24,9 @@
           "Medium": "spi",
           "Bus": 0,
           "ChipSelect": 2
+        },
+        "Recovery": {
+          "RecoveryType": "GlacierCrisis"
         }
       },
       {
@@ -83,6 +86,7 @@
           "PoolEndEID": "65"
         },
         "Recovery": {
+          "RecoveryType": "MCU",
           "RecoveryGpio": "IOB0_MCU_RECOVERY_L-O",
           "ResetGpio": "IOB0_MCU_RST_L-O"
         }
@@ -105,6 +109,7 @@
           "PoolEndEID": "75"
         },
         "Recovery": {
+          "RecoveryType": "MCU",
           "RecoveryGpio": "IOB1_MCU_RECOVERY_L-O",
           "ResetGpio": "IOB1_MCU_RST_L-O"
         }
@@ -127,6 +132,7 @@
           "PoolEndEID": "85"
         },
         "Recovery": {
+          "RecoveryType": "MCU",
           "RecoveryGpio": "IOB2_MCU_RECOVERY_L-O",
           "ResetGpio": "IOB2_MCU_RST_L-O"
         }
@@ -149,6 +155,7 @@
           "PoolEndEID": "95"
         },
         "Recovery": {
+          "RecoveryType": "MCU",
           "RecoveryGpio": "IOB3_MCU_RECOVERY_L-O",
           "ResetGpio": "IOB3_MCU_RST_L-O"
         }
@@ -172,6 +179,7 @@
           "PoolIndex": 0
         },
         "Recovery": {
+          "RecoveryType": "ConnectX",
           "I2CAddress": 72,
           "I2CBus": 78
         }
@@ -195,6 +203,7 @@
           "PoolIndex": 2
         },
         "Recovery": {
+          "RecoveryType": "ConnectX",
           "I2CAddress": 74,
           "I2CBus": 78
         }
@@ -218,6 +227,7 @@
           "PoolIndex": 0
         },
         "Recovery": {
+          "RecoveryType": "ConnectX",
           "I2CAddress": 72,
           "I2CBus": 79
         }
@@ -241,6 +251,7 @@
           "PoolIndex": 2
         },
         "Recovery": {
+          "RecoveryType": "ConnectX",
           "I2CAddress": 74,
           "I2CBus": 79
         }
@@ -264,6 +275,7 @@
           "PoolIndex": 0
         },
         "Recovery": {
+          "RecoveryType": "ConnectX",
           "I2CAddress": 72,
           "I2CBus": 80
         }
@@ -287,6 +299,7 @@
           "PoolIndex": 2
         },
         "Recovery": {
+          "RecoveryType": "ConnectX",
           "I2CAddress": 74,
           "I2CBus": 80
         }
@@ -310,6 +323,7 @@
           "PoolIndex": 0
         },
         "Recovery": {
+          "RecoveryType": "ConnectX",
           "I2CAddress": 72,
           "I2CBus": 81
         }
@@ -333,6 +347,7 @@
           "PoolIndex": 2
         },
         "Recovery": {
+          "RecoveryType": "ConnectX",
           "I2CAddress": 74,
           "I2CBus": 81
         }
@@ -447,6 +462,7 @@
           "PoolEndEID": "59"
         },
         "Recovery": {
+          "RecoveryType": "MCU",
           "RecoveryGpio": "BF4_USB_MCU_RECOVERY_L",
           "ResetGpio": "BF4_USB_MCU_RST_L"
         }
@@ -478,12 +494,12 @@
           "PoolIndex": 3
         },
         "Recovery": {
+          "RecoveryType": "GPIOERoT",
           "ApName": "FW_BF4_BMC_0",
           "FatalErrorGpio": "BF4_S_BMC_EROT_FATAL_ERROR_L-I",
           "FatalErrorPolarity": "ActiveLow",
           "I2CAddress": 83,
-          "I2CBus": 77,
-          "Method": "GPIOERoT"
+          "I2CBus": 77
         }
       },
       {
@@ -497,12 +513,12 @@
           "ChipSelect": 0
         },
         "Recovery": {
+          "RecoveryType": "GPIOERoT",
           "ApName": "FW_RECOVERY_HGX_FW_BMC_0",
           "FatalErrorGpio": "HMC_EROT_FATAL_ERROR_L-I",
           "FatalErrorPolarity": "ActiveLow",
           "I2CAddress": 82,
           "I2CBus": 6,
-          "Method": "GPIOERoT",
           "SoftwareName": "FW_RECOVERY_HGX_FW_ERoT_BMC_0",
           "Target": "enable-hmc-recovery.service"
         }

@@ -22,6 +22,9 @@
           "Medium": "spi",
           "Bus": 0,
           "ChipSelect": 2
+        },
+        "Recovery": {
+          "RecoveryType": "GlacierCrisis"
         }
       },
       {

@@ -23,6 +23,9 @@
           "Medium": "spi",
           "Bus": 0,
           "ChipSelect": 2
+        },
+        "Recovery": {
+          "RecoveryType": "GlacierCrisis"
         }
       },
       {
@@ -37,6 +40,9 @@
           "Medium": "spi",
           "Bus": 2,
           "ChipSelect": 0
+        },
+        "Recovery": {
+          "RecoveryType": "GlacierCrisis"
         }
       },
       {
@@ -54,6 +60,7 @@
           "PoolEndEID": "54"
         },
         "Recovery": {
+          "RecoveryType": "MCU",
           "RecoveryGpio": "GP_BMC_MCU1_RECOVERY_L",
           "ResetGpio": "GP_BMC_MCU1_RESET_L",
           "ResetGpioPolarity": "ActiveHigh"
@@ -74,6 +81,7 @@
           "PoolEndEID": "58"
         },
         "Recovery": {
+          "RecoveryType": "MCU",
           "RecoveryGpio": "GP_BMC_MCU2_RECOVERY_L",
           "ResetGpio": "GP_BMC_MCU2_RESET_L",
           "ResetGpioPolarity": "ActiveHigh"

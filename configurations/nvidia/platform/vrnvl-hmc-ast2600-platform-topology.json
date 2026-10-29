@@ -31,6 +31,9 @@
           "Medium": "spi",
           "Bus": 0,
           "ChipSelect": 2
+        },
+        "Recovery": {
+          "RecoveryType": "GlacierCrisis"
         }
       },
       {
@@ -54,6 +57,7 @@
           "PoolEndEID": "12"
         },
         "Recovery": {
+          "RecoveryType": "MCU",
           "RecoveryGpio": "BRD0_GPU_MCU_RECOVERY_L_3V3-O",
           "ResetGpio": "BRD0_GPU_MCU_RESET_L_3V3-O"
         }
@@ -76,6 +80,7 @@
           "PoolIndex": 0
         },
         "Recovery": {
+          "RecoveryType": "OCP",
           "OcpRecoveryI2cAddress": 105
         }
       },
@@ -97,6 +102,7 @@
           "PoolIndex": 1
         },
         "Recovery": {
+          "RecoveryType": "OCP",
           "OcpRecoveryI2cAddress": 106
         }
       },
@@ -121,6 +127,7 @@
           "PoolEndEID": "22"
         },
         "Recovery": {
+          "RecoveryType": "MCU",
           "RecoveryGpio": "BRD1_GPU_MCU_RECOVERY_L_3V3-O",
           "ResetGpio": "BRD1_GPU_MCU_RESET_L_3V3-O"
         }
@@ -143,6 +150,7 @@
           "PoolIndex": 0
         },
         "Recovery": {
+          "RecoveryType": "OCP",
           "OcpRecoveryI2cAddress": 105
         }
       },
@@ -164,6 +172,7 @@
           "PoolIndex": 1
         },
         "Recovery": {
+          "RecoveryType": "OCP",
           "OcpRecoveryI2cAddress": 106
         }
       },
@@ -182,6 +191,7 @@
           "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb"
         },
         "Recovery": {
+          "RecoveryType": "USBRCM",
           "ActionRedfishChassis": "HGX_Chassis_0",
           "SystemResetGpio": "BRD0_IST_SYS_RST_L-O",
           "ForcedRecoveryGpio": "BRD0_CPU_FORCED_RECOVERY_L-O",
@@ -207,6 +217,7 @@
           "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb"
         },
         "Recovery": {
+          "RecoveryType": "USBRCM",
           "ActionRedfishChassis": "HGX_Chassis_0",
           "SystemResetGpio": "BRD1_IST_SYS_RST_L-O",
           "ForcedRecoveryGpio": "BRD1_CPU_FORCED_RECOVERY_L-O",
@@ -232,6 +243,7 @@
           "Address": 82
         },
         "Recovery": {
+          "RecoveryType": "MCU",
           "RecoveryGpio": "BRD0_MCU_RECOVERY_L-O",
           "ResetGpio": "BRD0_MCU_RESET_L-O"
         }
@@ -251,6 +263,7 @@
           "Address": 82
         },
         "Recovery": {
+          "RecoveryType": "MCU",
           "RecoveryGpio": "BRD1_MCU_RECOVERY_L-O",
           "ResetGpio": "BRD1_MCU_RESET_L-O"
         }

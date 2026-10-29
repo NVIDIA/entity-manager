@@ -82,6 +82,7 @@
           "PoolEndEID": "65"
         },
         "Recovery": {
+          "RecoveryType": "MCU",
           "RecoveryGpio": "IOB0_MCU_RECOVERY_L-O",
           "ResetGpio": "IOB0_MCU_RST_L-O"
         }
@@ -104,6 +105,7 @@
           "PoolEndEID": "75"
         },
         "Recovery": {
+          "RecoveryType": "MCU",
           "RecoveryGpio": "IOB1_MCU_RECOVERY_L-O",
           "ResetGpio": "IOB1_MCU_RST_L-O"
         }
@@ -126,6 +128,7 @@
           "PoolEndEID": "85"
         },
         "Recovery": {
+          "RecoveryType": "MCU",
           "RecoveryGpio": "IOB2_MCU_RECOVERY_L-O",
           "ResetGpio": "IOB2_MCU_RST_L-O"
         }
@@ -148,6 +151,7 @@
           "PoolEndEID": "95"
         },
         "Recovery": {
+          "RecoveryType": "MCU",
           "RecoveryGpio": "IOB3_MCU_RECOVERY_L-O",
           "ResetGpio": "IOB3_MCU_RST_L-O"
         }
@@ -171,6 +175,7 @@
           "PoolIndex": 1
         },
         "Recovery": {
+          "RecoveryType": "ConnectX",
           "I2CAddress": 72,
           "I2CBus": 78
         }
@@ -194,6 +199,7 @@
           "PoolIndex": 3
         },
         "Recovery": {
+          "RecoveryType": "ConnectX",
           "I2CAddress": 74,
           "I2CBus": 78
         }
@@ -217,6 +223,7 @@
           "PoolIndex": 1
         },
         "Recovery": {
+          "RecoveryType": "ConnectX",
           "I2CAddress": 72,
           "I2CBus": 79
         }
@@ -240,6 +247,7 @@
           "PoolIndex": 3
         },
         "Recovery": {
+          "RecoveryType": "ConnectX",
           "I2CAddress": 74,
           "I2CBus": 79
         }
@@ -263,6 +271,7 @@
           "PoolIndex": 1
         },
         "Recovery": {
+          "RecoveryType": "ConnectX",
           "I2CAddress": 72,
           "I2CBus": 80
         }
@@ -286,6 +295,7 @@
           "PoolIndex": 3
         },
         "Recovery": {
+          "RecoveryType": "ConnectX",
           "I2CAddress": 74,
           "I2CBus": 80
         }
@@ -309,6 +319,7 @@
           "PoolIndex": 1
         },
         "Recovery": {
+          "RecoveryType": "ConnectX",
           "I2CAddress": 72,
           "I2CBus": 81
         }
@@ -332,6 +343,7 @@
           "PoolIndex": 3
         },
         "Recovery": {
+          "RecoveryType": "ConnectX",
           "I2CAddress": 74,
           "I2CBus": 81
         }

@@ -24,6 +24,9 @@
           "Medium": "spi",
           "Bus": 0,
           "ChipSelect": 2
+        },
+        "Recovery": {
+          "RecoveryType": "GlacierCrisis"
         }
       },
       {
@@ -49,6 +52,7 @@
           "PoolStartEID": "21"
         },
         "Recovery": {
+          "RecoveryType": "MCU",
           "RecoveryGpio": "B0_M1_MCU_RECOVERY_L-O",
           "ResetGpio": "B0_M1_MCU_RESET_L-O"
         }
@@ -67,6 +71,7 @@
           "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb"
         },
         "Recovery": {
+          "RecoveryType": "USBRCM",
           "ActionRedfishChassis": "BMC_0",
           "SystemResetGpio": "B0_M1_IST_SYS_RST_L-O",
           "ForcedRecoveryGpio": "B0_M1_CPU_FORCED_RECOVERY_L-O",
@@ -91,6 +96,7 @@
           "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb"
         },
         "Recovery": {
+          "RecoveryType": "USBRCM",
           "ActionRedfishChassis": "BMC_0",
           "SystemResetGpio": "B0_M1_IST_SYS_RST_L-O",
           "ForcedRecoveryGpio": "B0_M1_CPU_FORCED_RECOVERY_L-O",
