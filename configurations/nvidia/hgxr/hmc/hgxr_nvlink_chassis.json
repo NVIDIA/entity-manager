@@ -249,6 +249,7 @@
                 },
                 "InventoryObjPath": "/xyz/openbmc_project/inventory/system/fabrics/HGX_NVLinkFabric_0/Switches/",
                 "Name": "NVSwitch_$INSTANCE_NUMBER",
+                "SupportL1PredictionMode": true,
                 "SupportLTXMode": true,
                 "SupportNvSwitchDeviceConfiguration": true,
                 "SupportPowerCappingMode": true,

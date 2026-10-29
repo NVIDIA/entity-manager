@@ -1365,6 +1365,9 @@
                 "PowerMode": {
                     "type": "object"
                 },
+                "SupportL1PredictionMode": {
+                    "type": "boolean"
+                },
                 "SupportLTXMode": {
                     "type": "boolean"
                 },
