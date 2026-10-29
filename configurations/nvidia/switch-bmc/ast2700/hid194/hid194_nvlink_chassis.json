@@ -79,6 +79,7 @@
                 "InventoryObjPath": "/xyz/openbmc_project/inventory/system/fabrics/NVLinkFabric_0/Switches/",
                 "Name": "NVSwitch_$INSTANCE_NUMBER",
                 "SupportPowerCappingMode": true,
+                "SupportPowerProfile": true,
                 "Switch": {
                     "Association": [
                         "associated_switch_obj",
