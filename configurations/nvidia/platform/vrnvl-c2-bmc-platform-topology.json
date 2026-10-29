@@ -13,7 +13,7 @@
         "Name": "RecoveryPolicy",
         "Type": "RecoveryPolicy",
         "TopChassis": "Chassis_0",
-        "CpuRecoveryConfig": "c2",
+        "CpuRecoveryGPIOStraps": "c2",
         "CpuRecoveryChassis": "BMC_0"
       },
       {
