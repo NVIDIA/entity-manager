@@ -90,7 +90,7 @@
                     {
                         "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/HGX_Chassis_0",
                         "Backward": "all_sensors",
-                        "Forward": "chassis"
+                        "Forward": "parent_chassis"
                     },
                     {
                         "AbsolutePath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0",
