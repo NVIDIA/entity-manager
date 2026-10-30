@@ -2,7 +2,7 @@
     "Name": "Nvidia VR-NVL72 BMC AST2700-A1",
     "PlatformExposes": [
         {
-            "Name": "IRoT_BMC_0",
+            "Name": "MCTPIROT_0",
             "SupportedDumps": [
                 "RoT",
                 "FwAttrs",
