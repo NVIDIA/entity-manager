@@ -388,7 +388,6 @@ configs = [
     'nvidia/vera-cpu.json',
     'nvidia/vr-bmc-bluefield.json',
     'nvidia/vr-bmc-bluefield_sma.json',
-    'nvidia/vr-bmc-connectx_recovery.json',
     'nvidia/vr-bmc-cx9_io.json',
     'nvidia/vr-bmc-cx9_nic.json',
     'nvidia/vr-bmc-cx_sma.json',
