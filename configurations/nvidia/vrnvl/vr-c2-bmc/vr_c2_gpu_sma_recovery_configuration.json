@@ -1,0 +1,68 @@
+[
+    {
+        "Exposes": [
+            {
+                "ChassisName": "GPU_SMA_0",
+                "ForceRecoveryChassisObject": "GPU_SMA_0",
+                "Interface": "USB",
+                "MctpEID": 70,
+                "Name": "FW_GPU_SMA_0",
+                "ProductId": "0xCF11",
+                "RecoveryGpioName": "GPU0_MCU_RECOVERY_N-O",
+                "ResetGpioName": "GPU0_MCU_RST_N-O",
+                "Target": "GPU",
+                "Type": "MCURecovery",
+                "USBPort": "1-1.2.1.3.1",
+                "VendorId": "0x0955",
+                "hasChassisPowerSource": false
+            }
+        ],
+        "Name": "GPU_SMA_0_Recovery_Devices",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 42, 'ADDRESS': 80})",
+        "Type": "Recovery_Config"
+    },
+    {
+        "Exposes": [
+            {
+                "ChassisName": "GPU_SMA_1",
+                "ForceRecoveryChassisObject": "GPU_SMA_1",
+                "Interface": "USB",
+                "MctpEID": 80,
+                "Name": "FW_GPU_SMA_1",
+                "ProductId": "0xCF11",
+                "RecoveryGpioName": "GPU1_MCU_RECOVERY_N-O",
+                "ResetGpioName": "GPU1_MCU_RST_N-O",
+                "Target": "GPU",
+                "Type": "MCURecovery",
+                "USBPort": "1-1.3.1.3.1",
+                "VendorId": "0x0955",
+                "hasChassisPowerSource": false
+            }
+        ],
+        "Name": "GPU_SMA_1_Recovery_Devices",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 50, 'ADDRESS': 80})",
+        "Type": "Recovery_Config"
+    },
+    {
+        "Exposes": [
+            {
+                "ChassisName": "GPU_SMA_1",
+                "ForceRecoveryChassisObject": "GPU_SMA_1",
+                "Interface": "USB",
+                "MctpEID": 80,
+                "Name": "FW_GPU_SMA_1",
+                "ProductId": "0xCF11",
+                "RecoveryGpioName": "GPU1_MCU_RECOVERY_N-O",
+                "ResetGpioName": "GPU1_MCU_RST_N-O",
+                "Target": "GPU",
+                "Type": "MCURecovery",
+                "USBPort": "1-1.2.1.3.4",
+                "VendorId": "0x0955",
+                "hasChassisPowerSource": false
+            }
+        ],
+        "Name": "GPU_SMA_1_C1_Recovery_Devices",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 40, 'ADDRESS': 80})",
+        "Type": "Recovery_Config"
+    }
+]

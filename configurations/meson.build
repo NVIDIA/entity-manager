@@ -531,6 +531,7 @@ configs = [
     'nvidia/vrnvl/vr-c2-bmc/vr_c2_fan_board.json',
     'nvidia/vrnvl/vr-c2-bmc/vr_c2_gpu_chassis.json',
     'nvidia/vrnvl/vr-c2-bmc/vr_c2_gpu_sma_chassis.json',
+    'nvidia/vrnvl/vr-c2-bmc/vr_c2_gpu_sma_recovery_configuration.json',
     'nvidia/vrnvl/vr-c2-bmc/vr_c2_hpm_sma_recovery_configuration.json',
     'nvidia/vrnvl/vr-c2-bmc/vr_c2_irot_gpu_chassis.json',
     'nvidia/vrnvl/vr-c2-bmc/vr_c2_irot_gpu_sma_chassis.json',
