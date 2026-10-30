@@ -8,10 +8,6 @@
     "TopChassis": "Chassis_0",
     "PlatformExposes": [
       {
-        "Name": "GlobalRecoveryConfig",
-        "Type": "GlobalRecoveryConfig"
-      },
-      {
         "Name": "ERoT_BMC_0",
         "Type": "NvDevice",
         "Kind": "erot",

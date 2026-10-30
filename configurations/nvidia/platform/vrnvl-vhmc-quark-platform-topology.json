@@ -7,11 +7,6 @@
     "BmcName": "HGX_BMC_0",
     "PlatformExposes": [
       {
-        "Name": "GlobalRecoveryConfig",
-        "Type": "GlobalRecoveryConfig",
-        "NamePrefix": "HGX_"
-      },
-      {
         "Name": "HGX_GPU_SMA_0",
         "Type": "NvDevice",
         "Kind": "gpu_sma",
@@ -34,7 +29,8 @@
         "Recovery": {
           "RecoveryType": "MCU",
           "RecoveryGpio": "BRD0_GPU_MCU_RECOVERY_L_3V3-O",
-          "ResetGpio": "BRD0_GPU_MCU_RESET_L_3V3-O"
+          "ResetGpio": "BRD0_GPU_MCU_RESET_L_3V3-O",
+          "SoftwareName": "HGX_FW_GPU_SMA_0"
         }
       },
       {
@@ -56,7 +52,10 @@
         "Recovery": {
           "RecoveryType": "OCP",
           "OcpRecoveryI2cAddress": 105,
-          "OcpRecoveryI2cBus": 72
+          "OcpRecoveryI2cBus": 72,
+          "SoftwareName": "HGX_FW_GPU_0",
+          "ChassisName": "HGX_IRoT_GPU_0",
+          "InfoRomName": "HGX_InfoROM_GPU_0"
         }
       },
       {
@@ -78,7 +77,10 @@
         "Recovery": {
           "RecoveryType": "OCP",
           "OcpRecoveryI2cAddress": 106,
-          "OcpRecoveryI2cBus": 72
+          "OcpRecoveryI2cBus": 72,
+          "SoftwareName": "HGX_FW_GPU_1",
+          "ChassisName": "HGX_IRoT_GPU_1",
+          "InfoRomName": "HGX_InfoROM_GPU_1"
         }
       },
       {
@@ -104,7 +106,10 @@
           "BootDevSel1Gpio": "BRD0_CPU_BOOT_DEV_SEL1-O",
           "BootDevSel2Gpio": "BRD0_CPU_BOOT_DEV_SEL2-O",
           "RecoveryType0Gpio": "BRD0_CPU_RECOVERY_TYPE0-O",
-          "RecoveryType1Gpio": "BRD0_CPU_RECOVERY_TYPE1-O"
+          "RecoveryType1Gpio": "BRD0_CPU_RECOVERY_TYPE1-O",
+          "SoftwareName": "HGX_FW_CPU_0",
+          "FMCComponentName": "HGX_SBIOS_FMC_0",
+          "FWSComponentName": "HGX_SBIOS_FW_0"
         }
       },
       {
@@ -124,7 +129,8 @@
         "Recovery": {
           "RecoveryType": "MCU",
           "RecoveryGpio": "BRD0_MCU_RECOVERY_L-O",
-          "ResetGpio": "BRD0_MCU_RESET_L-O"
+          "ResetGpio": "BRD0_MCU_RESET_L-O",
+          "SoftwareName": "HGX_FW_ProcessorModule_SMA_0"
         }
       }
     ]

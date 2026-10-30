@@ -7,11 +7,6 @@
     "BmcName": "HGX_BMC_0",
     "PlatformExposes": [
       {
-        "Name": "GlobalRecoveryConfig",
-        "Type": "GlobalRecoveryConfig",
-        "NamePrefix": "HGX_"
-      },
-      {
         "Name": "HMC_USB_GADGET_0",
         "Type": "MCTPUSBGadgetTarget",
         "Interface": "mctpusbg0",
@@ -54,7 +49,8 @@
         "Recovery": {
           "RecoveryType": "MCU",
           "RecoveryGpio": "BRD0_GPU_MCU_RECOVERY_L_3V3-O",
-          "ResetGpio": "BRD0_GPU_MCU_RESET_L_3V3-O"
+          "ResetGpio": "BRD0_GPU_MCU_RESET_L_3V3-O",
+          "SoftwareName": "HGX_FW_GPU_SMA_0"
         }
       },
       {
@@ -76,7 +72,10 @@
         },
         "Recovery": {
           "RecoveryType": "OCP",
-          "OcpRecoveryI2cAddress": 105
+          "OcpRecoveryI2cAddress": 105,
+          "SoftwareName": "HGX_FW_GPU_0",
+          "ChassisName": "HGX_IRoT_GPU_0",
+          "InfoRomName": "HGX_InfoROM_GPU_0"
         }
       },
       {
@@ -98,7 +97,10 @@
         },
         "Recovery": {
           "RecoveryType": "OCP",
-          "OcpRecoveryI2cAddress": 106
+          "OcpRecoveryI2cAddress": 106,
+          "SoftwareName": "HGX_FW_GPU_1",
+          "ChassisName": "HGX_IRoT_GPU_1",
+          "InfoRomName": "HGX_InfoROM_GPU_1"
         }
       },
       {
@@ -124,7 +126,8 @@
         "Recovery": {
           "RecoveryType": "MCU",
           "RecoveryGpio": "BRD1_GPU_MCU_RECOVERY_L_3V3-O",
-          "ResetGpio": "BRD1_GPU_MCU_RESET_L_3V3-O"
+          "ResetGpio": "BRD1_GPU_MCU_RESET_L_3V3-O",
+          "SoftwareName": "HGX_FW_GPU_SMA_1"
         }
       },
       {
@@ -146,7 +149,10 @@
         },
         "Recovery": {
           "RecoveryType": "OCP",
-          "OcpRecoveryI2cAddress": 105
+          "OcpRecoveryI2cAddress": 105,
+          "SoftwareName": "HGX_FW_GPU_2",
+          "ChassisName": "HGX_IRoT_GPU_2",
+          "InfoRomName": "HGX_InfoROM_GPU_2"
         }
       },
       {
@@ -168,7 +174,10 @@
         },
         "Recovery": {
           "RecoveryType": "OCP",
-          "OcpRecoveryI2cAddress": 106
+          "OcpRecoveryI2cAddress": 106,
+          "SoftwareName": "HGX_FW_GPU_3",
+          "ChassisName": "HGX_IRoT_GPU_3",
+          "InfoRomName": "HGX_InfoROM_GPU_3"
         }
       },
       {
@@ -194,7 +203,10 @@
           "BootDevSel1Gpio": "BRD0_CPU_BOOT_DEV_SEL1-O",
           "BootDevSel2Gpio": "BRD0_CPU_BOOT_DEV_SEL2-O",
           "RecoveryType0Gpio": "BRD0_CPU_RECOVERY_TYPE0-O",
-          "RecoveryType1Gpio": "BRD0_CPU_RECOVERY_TYPE1-O"
+          "RecoveryType1Gpio": "BRD0_CPU_RECOVERY_TYPE1-O",
+          "SoftwareName": "HGX_FW_CPU_0",
+          "FMCComponentName": "HGX_SBIOS_FMC_0",
+          "FWSComponentName": "HGX_SBIOS_FW_0"
         }
       },
       {
@@ -220,7 +232,10 @@
           "BootDevSel1Gpio": "BRD1_CPU_BOOT_DEV_SEL1-O",
           "BootDevSel2Gpio": "BRD1_CPU_BOOT_DEV_SEL2-O",
           "RecoveryType0Gpio": "BRD1_CPU_RECOVERY_TYPE0-O",
-          "RecoveryType1Gpio": "BRD1_CPU_RECOVERY_TYPE1-O"
+          "RecoveryType1Gpio": "BRD1_CPU_RECOVERY_TYPE1-O",
+          "SoftwareName": "HGX_FW_CPU_1",
+          "FMCComponentName": "HGX_SBIOS_FMC_1",
+          "FWSComponentName": "HGX_SBIOS_FW_1"
         }
       },
       {
@@ -240,7 +255,8 @@
         "Recovery": {
           "RecoveryType": "MCU",
           "RecoveryGpio": "BRD0_MCU_RECOVERY_L-O",
-          "ResetGpio": "BRD0_MCU_RESET_L-O"
+          "ResetGpio": "BRD0_MCU_RESET_L-O",
+          "SoftwareName": "HGX_FW_ProcessorModule_SMA_0"
         }
       },
       {
@@ -260,7 +276,8 @@
         "Recovery": {
           "RecoveryType": "MCU",
           "RecoveryGpio": "BRD1_MCU_RECOVERY_L-O",
-          "ResetGpio": "BRD1_MCU_RESET_L-O"
+          "ResetGpio": "BRD1_MCU_RESET_L-O",
+          "SoftwareName": "HGX_FW_ProcessorModule_SMA_1"
         }
       },
       {

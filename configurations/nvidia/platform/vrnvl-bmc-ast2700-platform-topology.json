@@ -10,11 +10,6 @@
     "SmmLocationContext": "Chassis_0/SMM_Interposer_0",
     "PlatformExposes": [
       {
-        "Name": "GlobalRecoveryConfig",
-        "Type": "GlobalRecoveryConfig",
-        "ConnectXForceRecoveryOnIRoT": false
-      },
-      {
         "Name": "IRoT_BMC_0",
         "Type": "NvDevice",
         "Kind": "irot",
