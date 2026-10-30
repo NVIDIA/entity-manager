@@ -70,16 +70,6 @@
                 "UUID": "$UUID"
             },
             {
-                "AcknowledgementEventIds": [],
-                "MessageType": 0,
-                "Name": "GPIOStateEventSetting",
-                "SubscribedEventIDs": [
-                    3
-                ],
-                "Type": "NSM_EventConfig",
-                "UUID": "$UUID"
-            },
-            {
                 "EventGenerationSetting": 2,
                 "Name": "GlobalEventSetting",
                 "Type": "NSM_EventSetting",
