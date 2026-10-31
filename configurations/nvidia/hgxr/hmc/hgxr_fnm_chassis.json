@@ -22,7 +22,7 @@
                 "DEVICE_UUID": "$DEVICE_UUID",
                 "Name": "NVLinkManagementNIC_0",
                 "PCIeDevice": {
-                    "Type": "NSM_PCIeDevice"
+                    "Type": "NSM_MultiPortPCIeDevice"
                 },
                 "Type": "NSM_ChassisPCIeDevice",
                 "UUID": "$UUID"
