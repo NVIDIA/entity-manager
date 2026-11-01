@@ -1,47 +1,188 @@
 [
     {
-        "Exposes": [
+        "Name": "IRoT_SMA_0_MCTP",
+        "PlatformExposes": [
             {
-                "Interface": "$Interface",
-                "Name": "SMA_1",
-                "PollingInterval": "5",
-                "StaticEndpointID": "69",
-                "Type": "MCTPUSBDevice",
-                "USBPath": "swb1"
-            }
-        ],
-        "Name": "MCTP_USB_DEV1",
-        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'musbswb1'})",
-        "Type": "MCTPInterface"
-    },
-    {
-        "Exposes": [
-            {
-                "Interface": "$Interface",
-                "Name": "SMA_2",
-                "PollingInterval": "5",
-                "StaticEndpointID": "70",
-                "Type": "MCTPUSBDevice",
-                "USBPath": "swb2"
-            }
-        ],
-        "Name": "MCTP_USB_DEV2",
-        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'musbswb2'})",
-        "Type": "MCTPInterface"
-    },
-    {
-        "Exposes": [
-            {
-                "Interface": "$Interface",
+                "Interface": "musbmgmt",
                 "Name": "SMA_0",
                 "PollingInterval": "5",
                 "StaticEndpointID": "71",
                 "Type": "MCTPUSBDevice",
                 "USBPath": "mgmt"
+            },
+            {
+                "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SMA_0",
+                "MCTPTargetName": "SMA_0",
+                "Manufacturer": "NVIDIA",
+                "Name": "IRoT_SMA_0_DevInv",
+                "Type": "PLDMDeviceInventory",
+                "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/SMA_0"
+            },
+            {
+                "Components": [
+                    {
+                        "AssociationBackward": [
+                            "activation"
+                        ],
+                        "AssociationEndpoint": [
+                            "/xyz/openbmc_project/inventory/system/chassis/SMA_0"
+                        ],
+                        "AssociationForward": [
+                            "inventory"
+                        ],
+                        "ComponentIdentifier": 65282,
+                        "Name": "FW_SMA_0"
+                    },
+                    {
+                        "AssociationBackward": [
+                            "activation"
+                        ],
+                        "AssociationEndpoint": [
+                            "/xyz/openbmc_project/inventory/system/chassis/CPLD_0"
+                        ],
+                        "AssociationForward": [
+                            "inventory"
+                        ],
+                        "ComponentIdentifier": 288,
+                        "Manufacturer": "Lattice",
+                        "Name": "FW_CPLD_0"
+                    }
+                ],
+                "MCTPTargetName": "SMA_0",
+                "Name": "SMA_0_PLDM",
+                "StaticEID": 71,
+                "Type": "PLDMFirmwareDevice"
             }
         ],
-        "Name": "MCTP_USB_DEV3",
-        "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'musbmgmt'})",
-        "Type": "MCTPInterface"
+        "Probe": [
+            "au.com.codeconstruct.MCTP.Interface1({'Interface': 'musbmgmt'})",
+            "AND",
+            "FOUND('BMC_0')"
+        ],
+        "Type": "Platform"
+    },
+    {
+        "Name": "IRoT_SMA_1_MCTP",
+        "PlatformExposes": [
+            {
+                "Interface": "musbswb1",
+                "Name": "SMA_1",
+                "PollingInterval": "5",
+                "StaticEndpointID": "69",
+                "Type": "MCTPUSBDevice",
+                "USBPath": "swb1"
+            },
+            {
+                "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SMA_1",
+                "MCTPTargetName": "SMA_1",
+                "Manufacturer": "NVIDIA",
+                "Name": "IRoT_SMA_1_DevInv",
+                "Type": "PLDMDeviceInventory",
+                "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/SMA_1"
+            },
+            {
+                "Components": [
+                    {
+                        "AssociationBackward": [
+                            "activation"
+                        ],
+                        "AssociationEndpoint": [
+                            "/xyz/openbmc_project/inventory/system/chassis/SMA_1"
+                        ],
+                        "AssociationForward": [
+                            "inventory"
+                        ],
+                        "ComponentIdentifier": 65282,
+                        "Name": "FW_SMA_1"
+                    },
+                    {
+                        "AssociationBackward": [
+                            "activation"
+                        ],
+                        "AssociationEndpoint": [
+                            "/xyz/openbmc_project/inventory/system/chassis/CPLD_1"
+                        ],
+                        "AssociationForward": [
+                            "inventory"
+                        ],
+                        "ComponentIdentifier": 288,
+                        "Manufacturer": "Lattice",
+                        "Name": "FW_CPLD_1"
+                    }
+                ],
+                "MCTPTargetName": "SMA_1",
+                "Name": "SMA_1_PLDM",
+                "StaticEID": 69,
+                "Type": "PLDMFirmwareDevice"
+            }
+        ],
+        "Probe": [
+            "au.com.codeconstruct.MCTP.Interface1({'Interface': 'musbswb1'})",
+            "AND",
+            "FOUND('BMC_0')"
+        ],
+        "Type": "Platform"
+    },
+    {
+        "Name": "IRoT_SMA_2_MCTP",
+        "PlatformExposes": [
+            {
+                "Interface": "musbswb2",
+                "Name": "SMA_2",
+                "PollingInterval": "5",
+                "StaticEndpointID": "70",
+                "Type": "MCTPUSBDevice",
+                "USBPath": "swb2"
+            },
+            {
+                "CreateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/IRoT_SMA_2",
+                "MCTPTargetName": "SMA_2",
+                "Manufacturer": "NVIDIA",
+                "Name": "IRoT_SMA_2_DevInv",
+                "Type": "PLDMDeviceInventory",
+                "UpdateInventoryPath": "/xyz/openbmc_project/inventory/system/chassis/SMA_2"
+            },
+            {
+                "Components": [
+                    {
+                        "AssociationBackward": [
+                            "activation"
+                        ],
+                        "AssociationEndpoint": [
+                            "/xyz/openbmc_project/inventory/system/chassis/SMA_2"
+                        ],
+                        "AssociationForward": [
+                            "inventory"
+                        ],
+                        "ComponentIdentifier": 65282,
+                        "Name": "FW_SMA_2"
+                    },
+                    {
+                        "AssociationBackward": [
+                            "activation"
+                        ],
+                        "AssociationEndpoint": [
+                            "/xyz/openbmc_project/inventory/system/chassis/CPLD_2"
+                        ],
+                        "AssociationForward": [
+                            "inventory"
+                        ],
+                        "ComponentIdentifier": 288,
+                        "Manufacturer": "Lattice",
+                        "Name": "FW_CPLD_2"
+                    }
+                ],
+                "MCTPTargetName": "SMA_2",
+                "Name": "SMA_2_PLDM",
+                "StaticEID": 70,
+                "Type": "PLDMFirmwareDevice"
+            }
+        ],
+        "Probe": [
+            "au.com.codeconstruct.MCTP.Interface1({'Interface': 'musbswb2'})",
+            "AND",
+            "FOUND('BMC_0')"
+        ],
+        "Type": "Platform"
     }
 ]
