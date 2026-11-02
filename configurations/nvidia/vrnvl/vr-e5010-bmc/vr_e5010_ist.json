@@ -1,0 +1,20 @@
+{
+    "Exposes": [
+        {
+            "Name": "IST",
+            "ResetCommand": "/bin/powerctrl.sh ist_graceful_reset",
+            "ResetMethod": "command",
+            "SoftwareInventoryId": "IST_Vectors",
+            "Type": "IST"
+        },
+        {
+            "BootGpio": "B0_M1_CPU_IST_BOOT-B",
+            "Index": 0,
+            "Name": "B0_M1",
+            "Type": "ISTDomain"
+        }
+    ],
+    "Name": "IST_Config",
+    "Probe": "TRUE",
+    "Type": "IST_Config"
+}

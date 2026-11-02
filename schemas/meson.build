@@ -21,6 +21,7 @@ schemas = [
     'nvidia_eeprom_24c512.json',
     'nvidia_fru_eeprom.json',
     'nvidia_i2c_device_association.json',
+    'nvidia_ist.json',
     'nvidia_leak_detection_policy.json',
     'nvidia_m2nvme0_port.json',
     'nvidia_misc.json',

@@ -1,0 +1,26 @@
+{
+    "Exposes": [
+        {
+            "DotObjectPrefix": "/xyz/openbmc_project/DOT/IRoT_CPU_",
+            "Name": "IST",
+            "SoftwareInventoryId": "IST_Vectors",
+            "Type": "IST"
+        },
+        {
+            "BootGpio": "B0_M1_CPU_IST_BOOT_HMC-O",
+            "Cpus": [
+                0,
+                1
+            ],
+            "Index": 0,
+            "Name": "B0_M1",
+            "PreResetGpio": "B0_M1_HMC_IST_PRE_RST_L-O",
+            "ShutdownOkGpio": "B0_M1_CPU_SHDN_OK_L_3V3-I",
+            "SysResetGpio": "B0_M1_IST_SYS_RST_L-O",
+            "Type": "ISTDomain"
+        }
+    ],
+    "Name": "IST_Config",
+    "Probe": "TRUE",
+    "Type": "IST_Config"
+}

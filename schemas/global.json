@@ -77,6 +77,7 @@
                         "HardwareWriteProtectedControl",
                         "I2CDeviceAssociation",
                         "I2CFan",
+                        "IST_Config",
                         "LM5066i",
                         "LM5066I",
                         "LTC4287",

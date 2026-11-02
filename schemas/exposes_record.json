@@ -446,6 +446,12 @@
                     "$ref": "nvidia_misc.json#/$defs/GPIOCableSensing"
                 },
                 {
+                    "$ref": "nvidia_ist.json#/$defs/IST"
+                },
+                {
+                    "$ref": "nvidia_ist.json#/$defs/ISTDomain"
+                },
+                {
                     "$ref": "nvidia_recovery.json#/$defs/GPIORecovery"
                 },
                 {
