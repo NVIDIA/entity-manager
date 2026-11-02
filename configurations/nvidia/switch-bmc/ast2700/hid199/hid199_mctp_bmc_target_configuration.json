@@ -3,7 +3,7 @@
         "Exposes": [
             {
                 "Interface": "$Interface",
-                "Name": "SMA_0",
+                "Name": "SMA_1",
                 "PollingInterval": "5",
                 "StaticEndpointID": "69",
                 "Type": "MCTPUSBDevice",
@@ -18,7 +18,7 @@
         "Exposes": [
             {
                 "Interface": "$Interface",
-                "Name": "SMA_1",
+                "Name": "SMA_2",
                 "PollingInterval": "5",
                 "StaticEndpointID": "70",
                 "Type": "MCTPUSBDevice",
@@ -33,7 +33,7 @@
         "Exposes": [
             {
                 "Interface": "$Interface",
-                "Name": "SMA_2",
+                "Name": "SMA_0",
                 "PollingInterval": "5",
                 "StaticEndpointID": "71",
                 "Type": "MCTPUSBDevice",

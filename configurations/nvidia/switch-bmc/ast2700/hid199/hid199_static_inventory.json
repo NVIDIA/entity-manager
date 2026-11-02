@@ -19,7 +19,7 @@
             "DEVICE_ROLE": "NVSSMA",
             "DEVICE_TYPE": 5,
             "INSTANCE_NUMBER": 0,
-            "UUID": "STATIC:261:0:MCTP_EID:69"
+            "UUID": "STATIC:261:0:MCTP_EID:71"
         }
     },
     {
@@ -31,7 +31,7 @@
             "DEVICE_ROLE": "NVSSMA",
             "DEVICE_TYPE": 5,
             "INSTANCE_NUMBER": 1,
-            "UUID": "STATIC:261:1:MCTP_EID:70"
+            "UUID": "STATIC:261:1:MCTP_EID:69"
         }
     },
     {
@@ -43,7 +43,7 @@
             "DEVICE_ROLE": "NVSSMA",
             "DEVICE_TYPE": 5,
             "INSTANCE_NUMBER": 2,
-            "UUID": "STATIC:261:2:MCTP_EID:71"
+            "UUID": "STATIC:261:2:MCTP_EID:70"
         }
     }
 ]

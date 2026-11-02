@@ -114,7 +114,7 @@
                 ],
                 "ChassisName": "CPLD_0",
                 "ComponentClassification": 10,
-                "ComponentIdentifier": 65283,
+                "ComponentIdentifier": 288,
                 "ComponentIndex": 0,
                 "FirmwareType": "AP",
                 "Name": "Slot3",
@@ -124,18 +124,18 @@
             {
                 "Associations": [
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/software/FW_CPLD_1",
-                        "Backward": "ActiveSlot",
+                        "AbsolutePath": "/xyz/openbmc_project/software/FW_CPLD_0",
+                        "Backward": "InactiveSlot",
                         "Forward": "software"
                     }
                 ],
-                "ChassisName": "CPLD_1",
+                "ChassisName": "CPLD_0",
                 "ComponentClassification": 10,
-                "ComponentIdentifier": 65284,
+                "ComponentIdentifier": 288,
                 "ComponentIndex": 0,
                 "FirmwareType": "AP",
                 "Name": "Slot4",
-                "SlotType": "Active",
+                "SlotType": "InActive",
                 "Type": "NSM_RoT_Slot"
             }
         ],
@@ -189,7 +189,7 @@
                 "DeviceType": "$DEVICE_TYPE",
                 "ImageCopyEnabled": true,
                 "Name": "IRoT_SMA_1",
-                "SlotCount": 3,
+                "SlotCount": 4,
                 "Type": "NSM_ChassisRoT",
                 "UUID": "$UUID"
             },
@@ -249,18 +249,35 @@
             {
                 "Associations": [
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/software/FW_CPLD_2",
+                        "AbsolutePath": "/xyz/openbmc_project/software/FW_CPLD_1",
                         "Backward": "ActiveSlot",
                         "Forward": "software"
                     }
                 ],
-                "ChassisName": "CPLD_2",
+                "ChassisName": "CPLD_1",
                 "ComponentClassification": 10,
-                "ComponentIdentifier": 65283,
+                "ComponentIdentifier": 288,
                 "ComponentIndex": 0,
                 "FirmwareType": "AP",
                 "Name": "Slot3",
                 "SlotType": "Active",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/FW_CPLD_1",
+                        "Backward": "InactiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "CPLD_1",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 288,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot4",
+                "SlotType": "InActive",
                 "Type": "NSM_RoT_Slot"
             }
         ],
@@ -309,7 +326,7 @@
                 "DeviceType": "$DEVICE_TYPE",
                 "ImageCopyEnabled": true,
                 "Name": "IRoT_SMA_2",
-                "SlotCount": 2,
+                "SlotCount": 4,
                 "Type": "NSM_ChassisRoT",
                 "UUID": "$UUID"
             },
@@ -321,6 +338,11 @@
                 "Name": "DebugToken",
                 "Type": "NSM_DebugToken",
                 "UUID": "$UUID"
+            },
+            {
+                "ComponentType": "AP",
+                "Name": "AP",
+                "Type": "NSM_FW_ComponentType"
             },
             {
                 "ComponentType": "EC",
@@ -358,6 +380,40 @@
                 "ComponentIndex": 0,
                 "FirmwareType": "EC",
                 "Name": "Slot2",
+                "SlotType": "InActive",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/FW_CPLD_2",
+                        "Backward": "ActiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "CPLD_2",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 288,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot3",
+                "SlotType": "Active",
+                "Type": "NSM_RoT_Slot"
+            },
+            {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/software/FW_CPLD_2",
+                        "Backward": "InactiveSlot",
+                        "Forward": "software"
+                    }
+                ],
+                "ChassisName": "CPLD_2",
+                "ComponentClassification": 10,
+                "ComponentIdentifier": 288,
+                "ComponentIndex": 0,
+                "FirmwareType": "AP",
+                "Name": "Slot4",
                 "SlotType": "InActive",
                 "Type": "NSM_RoT_Slot"
             }

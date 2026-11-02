@@ -64,28 +64,14 @@
                     "AssociationForward": [
                         "inventory"
                     ],
-                    "ComponentIdentifier": 65283,
+                    "ComponentIdentifier": 288,
                     "Manufacturer": "Lattice",
                     "Name": "FW_CPLD_0"
-                },
-                {
-                    "AssociationBackward": [
-                        "activation"
-                    ],
-                    "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/CPLD_1"
-                    ],
-                    "AssociationForward": [
-                        "inventory"
-                    ],
-                    "ComponentIdentifier": 65284,
-                    "Manufacturer": "Lattice",
-                    "Name": "FW_CPLD_1"
                 }
             ],
             "MCTPTargetName": "SMA_0",
             "Name": "SMA_0_PLDM",
-            "StaticEID": 69,
+            "StaticEID": 71,
             "Type": "PLDMFirmwareDevice"
         },
         {
@@ -108,19 +94,19 @@
                         "activation"
                     ],
                     "AssociationEndpoint": [
-                        "/xyz/openbmc_project/inventory/system/chassis/CPLD_2"
+                        "/xyz/openbmc_project/inventory/system/chassis/CPLD_1"
                     ],
                     "AssociationForward": [
                         "inventory"
                     ],
-                    "ComponentIdentifier": 65283,
+                    "ComponentIdentifier": 288,
                     "Manufacturer": "Lattice",
-                    "Name": "FW_CPLD_2"
+                    "Name": "FW_CPLD_1"
                 }
             ],
             "MCTPTargetName": "SMA_1",
             "Name": "SMA_1_PLDM",
-            "StaticEID": 70,
+            "StaticEID": 69,
             "Type": "PLDMFirmwareDevice"
         },
         {
@@ -137,11 +123,25 @@
                     ],
                     "ComponentIdentifier": 65282,
                     "Name": "FW_SMA_2"
+                },
+                {
+                    "AssociationBackward": [
+                        "activation"
+                    ],
+                    "AssociationEndpoint": [
+                        "/xyz/openbmc_project/inventory/system/chassis/CPLD_2"
+                    ],
+                    "AssociationForward": [
+                        "inventory"
+                    ],
+                    "ComponentIdentifier": 288,
+                    "Manufacturer": "Lattice",
+                    "Name": "FW_CPLD_2"
                 }
             ],
             "MCTPTargetName": "SMA_2",
             "Name": "SMA_2_PLDM",
-            "StaticEID": 71,
+            "StaticEID": 70,
             "Type": "PLDMFirmwareDevice"
         },
         {
