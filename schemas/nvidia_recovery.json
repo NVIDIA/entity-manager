@@ -546,6 +546,41 @@
                 }
             },
             "required": ["Name", "Type", "DeviceType"]
+        },
+        "RecoveryPackages": {
+            "description": "Model IDs of the recovery PLDM packages of the machine; code-manager reads each <Device>PackageUUID as the Nvidia:<Device>Recovery:<UUID> supported model of that recovery updater when the build sets none.",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConnectXPackageUUID": {
+                    "type": "string",
+                    "pattern": "^[0-9A-Fa-f]{32}$"
+                },
+                "GlacierPackageUUID": {
+                    "type": "string",
+                    "pattern": "^[0-9A-Fa-f]{32}$"
+                },
+                "NVLinkManagementNICPackageUUID": {
+                    "type": "string",
+                    "pattern": "^[0-9A-Fa-f]{32}$"
+                },
+                "NVSwitchPackageUUID": {
+                    "type": "string",
+                    "pattern": "^[0-9A-Fa-f]{32}$"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "RecoveryPackages"
+                },
+                "USBDFUPackageUUID": {
+                    "type": "string",
+                    "pattern": "^[0-9A-Fa-f]{32}$"
+                }
+            },
+            "required": ["Name", "Type"]
         }
     }
 }

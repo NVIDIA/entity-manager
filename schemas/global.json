@@ -91,6 +91,7 @@
                         "PowerSupply",
                         "ProcessorModule0",
                         "ProcessorModule1",
+                        "RecoveryPackages",
                         "Recovery_Config",
                         "SMM_0",
                         "SMM_Interposer_0",

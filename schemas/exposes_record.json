@@ -551,6 +551,9 @@
                     "$ref": "nvidia_recovery.json#/$defs/MSTRecoveryPolicy"
                 },
                 {
+                    "$ref": "nvidia_recovery.json#/$defs/RecoveryPackages"
+                },
+                {
                     "$ref": "nvidia_sensors.json#/$defs/LM5066i"
                 },
                 {
