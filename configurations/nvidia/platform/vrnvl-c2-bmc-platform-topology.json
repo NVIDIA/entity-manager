@@ -13,6 +13,7 @@
         "Name": "ERoT_BMC_0",
         "Type": "NvDevice",
         "Kind": "erot",
+        "ParentChassis": "BMC_0",
         "Generation": "vera-rubin",
         "Instance": 0,
         "EID": 10,

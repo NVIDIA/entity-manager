@@ -7,6 +7,11 @@
     "BmcName": "HGX_BMC_0",
     "PlatformExposes": [
       {
+        "Name": "DevicePrefix",
+        "Type": "DevicePrefix",
+        "Prefix": "HGX_"
+      },
+      {
         "Name": "HMC_USB_GADGET_0",
         "Type": "MCTPUSBGadgetTarget",
         "Interface": "mctpusbg0",

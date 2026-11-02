@@ -12,6 +12,10 @@ more entities.
 2. They use `"Type": "Platform"` and a **PlatformExposes** array (not Exposes)
 3. They are validated at build time against the schema in `schemas/global.json`
    (EMPlatformConfig), which references `schemas/platform_schemas/`
+4. Only the `PlatformExposes` records are published on D-Bus. Top-level keys
+   such as `NamePrefix` are `$Platform.<key>` template variables only; a value
+   daemons read directly goes in a record (for example `DevicePrefix`, read by
+   bmcweb and pldmd as `xyz.openbmc_project.Configuration.DevicePrefix`)
 
 They allow exposing configuration that can't be described against a single
 entity. One example is configuration for MCTP over USB networks, which can

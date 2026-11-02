@@ -50,6 +50,10 @@
                 {
                     "$comment": "downstream-only: the BMC's I2C path to the HMC mailbox, consumed by hmc-dump-client.",
                     "$ref": "../nvidia_misc.json#/$defs/HmcMailbox"
+                },
+                {
+                    "$comment": "downstream-only: the platform's device-name prefix, consumed by bmcweb and pldmd.",
+                    "$ref": "device_prefix.json#/$defs/DevicePrefix"
                 }
             ]
         },

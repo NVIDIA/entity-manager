@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "NVIDIA DevicePrefix schema",
+    "$defs": {
+        "DevicePrefix": {
+            "description": "The prefix of the platform's device names (HGX_, MGX_, empty on a BMC-only platform). Published as xyz.openbmc_project.Configuration.DevicePrefix on the platform object, read by bmcweb and pldmd.",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Prefix": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "DevicePrefix"
+                }
+            },
+            "required": ["Name", "Prefix", "Type"]
+        }
+    }
+}
