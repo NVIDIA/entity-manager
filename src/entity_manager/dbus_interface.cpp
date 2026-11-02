@@ -172,11 +172,102 @@ static void populateInterfacePropertyFromJson(
     }
 }
 
+// Nvidia Added Code Start
+template <typename T>
+static std::vector<T> jsonArrayToVector(const nlohmann::json& array)
+{
+    std::vector<T> values;
+    values.reserve(array.size());
+    for (const auto& item : array)
+    {
+        values.emplace_back(item.get<T>());
+    }
+    return values;
+}
+
+std::optional<DictPropertyType> jsonObjectToDict(const nlohmann::json& object)
+{
+    if (!object.is_object())
+    {
+        return std::nullopt;
+    }
+
+    DictPropertyType dict;
+    for (const auto& [key, value] : object.items())
+    {
+        switch (value.type())
+        {
+            case nlohmann::json::value_t::boolean:
+                dict.emplace(key, value.get<bool>());
+                break;
+            case nlohmann::json::value_t::number_integer:
+                dict.emplace(key, value.get<int64_t>());
+                break;
+            case nlohmann::json::value_t::number_unsigned:
+                dict.emplace(key, value.get<uint64_t>());
+                break;
+            case nlohmann::json::value_t::number_float:
+                dict.emplace(key, value.get<double>());
+                break;
+            case nlohmann::json::value_t::string:
+                dict.emplace(key, value.get<std::string>());
+                break;
+            case nlohmann::json::value_t::array:
+            {
+                if (value.empty())
+                {
+                    break;
+                }
+                auto elementType = resolveArrayElementType(value);
+                if (!elementType)
+                {
+                    return std::nullopt;
+                }
+                switch (*elementType)
+                {
+                    case nlohmann::json::value_t::boolean:
+                    {
+                        std::vector<uint8_t> values;
+                        values.reserve(value.size());
+                        for (const auto& item : value)
+                        {
+                            values.emplace_back(item.get<bool>() ? 1 : 0);
+                        }
+                        dict.emplace(key, std::move(values));
+                        break;
+                    }
+                    case nlohmann::json::value_t::number_integer:
+                        dict.emplace(key, jsonArrayToVector<int64_t>(value));
+                        break;
+                    case nlohmann::json::value_t::number_unsigned:
+                        dict.emplace(key, jsonArrayToVector<uint64_t>(value));
+                        break;
+                    case nlohmann::json::value_t::number_float:
+                        dict.emplace(key, jsonArrayToVector<double>(value));
+                        break;
+                    case nlohmann::json::value_t::string:
+                        dict.emplace(key,
+                                     jsonArrayToVector<std::string>(value));
+                        break;
+                    default:
+                        return std::nullopt;
+                }
+                break;
+            }
+            default:
+                return std::nullopt;
+        }
+    }
+    return dict;
+}
+// Nvidia Added Code End
+
 // adds simple json types to interface's properties
 void EMDBusInterface::populateInterfaceFromJson(
     nlohmann::json& systemConfiguration, const std::string& jsonPointerPath,
     std::shared_ptr<sdbusplus::asio::dbus_interface>& iface,
-    nlohmann::json& dict, sdbusplus::asio::PropertyPermission permission)
+    nlohmann::json& dict, sdbusplus::asio::PropertyPermission permission,
+    bool objectsAsDict)
 {
     for (const auto& [key, value] : dict.items())
     {
@@ -199,6 +290,20 @@ void EMDBusInterface::populateInterfaceFromJson(
         }
         if (type == nlohmann::json::value_t::object)
         {
+            // Nvidia Added Code Start
+            if (objectsAsDict && value.is_object())
+            {
+                auto dictValue = jsonObjectToDict(value);
+                if (!dictValue)
+                {
+                    lg2::error(
+                        "Unsupported nested json for dict property {KEY}: {VALUE}",
+                        "KEY", key, "VALUE", value);
+                    continue;
+                }
+                iface->register_property(key, *dictValue);
+            }
+            // Nvidia Added Code End
             continue; // handled elsewhere
         }
 

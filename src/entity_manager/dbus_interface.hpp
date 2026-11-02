@@ -9,6 +9,8 @@
 #include <sdbusplus/asio/object_server.hpp>
 
 #include <flat_map>
+#include <map>
+#include <optional>
 #include <vector>
 
 namespace dbus_interface
@@ -18,6 +20,20 @@ using JsonVariantType =
     std::variant<std::vector<std::string>, std::vector<double>, std::string,
                  int64_t, uint64_t, double, int32_t, uint32_t, int16_t,
                  uint16_t, uint8_t, bool>;
+
+// Nvidia Added Code Start
+// Boolean arrays are carried as std::vector<uint8_t>, see addArrayToDbus<bool>.
+using DictVariantType =
+    std::variant<bool, int64_t, uint64_t, double, std::string,
+                 std::vector<uint8_t>, std::vector<int64_t>,
+                 std::vector<uint64_t>, std::vector<double>,
+                 std::vector<std::string>>;
+using DictPropertyType = std::map<std::string, DictVariantType>;
+
+// Converts a flat json object to an a{sv} property value. Empty arrays are
+// omitted. Returns std::nullopt for nested objects or mixed-type arrays.
+std::optional<DictPropertyType> jsonObjectToDict(const nlohmann::json& object);
+// Nvidia Added Code End
 
 class EMDBusInterface
 {
@@ -43,7 +59,8 @@ class EMDBusInterface
         std::shared_ptr<sdbusplus::asio::dbus_interface>& iface,
         nlohmann::json& dict,
         sdbusplus::asio::PropertyPermission permission =
-            sdbusplus::asio::PropertyPermission::readOnly);
+            sdbusplus::asio::PropertyPermission::readOnly,
+        bool objectsAsDict = false);
 
     void createDeleteObjectMethod(
         const std::string& jsonPointerPath,

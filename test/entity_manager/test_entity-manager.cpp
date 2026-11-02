@@ -1,3 +1,4 @@
+#include "entity_manager/dbus_interface.hpp"
 #include "entity_manager/utils.hpp"
 #include "utils.hpp"
 
@@ -1438,4 +1439,71 @@ TEST(HandleLeftOverTemplateVars, resolvedValuesAreKept)
     em_utils::handleLeftOverTemplateVars(j);
 
     EXPECT_EQ(before, j);
+}
+
+TEST(JsonObjectToDict, scalars)
+{
+    nlohmann::json j = {{"Enabled", false},
+                        {"Value", "GPU_0"},
+                        {"Count", 4},
+                        {"Offset", -1},
+                        {"Scale", 0.5}};
+
+    auto dict = dbus_interface::jsonObjectToDict(j);
+
+    ASSERT_TRUE(dict);
+    EXPECT_EQ(false, std::get<bool>(dict->at("Enabled")));
+    EXPECT_EQ("GPU_0", std::get<std::string>(dict->at("Value")));
+    EXPECT_EQ(4U, std::get<uint64_t>(dict->at("Count")));
+    EXPECT_EQ(-1, std::get<int64_t>(dict->at("Offset")));
+    EXPECT_EQ(0.5, std::get<double>(dict->at("Scale")));
+}
+
+TEST(JsonObjectToDict, arrays)
+{
+    nlohmann::json j = {{"Bitfield", {255, 255, 223, 15}},
+                        {"Signed", {1, -2}},
+                        {"Names", {"a", "b"}},
+                        {"Flags", {true, false}},
+                        {"Empty", nlohmann::json::array()}};
+
+    auto dict = dbus_interface::jsonObjectToDict(j);
+
+    ASSERT_TRUE(dict);
+    EXPECT_EQ((std::vector<uint64_t>{255, 255, 223, 15}),
+              std::get<std::vector<uint64_t>>(dict->at("Bitfield")));
+    EXPECT_EQ((std::vector<int64_t>{1, -2}),
+              std::get<std::vector<int64_t>>(dict->at("Signed")));
+    EXPECT_EQ((std::vector<std::string>{"a", "b"}),
+              std::get<std::vector<std::string>>(dict->at("Names")));
+    EXPECT_EQ((std::vector<uint8_t>{1, 0}),
+              std::get<std::vector<uint8_t>>(dict->at("Flags")));
+    EXPECT_FALSE(dict->contains("Empty"));
+}
+
+TEST(JsonObjectToDict, emptyObject)
+{
+    auto dict = dbus_interface::jsonObjectToDict(nlohmann::json::object());
+
+    ASSERT_TRUE(dict);
+    EXPECT_TRUE(dict->empty());
+}
+
+TEST(JsonObjectToDict, rejectsNestedObject)
+{
+    nlohmann::json j = {{"Value", {{"Inner", 1}}}};
+
+    EXPECT_FALSE(dbus_interface::jsonObjectToDict(j));
+}
+
+TEST(JsonObjectToDict, rejectsMixedArray)
+{
+    nlohmann::json j = {{"Value", {1, "a"}}};
+
+    EXPECT_FALSE(dbus_interface::jsonObjectToDict(j));
+}
+
+TEST(JsonObjectToDict, rejectsNonObject)
+{
+    EXPECT_FALSE(dbus_interface::jsonObjectToDict(nlohmann::json::array()));
 }

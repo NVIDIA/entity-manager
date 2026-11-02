@@ -607,7 +607,7 @@ bool EntityManager::postConfigurationRecord(
 
         dbus_interface.populateInterfaceFromJson(
             systemConfiguration, jsonPointerPath, objectIface, config,
-            getPermission(name));
+            getPermission(name), true);
     }
     else if (config.type() == nlohmann::json::value_t::array)
     {
@@ -651,7 +651,7 @@ bool EntityManager::postConfigurationRecord(
             dbus_interface.populateInterfaceFromJson(
                 systemConfiguration,
                 jsonPointerPath + "/" + std::to_string(index), objectIface,
-                arrayItem, getPermission(name));
+                arrayItem, getPermission(name), true);
             index++;
         }
     }
