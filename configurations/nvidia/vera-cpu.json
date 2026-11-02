@@ -1,16 +1,17 @@
 [
   {
-    "Name": "$Platform.NamePrefixIRoT_CPU_$Instance",
+    "Name": "$Name",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin'})",
     "Type": "NvDevice",
-    "Kind": "cpu",
-    "InstanceNumber": "$Instance",
-    "EID": "$EID",
     "Exposes": [
       {
         "Name": "NSM_Telemetry",
         "Type": "NSM_Telemetry",
-        "Disable": [],
+        "Kind": "cpu",
+        "InstanceNumber": "$Instance",
+        "EID": "$EID",
+        "LocationContext": "$LocationContext",
+        "LocationCode": "$LocationCode",
         "ParameterOverrides": {}
       },
       {

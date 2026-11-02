@@ -30,12 +30,14 @@
     "Name": "$Name",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vera-rubin'})",
     "Type": "NvDevice",
-    "Kind": "cx9_io",
     "Exposes": [
       {
         "Name": "NSM_Telemetry",
         "Type": "NSM_Telemetry",
-        "Disable": [],
+        "Kind": "cx9_io",
+        "InstanceNumber": "$Instance",
+        "EID": "$EID",
+        "LocationContext": "$LocationContext",
         "ParameterOverrides": {}
       },
       {

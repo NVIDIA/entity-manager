@@ -3,18 +3,17 @@
     "Name": "$Name",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^gpu$', 'Generation': 'vera-rubin'})",
     "Type": "NvDevice",
-    "Kind": "gpu",
-    "InstanceNumber": "$Instance",
-    "EID": "$EID",
-    "ParentChassis": "$ParentChassis",
-    "NvLinkCount": 36,
-    "LocationCode": "$LocationCode",
-    "LocationContext": "$LocationContext",
     "Exposes": [
       {
         "Name": "NSM_Telemetry",
         "Type": "NSM_Telemetry",
-        "Disable": [],
+        "Kind": "gpu",
+        "InstanceNumber": "$Instance",
+        "EID": "$EID",
+        "ParentChassis": "$ParentChassis",
+        "NvLinkCount": 36,
+        "LocationCode": "$LocationCode",
+        "LocationContext": "$LocationContext",
         "ParameterOverrides": {}
       },
       {

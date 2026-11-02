@@ -3,22 +3,16 @@
     "Name": "$Name",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^erot$', 'Generation': 'vera-rubin'})",
     "Type": "NvDevice",
-    "Kind": "erot",
-    "InstanceNumber": "$Instance",
-    "EID": "$EID",
     "Exposes": [
       {
         "Name": "NSM_Telemetry",
         "Type": "NSM_Telemetry",
-        "Disable": [],
-        "ParameterOverrides": {
-          "LocationCode": {
-            "Value": "$LocationCode"
-          },
-          "LocationContext": {
-            "Value": "$LocationContext"
-          }
-        }
+        "Kind": "hmc_erot",
+        "InstanceNumber": "$Instance",
+        "EID": "$EID",
+        "LocationCode": "$LocationCode",
+        "LocationContext": "$LocationContext",
+        "ParameterOverrides": {}
       },
       {
         "DeviceAddress": "MCTP:$EID",

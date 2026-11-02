@@ -17,12 +17,6 @@
         "Kind": "cx_sma",
         "Policy": [
           {
-            "Devices": [],
-            "ChassisIRoTResponder": {
-              "Enabled": false
-            }
-          },
-          {
             "Devices": [
               "IO_Board_SMA_0",
               "IO_Board_SMA_2"
@@ -42,9 +36,6 @@
             "Devices": [
               "Bay_C_CX_0"
             ],
-            "PortCount": {
-              "Value": 1
-            },
             "OpticalModuleResetSupported": {
               "Enabled": false
             }
@@ -92,17 +83,6 @@
             },
             "BusBarTemp_0": {
               "Enabled": false
-            }
-          },
-          {
-            "Devices": [
-              "HGX_ProcessorModule_SMA_1"
-            ],
-            "TotalGpuPower": {
-              "Enabled": false
-            },
-            "TotalGpuPowerGpuCount": {
-              "Value": 0
             }
           }
         ]

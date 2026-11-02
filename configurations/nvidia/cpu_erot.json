@@ -3,13 +3,13 @@
     "Name": "$Name",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu_erot$', 'Generation': 'vera-rubin'})",
     "Type": "NvDevice",
-    "Kind": "cpu_erot",
-    "InstanceNumber": "$Instance",
-    "EID": "$EID",
     "Exposes": [
       {
         "Name": "NSM_Telemetry",
         "Type": "NSM_Telemetry",
+        "Kind": "cpu_erot",
+        "InstanceNumber": "$Instance",
+        "EID": "$EID",
         "Disable": [],
         "ParameterOverrides": {}
       },

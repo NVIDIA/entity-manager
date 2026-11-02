@@ -3,32 +3,16 @@
     "Name": "$Name",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^erot$', 'Generation': 'vera-rubin'})",
     "Type": "NvDevice",
-    "Kind": "erot",
-    "InstanceNumber": "$Instance",
-    "EID": "$EID",
     "Exposes": [
       {
         "Name": "NSM_Telemetry",
         "Type": "NSM_Telemetry",
-        "Disable": [
-          "Device.ChassisIRoTResponder",
-          "Device.FW_ComponentType.AP",
-          "Device.FW_ComponentType.EC"
-        ],
-        "ParameterOverrides": {
-          "ImageCopyStateEnabled": {
-            "Enabled": false
-          },
-          "LocationCode": {
-            "Value": "$Name"
-          },
-          "LocationContext": {
-            "Value": "$Platform.TopChassis/SMM_Interposer_0/SMM_0/$Platform.BmcName"
-          },
-          "SKUUnsupported": {
-            "Enabled": true
-          }
-        }
+        "Kind": "erot",
+        "InstanceNumber": "$Instance",
+        "EID": "$EID",
+        "LocationContext": "$LocationContext",
+        "LocationCode": "$LocationCode",
+        "ParameterOverrides": {}
       },
       {
         "ConnectsToName": "$Platform.BmcName",
