@@ -233,7 +233,7 @@
                         "Forward": ""
                     },
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/state/Domain_2_Quantum_SPI_WriteProtect",
+                        "AbsolutePath": "/xyz/openbmc_project/state/Domain_1_Quantum_SPI_WriteProtect",
                         "Backward": "write_protects",
                         "Forward": "write_protected_by"
                     }

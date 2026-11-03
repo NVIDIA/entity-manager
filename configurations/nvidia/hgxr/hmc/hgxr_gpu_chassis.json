@@ -543,7 +543,7 @@
                         "Forward": ""
                     },
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/state/Domain_0_GPU_SPI_WriteProtect",
+                        "AbsolutePath": "/xyz/openbmc_project/state/Domain_2_GPU_SPI_WriteProtect",
                         "Backward": "write_protects",
                         "Forward": "write_protected_by"
                     }

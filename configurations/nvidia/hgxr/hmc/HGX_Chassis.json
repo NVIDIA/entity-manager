@@ -27,21 +27,21 @@
                 "UUID": "STATIC:773:0:MCTP_EID:84"
             },
             {
-                "Name": "Domain_0_GPU_SPI_WriteProtect",
+                "Name": "Domain_2_GPU_SPI_WriteProtect",
                 "Sources": [
                     "NSM_GPU_SPI_WriteProtect"
                 ],
                 "Type": "WriteProtectDomain"
             },
             {
-                "Name": "Domain_1_Baseboard_FRU_WriteProtect",
+                "Name": "Domain_0_Baseboard_FRU_WriteProtect",
                 "Sources": [
                     "NSM_Baseboard_FRU_WriteProtect"
                 ],
                 "Type": "WriteProtectDomain"
             },
             {
-                "Name": "Domain_2_Quantum_SPI_WriteProtect",
+                "Name": "Domain_1_Quantum_SPI_WriteProtect",
                 "Sources": [
                     "NSM_Quantum_SPI_WriteProtect"
                 ],
@@ -58,10 +58,10 @@
                     "HGX_FW_GPU_6",
                     "HGX_FW_GPU_7"
                 ],
-                "Name": "Domain_0_ProtectedComponents",
+                "Name": "GPU_ProtectedComponents",
                 "Sources": [
                     "HGX_HW_WriteProtect",
-                    "Domain_0_GPU_SPI_WriteProtect"
+                    "Domain_2_GPU_SPI_WriteProtect"
                 ],
                 "Type": "WriteProtectGroup"
             },
@@ -90,7 +90,7 @@
                 ],
                 "Name": "NVSwitch_ProtectedComponents",
                 "Sources": [
-                    "Domain_2_Quantum_SPI_WriteProtect",
+                    "Domain_1_Quantum_SPI_WriteProtect",
                     "HGX_HW_WriteProtect"
                 ],
                 "Type": "WriteProtectGroup"
@@ -201,7 +201,7 @@
                 [
                     "write_protected_by",
                     "write_protects",
-                    "/xyz/openbmc_project/state/Domain_1_Baseboard_FRU_WriteProtect"
+                    "/xyz/openbmc_project/state/Domain_0_Baseboard_FRU_WriteProtect"
                 ]
             ]
         },
