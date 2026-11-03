@@ -28,7 +28,7 @@
                     "type": "string"
                 },
                 "RequiredCpus": {
-                    "description": "Skip the CAK bypass when fewer CPUs than this are present.",
+                    "description": "Skip the CAK bypass when fewer CPUs than this are fitted: a short count means a partly populated machine. Must not exceed the CPUs the ISTDomain records declare (the hooks reject it). Do not set it on a board whose USBRCMRecovery records are probe-gated to tell SKUs apart (MGX C1/C2): there a short count is a valid smaller SKU, and every run on it would skip the bypass.",
                     "type": "integer",
                     "minimum": 1
                 },
