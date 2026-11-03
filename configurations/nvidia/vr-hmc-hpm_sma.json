@@ -13,6 +13,8 @@
         "LocationContext": "$LocationContext",
         "LocationCode": "$LocationCode",
         "ProcessorModuleName": "$ParentChassis",
+        "ParentChassis": "$ParentChassis",
+        "ZoneChassisName": "$ZoneChassis",
         "ParameterOverrides": {}
       },
       {

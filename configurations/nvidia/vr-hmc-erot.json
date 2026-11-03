@@ -12,6 +12,7 @@
         "EID": "$EID",
         "LocationCode": "$LocationCode",
         "LocationContext": "$LocationContext",
+        "ParentChassis": "$ParentChassis",
         "ParameterOverrides": {}
       },
       {

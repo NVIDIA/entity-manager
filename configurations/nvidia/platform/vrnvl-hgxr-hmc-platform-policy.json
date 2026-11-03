@@ -12,6 +12,15 @@
           {
             "Devices": [],
             "GPMMetrics": { "AggregatedMetricsBitfield": [255, 255, 223, 15]}
+          },
+          {
+            "Devices": [],
+            "ChassisParentAssociation": {
+              "ParentChassisAssociationPath": "chassis/{parentChassis}"
+            },
+            "IRoTSPDMResponder": {
+              "MctpUuidEnabled": false
+            }
           }
         ]
       },
@@ -30,6 +39,12 @@
             },
             "BusBarTemp_0": {
               "Enabled": false
+            }
+          },
+          {
+            "Devices": ["HGX_Baseboard_SMA_0"],
+            "ChassisParentAssociation": {
+              "ParentChassisAssociationPath": "chassis/{parentChassis}"
             }
           }
         ]
