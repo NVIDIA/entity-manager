@@ -125,5 +125,17 @@
         "xyz.openbmc_project.State.Decorator.Health": {
             "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
         }
+    },
+    {
+        "Name": "HGX DevicePrefix",
+        "PlatformExposes": [
+            {
+                "Name": "DevicePrefix",
+                "Prefix": "HGX_",
+                "Type": "DevicePrefix"
+            }
+        ],
+        "Probe": "FOUND('HGX_BMC_0')",
+        "Type": "Platform"
     }
 ]
