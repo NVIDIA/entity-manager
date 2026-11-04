@@ -142,7 +142,6 @@
       {
         "DotObjectPrefix": "/xyz/openbmc_project/DOT/HGX_IRoT_CPU_",
         "Name": "IST",
-        "RequiredCpus": 2,
         "SoftwareInventoryId": "HGX_IST_Vectors",
         "Type": "IST"
       },
@@ -157,19 +156,6 @@
         "PreResetGpio": "BRD0_HMC_IST_PRE_RST_L-O",
         "ShutdownOkGpio": "BRD0_CPU0_SHDN_OK_L_3V3-I",
         "SysResetGpio": "BRD0_IST_SYS_RST_L-O",
-        "Type": "ISTDomain"
-      },
-      {
-        "BootGpio": "BRD1_CPU_IST_BOOT_HMC-O",
-        "Cpus": [
-          1
-        ],
-        "Detect": true,
-        "Index": 1,
-        "Name": "BRD1",
-        "PreResetGpio": "BRD1_HMC_IST_PRE_RST_L-O",
-        "ShutdownOkGpio": "BRD1_CPU0_SHDN_OK_L_3V3-I",
-        "SysResetGpio": "BRD1_IST_SYS_RST_L-O",
         "Type": "ISTDomain"
       }
     ]
