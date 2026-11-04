@@ -697,6 +697,7 @@ configs = [
     'nvidia/vrnvl/vr-nvl-hmc/vr-nvl-hmc-ast2700/vrnvl_platform.json',
     'nvidia/vrnvl/vr-nvl-hmc/vr-nvl-hmc-ast2700/vrnvl_processor_systems_cpu.json',
     'nvidia/vrnvl/vr-nvl-hmc/vr-nvl-hmc-ast2700/vrnvl_static_inventory.json',
+    'nvidia/vrnvl/vr-nvl-hmc/vr-nvl-hmc-ast2700/vrnvl_static_inventory_gpu.json',
     'nvidia/vrnvl/vr-nvl-hmc/vr-nvl-hmc-ast2700/vrnvl_usbrcm_recovery_configuration.json',
     'nvidia/vrnvl/vr-nvl-hmc/vr-nvl-vhmc/HMC.json',
     'nvidia/vrnvl/vr-nvl-hmc/vr-nvl-vhmc/VR_Superchip.json',
