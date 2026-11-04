@@ -7,9 +7,11 @@
       {
         "Name": "NSM_Telemetry",
         "Type": "NSM_Telemetry",
-        "Kind": "irot",
+        "Kind": "bmc_irot",
         "InstanceNumber": "$Instance",
         "EID": "$EID",
+        "ParentChassis": "$ParentChassis",
+        "PlatformPrefix": "$Platform.NamePrefix",
         "LocationContext": "$LocationContext",
         "LocationCode": "$LocationCode",
         "ParameterOverrides": {}

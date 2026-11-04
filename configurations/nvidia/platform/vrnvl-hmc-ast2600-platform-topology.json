@@ -48,7 +48,7 @@
         ],
         "Generation": "vera-rubin",
         "ParentChassis": "HGX_ProcessorModule_0",
-        "LocationContext": "HGX_Chassis_0/ProcessorModule_0",
+        "LocationContext": "HGX_Chassis_0/ProcessorModule_0-Left",
         "EID": 10,
         "Transport": {
           "Medium": "usb",
@@ -121,7 +121,7 @@
         "Instance": 1,
         "Generation": "vera-rubin",
         "ParentChassis": "HGX_ProcessorModule_1",
-        "LocationContext": "HGX_Chassis_0/ProcessorModule_1",
+        "LocationContext": "HGX_Chassis_0/ProcessorModule_1-Right",
         "EID": 20,
         "BridgedProcessors": [
           "HGX_GPU_2",
