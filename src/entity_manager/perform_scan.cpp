@@ -535,6 +535,18 @@ void scan::detail::replaceTemplateFields(
     em_utils::handleLeftOverRecordTemplateVars(record);
 }
 
+DBusObject scan::detail::withPlatformVariables(
+    DBusObject object, const nlohmann::json& systemConfiguration)
+{
+    DBusInterface platformVariables =
+        em_utils::platformTemplateVariables(systemConfiguration);
+    if (!platformVariables.empty())
+    {
+        object["Platform"] = std::move(platformVariables);
+    }
+    return object;
+}
+
 static const std::string* configuredName(const nlohmann::json::object_t& record,
                                          const nlohmann::json& recordRef)
 {
@@ -609,16 +621,8 @@ void scan::PerformScan::updateSystemConfigurationForDevice(
     const DBusObject& dbusObject =
         (objectIt == dbusProbeObjects.end()) ? emptyObject : objectIt->second;
 
-    // The properties of the Platform record are variables of every record
-    // as $Platform.<Property>, on top of the properties of the matched
-    // object.
-    DBusObject templateObject = dbusObject;
-    DBusInterface platformVariables =
-        em_utils::platformTemplateVariables(_em.systemConfiguration);
-    if (!platformVariables.empty())
-    {
-        templateObject["Platform"] = std::move(platformVariables);
-    }
+    const DBusObject templateObject =
+        detail::withPlatformVariables(dbusObject, _em.systemConfiguration);
 
     const nlohmann::json::object_t* recordPtr =
         recordRef.get_ptr<const nlohmann::json::object_t*>();
@@ -745,17 +749,10 @@ void scan::PerformScan::updateAssemblyRecords(
     {
         foundDeviceIdx++;
         auto objectIt = dbusProbeObjects.find(device.path);
-        DBusObject templateObject;
-        if (objectIt != dbusProbeObjects.end())
-        {
-            templateObject = objectIt->second;
-        }
-        DBusInterface platformVariables =
-            em_utils::platformTemplateVariables(_em.systemConfiguration);
-        if (!platformVariables.empty())
-        {
-            templateObject["Platform"] = std::move(platformVariables);
-        }
+        const DBusObject templateObject = detail::withPlatformVariables(
+            (objectIt == dbusProbeObjects.end()) ? DBusObject{}
+                                                 : objectIt->second,
+            _em.systemConfiguration);
 
         // the properties of the FRU, from every interface of the object
         std::set<std::string, std::less<>> fruFields;
@@ -1013,10 +1010,47 @@ std::vector<std::string> scan::detail::collectConfiguredNames(
     return names;
 }
 
+static bool isPlatformRecord(const nlohmann::json& config)
+{
+    auto type = config.find("Type");
+    return type != config.end() && type->is_string() && *type == "Platform";
+}
+
+bool scan::detail::hasPendingPlatformRecord(
+    const std::vector<nlohmann::json>& configurations,
+    const std::vector<std::string>& passedProbes)
+{
+    return std::ranges::any_of(
+        configurations, [&passedProbes](const nlohmann::json& config) {
+            return isPlatformRecord(config) &&
+                   pendingProbeName(config, passedProbes) != nullptr;
+        });
+}
+
+bool scan::detail::probedInPass(const nlohmann::json& config, bool platformPass)
+{
+    return !platformPass || isPlatformRecord(config);
+}
+
+std::optional<bool> scan::detail::nextPass(bool passed, bool platformPass)
+{
+    if (passed || platformPass)
+    {
+        return false;
+    }
+    return std::nullopt;
+}
+
 bool scan::PerformScan::processConfigurations(
     std::flat_set<std::string, std::less<>>& dbusProbeInterfaces,
     std::vector<std::shared_ptr<probe::PerformProbe>>& dbusProbePointers)
 {
+    // Records are probed in file name order, so a board (SMM_Carrier_*)
+    // would be substituted before the platform topology that defines its
+    // $Platform.<Property> variables
+    _platformPass =
+        _platformPass &&
+        detail::hasPendingPlatformRecord(_configurations, passedProbes);
     for (auto it = _configurations.begin(); it != _configurations.end();)
     {
         // check for poorly formatted fields, probe must be an array
@@ -1036,11 +1070,18 @@ bool scan::PerformScan::processConfigurations(
             continue;
         }
 
+        if (!detail::probedInPass(*it, _platformPass))
+        {
+            it++;
+            continue;
+        }
+
         nlohmann::json& recordRef = *it;
         std::vector<probe::Token> probeCommand =
             detail::parseProbeCommand(*findProbe);
         if (probeCommand.empty())
         {
+            _platformPass = false;
             return false;
         }
 
@@ -1086,11 +1127,13 @@ void scan::PerformScan::run()
 
 scan::PerformScan::~PerformScan()
 {
-    if (_passed)
+    if (std::optional<bool> platformPass =
+            detail::nextPass(_passed, _platformPass))
     {
         auto nextScan = std::make_shared<PerformScan>(
             _em, _missingConfigurations, _configurations, io,
             std::move(_callback));
+        nextScan->_platformPass = *platformPass;
         nextScan->passedProbes = std::move(passedProbes);
         nextScan->dbusProbeObjects = std::move(dbusProbeObjects);
         boost::asio::post(_em.io, [nextScan]() { nextScan->run(); });

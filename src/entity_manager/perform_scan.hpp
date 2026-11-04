@@ -74,6 +74,10 @@ struct PerformScan final : std::enable_shared_from_this<PerformScan>
     std::vector<nlohmann::json> _configurations;
     std::function<void()> _callback;
     bool _passed = false;
+    // The first pass of a scan probes only the Platform records that are
+    // pending, so that their properties are $Platform.<Property> variables
+    // of every record probed in the later passes.
+    bool _platformPass = true;
 
     boost::asio::io_context& io;
 };
@@ -93,6 +97,27 @@ std::vector<std::string> collectConfiguredNames(
 
 void pruneMissingByName(nlohmann::json& missingConfigurations,
                         const std::vector<std::string>& names);
+
+// True if a pending (not yet applied) Platform record is in configurations:
+// the scan then probes the Platform records first, in a pass of their own.
+bool hasPendingPlatformRecord(const std::vector<nlohmann::json>& configurations,
+                              const std::vector<std::string>& passedProbes);
+
+// Whether a configuration is probed in this pass: the Platform pass probes
+// only Platform records, the other passes probe every configuration.
+bool probedInPass(const nlohmann::json& config, bool platformPass);
+
+// Whether a scan runs another pass after one that matched something
+// (passed) or was the Platform pass: nullopt when the scan is done, else
+// whether the next pass is a Platform pass (never: only the first pass of a
+// scan is).
+std::optional<bool> nextPass(bool passed, bool platformPass);
+
+// The template variables of a record matched on object: the properties of
+// the object, plus the properties of the Platform record(s) already in
+// systemConfiguration as $Platform.<Property>.
+DBusObject withPlatformVariables(DBusObject object,
+                                 const nlohmann::json& systemConfiguration);
 
 // Substitute the template variables of every property of a record except
 // Name, then handle the variables left over
