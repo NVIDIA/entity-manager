@@ -454,6 +454,12 @@
         "DataBus": 12,
         "Name": "HMC_0_Mailbox",
         "Type": "HmcMailbox"
+      },
+      {
+        "Name": "MCTPVROT_0",
+        "Type": "MCTPXROTTarget",
+        "Interface": "mctpvrot0",
+        "StaticEndpointID": "100"
       }
     ]
   }

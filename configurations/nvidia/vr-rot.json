@@ -25,7 +25,7 @@
         "Name": "$Name_PLDM",
         "Type": "PLDMDevice",
         "UpdateableComponents": {
-          "$Platform.NamePrefixFW_BMC_Caliptra_$Instance": 11,
+          "$Platform.NamePrefixFW_IRoT_BMC_$Instance": 11,
           "$Platform.NamePrefixFW_BMC_$Instance": 10
         }
       },
@@ -37,18 +37,12 @@
           "HwCheckout"
         ],
         "Type": "Dump"
-      }
-    ]
-  },
-  {
-    "Name": "VRoT_MCTP",
-    "Probe": "au.com.codeconstruct.MCTP.Interface1({'Interface': 'mctpvrot0'})",
-    "Type": "vrot",
-    "Exposes": [
+      },
       {
         "Interface": "$Interface",
-        "Name": "MCTPVROT_0",
-        "StaticEndpointID": "100",
+        "Name": "$Name",
+        "PollingInterval": "15",
+        "StaticEndpointID": "$EID",
         "Type": "MCTPXROTTarget"
       }
     ]
