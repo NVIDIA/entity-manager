@@ -62,6 +62,10 @@
                 {
                     "$comment": "downstream-only: in-system test CPU domain, consumed by nvidia-vera-kist.",
                     "$ref": "../nvidia_ist.json#/$defs/ISTDomain"
+                },
+                {
+                    "$comment": "downstream-only: MST recovery policy per device type, consumed by nvidia-code-mgmt.",
+                    "$ref": "../nvidia_recovery.json#/$defs/MSTRecoveryPolicy"
                 }
             ]
         },

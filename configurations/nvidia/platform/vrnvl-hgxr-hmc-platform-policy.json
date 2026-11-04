@@ -69,6 +69,34 @@
         "Devices": [],
         "LinkStateOnNetworkAdapter": true,
         "PlugParent": "HGX_OSFP_Board_0"
+      },
+      {
+        "DeviceType": "ConnectX",
+        "HealthyEvent": true,
+        "I2CForce": false,
+        "Name": "ConnectX_MST_Recovery_Policy",
+        "RecoveryFlow": "Mst",
+        "RecoveryGroups": [
+          "HGX_FW_ConnectX_0 HGX_FW_ConnectX_1 HGX_FW_ConnectX_2 HGX_FW_ConnectX_3 HGX_FW_ConnectX_4 HGX_FW_ConnectX_5 HGX_FW_ConnectX_6 HGX_FW_ConnectX_7"
+        ],
+        "SMAPresenceCheck": true,
+        "Type": "MSTRecoveryPolicy"
+      },
+      {
+        "DeviceType": "NVSwitch",
+        "Name": "NVSwitch_MST_Recovery_Policy",
+        "RecoveryGroups": [
+          "HGX_FW_NVSwitch_0 HGX_FW_NVSwitch_1 HGX_FW_NVSwitch_2 HGX_FW_NVSwitch_3"
+        ],
+        "Type": "MSTRecoveryPolicy"
+      },
+      {
+        "DeviceType": "NVLinkManagementNIC",
+        "Name": "NVLinkManagementNIC_MST_Recovery_Policy",
+        "RecoveryGroups": [
+          "HGX_FW_NVLinkManagementNIC_0"
+        ],
+        "Type": "MSTRecoveryPolicy"
       }
     ]
   }
