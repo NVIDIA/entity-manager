@@ -45,6 +45,11 @@
         "Hostname": "172.31.13.251",
         "Port": "80",
         "AuthType": "None"
+      },
+      {
+        "GlacierPackageUUID": "DBC2D178F70711EEBB65CFE7103AC1AC",
+        "Name": "RecoveryPackages",
+        "Type": "RecoveryPackages"
       }
     ]
   }

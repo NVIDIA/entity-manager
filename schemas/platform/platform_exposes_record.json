@@ -66,6 +66,10 @@
                 {
                     "$comment": "downstream-only: MST recovery policy per device type, consumed by nvidia-code-mgmt.",
                     "$ref": "../nvidia_recovery.json#/$defs/MSTRecoveryPolicy"
+                },
+                {
+                    "$comment": "downstream-only: recovery package model IDs of the machine, consumed by nvidia-code-mgmt.",
+                    "$ref": "../nvidia_recovery.json#/$defs/RecoveryPackages"
                 }
             ]
         },

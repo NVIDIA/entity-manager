@@ -295,6 +295,11 @@
         "ShutdownOkGpio": "B0_M1_CPU_SHDN_OK_L_3V3-I",
         "SysResetGpio": "B0_M1_IST_SYS_RST_L-O",
         "Type": "ISTDomain"
+      },
+      {
+        "GlacierPackageUUID": "DBC2D178F70711EEBB65CFE7103AC1AC",
+        "Name": "RecoveryPackages",
+        "Type": "RecoveryPackages"
       }
     ]
   }
