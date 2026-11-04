@@ -54,6 +54,14 @@
                 {
                     "$comment": "downstream-only: the platform's device-name prefix, consumed by bmcweb and pldmd.",
                     "$ref": "device_prefix.json#/$defs/DevicePrefix"
+                },
+                {
+                    "$comment": "downstream-only: in-system test board facts, consumed by nvidia-vera-kist.",
+                    "$ref": "../nvidia_ist.json#/$defs/IST"
+                },
+                {
+                    "$comment": "downstream-only: in-system test CPU domain, consumed by nvidia-vera-kist.",
+                    "$ref": "../nvidia_ist.json#/$defs/ISTDomain"
                 }
             ]
         },
