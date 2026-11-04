@@ -1,0 +1,24 @@
+[
+  {
+    "Name": "Nvidia SPC6 AST2700 Switch BMC",
+    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 4, 'ADDRESS': 80})",
+    "Type": "Platform",
+    "NamePrefix": "",
+    "BmcName": "BMC_0",
+    "PlatformExposes": [
+      {
+        "Name": "IRoT_BMC_0",
+        "Type": "NvDevice",
+        "Kind": "irot",
+        "Generation": "vera-rubin",
+        "Instance": 0,
+        "EID": 9,
+        "ParentChassis": "BMC_0",
+        "Transport": {
+          "Medium": "xrot",
+          "Interface": "mctpirot0"
+        }
+      }
+    ]
+  }
+]
