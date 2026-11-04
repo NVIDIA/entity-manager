@@ -41,65 +41,14 @@
             }
           }
         ]
-      },
-      {
-        "DeviceType": "ConnectX",
-        "HealthyEvent": false,
-        "I2CForce": true,
-        "Name": "ConnectX_MST_Recovery_Policy",
-        "RecoveryFlow": "Mst",
-        "RecoveryGroups": [
-          "FW_CX_0 FW_CX_2 FW_CX_4 FW_CX_6",
-          "FW_CX_1 FW_CX_3 FW_CX_5 FW_CX_7"
-        ],
-        "SMAPresenceCheck": false,
-        "Type": "MSTRecoveryPolicy"
       }
     ]
   },
   {
-    "Name": "Nvidia VR-NVL72 BMC AST2700 Policy",
-    "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2700')",
+    "Name": "Nvidia VR-NVL72 CX9 MST Recovery Policy",
+    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 90, 'ADDRESS': 81, 'PRODUCT_PRODUCT_NAME': 'NVL(72|144) 1CPU: ?2GPU .*'})",
     "Type": "Platform",
     "PlatformExposes": [
-      {
-        "Name": "Platform_FwUpdate_Exclusion",
-        "Type": "PLDMExclusion",
-        "ExcludedInventory": [
-          "BF4_0"
-        ]
-      },
-      {
-        "Name": "NSM_Policy_CX_SMA",
-        "Type": "NSM_Policy",
-        "Kind": "cx_sma",
-        "Policy": [
-          {
-            "Devices": [
-              "IO_Board_SMA_0",
-              "IO_Board_SMA_2"
-            ],
-            "LeakDetection": {
-              "Enabled": false
-            }
-          }
-        ]
-      },
-      {
-        "Name": "NSM_Policy_CX9_NIC",
-        "Type": "NSM_Policy",
-        "Kind": "cx9_nic",
-        "Policy": [
-          {
-            "Devices": [
-              "Bay_C_CX_0"
-            ],
-            "OpticalModuleResetSupported": {
-              "Enabled": false
-            }
-          }
-        ]
-      },
       {
         "DeviceType": "ConnectX",
         "HealthyEvent": false,
