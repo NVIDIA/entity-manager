@@ -74,8 +74,8 @@
                     "type": "string",
                     "default": "BidirectionalPort"
                 },
-                "Roles": {
-                    "description": "Sensor or effecter auxiliary names mapped to role associations, such as primary_temperature_sensor. Values are strings because entity-manager flattens only one level.",
+                "SensorRoles": {
+                    "description": "Role association names, such as primary_temperature_sensor, mapped to the sensor or effecter name as used in SensorAuxNames or EffecterAuxNames. Each role names one sensor. Values are strings because entity-manager flattens only one level.",
                     "type": "object",
                     "additionalProperties": {
                         "type": "string"

@@ -56,7 +56,7 @@ T2 configuration uses three layers:
 | `NetworkAdapter` | Inventory object name bound to the device's `NetworkController` entity. |
 | `Ports` | Sensor ID to port-name fallback used only when there are no Port entity PDRs. |
 | `PortMaxSpeedMBps`, `PortType` | Port metadata; `PortType` defaults to `BidirectionalPort`. |
-| `Roles` | Sensor or effecter auxiliary name to role string map, such as `TempLimit_0` to `primary_temperature_sensor`. |
+| `SensorRoles` | Role name to sensor or effecter auxiliary name map, such as `primary_temperature_sensor` to `TempLimit_0`. Each role names one sensor. |
 | `EventIds` | Sensor name as used in `SensorAuxNames` to event ID array map, preserving the order and semantics of `SensorEventInfo.EventIds`. |
 | `ImpactedComponent`, `LoggingNamespace` | Device-wide event component and optional logging namespace, copied from `SensorEventInfo`. |
 | `UpperFatal`, `UpperCritical`, `UpperCaution` | Threshold overrides by sensor auxiliary name. |
@@ -76,9 +76,10 @@ entity-file override. Relevant entries are:
 PDR entities above the device bind to `ParentChassis`. The MemoryController
 to parent-chassis binding is also a compiled default in pldmd.
 
-`Roles` and `EventIds` are flat, name-keyed maps because EM flattens only one
-level. Their values are strings and arrays of strings respectively, never
-nested objects. CPU roles mirror the four `cpu-primary-*` meson defaults.
+`SensorRoles` (keyed by role) and `EventIds` (keyed by sensor name) are flat
+maps because EM flattens only one level. Their values are strings and arrays
+of strings respectively, never nested objects. CPU roles mirror the four
+`cpu-primary-*` meson defaults.
 For events, match each legacy `SensorEventInfo.SensorId` to a `SensorAuxNames`
 name and copy its `EventIds` array verbatim. Resolve event names through the
 name-to-ID map, not an inverted ID-to-name map: legacy names and new event
