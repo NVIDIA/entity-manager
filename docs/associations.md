@@ -187,6 +187,7 @@ used. The lookup is a constant table in `entity_manager.cpp`
 | `all_chassis` | any | `parent_chassis` |
 | `computer_system` | any | `chassis` |
 | `assembly` | any | `parent_chassis` |
+| `associated_fru` | any | `associated_chassis` |
 | `downstream_chassis` | any | `upstream_cable` |
 | `activation` | any | `inventory` |
 | `all_states` | any | `parent_device` |
