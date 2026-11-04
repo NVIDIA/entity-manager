@@ -70,7 +70,9 @@ bool fwVersionIsSame()
 // does not define it) is a variable to skip: the map entry, the property or
 // the array element that holds it is not published, and a map or array that
 // is left empty by this is not published either. Name, Type and Probe keep
-// the old behavior (the variable is removed from the string).
+// the old behavior (the variable is removed from the string), and so do the
+// string properties of the D-Bus interfaces of a record
+// (handleLeftOverRecordTemplateVars).
 static bool hasLeftOverVar(const std::string& value)
 {
     for (size_t pos = value.find(templateChar); pos != std::string::npos;
@@ -193,6 +195,72 @@ void handleLeftOverTemplateVars(nlohmann::json::object_t& value)
 void handleLeftOverTemplateVars(nlohmann::json::array_t& value)
 {
     skipLeftOverTemplateVars(value);
+}
+
+// The properties of a D-Bus interface of a record are read by name (bmcweb
+// fails a Chassis request when AssetTag or LocationContext is missing), so a
+// string property keeps the old behavior: the variable is removed from the
+// string and the property stays, as "" for a FRU field the FRU does not
+// have. Maps and arrays in it skip entries as above.
+// @returns true if something was skipped and nothing is left
+static bool handleLeftOverInterfaceTemplateVars(nlohmann::json::object_t& iface)
+{
+    bool skipped = false;
+    for (auto it = iface.begin(); it != iface.end();)
+    {
+        bool drop = false;
+        if (hasLeftOverVar(it->first))
+        {
+            drop = true;
+        }
+        else if (auto* str = it->second.get_ptr<std::string*>())
+        {
+            handleLeftOverTemplateVars(*str);
+        }
+        else
+        {
+            drop = skipLeftOverTemplateVars(it->second);
+        }
+        if (drop)
+        {
+            it = iface.erase(it);
+            skipped = true;
+        }
+        else
+        {
+            ++it;
+        }
+    }
+    return skipped && iface.empty();
+}
+
+void handleLeftOverRecordTemplateVars(nlohmann::json::object_t& record)
+{
+    for (auto it = record.begin(); it != record.end();)
+    {
+        const std::string& key = it->first;
+        nlohmann::json& value = it->second;
+        auto* iface = value.get_ptr<nlohmann::json::object_t*>();
+        bool drop = false;
+        if (key == "Name" || key == "Probe" || key == "Exposes")
+        {
+            // Name is substituted on its own, Probe has no variables and
+            // the Exposes items are handled one by one
+        }
+        else if (iface != nullptr && key != "Associations")
+        {
+            drop = handleLeftOverInterfaceTemplateVars(*iface);
+        }
+        else if (value.is_string())
+        {
+            handleLeftOverTemplateVars(value);
+        }
+        else
+        {
+            drop = skipLeftOverTemplateVars(value);
+        }
+        it = drop ? record.erase(it) : std::next(it);
+    }
 }
 
 // @brief    finds a template var in a string

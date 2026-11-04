@@ -518,23 +518,21 @@ void scan::PerformScan::restorePersistedConfigurations(
     }
 }
 
-static void replaceTemplateFields(
+void scan::detail::replaceTemplateFields(
     nlohmann::json::object_t& record, const DBusObject& dbusObject,
-    size_t foundDeviceIdx, std::optional<std::string>& replaceStr)
+    size_t foundDeviceIdx, const std::optional<std::string>& replaceStr)
 {
     for (auto& keyPair : record)
     {
         if (keyPair.first != "Name")
         {
-            // "Probe" string does not contain template variables
-            // Handle left-over variables for "Exposes" later below
-            const bool handleLeftOver =
-                (keyPair.first != "Probe") && (keyPair.first != "Exposes");
             em_utils::templateCharReplace(keyPair.second, dbusObject,
-                                          foundDeviceIdx, replaceStr,
-                                          handleLeftOver);
+                                          foundDeviceIdx, replaceStr, false);
         }
     }
+    // "Probe" string does not contain template variables
+    // Handle left-over variables for "Exposes" later below
+    em_utils::handleLeftOverRecordTemplateVars(record);
 }
 
 static const std::string* configuredName(const nlohmann::json::object_t& record,
@@ -654,7 +652,8 @@ void scan::PerformScan::updateSystemConfigurationForDevice(
     // (template) at the start
     passedProbes.push_back(deviceName);
 
-    replaceTemplateFields(record, templateObject, foundDeviceIdx, replaceStr);
+    detail::replaceTemplateFields(record, templateObject, foundDeviceIdx,
+                                  replaceStr);
 
     // insert into configuration temporarily to be able to
     // reference ourselves

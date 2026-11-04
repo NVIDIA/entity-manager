@@ -97,3 +97,54 @@ TEST(SeedAndPrune, RescanKeepsAppliedTemplatedConfig)
     EXPECT_FALSE(missing.contains(gpuKey));
     EXPECT_TRUE(missing.contains(otherKey));
 }
+
+// The HGX_CPU_$SlotNumber record of configurations/nvidia/vera-cpu.json on a
+// FRU that has no asset tag: the AssetTag interface keeps its property as ""
+// (bmcweb fails the Chassis request when it is missing), and the other
+// properties are substituted or kept as they are.
+TEST(ReplaceTemplateFields, FruWithoutAssetTagKeepsAssetTagProperty)
+{
+    json::object_t record = {
+        {"Name", "HGX_CPU_$SlotNumber"},
+        {"Associations",
+         {{"parent_chassis", "board/HGX_ProcessorModule_$SlotNumber"}}},
+        {"Type", "Component"},
+        {"xyz.openbmc_project.Inventory.Decorator.Asset",
+         {{"Manufacturer", "NVIDIA"}, {"PartNumber", "$BOARD_PART_NUMBER"}}},
+        {"xyz.openbmc_project.Inventory.Decorator.AssetTag",
+         {{"AssetTag", "$PRODUCT_ASSET_TAG"}}},
+        {"xyz.openbmc_project.Inventory.Decorator.Instance",
+         {{"InstanceNumber", "$SlotNumber"}}},
+        {"xyz.openbmc_project.Inventory.Decorator.LocationCode",
+         {{"LocationCode", "G1:$SlotNumber.0"}}},
+        {"xyz.openbmc_project.Inventory.Decorator.LocationContext",
+         {{"LocationContext", "HGX_Chassis_0/ProcessorModule_$SlotNumber"}}},
+        {"xyz.openbmc_project.Inventory.Decorator.Replaceable",
+         {{"FieldReplaceable", false}}}};
+
+    DBusObject fru;
+    fru["xyz.openbmc_project.FruDevice"] = {
+        {"BOARD_PART_NUMBER", std::string("699-2G558-0205-TS3")},
+        {"SLOT_NUMBER", uint64_t{1}}};
+
+    scan::detail::replaceTemplateFields(record, fru, 0, std::nullopt);
+
+    // Name is substituted by the caller
+    const json expected = {
+        {"Name", "HGX_CPU_$SlotNumber"},
+        {"Associations", {{"parent_chassis", "board/HGX_ProcessorModule_1"}}},
+        {"Type", "Component"},
+        {"xyz.openbmc_project.Inventory.Decorator.Asset",
+         {{"Manufacturer", "NVIDIA"}, {"PartNumber", "699-2G558-0205-TS3"}}},
+        {"xyz.openbmc_project.Inventory.Decorator.AssetTag",
+         {{"AssetTag", ""}}},
+        {"xyz.openbmc_project.Inventory.Decorator.Instance",
+         {{"InstanceNumber", 1}}},
+        {"xyz.openbmc_project.Inventory.Decorator.LocationCode",
+         {{"LocationCode", "G1:1.0"}}},
+        {"xyz.openbmc_project.Inventory.Decorator.LocationContext",
+         {{"LocationContext", "HGX_Chassis_0/ProcessorModule_1"}}},
+        {"xyz.openbmc_project.Inventory.Decorator.Replaceable",
+         {{"FieldReplaceable", false}}}};
+    EXPECT_EQ(expected, json(record));
+}

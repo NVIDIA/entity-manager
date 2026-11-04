@@ -93,6 +93,14 @@ std::vector<std::string> collectConfiguredNames(
 
 void pruneMissingByName(nlohmann::json& missingConfigurations,
                         const std::vector<std::string>& names);
+
+// Substitute the template variables of every property of a record except
+// Name, then handle the variables left over
+// (em_utils::handleLeftOverRecordTemplateVars). The Exposes items get their
+// left-over variables handled later, one by one.
+void replaceTemplateFields(nlohmann::json::object_t& record,
+                           const DBusObject& dbusObject, size_t foundDeviceIdx,
+                           const std::optional<std::string>& replaceStr);
 } // namespace detail
 
 } // namespace scan

@@ -1441,6 +1441,118 @@ TEST(HandleLeftOverTemplateVars, resolvedValuesAreKept)
     EXPECT_EQ(before, j);
 }
 
+// A FRU without an asset tag leaves $PRODUCT_ASSET_TAG unresolved; the
+// AssetTag interface must keep its property (bmcweb reads it by name).
+TEST(HandleLeftOverRecordTemplateVars, interfaceStringPropertyIsKept)
+{
+    nlohmann::json::object_t record = {
+        {"xyz.openbmc_project.Inventory.Decorator.AssetTag",
+         {{"AssetTag", "$PRODUCT_ASSET_TAG"}}},
+        {"xyz.openbmc_project.Inventory.Decorator.LocationContext",
+         {{"LocationContext", "HGX_Chassis_0/$Missing"}}}};
+
+    em_utils::handleLeftOverRecordTemplateVars(record);
+
+    const nlohmann::json expected = {
+        {"xyz.openbmc_project.Inventory.Decorator.AssetTag",
+         {{"AssetTag", ""}}},
+        {"xyz.openbmc_project.Inventory.Decorator.LocationContext",
+         {{"LocationContext", "HGX_Chassis_0/"}}}};
+    EXPECT_EQ(expected, nlohmann::json(record));
+}
+
+TEST(HandleLeftOverRecordTemplateVars, interfaceMapsAndArraysSkipEntries)
+{
+    nlohmann::json::object_t record = {
+        {"xyz.openbmc_project.Some.Interface",
+         {{"List", {"a", "$Missing"}},
+          {"Map", {{"$Missing_Key", 1}, {"k", 2}}},
+          {"Gone", {"$Missing"}},
+          {"$MissingProperty", "x"},
+          {"Kept", "y"}}}};
+
+    em_utils::handleLeftOverRecordTemplateVars(record);
+
+    const nlohmann::json expected = {
+        {"xyz.openbmc_project.Some.Interface",
+         {{"List", {"a"}}, {"Map", {{"k", 2}}}, {"Kept", "y"}}}};
+    EXPECT_EQ(expected, nlohmann::json(record));
+}
+
+// An interface emptied by skipping is removed; one that the configuration
+// writes empty (a marker interface such as Item.Board) is kept.
+TEST(HandleLeftOverRecordTemplateVars, interfaceEmptiedBySkippingIsRemoved)
+{
+    nlohmann::json::object_t record = {
+        {"xyz.openbmc_project.Some.Interface", {{"List", {"$Missing"}}}},
+        {"xyz.openbmc_project.Inventory.Item.Board", nlohmann::json::object()}};
+
+    em_utils::handleLeftOverRecordTemplateVars(record);
+
+    const nlohmann::json expected = {
+        {"xyz.openbmc_project.Inventory.Item.Board", nlohmann::json::object()}};
+    EXPECT_EQ(expected, nlohmann::json(record));
+}
+
+TEST(HandleLeftOverRecordTemplateVars, associationsSkipUnresolvedTargets)
+{
+    nlohmann::json::object_t record = {
+        {"Associations",
+         {{"parent_chassis", "$Platform.SmmParent"},
+          {"host_management_network_access",
+           "/xyz/openbmc_project/control/host0/HostManagementNetworkAccess"}}}};
+
+    em_utils::handleLeftOverRecordTemplateVars(record);
+
+    const nlohmann::json expected = {
+        {"Associations",
+         {{"host_management_network_access",
+           "/xyz/openbmc_project/control/host0/HostManagementNetworkAccess"}}}};
+    EXPECT_EQ(expected, nlohmann::json(record));
+}
+
+TEST(HandleLeftOverRecordTemplateVars, associationsEmptiedBySkippingAreRemoved)
+{
+    nlohmann::json::object_t emptied = {
+        {"Associations", {{"parent_chassis", "$Platform.SmmParent"}}}};
+    nlohmann::json::object_t writtenEmpty = {
+        {"Associations", nlohmann::json::object()}};
+
+    em_utils::handleLeftOverRecordTemplateVars(emptied);
+    em_utils::handleLeftOverRecordTemplateVars(writtenEmpty);
+
+    EXPECT_TRUE(emptied.empty());
+    EXPECT_EQ(nlohmann::json({{"Associations", nlohmann::json::object()}}),
+              nlohmann::json(writtenEmpty));
+}
+
+TEST(HandleLeftOverRecordTemplateVars, recordStringIsStripped)
+{
+    nlohmann::json::object_t record = {{"Type", "Board$Missing"},
+                                       {"Kind", "$Missing"}};
+
+    em_utils::handleLeftOverRecordTemplateVars(record);
+
+    EXPECT_EQ(nlohmann::json({{"Type", "Board"}, {"Kind", ""}}),
+              nlohmann::json(record));
+}
+
+// Name is substituted on its own, Probe has no variables and the Exposes
+// items are handled later, one by one.
+TEST(HandleLeftOverRecordTemplateVars, nameProbeAndExposesAreNotTouched)
+{
+    nlohmann::json::object_t record = {
+        {"Name", "$Missing"},
+        {"Probe", "iface({'Kind': '^a$'}) $Missing"},
+        {"Exposes",
+         {{{"IgnoreEIDs", "$IgnoreEIDs"}, {"Map", {{"$Missing", 1}}}}}}};
+    const nlohmann::json before = record;
+
+    em_utils::handleLeftOverRecordTemplateVars(record);
+
+    EXPECT_EQ(before, nlohmann::json(record));
+}
+
 TEST(JsonObjectToDict, scalars)
 {
     nlohmann::json j = {{"Enabled", false},

@@ -28,6 +28,14 @@ void handleLeftOverTemplateVars(nlohmann::json::object_t& value);
 void handleLeftOverTemplateVars(nlohmann::json::array_t& value);
 void handleLeftOverTemplateVars(std::string& value);
 
+// Left-over variables of a record after its properties are substituted
+// (Name, Probe and Exposes are not touched). A string property of one of its
+// D-Bus interfaces, and a string at the record level, keeps the old behavior
+// (the variable is removed from the string); map entries and array elements
+// are skipped as handleLeftOverTemplateVars does. A map, array or interface
+// that is left empty by skipping is removed from the record.
+void handleLeftOverRecordTemplateVars(nlohmann::json::object_t& record);
+
 std::optional<std::string> templateCharReplace(
     nlohmann::json& value, const DBusObject& object, size_t index,
     const std::optional<std::string>& replaceStr = std::nullopt,
