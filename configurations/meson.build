@@ -372,6 +372,7 @@ configs = [
     'nvidia/p4764-hmc.json',
     'nvidia/platform/vrnvl-bmc-ast2600-platform-topology.json',
     'nvidia/platform/vrnvl-bmc-ast2700-platform-topology.json',
+    'nvidia/platform/vrnvl-bmc-vhmc-platform-topology.json',
     'nvidia/platform/vrnvl-c2-bmc-platform-topology.json',
     'nvidia/platform/vrnvl-hgxr-hmc-platform-policy.json',
     'nvidia/platform/vrnvl-hgxr-hmc-platform-topology.json',

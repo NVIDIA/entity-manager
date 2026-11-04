@@ -94,6 +94,7 @@
                         "HardwareWriteProtectedControl",
                         "I2CDeviceAssociation",
                         "I2CFan",
+                        "IST_Config",
                         "LM5066i",
                         "LM5066I",
                         "LTC4287",
@@ -107,6 +108,7 @@
                         "PowerSupply",
                         "ProcessorModule0",
                         "ProcessorModule1",
+                        "RecoveryPackages",
                         "Recovery_Config",
                         "SMM_0",
                         "SMM_Interposer_0",
@@ -165,6 +167,9 @@
                 },
                 "xyz.openbmc_project.Inventory.Decorator.ManagedHost": {
                     "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Decorator/ManagedHost"
+                },
+                "xyz.openbmc_project.Inventory.Decorator.PCIeRefClock": {
+                    "type": "object"
                 },
                 "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
                     "type": "object"

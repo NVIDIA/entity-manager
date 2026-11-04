@@ -24,6 +24,10 @@
                     "$ref": "../mctp.json#/$defs/MCTPXROTTarget"
                 },
                 {
+                    "$comment": "downstream-only: platform device-name prefix consumed by bmcweb.",
+                    "$ref": "device_prefix.json#/$defs/DevicePrefix"
+                },
+                {
                     "$comment": "downstream-only: per-device diagnostic dump capability advertisement consumed by the dump manager.",
                     "$ref": "dump.json#/$defs/Dump"
                 },

@@ -788,3 +788,152 @@ TEST(formatIPMIFRU, AreaExtentPastBufferRejected)
     std::flat_map<std::string, std::string, std::less<>> result;
     EXPECT_EQ(formatIPMIFRU(fru, result), resCodes::resErr);
 }
+
+namespace
+{
+class SetFieldBoundsTest : public testing::TestWithParam<fruAreas>
+{
+  protected:
+    static size_t headerSize()
+    {
+        return GetParam() == fruAreas::fruAreaBoard ? 6 : 3;
+    }
+
+    static size_t fieldCount()
+    {
+        switch (GetParam())
+        {
+            case fruAreas::fruAreaChassis:
+                return chassisFruAreas.size();
+            case fruAreas::fruAreaBoard:
+                return boardFruAreas.size();
+            default:
+                return productFruAreas.size();
+        }
+    }
+
+    static std::string firstField()
+    {
+        return getFruAreaName(GetParam()) +
+               (GetParam() == fruAreas::fruAreaChassis ? "_PART_NUMBER"
+                                                       : "_MANUFACTURER");
+    }
+
+    static std::string customField(const std::string& index)
+    {
+        return getFruAreaName(GetParam()) + "_INFO_AM" + index;
+    }
+
+    static std::vector<uint8_t> validArea()
+    {
+        std::vector<uint8_t> area(headerSize(), 0);
+        area[0] = 1;
+        for (size_t i = 0; i < fieldCount(); ++i)
+        {
+            area.insert(area.end(), {0xc2, 'A', 'A'});
+        }
+        area.insert(area.end(), {0xc2, 'C', 'C', 0xc1, 0});
+        while (area.size() % fruBlockSize != 0)
+        {
+            area.push_back(0);
+        }
+        area[1] = area.size() / fruBlockSize;
+        EXPECT_TRUE(updateAreaChecksum(area));
+        return area;
+    }
+
+    static void expectRejected(std::vector<uint8_t> area,
+                               const std::string& property)
+    {
+        const auto original = area;
+        EXPECT_NO_THROW(
+            EXPECT_FALSE(setField(GetParam(), area, property, "NV")));
+        EXPECT_EQ(area, original);
+    }
+};
+} // namespace
+
+TEST_P(SetFieldBoundsTest, RejectsTruncatedHeaders)
+{
+    for (size_t size = 0; size <= headerSize(); ++size)
+    {
+        SCOPED_TRACE(size);
+        expectRejected(std::vector<uint8_t>(size, 0x0a), firstField());
+    }
+}
+
+TEST_P(SetFieldBoundsTest, RejectsTruncatedSelectedField)
+{
+    std::vector<uint8_t> area(headerSize(), 0);
+    area.push_back(0xff); // Declares 63 bytes that are not present.
+    expectRejected(area, firstField());
+}
+
+TEST_P(SetFieldBoundsTest, RejectsTruncatedPrecedingField)
+{
+    std::vector<uint8_t> area(headerSize(), 0);
+    area.insert(area.end(), {0xff, 'A'});
+    expectRejected(area, customField("1"));
+}
+
+TEST_P(SetFieldBoundsTest, RejectsMissingCustomFieldHeader)
+{
+    std::vector<uint8_t> area(headerSize() + fieldCount(), 0xc0);
+    expectRejected(area, customField("1"));
+}
+
+TEST_P(SetFieldBoundsTest, RejectsTruncatedCustomField)
+{
+    std::vector<uint8_t> area(headerSize() + fieldCount(), 0xc0);
+    area.push_back(0xff);
+    expectRejected(area, customField("1"));
+    expectRejected(area, customField("2"));
+}
+
+TEST_P(SetFieldBoundsTest, RejectsInvalidCustomFieldIndexWithoutThrowing)
+{
+    for (const std::string index :
+         {"", "0", "-1", "1x", "999999999999999999999999"})
+    {
+        SCOPED_TRACE(index);
+        expectRejected(validArea(), customField(index));
+    }
+}
+
+TEST_P(SetFieldBoundsTest, RejectsMissingEndMarker)
+{
+    auto area = validArea();
+    const auto marker = std::find(area.begin(), area.end(), 0xc1);
+    ASSERT_NE(marker, area.end());
+    *marker = 0;
+    ASSERT_TRUE(updateAreaChecksum(area));
+    expectRejected(area, firstField());
+}
+
+TEST_P(SetFieldBoundsTest, UpdatesValidNamedAndCustomFields)
+{
+    auto area = validArea();
+    ASSERT_TRUE(setField(GetParam(), area, firstField(), "NV"));
+    EXPECT_EQ(area[headerSize() + 1], 'N');
+    EXPECT_EQ(area[headerSize() + 2], 'V');
+    ASSERT_TRUE(setField(GetParam(), area, customField("1"), "OK"));
+    const size_t customIndex = headerSize() + fieldCount() * 3;
+    EXPECT_EQ(area[customIndex + 1], 'O');
+    EXPECT_EQ(area[customIndex + 2], 'K');
+    EXPECT_EQ(calculateChecksum(area), 0);
+}
+
+INSTANTIATE_TEST_SUITE_P(AllEditableAreas, SetFieldBoundsTest,
+                         testing::Values(fruAreas::fruAreaChassis,
+                                         fruAreas::fruAreaBoard,
+                                         fruAreas::fruAreaProduct));
+
+// The fuzz harness selects the board area from input size % 5
+// and uses the same two bytes as area data, property name, and replacement.
+TEST(SetFieldBounds, RejectsReportedTwoByteReproducer)
+{
+    std::vector<uint8_t> area{0x0a, 0x0a};
+    const auto original = area;
+    EXPECT_FALSE(setField(fruAreas::fruAreaBoard, area, "\n\n", "\n\n"));
+    EXPECT_EQ(area, original);
+}

@@ -206,6 +206,9 @@
                     "$ref": "nvidia_cpld_gpio_monitor.json#/$defs/CPLDGPIOMonitor"
                 },
                 {
+                    "$ref": "platform/device_prefix.json#/$defs/DevicePrefix"
+                },
+                {
                     "$ref": "nvidia_eeprom_24c512.json#/$defs/EEPROM_24C512"
                 },
                 {
@@ -450,6 +453,12 @@
                     "$ref": "nvidia_misc.json#/$defs/GPIOCableSensing"
                 },
                 {
+                    "$ref": "nvidia_ist.json#/$defs/IST"
+                },
+                {
+                    "$ref": "nvidia_ist.json#/$defs/ISTDomain"
+                },
+                {
                     "$ref": "nvidia_recovery.json#/$defs/GPIORecovery"
                 },
                 {
@@ -544,6 +553,12 @@
                 },
                 {
                     "$ref": "nvidia_recovery.json#/$defs/NVSwitchRecovery"
+                },
+                {
+                    "$ref": "nvidia_recovery.json#/$defs/MSTRecoveryPolicy"
+                },
+                {
+                    "$ref": "nvidia_recovery.json#/$defs/RecoveryPackages"
                 },
                 {
                     "$ref": "nvidia_sensors.json#/$defs/LM5066i"
