@@ -13,7 +13,7 @@
     {
         "Exposes": [],
         "Name": "NSM_CX_0",
-        "Probe": "TRUE",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 90, 'ADDRESS': 81, 'PRODUCT_PRODUCT_NAME': 'NVL(72|144) 1CPU: ?2GPU .*'})",
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "CX9",
@@ -31,7 +31,7 @@
     {
         "Exposes": [],
         "Name": "NSM_CX_1",
-        "Probe": "TRUE",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 90, 'ADDRESS': 81, 'PRODUCT_PRODUCT_NAME': 'NVL(72|144) 1CPU: ?2GPU .*'})",
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "CX9",
@@ -85,7 +85,7 @@
     {
         "Exposes": [],
         "Name": "NSM_CX_4",
-        "Probe": "TRUE",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 90, 'ADDRESS': 81, 'PRODUCT_PRODUCT_NAME': 'NVL(72|144) 1CPU: ?2GPU .*'})",
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "CX9",
@@ -103,7 +103,7 @@
     {
         "Exposes": [],
         "Name": "NSM_CX_5",
-        "Probe": "TRUE",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 90, 'ADDRESS': 81, 'PRODUCT_PRODUCT_NAME': 'NVL(72|144) 1CPU: ?2GPU .*'})",
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "CX9",
@@ -184,7 +184,7 @@
     {
         "Exposes": [],
         "Name": "NSM_SMA_CX9_0_Bridge",
-        "Probe": "TRUE",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 90, 'ADDRESS': 81, 'PRODUCT_PRODUCT_NAME': 'NVL(72|144) 1CPU: ?2GPU .*'})",
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "CXSMA",
@@ -212,7 +212,7 @@
     {
         "Exposes": [],
         "Name": "NSM_SMA_CX9_2_Bridge",
-        "Probe": "TRUE",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 90, 'ADDRESS': 81, 'PRODUCT_PRODUCT_NAME': 'NVL(72|144) 1CPU: ?2GPU .*'})",
         "Type": "NSM_Configs",
         "xyz.openbmc_project.NsmDevice": {
             "DEVICE_ROLE": "CXSMA",
