@@ -38,8 +38,11 @@ Platform config schemas live under `schemas/platform/`:
 T2 configuration uses three layers:
 
 - **Topology** (`platform/*-topology.json`): `NvDevice` identifies each device
-  with `Name`, `Kind`, `Generation`, `Instance`, `EID` and `ParentChassis`.
-  Port names describe wiring, not firmware behaviour.
+  with `Name`, `Kind`, `Generation`, `Instance`, `EID` and `ParentChassis`. Port
+  names describe wiring, not firmware behaviour. A `cx9_io` device also carries
+  `NetworkAdapterName`, the name of its NIC under
+  `chassis/<Name>/NetworkAdapters/`; the name differs per platform, so it is
+  written per device rather than built from `$Instance`.
 - **Entity** (the shared firmware-family file): `PLDMDevice` in `Exposes`
   carries the device's monitoring facts. `Kind` identifies the firmware family,
   not just the silicon, so sensor IDs belong in the entity file. CX-9 IDs are

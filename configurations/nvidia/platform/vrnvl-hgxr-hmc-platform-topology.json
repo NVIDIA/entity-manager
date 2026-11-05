@@ -603,6 +603,7 @@
         "Instance": 0,
         "EID": 17,
         "ParentChassis": "HGX_Chassis_0",
+        "NetworkAdapterName": "ConnectX_NIC_0",
         "PortName0": "Port_0",
         "Transport": {
           "Medium": "bridge",
@@ -628,6 +629,7 @@
         "Instance": 1,
         "EID": 27,
         "ParentChassis": "HGX_Chassis_0",
+        "NetworkAdapterName": "ConnectX_NIC_1",
         "PortName0": "Port_0",
         "Transport": {
           "Medium": "bridge",
@@ -653,6 +655,7 @@
         "Instance": 2,
         "EID": 19,
         "ParentChassis": "HGX_Chassis_0",
+        "NetworkAdapterName": "ConnectX_NIC_2",
         "PortName0": "Port_0",
         "Transport": {
           "Medium": "bridge",
@@ -678,6 +681,7 @@
         "Instance": 3,
         "EID": 25,
         "ParentChassis": "HGX_Chassis_0",
+        "NetworkAdapterName": "ConnectX_NIC_3",
         "PortName0": "Port_0",
         "Transport": {
           "Medium": "bridge",
@@ -703,6 +707,7 @@
         "Instance": 4,
         "EID": 43,
         "ParentChassis": "HGX_Chassis_0",
+        "NetworkAdapterName": "ConnectX_NIC_4",
         "PortName0": "Port_0",
         "Transport": {
           "Medium": "bridge",
@@ -728,6 +733,7 @@
         "Instance": 5,
         "EID": 35,
         "ParentChassis": "HGX_Chassis_0",
+        "NetworkAdapterName": "ConnectX_NIC_5",
         "PortName0": "Port_0",
         "Transport": {
           "Medium": "bridge",
@@ -753,6 +759,7 @@
         "Instance": 6,
         "EID": 41,
         "ParentChassis": "HGX_Chassis_0",
+        "NetworkAdapterName": "ConnectX_NIC_6",
         "PortName0": "Port_0",
         "Transport": {
           "Medium": "bridge",
@@ -778,6 +785,7 @@
         "Instance": 7,
         "EID": 33,
         "ParentChassis": "HGX_Chassis_0",
+        "NetworkAdapterName": "ConnectX_NIC_7",
         "PortName0": "Port_0",
         "Transport": {
           "Medium": "bridge",

@@ -38,6 +38,7 @@
         "InstanceNumber": "$Instance",
         "EID": "$EID",
         "LocationContext": "$LocationContext",
+        "NetworkAdapterName": "$NetworkAdapterName",
         "ParameterOverrides": {}
       },
       {
@@ -72,10 +73,10 @@
           "CX_NVConfig_MLNX_$Instance": 4,
           "CX_NVConfig_OEM_$Instance": 3
         },
-        "NetworkAdapter": "ConnectX_NIC_$Instance",
+        "NetworkAdapter": "$NetworkAdapterName",
         "SensorAuxNames": {
           "$Name": 5,
-          "ConnectX_NIC_$Instance": 60,
+          "$NetworkAdapterName": 60,
           "Port_0": 200,
           "Port_1": 201,
           "Port_2": 202,
