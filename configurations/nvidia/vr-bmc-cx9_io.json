@@ -38,7 +38,9 @@
         "InstanceNumber": "$Instance",
         "EID": "$EID",
         "LocationContext": "$LocationContext",
-        "NetworkAdapterName": "$NetworkAdapterName",
+        "SwitchName": "$SwitchName",
+        "PortLocationReference": "$PortLocationReference",
+        "PortNameMap": ["$PortName0", "$PortName1"],
         "ParameterOverrides": {}
       },
       {

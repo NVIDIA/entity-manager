@@ -9,6 +9,12 @@
       {
         "Name": "NSM_Telemetry",
         "Type": "NSM_Telemetry",
+        "Kind": "bluefield_nic",
+        "InstanceNumber": "$Instance",
+        "EID": "$EID",
+        "ParentChassis": "$Platform.TopChassis",
+        "LocationCode": "$LocationCode",
+        "PortCount": 2,
         "Disable": [],
         "ParameterOverrides": {}
       },

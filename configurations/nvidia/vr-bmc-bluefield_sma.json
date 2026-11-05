@@ -10,6 +10,13 @@
       {
         "Name": "NSM_Telemetry",
         "Type": "NSM_Telemetry",
+        "Kind": "bluefield_sma",
+        "InstanceNumber": "$Instance",
+        "EID": "$EID",
+        "ParentChassis": "$Platform.TopChassis",
+        "LocationCode": "SMA_0",
+        "LocationContext": "$LocationContext",
+        "LeakDetectorChassis": "$ParentChassis",
         "Disable": [],
         "ParameterOverrides": {}
       },

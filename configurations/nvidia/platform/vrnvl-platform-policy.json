@@ -28,16 +28,33 @@
         ]
       },
       {
-        "Name": "NSM_Policy_CX9_NIC",
+        "Name": "NSM_Policy_CX9_IO",
         "Type": "NSM_Policy",
-        "Kind": "cx9_nic",
+        "Kind": "cx9_io",
         "Policy": [
           {
-            "Devices": [
-              "Bay_C_CX_0"
-            ],
-            "OpticalModuleResetSupported": {
+            "Devices": [],
+            "TemplateValues": {
+              "NetworkAdapterName": "NIC_0",
+              "PortCount": 2
+            },
+            "OpticalModuleReset": {
               "Enabled": false
+            }
+          }
+        ]
+      },
+      {
+        "Name": "NSM_Policy_BlueField_NIC",
+        "Type": "NSM_Policy",
+        "Kind": "bluefield_nic",
+        "Policy": [
+          {
+            "Devices": [],
+            "TemplateValues": {
+              "NetworkAdapterName": "BlueField_NIC_0",
+              "PortCount": 2,
+              "SwitchName": "BlueField_Switch_0"
             }
           }
         ]

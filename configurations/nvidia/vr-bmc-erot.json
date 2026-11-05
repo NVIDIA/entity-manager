@@ -7,7 +7,7 @@
       {
         "Name": "NSM_Telemetry",
         "Type": "NSM_Telemetry",
-        "Kind": "erot",
+        "Kind": "bmc_erot",
         "InstanceNumber": "$Instance",
         "EID": "$EID",
         "LocationContext": "$LocationContext",

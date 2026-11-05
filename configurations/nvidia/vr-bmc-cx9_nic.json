@@ -11,6 +11,8 @@
         "InstanceNumber": "$Instance",
         "EID": "$EID",
         "LocationContext": "$LocationContext",
+        "SwitchName": "$SwitchName",
+        "PortLocationReference": "$PortLocationReference",
         "ParameterOverrides": {}
       },
       {
