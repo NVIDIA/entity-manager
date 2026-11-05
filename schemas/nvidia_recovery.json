@@ -513,23 +513,23 @@
                     "enum": ["ConnectX", "NVSwitch", "NVLinkManagementNIC"]
                 },
                 "HealthyEvent": {
-                    "description": "Mst flow: post FirmwareNotInRecovery for a healthy device. Default true for NVSwitch and NVLinkManagementNIC.",
+                    "description": "Mst flow: post FirmwareNotInRecovery for a healthy device. Default true.",
                     "type": "boolean"
                 },
                 "I2CForce": {
-                    "description": "Mst flow: read GIS even when a kernel driver owns the address. Default false for NVSwitch and NVLinkManagementNIC.",
+                    "description": "Read GIS even when a kernel driver owns the address. Default: force only where sysfs shows a driver bound to the address.",
                     "type": "boolean"
                 },
                 "Name": {
                     "type": "string"
                 },
                 "RecoveryFlow": {
-                    "description": "Mst: device groups in parallel; Legacy: CX8 devices one by one; Hold: the one device of this board found through the mapper, FNP held. Default Mst for NVSwitch and NVLinkManagementNIC.",
+                    "description": "Mst: device groups in parallel; Legacy: CX8 devices one by one; Hold: the one device of this board found through the mapper, FNP held. Default Mst.",
                     "type": "string",
                     "enum": ["Mst", "Legacy", "Hold"]
                 },
                 "RecoveryGroups": {
-                    "description": "Mst and Legacy flows: device record names of this board; the names in one entry are recovered in parallel, the entries one after the other.",
+                    "description": "Mst and Legacy flows: device record names of this board; the names in one entry are recovered in parallel, the entries one after the other. Default: derived from the devices' I2CBus, devices sharing a bus go to separate entries.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -537,7 +537,7 @@
                     "minItems": 1
                 },
                 "SMAPresenceCheck": {
-                    "description": "Mst flow: report the SMA MCU state when a device bus is missing. Default true for NVSwitch and NVLinkManagementNIC.",
+                    "description": "Mst flow: report the SMA MCU state when a device bus is missing. Default true.",
                     "type": "boolean"
                 },
                 "Type": {
