@@ -102,6 +102,11 @@
                     "assembly",
                     "parent_chassis",
                     "/xyz/openbmc_project/inventory/system/smm_0/SMM_Product_FRU_Assembly1"
+                ],
+                [
+                    "host_management_network_access",
+                    "chassis",
+                    "/xyz/openbmc_project/control/host0/HostManagementNetworkAccess"
                 ]
             ]
         },
