@@ -224,6 +224,9 @@
                 "DEVICE_UUID": "$DEVICE_UUID",
                 "InventoryObjPath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_0",
                 "Name": "GPU_0 Processor",
+                "PowerCap": {
+                    "Type": "NSM_PowerCap"
+                },
                 "ProcessorAttributes": {
                     "CpuOperatingConfigSupported": true,
                     "ECCModeSupported": true,
@@ -586,6 +589,9 @@
                 "DEVICE_UUID": "$DEVICE_UUID",
                 "InventoryObjPath": "/xyz/openbmc_project/inventory/system/accelerator/GPU_1",
                 "Name": "GPU_1 Processor",
+                "PowerCap": {
+                    "Type": "NSM_PowerCap"
+                },
                 "ProcessorAttributes": {
                     "CpuOperatingConfigSupported": true,
                     "ECCModeSupported": true,
