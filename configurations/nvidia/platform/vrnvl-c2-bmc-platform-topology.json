@@ -300,6 +300,18 @@
         "GlacierPackageUUID": "DBC2D178F70711EEBB65CFE7103AC1AC",
         "Name": "RecoveryPackages",
         "Type": "RecoveryPackages"
+      },
+      {
+        "Name": "HPM_MCURecoveryPackage",
+        "PackageUUID": "E7A31C9F48B2D075C3FE6A41B09D57E2",
+        "Target": "HPM",
+        "Type": "MCURecoveryPackage"
+      },
+      {
+        "Name": "GPU_MCURecoveryPackage",
+        "PackageUUID": "30546141D0614097829DADD8E9466DCA",
+        "Target": "GPU",
+        "Type": "MCURecoveryPackage"
       }
     ]
   }

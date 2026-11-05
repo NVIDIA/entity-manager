@@ -581,6 +581,28 @@
                 }
             },
             "required": ["Name", "Type"]
+        },
+        "MCURecoveryPackage": {
+            "description": "Model of one MCU recovery instance; code-manager starts com.Nvidia.MCURecovery.Updater@<Target> with the model Nvidia:<Target>:<PackageUUID>.",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "PackageUUID": {
+                    "type": "string",
+                    "pattern": "^[0-9A-Fa-f]{32}$"
+                },
+                "Target": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "MCURecoveryPackage"
+                }
+            },
+            "required": ["Name", "PackageUUID", "Target", "Type"]
         }
     }
 }

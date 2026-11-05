@@ -193,5 +193,39 @@
         "Name": "BlueField_4_B4240V_FRU",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'B4240V.*'})",
         "Type": "FRU_EEPROM"
+    },
+    {
+        "Exposes": [
+            {
+                "Name": "BF4_MCURecoveryPackage",
+                "PackageUUID": "C8E5F4F05A2E4C6B91512E4D7C3CE4C6",
+                "Target": "BF4",
+                "Type": "MCURecoveryPackage"
+            }
+        ],
+        "Name": "BlueField_4_Lupine_MCU_Recovery",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BOARD_PART_NUMBER': '.*D4A4.*'})",
+            "AND",
+            "FOUND('Nvidia VR-NVL72 BMC AST2600')"
+        ],
+        "Type": "FRU_EEPROM"
+    },
+    {
+        "Exposes": [
+            {
+                "Name": "BF4_MCURecoveryPackage",
+                "PackageUUID": "668BD433B9F8473DBA1EC32B99772679",
+                "Target": "BF4",
+                "Type": "MCURecoveryPackage"
+            }
+        ],
+        "Name": "BlueField_4_Clover_MCU_Recovery",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BOARD_PART_NUMBER': '.*X9ME.*'})",
+            "AND",
+            "FOUND('Nvidia VR-NVL72 BMC AST2600')"
+        ],
+        "Type": "FRU_EEPROM"
     }
 ]

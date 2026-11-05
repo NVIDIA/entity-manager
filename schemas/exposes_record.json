@@ -561,6 +561,10 @@
                     "$ref": "nvidia_recovery.json#/$defs/RecoveryPackages"
                 },
                 {
+                    "$comment": "downstream-only: model of one MCU recovery instance, consumed by nvidia-code-mgmt.",
+                    "$ref": "nvidia_recovery.json#/$defs/MCURecoveryPackage"
+                },
+                {
                     "$ref": "nvidia_sensors.json#/$defs/LM5066i"
                 },
                 {

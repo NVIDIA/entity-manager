@@ -914,6 +914,30 @@
           "SoftwareName": "HGX_FW_NVSwitch_3",
           "ChassisName": "HGX_IRoT_NVSwitch_3"
         }
+      },
+      {
+        "Name": "CX9_MCURecoveryPackage",
+        "PackageUUID": "4E7A1BC95F203D8EA6C1B94E2F78D3C1",
+        "Target": "CX9",
+        "Type": "MCURecoveryPackage"
+      },
+      {
+        "Name": "SXM_MCURecoveryPackage",
+        "PackageUUID": "F1C47A3E9D205B6C8A3F1E7B4C9628D0",
+        "Target": "SXM",
+        "Type": "MCURecoveryPackage"
+      },
+      {
+        "Name": "SMA_MCURecoveryPackage",
+        "PackageUUID": "A3C9F21B7D8045E6F2B19C4DE87A3F5B",
+        "Target": "SMA",
+        "Type": "MCURecoveryPackage"
+      },
+      {
+        "Name": "QM4_MCURecoveryPackage",
+        "PackageUUID": "9B5E32AF10C7D4E8F3A2619CB8D4E0F2",
+        "Target": "QM4",
+        "Type": "MCURecoveryPackage"
       }
     ]
   }

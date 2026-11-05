@@ -324,6 +324,18 @@
         "ShutdownOkGpio": "BRD1_CPU0_SHDN_OK_L_3V3-I",
         "SysResetGpio": "BRD1_IST_SYS_RST_L-O",
         "Type": "ISTDomain"
+      },
+      {
+        "Name": "HPM_MCURecoveryPackage",
+        "PackageUUID": "3E9B47D2A5F18C0E6BD9314FA72C58DE",
+        "Target": "HPM",
+        "Type": "MCURecoveryPackage"
+      },
+      {
+        "Name": "GPU_MCURecoveryPackage",
+        "PackageUUID": "8F3A1C76B24E9D50C7AD93E1F42BC689",
+        "Target": "GPU",
+        "Type": "MCURecoveryPackage"
       }
     ]
   }
