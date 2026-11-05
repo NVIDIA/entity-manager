@@ -730,6 +730,7 @@ configs = [
     'nvidia/vrnvl/vr-nvl-hmc/vru-nvl-hmc/vrnvl_processor_systems_cpu.json',
     'nvidia/vrnvl/vr-nvl-hmc/vru-nvl-hmc/vrnvl_processor_systems_gpu.json',
     'nvidia/vrnvl/vr-nvl-hmc/vru-nvl-hmc/vrnvl_static_inventory.json',
+    'nvidia/vrnvl/vr-nvl-hmc/vru-nvl-hmc/vrnvl_static_inventory_gpu.json',
     'nvidia/vrnvl/vr-nvl-hmc/vru-nvl-hmc/vrnvl_usbrcm_recovery_configuration.json',
     'nvidia/vrnvl/vr-quark-bmc/CBC_FRU.json',
     'nvidia/vrnvl/vr-quark-bmc/Chassis_Quark.json',
