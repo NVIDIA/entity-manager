@@ -14,7 +14,7 @@
       },
       {
         "Address": "$EID",
-        "Name": "$Name_Temp_0",
+        "Name": "SSD_$SsdIndex_Temp_0",
         "PowerState": "On",
         "Thresholds": [
           {

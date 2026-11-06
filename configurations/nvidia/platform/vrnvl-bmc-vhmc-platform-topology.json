@@ -379,6 +379,7 @@
         "Generation": "vera-rubin",
         "Instance": 0,
         "LocationCode": "NVMe E1.S Slot 1",
+        "SsdIndex": 1,
         "LocationContext": "Chassis_0/Bay-B-Left-Bottom",
         "EID": 65,
         "Transport": {
@@ -395,6 +396,7 @@
         "Generation": "vera-rubin",
         "Instance": 1,
         "LocationCode": "NVMe E1.S Slot 2",
+        "SsdIndex": 0,
         "LocationContext": "Chassis_0/Bay-B-Left-Top",
         "EID": 75,
         "Transport": {
@@ -411,6 +413,7 @@
         "Generation": "vera-rubin",
         "Instance": 2,
         "LocationCode": "NVMe E1.S Slot 3",
+        "SsdIndex": 3,
         "LocationContext": "Chassis_0/Bay-B-Right-Bottom",
         "EID": 85,
         "Transport": {
@@ -427,6 +430,7 @@
         "Generation": "vera-rubin",
         "Instance": 3,
         "LocationCode": "NVMe E1.S Slot 4",
+        "SsdIndex": 2,
         "LocationContext": "Chassis_0/Bay-B-Right-Top",
         "EID": 95,
         "Transport": {
