@@ -37,10 +37,14 @@
         "Kind": "cx9_io",
         "InstanceNumber": "$Instance",
         "EID": "$EID",
+        "LocationCode": "$Name",
         "LocationContext": "$LocationContext",
+        "PortLocationContext": "$LocationContext",
         "SwitchName": "$SwitchName",
+        "BridgeName": "$Bridge",
         "PortLocationReference": "$PortLocationReference",
         "PortNameMap": ["$PortName0", "$PortName1"],
+        "PortLocationCodeMap": ["$PortName0", "$PortName1"],
         "ParameterOverrides": {}
       },
       {

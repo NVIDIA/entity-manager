@@ -10,7 +10,10 @@
         "Kind": "cx_sma",
         "InstanceNumber": "$Instance",
         "EID": "$EID",
+        "ParentChassis": "$ParentChassis",
         "LocationContext": "$LocationContext",
+        "LocationCode": "SMA_0",
+        "LeakDetectorChassis": "$ParentChassis",
         "ParameterOverrides": {}
       },
       {

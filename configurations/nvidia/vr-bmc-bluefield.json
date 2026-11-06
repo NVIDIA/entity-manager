@@ -14,6 +14,7 @@
         "EID": "$EID",
         "ParentChassis": "$Platform.TopChassis",
         "LocationCode": "$LocationCode",
+        "BridgeName": "$Bridge",
         "PortCount": 2,
         "Disable": [],
         "ParameterOverrides": {}

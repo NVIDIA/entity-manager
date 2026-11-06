@@ -12,6 +12,7 @@
         "EID": "$EID",
         "LocationContext": "$LocationContext",
         "SwitchName": "$SwitchName",
+        "BridgeName": "$Bridge",
         "PortLocationReference": "$PortLocationReference",
         "ParameterOverrides": {}
       },

@@ -58,6 +58,9 @@
             "Devices": [],
             "ChassisIRoTResponder": {
               "Enabled": false
+            },
+            "LeakDetection": {
+              "Enabled": false
             }
           }
         ]
