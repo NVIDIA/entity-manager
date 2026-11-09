@@ -2,6 +2,33 @@
     {
         "Exposes": [
             {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
+                        "Backward": "all_chassis",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/SMA_0",
+                        "Backward": "associated_ROT",
+                        "Forward": "inventory"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/SMA_0",
+                        "Backward": "associated_chassis",
+                        "Forward": "inventory_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CPLD_0",
+                        "Backward": "associated_ROT",
+                        "Forward": "inventory"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CPLD_1",
+                        "Backward": "associated_ROT",
+                        "Forward": "inventory"
+                    }
+                ],
                 "ChassisAttributes": {
                     "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
                     "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
@@ -122,6 +149,28 @@
     {
         "Exposes": [
             {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
+                        "Backward": "all_chassis",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/SMA_1",
+                        "Backward": "associated_ROT",
+                        "Forward": "inventory"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/SMA_1",
+                        "Backward": "associated_chassis",
+                        "Forward": "inventory_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CPLD_2",
+                        "Backward": "associated_ROT",
+                        "Forward": "inventory"
+                    }
+                ],
                 "ChassisAttributes": {
                     "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
                     "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
@@ -225,6 +274,23 @@
     {
         "Exposes": [
             {
+                "Associations": [
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0",
+                        "Backward": "all_chassis",
+                        "Forward": "parent_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/SMA_2",
+                        "Backward": "associated_ROT",
+                        "Forward": "inventory"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/SMA_2",
+                        "Backward": "associated_chassis",
+                        "Forward": "inventory_chassis"
+                    }
+                ],
                 "ChassisAttributes": {
                     "ChassisType": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component",
                     "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded",
