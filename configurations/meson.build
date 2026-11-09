@@ -724,6 +724,7 @@ configs = [
     'nvidia/vrnvl/vr-nvl-hmc/vru-nvl-hmc/vrnvl_irot_bmc_pldm.json',
     'nvidia/vrnvl/vr-nvl-hmc/vru-nvl-hmc/vrnvl_irot_gpu_chassis.json',
     'nvidia/vrnvl/vr-nvl-hmc/vru-nvl-hmc/vrnvl_mctp_hmc_target_configuration.json',
+    'nvidia/vrnvl/vr-nvl-hmc/vru-nvl-hmc/vrnvl_memory_systems_gpu.json',
     'nvidia/vrnvl/vr-nvl-hmc/vru-nvl-hmc/vrnvl_nvlink_topology.json',
     'nvidia/vrnvl/vr-nvl-hmc/vru-nvl-hmc/vrnvl_platform.json',
     'nvidia/vrnvl/vr-nvl-hmc/vru-nvl-hmc/vrnvl_processor_systems_cpu.json',
