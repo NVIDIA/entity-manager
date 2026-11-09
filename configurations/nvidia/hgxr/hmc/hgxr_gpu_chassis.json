@@ -496,7 +496,7 @@
                 "CompositeNumericSensors": [
                     "/xyz/openbmc_project/sensors/power/HGX_Chassis_0_TotalGPU_Power_0"
                 ],
-                "MaxAllowableOperatingValue": 1020.0,
+                "MaxAllowableOperatingValue": 2300.0,
                 "Name": "HGX_GPU $INSTANCE_NUMBER Power_0",
                 "PeakValue": {
                     "Aggregated": true,
