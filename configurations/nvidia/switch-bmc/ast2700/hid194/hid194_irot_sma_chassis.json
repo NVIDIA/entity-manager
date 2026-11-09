@@ -24,9 +24,9 @@
                         "Forward": "inventory"
                     },
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CPLD_1",
-                        "Backward": "associated_ROT",
-                        "Forward": "inventory"
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CPLD_0",
+                        "Backward": "associated_chassis",
+                        "Forward": "ap_chassis"
                     }
                 ],
                 "ChassisAttributes": {
@@ -166,9 +166,14 @@
                         "Forward": "inventory_chassis"
                     },
                     {
-                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CPLD_2",
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CPLD_1",
                         "Backward": "associated_ROT",
                         "Forward": "inventory"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CPLD_1",
+                        "Backward": "associated_chassis",
+                        "Forward": "ap_chassis"
                     }
                 ],
                 "ChassisAttributes": {
@@ -306,6 +311,16 @@
                         "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/SMA_2",
                         "Backward": "associated_chassis",
                         "Forward": "inventory_chassis"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CPLD_2",
+                        "Backward": "associated_ROT",
+                        "Forward": "inventory"
+                    },
+                    {
+                        "AbsolutePath": "/xyz/openbmc_project/inventory/system/chassis/CPLD_2",
+                        "Backward": "associated_chassis",
+                        "Forward": "ap_chassis"
                     }
                 ],
                 "ChassisAttributes": {
