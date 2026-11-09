@@ -616,7 +616,11 @@
             }
         ],
         "Name": "NVMe_E1S_SSD4",
-        "Probe": "FOUND('StorageBackplane_0')",
+        "Probe": [
+            "FOUND('StorageBackplane_0')",
+            "AND",
+            "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.*MGX C2.*'})"
+        ],
         "Type": "NVMe",
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
@@ -643,7 +647,11 @@
             }
         ],
         "Name": "NVMe_E1S_SSD5",
-        "Probe": "FOUND('StorageBackplane_0')",
+        "Probe": [
+            "FOUND('StorageBackplane_0')",
+            "AND",
+            "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.*MGX C2.*'})"
+        ],
         "Type": "NVMe",
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
@@ -670,7 +678,11 @@
             }
         ],
         "Name": "NVMe_E1S_SSD6",
-        "Probe": "FOUND('StorageBackplane_0')",
+        "Probe": [
+            "FOUND('StorageBackplane_0')",
+            "AND",
+            "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.*MGX C2.*'})"
+        ],
         "Type": "NVMe",
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
@@ -697,7 +709,11 @@
             }
         ],
         "Name": "NVMe_E1S_SSD7",
-        "Probe": "FOUND('StorageBackplane_0')",
+        "Probe": [
+            "FOUND('StorageBackplane_0')",
+            "AND",
+            "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.*MGX C2.*'})"
+        ],
         "Type": "NVMe",
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
