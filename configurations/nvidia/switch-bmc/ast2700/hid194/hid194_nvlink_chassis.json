@@ -122,6 +122,15 @@
                 "Name": "NVSwitch_$INSTANCE_NUMBER_Association",
                 "Type": "NsmDeviceAssociation",
                 "UUID": "$UUID"
+            },
+            {
+                "AuxNames": [
+                    "NVSwitch_$INSTANCE_NUMBER_Power_0"
+                ],
+                "Name": "NVSwitch_$INSTANCE_NUMBER_Power_0",
+                "ParentObjPath": "/xyz/openbmc_project/inventory/system/chassis/NVSwitch_$INSTANCE_NUMBER",
+                "SensorId": 50,
+                "Type": "SensorAuxName"
             }
         ],
         "Name": "NVSwitch_$INSTANCE_NUMBER",
