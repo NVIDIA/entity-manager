@@ -87,15 +87,11 @@
       {
         "Name": "$Name_PLDM",
         "Type": "PLDMDevice",
-        "NetworkAdapter": "CX_NIC_$Instance",
         "SensorAuxNames": {
           "$Name_Temp_0": 300,
           "CX_NIC_$Instance_Port_0_Temp_0": 500,
           "Port_0": 200,
           "$Name_Power_0": 50
-        },
-        "Ports": {
-          "200": "Port_0"
         }
       },
       {
