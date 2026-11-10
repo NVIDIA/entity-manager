@@ -44,12 +44,12 @@
                     165
                 ],
                 "MinValue": 0.0,
-                "Name": "SMA_0_LeakDetector_0",
+                "Name": "MGMT_LeakDetector_0",
                 "SensorIdMap": [
                     4
                 ],
                 "SensorNameMap": [
-                    "SMA_0_LeakDetector_0"
+                    "MGMT_LeakDetector_0"
                 ],
                 "Type": "NSM_LeakDetection",
                 "UUID": "$UUID"
@@ -110,12 +110,12 @@
                     165
                 ],
                 "MinValue": 0.0,
-                "Name": "SMA_1_LeakDetector_0",
+                "Name": "SWB1_LeakDetector_0",
                 "SensorIdMap": [
                     4
                 ],
                 "SensorNameMap": [
-                    "SMA_1_LeakDetector_0"
+                    "SWB1_LeakDetector_0"
                 ],
                 "Type": "NSM_LeakDetection",
                 "UUID": "$UUID"
@@ -176,12 +176,12 @@
                     165
                 ],
                 "MinValue": 0.0,
-                "Name": "SMA_2_LeakDetector_0",
+                "Name": "SWB2_LeakDetector_0",
                 "SensorIdMap": [
                     4
                 ],
                 "SensorNameMap": [
-                    "SMA_2_LeakDetector_0"
+                    "SWB2_LeakDetector_0"
                 ],
                 "Type": "NSM_LeakDetection",
                 "UUID": "$UUID"
