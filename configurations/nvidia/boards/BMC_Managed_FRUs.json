@@ -183,15 +183,16 @@
         }
     },
     {
-        "Exposes": [],
+        "Exposes": [
+            {
+                "Name": "BF4_MCURecoveryPackage",
+                "PackageUUID": "C8E5F4F05A2E4C6B91512E4D7C3CE4C6",
+                "Target": "BF4",
+                "Type": "MCURecoveryPackage"
+            }
+        ],
         "Name": "BlueField_4_B4180V_FRU",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'B4180V.*'})",
-        "Type": "FRU_EEPROM"
-    },
-    {
-        "Exposes": [],
-        "Name": "BlueField_4_B4240V_FRU",
-        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'B4240V.*'})",
         "Type": "FRU_EEPROM"
     },
     {
@@ -203,12 +204,8 @@
                 "Type": "MCURecoveryPackage"
             }
         ],
-        "Name": "BlueField_4_Lupine_MCU_Recovery",
-        "Probe": [
-            "xyz.openbmc_project.FruDevice({'BOARD_PART_NUMBER': '.*D4A4.*'})",
-            "AND",
-            "FOUND('Nvidia VR-NVL72 BMC AST2600')"
-        ],
+        "Name": "BlueField_4_B4240V_FRU",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'B4240V.*'})",
         "Type": "FRU_EEPROM"
     },
     {
@@ -220,12 +217,8 @@
                 "Type": "MCURecoveryPackage"
             }
         ],
-        "Name": "BlueField_4_Clover_MCU_Recovery",
-        "Probe": [
-            "xyz.openbmc_project.FruDevice({'BOARD_PART_NUMBER': '.*X9ME.*'})",
-            "AND",
-            "FOUND('Nvidia VR-NVL72 BMC AST2600')"
-        ],
+        "Name": "BlueField_4_C9180_FRU",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'ConnectX-9.*'})",
         "Type": "FRU_EEPROM"
     }
 ]
