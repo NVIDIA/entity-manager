@@ -481,5 +481,92 @@
         "USBDFUPackageUUID": "C7C67D84B064593A938C098DC5584669"
       }
     ]
+  },
+  {
+    "Name": "HMC_BRIDGE",
+    "Probe": "xyz.openbmc_project.State.FeatureReady({'FeatureType': 'xyz.openbmc_project.State.FeatureReady.FeatureTypes.MC', 'State': 'xyz.openbmc_project.State.FeatureReady.States.Enabled'})",
+    "Type": "HMCBridge",
+    "Exposes": [
+      {
+        "Name": "HMC_BRIDGE_GPU_SMA_0",
+        "Type": "NvDevice",
+        "Kind": "hmc_bridge_gpu_sma",
+        "Generation": "vera-rubin",
+        "Instance": 0,
+        "EID": 10
+      },
+      {
+        "Name": "HMC_BRIDGE_IRoT_GPU_0",
+        "Type": "NvDevice",
+        "Kind": "hmc_bridge_gpu",
+        "Generation": "vera-rubin",
+        "Instance": 0,
+        "EID": 11
+      },
+      {
+        "Name": "HMC_BRIDGE_IRoT_GPU_1",
+        "Type": "NvDevice",
+        "Kind": "hmc_bridge_gpu",
+        "Generation": "vera-rubin",
+        "Instance": 1,
+        "EID": 12
+      },
+      {
+        "Name": "HMC_BRIDGE_GPU_SMA_1",
+        "Type": "NvDevice",
+        "Kind": "hmc_bridge_gpu_sma",
+        "Generation": "vera-rubin",
+        "Instance": 1,
+        "EID": 20
+      },
+      {
+        "Name": "HMC_BRIDGE_IRoT_GPU_2",
+        "Type": "NvDevice",
+        "Kind": "hmc_bridge_gpu",
+        "Generation": "vera-rubin",
+        "Instance": 2,
+        "EID": 21
+      },
+      {
+        "Name": "HMC_BRIDGE_IRoT_GPU_3",
+        "Type": "NvDevice",
+        "Kind": "hmc_bridge_gpu",
+        "Generation": "vera-rubin",
+        "Instance": 3,
+        "EID": 22
+      },
+      {
+        "Name": "HMC_BRIDGE_CPU_0",
+        "Type": "NvDevice",
+        "Kind": "hmc_bridge_cpu",
+        "Generation": "vera-rubin",
+        "Instance": 0,
+        "EID": 14
+      },
+      {
+        "Name": "HMC_BRIDGE_CPU_1",
+        "Type": "NvDevice",
+        "Kind": "hmc_bridge_cpu",
+        "Generation": "vera-rubin",
+        "Instance": 1,
+        "EID": 24
+      },
+      {
+        "Name": "HMC_BRIDGE_IRoT_ProcessorModule_SMA_0",
+        "Type": "NvDevice",
+        "Kind": "hmc_bridge_hpm_sma",
+        "Generation": "vera-rubin",
+        "Instance": 0,
+        "EID": 13
+      },
+      {
+        "Name": "HMC_BRIDGE_IRoT_ProcessorModule_SMA_1",
+        "Type": "NvDevice",
+        "Kind": "hmc_bridge_hpm_sma",
+        "Generation": "vera-rubin",
+        "Instance": 1,
+        "EID": 23
+      }
+    ]
   }
 ]
