@@ -110,5 +110,98 @@
         ],
         "Type": "Assembly",
         "Board": "BMC/BMC_0"
+    },
+    {
+        "Exposes": [
+            {
+                "Address": "0x53",
+                "Bus": "90",
+                "Name": "CBC00_FRU",
+                "Type": "EEPROM_24C02"
+            }
+        ],
+        "Name": "CBC00_FRU",
+        "Probe": "TRUE",
+        "Type": "FRU_EEPROM",
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "0x53",
+            "Bus": "90",
+            "Name": "CBC00_FRU"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Address": "0x54",
+                "Bus": "90",
+                "Name": "CBC01_FRU",
+                "Type": "EEPROM_24C02"
+            }
+        ],
+        "Name": "CBC01_FRU",
+        "Probe": "TRUE",
+        "Type": "FRU_EEPROM",
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "0x54",
+            "Bus": "90",
+            "Name": "CBC01_FRU"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Address": "0x55",
+                "Bus": "90",
+                "Name": "CBC10_FRU",
+                "Type": "EEPROM_24C02"
+            }
+        ],
+        "Name": "CBC10_FRU",
+        "Probe": "TRUE",
+        "Type": "FRU_EEPROM",
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "0x55",
+            "Bus": "90",
+            "Name": "CBC10_FRU"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Address": "0x56",
+                "Bus": "90",
+                "Name": "CBC11_FRU",
+                "Type": "EEPROM_24C02"
+            }
+        ],
+        "Name": "CBC11_FRU",
+        "Probe": "TRUE",
+        "Type": "FRU_EEPROM",
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "0x56",
+            "Bus": "90",
+            "Name": "CBC11_FRU"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "Address": "0x52",
+                "Bus": "90",
+                "Name": "HMC_FRU",
+                "Type": "EEPROM_24C02"
+            }
+        ],
+        "Name": "HMC_FRU",
+        "Associations": {
+            "parent_chassis": "chassis/Baseboard_0"
+        },
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 90, 'ADDRESS': 82})",
+        "Type": "FRU_EEPROM",
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "0x52",
+            "Bus": "90",
+            "Name": "HMC_FRU"
+        }
     }
 ]
