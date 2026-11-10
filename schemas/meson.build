@@ -46,6 +46,7 @@ schemas = [
     'platform/pldm_device_inventory.json',
     'platform/pldm_exclusion.json',
     'platform/pldm_firmware_device.json',
+    'platform/top_chassis.json',
     'satellite_controller.json',
     'spdm_endpoint.json',
     'stepwise.json',

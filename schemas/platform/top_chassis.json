@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "NVIDIA TopChassis schema",
+    "$defs": {
+        "TopChassis": {
+            "description": "The name of the platform's top chassis (Chassis_0 on a BMC, HGX_Chassis_0 on an HMC). Published as xyz.openbmc_project.Configuration.TopChassis on the platform object, read by pldmd as the system chassis of its sensors.",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Chassis": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "TopChassis"
+                }
+            },
+            "required": ["Chassis", "Name", "Type"]
+        }
+    }
+}

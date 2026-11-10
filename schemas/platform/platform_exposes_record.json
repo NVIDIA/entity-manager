@@ -56,6 +56,10 @@
                     "$ref": "device_prefix.json#/$defs/DevicePrefix"
                 },
                 {
+                    "$comment": "downstream-only: the platform's top chassis, consumed by pldmd.",
+                    "$ref": "top_chassis.json#/$defs/TopChassis"
+                },
+                {
                     "$comment": "downstream-only: in-system test board facts, consumed by nvidia-vera-kist.",
                     "$ref": "../nvidia_ist.json#/$defs/IST"
                 },
