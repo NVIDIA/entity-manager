@@ -92,5 +92,44 @@
             "Name": "I2CDeviceAssociation"
         },
         "xyz.openbmc_project.Inventory.Item.NetworkInterface": {}
+    },
+    {
+        "Exposes": [
+            {
+                "Name": "BF4_MCURecoveryPackage",
+                "PackageUUID": "C8E5F4F05A2E4C6B91512E4D7C3CE4C6",
+                "Target": "BF4",
+                "Type": "MCURecoveryPackage"
+            }
+        ],
+        "Name": "BlueField_4_B4180V_FRU",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'B4180V.*'})",
+        "Type": "FRU_EEPROM"
+    },
+    {
+        "Exposes": [
+            {
+                "Name": "BF4_MCURecoveryPackage",
+                "PackageUUID": "C8E5F4F05A2E4C6B91512E4D7C3CE4C6",
+                "Target": "BF4",
+                "Type": "MCURecoveryPackage"
+            }
+        ],
+        "Name": "BlueField_4_B4240V_FRU",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'B4240V.*'})",
+        "Type": "FRU_EEPROM"
+    },
+    {
+        "Exposes": [
+            {
+                "Name": "BF4_MCURecoveryPackage",
+                "PackageUUID": "668BD433B9F8473DBA1EC32B99772679",
+                "Target": "BF4",
+                "Type": "MCURecoveryPackage"
+            }
+        ],
+        "Name": "BlueField_4_C9180_FRU",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'ConnectX-9.*'})",
+        "Type": "FRU_EEPROM"
     }
 ]
