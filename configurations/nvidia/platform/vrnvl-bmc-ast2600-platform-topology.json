@@ -85,7 +85,9 @@
         "Recovery": {
           "RecoveryType": "MCU",
           "RecoveryGpio": "IOB0_MCU_RECOVERY_L-O",
-          "ResetGpio": "IOB0_MCU_RST_L-O"
+          "ResetGpio": "IOB0_MCU_RST_L-O",
+          "Target": "CX9",
+          "PackageUUID": "8F6B4D3E2C2B4B39BC929C6C4DF7B8E1"
         }
       },
       {
@@ -108,7 +110,9 @@
         "Recovery": {
           "RecoveryType": "MCU",
           "RecoveryGpio": "IOB1_MCU_RECOVERY_L-O",
-          "ResetGpio": "IOB1_MCU_RST_L-O"
+          "ResetGpio": "IOB1_MCU_RST_L-O",
+          "Target": "CX9",
+          "PackageUUID": "8F6B4D3E2C2B4B39BC929C6C4DF7B8E1"
         }
       },
       {
@@ -131,7 +135,9 @@
         "Recovery": {
           "RecoveryType": "MCU",
           "RecoveryGpio": "IOB2_MCU_RECOVERY_L-O",
-          "ResetGpio": "IOB2_MCU_RST_L-O"
+          "ResetGpio": "IOB2_MCU_RST_L-O",
+          "Target": "CX9",
+          "PackageUUID": "8F6B4D3E2C2B4B39BC929C6C4DF7B8E1"
         }
       },
       {
@@ -154,7 +160,9 @@
         "Recovery": {
           "RecoveryType": "MCU",
           "RecoveryGpio": "IOB3_MCU_RECOVERY_L-O",
-          "ResetGpio": "IOB3_MCU_RST_L-O"
+          "ResetGpio": "IOB3_MCU_RST_L-O",
+          "Target": "CX9",
+          "PackageUUID": "8F6B4D3E2C2B4B39BC929C6C4DF7B8E1"
         }
       },
       {
@@ -579,12 +587,6 @@
         "GlacierPackageUUID": "F70650A20D174C8F8A9E7CFA5CE5BD94",
         "Name": "RecoveryPackages",
         "Type": "RecoveryPackages"
-      },
-      {
-        "Name": "CX9_MCURecoveryPackage",
-        "PackageUUID": "8F6B4D3E2C2B4B39BC929C6C4DF7B8E1",
-        "Target": "CX9",
-        "Type": "MCURecoveryPackage"
       }
     ]
   },

@@ -50,7 +50,8 @@
           "RecoveryGpio": "BB_MCU_RECOV_L-O",
           "ResetGpio": "BB_MCU_RESET_L-O",
           "Target": "SMA",
-          "SoftwareName": "HGX_FW_Baseboard_SMA_0"
+          "SoftwareName": "HGX_FW_Baseboard_SMA_0",
+          "PackageUUID": "A3C9F21B7D8045E6F2B19C4DE87A3F5B"
         }
       },
       {
@@ -72,7 +73,9 @@
           "RecoveryType": "MCU",
           "RecoveryGpio": "CX9_13_MCU_RECOV_L-O",
           "ResetGpio": "CX9_13_MCU_RESET_L-O",
-          "SoftwareName": "HGX_FW_ConnectX_SMA_0"
+          "SoftwareName": "HGX_FW_ConnectX_SMA_0",
+          "Target": "CX9",
+          "PackageUUID": "4E7A1BC95F203D8EA6C1B94E2F78D3C1"
         }
       },
       {
@@ -94,7 +97,9 @@
           "RecoveryType": "MCU",
           "RecoveryGpio": "CX9_42_MCU_RECOV_L-O",
           "ResetGpio": "CX9_42_MCU_RESET_L-O",
-          "SoftwareName": "HGX_FW_ConnectX_SMA_1"
+          "SoftwareName": "HGX_FW_ConnectX_SMA_1",
+          "Target": "CX9",
+          "PackageUUID": "4E7A1BC95F203D8EA6C1B94E2F78D3C1"
         }
       },
       {
@@ -116,7 +121,9 @@
           "RecoveryType": "MCU",
           "RecoveryGpio": "CX9_86_MCU_RECOV_L-O",
           "ResetGpio": "CX9_86_MCU_RESET_L-O",
-          "SoftwareName": "HGX_FW_ConnectX_SMA_2"
+          "SoftwareName": "HGX_FW_ConnectX_SMA_2",
+          "Target": "CX9",
+          "PackageUUID": "4E7A1BC95F203D8EA6C1B94E2F78D3C1"
         }
       },
       {
@@ -138,7 +145,9 @@
           "RecoveryType": "MCU",
           "RecoveryGpio": "CX9_75_MCU_RECOV_L-O",
           "ResetGpio": "CX9_75_MCU_RESET_L-O",
-          "SoftwareName": "HGX_FW_ConnectX_SMA_3"
+          "SoftwareName": "HGX_FW_ConnectX_SMA_3",
+          "Target": "CX9",
+          "PackageUUID": "4E7A1BC95F203D8EA6C1B94E2F78D3C1"
         }
       },
       {
@@ -164,7 +173,8 @@
           "RecoveryGpio": "SXM_1_MCU_RECOV_L-O",
           "ResetGpio": "SXM_1_MCU_RESET_L-O",
           "Target": "SXM",
-          "SoftwareName": "HGX_FW_SXM_SMA_0"
+          "SoftwareName": "HGX_FW_SXM_SMA_0",
+          "PackageUUID": "F1C47A3E9D205B6C8A3F1E7B4C9628D0"
         }
       },
       {
@@ -190,7 +200,8 @@
           "RecoveryGpio": "SXM_2_MCU_RECOV_L-O",
           "ResetGpio": "SXM_2_MCU_RESET_L-O",
           "Target": "SXM",
-          "SoftwareName": "HGX_FW_SXM_SMA_1"
+          "SoftwareName": "HGX_FW_SXM_SMA_1",
+          "PackageUUID": "F1C47A3E9D205B6C8A3F1E7B4C9628D0"
         }
       },
       {
@@ -216,7 +227,8 @@
           "RecoveryGpio": "SXM_3_MCU_RECOV_L-O",
           "ResetGpio": "SXM_3_MCU_RESET_L-O",
           "Target": "SXM",
-          "SoftwareName": "HGX_FW_SXM_SMA_2"
+          "SoftwareName": "HGX_FW_SXM_SMA_2",
+          "PackageUUID": "F1C47A3E9D205B6C8A3F1E7B4C9628D0"
         }
       },
       {
@@ -242,7 +254,8 @@
           "RecoveryGpio": "SXM_4_MCU_RECOV_L-O",
           "ResetGpio": "SXM_4_MCU_RESET_L-O",
           "Target": "SXM",
-          "SoftwareName": "HGX_FW_SXM_SMA_3"
+          "SoftwareName": "HGX_FW_SXM_SMA_3",
+          "PackageUUID": "F1C47A3E9D205B6C8A3F1E7B4C9628D0"
         }
       },
       {
@@ -268,7 +281,8 @@
           "RecoveryGpio": "SXM_5_MCU_RECOV_L-O",
           "ResetGpio": "SXM_5_MCU_RESET_L-O",
           "Target": "SXM",
-          "SoftwareName": "HGX_FW_SXM_SMA_4"
+          "SoftwareName": "HGX_FW_SXM_SMA_4",
+          "PackageUUID": "F1C47A3E9D205B6C8A3F1E7B4C9628D0"
         }
       },
       {
@@ -294,7 +308,8 @@
           "RecoveryGpio": "SXM_6_MCU_RECOV_L-O",
           "ResetGpio": "SXM_6_MCU_RESET_L-O",
           "Target": "SXM",
-          "SoftwareName": "HGX_FW_SXM_SMA_5"
+          "SoftwareName": "HGX_FW_SXM_SMA_5",
+          "PackageUUID": "F1C47A3E9D205B6C8A3F1E7B4C9628D0"
         }
       },
       {
@@ -320,7 +335,8 @@
           "RecoveryGpio": "SXM_7_MCU_RECOV_L-O",
           "ResetGpio": "SXM_7_MCU_RESET_L-O",
           "Target": "SXM",
-          "SoftwareName": "HGX_FW_SXM_SMA_6"
+          "SoftwareName": "HGX_FW_SXM_SMA_6",
+          "PackageUUID": "F1C47A3E9D205B6C8A3F1E7B4C9628D0"
         }
       },
       {
@@ -346,7 +362,8 @@
           "RecoveryGpio": "SXM_8_MCU_RECOV_L-O",
           "ResetGpio": "SXM_8_MCU_RESET_L-O",
           "Target": "SXM",
-          "SoftwareName": "HGX_FW_SXM_SMA_7"
+          "SoftwareName": "HGX_FW_SXM_SMA_7",
+          "PackageUUID": "F1C47A3E9D205B6C8A3F1E7B4C9628D0"
         }
       },
       {
@@ -569,7 +586,8 @@
           "RecoveryGpio": "QM4_32_MCU_RECOV_L-O",
           "ResetGpio": "QM4_32_MCU_RESET_L-O",
           "Target": "QM4",
-          "SoftwareName": "HGX_FW_NVSwitch_SMA_0"
+          "SoftwareName": "HGX_FW_NVSwitch_SMA_0",
+          "PackageUUID": "9B5E32AF10C7D4E8F3A2619CB8D4E0F2"
         }
       },
       {
@@ -592,7 +610,8 @@
           "RecoveryGpio": "QM4_14_MCU_RECOV_L-O",
           "ResetGpio": "QM4_14_MCU_RESET_L-O",
           "Target": "QM4",
-          "SoftwareName": "HGX_FW_NVSwitch_SMA_1"
+          "SoftwareName": "HGX_FW_NVSwitch_SMA_1",
+          "PackageUUID": "9B5E32AF10C7D4E8F3A2619CB8D4E0F2"
         }
       },
       {
@@ -922,30 +941,6 @@
           "SoftwareName": "HGX_FW_NVSwitch_3",
           "ChassisName": "HGX_IRoT_NVSwitch_3"
         }
-      },
-      {
-        "Name": "CX9_MCURecoveryPackage",
-        "PackageUUID": "4E7A1BC95F203D8EA6C1B94E2F78D3C1",
-        "Target": "CX9",
-        "Type": "MCURecoveryPackage"
-      },
-      {
-        "Name": "SXM_MCURecoveryPackage",
-        "PackageUUID": "F1C47A3E9D205B6C8A3F1E7B4C9628D0",
-        "Target": "SXM",
-        "Type": "MCURecoveryPackage"
-      },
-      {
-        "Name": "SMA_MCURecoveryPackage",
-        "PackageUUID": "A3C9F21B7D8045E6F2B19C4DE87A3F5B",
-        "Target": "SMA",
-        "Type": "MCURecoveryPackage"
-      },
-      {
-        "Name": "QM4_MCURecoveryPackage",
-        "PackageUUID": "9B5E32AF10C7D4E8F3A2619CB8D4E0F2",
-        "Target": "QM4",
-        "Type": "MCURecoveryPackage"
       }
     ]
   }

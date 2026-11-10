@@ -404,6 +404,7 @@ configs = [
     'nvidia/vr-hmc-nvlink_mgmt_nic.json',
     'nvidia/vr-hmc-nvswitch.json',
     'nvidia/vr-hmc-nvswitch_sma.json',
+    'nvidia/vr-mcu_recovery.json',
     'nvidia/vr-rot.json',
     'ocp/cx7_ocp.json',
     'ocp/cx8_ocp.json',

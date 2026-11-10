@@ -1,0 +1,13 @@
+{
+    "Exposes": [
+        {
+            "Name": "$Target_MCURecoveryPackage",
+            "PackageUUID": "$PackageUUID",
+            "Target": "$Target",
+            "Type": "MCURecoveryPackage"
+        }
+    ],
+    "Name": "$Target MCU Recovery $index",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice.Recovery({'RecoveryType': 'MCU', 'PackageUUID': '.+'})",
+    "Type": "RecoveryPackages"
+}

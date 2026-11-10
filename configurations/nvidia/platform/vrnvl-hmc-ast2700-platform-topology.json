@@ -56,7 +56,9 @@
           "RecoveryType": "MCU",
           "RecoveryGpio": "BRD0_GPU_MCU_RECOVERY_L_3V3-O",
           "ResetGpio": "BRD0_GPU_MCU_RESET_L_3V3-O",
-          "SoftwareName": "HGX_FW_GPU_SMA_0"
+          "SoftwareName": "HGX_FW_GPU_SMA_0",
+          "Target": "GPU",
+          "PackageUUID": "8F3A1C76B24E9D50C7AD93E1F42BC689"
         }
       },
       {
@@ -133,7 +135,9 @@
           "RecoveryType": "MCU",
           "RecoveryGpio": "BRD1_GPU_MCU_RECOVERY_L_3V3-O",
           "ResetGpio": "BRD1_GPU_MCU_RESET_L_3V3-O",
-          "SoftwareName": "HGX_FW_GPU_SMA_1"
+          "SoftwareName": "HGX_FW_GPU_SMA_1",
+          "Target": "GPU",
+          "PackageUUID": "8F3A1C76B24E9D50C7AD93E1F42BC689"
         }
       },
       {
@@ -263,7 +267,9 @@
           "RecoveryType": "MCU",
           "RecoveryGpio": "BRD0_MCU_RECOVERY_L-O",
           "ResetGpio": "BRD0_MCU_RESET_L-O",
-          "SoftwareName": "HGX_FW_ProcessorModule_SMA_0"
+          "SoftwareName": "HGX_FW_ProcessorModule_SMA_0",
+          "Target": "HPM",
+          "PackageUUID": "3E9B47D2A5F18C0E6BD9314FA72C58DE"
         }
       },
       {
@@ -284,7 +290,9 @@
           "RecoveryType": "MCU",
           "RecoveryGpio": "BRD1_MCU_RECOVERY_L-O",
           "ResetGpio": "BRD1_MCU_RESET_L-O",
-          "SoftwareName": "HGX_FW_ProcessorModule_SMA_1"
+          "SoftwareName": "HGX_FW_ProcessorModule_SMA_1",
+          "Target": "HPM",
+          "PackageUUID": "3E9B47D2A5F18C0E6BD9314FA72C58DE"
         }
       },
       {
@@ -325,18 +333,6 @@
         "ShutdownOkGpio": "BRD1_CPU0_SHDN_OK_L_3V3-I",
         "SysResetGpio": "BRD1_IST_SYS_RST_L-O",
         "Type": "ISTDomain"
-      },
-      {
-        "Name": "HPM_MCURecoveryPackage",
-        "PackageUUID": "3E9B47D2A5F18C0E6BD9314FA72C58DE",
-        "Target": "HPM",
-        "Type": "MCURecoveryPackage"
-      },
-      {
-        "Name": "GPU_MCURecoveryPackage",
-        "PackageUUID": "8F3A1C76B24E9D50C7AD93E1F42BC689",
-        "Target": "GPU",
-        "Type": "MCURecoveryPackage"
       }
     ]
   }
