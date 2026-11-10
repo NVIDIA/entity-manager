@@ -102,7 +102,7 @@
           "200": "$PortName0",
           "201": "$PortName1"
         },
-        "PortMaxSpeedMBps": 100000,
+        "PortMaxSpeedMBps": "$PortMaxSpeedMBps",
         "UpperFatal": {
           "$Name_Temp_0": 105.0,
           "CX_NIC_$Instance_Port_0_Temp_0": 72.0,

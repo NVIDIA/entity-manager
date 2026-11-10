@@ -65,8 +65,8 @@
                     }
                 },
                 "PortMaxSpeedMBps": {
-                    "description": "Maximum port speed in megabytes per second, used for port metadata.",
-                    "type": "integer",
+                    "description": "Maximum port speed in megabytes per second, used for port metadata. A string is a template variable, such as $PortMaxSpeedMBps from the device's topology entry, that entity-manager replaces with the integer.",
+                    "type": ["string", "integer"],
                     "minimum": 0
                 },
                 "PortType": {

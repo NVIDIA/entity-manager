@@ -624,6 +624,7 @@
         "ParentChassis": "HGX_Chassis_0",
         "NetworkAdapterName": "ConnectX_NIC_0",
         "PortName0": "Port_0",
+        "PortMaxSpeedMBps": 50000,
         "Transport": {
           "Medium": "bridge",
           "Bridge": "HGX_ConnectX_SMA_0",
@@ -650,6 +651,7 @@
         "ParentChassis": "HGX_Chassis_0",
         "NetworkAdapterName": "ConnectX_NIC_1",
         "PortName0": "Port_0",
+        "PortMaxSpeedMBps": 50000,
         "Transport": {
           "Medium": "bridge",
           "Bridge": "HGX_ConnectX_SMA_1",
@@ -676,6 +678,7 @@
         "ParentChassis": "HGX_Chassis_0",
         "NetworkAdapterName": "ConnectX_NIC_2",
         "PortName0": "Port_0",
+        "PortMaxSpeedMBps": 50000,
         "Transport": {
           "Medium": "bridge",
           "Bridge": "HGX_ConnectX_SMA_0",
@@ -702,6 +705,7 @@
         "ParentChassis": "HGX_Chassis_0",
         "NetworkAdapterName": "ConnectX_NIC_3",
         "PortName0": "Port_0",
+        "PortMaxSpeedMBps": 50000,
         "Transport": {
           "Medium": "bridge",
           "Bridge": "HGX_ConnectX_SMA_1",
@@ -728,6 +732,7 @@
         "ParentChassis": "HGX_Chassis_0",
         "NetworkAdapterName": "ConnectX_NIC_4",
         "PortName0": "Port_0",
+        "PortMaxSpeedMBps": 50000,
         "Transport": {
           "Medium": "bridge",
           "Bridge": "HGX_ConnectX_SMA_3",
@@ -754,6 +759,7 @@
         "ParentChassis": "HGX_Chassis_0",
         "NetworkAdapterName": "ConnectX_NIC_5",
         "PortName0": "Port_0",
+        "PortMaxSpeedMBps": 50000,
         "Transport": {
           "Medium": "bridge",
           "Bridge": "HGX_ConnectX_SMA_2",
@@ -780,6 +786,7 @@
         "ParentChassis": "HGX_Chassis_0",
         "NetworkAdapterName": "ConnectX_NIC_6",
         "PortName0": "Port_0",
+        "PortMaxSpeedMBps": 50000,
         "Transport": {
           "Medium": "bridge",
           "Bridge": "HGX_ConnectX_SMA_3",
@@ -806,6 +813,7 @@
         "ParentChassis": "HGX_Chassis_0",
         "NetworkAdapterName": "ConnectX_NIC_7",
         "PortName0": "Port_0",
+        "PortMaxSpeedMBps": 50000,
         "Transport": {
           "Medium": "bridge",
           "Bridge": "HGX_ConnectX_SMA_2",

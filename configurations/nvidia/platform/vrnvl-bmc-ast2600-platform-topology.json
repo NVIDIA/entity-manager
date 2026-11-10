@@ -179,6 +179,7 @@
         "NetworkAdapterName": "NIC_0",
         "PortName0": "C3_1",
         "PortName1": "C4_2",
+        "PortMaxSpeedMBps": 100000,
         "PortLocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Left",
         "SwitchName": "CX_Switch_0",
         "Transport": {
@@ -207,6 +208,7 @@
         "NetworkAdapterName": "NIC_0",
         "PortName0": "C3_2",
         "PortName1": "C4_1",
+        "PortMaxSpeedMBps": 100000,
         "PortLocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Left",
         "SwitchName": "CX_Switch_1",
         "Transport": {
@@ -235,6 +237,7 @@
         "NetworkAdapterName": "NIC_0",
         "PortName0": "C1_1",
         "PortName1": "C2_2",
+        "PortMaxSpeedMBps": 100000,
         "PortLocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Left",
         "SwitchName": "CX_Switch_2",
         "Transport": {
@@ -263,6 +266,7 @@
         "NetworkAdapterName": "NIC_0",
         "PortName0": "C1_2",
         "PortName1": "C2_1",
+        "PortMaxSpeedMBps": 100000,
         "PortLocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Left",
         "SwitchName": "CX_Switch_3",
         "Transport": {
@@ -291,6 +295,7 @@
         "NetworkAdapterName": "NIC_0",
         "PortName0": "C7_1",
         "PortName1": "C8_2",
+        "PortMaxSpeedMBps": 100000,
         "PortLocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Right",
         "SwitchName": "CX_Switch_4",
         "Transport": {
@@ -319,6 +324,7 @@
         "NetworkAdapterName": "NIC_0",
         "PortName0": "C7_2",
         "PortName1": "C8_1",
+        "PortMaxSpeedMBps": 100000,
         "PortLocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Right",
         "SwitchName": "CX_Switch_5",
         "Transport": {
@@ -347,6 +353,7 @@
         "NetworkAdapterName": "NIC_0",
         "PortName0": "C5_1",
         "PortName1": "C6_2",
+        "PortMaxSpeedMBps": 100000,
         "PortLocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Right",
         "SwitchName": "CX_Switch_6",
         "Transport": {
@@ -375,6 +382,7 @@
         "NetworkAdapterName": "NIC_0",
         "PortName0": "C5_2",
         "PortName1": "C6_1",
+        "PortMaxSpeedMBps": 100000,
         "PortLocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Right",
         "SwitchName": "CX_Switch_7",
         "Transport": {
