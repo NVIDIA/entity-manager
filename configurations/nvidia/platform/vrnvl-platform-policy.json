@@ -106,13 +106,15 @@
             "Devices": [
               "HGX_ProcessorModule_SMA_0"
             ],
-            "TotalGpuPower": {
-              "Enabled": true
-            },
-            "TotalGpuPowerGpuCount": {
-              "Value": 4
-            },
             "BusBarTemp_0": {
+              "Enabled": false
+            }
+          },
+          {
+            "Devices": [
+              "HGX_ProcessorModule_SMA_1"
+            ],
+            "TotalGpuPower": {
               "Enabled": false
             }
           }

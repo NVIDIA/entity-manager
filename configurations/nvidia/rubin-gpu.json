@@ -13,6 +13,7 @@
         "ParentChassis": "$ParentChassis",
         "NvLinkCount": 36,
         "LocationCode": "$LocationCode",
+        "MemoryLocationCode": "$LocationCode_DRAM_0",
         "LocationContext": "$LocationContext",
         "BridgeName": "$Bridge",
         "ParameterOverrides": {}
