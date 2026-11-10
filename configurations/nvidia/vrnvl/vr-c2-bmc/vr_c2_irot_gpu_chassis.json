@@ -46,16 +46,6 @@
                 "UUID": "$UUID"
             },
             {
-                "ChassisName": "IRoT_GPU_$INSTANCE_NUMBER",
-                "DebugTokenDeviceType": "GPU",
-                "DebugTokenType": [
-                    "Unified"
-                ],
-                "Name": "DebugToken",
-                "Type": "NSM_DebugToken",
-                "UUID": "$UUID"
-            },
-            {
                 "Associations": [
                     {
                         "AbsolutePath": "/xyz/openbmc_project/software/FW_GPU_$INSTANCE_NUMBER",

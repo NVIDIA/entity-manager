@@ -45,16 +45,6 @@
                 "UUID": "$UUID"
             },
             {
-                "ChassisName": "IRoT_GPU_SMA_$INSTANCE_NUMBER",
-                "DebugTokenDeviceType": "SMA",
-                "DebugTokenType": [
-                    "Unified"
-                ],
-                "Name": "DebugToken",
-                "Type": "NSM_DebugToken",
-                "UUID": "$UUID"
-            },
-            {
                 "Associations": [
                     {
                         "AbsolutePath": "/xyz/openbmc_project/software/FW_GPU_SMA_$INSTANCE_NUMBER",
