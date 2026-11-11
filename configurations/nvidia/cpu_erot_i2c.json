@@ -1,0 +1,48 @@
+[
+  {
+    "Name": "$Name",
+    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu_erot_i2c$', 'Generation': 'vera-rubin'})",
+    "Type": "NvDevice",
+    "Exposes": [
+      {
+        "Name": "NSM_Telemetry",
+        "Type": "NSM_Telemetry",
+        "Kind": "cpu_erot",
+        "InstanceNumber": "$Instance",
+        "EID": "$EID",
+        "Disable": [],
+        "ParameterOverrides": {}
+      },
+      {
+        "ConnectsToName": "$Platform.BmcName",
+        "DeviceAddress": "MCTP:$EID",
+        "DeviceType": "MCTPEndpoint",
+        "Name": "$Name",
+        "Type": "PlatformDevice"
+      },
+      {
+        "Name": "$Name",
+        "SupportedDumps": [
+          "RoT"
+        ],
+        "Type": "Dump"
+      },
+      {
+        "Name": "$Name_PLDM",
+        "Type": "PLDMDevice",
+        "UpdateableComponents": {
+          "$Platform.NamePrefixFW_ERoT_CPU_0": 65280,
+          "$Platform.NamePrefixFW_CPU_0": 218
+        }
+      },
+      {
+        "Address": "$Address",
+        "Bus": "$Bus",
+        "Name": "$Name",
+        "PollingInterval": "5",
+        "StaticEndpointID": "$EID",
+        "Type": "MCTPI2CTarget"
+      }
+    ]
+  }
+]

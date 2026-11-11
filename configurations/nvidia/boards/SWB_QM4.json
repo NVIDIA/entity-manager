@@ -1,0 +1,68 @@
+[
+  {
+    "Name": "SWB_QM4_Devices_$Instance",
+    "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^SWB_QM4$'})",
+    "Type": "NvDevice",
+    "Exposes": [
+      {
+        "Name": "MGX_NVSwitch_SMA_$Instance",
+        "Type": "NvDevice",
+        "Kind": "nvswitch_sma",
+        "Generation": "vera-rubin",
+        "Instance": "$Instance",
+        "EID": "$Instance + 69",
+        "Transport": {
+          "Medium": "usb",
+          "Port": "$UsbPort",
+          "RootHubPath": "$Platform.UsbRootHubPath",
+          "PoolStartEID": "$Instance * 4 + 53",
+          "PoolEndEID": "$Instance * 4 + 54"
+        },
+        "Recovery": {
+          "RecoveryType": "MCU",
+          "RecoveryGpio": "GP_BMC_MCU$McuNumber_RECOVERY_L",
+          "ResetGpio": "GP_BMC_MCU$McuNumber_RESET_L",
+          "ResetGpioPolarity": "ActiveHigh",
+          "SoftwareName": "MGX_FW_NVSwitch_SMA_$Instance"
+        }
+      },
+      {
+        "Name": "MGX_NVSwitch_$Instance * 2",
+        "Type": "NvDevice",
+        "Kind": "nvswitch",
+        "Generation": "vera-rubin",
+        "Instance": "$Instance * 2",
+        "EID": "$Instance * 4 + 53",
+        "ParentChassis": "Chassis_0",
+        "Transport": {
+          "Medium": "bridge",
+          "Bridge": "MGX_NVSwitch_SMA_$Instance",
+          "BridgeEID": "$Instance + 69",
+          "PoolIndex": 0
+        }
+      },
+      {
+        "Name": "MGX_NVSwitch_$Instance * 2 + 1",
+        "Type": "NvDevice",
+        "Kind": "nvswitch",
+        "Generation": "vera-rubin",
+        "Instance": "$Instance * 2 + 1",
+        "EID": "$Instance * 4 + 54",
+        "ParentChassis": "Chassis_0",
+        "Transport": {
+          "Medium": "bridge",
+          "Bridge": "MGX_NVSwitch_SMA_$Instance",
+          "BridgeEID": "$Instance + 69",
+          "PoolIndex": 1
+        }
+      },
+      {
+        "Name": "MGX_IRoT_NVSwitch_SMA_$Instance",
+        "Type": "PlatformDevice",
+        "ConnectsToName": "MGX_NVSwitch_SMA_$Instance",
+        "DeviceAddress": "MCTP:$Instance + 69",
+        "DeviceType": "ROT"
+      }
+    ]
+  }
+]

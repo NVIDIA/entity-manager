@@ -1,0 +1,26 @@
+[
+  {
+    "Name": "Nvidia NVL144 AST2700 Switch BMC",
+    "Probe": "TRUE",
+    "Type": "Platform",
+    "NamePrefix": "",
+    "BmcName": "BMC_0",
+    "UsbRootHubPath": "/sys/devices/platform/soc@10000000/12063000.usb",
+    "PlatformExposes": [
+      {
+        "Name": "SWB_Site_0",
+        "Type": "NvBoard",
+        "Board": "SWB_QM4_AST2700",
+        "Instance": 0,
+        "UsbPort": "1.2"
+      },
+      {
+        "Name": "SWB_Site_1",
+        "Type": "NvBoard",
+        "Board": "SWB_QM4_AST2700",
+        "Instance": 1,
+        "UsbPort": "1.3"
+      }
+    ]
+  }
+]

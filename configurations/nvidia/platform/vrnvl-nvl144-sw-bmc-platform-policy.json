@@ -1,11 +1,7 @@
 [
   {
     "Name": "Nvidia NVL144 Switch Tray BMC Policy",
-    "Probe": [
-      "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80})",
-      "OR",
-      "xyz.openbmc_project.FruDevice({'BUS': 4, 'ADDRESS': 80})"
-    ],
+    "Probe": "FOUND('Nvidia VR-NVL144 Switch BMC')",
     "Type": "Platform",
     "PlatformExposes": [
       {
@@ -19,6 +15,76 @@
         "CriticalReactionType": "None",
         "LeakDetectorName": "leakage2",
         "Name": "leakage2_Policy",
+        "ReactionDelaySeconds": 0,
+        "Type": "LeakDetectionPolicy"
+      },
+      {
+        "CriticalReactionType": "None",
+        "LeakDetectorName": "leakage_aggr",
+        "Name": "leakage_aggr_Policy",
+        "ReactionDelaySeconds": 0,
+        "Type": "LeakDetectionPolicy"
+      }
+    ]
+  },
+  {
+    "Name": "Nvidia NVL144 AST2700 Switch Tray BMC Policy",
+    "Probe": "FOUND('Nvidia NVL144 AST2700 Switch BMC')",
+    "Type": "Platform",
+    "PlatformExposes": [
+      {
+        "CriticalReactionType": "None",
+        "LeakDetectorName": "leakage1",
+        "Name": "leakage1_Policy",
+        "ReactionDelaySeconds": 0,
+        "Type": "LeakDetectionPolicy"
+      },
+      {
+        "CriticalReactionType": "None",
+        "LeakDetectorName": "leakage2",
+        "Name": "leakage2_Policy",
+        "ReactionDelaySeconds": 0,
+        "Type": "LeakDetectionPolicy"
+      },
+      {
+        "CriticalReactionType": "None",
+        "LeakDetectorName": "leakage3",
+        "Name": "leakage3_Policy",
+        "ReactionDelaySeconds": 0,
+        "Type": "LeakDetectionPolicy"
+      },
+      {
+        "CriticalReactionType": "None",
+        "LeakDetectorName": "leakage4",
+        "Name": "leakage4_Policy",
+        "ReactionDelaySeconds": 0,
+        "Type": "LeakDetectionPolicy"
+      },
+      {
+        "CriticalReactionType": "None",
+        "LeakDetectorName": "leakage5",
+        "Name": "leakage5_Policy",
+        "ReactionDelaySeconds": 0,
+        "Type": "LeakDetectionPolicy"
+      },
+      {
+        "CriticalReactionType": "None",
+        "LeakDetectorName": "leakage6",
+        "Name": "leakage6_Policy",
+        "ReactionDelaySeconds": 0,
+        "Type": "LeakDetectionPolicy"
+      },
+      {
+        "CriticalReactionType": "None",
+        "LeakDetectorName": "leakage7",
+        "Name": "leakage7_Policy",
+        "ReactionDelaySeconds": 0,
+        "Type": "LeakDetectionPolicy"
+      },
+      {
+        "CriticalReactionType": "None",
+        "LeakDetectorName": "leakage8",
+        "Name": "leakage8_Policy",
         "ReactionDelaySeconds": 0,
         "Type": "LeakDetectionPolicy"
       },

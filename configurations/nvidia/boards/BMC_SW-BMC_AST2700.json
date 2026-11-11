@@ -96,5 +96,53 @@
     "xyz.openbmc_project.State.Decorator.Health": {
       "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
     }
+  },
+  {
+    "Name": "BMC_SW_AST2700_Devices",
+    "Probe": "FOUND('Nvidia NVL144 AST2700 Switch BMC')",
+    "Type": "NvDevice",
+    "Exposes": [
+      {
+        "Name": "IRoT_BMC_0",
+        "Type": "NvDevice",
+        "Kind": "irot",
+        "ParentChassis": "BMC_0",
+        "Generation": "vera-rubin",
+        "Instance": 0,
+        "EID": 9,
+        "Transport": {
+          "Medium": "xrot",
+          "Interface": "mctpirot0"
+        },
+        "Recovery": {
+          "RecoveryType": "GlacierCrisis",
+          "SoftwareName": "FW_IRoT_BMC_0"
+        }
+      },
+      {
+        "Name": "ERoT_CPU_0",
+        "Type": "NvDevice",
+        "Kind": "cpu_erot_i2c",
+        "ParentChassis": "CPU_0",
+        "Generation": "vera-rubin",
+        "Instance": 2,
+        "EID": 16,
+        "Transport": {
+          "Medium": "i2c",
+          "Bus": 0,
+          "Address": 88
+        },
+        "Recovery": {
+          "RecoveryType": "GlacierCrisis",
+          "SoftwareName": "FW_ERoT_CPU_0"
+        }
+      },
+      {
+        "Name": "BMC_0",
+        "Type": "PlatformDevice",
+        "DeviceAddress": "MCTP:9",
+        "DeviceType": "BMC"
+      }
+    ]
   }
 ]
