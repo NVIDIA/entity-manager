@@ -278,5 +278,264 @@
     "xyz.openbmc_project.Inventory.Item.Chassis": {
       "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
     }
+  },
+  {
+    "Name": "HGX_SXM_Devices_$Instance",
+    "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^HGX_Baseboard_HGXR$', 'Site': '^SXM$'})",
+    "Type": "NvDevice",
+    "Exposes": [
+      {
+        "Name": "HGX_SXM_SMA_$Instance",
+        "Type": "NvDevice",
+        "Kind": "gpu_sma",
+        "Generation": "vera-rubin",
+        "Instance": "$Instance",
+        "BridgedProcessors": [
+          "HGX_GPU_$Instance"
+        ],
+        "EID": "$Instance * 3 + 48",
+        "Transport": {
+          "Medium": "usb",
+          "Port": "$UsbPort",
+          "RootHubPath": "$Platform.UsbRootHubPath",
+          "PoolStartEID": "$Instance * 3 + 49",
+          "PoolEndEID": "$Instance * 3 + 49"
+        },
+        "IgnoreEIDs": "$IgnoreEIDs",
+        "Recovery": {
+          "RecoveryType": "MCU",
+          "RecoveryGpio": "SXM_$SxmIndex_MCU_RECOV_L-O",
+          "ResetGpio": "SXM_$SxmIndex_MCU_RESET_L-O",
+          "Target": "SXM",
+          "SoftwareName": "HGX_FW_SXM_SMA_$Instance",
+          "PackageUUID": "F1C47A3E9D205B6C8A3F1E7B4C9628D0"
+        }
+      },
+      {
+        "Name": "HGX_GPU_$Instance",
+        "Type": "NvDevice",
+        "Kind": "gpu",
+        "Generation": "vera-rubin",
+        "Instance": "$Instance",
+        "EID": "$Instance * 3 + 49",
+        "ParentChassis": "HGX_GPU_SXM_$SxmIndex",
+        "LocationCode": "GPU$Instance",
+        "Transport": {
+          "Medium": "bridge",
+          "Bridge": "HGX_SXM_SMA_$Instance",
+          "BridgeEID": "$Instance * 3 + 48",
+          "BridgePort": "$UsbPort",
+          "PoolIndex": 0
+        },
+        "Recovery": {
+          "RecoveryType": "OCP",
+          "OcpRecoveryI2cAddress": 105,
+          "SoftwareName": "HGX_FW_GPU_$Instance",
+          "ChassisName": "HGX_IRoT_GPU_$Instance",
+          "OcpInfoRom": false,
+          "OcpSmaEid": false
+        }
+      }
+    ]
+  },
+  {
+    "Name": "HGX_Baseboard_Devices",
+    "Probe": "FOUND('Nvidia HGX-R HMC')",
+    "Type": "NvDevice",
+    "Exposes": [
+      {
+        "Name": "HGX_Baseboard_SMA_0",
+        "Type": "NvDevice",
+        "Kind": "hmc_hpm_sma",
+        "Generation": "vera-rubin",
+        "Instance": 0,
+        "EID": 84,
+        "ParentChassis": "HGX_Chassis_0",
+        "Transport": {
+          "Medium": "usb",
+          "Port": "1.4.3",
+          "RootHubPath": "$Platform.UsbRootHubPath",
+          "PoolStartEID": "85",
+          "PoolEndEID": "86"
+        },
+        "IgnoreEIDs": "86,87",
+        "Recovery": {
+          "RecoveryType": "MCU",
+          "RecoveryGpio": "BB_MCU_RECOV_L-O",
+          "ResetGpio": "BB_MCU_RESET_L-O",
+          "Target": "SMA",
+          "SoftwareName": "HGX_FW_Baseboard_SMA_0",
+          "PackageUUID": "A3C9F21B7D8045E6F2B19C4DE87A3F5B"
+        }
+      },
+      {
+        "Name": "HGX_NVSwitch_SMA_0",
+        "Type": "NvDevice",
+        "Kind": "nvswitch_sma",
+        "Generation": "vera-rubin",
+        "Instance": 0,
+        "EID": 72,
+        "Transport": {
+          "Medium": "usb",
+          "Port": "1.4.1",
+          "RootHubPath": "$Platform.UsbRootHubPath",
+          "PoolStartEID": "73",
+          "PoolEndEID": "76"
+        },
+        "IgnoreEIDs": "74,76,77",
+        "Recovery": {
+          "RecoveryType": "MCU",
+          "RecoveryGpio": "QM4_32_MCU_RECOV_L-O",
+          "ResetGpio": "QM4_32_MCU_RESET_L-O",
+          "Target": "QM4",
+          "SoftwareName": "HGX_FW_NVSwitch_SMA_0",
+          "PackageUUID": "9B5E32AF10C7D4E8F3A2619CB8D4E0F2"
+        }
+      },
+      {
+        "Name": "HGX_NVSwitch_SMA_1",
+        "Type": "NvDevice",
+        "Kind": "nvswitch_sma",
+        "Generation": "vera-rubin",
+        "Instance": 1,
+        "EID": 78,
+        "Transport": {
+          "Medium": "usb",
+          "Port": "1.4.2",
+          "RootHubPath": "$Platform.UsbRootHubPath",
+          "PoolStartEID": "79",
+          "PoolEndEID": "82"
+        },
+        "IgnoreEIDs": "80,82,83",
+        "Recovery": {
+          "RecoveryType": "MCU",
+          "RecoveryGpio": "QM4_14_MCU_RECOV_L-O",
+          "ResetGpio": "QM4_14_MCU_RESET_L-O",
+          "Target": "QM4",
+          "SoftwareName": "HGX_FW_NVSwitch_SMA_1",
+          "PackageUUID": "9B5E32AF10C7D4E8F3A2619CB8D4E0F2"
+        }
+      },
+      {
+        "Name": "HGX_NVSwitch_0",
+        "Type": "NvDevice",
+        "Kind": "nvswitch",
+        "Generation": "vera-rubin",
+        "Instance": 0,
+        "EID": 79,
+        "ParentChassis": "HGX_Chassis_0",
+        "Transport": {
+          "Medium": "bridge",
+          "Bridge": "HGX_NVSwitch_SMA_1",
+          "BridgeEID": 78,
+          "PoolIndex": 0
+        },
+        "Recovery": {
+          "RecoveryType": "NVSwitch",
+          "FlashNotPresentGpio": "QM4_1_FNP_L-O",
+          "I2CAddress": 72,
+          "I2CBus": 3,
+          "ResetGpio": "QM4_1_RESET_L-O",
+          "SoftwareName": "HGX_FW_NVSwitch_0",
+          "ChassisName": "HGX_IRoT_NVSwitch_0"
+        }
+      },
+      {
+        "Name": "HGX_NVSwitch_1",
+        "Type": "NvDevice",
+        "Kind": "nvswitch",
+        "Generation": "vera-rubin",
+        "Instance": 1,
+        "EID": 75,
+        "ParentChassis": "HGX_Chassis_0",
+        "Transport": {
+          "Medium": "bridge",
+          "Bridge": "HGX_NVSwitch_SMA_0",
+          "BridgeEID": 72,
+          "PoolIndex": 2
+        },
+        "Recovery": {
+          "RecoveryType": "NVSwitch",
+          "FlashNotPresentGpio": "QM4_2_FNP_L-O",
+          "I2CAddress": 72,
+          "I2CBus": 7,
+          "ResetGpio": "QM4_2_RESET_L-O",
+          "SoftwareName": "HGX_FW_NVSwitch_1",
+          "ChassisName": "HGX_IRoT_NVSwitch_1"
+        }
+      },
+      {
+        "Name": "HGX_NVSwitch_2",
+        "Type": "NvDevice",
+        "Kind": "nvswitch",
+        "Generation": "vera-rubin",
+        "Instance": 2,
+        "EID": 73,
+        "ParentChassis": "HGX_Chassis_0",
+        "Transport": {
+          "Medium": "bridge",
+          "Bridge": "HGX_NVSwitch_SMA_0",
+          "BridgeEID": 72,
+          "PoolIndex": 0
+        },
+        "Recovery": {
+          "RecoveryType": "NVSwitch",
+          "FlashNotPresentGpio": "QM4_3_FNP_L-O",
+          "I2CAddress": 72,
+          "I2CBus": 8,
+          "ResetGpio": "QM4_3_RESET_L-O",
+          "SoftwareName": "HGX_FW_NVSwitch_2",
+          "ChassisName": "HGX_IRoT_NVSwitch_2"
+        }
+      },
+      {
+        "Name": "HGX_NVSwitch_3",
+        "Type": "NvDevice",
+        "Kind": "nvswitch",
+        "Generation": "vera-rubin",
+        "Instance": 3,
+        "EID": 81,
+        "ParentChassis": "HGX_Chassis_0",
+        "Transport": {
+          "Medium": "bridge",
+          "Bridge": "HGX_NVSwitch_SMA_1",
+          "BridgeEID": 78,
+          "PoolIndex": 2
+        },
+        "Recovery": {
+          "RecoveryType": "NVSwitch",
+          "FlashNotPresentGpio": "QM4_4_FNP_L-O",
+          "I2CAddress": 72,
+          "I2CBus": 10,
+          "ResetGpio": "QM4_4_RESET_L-O",
+          "SoftwareName": "HGX_FW_NVSwitch_3",
+          "ChassisName": "HGX_IRoT_NVSwitch_3"
+        }
+      },
+      {
+        "Name": "HGX_NVLinkManagementNIC_0",
+        "Type": "NvDevice",
+        "Kind": "nvlink_mgmt_nic",
+        "Generation": "vera-rubin",
+        "Instance": 0,
+        "EID": 85,
+        "ParentChassis": "HGX_Chassis_0",
+        "Transport": {
+          "Medium": "bridge",
+          "Bridge": "HGX_Baseboard_SMA_0",
+          "BridgeEID": 84,
+          "PoolIndex": 0
+        },
+        "Recovery": {
+          "RecoveryType": "NVLinkManagementNIC",
+          "FlashNotPresentGpio": "CX9_FNM_FNP_L-O",
+          "I2CAddress": 72,
+          "I2CBus": 118,
+          "ResetGpio": "CX9_FNM_RESET_L-O",
+          "SoftwareName": "HGX_FW_NVLinkManagementNIC_0",
+          "ChassisName": "HGX_IRoT_NVLinkManagementNIC_0"
+        }
+      }
+    ]
   }
 ]

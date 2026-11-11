@@ -1,7 +1,7 @@
 [
   {
     "Name": "Nvidia HGX-R HMC Policy",
-    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 37, 'ADDRESS': 83})",
+    "Probe": "FOUND('Nvidia HGX-R HMC')",
     "Type": "Platform",
     "PlatformExposes": [
       {

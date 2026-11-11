@@ -1,11 +1,11 @@
 [
   {
     "Name": "Nvidia HGX-R HMC",
-    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 37, 'ADDRESS': 83})",
+    "Probe": "TRUE",
     "Type": "Platform",
     "NamePrefix": "HGX_",
     "BmcName": "HGX_BMC_0",
-    "TopChassis": "HGX_Chassis_0",
+    "UsbRootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
     "PlatformExposes": [
       {
         "Name": "DevicePrefix",
@@ -18,943 +18,124 @@
         "Chassis": "HGX_Chassis_0"
       },
       {
-        "Name": "HGX_ERoT_BMC_0",
-        "Type": "NvDevice",
-        "Kind": "erot",
-        "Generation": "vera-rubin",
+        "Name": "HGX_SXM_Board_0",
+        "Type": "NvBoard",
+        "Board": "HGX_Baseboard_HGXR",
+        "Site": "SXM",
         "Instance": 0,
-        "EID": 10,
-        "ParentChassis": "HGX_Chassis_0",
-        "Transport": {
-          "Medium": "spi",
-          "Bus": 0,
-          "ChipSelect": 2
-        },
-        "Recovery": {
-          "RecoveryType": "GlacierCrisis",
-          "SoftwareName": "HGX_FW_ERoT_BMC_0"
-        }
+        "SxmIndex": 1,
+        "UsbPort": "1.2.1",
+        "IgnoreEIDs": "50"
       },
       {
-        "Name": "HGX_Baseboard_SMA_0",
-        "Type": "NvDevice",
-        "Kind": "hmc_hpm_sma",
-        "Generation": "vera-rubin",
-        "Instance": 0,
-        "EID": 84,
-        "ParentChassis": "HGX_Chassis_0",
-        "Transport": {
-          "Medium": "usb",
-          "Port": "1.4.3",
-          "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
-          "PoolStartEID": "85",
-          "PoolEndEID": "86"
-        },
-        "IgnoreEIDs": "86,87",
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "BB_MCU_RECOV_L-O",
-          "ResetGpio": "BB_MCU_RESET_L-O",
-          "Target": "SMA",
-          "SoftwareName": "HGX_FW_Baseboard_SMA_0",
-          "PackageUUID": "A3C9F21B7D8045E6F2B19C4DE87A3F5B"
-        }
-      },
-      {
-        "Name": "HGX_ConnectX_SMA_0",
-        "Type": "NvDevice",
-        "Kind": "cx_sma",
-        "Generation": "vera-rubin",
-        "Instance": 0,
-        "EID": 16,
-        "Transport": {
-          "Medium": "usb",
-          "Port": "1.1.1",
-          "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
-          "PoolStartEID": "17",
-          "PoolEndEID": "20"
-        },
-        "IgnoreEIDs": "18,20,21,22,23",
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "CX9_13_MCU_RECOV_L-O",
-          "ResetGpio": "CX9_13_MCU_RESET_L-O",
-          "SoftwareName": "HGX_FW_ConnectX_SMA_0",
-          "Target": "CX9",
-          "PackageUUID": "4E7A1BC95F203D8EA6C1B94E2F78D3C1"
-        }
-      },
-      {
-        "Name": "HGX_ConnectX_SMA_1",
-        "Type": "NvDevice",
-        "Kind": "cx_sma",
-        "Generation": "vera-rubin",
+        "Name": "HGX_SXM_Board_1",
+        "Type": "NvBoard",
+        "Board": "HGX_Baseboard_HGXR",
+        "Site": "SXM",
         "Instance": 1,
-        "EID": 24,
-        "Transport": {
-          "Medium": "usb",
-          "Port": "1.1.2",
-          "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
-          "PoolStartEID": "25",
-          "PoolEndEID": "28"
-        },
-        "IgnoreEIDs": "26,28,29,30,31",
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "CX9_42_MCU_RECOV_L-O",
-          "ResetGpio": "CX9_42_MCU_RESET_L-O",
-          "SoftwareName": "HGX_FW_ConnectX_SMA_1",
-          "Target": "CX9",
-          "PackageUUID": "4E7A1BC95F203D8EA6C1B94E2F78D3C1"
-        }
+        "SxmIndex": 2,
+        "UsbPort": "1.2.2",
+        "IgnoreEIDs": "53"
       },
       {
-        "Name": "HGX_ConnectX_SMA_2",
-        "Type": "NvDevice",
-        "Kind": "cx_sma",
-        "Generation": "vera-rubin",
+        "Name": "HGX_SXM_Board_2",
+        "Type": "NvBoard",
+        "Board": "HGX_Baseboard_HGXR",
+        "Site": "SXM",
         "Instance": 2,
-        "EID": 32,
-        "Transport": {
-          "Medium": "usb",
-          "Port": "1.1.3",
-          "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
-          "PoolStartEID": "33",
-          "PoolEndEID": "36"
-        },
-        "IgnoreEIDs": "34,36,37,38,39",
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "CX9_86_MCU_RECOV_L-O",
-          "ResetGpio": "CX9_86_MCU_RESET_L-O",
-          "SoftwareName": "HGX_FW_ConnectX_SMA_2",
-          "Target": "CX9",
-          "PackageUUID": "4E7A1BC95F203D8EA6C1B94E2F78D3C1"
-        }
+        "SxmIndex": 3,
+        "UsbPort": "1.2.3",
+        "IgnoreEIDs": "56"
       },
       {
-        "Name": "HGX_ConnectX_SMA_3",
-        "Type": "NvDevice",
-        "Kind": "cx_sma",
-        "Generation": "vera-rubin",
+        "Name": "HGX_SXM_Board_3",
+        "Type": "NvBoard",
+        "Board": "HGX_Baseboard_HGXR",
+        "Site": "SXM",
         "Instance": 3,
-        "EID": 40,
-        "Transport": {
-          "Medium": "usb",
-          "Port": "1.1.4",
-          "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
-          "PoolStartEID": "41",
-          "PoolEndEID": "44"
-        },
-        "IgnoreEIDs": "42,44,45,46,47",
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "CX9_75_MCU_RECOV_L-O",
-          "ResetGpio": "CX9_75_MCU_RESET_L-O",
-          "SoftwareName": "HGX_FW_ConnectX_SMA_3",
-          "Target": "CX9",
-          "PackageUUID": "4E7A1BC95F203D8EA6C1B94E2F78D3C1"
-        }
+        "SxmIndex": 4,
+        "UsbPort": "1.2.4",
+        "IgnoreEIDs": "59"
       },
       {
-        "Name": "HGX_SXM_SMA_0",
-        "Type": "NvDevice",
-        "Kind": "gpu_sma",
-        "Generation": "vera-rubin",
-        "Instance": 0,
-        "BridgedProcessors": [
-          "HGX_GPU_0"
-        ],
-        "EID": 48,
-        "Transport": {
-          "Medium": "usb",
-          "Port": "1.2.1",
-          "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
-          "PoolStartEID": "49",
-          "PoolEndEID": "49"
-        },
-        "IgnoreEIDs": "50",
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "SXM_1_MCU_RECOV_L-O",
-          "ResetGpio": "SXM_1_MCU_RESET_L-O",
-          "Target": "SXM",
-          "SoftwareName": "HGX_FW_SXM_SMA_0",
-          "PackageUUID": "F1C47A3E9D205B6C8A3F1E7B4C9628D0"
-        }
-      },
-      {
-        "Name": "HGX_SXM_SMA_1",
-        "Type": "NvDevice",
-        "Kind": "gpu_sma",
-        "Generation": "vera-rubin",
-        "Instance": 1,
-        "BridgedProcessors": [
-          "HGX_GPU_1"
-        ],
-        "EID": 51,
-        "Transport": {
-          "Medium": "usb",
-          "Port": "1.2.2",
-          "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
-          "PoolStartEID": "52",
-          "PoolEndEID": "52"
-        },
-        "IgnoreEIDs": "53",
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "SXM_2_MCU_RECOV_L-O",
-          "ResetGpio": "SXM_2_MCU_RESET_L-O",
-          "Target": "SXM",
-          "SoftwareName": "HGX_FW_SXM_SMA_1",
-          "PackageUUID": "F1C47A3E9D205B6C8A3F1E7B4C9628D0"
-        }
-      },
-      {
-        "Name": "HGX_SXM_SMA_2",
-        "Type": "NvDevice",
-        "Kind": "gpu_sma",
-        "Generation": "vera-rubin",
-        "Instance": 2,
-        "BridgedProcessors": [
-          "HGX_GPU_2"
-        ],
-        "EID": 54,
-        "Transport": {
-          "Medium": "usb",
-          "Port": "1.2.3",
-          "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
-          "PoolStartEID": "55",
-          "PoolEndEID": "55"
-        },
-        "IgnoreEIDs": "56",
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "SXM_3_MCU_RECOV_L-O",
-          "ResetGpio": "SXM_3_MCU_RESET_L-O",
-          "Target": "SXM",
-          "SoftwareName": "HGX_FW_SXM_SMA_2",
-          "PackageUUID": "F1C47A3E9D205B6C8A3F1E7B4C9628D0"
-        }
-      },
-      {
-        "Name": "HGX_SXM_SMA_3",
-        "Type": "NvDevice",
-        "Kind": "gpu_sma",
-        "Generation": "vera-rubin",
-        "Instance": 3,
-        "BridgedProcessors": [
-          "HGX_GPU_3"
-        ],
-        "EID": 57,
-        "Transport": {
-          "Medium": "usb",
-          "Port": "1.2.4",
-          "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
-          "PoolStartEID": "58",
-          "PoolEndEID": "58"
-        },
-        "IgnoreEIDs": "59",
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "SXM_4_MCU_RECOV_L-O",
-          "ResetGpio": "SXM_4_MCU_RESET_L-O",
-          "Target": "SXM",
-          "SoftwareName": "HGX_FW_SXM_SMA_3",
-          "PackageUUID": "F1C47A3E9D205B6C8A3F1E7B4C9628D0"
-        }
-      },
-      {
-        "Name": "HGX_SXM_SMA_4",
-        "Type": "NvDevice",
-        "Kind": "gpu_sma",
-        "Generation": "vera-rubin",
+        "Name": "HGX_SXM_Board_4",
+        "Type": "NvBoard",
+        "Board": "HGX_Baseboard_HGXR",
+        "Site": "SXM",
         "Instance": 4,
-        "BridgedProcessors": [
-          "HGX_GPU_4"
-        ],
-        "EID": 60,
-        "Transport": {
-          "Medium": "usb",
-          "Port": "1.3.1",
-          "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
-          "PoolStartEID": "61",
-          "PoolEndEID": "61"
-        },
-        "IgnoreEIDs": "62",
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "SXM_5_MCU_RECOV_L-O",
-          "ResetGpio": "SXM_5_MCU_RESET_L-O",
-          "Target": "SXM",
-          "SoftwareName": "HGX_FW_SXM_SMA_4",
-          "PackageUUID": "F1C47A3E9D205B6C8A3F1E7B4C9628D0"
-        }
+        "SxmIndex": 5,
+        "UsbPort": "1.3.1",
+        "IgnoreEIDs": "62"
       },
       {
-        "Name": "HGX_SXM_SMA_5",
-        "Type": "NvDevice",
-        "Kind": "gpu_sma",
-        "Generation": "vera-rubin",
+        "Name": "HGX_SXM_Board_5",
+        "Type": "NvBoard",
+        "Board": "HGX_Baseboard_HGXR",
+        "Site": "SXM",
         "Instance": 5,
-        "BridgedProcessors": [
-          "HGX_GPU_5"
-        ],
-        "EID": 63,
-        "Transport": {
-          "Medium": "usb",
-          "Port": "1.3.2",
-          "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
-          "PoolStartEID": "64",
-          "PoolEndEID": "64"
-        },
-        "IgnoreEIDs": "65",
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "SXM_6_MCU_RECOV_L-O",
-          "ResetGpio": "SXM_6_MCU_RESET_L-O",
-          "Target": "SXM",
-          "SoftwareName": "HGX_FW_SXM_SMA_5",
-          "PackageUUID": "F1C47A3E9D205B6C8A3F1E7B4C9628D0"
-        }
+        "SxmIndex": 6,
+        "UsbPort": "1.3.2",
+        "IgnoreEIDs": "65"
       },
       {
-        "Name": "HGX_SXM_SMA_6",
-        "Type": "NvDevice",
-        "Kind": "gpu_sma",
-        "Generation": "vera-rubin",
+        "Name": "HGX_SXM_Board_6",
+        "Type": "NvBoard",
+        "Board": "HGX_Baseboard_HGXR",
+        "Site": "SXM",
         "Instance": 6,
-        "BridgedProcessors": [
-          "HGX_GPU_6"
-        ],
-        "EID": 66,
-        "Transport": {
-          "Medium": "usb",
-          "Port": "1.3.3",
-          "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
-          "PoolStartEID": "67",
-          "PoolEndEID": "67"
-        },
-        "IgnoreEIDs": "68",
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "SXM_7_MCU_RECOV_L-O",
-          "ResetGpio": "SXM_7_MCU_RESET_L-O",
-          "Target": "SXM",
-          "SoftwareName": "HGX_FW_SXM_SMA_6",
-          "PackageUUID": "F1C47A3E9D205B6C8A3F1E7B4C9628D0"
-        }
+        "SxmIndex": 7,
+        "UsbPort": "1.3.3",
+        "IgnoreEIDs": "68"
       },
       {
-        "Name": "HGX_SXM_SMA_7",
-        "Type": "NvDevice",
-        "Kind": "gpu_sma",
-        "Generation": "vera-rubin",
+        "Name": "HGX_SXM_Board_7",
+        "Type": "NvBoard",
+        "Board": "HGX_Baseboard_HGXR",
+        "Site": "SXM",
         "Instance": 7,
-        "BridgedProcessors": [
-          "HGX_GPU_7"
-        ],
-        "EID": 69,
-        "Transport": {
-          "Medium": "usb",
-          "Port": "1.3.4",
-          "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
-          "PoolStartEID": "70",
-          "PoolEndEID": "70"
-        },
-        "IgnoreEIDs": "71",
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "SXM_8_MCU_RECOV_L-O",
-          "ResetGpio": "SXM_8_MCU_RESET_L-O",
-          "Target": "SXM",
-          "SoftwareName": "HGX_FW_SXM_SMA_7",
-          "PackageUUID": "F1C47A3E9D205B6C8A3F1E7B4C9628D0"
-        }
+        "SxmIndex": 8,
+        "UsbPort": "1.3.4",
+        "IgnoreEIDs": "71"
       },
       {
-        "Name": "HGX_GPU_0",
-        "Type": "NvDevice",
-        "Kind": "gpu",
-        "Generation": "vera-rubin",
+        "Name": "HGX_ConnectX_Board_0",
+        "Type": "NvBoard",
+        "Board": "HGX_OSFP_Board_HGXR",
+        "Site": "ConnectX_SMA",
         "Instance": 0,
-        "EID": 49,
-        "ParentChassis": "HGX_GPU_SXM_1",
-        "LocationCode": "GPU0",
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_SXM_SMA_0",
-          "BridgeEID": 48,
-          "BridgePort": "1.2.1",
-          "PoolIndex": 0
-        },
-        "Recovery": {
-          "RecoveryType": "OCP",
-          "OcpRecoveryI2cAddress": 105,
-          "SoftwareName": "HGX_FW_GPU_0",
-          "ChassisName": "HGX_IRoT_GPU_0",
-          "OcpInfoRom": false,
-          "OcpSmaEid": false
-        }
+        "CxNumber": 13,
+        "UsbPort": "1.1.1",
+        "IgnoreEIDs": "18,20,21,22,23"
       },
       {
-        "Name": "HGX_GPU_1",
-        "Type": "NvDevice",
-        "Kind": "gpu",
-        "Generation": "vera-rubin",
+        "Name": "HGX_ConnectX_Board_1",
+        "Type": "NvBoard",
+        "Board": "HGX_OSFP_Board_HGXR",
+        "Site": "ConnectX_SMA",
         "Instance": 1,
-        "EID": 52,
-        "ParentChassis": "HGX_GPU_SXM_2",
-        "LocationCode": "GPU1",
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_SXM_SMA_1",
-          "BridgeEID": 51,
-          "BridgePort": "1.2.2",
-          "PoolIndex": 0
-        },
-        "Recovery": {
-          "RecoveryType": "OCP",
-          "OcpRecoveryI2cAddress": 105,
-          "SoftwareName": "HGX_FW_GPU_1",
-          "ChassisName": "HGX_IRoT_GPU_1",
-          "OcpInfoRom": false,
-          "OcpSmaEid": false
-        }
+        "CxNumber": 42,
+        "UsbPort": "1.1.2",
+        "IgnoreEIDs": "26,28,29,30,31"
       },
       {
-        "Name": "HGX_GPU_2",
-        "Type": "NvDevice",
-        "Kind": "gpu",
-        "Generation": "vera-rubin",
+        "Name": "HGX_ConnectX_Board_2",
+        "Type": "NvBoard",
+        "Board": "HGX_OSFP_Board_HGXR",
+        "Site": "ConnectX_SMA",
         "Instance": 2,
-        "EID": 55,
-        "ParentChassis": "HGX_GPU_SXM_3",
-        "LocationCode": "GPU2",
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_SXM_SMA_2",
-          "BridgeEID": 54,
-          "BridgePort": "1.2.3",
-          "PoolIndex": 0
-        },
-        "Recovery": {
-          "RecoveryType": "OCP",
-          "OcpRecoveryI2cAddress": 105,
-          "SoftwareName": "HGX_FW_GPU_2",
-          "ChassisName": "HGX_IRoT_GPU_2",
-          "OcpInfoRom": false,
-          "OcpSmaEid": false
-        }
+        "CxNumber": 86,
+        "UsbPort": "1.1.3",
+        "IgnoreEIDs": "34,36,37,38,39"
       },
       {
-        "Name": "HGX_GPU_3",
-        "Type": "NvDevice",
-        "Kind": "gpu",
-        "Generation": "vera-rubin",
+        "Name": "HGX_ConnectX_Board_3",
+        "Type": "NvBoard",
+        "Board": "HGX_OSFP_Board_HGXR",
+        "Site": "ConnectX_SMA",
         "Instance": 3,
-        "EID": 58,
-        "ParentChassis": "HGX_GPU_SXM_4",
-        "LocationCode": "GPU3",
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_SXM_SMA_3",
-          "BridgeEID": 57,
-          "BridgePort": "1.2.4",
-          "PoolIndex": 0
-        },
-        "Recovery": {
-          "RecoveryType": "OCP",
-          "OcpRecoveryI2cAddress": 105,
-          "SoftwareName": "HGX_FW_GPU_3",
-          "ChassisName": "HGX_IRoT_GPU_3",
-          "OcpInfoRom": false,
-          "OcpSmaEid": false
-        }
-      },
-      {
-        "Name": "HGX_GPU_4",
-        "Type": "NvDevice",
-        "Kind": "gpu",
-        "Generation": "vera-rubin",
-        "Instance": 4,
-        "EID": 61,
-        "ParentChassis": "HGX_GPU_SXM_5",
-        "LocationCode": "GPU4",
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_SXM_SMA_4",
-          "BridgeEID": 60,
-          "BridgePort": "1.3.1",
-          "PoolIndex": 0
-        },
-        "Recovery": {
-          "RecoveryType": "OCP",
-          "OcpRecoveryI2cAddress": 105,
-          "SoftwareName": "HGX_FW_GPU_4",
-          "ChassisName": "HGX_IRoT_GPU_4",
-          "OcpInfoRom": false,
-          "OcpSmaEid": false
-        }
-      },
-      {
-        "Name": "HGX_GPU_5",
-        "Type": "NvDevice",
-        "Kind": "gpu",
-        "Generation": "vera-rubin",
-        "Instance": 5,
-        "EID": 64,
-        "ParentChassis": "HGX_GPU_SXM_6",
-        "LocationCode": "GPU5",
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_SXM_SMA_5",
-          "BridgeEID": 63,
-          "BridgePort": "1.3.2",
-          "PoolIndex": 0
-        },
-        "Recovery": {
-          "RecoveryType": "OCP",
-          "OcpRecoveryI2cAddress": 105,
-          "SoftwareName": "HGX_FW_GPU_5",
-          "ChassisName": "HGX_IRoT_GPU_5",
-          "OcpInfoRom": false,
-          "OcpSmaEid": false
-        }
-      },
-      {
-        "Name": "HGX_GPU_6",
-        "Type": "NvDevice",
-        "Kind": "gpu",
-        "Generation": "vera-rubin",
-        "Instance": 6,
-        "EID": 67,
-        "ParentChassis": "HGX_GPU_SXM_7",
-        "LocationCode": "GPU6",
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_SXM_SMA_6",
-          "BridgeEID": 66,
-          "BridgePort": "1.3.3",
-          "PoolIndex": 0
-        },
-        "Recovery": {
-          "RecoveryType": "OCP",
-          "OcpRecoveryI2cAddress": 105,
-          "SoftwareName": "HGX_FW_GPU_6",
-          "ChassisName": "HGX_IRoT_GPU_6",
-          "OcpInfoRom": false,
-          "OcpSmaEid": false
-        }
-      },
-      {
-        "Name": "HGX_GPU_7",
-        "Type": "NvDevice",
-        "Kind": "gpu",
-        "Generation": "vera-rubin",
-        "Instance": 7,
-        "EID": 70,
-        "ParentChassis": "HGX_GPU_SXM_8",
-        "LocationCode": "GPU7",
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_SXM_SMA_7",
-          "BridgeEID": 69,
-          "BridgePort": "1.3.4",
-          "PoolIndex": 0
-        },
-        "Recovery": {
-          "RecoveryType": "OCP",
-          "OcpRecoveryI2cAddress": 105,
-          "SoftwareName": "HGX_FW_GPU_7",
-          "ChassisName": "HGX_IRoT_GPU_7",
-          "OcpInfoRom": false,
-          "OcpSmaEid": false
-        }
-      },
-      {
-        "Name": "HGX_NVSwitch_SMA_0",
-        "Type": "NvDevice",
-        "Kind": "nvswitch_sma",
-        "Generation": "vera-rubin",
-        "Instance": 0,
-        "EID": 72,
-        "Transport": {
-          "Medium": "usb",
-          "Port": "1.4.1",
-          "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
-          "PoolStartEID": "73",
-          "PoolEndEID": "76"
-        },
-        "IgnoreEIDs": "74,76,77",
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "QM4_32_MCU_RECOV_L-O",
-          "ResetGpio": "QM4_32_MCU_RESET_L-O",
-          "Target": "QM4",
-          "SoftwareName": "HGX_FW_NVSwitch_SMA_0",
-          "PackageUUID": "9B5E32AF10C7D4E8F3A2619CB8D4E0F2"
-        }
-      },
-      {
-        "Name": "HGX_NVSwitch_SMA_1",
-        "Type": "NvDevice",
-        "Kind": "nvswitch_sma",
-        "Generation": "vera-rubin",
-        "Instance": 1,
-        "EID": 78,
-        "Transport": {
-          "Medium": "usb",
-          "Port": "1.4.2",
-          "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
-          "PoolStartEID": "79",
-          "PoolEndEID": "82"
-        },
-        "IgnoreEIDs": "80,82,83",
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "QM4_14_MCU_RECOV_L-O",
-          "ResetGpio": "QM4_14_MCU_RESET_L-O",
-          "Target": "QM4",
-          "SoftwareName": "HGX_FW_NVSwitch_SMA_1",
-          "PackageUUID": "9B5E32AF10C7D4E8F3A2619CB8D4E0F2"
-        }
-      },
-      {
-        "Name": "HGX_ConnectX_0",
-        "Type": "NvDevice",
-        "Kind": "cx9_io",
-        "Generation": "vera-rubin",
-        "Instance": 0,
-        "EID": 17,
-        "ParentChassis": "HGX_Chassis_0",
-        "NetworkAdapterName": "ConnectX_NIC_0",
-        "PortName0": "Port_0",
-        "PortMaxSpeedMBps": 50000,
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_ConnectX_SMA_0",
-          "BridgeEID": 16,
-          "PoolIndex": 0
-        },
-        "Recovery": {
-          "RecoveryType": "ConnectX",
-          "FlashNotPresentGpio": "CX9_1_FNP_L-O",
-          "I2CAddress": 72,
-          "I2CBus": 110,
-          "ResetGpio": "CX9_1_RESET_L-O",
-          "SoftwareName": "HGX_FW_ConnectX_0",
-          "ChassisName": "HGX_IRoT_ConnectX_0"
-        }
-      },
-      {
-        "Name": "HGX_ConnectX_1",
-        "Type": "NvDevice",
-        "Kind": "cx9_io",
-        "Generation": "vera-rubin",
-        "Instance": 1,
-        "EID": 27,
-        "ParentChassis": "HGX_Chassis_0",
-        "NetworkAdapterName": "ConnectX_NIC_1",
-        "PortName0": "Port_0",
-        "PortMaxSpeedMBps": 50000,
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_ConnectX_SMA_1",
-          "BridgeEID": 24,
-          "PoolIndex": 2
-        },
-        "Recovery": {
-          "RecoveryType": "ConnectX",
-          "FlashNotPresentGpio": "CX9_2_FNP_L-O",
-          "I2CAddress": 72,
-          "I2CBus": 111,
-          "ResetGpio": "CX9_2_RESET_L-O",
-          "SoftwareName": "HGX_FW_ConnectX_1",
-          "ChassisName": "HGX_IRoT_ConnectX_1"
-        }
-      },
-      {
-        "Name": "HGX_ConnectX_2",
-        "Type": "NvDevice",
-        "Kind": "cx9_io",
-        "Generation": "vera-rubin",
-        "Instance": 2,
-        "EID": 19,
-        "ParentChassis": "HGX_Chassis_0",
-        "NetworkAdapterName": "ConnectX_NIC_2",
-        "PortName0": "Port_0",
-        "PortMaxSpeedMBps": 50000,
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_ConnectX_SMA_0",
-          "BridgeEID": 16,
-          "PoolIndex": 2
-        },
-        "Recovery": {
-          "RecoveryType": "ConnectX",
-          "FlashNotPresentGpio": "CX9_3_FNP_L-O",
-          "I2CAddress": 72,
-          "I2CBus": 112,
-          "ResetGpio": "CX9_3_RESET_L-O",
-          "SoftwareName": "HGX_FW_ConnectX_2",
-          "ChassisName": "HGX_IRoT_ConnectX_2"
-        }
-      },
-      {
-        "Name": "HGX_ConnectX_3",
-        "Type": "NvDevice",
-        "Kind": "cx9_io",
-        "Generation": "vera-rubin",
-        "Instance": 3,
-        "EID": 25,
-        "ParentChassis": "HGX_Chassis_0",
-        "NetworkAdapterName": "ConnectX_NIC_3",
-        "PortName0": "Port_0",
-        "PortMaxSpeedMBps": 50000,
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_ConnectX_SMA_1",
-          "BridgeEID": 24,
-          "PoolIndex": 0
-        },
-        "Recovery": {
-          "RecoveryType": "ConnectX",
-          "FlashNotPresentGpio": "CX9_4_FNP_L-O",
-          "I2CAddress": 72,
-          "I2CBus": 113,
-          "ResetGpio": "CX9_4_RESET_L-O",
-          "SoftwareName": "HGX_FW_ConnectX_3",
-          "ChassisName": "HGX_IRoT_ConnectX_3"
-        }
-      },
-      {
-        "Name": "HGX_ConnectX_4",
-        "Type": "NvDevice",
-        "Kind": "cx9_io",
-        "Generation": "vera-rubin",
-        "Instance": 4,
-        "EID": 43,
-        "ParentChassis": "HGX_Chassis_0",
-        "NetworkAdapterName": "ConnectX_NIC_4",
-        "PortName0": "Port_0",
-        "PortMaxSpeedMBps": 50000,
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_ConnectX_SMA_3",
-          "BridgeEID": 40,
-          "PoolIndex": 2
-        },
-        "Recovery": {
-          "RecoveryType": "ConnectX",
-          "FlashNotPresentGpio": "CX9_5_FNP_L-O",
-          "I2CAddress": 72,
-          "I2CBus": 114,
-          "ResetGpio": "CX9_5_RESET_L-O",
-          "SoftwareName": "HGX_FW_ConnectX_4",
-          "ChassisName": "HGX_IRoT_ConnectX_4"
-        }
-      },
-      {
-        "Name": "HGX_ConnectX_5",
-        "Type": "NvDevice",
-        "Kind": "cx9_io",
-        "Generation": "vera-rubin",
-        "Instance": 5,
-        "EID": 35,
-        "ParentChassis": "HGX_Chassis_0",
-        "NetworkAdapterName": "ConnectX_NIC_5",
-        "PortName0": "Port_0",
-        "PortMaxSpeedMBps": 50000,
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_ConnectX_SMA_2",
-          "BridgeEID": 32,
-          "PoolIndex": 2
-        },
-        "Recovery": {
-          "RecoveryType": "ConnectX",
-          "FlashNotPresentGpio": "CX9_6_FNP_L-O",
-          "I2CAddress": 72,
-          "I2CBus": 115,
-          "ResetGpio": "CX9_6_RESET_L-O",
-          "SoftwareName": "HGX_FW_ConnectX_5",
-          "ChassisName": "HGX_IRoT_ConnectX_5"
-        }
-      },
-      {
-        "Name": "HGX_ConnectX_6",
-        "Type": "NvDevice",
-        "Kind": "cx9_io",
-        "Generation": "vera-rubin",
-        "Instance": 6,
-        "EID": 41,
-        "ParentChassis": "HGX_Chassis_0",
-        "NetworkAdapterName": "ConnectX_NIC_6",
-        "PortName0": "Port_0",
-        "PortMaxSpeedMBps": 50000,
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_ConnectX_SMA_3",
-          "BridgeEID": 40,
-          "PoolIndex": 0
-        },
-        "Recovery": {
-          "RecoveryType": "ConnectX",
-          "FlashNotPresentGpio": "CX9_7_FNP_L-O",
-          "I2CAddress": 72,
-          "I2CBus": 116,
-          "ResetGpio": "CX9_7_RESET_L-O",
-          "SoftwareName": "HGX_FW_ConnectX_6",
-          "ChassisName": "HGX_IRoT_ConnectX_6"
-        }
-      },
-      {
-        "Name": "HGX_ConnectX_7",
-        "Type": "NvDevice",
-        "Kind": "cx9_io",
-        "Generation": "vera-rubin",
-        "Instance": 7,
-        "EID": 33,
-        "ParentChassis": "HGX_Chassis_0",
-        "NetworkAdapterName": "ConnectX_NIC_7",
-        "PortName0": "Port_0",
-        "PortMaxSpeedMBps": 50000,
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_ConnectX_SMA_2",
-          "BridgeEID": 32,
-          "PoolIndex": 0
-        },
-        "Recovery": {
-          "RecoveryType": "ConnectX",
-          "FlashNotPresentGpio": "CX9_8_FNP_L-O",
-          "I2CAddress": 72,
-          "I2CBus": 117,
-          "ResetGpio": "CX9_8_RESET_L-O",
-          "SoftwareName": "HGX_FW_ConnectX_7",
-          "ChassisName": "HGX_IRoT_ConnectX_7"
-        }
-      },
-      {
-        "Name": "HGX_NVLinkManagementNIC_0",
-        "Type": "NvDevice",
-        "Kind": "nvlink_mgmt_nic",
-        "Generation": "vera-rubin",
-        "Instance": 0,
-        "EID": 85,
-        "ParentChassis": "HGX_Chassis_0",
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_Baseboard_SMA_0",
-          "BridgeEID": 84,
-          "PoolIndex": 0
-        },
-        "Recovery": {
-          "RecoveryType": "NVLinkManagementNIC",
-          "FlashNotPresentGpio": "CX9_FNM_FNP_L-O",
-          "I2CAddress": 72,
-          "I2CBus": 118,
-          "ResetGpio": "CX9_FNM_RESET_L-O",
-          "SoftwareName": "HGX_FW_NVLinkManagementNIC_0",
-          "ChassisName": "HGX_IRoT_NVLinkManagementNIC_0"
-        }
-      },
-      {
-        "Name": "HGX_NVSwitch_0",
-        "Type": "NvDevice",
-        "Kind": "nvswitch",
-        "Generation": "vera-rubin",
-        "Instance": 0,
-        "EID": 79,
-        "ParentChassis": "HGX_Chassis_0",
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_NVSwitch_SMA_1",
-          "BridgeEID": 78,
-          "PoolIndex": 0
-        },
-        "Recovery": {
-          "RecoveryType": "NVSwitch",
-          "FlashNotPresentGpio": "QM4_1_FNP_L-O",
-          "I2CAddress": 72,
-          "I2CBus": 3,
-          "ResetGpio": "QM4_1_RESET_L-O",
-          "SoftwareName": "HGX_FW_NVSwitch_0",
-          "ChassisName": "HGX_IRoT_NVSwitch_0"
-        }
-      },
-      {
-        "Name": "HGX_NVSwitch_1",
-        "Type": "NvDevice",
-        "Kind": "nvswitch",
-        "Generation": "vera-rubin",
-        "Instance": 1,
-        "EID": 75,
-        "ParentChassis": "HGX_Chassis_0",
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_NVSwitch_SMA_0",
-          "BridgeEID": 72,
-          "PoolIndex": 2
-        },
-        "Recovery": {
-          "RecoveryType": "NVSwitch",
-          "FlashNotPresentGpio": "QM4_2_FNP_L-O",
-          "I2CAddress": 72,
-          "I2CBus": 7,
-          "ResetGpio": "QM4_2_RESET_L-O",
-          "SoftwareName": "HGX_FW_NVSwitch_1",
-          "ChassisName": "HGX_IRoT_NVSwitch_1"
-        }
-      },
-      {
-        "Name": "HGX_NVSwitch_2",
-        "Type": "NvDevice",
-        "Kind": "nvswitch",
-        "Generation": "vera-rubin",
-        "Instance": 2,
-        "EID": 73,
-        "ParentChassis": "HGX_Chassis_0",
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_NVSwitch_SMA_0",
-          "BridgeEID": 72,
-          "PoolIndex": 0
-        },
-        "Recovery": {
-          "RecoveryType": "NVSwitch",
-          "FlashNotPresentGpio": "QM4_3_FNP_L-O",
-          "I2CAddress": 72,
-          "I2CBus": 8,
-          "ResetGpio": "QM4_3_RESET_L-O",
-          "SoftwareName": "HGX_FW_NVSwitch_2",
-          "ChassisName": "HGX_IRoT_NVSwitch_2"
-        }
-      },
-      {
-        "Name": "HGX_NVSwitch_3",
-        "Type": "NvDevice",
-        "Kind": "nvswitch",
-        "Generation": "vera-rubin",
-        "Instance": 3,
-        "EID": 81,
-        "ParentChassis": "HGX_Chassis_0",
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_NVSwitch_SMA_1",
-          "BridgeEID": 78,
-          "PoolIndex": 2
-        },
-        "Recovery": {
-          "RecoveryType": "NVSwitch",
-          "FlashNotPresentGpio": "QM4_4_FNP_L-O",
-          "I2CAddress": 72,
-          "I2CBus": 10,
-          "ResetGpio": "QM4_4_RESET_L-O",
-          "SoftwareName": "HGX_FW_NVSwitch_3",
-          "ChassisName": "HGX_IRoT_NVSwitch_3"
-        }
+        "CxNumber": 75,
+        "UsbPort": "1.1.4",
+        "IgnoreEIDs": "42,44,45,46,47"
       },
       {
         "ConnectXPackageUUID": "08E4F61E12EB42FAAC600953C4194564",
