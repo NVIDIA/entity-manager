@@ -158,5 +158,27 @@
             "Bus": "90",
             "Name": "ProcMod_1"
         }
+    },
+    {
+        "Name": "ProcessorModule_Devices_$Instance",
+        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^HPM_BMC_PG558$'})",
+        "Type": "NvDevice",
+        "Exposes": [
+            {
+                "Name": "ProcessorModule_SMA_$Instance",
+                "Type": "NvDevice",
+                "Kind": "bmc_hpm_sma",
+                "Generation": "vera-rubin",
+                "Instance": "$Instance",
+                "EID": "$SmaEid",
+                "ParentChassis": "ProcessorModule_$Instance",
+                "Transport": {
+                    "Medium": "usb",
+                    "Port": "$UsbHubPath.1",
+                    "RootHubPath": "$Platform.UsbRootHubPath",
+                    "PoolStartEID": "$SmaEid + 1"
+                }
+            }
+        ]
     }
 ]

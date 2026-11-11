@@ -197,5 +197,71 @@
     "PhysicalContext": "GPUSubsystem",
     "LocationCode": "HMC_0",
     "LocationContext": "HGX_Chassis_0/SMM_0"
+  },
+  {
+    "Name": "HGX_HMC_ERoT",
+    "Probe": "FOUND('Nvidia VR-NVL144 HMC AST2600')",
+    "Type": "NvDevice",
+    "Exposes": [
+      {
+        "Name": "HGX_ERoT_BMC_0",
+        "Type": "NvDevice",
+        "Kind": "erot",
+        "Instance": 0,
+        "Generation": "vera-rubin",
+        "ParentChassis": "HGX_BMC_0",
+        "LocationContext": "HGX_Chassis_0/SMM_0/HMC_0",
+        "LocationCode": "ERoT_HMC_0",
+        "EID": 9,
+        "Transport": {
+          "Medium": "spi",
+          "Bus": 0,
+          "ChipSelect": 2
+        },
+        "Recovery": {
+          "RecoveryType": "GlacierCrisis",
+          "SoftwareName": "HGX_FW_ERoT_BMC_0"
+        }
+      }
+    ]
+  },
+  {
+    "Name": "HGX_HMC_IRoT",
+    "Probe": "FOUND('Nvidia VR-NVL144 HMC AST2700')",
+    "Type": "NvDevice",
+    "Exposes": [
+      {
+        "Name": "HGX_IRoT_BMC_0",
+        "Type": "NvDevice",
+        "Kind": "irot",
+        "Instance": 0,
+        "Generation": "vera-rubin",
+        "ParentChassis": "HGX_BMC_0",
+        "LocationContext": "HGX_Chassis_0/SMM_0/HMC_0",
+        "LocationCode": "IRoT_BMC_0",
+        "EID": 9,
+        "Transport": {
+          "Medium": "xrot",
+          "Interface": "mctpirot0"
+        }
+      }
+    ]
+  },
+  {
+    "Name": "HGX_HMC_USB_Gadget",
+    "Probe": [
+      "FOUND('Nvidia VR-NVL144 HMC AST2600')",
+      "OR",
+      "FOUND('Nvidia VR-NVL144 HMC AST2700')"
+    ],
+    "Type": "NvDevice",
+    "Exposes": [
+      {
+        "Name": "HMC_USB_GADGET_0",
+        "Type": "MCTPUSBGadgetTarget",
+        "Interface": "mctpusbg0",
+        "LocalEID": 8
+      }
+    ]
   }
 ]

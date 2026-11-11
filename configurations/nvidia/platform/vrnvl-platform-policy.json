@@ -1,7 +1,11 @@
 [
   {
     "Name": "Nvidia VR-NVL72 BMC AST2600 Policy",
-    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 9, 'ADDRESS': 80, 'BOARD_MANUFACTURER': 'NVIDIA'})",
+    "Probe": [
+      "FOUND('Nvidia VR-NVL72 BMC AST2600')",
+      "OR",
+      "FOUND('Nvidia VR-NVL72 BMC AST2700')"
+    ],
     "Type": "Platform",
     "PlatformExposes": [
       {
@@ -78,9 +82,9 @@
   {
     "Name": "Nvidia VR-NVL144 HMC Policy",
     "Probe": [
-      "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?'})",
+      "FOUND('Nvidia VR-NVL144 HMC AST2600')",
       "OR",
-      "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?'})"
+      "FOUND('Nvidia VR-NVL144 HMC AST2700')"
     ],
     "Type": "Platform",
     "PlatformExposes": [

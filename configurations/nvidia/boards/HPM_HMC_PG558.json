@@ -190,5 +190,173 @@
     "xyz.openbmc_project.Inventory.Item.Chassis": {
       "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
     }
+  },
+  {
+    "Name": "HGX_ProcessorModule_Devices_$Instance",
+    "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^HPM_HMC_PG558$'})",
+    "Type": "NvDevice",
+    "Exposes": [
+      {
+        "Name": "HGX_GPU_SMA_$Instance",
+        "Type": "NvDevice",
+        "Kind": "gpu_sma",
+        "Instance": "$Instance",
+        "BridgedProcessors": [
+          "HGX_GPU_$Instance * 2",
+          "HGX_GPU_$Instance * 2 + 1"
+        ],
+        "Generation": "vera-rubin",
+        "ParentChassis": "HGX_ProcessorModule_$Instance",
+        "LocationContext": "HGX_Chassis_0/ProcessorModule_$Instance-$Side",
+        "EID": "$Instance * 10 + 10",
+        "Transport": {
+          "Medium": "usb",
+          "Port": "$UsbHubPath.1",
+          "RootHubPath": "$Platform.UsbRootHubPath",
+          "PoolStartEID": "$Instance * 10 + 11",
+          "PoolEndEID": "$Instance * 10 + 12"
+        },
+        "Recovery": {
+          "RecoveryType": "MCU",
+          "RecoveryGpio": "BRD$Instance_GPU_MCU_RECOVERY_L_3V3-O",
+          "ResetGpio": "BRD$Instance_GPU_MCU_RESET_L_3V3-O",
+          "SoftwareName": "HGX_FW_GPU_SMA_$Instance",
+          "Target": "GPU",
+          "PackageUUID": "8F3A1C76B24E9D50C7AD93E1F42BC689"
+        },
+        "LocationCode": "GPU_SMA_0"
+      },
+      {
+        "Name": "HGX_GPU_$Instance * 2",
+        "Type": "NvDevice",
+        "Kind": "gpu",
+        "Instance": "$Instance * 2",
+        "Generation": "vera-rubin",
+        "ParentChassis": "HGX_ProcessorModule_$Instance",
+        "LocationContext": "HGX_Chassis_0/ProcessorModule_$Instance",
+        "LocationCode": "GPU_0",
+        "EID": "$Instance * 10 + 11",
+        "Transport": {
+          "Medium": "bridge",
+          "Bridge": "HGX_GPU_SMA_$Instance",
+          "BridgeEID": "$Instance * 10 + 10",
+          "BridgePort": "$UsbHubPath.1",
+          "PoolIndex": 0
+        },
+        "Recovery": {
+          "RecoveryType": "OCP",
+          "OcpRecoveryI2cAddress": 105,
+          "SoftwareName": "HGX_FW_GPU_$Instance * 2",
+          "ChassisName": "HGX_IRoT_GPU_$Instance * 2",
+          "InfoRomName": "HGX_InfoROM_GPU_$Instance * 2"
+        }
+      },
+      {
+        "Name": "HGX_GPU_$Instance * 2 + 1",
+        "Type": "NvDevice",
+        "Kind": "gpu",
+        "Instance": "$Instance * 2 + 1",
+        "Generation": "vera-rubin",
+        "ParentChassis": "HGX_ProcessorModule_$Instance",
+        "LocationContext": "HGX_Chassis_0/ProcessorModule_$Instance",
+        "LocationCode": "GPU_1",
+        "EID": "$Instance * 10 + 12",
+        "Transport": {
+          "Medium": "bridge",
+          "Bridge": "HGX_GPU_SMA_$Instance",
+          "BridgeEID": "$Instance * 10 + 10",
+          "BridgePort": "$UsbHubPath.1",
+          "PoolIndex": 1
+        },
+        "Recovery": {
+          "RecoveryType": "OCP",
+          "OcpRecoveryI2cAddress": 106,
+          "SoftwareName": "HGX_FW_GPU_$Instance * 2 + 1",
+          "ChassisName": "HGX_IRoT_GPU_$Instance * 2 + 1",
+          "InfoRomName": "HGX_InfoROM_GPU_$Instance * 2 + 1"
+        }
+      },
+      {
+        "Name": "HGX_CPU_$Instance",
+        "Type": "NvDevice",
+        "Kind": "cpu",
+        "Instance": "$Instance",
+        "Generation": "vera-rubin",
+        "ParentChassis": "HGX_ProcessorModule_$Instance",
+        "LocationContext": "HGX_Chassis_0/ProcessorModule_$Instance",
+        "EID": "$Instance * 10 + 14",
+        "Transport": {
+          "Medium": "usb",
+          "Port": "$UsbHubPath.2",
+          "RootHubPath": "$Platform.UsbRootHubPath"
+        },
+        "Recovery": {
+          "RecoveryType": "USBRCM",
+          "ActionRedfishChassis": "HGX_Chassis_0",
+          "SystemResetGpio": "BRD$Instance_IST_SYS_RST_L-O",
+          "ForcedRecoveryGpio": "BRD$Instance_CPU_FORCED_RECOVERY_L-O",
+          "BootDevSel0Gpio": "BRD$Instance_CPU_BOOT_DEV_SEL0-O",
+          "BootDevSel1Gpio": "BRD$Instance_CPU_BOOT_DEV_SEL1-O",
+          "BootDevSel2Gpio": "BRD$Instance_CPU_BOOT_DEV_SEL2-O",
+          "RecoveryType0Gpio": "BRD$Instance_CPU_RECOVERY_TYPE0-O",
+          "RecoveryType1Gpio": "BRD$Instance_CPU_RECOVERY_TYPE1-O",
+          "SoftwareName": "HGX_FW_CPU_$Instance",
+          "FMCComponentName": "HGX_SBIOS_FMC_$Instance",
+          "FWSComponentName": "HGX_SBIOS_FW_$Instance"
+        }
+      },
+      {
+        "Name": "HGX_ProcessorModule_SMA_$Instance",
+        "Type": "NvDevice",
+        "Kind": "hmc_hpm_sma",
+        "Instance": "$Instance",
+        "Generation": "vera-rubin",
+        "ParentChassis": "HGX_ProcessorModule_$Instance",
+        "LocationContext": "HGX_Chassis_0/ProcessorModule_$Instance",
+        "ZoneChassis": "$ZoneChassis",
+        "EID": "$Instance * 10 + 13",
+        "Transport": {
+          "Medium": "i2c",
+          "Bus": "$SmaI2cBus",
+          "Address": 82
+        },
+        "Recovery": {
+          "RecoveryType": "MCU",
+          "RecoveryGpio": "BRD$Instance_MCU_RECOVERY_L-O",
+          "ResetGpio": "BRD$Instance_MCU_RESET_L-O",
+          "SoftwareName": "HGX_FW_ProcessorModule_SMA_$Instance",
+          "Target": "HPM",
+          "PackageUUID": "3E9B47D2A5F18C0E6BD9314FA72C58DE"
+        },
+        "LocationCode": "HPM_SMA_0"
+      },
+      {
+        "Name": "BRD$Instance",
+        "Type": "ISTDomain",
+        "Index": "$Instance",
+        "Cpus": [
+          "$Instance"
+        ],
+        "Detect": true,
+        "BootGpio": "BRD$Instance_CPU_IST_BOOT_HMC-O",
+        "PreResetGpio": "BRD$Instance_HMC_IST_PRE_RST_L-O",
+        "ShutdownOkGpio": "BRD$Instance_CPU0_SHDN_OK_L_3V3-I",
+        "SysResetGpio": "BRD$Instance_IST_SYS_RST_L-O"
+      }
+    ]
+  },
+  {
+    "Name": "HGX_ProcessorModule_Shared",
+    "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^HPM_HMC_PG558$', 'Instance': 0})",
+    "Type": "NvDevice",
+    "Exposes": [
+      {
+        "DotObjectPrefix": "/xyz/openbmc_project/DOT/HGX_IRoT_CPU_",
+        "Name": "IST",
+        "RequiredCpus": 2,
+        "SoftwareInventoryId": "HGX_IST_Vectors",
+        "Type": "IST"
+      }
+    ]
   }
 ]

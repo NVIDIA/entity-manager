@@ -131,5 +131,70 @@
         "Name": "BlueField_4_C9180_FRU",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'ConnectX-9.*'})",
         "Type": "FRU_EEPROM"
+    },
+    {
+        "Name": "BF4_BayC",
+        "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2600')",
+        "Type": "NvDevice",
+        "Exposes": [
+            {
+                "Name": "BlueField_0",
+                "Type": "NvDevice",
+                "Kind": "bluefield",
+                "Generation": "vera-rubin",
+                "Instance": 0,
+                "LocationCode": "Bay-C-Middle",
+                "EID": 56,
+                "IdentityInstance": 0,
+                "Transport": {
+                    "Medium": "bridge",
+                    "Bridge": "Bay_C_SMA_0",
+                    "BridgeEID": 55,
+                    "PoolIndex": 0
+                }
+            },
+            {
+                "Name": "Bay_C_SMA_0",
+                "Type": "NvDevice",
+                "Kind": "bluefield_sma",
+                "Generation": "vera-rubin",
+                "Instance": 0,
+                "LocationContext": "Chassis_0/Bay-C-Middle",
+                "EID": 55,
+                "ParentChassis": "BlueField_0",
+                "Transport": {
+                    "Medium": "usb",
+                    "Port": "1.1.4.1",
+                    "RootHubPath": "$Platform.UsbRootHubPath",
+                    "PoolStartEID": "56",
+                    "PoolEndEID": "59"
+                },
+                "Recovery": {
+                    "RecoveryType": "MCU",
+                    "RecoveryGpio": "BF4_USB_MCU_RECOVERY_L",
+                    "ResetGpio": "BF4_USB_MCU_RST_L"
+                }
+            },
+            {
+                "Name": "BF4_ERoT_BMC_0",
+                "Type": "NvDevice",
+                "Kind": "bf4_erot",
+                "EID": 59,
+                "Transport": {
+                    "Medium": "bridge",
+                    "Bridge": "Bay_C_SMA_0",
+                    "BridgeEID": 55,
+                    "PoolIndex": 3
+                },
+                "Recovery": {
+                    "RecoveryType": "GPIOERoT",
+                    "ApName": "FW_BF4_BMC_0",
+                    "FatalErrorGpio": "BF4_S_BMC_EROT_FATAL_ERROR_L-I",
+                    "FatalErrorPolarity": "ActiveLow",
+                    "I2CAddress": 83,
+                    "I2CBus": 77
+                }
+            }
+        ]
     }
 ]

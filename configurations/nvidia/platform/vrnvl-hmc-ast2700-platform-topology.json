@@ -1,11 +1,10 @@
 [
   {
     "Name": "Nvidia VR-NVL144 HMC AST2700",
-    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?'})",
+    "Probe": "TRUE",
     "Type": "Platform",
     "NamePrefix": "HGX_",
     "BmcName": "HGX_BMC_0",
-    "TopChassis": "HGX_Chassis_0",
     "PlatformExposes": [
       {
         "Name": "DevicePrefix",
@@ -18,332 +17,31 @@
         "Chassis": "HGX_Chassis_0"
       },
       {
-        "Name": "HMC_USB_GADGET_0",
-        "Type": "MCTPUSBGadgetTarget",
-        "Interface": "mctpusbg0",
-        "LocalEID": 8
-      },
-      {
-        "Name": "HGX_IRoT_BMC_0",
-        "Type": "NvDevice",
-        "Kind": "irot",
+        "Name": "HGX_ProcessorModule_0",
+        "Type": "NvBoard",
+        "Board": "HPM_HMC_PG558",
         "Instance": 0,
-        "Generation": "vera-rubin",
-        "ParentChassis": "HGX_BMC_0",
-        "LocationContext": "HGX_Chassis_0/SMM_0/HMC_0",
-        "LocationCode": "IRoT_BMC_0",
-        "EID": 9,
-        "Transport": {
-          "Medium": "xrot",
-          "Interface": "mctpirot0"
-        }
+        "UsbHubPath": "1.1",
+        "SmaI2cBus": 10,
+        "Side": "Left",
+        "ZoneChassis": "HGX_Chassis_0"
       },
       {
-        "Name": "HGX_GPU_SMA_0",
-        "Type": "NvDevice",
-        "Kind": "gpu_sma",
-        "LocationCode": "GPU_SMA_0",
-        "Instance": 0,
-        "BridgedProcessors": [
-          "HGX_GPU_0",
-          "HGX_GPU_1"
-        ],
-        "Generation": "vera-rubin",
-        "ParentChassis": "HGX_ProcessorModule_0",
-        "LocationContext": "HGX_Chassis_0/ProcessorModule_0-Left",
-        "EID": 10,
-        "Transport": {
-          "Medium": "usb",
-          "Port": "1.1.1",
-          "RootHubPath": "/sys/devices/platform/soc@10000000/12063000.usb",
-          "PoolStartEID": "11",
-          "PoolEndEID": "12"
-        },
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "BRD0_GPU_MCU_RECOVERY_L_3V3-O",
-          "ResetGpio": "BRD0_GPU_MCU_RESET_L_3V3-O",
-          "SoftwareName": "HGX_FW_GPU_SMA_0",
-          "Target": "GPU",
-          "PackageUUID": "8F3A1C76B24E9D50C7AD93E1F42BC689"
-        }
-      },
-      {
-        "Name": "HGX_GPU_0",
-        "Type": "NvDevice",
-        "Kind": "gpu",
-        "Instance": 0,
-        "Generation": "vera-rubin",
-        "ParentChassis": "HGX_ProcessorModule_0",
-        "LocationContext": "HGX_Chassis_0/ProcessorModule_0",
-        "LocationCode": "GPU_0",
-        "EID": 11,
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_GPU_SMA_0",
-          "BridgeEID": 10,
-          "BridgePort": "1.1.1",
-          "PoolIndex": 0
-        },
-        "Recovery": {
-          "RecoveryType": "OCP",
-          "OcpRecoveryI2cAddress": 105,
-          "SoftwareName": "HGX_FW_GPU_0",
-          "ChassisName": "HGX_IRoT_GPU_0",
-          "InfoRomName": "HGX_InfoROM_GPU_0"
-        }
-      },
-      {
-        "Name": "HGX_GPU_1",
-        "Type": "NvDevice",
-        "Kind": "gpu",
+        "Name": "HGX_ProcessorModule_1",
+        "Type": "NvBoard",
+        "Board": "HPM_HMC_PG558",
         "Instance": 1,
-        "Generation": "vera-rubin",
-        "ParentChassis": "HGX_ProcessorModule_0",
-        "LocationContext": "HGX_Chassis_0/ProcessorModule_0",
-        "LocationCode": "GPU_1",
-        "EID": 12,
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_GPU_SMA_0",
-          "BridgeEID": 10,
-          "BridgePort": "1.1.1",
-          "PoolIndex": 1
-        },
-        "Recovery": {
-          "RecoveryType": "OCP",
-          "OcpRecoveryI2cAddress": 106,
-          "SoftwareName": "HGX_FW_GPU_1",
-          "ChassisName": "HGX_IRoT_GPU_1",
-          "InfoRomName": "HGX_InfoROM_GPU_1"
-        }
-      },
-      {
-        "Name": "HGX_GPU_SMA_1",
-        "Type": "NvDevice",
-        "Kind": "gpu_sma",
-        "LocationCode": "GPU_SMA_0",
-        "Instance": 1,
-        "Generation": "vera-rubin",
-        "ParentChassis": "HGX_ProcessorModule_1",
-        "LocationContext": "HGX_Chassis_0/ProcessorModule_1-Right",
-        "EID": 20,
-        "BridgedProcessors": [
-          "HGX_GPU_2",
-          "HGX_GPU_3"
-        ],
-        "Transport": {
-          "Medium": "usb",
-          "Port": "1.2.1",
-          "RootHubPath": "/sys/devices/platform/soc@10000000/12063000.usb",
-          "PoolStartEID": "21",
-          "PoolEndEID": "22"
-        },
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "BRD1_GPU_MCU_RECOVERY_L_3V3-O",
-          "ResetGpio": "BRD1_GPU_MCU_RESET_L_3V3-O",
-          "SoftwareName": "HGX_FW_GPU_SMA_1",
-          "Target": "GPU",
-          "PackageUUID": "8F3A1C76B24E9D50C7AD93E1F42BC689"
-        }
-      },
-      {
-        "Name": "HGX_GPU_2",
-        "Type": "NvDevice",
-        "Kind": "gpu",
-        "Instance": 2,
-        "Generation": "vera-rubin",
-        "ParentChassis": "HGX_ProcessorModule_1",
-        "LocationContext": "HGX_Chassis_0/ProcessorModule_1",
-        "LocationCode": "GPU_0",
-        "EID": 21,
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_GPU_SMA_1",
-          "BridgeEID": 20,
-          "BridgePort": "1.2.1",
-          "PoolIndex": 0
-        },
-        "Recovery": {
-          "RecoveryType": "OCP",
-          "OcpRecoveryI2cAddress": 105,
-          "SoftwareName": "HGX_FW_GPU_2",
-          "ChassisName": "HGX_IRoT_GPU_2",
-          "InfoRomName": "HGX_InfoROM_GPU_2"
-        }
-      },
-      {
-        "Name": "HGX_GPU_3",
-        "Type": "NvDevice",
-        "Kind": "gpu",
-        "Instance": 3,
-        "Generation": "vera-rubin",
-        "ParentChassis": "HGX_ProcessorModule_1",
-        "LocationContext": "HGX_Chassis_0/ProcessorModule_1",
-        "LocationCode": "GPU_1",
-        "EID": 22,
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_GPU_SMA_1",
-          "BridgeEID": 20,
-          "BridgePort": "1.2.1",
-          "PoolIndex": 1
-        },
-        "Recovery": {
-          "RecoveryType": "OCP",
-          "OcpRecoveryI2cAddress": 106,
-          "SoftwareName": "HGX_FW_GPU_3",
-          "ChassisName": "HGX_IRoT_GPU_3",
-          "InfoRomName": "HGX_InfoROM_GPU_3"
-        }
-      },
-      {
-        "Name": "HGX_CPU_0",
-        "Type": "NvDevice",
-        "Kind": "cpu",
-        "Instance": 0,
-        "Generation": "vera-rubin",
-        "ParentChassis": "HGX_ProcessorModule_0",
-        "LocationContext": "HGX_Chassis_0/ProcessorModule_0",
-        "EID": 14,
-        "Transport": {
-          "Medium": "usb",
-          "Port": "1.1.2",
-          "RootHubPath": "/sys/devices/platform/soc@10000000/12063000.usb"
-        },
-        "Recovery": {
-          "RecoveryType": "USBRCM",
-          "ActionRedfishChassis": "HGX_Chassis_0",
-          "SystemResetGpio": "BRD0_IST_SYS_RST_L-O",
-          "ForcedRecoveryGpio": "BRD0_CPU_FORCED_RECOVERY_L-O",
-          "BootDevSel0Gpio": "BRD0_CPU_BOOT_DEV_SEL0-O",
-          "BootDevSel1Gpio": "BRD0_CPU_BOOT_DEV_SEL1-O",
-          "BootDevSel2Gpio": "BRD0_CPU_BOOT_DEV_SEL2-O",
-          "RecoveryType0Gpio": "BRD0_CPU_RECOVERY_TYPE0-O",
-          "RecoveryType1Gpio": "BRD0_CPU_RECOVERY_TYPE1-O",
-          "SoftwareName": "HGX_FW_CPU_0",
-          "FMCComponentName": "HGX_SBIOS_FMC_0",
-          "FWSComponentName": "HGX_SBIOS_FW_0"
-        }
-      },
-      {
-        "Name": "HGX_CPU_1",
-        "Type": "NvDevice",
-        "Kind": "cpu",
-        "Instance": 1,
-        "Generation": "vera-rubin",
-        "ParentChassis": "HGX_ProcessorModule_1",
-        "LocationContext": "HGX_Chassis_0/ProcessorModule_1",
-        "EID": 24,
-        "Transport": {
-          "Medium": "usb",
-          "Port": "1.2.2",
-          "RootHubPath": "/sys/devices/platform/soc@10000000/12063000.usb"
-        },
-        "Recovery": {
-          "RecoveryType": "USBRCM",
-          "ActionRedfishChassis": "HGX_Chassis_0",
-          "SystemResetGpio": "BRD1_IST_SYS_RST_L-O",
-          "ForcedRecoveryGpio": "BRD1_CPU_FORCED_RECOVERY_L-O",
-          "BootDevSel0Gpio": "BRD1_CPU_BOOT_DEV_SEL0-O",
-          "BootDevSel1Gpio": "BRD1_CPU_BOOT_DEV_SEL1-O",
-          "BootDevSel2Gpio": "BRD1_CPU_BOOT_DEV_SEL2-O",
-          "RecoveryType0Gpio": "BRD1_CPU_RECOVERY_TYPE0-O",
-          "RecoveryType1Gpio": "BRD1_CPU_RECOVERY_TYPE1-O",
-          "SoftwareName": "HGX_FW_CPU_1",
-          "FMCComponentName": "HGX_SBIOS_FMC_1",
-          "FWSComponentName": "HGX_SBIOS_FW_1"
-        }
-      },
-      {
-        "Name": "HGX_ProcessorModule_SMA_0",
-        "Type": "NvDevice",
-        "Kind": "hmc_hpm_sma",
-        "LocationCode": "HPM_SMA_0",
-        "Instance": 0,
-        "Generation": "vera-rubin",
-        "ParentChassis": "HGX_ProcessorModule_0",
-        "LocationContext": "HGX_Chassis_0/ProcessorModule_0",
-        "ZoneChassis": "HGX_Chassis_0",
-        "EID": 13,
-        "Transport": {
-          "Medium": "i2c",
-          "Bus": 10,
-          "Address": 82
-        },
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "BRD0_MCU_RECOVERY_L-O",
-          "ResetGpio": "BRD0_MCU_RESET_L-O",
-          "SoftwareName": "HGX_FW_ProcessorModule_SMA_0",
-          "Target": "HPM",
-          "PackageUUID": "3E9B47D2A5F18C0E6BD9314FA72C58DE"
-        }
-      },
-      {
-        "Name": "HGX_ProcessorModule_SMA_1",
-        "Type": "NvDevice",
-        "Kind": "hmc_hpm_sma",
-        "LocationCode": "HPM_SMA_0",
-        "Instance": 1,
-        "Generation": "vera-rubin",
-        "ParentChassis": "HGX_ProcessorModule_1",
-        "LocationContext": "HGX_Chassis_0/ProcessorModule_1",
-        "EID": 23,
-        "Transport": {
-          "Medium": "i2c",
-          "Bus": 8,
-          "Address": 82
-        },
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "BRD1_MCU_RECOVERY_L-O",
-          "ResetGpio": "BRD1_MCU_RESET_L-O",
-          "SoftwareName": "HGX_FW_ProcessorModule_SMA_1",
-          "Target": "HPM",
-          "PackageUUID": "3E9B47D2A5F18C0E6BD9314FA72C58DE"
-        }
+        "UsbHubPath": "1.2",
+        "SmaI2cBus": 8,
+        "Side": "Right"
       },
       {
         "Name": "HGX_BMC_0",
         "Type": "PlatformDevice",
         "DeviceAddress": "MCTP:9",
         "DeviceType": "BMC"
-      },
-      {
-        "DotObjectPrefix": "/xyz/openbmc_project/DOT/HGX_IRoT_CPU_",
-        "Name": "IST",
-        "RequiredCpus": 2,
-        "SoftwareInventoryId": "HGX_IST_Vectors",
-        "Type": "IST"
-      },
-      {
-        "BootGpio": "BRD0_CPU_IST_BOOT_HMC-O",
-        "Cpus": [
-          0
-        ],
-        "Detect": true,
-        "Index": 0,
-        "Name": "BRD0",
-        "PreResetGpio": "BRD0_HMC_IST_PRE_RST_L-O",
-        "ShutdownOkGpio": "BRD0_CPU0_SHDN_OK_L_3V3-I",
-        "SysResetGpio": "BRD0_IST_SYS_RST_L-O",
-        "Type": "ISTDomain"
-      },
-      {
-        "BootGpio": "BRD1_CPU_IST_BOOT_HMC-O",
-        "Cpus": [
-          1
-        ],
-        "Detect": true,
-        "Index": 1,
-        "Name": "BRD1",
-        "PreResetGpio": "BRD1_HMC_IST_PRE_RST_L-O",
-        "ShutdownOkGpio": "BRD1_CPU0_SHDN_OK_L_3V3-I",
-        "SysResetGpio": "BRD1_IST_SYS_RST_L-O",
-        "Type": "ISTDomain"
       }
-    ]
+    ],
+    "UsbRootHubPath": "/sys/devices/platform/soc@10000000/12063000.usb"
   }
 ]
