@@ -206,7 +206,11 @@
     },
     {
         "Name": "BMC_ERoT",
-        "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2600')",
+        "Probe": [
+            "FOUND('Nvidia VR-NVL72 BMC AST2600')",
+            "OR",
+            "FOUND('Nvidia VR-NVL72 BMC AST2600 vHMC host')"
+        ],
         "Type": "NvDevice",
         "Exposes": [
             {
@@ -294,6 +298,8 @@
         "Name": "HMC_BRIDGE",
         "Probe": [
             "FOUND('Nvidia VR-NVL72 BMC AST2600')",
+            "OR",
+            "FOUND('Nvidia VR-NVL72 BMC AST2600 vHMC host')",
             "AND",
             "xyz.openbmc_project.State.FeatureReady({'FeatureType': 'xyz.openbmc_project.State.FeatureReady.FeatureTypes.MC', 'State': 'xyz.openbmc_project.State.FeatureReady.States.Enabled'})"
         ],

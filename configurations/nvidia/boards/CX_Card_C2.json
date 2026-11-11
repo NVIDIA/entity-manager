@@ -132,5 +132,25 @@
             "Name": "I2CDeviceAssociation"
         },
         "xyz.openbmc_project.Inventory.Item.NetworkInterface": {}
+    },
+    {
+        "Name": "CX_Card_Devices_$Instance",
+        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^CX_Card_C2$'})",
+        "Type": "NvDevice",
+        "Exposes": [
+            {
+                "Name": "CX_$Instance",
+                "Type": "NvDevice",
+                "Kind": "cx9_nic_i2c",
+                "Generation": "vera-rubin",
+                "Instance": "$Instance",
+                "EID": "$Instance + 101",
+                "Transport": {
+                    "Medium": "i2c",
+                    "Bus": "$I2cBus",
+                    "Address": 50
+                }
+            }
+        ]
     }
 ]

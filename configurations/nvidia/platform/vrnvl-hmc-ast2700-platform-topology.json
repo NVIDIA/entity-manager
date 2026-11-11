@@ -34,12 +34,6 @@
         "UsbHubPath": "1.2",
         "SmaI2cBus": 8,
         "Side": "Right"
-      },
-      {
-        "Name": "HGX_BMC_0",
-        "Type": "PlatformDevice",
-        "DeviceAddress": "MCTP:9",
-        "DeviceType": "BMC"
       }
     ],
     "UsbRootHubPath": "/sys/devices/platform/soc@10000000/12063000.usb"

@@ -16,12 +16,6 @@
         "ParameterOverrides": {}
       },
       {
-        "DeviceAddress": "MCTP:$EID",
-        "DeviceType": "BMC",
-        "Name": "$Platform.BmcName",
-        "Type": "PlatformDevice"
-      },
-      {
         "Name": "$Name",
         "SupportedDumps": [
           "RoT",

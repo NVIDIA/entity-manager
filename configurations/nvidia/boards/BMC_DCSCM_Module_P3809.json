@@ -93,5 +93,44 @@
         "Name": "BMC",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80})",
         "Type": "Assembly"
+    },
+    {
+        "Name": "BMC_ERoT",
+        "Probe": "FOUND('Nvidia VR-C2 BMC')",
+        "Type": "NvDevice",
+        "Exposes": [
+            {
+                "Name": "ERoT_BMC_0",
+                "Type": "NvDevice",
+                "Kind": "erot",
+                "ParentChassis": "BMC_0",
+                "Generation": "vera-rubin",
+                "Instance": 0,
+                "EID": 10,
+                "Transport": {
+                    "Medium": "spi",
+                    "Bus": 0,
+                    "ChipSelect": 2
+                },
+                "Recovery": {
+                    "RecoveryType": "GlacierCrisis"
+                }
+            }
+        ]
+    },
+    {
+        "Name": "BMC_Device",
+        "Probe": "FOUND('Nvidia VR-C2 BMC')",
+        "Type": "NvDevice",
+        "Exposes": [
+            {
+                "Name": "BMC_Device_0",
+                "Type": "NvDevice",
+                "Kind": "bmc",
+                "Generation": "vera-rubin",
+                "Instance": 0,
+                "EID": 30
+            }
+        ]
     }
 ]

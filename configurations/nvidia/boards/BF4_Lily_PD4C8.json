@@ -134,7 +134,11 @@
     },
     {
         "Name": "BF4_BayC",
-        "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2600')",
+        "Probe": [
+            "FOUND('Nvidia VR-NVL72 BMC AST2600')",
+            "OR",
+            "FOUND('Nvidia VR-NVL72 BMC AST2600 vHMC host')"
+        ],
         "Type": "NvDevice",
         "Exposes": [
             {
@@ -193,6 +197,26 @@
                     "FatalErrorPolarity": "ActiveLow",
                     "I2CAddress": 83,
                     "I2CBus": 77
+                }
+            }
+        ]
+    },
+    {
+        "Name": "BF4_Lily_C2",
+        "Probe": "FOUND('Nvidia VR-C2 BMC')",
+        "Type": "NvDevice",
+        "Exposes": [
+            {
+                "Name": "BlueField_0",
+                "Type": "NvDevice",
+                "Kind": "bluefield_lily",
+                "Generation": "vera-rubin",
+                "Instance": 0,
+                "EID": 105,
+                "Transport": {
+                    "Medium": "i2c",
+                    "Bus": 34,
+                    "Address": 50
                 }
             }
         ]

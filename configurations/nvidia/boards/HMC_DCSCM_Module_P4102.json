@@ -263,5 +263,22 @@
         "LocalEID": 8
       }
     ]
+  },
+  {
+    "Name": "HGX_HMC_BMC_Device",
+    "Probe": [
+      "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
+      "OR",
+      "xyz.openbmc_project.FruDevice({'BUS': 4, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})"
+    ],
+    "Type": "NvDevice",
+    "Exposes": [
+      {
+        "Name": "HGX_BMC_0",
+        "Type": "PlatformDevice",
+        "DeviceAddress": "MCTP:9",
+        "DeviceType": "BMC"
+      }
+    ]
   }
 ]

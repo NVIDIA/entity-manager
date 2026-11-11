@@ -344,19 +344,5 @@
         "SysResetGpio": "BRD$Instance_IST_SYS_RST_L-O"
       }
     ]
-  },
-  {
-    "Name": "HGX_ProcessorModule_Shared",
-    "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^HPM_HMC_PG558$', 'Instance': 0})",
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "DotObjectPrefix": "/xyz/openbmc_project/DOT/HGX_IRoT_CPU_",
-        "Name": "IST",
-        "RequiredCpus": 2,
-        "SoftwareInventoryId": "HGX_IST_Vectors",
-        "Type": "IST"
-      }
-    ]
   }
 ]
