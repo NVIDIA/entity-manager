@@ -226,6 +226,34 @@ TEST(Topology, OneNewBoard)
     EXPECT_TRUE(assocs[subchassisPath].contains(subchassisAssoc));
 }
 
+TEST(Topology, BoardPostedInLaterPass)
+{
+    Topology topo;
+
+    // First pass: the subchassis (for example a drive) is posted before the
+    // board it connects to (for example one found through its FRU).
+    BoardMap firstPass{{subchassisPath, "BoardA"}};
+    topo.addBoard(subchassisPath, "Chassis", "BoardA", subchassisExposesItem);
+    EXPECT_EQ(topo.getAssocs(std::views::keys(firstPass)).size(), 0U);
+
+    // Second pass: the superchassis is new.
+    topo.addBoard(superchassisPath, "Chassis", "BoardB",
+                  superchassisExposesItem);
+    BoardMap secondPass{{superchassisPath, "BoardB"}};
+
+    // Asking only for the new board gives nothing: the association belongs to
+    // the subchassis, which was posted in the first pass.
+    EXPECT_EQ(topo.getAssocs(std::views::keys(secondPass)).size(), 0U);
+
+    // Asking for every object posted so far returns it, so the subchassis can
+    // be updated when the board arrives.
+    BoardMap posted{{subchassisPath, "BoardA"}, {superchassisPath, "BoardB"}};
+    auto assocs = topo.getAssocs(std::views::keys(posted));
+    EXPECT_EQ(assocs.size(), 1U);
+    EXPECT_EQ(assocs[subchassisPath].size(), 1U);
+    EXPECT_TRUE(assocs[subchassisPath].contains(subchassisAssoc));
+}
+
 TEST(Topology, 2Superchassis)
 {
     Association subchassisAssoc2 =

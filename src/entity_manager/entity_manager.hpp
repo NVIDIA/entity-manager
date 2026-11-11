@@ -13,7 +13,11 @@
 #include <sdbusplus/asio/object_server.hpp>
 
 #include <flat_map>
+#include <map>
+#include <memory>
+#include <set>
 #include <string>
+#include <vector>
 
 class EntityManager
 {
@@ -90,6 +94,27 @@ class EntityManager
 
     bool scannedPowerOff = false;
     bool scannedPowerOn = false;
+
+    // Every object posted so far (path -> config name), across passes. The
+    // topology associations of an object (port pairing, probed_by) can change
+    // when a board it pairs with is posted in a later pass, so each pass
+    // looks at all of them, not only the new ones.
+    std::map<sdbusplus::object_path, std::string> postedObjects;
+
+    // Objects whose Association.Definitions comes from their own record
+    // ("Associations"). Their interface already exists, so the topology
+    // associations are not added to it (same as before this state was kept).
+    std::set<sdbusplus::object_path> recordAssociationPaths;
+
+    // Topology Association.Definitions published so far, to update an
+    // interface when a later pass changes its associations.
+    struct TopologyAssociations
+    {
+        std::shared_ptr<sdbusplus::asio::dbus_interface> iface;
+        std::set<Association> assocs;
+    };
+    std::map<sdbusplus::object_path, TopologyAssociations>
+        topologyAssociations;
 
     bool propertiesChangedInProgress = false;
     boost::asio::steady_timer propertiesChangedTimer;

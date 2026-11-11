@@ -104,23 +104,50 @@ void EntityManager::postToDbus(const nlohmann::json& newConfiguration)
         postBoardToDBus(configId, *configObjectPtr, newObjects);
     }
 
+    postedObjects.insert(newObjects.begin(), newObjects.end());
+
+    // The associations of an object can change when a board it pairs with is
+    // posted in a later pass (a drive is posted before its FRU-probed board).
+    // Look at every object posted so far and publish what changed: create the
+    // interface the first time, update its property afterwards.
     for (const auto& [assocPath, assocPropValue] :
-         topology.getAssocs(std::views::keys(newObjects)))
+         topology.getAssocs(std::views::keys(postedObjects)))
     {
-        auto findBoard = newObjects.find(assocPath);
-        if (findBoard == newObjects.end())
+        auto findBoard = postedObjects.find(assocPath);
+        if (findBoard == postedObjects.end())
         {
             continue;
         }
+        if (recordAssociationPaths.contains(assocPath))
+        {
+            // the record's own Association.Definitions is already published
+            continue;
+        }
 
-        auto ifacePtr = dbus_interface.createInterface(
+        const std::set<Association> assocs(assocPropValue.begin(),
+                                           assocPropValue.end());
+        auto [stateIt, created] = topologyAssociations.try_emplace(assocPath);
+        TopologyAssociations& state = stateIt->second;
+        if (!created && state.assocs == assocs)
+        {
+            continue;
+        }
+        state.assocs = assocs;
+        const std::vector<Association> value(assocs.begin(), assocs.end());
+
+        if (state.iface != nullptr)
+        {
+            state.iface->set_property("Associations", value);
+            continue;
+        }
+
+        state.iface = dbus_interface.createInterface(
             assocPath,
             sdbusplus::common::xyz::openbmc_project::association::Definitions::
                 interface,
             findBoard->second);
-
-        ifacePtr->register_property("Associations", assocPropValue);
-        dbus_interface::tryIfaceInitialize(ifacePtr);
+        state.iface->register_property("Associations", value);
+        dbus_interface::tryIfaceInitialize(state.iface);
     }
 }
 
@@ -472,6 +499,8 @@ void EntityManager::postBoardToDBus(
             "Associations", extraAssociations,
             sdbusplus::asio::PropertyPermission::readWrite);
         dbus_interface::tryIfaceInitialize(assocIface);
+
+        recordAssociationPaths.insert(objectPath);
     }
 
     const std::string exposesKey = em_utils::getExposesKey(configValues);
@@ -754,6 +783,17 @@ void EntityManager::pruneConfiguration(bool powerOff, const std::string& name,
     }
 
     ifaces.clear();
+    for (auto it = postedObjects.begin(); it != postedObjects.end();)
+    {
+        if (it->second == device["Name"].get<std::string>())
+        {
+            recordAssociationPaths.erase(it->first);
+            topologyAssociations.erase(it->first);
+            it = postedObjects.erase(it);
+            continue;
+        }
+        ++it;
+    }
     systemConfiguration.erase(name);
     topology.remove(device["Name"].get<std::string>());
     logDeviceRemoved(device);
