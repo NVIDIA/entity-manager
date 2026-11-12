@@ -398,6 +398,7 @@ configs = [
     'nvidia/vr-bmc-cx9_nic.json',
     'nvidia/vr-bmc-cx_sma.json',
     'nvidia/vr-bmc-erot.json',
+    'nvidia/vr-bmc-hmc_bridge.json',
     'nvidia/vr-bmc-hpm_sma.json',
     'nvidia/vr-bmc-nvme_e1s.json',
     'nvidia/vr-bmc-nvme_smm.json',
