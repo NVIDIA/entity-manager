@@ -249,10 +249,7 @@ TEST(TemplateCharReplace, hexAndWrongCase)
     DBusInterface data;
     data["BUS"] = 15;
 
-    for (auto it = j.begin(); it != j.end(); it++)
-    {
-        em_utils::templateCharReplace(j, data, 0);
-    }
+    em_utils::templateCharReplace(j, data, 0);
     nlohmann::json expected = {{"Address", 84},
                                {"Bus", 15},
                                {"Name", "15 sensor 0"},
@@ -337,38 +334,43 @@ TEST(TemplateCharReplace, leftOverTemplateVars)
 
     em_utils::templateCharReplace(j, object, 0);
 
-    nlohmann::json expected = "Replaced and ";
-    EXPECT_EQ(expected, j["foo"]);
+    // A property still holding an undefined variable is not published.
+    EXPECT_FALSE(j.contains("foo"));
 }
 
 TEST(HandleLeftOverTemplateVars, replaceLeftOverTemplateVar)
 {
-    nlohmann::json j = {{"foo", "the Test $TEST is $TESTED"}};
+    nlohmann::json j = {{"foo", "the Test $TEST is $TESTED"},
+                        {"Name", "the Test $TEST is $TESTED"}};
 
     em_utils::handleLeftOverTemplateVars(j);
 
-    nlohmann::json expected = "the Test  is ";
-    EXPECT_EQ(expected, j["foo"]);
+    // Name keeps the old behavior: the variables are removed from it.
+    nlohmann::json expected = {{"Name", "the Test  is "}};
+    EXPECT_EQ(expected, j);
 }
 
 TEST(HandleLeftOverTemplateVars, replaceLeftOverTemplateVarObj)
 {
-    nlohmann::json::object_t j = {{"foo", "the Test $TEST is $TESTED"}};
+    nlohmann::json::object_t j = {{"foo", "the Test $TEST is $TESTED"},
+                                  {"bar", "kept"}};
 
     em_utils::handleLeftOverTemplateVars(j);
 
-    nlohmann::json expected = "the Test  is ";
-    EXPECT_EQ(expected, j["foo"]);
+    nlohmann::json::object_t expected = {{"bar", "kept"}};
+    EXPECT_EQ(expected, j);
 }
 
 TEST(HandleLeftOverTemplateVars, replaceLeftOverTemplateVarArr)
 {
-    nlohmann::json::array_t j = {{{"foo", "the Test $TEST is $TESTED"}}};
+    nlohmann::json::array_t j = {{{"foo", "the Test $TEST is $TESTED"}},
+                                 {{"foo", "kept"}}};
 
     em_utils::handleLeftOverTemplateVars(j);
 
-    nlohmann::json expected = "the Test  is ";
-    EXPECT_EQ(expected, j[0]["foo"]);
+    // The first element is left empty, so it is dropped too.
+    nlohmann::json::array_t expected = {{{"foo", "kept"}}};
+    EXPECT_EQ(expected, j);
 }
 
 TEST(HandleLeftOverTemplateVars, replaceLeftOverTemplateVarString)
@@ -1259,7 +1261,7 @@ TEST(PlatformTemplateVariables, scalarsOfThePlatformRecord)
     platform["Type"] = "Platform";
     platform["Probe"] = "TRUE";
     platform["NamePrefix"] = "HGX_";
-    platform["Limit"] = 5;
+    platform["Limit"] = 5U;
     platform["Enabled"] = true;
     platform["PlatformExposes"] = nlohmann::json::array();
     nlohmann::json other = nlohmann::json::object();
@@ -1273,7 +1275,8 @@ TEST(PlatformTemplateVariables, scalarsOfThePlatformRecord)
     const DBusInterface variables = em_utils::platformTemplateVariables(config);
 
     EXPECT_EQ(3U, variables.size());
-    EXPECT_EQ("HGX_", std::get<std::string>(variables.at("Platform.NamePrefix")));
+    EXPECT_EQ("HGX_",
+              std::get<std::string>(variables.at("Platform.NamePrefix")));
     EXPECT_EQ(5U, std::get<uint64_t>(variables.at("Platform.Limit")));
     EXPECT_TRUE(std::get<bool>(variables.at("Platform.Enabled")));
     EXPECT_FALSE(variables.contains("Platform.PlatformExposes"));
@@ -1362,10 +1365,9 @@ TEST(HandleLeftOverTemplateVars, skipsPropertyOfItemOnly)
 
 TEST(HandleLeftOverTemplateVars, dropsMapEmptiedBySkipping)
 {
-    nlohmann::json j = {
-        {"Type", "PLDMDevice"},
-        {"SensorAuxNames", {{"$Name_Temp_0", "$TempSensorId"}}},
-        {"Other", {{"x", {{"y", "$Missing"}}}}}};
+    nlohmann::json j = {{"Type", "PLDMDevice"},
+                        {"SensorAuxNames", {{"$Name_Temp_0", "$TempSensorId"}}},
+                        {"Other", {{"x", {{"y", "$Missing"}}}}}};
 
     em_utils::handleLeftOverTemplateVars(j);
 
@@ -1555,11 +1557,10 @@ TEST(HandleLeftOverRecordTemplateVars, nameProbeAndExposesAreNotTouched)
 
 TEST(JsonObjectToDict, scalars)
 {
-    nlohmann::json j = {{"Enabled", false},
-                        {"Value", "GPU_0"},
-                        {"Count", 4},
-                        {"Offset", -1},
-                        {"Scale", 0.5}};
+    // Parsed, as configurations are: a positive number is unsigned.
+    nlohmann::json j = nlohmann::json::parse(
+        R"({"Enabled": false, "Value": "GPU_0", "Count": 4, "Offset": -1,
+            "Scale": 0.5})");
 
     auto dict = dbus_interface::jsonObjectToDict(j);
 
@@ -1573,11 +1574,9 @@ TEST(JsonObjectToDict, scalars)
 
 TEST(JsonObjectToDict, arrays)
 {
-    nlohmann::json j = {{"Bitfield", {255, 255, 223, 15}},
-                        {"Signed", {1, -2}},
-                        {"Names", {"a", "b"}},
-                        {"Flags", {true, false}},
-                        {"Empty", nlohmann::json::array()}};
+    nlohmann::json j = nlohmann::json::parse(
+        R"({"Bitfield": [255, 255, 223, 15], "Signed": [1, -2],
+            "Names": ["a", "b"], "Flags": [true, false], "Empty": []})");
 
     auto dict = dbus_interface::jsonObjectToDict(j);
 
