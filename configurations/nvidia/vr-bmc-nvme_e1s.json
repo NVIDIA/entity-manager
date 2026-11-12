@@ -83,7 +83,6 @@
     "Name": "$Name_Platform",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^nvme_e1s$', 'Generation': 'vera-rubin'})",
     "Type": "NvDevice",
-    "Kind": "nvme_e1s",
     "Exposes": [
       {
         "BridgeName": "$Bridge",

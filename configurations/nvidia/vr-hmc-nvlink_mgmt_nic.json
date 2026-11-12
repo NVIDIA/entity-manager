@@ -3,15 +3,15 @@
     "Name": "$Name",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^nvlink_mgmt_nic$', 'Generation': 'vera-rubin'})",
     "Type": "NvDevice",
-    "Kind": "nvlink_mgmt_nic",
-    "InstanceNumber": "$Instance",
-    "EID": "$EID",
     "Exposes": [
       {
         "Name": "NSM_Telemetry",
         "Type": "NSM_Telemetry",
         "Disable": [],
-        "ParameterOverrides": {}
+        "ParameterOverrides": {},
+        "Kind": "nvlink_mgmt_nic",
+        "InstanceNumber": "$Instance",
+        "EID": "$EID"
       },
       {
         "DeviceType": "NVLinkManagementNIC_$Instance",

@@ -260,7 +260,7 @@
         "Name": "HMC_USB_GADGET_0",
         "Type": "MCTPUSBGadgetTarget",
         "Interface": "mctpusbg0",
-        "LocalEID": 8
+        "LocalEID": "8"
       }
     ]
   },

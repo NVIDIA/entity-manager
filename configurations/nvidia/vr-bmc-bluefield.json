@@ -3,8 +3,6 @@
     "Name": "$Name",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vera-rubin'})",
     "Type": "chassis",
-    "InstanceNumber": "$Instance",
-    "EID": "$EID",
     "Exposes": [
       {
         "Name": "NSM_Telemetry",
@@ -70,7 +68,6 @@
       "FOUND('BlueField_4_B4240V_FRU')"
     ],
     "Type": "NvDevice",
-    "Kind": "bluefield",
     "Exposes": [
       {
         "Name": "$Name_PLDM",
@@ -116,7 +113,6 @@
       "FOUND('BlueField_4_B4180V_FRU')"
     ],
     "Type": "NvDevice",
-    "Kind": "bluefield",
     "Exposes": [
       {
         "Name": "$Name_PLDM",
@@ -168,7 +164,6 @@
     "Name": "$Name_Platform",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield_lily$', 'Generation': 'vera-rubin'})",
     "Type": "NvDevice",
-    "Kind": "bluefield_lily",
     "Exposes": [
       {
         "Name": "$Name_PLDM",

@@ -2,8 +2,6 @@
   {
     "Name": "$Name",
     "Type": "chassis",
-    "InstanceNumber": "$Instance",
-    "EID": "$EID",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vera-rubin'})",
     "Exposes": [],
     "Associations": {

@@ -54,7 +54,6 @@
     "Name": "$Name_Platform",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_nic$', 'Generation': 'vera-rubin'})",
     "Type": "NvDevice",
-    "Kind": "cx9_nic",
     "Exposes": [
       {
         "Name": "$Name_PLDM",
@@ -82,7 +81,6 @@
     "Name": "$Name_Platform",
     "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_nic_i2c$', 'Generation': 'vera-rubin'})",
     "Type": "NvDevice",
-    "Kind": "cx9_nic_i2c",
     "Exposes": [
       {
         "Name": "$Name_PLDM",
