@@ -14,7 +14,7 @@
             },
             {
                 "Address": "0x48",
-                "Bus": 10,
+                "Bus": "$bus",
                 "Name": "BMC_0_Temp_0",
                 "Thresholds": [
                     {

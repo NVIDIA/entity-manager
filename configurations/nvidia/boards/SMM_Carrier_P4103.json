@@ -53,7 +53,7 @@
             },
             {
                 "Address": "0x48",
-                "Bus": 5,
+                "Bus": "$bus",
                 "Name": "SMM_0_Temp_0",
                 "Thresholds": [
                     {
