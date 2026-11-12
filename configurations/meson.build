@@ -338,7 +338,7 @@ configs = [
     'nvidia/boards/BMC_DCSCM_VHMC_P4102.json',
     'nvidia/boards/BMC_SW-BMC.json',
     'nvidia/boards/BMC_SW-BMC_AST2700.json',
-    'nvidia/boards/CX_Card_C2.json',
+    'nvidia/boards/CX_Card_MGX.json',
     'nvidia/boards/Cable_Cartridge_NVIDIA.json',
     'nvidia/boards/Chassis_SW-BMC.json',
     'nvidia/boards/Fan_Board_C2.json',

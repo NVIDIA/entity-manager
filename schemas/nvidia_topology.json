@@ -521,7 +521,7 @@
                 "Board": {
                     "description": "Board file that instantiates this board.",
                     "enum": [
-                        "CX_Card_C2",
+                        "CX_Card_MGX",
                         "GPU_PG153",
                         "HGX_Baseboard_HGXR",
                         "HGX_OSFP_Board_HGXR",

@@ -32,14 +32,14 @@
                 "Type": "NvBoard"
             },
             {
-                "Board": "CX_Card_C2",
+                "Board": "CX_Card_MGX",
                 "I2cBus": 46,
                 "Instance": 0,
                 "Name": "CX_Card_0",
                 "Type": "NvBoard"
             },
             {
-                "Board": "CX_Card_C2",
+                "Board": "CX_Card_MGX",
                 "I2cBus": 56,
                 "Instance": 1,
                 "Name": "CX_Card_1",
@@ -106,7 +106,7 @@
                 "Type": "NvBoard"
             },
             {
-                "Board": "CX_Card_C2",
+                "Board": "CX_Card_MGX",
                 "I2cBus": 46,
                 "Instance": 0,
                 "Name": "CX_Card_0",
