@@ -548,9 +548,15 @@
             "required": ["Name", "Type", "DeviceType"]
         },
         "RecoveryPackages": {
-            "description": "Model IDs of the recovery PLDM packages of the machine; code-manager reads each <Device>PackageUUID as the Nvidia:<Device>Recovery:<UUID> supported model of that recovery updater when the build sets none.",
+            "description": "Model IDs of the recovery PLDM packages of the machine, in a platform policy record; code-manager reads each <Device>PackageUUID as the Nvidia:<Device>Recovery:<UUID> supported model of that recovery updater when the build sets none, and MCU<Target>PackageUUID as the Nvidia:<Target>:<UUID> model of the MCU recovery updater of each MCU Recovery block Target. A package that depends on a FRU goes in a policy record probed on that FRU.",
             "type": "object",
             "additionalProperties": false,
+            "patternProperties": {
+                "^MCU[A-Za-z0-9]+PackageUUID$": {
+                    "type": "string",
+                    "pattern": "^[0-9A-Fa-f]{32}$"
+                }
+            },
             "properties": {
                 "ConnectXPackageUUID": {
                     "type": "string",
@@ -581,28 +587,6 @@
                 }
             },
             "required": ["Name", "Type"]
-        },
-        "MCURecoveryPackage": {
-            "description": "Model of one MCU recovery instance; code-manager starts com.Nvidia.MCURecovery.Updater@<Target> with the model Nvidia:<Target>:<PackageUUID>.",
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "Name": {
-                    "type": "string"
-                },
-                "PackageUUID": {
-                    "type": "string",
-                    "pattern": "^[0-9A-Fa-f]{32}$"
-                },
-                "Target": {
-                    "type": "string"
-                },
-                "Type": {
-                    "type": "string",
-                    "const": "MCURecoveryPackage"
-                }
-            },
-            "required": ["Name", "PackageUUID", "Target", "Type"]
         }
     }
 }

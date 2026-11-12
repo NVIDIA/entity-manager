@@ -2,80 +2,9 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "NVIDIA IST (in-system test) Exposes schemas",
     "$defs": {
-        "Text": {
-            "type": "string",
-            "pattern": "^[A-Za-z0-9_./ -]+$"
-        },
         "Gpio": {
             "type": "string",
             "pattern": "^[A-Za-z0-9_.-]+$"
-        },
-        "IST": {
-            "description": "Board facts for nvidia-vera-kist. A CPU's MCTP EID comes from its USBRCMRecovery record.",
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "DotObjectPrefix": {
-                    "description": "Present: CAK bypass on. NSM DOT object path prefix; the CPU index is appended.",
-                    "$ref": "#/$defs/Text"
-                },
-                "EidTimeoutS": {
-                    "description": "Wait for the CPU MCTP endpoints after a reset. Default 45.",
-                    "type": "integer",
-                    "minimum": 1
-                },
-                "Name": {
-                    "type": "string"
-                },
-                "RequiredCpus": {
-                    "description": "Skip the CAK bypass when fewer CPUs than this are fitted: a short count means a partly populated machine. Must not exceed the CPUs the ISTDomain records declare (the hooks reject it). Do not set it on a board whose USBRCMRecovery records are probe-gated to tell SKUs apart (MGX C1/C2): there a short count is a valid smaller SKU, and every run on it would skip the bypass.",
-                    "type": "integer",
-                    "minimum": 1
-                },
-                "ResetCommand": {
-                    "description": "Command run by ist_sys_rst.sh for ResetMethod command.",
-                    "$ref": "#/$defs/Text"
-                },
-                "ResetMethod": {
-                    "description": "gpio (default): drive the ISTDomain reset lines. command: run ResetCommand. hostWarmReboot: ForceWarmReboot on host0, then wait for CpuResetIndicator.",
-                    "enum": ["gpio", "command", "hostWarmReboot"]
-                },
-                "ShutdownOkPollS": {
-                    "description": "gpio: ShutdownOkGpio poll interval. Default 0.2.",
-                    "type": "number",
-                    "exclusiveMinimum": 0
-                },
-                "ShutdownOkTimeoutS": {
-                    "description": "gpio: wait for ShutdownOkGpio; hostWarmReboot: each CpuResetIndicator wait. Default 10.",
-                    "type": "integer",
-                    "minimum": 1
-                },
-                "SoftwareInventoryId": {
-                    "description": "Vector inventory object name under /xyz/openbmc_project/inventory_software/.",
-                    "type": "string",
-                    "pattern": "^[A-Za-z0-9_]+$"
-                },
-                "SysResetHoldS": {
-                    "description": "gpio: how long SysResetGpio is held low. Default 5.",
-                    "type": "number",
-                    "exclusiveMinimum": 0
-                },
-                "Type": {
-                    "const": "IST"
-                }
-            },
-            "required": ["Name", "SoftwareInventoryId", "Type"],
-            "if": {
-                "properties": { "ResetMethod": { "const": "command" } },
-                "required": ["ResetMethod"]
-            },
-            "then": {
-                "required": ["ResetCommand"],
-                "not": { "required": ["DotObjectPrefix"] }
-            },
-            "else": {
-                "not": { "required": ["ResetCommand"] }
-            }
         },
         "ISTDomain": {
             "description": "One set of IST lines (a CPU board or module) for nvidia-vera-kist.",

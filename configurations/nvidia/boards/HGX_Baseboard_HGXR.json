@@ -307,8 +307,7 @@
           "RecoveryGpio": "SXM_$SxmIndex_MCU_RECOV_L-O",
           "ResetGpio": "SXM_$SxmIndex_MCU_RESET_L-O",
           "Target": "SXM",
-          "SoftwareName": "HGX_FW_SXM_SMA_$Instance",
-          "PackageUUID": "F1C47A3E9D205B6C8A3F1E7B4C9628D0"
+          "SoftwareName": "HGX_FW_SXM_SMA_$Instance"
         }
       },
       {
@@ -364,8 +363,7 @@
           "RecoveryGpio": "BB_MCU_RECOV_L-O",
           "ResetGpio": "BB_MCU_RESET_L-O",
           "Target": "SMA",
-          "SoftwareName": "HGX_FW_Baseboard_SMA_0",
-          "PackageUUID": "A3C9F21B7D8045E6F2B19C4DE87A3F5B"
+          "SoftwareName": "HGX_FW_Baseboard_SMA_0"
         }
       },
       {
@@ -388,8 +386,7 @@
           "RecoveryGpio": "QM4_32_MCU_RECOV_L-O",
           "ResetGpio": "QM4_32_MCU_RESET_L-O",
           "Target": "QM4",
-          "SoftwareName": "HGX_FW_NVSwitch_SMA_0",
-          "PackageUUID": "9B5E32AF10C7D4E8F3A2619CB8D4E0F2"
+          "SoftwareName": "HGX_FW_NVSwitch_SMA_0"
         }
       },
       {
@@ -412,8 +409,7 @@
           "RecoveryGpio": "QM4_14_MCU_RECOV_L-O",
           "ResetGpio": "QM4_14_MCU_RESET_L-O",
           "Target": "QM4",
-          "SoftwareName": "HGX_FW_NVSwitch_SMA_1",
-          "PackageUUID": "9B5E32AF10C7D4E8F3A2619CB8D4E0F2"
+          "SoftwareName": "HGX_FW_NVSwitch_SMA_1"
         }
       },
       {

@@ -97,12 +97,6 @@
           "Bus": 13,
           "Address": 29
         }
-      },
-      {
-        "ConnectXPackageUUID": "C248ACFF10EA43C28793989C5C0FE840",
-        "GlacierPackageUUID": "F70650A20D174C8F8A9E7CFA5CE5BD94",
-        "Name": "RecoveryPackages",
-        "Type": "RecoveryPackages"
       }
     ]
   }

@@ -415,8 +415,7 @@
                     "RecoveryType": "MCU",
                     "RecoveryGpio": "B0_M1_MCU_RECOVERY_L-O",
                     "ResetGpio": "B0_M1_MCU_RESET_L-O",
-                    "Target": "HPM",
-                    "PackageUUID": "E7A31C9F48B2D075C3FE6A41B09D57E2"
+                    "Target": "HPM"
                 }
             },
             {

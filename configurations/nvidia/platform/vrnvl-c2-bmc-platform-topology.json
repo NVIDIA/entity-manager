@@ -54,11 +54,6 @@
         "BridgePoolStartEID": "101",
         "BridgePoolEndEID": "105",
         "IndeterministicPoolSpace": "true"
-      },
-      {
-        "GlacierPackageUUID": "DBC2D178F70711EEBB65CFE7103AC1AC",
-        "Name": "RecoveryPackages",
-        "Type": "RecoveryPackages"
       }
     ]
   }

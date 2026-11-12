@@ -95,13 +95,6 @@
           "Bus": 7,
           "Address": 29
         }
-      },
-      {
-        "ConnectXPackageUUID": "C248ACFF10EA43C28793989C5C0FE840",
-        "GlacierPackageUUID": "F70650A20D174C8F8A9E7CFA5CE5BD94",
-        "Name": "RecoveryPackages",
-        "Type": "RecoveryPackages",
-        "USBDFUPackageUUID": "C7C67D84B064593A938C098DC5584669"
       }
     ],
     "UsbRootHubPath": "/sys/devices/platform/soc@14000000/14121000.usb",

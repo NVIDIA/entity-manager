@@ -60,10 +60,6 @@
                     "$ref": "top_chassis.json#/$defs/TopChassis"
                 },
                 {
-                    "$comment": "downstream-only: in-system test board facts, consumed by nvidia-vera-kist.",
-                    "$ref": "../nvidia_ist.json#/$defs/IST"
-                },
-                {
                     "$comment": "downstream-only: in-system test CPU domain, consumed by nvidia-vera-kist.",
                     "$ref": "../nvidia_ist.json#/$defs/ISTDomain"
                 },
@@ -74,10 +70,6 @@
                 {
                     "$comment": "downstream-only: recovery package model IDs of the machine, consumed by nvidia-code-mgmt.",
                     "$ref": "../nvidia_recovery.json#/$defs/RecoveryPackages"
-                },
-                {
-                    "$comment": "downstream-only: model of one MCU recovery instance, consumed by nvidia-code-mgmt.",
-                    "$ref": "../nvidia_recovery.json#/$defs/MCURecoveryPackage"
                 }
             ]
         },

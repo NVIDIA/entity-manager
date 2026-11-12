@@ -453,9 +453,6 @@
                     "$ref": "nvidia_misc.json#/$defs/GPIOCableSensing"
                 },
                 {
-                    "$ref": "nvidia_ist.json#/$defs/IST"
-                },
-                {
                     "$ref": "nvidia_ist.json#/$defs/ISTDomain"
                 },
                 {
@@ -559,10 +556,6 @@
                 },
                 {
                     "$ref": "nvidia_recovery.json#/$defs/RecoveryPackages"
-                },
-                {
-                    "$comment": "downstream-only: model of one MCU recovery instance, consumed by nvidia-code-mgmt.",
-                    "$ref": "nvidia_recovery.json#/$defs/MCURecoveryPackage"
                 },
                 {
                     "$ref": "nvidia_sensors.json#/$defs/LM5066i"

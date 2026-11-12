@@ -247,8 +247,7 @@
                     "RecoveryType": "MCU",
                     "RecoveryGpio": "IOB$Instance_MCU_RECOVERY_L-O",
                     "ResetGpio": "IOB$Instance_MCU_RST_L-O",
-                    "Target": "CX9",
-                    "PackageUUID": "8F6B4D3E2C2B4B39BC929C6C4DF7B8E1"
+                    "Target": "CX9"
                 }
             },
             {

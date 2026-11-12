@@ -57,8 +57,7 @@
           "RecoveryGpio": "CX9_$CxNumber_MCU_RECOV_L-O",
           "ResetGpio": "CX9_$CxNumber_MCU_RESET_L-O",
           "SoftwareName": "HGX_FW_ConnectX_SMA_$Instance",
-          "Target": "CX9",
-          "PackageUUID": "4E7A1BC95F203D8EA6C1B94E2F78D3C1"
+          "Target": "CX9"
         }
       }
     ]

@@ -221,8 +221,7 @@
           "RecoveryGpio": "BRD$Instance_GPU_MCU_RECOVERY_L_3V3-O",
           "ResetGpio": "BRD$Instance_GPU_MCU_RESET_L_3V3-O",
           "SoftwareName": "HGX_FW_GPU_SMA_$Instance",
-          "Target": "GPU",
-          "PackageUUID": "8F3A1C76B24E9D50C7AD93E1F42BC689"
+          "Target": "GPU"
         },
         "LocationCode": "GPU_SMA_0"
       },
@@ -325,8 +324,7 @@
           "RecoveryGpio": "BRD$Instance_MCU_RECOVERY_L-O",
           "ResetGpio": "BRD$Instance_MCU_RESET_L-O",
           "SoftwareName": "HGX_FW_ProcessorModule_SMA_$Instance",
-          "Target": "HPM",
-          "PackageUUID": "3E9B47D2A5F18C0E6BD9314FA72C58DE"
+          "Target": "HPM"
         },
         "LocationCode": "HPM_SMA_0"
       },

@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Nvidia VR-NVL72 vHMC Recovery Packages",
+    "Probe": "FOUND('Nvidia VR-NVL72 vHMC on VR NVL BMC')",
+    "Type": "Platform",
+    "PlatformExposes": [
+      {
+        "Name": "RecoveryPackages",
+        "Type": "RecoveryPackages",
+        "MCUGPUPackageUUID": "8F3A1C76B24E9D50C7AD93E1F42BC689",
+        "MCUHPMPackageUUID": "3E9B47D2A5F18C0E6BD9314FA72C58DE"
+      }
+    ]
+  }
+]
