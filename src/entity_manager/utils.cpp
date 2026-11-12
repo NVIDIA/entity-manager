@@ -508,7 +508,7 @@ static std::optional<DBusValueVariant> templateCharReplaceLoop(
 }
 
 static std::optional<DBusValueVariant> templateCharReplaceStr(
-    std::string& str, const DBusInterface& interface, const size_t index,
+    std::string& str, const DBusInterface& interface, size_t index,
     const std::optional<std::string>& replaceStr, bool& keepAsString);
 
 // The keys of an object are template targets too: the maps of a PLDMDevice

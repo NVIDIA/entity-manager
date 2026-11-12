@@ -1564,7 +1564,10 @@ TEST(JsonObjectToDict, scalars)
 
     auto dict = dbus_interface::jsonObjectToDict(j);
 
-    ASSERT_TRUE(dict);
+    if (!dict)
+    {
+        FAIL() << "jsonObjectToDict returned no dictionary";
+    }
     EXPECT_EQ(false, std::get<bool>(dict->at("Enabled")));
     EXPECT_EQ("GPU_0", std::get<std::string>(dict->at("Value")));
     EXPECT_EQ(4U, std::get<uint64_t>(dict->at("Count")));
@@ -1580,7 +1583,10 @@ TEST(JsonObjectToDict, arrays)
 
     auto dict = dbus_interface::jsonObjectToDict(j);
 
-    ASSERT_TRUE(dict);
+    if (!dict)
+    {
+        FAIL() << "jsonObjectToDict returned no dictionary";
+    }
     EXPECT_EQ((std::vector<uint64_t>{255, 255, 223, 15}),
               std::get<std::vector<uint64_t>>(dict->at("Bitfield")));
     EXPECT_EQ((std::vector<int64_t>{1, -2}),
@@ -1596,7 +1602,10 @@ TEST(JsonObjectToDict, emptyObject)
 {
     auto dict = dbus_interface::jsonObjectToDict(nlohmann::json::object());
 
-    ASSERT_TRUE(dict);
+    if (!dict)
+    {
+        FAIL() << "jsonObjectToDict returned no dictionary";
+    }
     EXPECT_TRUE(dict->empty());
 }
 
