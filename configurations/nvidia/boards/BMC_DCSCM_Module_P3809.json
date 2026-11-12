@@ -115,7 +115,11 @@
             }
         ],
         "Name": "BMC_ERoT",
-        "Probe": "FOUND('Nvidia VR-C2 BMC')",
+        "Probe": [
+            "FOUND('Nvidia VR-C2 BMC')",
+            "OR",
+            "FOUND('Nvidia VR-C1 BMC')"
+        ],
         "Type": "NvDevice"
     },
     {
@@ -128,7 +132,11 @@
             }
         ],
         "Name": "BMC_Device",
-        "Probe": "FOUND('Nvidia VR-C2 BMC')",
+        "Probe": [
+            "FOUND('Nvidia VR-C2 BMC')",
+            "OR",
+            "FOUND('Nvidia VR-C1 BMC')"
+        ],
         "Type": "NvDevice"
     }
 ]

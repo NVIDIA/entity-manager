@@ -1,6 +1,6 @@
 [
     {
-        "Name": "Nvidia VR-C2 BMC Recovery Packages",
+        "Name": "Nvidia VR-MGX BMC Recovery Packages",
         "PlatformExposes": [
             {
                 "GlacierPackageUUID": "DBC2D178F70711EEBB65CFE7103AC1AC",
@@ -10,7 +10,11 @@
                 "Type": "RecoveryPackages"
             }
         ],
-        "Probe": "FOUND('Nvidia VR-C2 BMC')",
+        "Probe": [
+            "FOUND('Nvidia VR-C2 BMC')",
+            "OR",
+            "FOUND('Nvidia VR-C1 BMC')"
+        ],
         "Type": "Platform"
     }
 ]

@@ -191,14 +191,18 @@
                 "Name": "BlueField_0",
                 "Transport": {
                     "Address": 50,
-                    "Bus": 34,
+                    "Bus": "$Platform.BlueFieldI2cBus",
                     "Medium": "i2c"
                 },
                 "Type": "NvDevice"
             }
         ],
         "Name": "BF4_Lily_C2",
-        "Probe": "FOUND('Nvidia VR-C2 BMC')",
+        "Probe": [
+            "FOUND('Nvidia VR-C2 BMC')",
+            "OR",
+            "FOUND('Nvidia VR-C1 BMC')"
+        ],
         "Type": "NvDevice"
     }
 ]

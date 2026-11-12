@@ -15,6 +15,8 @@
                 },
                 "Transport": {
                     "Medium": "usb",
+                    "PoolEndEID": "$SmaEid + 1",
+                    "PoolStartEID": "$SmaEid + 1",
                     "Port": "$UsbPort",
                     "RootHubPath": "$Platform.UsbRootHubPath"
                 },
@@ -22,67 +24,7 @@
             }
         ],
         "Name": "GPU_Devices_$Instance",
-        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^GPU_PG153$', 'Sku': '^All$'})",
-        "Type": "NvDevice"
-    },
-    {
-        "Exposes": [
-            {
-                "EID": "$SmaEid",
-                "Generation": "vera-rubin",
-                "Instance": "$Instance",
-                "Kind": "gpu_sma",
-                "Name": "GPU_SMA_$Instance",
-                "Recovery": {
-                    "RecoveryGpio": "GPU$Instance_MCU_RECOVERY_N-O",
-                    "RecoveryType": "MCU",
-                    "ResetGpio": "GPU$Instance_MCU_RST_N-O",
-                    "Target": "GPU"
-                },
-                "Transport": {
-                    "Medium": "usb",
-                    "Port": "$UsbPort",
-                    "RootHubPath": "$Platform.UsbRootHubPath"
-                },
-                "Type": "NvDevice"
-            }
-        ],
-        "Name": "GPU_C2_Devices_$Instance",
-        "Probe": [
-            "xyz.openbmc_project.Configuration.NvBoard({'Board': '^GPU_PG153$', 'Sku': '^C2$'})",
-            "AND",
-            "FOUND('CPU_1')"
-        ],
-        "Type": "NvDevice"
-    },
-    {
-        "Exposes": [
-            {
-                "EID": "$SmaEid",
-                "Generation": "vera-rubin",
-                "Instance": "$Instance",
-                "Kind": "gpu_sma",
-                "Name": "GPU_SMA_$Instance",
-                "Recovery": {
-                    "RecoveryGpio": "GPU$Instance_MCU_RECOVERY_N-O",
-                    "RecoveryType": "MCU",
-                    "ResetGpio": "GPU$Instance_MCU_RST_N-O",
-                    "Target": "GPU"
-                },
-                "Transport": {
-                    "Medium": "usb",
-                    "Port": "$UsbPort",
-                    "RootHubPath": "$Platform.UsbRootHubPath"
-                },
-                "Type": "NvDevice"
-            }
-        ],
-        "Name": "GPU_C1_Devices_$Instance",
-        "Probe": [
-            "xyz.openbmc_project.Configuration.NvBoard({'Board': '^GPU_PG153$', 'Sku': '^C1$'})",
-            "AND",
-            "FOUND('MGX_C1')"
-        ],
+        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^GPU_PG153$'})",
         "Type": "NvDevice"
     }
 ]

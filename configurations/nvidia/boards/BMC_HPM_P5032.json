@@ -288,12 +288,6 @@
         }
     },
     {
-        "Exposes": [],
-        "Name": "MGX_C1",
-        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.*MGX C1.*'})",
-        "Type": "NvDevice"
-    },
-    {
         "Associations": {
             "parent_chassis": "board/ProcessorModule_0"
         },
@@ -493,11 +487,7 @@
             }
         ],
         "Name": "ProcessorModule_CPU_1_Devices_$Instance",
-        "Probe": [
-            "xyz.openbmc_project.Configuration.NvBoard({'Board': '^BMC_HPM_P5032$'})",
-            "AND",
-            "FOUND('CPU_1')"
-        ],
+        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^BMC_HPM_P5032$', 'Cpu1Port': '.+'})",
         "Type": "NvDevice"
     }
 ]

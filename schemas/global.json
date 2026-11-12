@@ -364,6 +364,10 @@
                     "description": "$Platform.BmcName: name of the platform's BMC object; empty on a platform without one.",
                     "type": "string"
                 },
+                "BlueFieldI2cBus": {
+                    "description": "I2C bus of the BlueField card's MCTP endpoint on this platform (the MGX C2 and C1 route it to different buses).",
+                    "type": "integer"
+                },
                 "CxPoolBase": {
                     "description": "$Platform.CxPoolBase: first bridge pool index of the platform's ConnectX devices.",
                     "type": "integer",
