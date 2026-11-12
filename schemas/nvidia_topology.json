@@ -523,6 +523,7 @@
                     "enum": [
                         "BMC_HPM_P5032",
                         "CX_Card_C2",
+                        "GPU_Card_C2",
                         "HGX_Baseboard_HGXR",
                         "HGX_OSFP_Board_HGXR",
                         "HPM_BMC_PG558",

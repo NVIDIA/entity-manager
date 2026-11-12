@@ -46,6 +46,22 @@
         "I2cBus": 56
       },
       {
+        "Name": "GPU_Card_0",
+        "Type": "NvBoard",
+        "Board": "GPU_Card_C2",
+        "Instance": 0,
+        "SmaPort": "1.2.1.3.1",
+        "SmaEid": 70
+      },
+      {
+        "Name": "GPU_Card_1",
+        "Type": "NvBoard",
+        "Board": "GPU_Card_C2",
+        "Instance": 1,
+        "SmaPort": "1.3.1.3.1",
+        "SmaEid": 80
+      },
+      {
         "Name": "MCTPPCIe_Device",
         "Type": "MCTPPCIeTarget",
         "Interface": "mctppcie0",
