@@ -425,13 +425,30 @@
         "Type": "NvDevice",
         "Exposes": [
             {
-                "Name": "BMC_Device_0",
-                "Type": "NvDevice",
-                "Kind": "bmc",
-                "Generation": "vera-rubin",
-                "Instance": 0,
-                "EID": 30,
-                "SatelliteHost": "172.31.13.251"
+                "Name": "BMC_0",
+                "Type": "PlatformDevice",
+                "DeviceAddress": "MCTP:30",
+                "DeviceType": "BMC"
+            },
+            {
+                "Name": "sat0",
+                "Type": "SatelliteController",
+                "AuthType": "None",
+                "Hostname": "172.31.13.251",
+                "Port": "80"
+            }
+        ]
+    },
+    {
+        "Name": "BMC_Device_vHMC",
+        "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2600 vHMC host')",
+        "Type": "NvDevice",
+        "Exposes": [
+            {
+                "Name": "BMC_0",
+                "Type": "PlatformDevice",
+                "DeviceAddress": "MCTP:30",
+                "DeviceType": "BMC"
             }
         ]
     },

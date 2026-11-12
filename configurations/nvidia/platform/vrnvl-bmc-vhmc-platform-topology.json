@@ -85,14 +85,6 @@
         "SsdIndex": 2
       },
       {
-        "Name": "BMC_Device_0",
-        "Type": "NvDevice",
-        "Kind": "bmc",
-        "Generation": "vera-rubin",
-        "Instance": 0,
-        "EID": 30
-      },
-      {
         "Name": "NVMe_E1S_SMM",
         "Type": "NvDevice",
         "Kind": "nvme_smm",
