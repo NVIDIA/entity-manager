@@ -340,7 +340,7 @@
             }
         ],
         "Name": "HGX_ProcessorModule_Devices_$Instance",
-        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^HPM_HMC_PG558$'})",
+        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^HPM_HMC_VRNVL$'})",
         "Type": "NvDevice"
     }
 ]

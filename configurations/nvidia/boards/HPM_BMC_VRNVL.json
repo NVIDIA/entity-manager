@@ -178,7 +178,7 @@
             }
         ],
         "Name": "ProcessorModule_Devices_$Instance",
-        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^HPM_BMC_PG558$'})",
+        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^HPM_BMC_VRNVL$'})",
         "Type": "NvDevice"
     }
 ]

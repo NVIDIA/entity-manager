@@ -521,13 +521,13 @@
                 "Board": {
                     "description": "Board file that instantiates this board.",
                     "enum": [
-                        "BMC_HPM_P5032",
                         "CX_Card_C2",
                         "GPU_PG153",
                         "HGX_Baseboard_HGXR",
                         "HGX_OSFP_Board_HGXR",
-                        "HPM_BMC_PG558",
-                        "HPM_HMC_PG558",
+                        "HPM_BMC_VRNVL",
+                        "HPM_BMC_VRNVLMGX",
+                        "HPM_HMC_VRNVL",
                         "IO_Board_CX9",
                         "SWB_QM4",
                         "SWB_QM4_AST2700",

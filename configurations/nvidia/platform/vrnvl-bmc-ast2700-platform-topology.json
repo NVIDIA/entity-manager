@@ -6,7 +6,7 @@
         "NamePrefix": "",
         "PlatformExposes": [
             {
-                "Board": "HPM_BMC_PG558",
+                "Board": "HPM_BMC_VRNVL",
                 "Instance": 0,
                 "Name": "ProcessorModule_0",
                 "SmaEid": 45,
@@ -14,7 +14,7 @@
                 "UsbHubPath": "1.1"
             },
             {
-                "Board": "HPM_BMC_PG558",
+                "Board": "HPM_BMC_VRNVL",
                 "Instance": 1,
                 "Name": "ProcessorModule_1",
                 "SmaEid": 40,

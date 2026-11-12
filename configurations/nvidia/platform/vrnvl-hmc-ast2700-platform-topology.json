@@ -10,7 +10,7 @@
                 "Type": "DevicePrefix"
             },
             {
-                "Board": "HPM_HMC_PG558",
+                "Board": "HPM_HMC_VRNVL",
                 "Instance": 0,
                 "Name": "HGX_ProcessorModule_0",
                 "Side": "Left",
@@ -20,7 +20,7 @@
                 "ZoneChassis": "HGX_Chassis_0"
             },
             {
-                "Board": "HPM_HMC_PG558",
+                "Board": "HPM_HMC_VRNVL",
                 "Instance": 1,
                 "Name": "HGX_ProcessorModule_1",
                 "Side": "Right",
