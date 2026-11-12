@@ -1913,6 +1913,16 @@
                 "nvswitch"
             ]
         },
+        "NsmKindPending": {
+            "description": "Device kinds whose entity file publishes an NSM_Telemetry item although nsmd has no entry for the kind in its device table yet; nsmd skips the item until it has one.",
+            "enum": [
+                "cpu_erot",
+                "cpu_erot_i2c",
+                "nvlink_mgmt_nic",
+                "nvswitch_sma",
+                "storage_backplane_sma"
+            ]
+        },
         "NsmFeatureSettings": {
             "description": "One feature's settings, published as a{sv}: Enabled enables or disables the feature, every other key sets that feature parameter.",
             "type": "object",
@@ -1949,7 +1959,14 @@
                     "const": "NSM_Telemetry"
                 },
                 "Kind": {
-                    "$ref": "#/$defs/NsmKind"
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/NsmKind"
+                        },
+                        {
+                            "$ref": "#/$defs/NsmKindPending"
+                        }
+                    ]
                 },
                 "InstanceNumber": {
                     "description": "Device instance, the {instance} template variable.",
