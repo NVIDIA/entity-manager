@@ -647,46 +647,6 @@
                 "Bus": 2,
                 "MaxValue": 127,
                 "MinValue": -128,
-                "Name": "M0_ExhaustTemp0",
-                "Name1": "ProcessorModule_0_Exhaust_Temp_0",
-                "OffsetValue": 328,
-                "PollRate": 1,
-                "PowerState": "On",
-                "SensorType": "Temperature",
-                "Thresholds": [
-                    {
-                        "Direction": "greater than",
-                        "Name": "upper non recoverable",
-                        "Severity": 4,
-                        "Value": 89.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Name": "soft shutdown",
-                        "Severity": 3,
-                        "Value": 86.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Name": "upper critical",
-                        "Severity": 1,
-                        "Value": 86.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Name": "upper non critical",
-                        "Severity": 0,
-                        "Value": 84.0
-                    }
-                ],
-                "Type": "Satellite",
-                "ValueType": "Raw"
-            },
-            {
-                "Address": "0x4f",
-                "Bus": 2,
-                "MaxValue": 127,
-                "MinValue": -128,
                 "Name": "M1_InletTemp0",
                 "Name1": "ProcessorModule_1_Inlet_Temp_0",
                 "OffsetValue": 336,
@@ -757,46 +717,6 @@
                         "Name": "upper non critical",
                         "Severity": 0,
                         "Value": 75.0
-                    }
-                ],
-                "Type": "Satellite",
-                "ValueType": "Raw"
-            },
-            {
-                "Address": "0x4f",
-                "Bus": 2,
-                "MaxValue": 127,
-                "MinValue": -128,
-                "Name": "M1_ExhaustTemp0",
-                "Name1": "ProcessorModule_1_Exhaust_Temp_0",
-                "OffsetValue": 344,
-                "PollRate": 1,
-                "PowerState": "On",
-                "SensorType": "Temperature",
-                "Thresholds": [
-                    {
-                        "Direction": "greater than",
-                        "Name": "upper non recoverable",
-                        "Severity": 4,
-                        "Value": 89.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Name": "soft shutdown",
-                        "Severity": 3,
-                        "Value": 86.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Name": "upper critical",
-                        "Severity": 1,
-                        "Value": 86.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Name": "upper non critical",
-                        "Severity": 0,
-                        "Value": 84.0
                     }
                 ],
                 "Type": "Satellite",
