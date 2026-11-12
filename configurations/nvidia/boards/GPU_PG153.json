@@ -6,7 +6,10 @@
                 "Generation": "vera-rubin",
                 "Instance": "$Instance",
                 "Kind": "gpu_sma",
+                "LocationCode": "GPU_SMA_$Instance",
+                "LocationContext": "$Platform.TopChassis/GPU_$Instance",
                 "Name": "GPU_SMA_$Instance",
+                "ParentChassis": "GPU_$Instance",
                 "Recovery": {
                     "RecoveryGpio": "GPU$Instance_MCU_RECOVERY_N-O",
                     "RecoveryType": "MCU",
@@ -19,6 +22,24 @@
                     "PoolStartEID": "$SmaEid + 1",
                     "Port": "$UsbPort",
                     "RootHubPath": "$Platform.UsbRootHubPath"
+                },
+                "Type": "NvDevice"
+            },
+            {
+                "EID": "$SmaEid + 1",
+                "Generation": "vera-rubin",
+                "Instance": "$Instance",
+                "Kind": "gpu",
+                "LocationCode": "GPU_$Instance",
+                "LocationContext": "$Platform.TopChassis/GPU_$Instance",
+                "Name": "GPU_$Instance",
+                "ParentChassis": "GPU_$Instance",
+                "Transport": {
+                    "Bridge": "GPU_SMA_$Instance",
+                    "BridgeEID": "$SmaEid",
+                    "BridgePort": "$UsbPort",
+                    "Medium": "bridge",
+                    "PoolIndex": 0
                 },
                 "Type": "NvDevice"
             }
