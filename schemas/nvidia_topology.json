@@ -1,0 +1,636 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "NVIDIA platform topology schemas",
+    "description": "NvBoard and NvDevice records of the platform topology and the board files, and the template value types they share. Entity files probe Configuration.NvDevice by Kind and Generation; board files probe Configuration.NvBoard by Board.",
+    "$defs": {
+        "Template": {
+            "description": "A template expression ($Variable, $Platform.<key>, or arithmetic such as \"$Instance * 2 + 1\") that entity-manager replaces when the record is published.",
+            "type": "string",
+            "pattern": "\\$"
+        },
+        "UnsignedOrTemplate": {
+            "description": "A non-negative integer, or a template expression that resolves to one.",
+            "oneOf": [
+                {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                {
+                    "$ref": "#/$defs/Template"
+                }
+            ]
+        },
+        "EidOrTemplate": {
+            "description": "An MCTP endpoint ID, or a template expression that resolves to one.",
+            "oneOf": [
+                {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255
+                },
+                {
+                    "$ref": "#/$defs/Template"
+                }
+            ]
+        },
+        "EidString": {
+            "description": "An MCTP endpoint ID written as a decimal string, or a template expression that resolves to one.",
+            "oneOf": [
+                {
+                    "type": "string",
+                    "pattern": "^[0-9]{1,3}$"
+                },
+                {
+                    "$ref": "#/$defs/Template"
+                }
+            ]
+        },
+        "EidList": {
+            "description": "Comma separated MCTP endpoint IDs, or a template expression that resolves to such a list.",
+            "oneOf": [
+                {
+                    "type": "string",
+                    "pattern": "^[0-9]{1,3}(,[0-9]{1,3})*$"
+                },
+                {
+                    "$ref": "#/$defs/Template"
+                }
+            ]
+        },
+        "UsbPortPath": {
+            "description": "A USB port path below the root hub (e.g. 1.2.1.4), or a template expression that resolves to one.",
+            "oneOf": [
+                {
+                    "type": "string",
+                    "pattern": "^[0-9]+(\\.[0-9]+)*$"
+                },
+                {
+                    "$ref": "#/$defs/Template"
+                }
+            ]
+        },
+        "IpmiName": {
+            "description": "Short sensor name reported over IPMI by phosphor-host-ipmi. At most 16 characters once its template variables are replaced, so only names without a template are length-checked here.",
+            "type": "string",
+            "anyOf": [
+                {
+                    "maxLength": 16
+                },
+                {
+                    "$ref": "#/$defs/Template"
+                }
+            ]
+        },
+        "NvDeviceKind": {
+            "description": "Device kind; entity files select the devices of a kind by it, and pldmd, nsmd and nvidia-code-mgmt map it to their device tables.",
+            "enum": [
+                "bf4_erot",
+                "bluefield",
+                "bluefield_lily",
+                "bluefield_sma",
+                "bmc_hpm_sma",
+                "cpu",
+                "cpu_erot",
+                "cpu_erot_i2c",
+                "cx9_io",
+                "cx9_nic",
+                "cx9_nic_i2c",
+                "cx_sma",
+                "erot",
+                "gpu",
+                "gpu_sma",
+                "hmc_bridge_cpu",
+                "hmc_bridge_erot",
+                "hmc_bridge_gpu",
+                "hmc_bridge_gpu_sma",
+                "hmc_bridge_hpm_sma",
+                "hmc_erot",
+                "hmc_hpm_sma",
+                "irot",
+                "nvlink_mgmt_nic",
+                "nvme_e1s",
+                "nvme_e1s_backplane",
+                "nvme_smm",
+                "nvswitch",
+                "nvswitch_sma",
+                "storage_backplane_sma"
+            ]
+        },
+        "NvDeviceTransport": {
+            "description": "How the BMC reaches the device; published as Configuration.NvDevice.Transport and read by nvidia-code-mgmt and the entity files ($Port, $Bus, $Bridge, ...).",
+            "oneOf": [
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "Medium": {
+                            "description": "Directly attached USB endpoint.",
+                            "const": "usb"
+                        },
+                        "Port": {
+                            "description": "USB port path of the device below RootHubPath.",
+                            "$ref": "#/$defs/UsbPortPath"
+                        },
+                        "RootHubPath": {
+                            "description": "sysfs path of the USB root hub controller.",
+                            "type": "string"
+                        },
+                        "PoolStartEID": {
+                            "description": "First EID of the bridge pool the device assigns to its downstream endpoints.",
+                            "$ref": "#/$defs/EidString"
+                        },
+                        "PoolEndEID": {
+                            "description": "Last EID of the bridge pool the device assigns to its downstream endpoints.",
+                            "$ref": "#/$defs/EidString"
+                        }
+                    },
+                    "required": ["Medium", "Port", "RootHubPath"]
+                },
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "Medium": {
+                            "description": "Endpoint behind an MCTP bridge, given an EID from the bridge's pool.",
+                            "const": "bridge"
+                        },
+                        "Bridge": {
+                            "description": "Name of the bridge NvDevice.",
+                            "type": "string"
+                        },
+                        "BridgeEID": {
+                            "description": "EID of the bridge.",
+                            "$ref": "#/$defs/EidOrTemplate"
+                        },
+                        "PoolIndex": {
+                            "description": "0-based slot of the device in the bridge's EID pool.",
+                            "$ref": "#/$defs/UnsignedOrTemplate"
+                        },
+                        "BridgePort": {
+                            "description": "USB port path of the bridge, used for OCP recovery through the bridge.",
+                            "$ref": "#/$defs/UsbPortPath"
+                        }
+                    },
+                    "required": ["Medium", "Bridge", "BridgeEID", "PoolIndex"]
+                },
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "Medium": {
+                            "description": "MCTP over SMBus/I2C.",
+                            "const": "i2c"
+                        },
+                        "Bus": {
+                            "description": "I2C bus number.",
+                            "$ref": "#/$defs/UnsignedOrTemplate"
+                        },
+                        "Address": {
+                            "description": "7-bit I2C target address.",
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 127
+                        }
+                    },
+                    "required": ["Medium", "Bus", "Address"]
+                },
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "Medium": {
+                            "description": "MCTP over SPI.",
+                            "const": "spi"
+                        },
+                        "Bus": {
+                            "description": "SPI bus number.",
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "ChipSelect": {
+                            "description": "SPI chip select.",
+                            "type": "integer",
+                            "minimum": 0
+                        }
+                    },
+                    "required": ["Medium", "Bus", "ChipSelect"]
+                },
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "Medium": {
+                            "description": "On-die IRoT/vROT co-processor interface.",
+                            "const": "xrot"
+                        },
+                        "Interface": {
+                            "description": "MCTP network interface of the co-processor (e.g. mctpirot0).",
+                            "type": "string",
+                            "pattern": "^mctp[a-z0-9]+$"
+                        }
+                    },
+                    "required": ["Medium", "Interface"]
+                }
+            ]
+        },
+        "NvDeviceRecovery": {
+            "description": "How the device's firmware is recovered; published as Configuration.NvDevice.Recovery. nvidia-code-mgmt derives the per-method recovery record from it.",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RecoveryType": {
+                    "description": "Recovery method; selects the derived record type.",
+                    "enum": [
+                        "ConnectX",
+                        "GPIOERoT",
+                        "GlacierCrisis",
+                        "MCU",
+                        "NVLinkManagementNIC",
+                        "NVSwitch",
+                        "OCP",
+                        "USBRCM"
+                    ]
+                },
+                "SoftwareName": {
+                    "description": "Name of the recovered firmware inventory object; FW_<device name> when absent.",
+                    "type": "string"
+                },
+                "ChassisName": {
+                    "description": "Chassis the recovery action is published on; IRoT_<device name> when absent.",
+                    "type": "string"
+                },
+                "Target": {
+                    "description": "Device group passed to the recovery tool; derived from Kind when absent.",
+                    "enum": [
+                        "BF4",
+                        "CX9",
+                        "GPU",
+                        "HPM",
+                        "NVSSMA",
+                        "QM4",
+                        "SMA",
+                        "SXM"
+                    ]
+                },
+                "RecoveryGpio": {
+                    "description": "MCU: GPIO line that puts the MCU in recovery mode.",
+                    "type": "string"
+                },
+                "ResetGpio": {
+                    "description": "GPIO line that resets the device.",
+                    "type": "string"
+                },
+                "ResetGpioPolarity": {
+                    "description": "MCU: active level of ResetGpio.",
+                    "enum": ["ActiveHigh", "ActiveLow"]
+                },
+                "FlashNotPresentGpio": {
+                    "description": "ConnectX/NVSwitch/NVLinkManagementNIC: GPIO line that hides the device's flash.",
+                    "type": "string"
+                },
+                "I2CBus": {
+                    "description": "I2C bus of the recovery interface.",
+                    "$ref": "#/$defs/UnsignedOrTemplate"
+                },
+                "I2CAddress": {
+                    "description": "I2C address of the recovery interface.",
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 127
+                },
+                "ForceRecoveryOnIRoT": {
+                    "description": "ConnectX: publish the force-recovery action on the IRoT chassis instead of the device.",
+                    "type": "boolean"
+                },
+                "InfoRomName": {
+                    "description": "OCP: InfoROM inventory object name; InfoROM_<device name> when absent.",
+                    "type": "string"
+                },
+                "OcpInfoRom": {
+                    "description": "OCP: whether the device has an InfoROM object; true when absent.",
+                    "type": "boolean"
+                },
+                "OcpRecoveryI2cAddress": {
+                    "description": "OCP: I2C address of the OCP recovery interface.",
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 127
+                },
+                "OcpRecoveryI2cBus": {
+                    "description": "OCP: I2C bus of the OCP recovery interface.",
+                    "$ref": "#/$defs/UnsignedOrTemplate"
+                },
+                "OcpSmaEid": {
+                    "description": "OCP: whether the bridge EID is passed as the SMA EID; true when absent.",
+                    "type": "boolean"
+                },
+                "FMCComponentName": {
+                    "description": "USBRCM: SBIOS FMC component name; SBIOS_FMC_<Instance> when absent.",
+                    "type": "string"
+                },
+                "FWSComponentName": {
+                    "description": "USBRCM: SBIOS firmware component name; SBIOS_FW_<Instance> when absent.",
+                    "type": "string"
+                },
+                "ActionRedfishChassis": {
+                    "description": "CPU: chassis that carries the Redfish force-recovery action for the board's strap lines.",
+                    "type": "string"
+                },
+                "SystemResetGpio": {
+                    "description": "CPU force recovery: system reset line.",
+                    "type": "string"
+                },
+                "ForcedRecoveryGpio": {
+                    "description": "CPU force recovery: forced recovery strap line.",
+                    "type": "string"
+                },
+                "BootDevSel0Gpio": {
+                    "description": "CPU force recovery: boot device select strap 0.",
+                    "type": "string"
+                },
+                "BootDevSel1Gpio": {
+                    "description": "CPU force recovery: boot device select strap 1.",
+                    "type": "string"
+                },
+                "BootDevSel2Gpio": {
+                    "description": "CPU force recovery: boot device select strap 2.",
+                    "type": "string"
+                },
+                "RecoveryType0Gpio": {
+                    "description": "CPU force recovery: recovery type strap 0.",
+                    "type": "string"
+                },
+                "RecoveryType1Gpio": {
+                    "description": "CPU force recovery: recovery type strap 1.",
+                    "type": "string"
+                },
+                "FatalErrorGpio": {
+                    "description": "GPIOERoT: ERoT fatal error input line.",
+                    "type": "string"
+                },
+                "FatalErrorPolarity": {
+                    "description": "GPIOERoT: active level of FatalErrorGpio.",
+                    "enum": ["ActiveHigh", "ActiveLow"]
+                },
+                "ApName": {
+                    "description": "GPIOERoT: firmware inventory name of the application processor behind the ERoT.",
+                    "type": "string"
+                },
+                "MctpInterface": {
+                    "description": "GPIOERoT: MCTP interface of the ERoT.",
+                    "type": "string"
+                }
+            },
+            "required": ["RecoveryType"],
+            "allOf": [
+                {
+                    "if": {
+                        "properties": {
+                            "RecoveryType": {
+                                "const": "MCU"
+                            }
+                        }
+                    },
+                    "then": {
+                        "required": ["RecoveryGpio", "ResetGpio"]
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "RecoveryType": {
+                                "const": "GPIOERoT"
+                            }
+                        }
+                    },
+                    "then": {
+                        "required": ["FatalErrorGpio"]
+                    }
+                }
+            ]
+        },
+        "NvDevice": {
+            "description": "One device of the platform: its kind, identity, EID and how it is reached and recovered. Published as Configuration.NvDevice; entity files probe it by Kind and Generation and read its values as $Variables.",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "description": "Device name; the entity file's $Name.",
+                    "type": "string"
+                },
+                "Type": {
+                    "const": "NvDevice"
+                },
+                "Kind": {
+                    "$ref": "#/$defs/NvDeviceKind"
+                },
+                "Generation": {
+                    "description": "Product generation; entity files probe on it.",
+                    "enum": ["vera-rubin"]
+                },
+                "Instance": {
+                    "description": "Index of the device among the devices of its kind.",
+                    "$ref": "#/$defs/UnsignedOrTemplate"
+                },
+                "IdentityInstance": {
+                    "description": "Instance number of the device's static identity.",
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "EID": {
+                    "description": "MCTP endpoint ID of the device.",
+                    "$ref": "#/$defs/EidOrTemplate"
+                },
+                "ParentChassis": {
+                    "description": "Name of the chassis or board that contains the device.",
+                    "type": "string"
+                },
+                "LocationCode": {
+                    "description": "Location code published for the device.",
+                    "type": "string"
+                },
+                "LocationContext": {
+                    "description": "Location context published for the device.",
+                    "type": "string"
+                },
+                "ZoneChassis": {
+                    "description": "Zone chassis the device reports into.",
+                    "type": "string"
+                },
+                "IgnoreEIDs": {
+                    "description": "EIDs the bridge's bus owner ignores; copied to its MCTPUSBDevice.",
+                    "$ref": "#/$defs/EidList"
+                },
+                "BridgedProcessors": {
+                    "description": "Names of the processor devices reached through this bridge.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "NetworkAdapterName": {
+                    "description": "Name of the device's NIC under chassis/<Name>/NetworkAdapters/.",
+                    "type": "string"
+                },
+                "SwitchName": {
+                    "description": "Name of the device's PCIe switch object.",
+                    "type": "string"
+                },
+                "PortName0": {
+                    "description": "Name of the device's first network port.",
+                    "type": "string"
+                },
+                "PortName1": {
+                    "description": "Name of the device's second network port.",
+                    "type": "string"
+                },
+                "PortMaxSpeedMBps": {
+                    "description": "Maximum port speed in megabytes per second.",
+                    "$ref": "#/$defs/UnsignedOrTemplate"
+                },
+                "PortLocationReference": {
+                    "description": "LocationReference value of the device's ports.",
+                    "type": "string",
+                    "pattern": "^xyz\\.openbmc_project\\.Inventory\\.Decorator\\.LocationReference\\.ReferenceAreas\\."
+                },
+                "SsdIndex": {
+                    "description": "Index of the drive in its NVMe slot numbering.",
+                    "$ref": "#/$defs/UnsignedOrTemplate"
+                },
+                "Transport": {
+                    "$ref": "#/$defs/NvDeviceTransport"
+                },
+                "Recovery": {
+                    "$ref": "#/$defs/NvDeviceRecovery"
+                }
+            },
+            "required": ["Name", "Type", "Kind", "EID"]
+        },
+        "NvBoard": {
+            "description": "One board of the platform topology. Published as Configuration.NvBoard; the board file probes it by Board (and Site) and reads the other values as $Variables.",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "description": "Board instance name.",
+                    "type": "string"
+                },
+                "Type": {
+                    "const": "NvBoard"
+                },
+                "Board": {
+                    "description": "Board file that instantiates this board.",
+                    "enum": [
+                        "BMC_HPM_P5032",
+                        "CX_Card_C2",
+                        "HGX_Baseboard_HGXR",
+                        "HGX_OSFP_Board_HGXR",
+                        "HPM_BMC_PG558",
+                        "HPM_HMC_PG558",
+                        "IO_Board_CX9",
+                        "SWB_QM4",
+                        "SWB_QM4_AST2700",
+                        "Storage_Backplane_P4546"
+                    ]
+                },
+                "Site": {
+                    "description": "Which part of a multi-site board this record instantiates.",
+                    "enum": ["ConnectX_SMA", "SXM"]
+                },
+                "Instance": {
+                    "description": "Index of the board among the boards of its type.",
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "Bay": {
+                    "description": "Bay the board sits in.",
+                    "enum": [
+                        "Left-Bottom",
+                        "Left-Top",
+                        "Right-Bottom",
+                        "Right-Top"
+                    ]
+                },
+                "Side": {
+                    "description": "Side of the chassis the board sits on.",
+                    "enum": ["Left", "Right"]
+                },
+                "CxNumber": {
+                    "description": "Number of the board's ConnectX device in GPIO line names.",
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "CxPortA": {
+                    "description": "Front-panel name of the board's first network port.",
+                    "type": "string",
+                    "pattern": "^C[0-9]+$"
+                },
+                "CxPortB": {
+                    "description": "Front-panel name of the board's second network port.",
+                    "type": "string",
+                    "pattern": "^C[0-9]+$"
+                },
+                "McuNumber": {
+                    "description": "Number of the board's MCU in GPIO line names.",
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "SxmIndex": {
+                    "description": "SXM slot number in GPIO line and chassis names.",
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "SsdIndex": {
+                    "description": "Index of the board's drive in the NVMe slot numbering.",
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "I2cBus": {
+                    "description": "I2C bus of the board's I2C-attached device.",
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "SmaI2cBus": {
+                    "description": "I2C bus of the board's SMA.",
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "SmaEid": {
+                    "description": "EID of the board's SMA.",
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255
+                },
+                "UsbHubPath": {
+                    "description": "USB port path of the board's hub below the root hub.",
+                    "$ref": "#/$defs/UsbPortPath"
+                },
+                "UsbPort": {
+                    "description": "USB port path of the board's USB device below the root hub.",
+                    "$ref": "#/$defs/UsbPortPath"
+                },
+                "SmaPort": {
+                    "description": "USB port path of the board's SMA below the root hub.",
+                    "$ref": "#/$defs/UsbPortPath"
+                },
+                "Cpu0Port": {
+                    "description": "USB port path of the board's first CPU below the root hub.",
+                    "$ref": "#/$defs/UsbPortPath"
+                },
+                "Cpu1Port": {
+                    "description": "USB port path of the board's second CPU below the root hub.",
+                    "$ref": "#/$defs/UsbPortPath"
+                },
+                "IgnoreEIDs": {
+                    "description": "EIDs the board's bridge bus owner ignores.",
+                    "$ref": "#/$defs/EidList"
+                },
+                "ZoneChassis": {
+                    "description": "Zone chassis the board's devices report into.",
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type", "Board"]
+        }
+    }
+}

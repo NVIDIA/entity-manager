@@ -507,9 +507,7 @@
                     "type": ["integer", "string"]
                 },
                 "IpmiName": {
-                    "description": "Short sensor name reported over IPMI by phosphor-host-ipmi.",
-                    "maxLength": 16,
-                    "type": "string"
+                    "$ref": "nvidia_topology.json#/$defs/IpmiName"
                 },
                 "Name": {
                     "type": "string"

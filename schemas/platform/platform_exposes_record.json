@@ -64,6 +64,26 @@
                     "$ref": "../nvidia_ist.json#/$defs/ISTDomain"
                 },
                 {
+                    "$comment": "downstream-only: a board of the platform topology, consumed by the board files that probe it.",
+                    "$ref": "../nvidia_topology.json#/$defs/NvBoard"
+                },
+                {
+                    "$comment": "downstream-only: a device of the platform topology, consumed by the entity files, nvidia-code-mgmt, pldmd and nsmd.",
+                    "$ref": "../nvidia_topology.json#/$defs/NvDevice"
+                },
+                {
+                    "$comment": "downstream-only: the platform's NSM feature choices per device kind, consumed by nsmd.",
+                    "$ref": "../nvidia_nsm.json#/$defs/NSM_Policy"
+                },
+                {
+                    "$comment": "downstream-only: the platform's leak reaction policy, consumed by dbus-sensors.",
+                    "$ref": "../nvidia_leak_detection_policy.json#/$defs/LeakDetectionPolicy"
+                },
+                {
+                    "$comment": "downstream-only: MCTP-over-PCIe endpoint of the platform, consumed by mctpreactor.",
+                    "$ref": "../mctp.json#/$defs/MCTPPCIeTarget"
+                },
+                {
                     "$comment": "downstream-only: MST recovery policy per device type, consumed by nvidia-code-mgmt.",
                     "$ref": "../nvidia_recovery.json#/$defs/MSTRecoveryPolicy"
                 },

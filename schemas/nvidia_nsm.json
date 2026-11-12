@@ -1887,6 +1887,214 @@
                 }
             },
             "required": ["Name", "Type"]
+        },
+        "NsmKind": {
+            "description": "nsmd device kind: the key of nsmd's compiled device table, which gives the NSM device type, role and base feature list.",
+            "enum": [
+                "baseboard",
+                "bluefield_nic",
+                "bluefield_sma",
+                "bmc_erot",
+                "bmc_hpm_sma",
+                "bmc_irot",
+                "cpu",
+                "cx7",
+                "cx8",
+                "cx9",
+                "cx9_io",
+                "cx9_nic",
+                "cx_sma",
+                "erot",
+                "gpu",
+                "gpu_sma",
+                "gpu_sxm",
+                "hmc_erot",
+                "hmc_hpm_sma",
+                "nvswitch"
+            ]
+        },
+        "NsmFeatureSettings": {
+            "description": "One feature's settings, published as a{sv}: Enabled enables or disables the feature, every other key sets that feature parameter.",
+            "type": "object",
+            "minProperties": 1,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "type": ["string", "number", "boolean"]
+                    },
+                    {
+                        "type": "array",
+                        "items": {
+                            "type": ["string", "number"]
+                        }
+                    }
+                ]
+            }
+        },
+        "NSM_Telemetry": {
+            "description": "The NSM device record of an entity file: device identity and the template variables of nsmd's base feature list for the kind, plus the entity's deviation from that list.",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "description": "Record name; nsmd takes the device name from the entity.",
+                    "type": "string"
+                },
+                "Type": {
+                    "const": "NSM_Telemetry"
+                },
+                "Kind": {
+                    "$ref": "#/$defs/NsmKind"
+                },
+                "InstanceNumber": {
+                    "description": "Device instance, the {instance} template variable.",
+                    "$ref": "nvidia_topology.json#/$defs/UnsignedOrTemplate"
+                },
+                "EID": {
+                    "description": "MCTP endpoint ID of the device.",
+                    "$ref": "nvidia_topology.json#/$defs/EidOrTemplate"
+                },
+                "ParentChassis": {
+                    "description": "Parent chassis name, the {parentChassis} template variable.",
+                    "type": "string"
+                },
+                "Disable": {
+                    "description": "Features of the base feature list that this entity does not have.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ParameterOverrides": {
+                    "description": "Feature id to the settings that differ from the base feature list.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/$defs/NsmFeatureSettings"
+                    }
+                },
+                "BridgeName": {
+                    "description": "Template variable: name of the MCTP bridge in front of the device.",
+                    "type": "string"
+                },
+                "LeakDetectorChassis": {
+                    "description": "Template variable: chassis that owns the device's leak detectors.",
+                    "type": "string"
+                },
+                "LocationCode": {
+                    "description": "Template variable: location code of the device.",
+                    "type": "string"
+                },
+                "LocationContext": {
+                    "description": "Template variable: location context of the device.",
+                    "type": "string"
+                },
+                "MemoryLocationCode": {
+                    "description": "Template variable: location code of the device's memory.",
+                    "type": "string"
+                },
+                "NvLinkCount": {
+                    "description": "Template variable: number of NVLinks of the device.",
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "PlatformPrefix": {
+                    "description": "Template variable: the platform's device-name prefix.",
+                    "type": "string"
+                },
+                "PortCount": {
+                    "description": "Template variable: number of network ports of the device.",
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "PortLocationCodeMap": {
+                    "description": "Template variable: location code of each network port, by port index.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "PortLocationContext": {
+                    "description": "Template variable: location context of the network ports.",
+                    "type": "string"
+                },
+                "PortLocationReference": {
+                    "description": "Template variable: LocationReference value of the network ports.",
+                    "type": "string"
+                },
+                "PortNameMap": {
+                    "description": "Template variable: name of each network port, by port index.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ProcessorModuleName": {
+                    "description": "Template variable: processor module that contains the device.",
+                    "type": "string"
+                },
+                "SwitchName": {
+                    "description": "Template variable: name of the device's PCIe switch object.",
+                    "type": "string"
+                },
+                "ZoneChassisName": {
+                    "description": "Template variable: zone chassis the device reports into.",
+                    "type": "string"
+                }
+            },
+            "required": ["Name", "Type", "Kind", "InstanceNumber"]
+        },
+        "NSM_Policy": {
+            "description": "A platform's NSM feature choices for one device kind, consumed by nsmd. Entries apply in order; a later entry wins.",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "const": "NSM_Policy"
+                },
+                "Kind": {
+                    "$ref": "#/$defs/NsmKind"
+                },
+                "Policy": {
+                    "description": "Policy entries, each published as its own Policy<N> interface.",
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Devices": {
+                                "description": "Device names the entry applies to; an empty array applies it to every device of the Kind.",
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "TemplateValues": {
+                                "description": "Device template variables for the {...} templates of the feature list.",
+                                "type": "object",
+                                "additionalProperties": {
+                                    "type": ["string", "number", "boolean"]
+                                }
+                            }
+                        },
+                        "patternProperties": {
+                            "^(?!Devices$|TemplateValues$)[A-Za-z][A-Za-z0-9_]*$": {
+                                "$ref": "#/$defs/NsmFeatureSettings"
+                            }
+                        },
+                        "required": ["Devices"]
+                    }
+                }
+            },
+            "required": ["Name", "Type", "Kind", "Policy"]
         }
     }
 }

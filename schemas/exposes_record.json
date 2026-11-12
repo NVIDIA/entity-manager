@@ -543,6 +543,18 @@
                     "$ref": "nvidia_nsm.json#/$defs/NSM_PowerSupply"
                 },
                 {
+                    "$comment": "downstream-only: the NSM device record of an entity file (identity, template variables, feature deviation), consumed by nsmd.",
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_Telemetry"
+                },
+                {
+                    "$comment": "downstream-only: a device instantiated by a board file, consumed by the entity files, nvidia-code-mgmt, pldmd and nsmd.",
+                    "$ref": "nvidia_topology.json#/$defs/NvDevice"
+                },
+                {
+                    "$comment": "downstream-only: per-device diagnostic dump capability advertisement in an entity file, consumed by the dump manager.",
+                    "$ref": "platform/dump.json#/$defs/Dump"
+                },
+                {
                     "$ref": "nvidia_recovery.json#/$defs/ConnectXRecovery"
                 },
                 {
@@ -571,6 +583,14 @@
                 },
                 {
                     "$ref": "nvidia_sensors.json#/$defs/Satellite"
+                },
+                {
+                    "$comment": "downstream-only: the SMBus of a record's satellite sensors, consumed by satellitesensor.",
+                    "$ref": "nvidia_sensors.json#/$defs/SatelliteBus"
+                },
+                {
+                    "$comment": "downstream-only: a family of satellite sensors with shared settings, consumed by satellitesensor.",
+                    "$ref": "nvidia_sensors.json#/$defs/SatelliteGroup"
                 },
                 {
                     "$ref": "nvidia_sensors.json#/$defs/SensorAuxName"

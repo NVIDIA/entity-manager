@@ -193,12 +193,10 @@
                     "type": "integer"
                 },
                 "EntityInstance": {
-                    "type": "integer"
+                    "$ref": "nvidia_topology.json#/$defs/UnsignedOrTemplate"
                 },
                 "IpmiName": {
-                    "description": "Short sensor name reported over IPMI by phosphor-host-ipmi.",
-                    "maxLength": 16,
-                    "type": "string"
+                    "$ref": "nvidia_topology.json#/$defs/IpmiName"
                 },
                 "Name": {
                     "type": "string"
@@ -268,6 +266,104 @@
                 }
             },
             "required": ["Name", "Type"]
+        },
+        "SatelliteBus": {
+            "description": "The SMBus the satellite sensors of the record are read over.",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "description": "7-bit SMBus address of the satellite controller, in hex.",
+                    "type": "string",
+                    "pattern": "^0x[0-9A-Fa-f]{1,2}$"
+                },
+                "Bus": {
+                    "description": "I2C bus number.",
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "const": "SatelliteBus"
+                }
+            },
+            "required": ["Address", "Bus", "Name", "Type"]
+        },
+        "SatelliteGroup": {
+            "description": "A family of satellite sensors that share type, range, thresholds and stale byte; each sensor's stale bit is FirstStaleBit plus its rank by register offset.",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FirstStaleBit": {
+                    "description": "Stale bit of the sensor with the lowest register offset.",
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "MaxValue": {
+                    "type": "number"
+                },
+                "MinValue": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PowerState": {
+                    "$ref": "legacy.json#/$defs/Types/PowerState"
+                },
+                "Sensors": {
+                    "description": "Sensor name to register offset.",
+                    "type": "object",
+                    "minProperties": 1,
+                    "additionalProperties": {
+                        "type": "integer",
+                        "minimum": 0
+                    }
+                },
+                "SensorType": {
+                    "enum": ["Energy", "Power", "Temperature", "Voltage"]
+                },
+                "StaleOffset": {
+                    "description": "Register offset of the stale byte.",
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "Thresholds": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Direction": {
+                                "$ref": "legacy.json#/$defs/Types/Direction"
+                            },
+                            "Severity": {
+                                "type": "integer",
+                                "minimum": 0,
+                                "maximum": 4
+                            },
+                            "Value": {
+                                "type": "number"
+                            }
+                        },
+                        "required": ["Direction", "Severity", "Value"]
+                    }
+                },
+                "Type": {
+                    "const": "SatelliteGroup"
+                },
+                "ValueType": {
+                    "description": "Encoding of the register value.",
+                    "enum": ["PLDM"]
+                }
+            },
+            "required": ["Name", "Sensors", "SensorType", "Type"],
+            "dependentRequired": {
+                "FirstStaleBit": ["StaleOffset"],
+                "StaleOffset": ["FirstStaleBit"]
+            }
         },
         "SummationSensor": {
             "type": "object",
@@ -403,7 +499,7 @@
                     "type": ["string", "integer"]
                 },
                 "Bus": {
-                    "type": "integer"
+                    "$ref": "nvidia_topology.json#/$defs/UnsignedOrTemplate"
                 },
                 "IpmiName": {
                     "description": "Short sensor name reported over IPMI by phosphor-host-ipmi.",

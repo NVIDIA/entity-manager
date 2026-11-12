@@ -14,8 +14,7 @@
                 },
                 "PoolIndex": {
                     "description": "0-based slot in the bridge's EID pool. bridgedEid = Bridge1.PoolStart + PoolIndex. Encodes the bridge-port-to-device wiring (fixed at PCB design).",
-                    "type": "integer",
-                    "minimum": 0
+                    "$ref": "../nvidia_topology.json#/$defs/UnsignedOrTemplate"
                 },
                 "Type": {
                     "type": "string",

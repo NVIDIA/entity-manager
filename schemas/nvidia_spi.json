@@ -12,10 +12,18 @@
                 "ChipSelect": {
                     "type": "integer"
                 },
+                "Device": {
+                    "description": "Name of the NvDevice whose USB transport reaches the flash; nvidia-code-mgmt derives USBPort, Programmer and InventoryObjPath from it.",
+                    "type": "string"
+                },
                 "Gpio": {
                     "type": "array"
                 },
                 "InventoryObjPath": {
+                    "type": "string"
+                },
+                "MuxGpio": {
+                    "description": "GPIO line that switches the flash's SPI mux, driven high while programming; nvidia-code-mgmt turns it into the Gpio entry.",
                     "type": "string"
                 },
                 "Name": {

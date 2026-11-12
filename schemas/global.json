@@ -61,6 +61,53 @@
                 "Parent_Chassis": {
                     "type": "string"
                 },
+                "Board": {
+                    "description": "Compact Assembly record: the board, as <Type>/<Name>, whose FRU assembly records entity-manager generates, one per FRU area present.",
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9_]+/.+$"
+                },
+                "LocationType": {
+                    "description": "Compact Assembly record: Decorator.Location.LocationTypes value of the generated records; Embedded when absent.",
+                    "enum": [
+                        "Backplane",
+                        "Bay",
+                        "Connector",
+                        "Embedded",
+                        "Slot",
+                        "Socket",
+                        "Unknown"
+                    ]
+                },
+                "PhysicalContext": {
+                    "description": "Compact Assembly record: Decorator.Area.PhysicalContextType value of the generated records.",
+                    "enum": [
+                        "Back",
+                        "Backplane",
+                        "Board",
+                        "CPU",
+                        "DCBus",
+                        "Fan",
+                        "Front",
+                        "GPU",
+                        "GPUSubsystem",
+                        "Manager",
+                        "Memory",
+                        "NetworkingDevice",
+                        "PowerSupply",
+                        "ProcessorModule",
+                        "StorageDevice",
+                        "SystemBoard",
+                        "VoltageRegulator"
+                    ]
+                },
+                "LocationCode": {
+                    "description": "Compact Assembly record: LocationCode of the generated records.",
+                    "type": "string"
+                },
+                "LocationContext": {
+                    "description": "Compact Assembly record: LocationContext of the generated records.",
+                    "type": "string"
+                },
                 "Probe": {
                     "$ref": "#/$defs/Probe"
                 },
@@ -91,6 +138,7 @@
                         "FRU_EEPROM",
                         "FlowMeter",
                         "GlacierCrisisRecovery",
+                        "HMCBridge",
                         "HardwareWriteProtectedControl",
                         "I2CDeviceAssociation",
                         "I2CFan",
@@ -98,12 +146,14 @@
                         "LM5066i",
                         "LM5066I",
                         "LTC4287",
+                        "LeakDetection",
                         "LinkTopology",
                         "MCTPInterface",
                         "Module",
                         "NSM_Configs",
                         "NVMe",
                         "NetworkAdapter",
+                        "NvDevice",
                         "PlatformRecoveryConfiguration",
                         "PowerSupply",
                         "ProcessorModule0",
@@ -231,6 +281,17 @@
                 "xyz.openbmc_project.Inventory.Item.NetworkInterface": {
                     "type": "object"
                 },
+                "xyz.openbmc_project.Inventory.Item.NVMe": {
+                    "description": "Declared with Name because nvidia-nvme-manager reads the drive name from it.",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "Name": {
+                            "type": "string"
+                        }
+                    },
+                    "required": ["Name"]
+                },
                 "xyz.openbmc_project.Inventory.Item.Panel": {
                     "$ref": "openbmc-dbus.json#/$defs/xyz/openbmc_project/Inventory/Item/Panel"
                 },
@@ -262,7 +323,22 @@
                     "type": "object"
                 }
             },
-            "required": ["Name", "Probe"]
+            "required": ["Name", "Probe"],
+            "dependentRequired": {
+                "LocationCode": ["Board"],
+                "LocationContext": ["Board"],
+                "LocationType": ["Board"],
+                "PhysicalContext": ["Board"]
+            },
+            "dependentSchemas": {
+                "Board": {
+                    "properties": {
+                        "Type": {
+                            "const": "Assembly"
+                        }
+                    }
+                }
+            }
         },
         "EMPlatformConfig": {
             "title": "Entity Manager Platform Configuration",
@@ -283,6 +359,38 @@
                 },
                 "Probe": {
                     "$ref": "#/$defs/Probe"
+                },
+                "BmcName": {
+                    "description": "$Platform.BmcName: name of the platform's BMC object; empty on a platform without one.",
+                    "type": "string"
+                },
+                "CxPoolBase": {
+                    "description": "$Platform.CxPoolBase: first bridge pool index of the platform's ConnectX devices.",
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "NamePrefix": {
+                    "description": "$Platform.NamePrefix: prefix of the platform's device and firmware names (e.g. HGX_).",
+                    "type": "string",
+                    "pattern": "^([A-Z][A-Za-z0-9]*_)?$"
+                },
+                "SmmLocationContext": {
+                    "description": "$Platform.SmmLocationContext: LocationContext of the SMM.",
+                    "type": "string"
+                },
+                "SmmParent": {
+                    "description": "$Platform.SmmParent: parent_chassis association target of the SMM, as <type>/<name>.",
+                    "type": "string",
+                    "pattern": "^[a-z_]+/.+$"
+                },
+                "TopChassis": {
+                    "description": "$Platform.TopChassis: name of the platform's top chassis.",
+                    "type": "string"
+                },
+                "UsbRootHubPath": {
+                    "description": "$Platform.UsbRootHubPath: sysfs path of the USB root hub controller the platform's USB devices hang off.",
+                    "type": "string",
+                    "pattern": "^/sys/devices/"
                 },
                 "Type": {
                     "title": "Configuration Type",
