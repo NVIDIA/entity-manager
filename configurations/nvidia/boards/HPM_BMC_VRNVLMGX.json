@@ -189,7 +189,7 @@
         },
         "Exposes": [],
         "Name": "CPU_1",
-        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.*MGX C2.*'})",
+        "Probe": "xyz.openbmc_project.FruDevice({'PRODUCT_PRODUCT_NAME': '.*MGX C2.*'})",
         "Type": "Component",
         "xyz.openbmc_project.Association.Definitions": {
             "Associations": [
@@ -262,7 +262,7 @@
             "chassis": "component/CPU_1"
         },
         "Name": "CPU_1",
-        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.*MGX C2.*'})",
+        "Probe": "xyz.openbmc_project.FruDevice({'PRODUCT_PRODUCT_NAME': '.*MGX C2.*'})",
         "Type": "Cpu",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
             "Manufacturer": "NVIDIA",
