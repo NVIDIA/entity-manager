@@ -367,6 +367,12 @@
         }
       },
       {
+        "Name": "HGX_FW_CPLD_0",
+        "Type": "CPLDGPIOMonitor",
+        "DeviceId": "CPLD_0",
+        "SMAEID": 84
+      },
+      {
         "Name": "HGX_NVSwitch_SMA_0",
         "Type": "NvDevice",
         "Kind": "nvswitch_sma",
