@@ -344,7 +344,7 @@ configs = [
     'nvidia/boards/Chassis_SW-BMC.json',
     'nvidia/boards/Fan_Board_C2.json',
     'nvidia/boards/Front_IO_Board_P4104.json',
-    'nvidia/boards/GPU_Card_C2.json',
+    'nvidia/boards/GPU_PG153.json',
     'nvidia/boards/HGX_Baseboard_HGXR.json',
     'nvidia/boards/HGX_HMC_HGXR.json',
     'nvidia/boards/HGX_OSFP_Board_HGXR.json',

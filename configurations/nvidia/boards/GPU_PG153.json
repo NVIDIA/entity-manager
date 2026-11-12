@@ -15,14 +15,14 @@
                 },
                 "Transport": {
                     "Medium": "usb",
-                    "Port": "$SmaPort",
+                    "Port": "$UsbPort",
                     "RootHubPath": "$Platform.UsbRootHubPath"
                 },
                 "Type": "NvDevice"
             }
         ],
-        "Name": "GPU_Card_Devices_$Instance",
-        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^GPU_Card_C2$', 'Sku': '^All$'})",
+        "Name": "GPU_Devices_$Instance",
+        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^GPU_PG153$', 'Sku': '^All$'})",
         "Type": "NvDevice"
     },
     {
@@ -41,15 +41,15 @@
                 },
                 "Transport": {
                     "Medium": "usb",
-                    "Port": "$SmaPort",
+                    "Port": "$UsbPort",
                     "RootHubPath": "$Platform.UsbRootHubPath"
                 },
                 "Type": "NvDevice"
             }
         ],
-        "Name": "GPU_Card_C2_Devices_$Instance",
+        "Name": "GPU_C2_Devices_$Instance",
         "Probe": [
-            "xyz.openbmc_project.Configuration.NvBoard({'Board': '^GPU_Card_C2$', 'Sku': '^C2$'})",
+            "xyz.openbmc_project.Configuration.NvBoard({'Board': '^GPU_PG153$', 'Sku': '^C2$'})",
             "AND",
             "FOUND('CPU_1')"
         ],
@@ -71,15 +71,15 @@
                 },
                 "Transport": {
                     "Medium": "usb",
-                    "Port": "$SmaPort",
+                    "Port": "$UsbPort",
                     "RootHubPath": "$Platform.UsbRootHubPath"
                 },
                 "Type": "NvDevice"
             }
         ],
-        "Name": "GPU_Card_C1_Devices_$Instance",
+        "Name": "GPU_C1_Devices_$Instance",
         "Probe": [
-            "xyz.openbmc_project.Configuration.NvBoard({'Board': '^GPU_Card_C2$', 'Sku': '^C1$'})",
+            "xyz.openbmc_project.Configuration.NvBoard({'Board': '^GPU_PG153$', 'Sku': '^C1$'})",
             "AND",
             "FOUND('MGX_C1')"
         ],
