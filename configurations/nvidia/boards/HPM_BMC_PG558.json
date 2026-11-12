@@ -6,8 +6,8 @@
                 "Device": "ProcessorModule_SMA_0",
                 "MuxGpio": "OOB_MUX_CTRL0-O",
                 "Name": "BootSPI_0",
-                "Type": "SPI",
-                "TargetFirmware": "FW_CPU_0"
+                "TargetFirmware": "FW_CPU_0",
+                "Type": "SPI"
             }
         ],
         "Name": "ProcessorModule_0_SBIOS_BootFlash_0",
@@ -21,8 +21,8 @@
                 "Device": "ProcessorModule_SMA_1",
                 "MuxGpio": "SEC_OOB_MUX_CTRL0-O",
                 "Name": "BootSPI_1",
-                "Type": "SPI",
-                "TargetFirmware": "FW_CPU_1"
+                "TargetFirmware": "FW_CPU_1",
+                "Type": "SPI"
             }
         ],
         "Name": "ProcessorModule_1_SBIOS_BootFlash_0",
@@ -160,25 +160,25 @@
         }
     },
     {
-        "Name": "ProcessorModule_Devices_$Instance",
-        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^HPM_BMC_PG558$'})",
-        "Type": "NvDevice",
         "Exposes": [
             {
-                "Name": "ProcessorModule_SMA_$Instance",
-                "Type": "NvDevice",
-                "Kind": "bmc_hpm_sma",
+                "EID": "$SmaEid",
                 "Generation": "vera-rubin",
                 "Instance": "$Instance",
-                "EID": "$SmaEid",
+                "Kind": "bmc_hpm_sma",
+                "Name": "ProcessorModule_SMA_$Instance",
                 "ParentChassis": "ProcessorModule_$Instance",
                 "Transport": {
                     "Medium": "usb",
+                    "PoolStartEID": "$SmaEid + 1",
                     "Port": "$UsbHubPath.1",
-                    "RootHubPath": "$Platform.UsbRootHubPath",
-                    "PoolStartEID": "$SmaEid + 1"
-                }
+                    "RootHubPath": "$Platform.UsbRootHubPath"
+                },
+                "Type": "NvDevice"
             }
-        ]
+        ],
+        "Name": "ProcessorModule_Devices_$Instance",
+        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^HPM_BMC_PG558$'})",
+        "Type": "NvDevice"
     }
 ]

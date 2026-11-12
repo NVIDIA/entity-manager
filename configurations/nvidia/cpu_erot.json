@@ -1,47 +1,47 @@
 [
-  {
-    "Name": "$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu_erot$', 'Generation': 'vera-rubin'})",
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "NSM_Telemetry",
-        "Type": "NSM_Telemetry",
-        "Kind": "cpu_erot",
-        "InstanceNumber": "$Instance",
-        "EID": "$EID",
-        "Disable": [],
-        "ParameterOverrides": {}
-      },
-      {
-        "ConnectsToName": "$Platform.BmcName",
-        "DeviceAddress": "MCTP:$EID",
-        "DeviceType": "MCTPEndpoint",
-        "Name": "$Name",
-        "Type": "PlatformDevice"
-      },
-      {
-        "Name": "$Name",
-        "SupportedDumps": [
-          "RoT"
+    {
+        "Exposes": [
+            {
+                "Name": "$Name",
+                "SupportedDumps": [
+                    "RoT"
+                ],
+                "Type": "Dump"
+            },
+            {
+                "Bus": "$Bus",
+                "ChipSelect": "$ChipSelect",
+                "Name": "$Name",
+                "StaticEndpointID": "$EID",
+                "Type": "MCTPSPIDevice"
+            },
+            {
+                "Disable": [],
+                "EID": "$EID",
+                "InstanceNumber": "$Instance",
+                "Kind": "cpu_erot",
+                "Name": "NSM_Telemetry",
+                "ParameterOverrides": {},
+                "Type": "NSM_Telemetry"
+            },
+            {
+                "Name": "$Name_PLDM",
+                "Type": "PLDMDevice",
+                "UpdateableComponents": {
+                    "$Platform.NamePrefixFW_CPU_0": 218,
+                    "$Platform.NamePrefixFW_ERoT_CPU_0": 65280
+                }
+            },
+            {
+                "ConnectsToName": "$Platform.BmcName",
+                "DeviceAddress": "MCTP:$EID",
+                "DeviceType": "MCTPEndpoint",
+                "Name": "$Name",
+                "Type": "PlatformDevice"
+            }
         ],
-        "Type": "Dump"
-      },
-      {
-        "Name": "$Name_PLDM",
-        "Type": "PLDMDevice",
-        "UpdateableComponents": {
-          "$Platform.NamePrefixFW_ERoT_CPU_0": 65280,
-          "$Platform.NamePrefixFW_CPU_0": 218
-        }
-      },
-      {
-        "Bus": "$Bus",
-        "ChipSelect": "$ChipSelect",
         "Name": "$Name",
-        "StaticEndpointID": "$EID",
-        "Type": "MCTPSPIDevice"
-      }
-    ]
-  }
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu_erot$', 'Generation': 'vera-rubin'})",
+        "Type": "NvDevice"
+    }
 ]

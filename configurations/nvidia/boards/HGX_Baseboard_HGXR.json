@@ -1,543 +1,543 @@
 [
-  {
-    "Name": "HGX_Chassis_0",
-    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 37, 'ADDRESS': 83})",
-    "Type": "Chassis",
-    "Associations": {
-      "all_managers": "bmc/HGX_BMC_0",
-      "computer_system": "system/system0",
-      "assembly": [
-        "assembly/BOARD_FRU_ASSEMBLY",
-        "assembly/PRODUCT_FRU_ASSEMBLY",
-        "assembly/CHASSIS_FRU_ASSEMBLY"
-      ],
-      "associated_fru": [
-        "/xyz/openbmc_project/FruDevice/P7612_A00",
-        "/xyz/openbmc_project/FruDevice/P7612_A01",
-        "/xyz/openbmc_project/FruDevice/P7612_A02"
-      ]
+    {
+        "Associations": {
+            "all_managers": "bmc/HGX_BMC_0",
+            "assembly": [
+                "assembly/BOARD_FRU_ASSEMBLY",
+                "assembly/PRODUCT_FRU_ASSEMBLY",
+                "assembly/CHASSIS_FRU_ASSEMBLY"
+            ],
+            "associated_fru": [
+                "/xyz/openbmc_project/FruDevice/P7612_A00",
+                "/xyz/openbmc_project/FruDevice/P7612_A01",
+                "/xyz/openbmc_project/FruDevice/P7612_A02"
+            ],
+            "computer_system": "system/system0"
+        },
+        "Exposes": [
+            {
+                "Name": "HGX_HW_WriteProtect",
+                "Sources": [
+                    "HGX_Global_WriteProtect"
+                ],
+                "Type": "HardwareWriteProtectedControl"
+            },
+            {
+                "DataIndex": 160,
+                "Name": "NSM_GPU_SPI_WriteProtect",
+                "Type": "NSM_WriteProtect",
+                "UUID": "STATIC:773:0:MCTP_EID:84"
+            },
+            {
+                "DataIndex": 129,
+                "Name": "NSM_Baseboard_FRU_WriteProtect",
+                "Type": "NSM_WriteProtect",
+                "UUID": "STATIC:773:0:MCTP_EID:84"
+            },
+            {
+                "DataIndex": 131,
+                "Name": "NSM_Quantum_SPI_WriteProtect",
+                "Type": "NSM_WriteProtect",
+                "UUID": "STATIC:773:0:MCTP_EID:84"
+            },
+            {
+                "Name": "Domain_0_GPU_SPI_WriteProtect",
+                "Sources": [
+                    "NSM_GPU_SPI_WriteProtect"
+                ],
+                "Type": "WriteProtectDomain"
+            },
+            {
+                "Name": "Domain_1_Baseboard_FRU_WriteProtect",
+                "Sources": [
+                    "NSM_Baseboard_FRU_WriteProtect"
+                ],
+                "Type": "WriteProtectDomain"
+            },
+            {
+                "Name": "Domain_2_Quantum_SPI_WriteProtect",
+                "Sources": [
+                    "NSM_Quantum_SPI_WriteProtect"
+                ],
+                "Type": "WriteProtectDomain"
+            },
+            {
+                "FlashProtectedComponents": [
+                    "HGX_FW_GPU_0",
+                    "HGX_FW_GPU_1",
+                    "HGX_FW_GPU_2",
+                    "HGX_FW_GPU_3",
+                    "HGX_FW_GPU_4",
+                    "HGX_FW_GPU_5",
+                    "HGX_FW_GPU_6",
+                    "HGX_FW_GPU_7"
+                ],
+                "Name": "Domain_0_ProtectedComponents",
+                "Sources": [
+                    "HGX_HW_WriteProtect",
+                    "Domain_0_GPU_SPI_WriteProtect"
+                ],
+                "Type": "WriteProtectGroup"
+            },
+            {
+                "FlashProtectedComponents": [
+                    "HGX_FW_ConnectX_0",
+                    "HGX_FW_ConnectX_1",
+                    "HGX_FW_ConnectX_2",
+                    "HGX_FW_ConnectX_3",
+                    "HGX_FW_ConnectX_4",
+                    "HGX_FW_ConnectX_5",
+                    "HGX_FW_ConnectX_6",
+                    "HGX_FW_ConnectX_7",
+                    "HGX_FW_NVLinkManagementNIC_0"
+                ],
+                "Name": "ConnectX_ProtectedComponents",
+                "Sources": [],
+                "Type": "WriteProtectGroup"
+            },
+            {
+                "FlashProtectedComponents": [
+                    "HGX_FW_NVSwitch_0",
+                    "HGX_FW_NVSwitch_1",
+                    "HGX_FW_NVSwitch_2",
+                    "HGX_FW_NVSwitch_3"
+                ],
+                "Name": "NVSwitch_ProtectedComponents",
+                "Sources": [
+                    "Domain_2_Quantum_SPI_WriteProtect",
+                    "HGX_HW_WriteProtect"
+                ],
+                "Type": "WriteProtectGroup"
+            },
+            {
+                "FlashProtectedComponents": [
+                    "HGX_FW_BMC_0"
+                ],
+                "Name": "HMC_SPI_WriteProtect",
+                "Sources": [
+                    "HGX_HW_WriteProtect"
+                ],
+                "Type": "WriteProtectGroup"
+            },
+            {
+                "ActiveLow": false,
+                "LineName": "BB_GLOBAL_WP-I",
+                "Name": "HGX_Global_WriteProtect",
+                "PollInterval": 5000,
+                "Type": "WriteProtectInput"
+            }
+        ],
+        "Name": "HGX_Chassis_0",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 37, 'ADDRESS': 83})",
+        "Type": "Chassis",
+        "xyz.openbmc_project.Association.Definitions": {
+            "Associations": [
+                [
+                    "all_chassis",
+                    "chassis",
+                    "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_BMC_0"
+                ]
+            ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$PRODUCT_MANUFACTURER",
+            "Model": "$PRODUCT_PRODUCT_NAME",
+            "PartNumber": "$PRODUCT_PART_NUMBER",
+            "SKU": "$PRODUCT_VERSION",
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Backplane"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "HGX_Chassis_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": ""
+        },
+        "xyz.openbmc_project.Inventory.Decorator.PCIeRefClock": {
+            "PCIeReferenceClockCount": 3
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": false
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Zone"
+        }
     },
-    "Exposes": [
-      {
-        "Name": "HGX_HW_WriteProtect",
-        "Sources": [
-          "HGX_Global_WriteProtect"
-        ],
-        "Type": "HardwareWriteProtectedControl"
-      },
-      {
-        "DataIndex": 160,
-        "Name": "NSM_GPU_SPI_WriteProtect",
-        "Type": "NSM_WriteProtect",
-        "UUID": "STATIC:773:0:MCTP_EID:84"
-      },
-      {
-        "DataIndex": 129,
-        "Name": "NSM_Baseboard_FRU_WriteProtect",
-        "Type": "NSM_WriteProtect",
-        "UUID": "STATIC:773:0:MCTP_EID:84"
-      },
-      {
-        "DataIndex": 131,
-        "Name": "NSM_Quantum_SPI_WriteProtect",
-        "Type": "NSM_WriteProtect",
-        "UUID": "STATIC:773:0:MCTP_EID:84"
-      },
-      {
-        "Name": "Domain_0_GPU_SPI_WriteProtect",
-        "Sources": [
-          "NSM_GPU_SPI_WriteProtect"
-        ],
-        "Type": "WriteProtectDomain"
-      },
-      {
-        "Name": "Domain_1_Baseboard_FRU_WriteProtect",
-        "Sources": [
-          "NSM_Baseboard_FRU_WriteProtect"
-        ],
-        "Type": "WriteProtectDomain"
-      },
-      {
-        "Name": "Domain_2_Quantum_SPI_WriteProtect",
-        "Sources": [
-          "NSM_Quantum_SPI_WriteProtect"
-        ],
-        "Type": "WriteProtectDomain"
-      },
-      {
-        "FlashProtectedComponents": [
-          "HGX_FW_GPU_0",
-          "HGX_FW_GPU_1",
-          "HGX_FW_GPU_2",
-          "HGX_FW_GPU_3",
-          "HGX_FW_GPU_4",
-          "HGX_FW_GPU_5",
-          "HGX_FW_GPU_6",
-          "HGX_FW_GPU_7"
-        ],
-        "Name": "Domain_0_ProtectedComponents",
-        "Sources": [
-          "HGX_HW_WriteProtect",
-          "Domain_0_GPU_SPI_WriteProtect"
-        ],
-        "Type": "WriteProtectGroup"
-      },
-      {
-        "FlashProtectedComponents": [
-          "HGX_FW_ConnectX_0",
-          "HGX_FW_ConnectX_1",
-          "HGX_FW_ConnectX_2",
-          "HGX_FW_ConnectX_3",
-          "HGX_FW_ConnectX_4",
-          "HGX_FW_ConnectX_5",
-          "HGX_FW_ConnectX_6",
-          "HGX_FW_ConnectX_7",
-          "HGX_FW_NVLinkManagementNIC_0"
-        ],
-        "Name": "ConnectX_ProtectedComponents",
-        "Sources": [],
-        "Type": "WriteProtectGroup"
-      },
-      {
-        "FlashProtectedComponents": [
-          "HGX_FW_NVSwitch_0",
-          "HGX_FW_NVSwitch_1",
-          "HGX_FW_NVSwitch_2",
-          "HGX_FW_NVSwitch_3"
-        ],
-        "Name": "NVSwitch_ProtectedComponents",
-        "Sources": [
-          "Domain_2_Quantum_SPI_WriteProtect",
-          "HGX_HW_WriteProtect"
-        ],
-        "Type": "WriteProtectGroup"
-      },
-      {
-        "FlashProtectedComponents": [
-          "HGX_FW_BMC_0"
-        ],
-        "Name": "HMC_SPI_WriteProtect",
-        "Sources": [
-          "HGX_HW_WriteProtect"
-        ],
-        "Type": "WriteProtectGroup"
-      },
-      {
-        "ActiveLow": false,
-        "LineName": "BB_GLOBAL_WP-I",
-        "Name": "HGX_Global_WriteProtect",
-        "PollInterval": 5000,
-        "Type": "WriteProtectInput"
-      }
-    ],
-    "xyz.openbmc_project.Association.Definitions": {
-      "Associations": [
-        [
-          "all_chassis",
-          "chassis",
-          "/xyz/openbmc_project/inventory/system/chassis/HGX_ERoT_BMC_0"
-        ]
-      ]
+    {
+        "Name": "system0",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 37, 'ADDRESS': 83})",
+        "Type": "System",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME"
+        }
     },
-    "xyz.openbmc_project.Inventory.Decorator.Asset": {
-      "Manufacturer": "$PRODUCT_MANUFACTURER",
-      "Model": "$PRODUCT_PRODUCT_NAME",
-      "PartNumber": "$PRODUCT_PART_NUMBER",
-      "SKU": "$PRODUCT_VERSION",
-      "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
+    {
+        "AssemblyID": 0,
+        "Name": "BOARD_FRU_ASSEMBLY",
+        "Probe": "xyz.openbmc_project.FruDevice({'ADDRESS': 83, 'BUS': 37})",
+        "Type": "Assembly",
+        "xyz.openbmc_project.Association.Definitions": {
+            "Associations": [
+                [
+                    "write_protected_by",
+                    "write_protects",
+                    "/xyz/openbmc_project/state/Domain_1_Baseboard_FRU_WriteProtect"
+                ]
+            ]
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Area": {
+            "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.GPUSubsystem"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "BuildDate": "$BOARD_MANUFACTURE_DATE",
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "Name": "Board FRU Assembly",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Item.Panel": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
     },
-    "xyz.openbmc_project.Inventory.Decorator.Location": {
-      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Backplane"
+    {
+        "AssemblyID": 1,
+        "Name": "PRODUCT_FRU_ASSEMBLY",
+        "Probe": "xyz.openbmc_project.FruDevice({'ADDRESS': 83, 'BUS': 37})",
+        "Type": "Assembly",
+        "xyz.openbmc_project.Inventory.Decorator.Area": {
+            "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.GPUSubsystem"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$PRODUCT_MANUFACTURER",
+            "Model": "$PRODUCT_PRODUCT_NAME",
+            "Name": "Product FRU Assembly",
+            "PartNumber": "$PRODUCT_PART_NUMBER",
+            "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Revision": {
+            "Version": "$PRODUCT_VERSION"
+        },
+        "xyz.openbmc_project.Inventory.Item.Panel": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
     },
-    "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-      "LocationCode": "HGX_Chassis_0"
+    {
+        "AssemblyID": 2,
+        "Name": "CHASSIS_FRU_ASSEMBLY",
+        "Probe": "xyz.openbmc_project.FruDevice({'ADDRESS': 83, 'BUS': 37})",
+        "Type": "Assembly",
+        "xyz.openbmc_project.Inventory.Decorator.Area": {
+            "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.GPUSubsystem"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Name": "Chassis FRU Assembly",
+            "PartNumber": "$CHASSIS_PART_NUMBER",
+            "SerialNumber": "$CHASSIS_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Item.Panel": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
     },
-    "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-      "LocationContext": ""
+    {
+        "Associations": {
+            "parent_chassis": "chassis/HGX_Chassis_0"
+        },
+        "Name": "HGX_CPLD_0",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 37, 'ADDRESS': 83})",
+        "Type": "Component",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "Lattice",
+            "Model": "LCMXO3",
+            "PartNumber": "LCMXO3LF-9400C-5BG400I"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "U1083"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": false
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        }
     },
-    "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
-      "FieldReplaceable": false
+    {
+        "Exposes": [
+            {
+                "BridgedProcessors": [
+                    "HGX_GPU_$Instance"
+                ],
+                "EID": "$Instance * 3 + 48",
+                "Generation": "vera-rubin",
+                "IgnoreEIDs": "$IgnoreEIDs",
+                "Instance": "$Instance",
+                "Kind": "gpu_sma",
+                "Name": "HGX_SXM_SMA_$Instance",
+                "Recovery": {
+                    "RecoveryGpio": "SXM_$SxmIndex_MCU_RECOV_L-O",
+                    "RecoveryType": "MCU",
+                    "ResetGpio": "SXM_$SxmIndex_MCU_RESET_L-O",
+                    "SoftwareName": "HGX_FW_SXM_SMA_$Instance",
+                    "Target": "SXM"
+                },
+                "Transport": {
+                    "Medium": "usb",
+                    "PoolEndEID": "$Instance * 3 + 49",
+                    "PoolStartEID": "$Instance * 3 + 49",
+                    "Port": "$UsbPort",
+                    "RootHubPath": "$Platform.UsbRootHubPath"
+                },
+                "Type": "NvDevice"
+            },
+            {
+                "EID": "$Instance * 3 + 49",
+                "Generation": "vera-rubin",
+                "Instance": "$Instance",
+                "Kind": "gpu",
+                "LocationCode": "GPU$Instance",
+                "Name": "HGX_GPU_$Instance",
+                "ParentChassis": "HGX_GPU_SXM_$SxmIndex",
+                "Recovery": {
+                    "ChassisName": "HGX_IRoT_GPU_$Instance",
+                    "OcpInfoRom": false,
+                    "OcpRecoveryI2cAddress": 105,
+                    "OcpSmaEid": false,
+                    "RecoveryType": "OCP",
+                    "SoftwareName": "HGX_FW_GPU_$Instance"
+                },
+                "Transport": {
+                    "Bridge": "HGX_SXM_SMA_$Instance",
+                    "BridgeEID": "$Instance * 3 + 48",
+                    "BridgePort": "$UsbPort",
+                    "Medium": "bridge",
+                    "PoolIndex": 0
+                },
+                "Type": "NvDevice"
+            }
+        ],
+        "Name": "HGX_SXM_Devices_$Instance",
+        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^HGX_Baseboard_HGXR$', 'Site': '^SXM$'})",
+        "Type": "NvDevice"
     },
-    "xyz.openbmc_project.Inventory.Item.Chassis": {
-      "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Zone"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.PCIeRefClock": {
-      "PCIeReferenceClockCount": 3
+    {
+        "Exposes": [
+            {
+                "DeviceId": "CPLD_0",
+                "Name": "HGX_FW_CPLD_0",
+                "SMAEID": 84,
+                "Type": "CPLDGPIOMonitor"
+            },
+            {
+                "EID": 84,
+                "Generation": "vera-rubin",
+                "IgnoreEIDs": "86,87",
+                "Instance": 0,
+                "Kind": "hmc_hpm_sma",
+                "Name": "HGX_Baseboard_SMA_0",
+                "ParentChassis": "HGX_Chassis_0",
+                "Recovery": {
+                    "RecoveryGpio": "BB_MCU_RECOV_L-O",
+                    "RecoveryType": "MCU",
+                    "ResetGpio": "BB_MCU_RESET_L-O",
+                    "SoftwareName": "HGX_FW_Baseboard_SMA_0",
+                    "Target": "SMA"
+                },
+                "Transport": {
+                    "Medium": "usb",
+                    "PoolEndEID": "86",
+                    "PoolStartEID": "85",
+                    "Port": "1.4.3",
+                    "RootHubPath": "$Platform.UsbRootHubPath"
+                },
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 72,
+                "Generation": "vera-rubin",
+                "IgnoreEIDs": "74,76,77",
+                "Instance": 0,
+                "Kind": "nvswitch_sma",
+                "Name": "HGX_NVSwitch_SMA_0",
+                "Recovery": {
+                    "RecoveryGpio": "QM4_32_MCU_RECOV_L-O",
+                    "RecoveryType": "MCU",
+                    "ResetGpio": "QM4_32_MCU_RESET_L-O",
+                    "SoftwareName": "HGX_FW_NVSwitch_SMA_0",
+                    "Target": "QM4"
+                },
+                "Transport": {
+                    "Medium": "usb",
+                    "PoolEndEID": "76",
+                    "PoolStartEID": "73",
+                    "Port": "1.4.1",
+                    "RootHubPath": "$Platform.UsbRootHubPath"
+                },
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 78,
+                "Generation": "vera-rubin",
+                "IgnoreEIDs": "80,82,83",
+                "Instance": 1,
+                "Kind": "nvswitch_sma",
+                "Name": "HGX_NVSwitch_SMA_1",
+                "Recovery": {
+                    "RecoveryGpio": "QM4_14_MCU_RECOV_L-O",
+                    "RecoveryType": "MCU",
+                    "ResetGpio": "QM4_14_MCU_RESET_L-O",
+                    "SoftwareName": "HGX_FW_NVSwitch_SMA_1",
+                    "Target": "QM4"
+                },
+                "Transport": {
+                    "Medium": "usb",
+                    "PoolEndEID": "82",
+                    "PoolStartEID": "79",
+                    "Port": "1.4.2",
+                    "RootHubPath": "$Platform.UsbRootHubPath"
+                },
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 79,
+                "Generation": "vera-rubin",
+                "Instance": 0,
+                "Kind": "nvswitch",
+                "Name": "HGX_NVSwitch_0",
+                "ParentChassis": "HGX_Chassis_0",
+                "Recovery": {
+                    "ChassisName": "HGX_IRoT_NVSwitch_0",
+                    "FlashNotPresentGpio": "QM4_1_FNP_L-O",
+                    "I2CAddress": 72,
+                    "I2CBus": 3,
+                    "RecoveryType": "NVSwitch",
+                    "ResetGpio": "QM4_1_RESET_L-O",
+                    "SoftwareName": "HGX_FW_NVSwitch_0"
+                },
+                "Transport": {
+                    "Bridge": "HGX_NVSwitch_SMA_1",
+                    "BridgeEID": 78,
+                    "Medium": "bridge",
+                    "PoolIndex": 0
+                },
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 75,
+                "Generation": "vera-rubin",
+                "Instance": 1,
+                "Kind": "nvswitch",
+                "Name": "HGX_NVSwitch_1",
+                "ParentChassis": "HGX_Chassis_0",
+                "Recovery": {
+                    "ChassisName": "HGX_IRoT_NVSwitch_1",
+                    "FlashNotPresentGpio": "QM4_2_FNP_L-O",
+                    "I2CAddress": 72,
+                    "I2CBus": 7,
+                    "RecoveryType": "NVSwitch",
+                    "ResetGpio": "QM4_2_RESET_L-O",
+                    "SoftwareName": "HGX_FW_NVSwitch_1"
+                },
+                "Transport": {
+                    "Bridge": "HGX_NVSwitch_SMA_0",
+                    "BridgeEID": 72,
+                    "Medium": "bridge",
+                    "PoolIndex": 2
+                },
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 73,
+                "Generation": "vera-rubin",
+                "Instance": 2,
+                "Kind": "nvswitch",
+                "Name": "HGX_NVSwitch_2",
+                "ParentChassis": "HGX_Chassis_0",
+                "Recovery": {
+                    "ChassisName": "HGX_IRoT_NVSwitch_2",
+                    "FlashNotPresentGpio": "QM4_3_FNP_L-O",
+                    "I2CAddress": 72,
+                    "I2CBus": 8,
+                    "RecoveryType": "NVSwitch",
+                    "ResetGpio": "QM4_3_RESET_L-O",
+                    "SoftwareName": "HGX_FW_NVSwitch_2"
+                },
+                "Transport": {
+                    "Bridge": "HGX_NVSwitch_SMA_0",
+                    "BridgeEID": 72,
+                    "Medium": "bridge",
+                    "PoolIndex": 0
+                },
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 81,
+                "Generation": "vera-rubin",
+                "Instance": 3,
+                "Kind": "nvswitch",
+                "Name": "HGX_NVSwitch_3",
+                "ParentChassis": "HGX_Chassis_0",
+                "Recovery": {
+                    "ChassisName": "HGX_IRoT_NVSwitch_3",
+                    "FlashNotPresentGpio": "QM4_4_FNP_L-O",
+                    "I2CAddress": 72,
+                    "I2CBus": 10,
+                    "RecoveryType": "NVSwitch",
+                    "ResetGpio": "QM4_4_RESET_L-O",
+                    "SoftwareName": "HGX_FW_NVSwitch_3"
+                },
+                "Transport": {
+                    "Bridge": "HGX_NVSwitch_SMA_1",
+                    "BridgeEID": 78,
+                    "Medium": "bridge",
+                    "PoolIndex": 2
+                },
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 85,
+                "Generation": "vera-rubin",
+                "Instance": 0,
+                "Kind": "nvlink_mgmt_nic",
+                "Name": "HGX_NVLinkManagementNIC_0",
+                "ParentChassis": "HGX_Chassis_0",
+                "Recovery": {
+                    "ChassisName": "HGX_IRoT_NVLinkManagementNIC_0",
+                    "FlashNotPresentGpio": "CX9_FNM_FNP_L-O",
+                    "I2CAddress": 72,
+                    "I2CBus": 118,
+                    "RecoveryType": "NVLinkManagementNIC",
+                    "ResetGpio": "CX9_FNM_RESET_L-O",
+                    "SoftwareName": "HGX_FW_NVLinkManagementNIC_0"
+                },
+                "Transport": {
+                    "Bridge": "HGX_Baseboard_SMA_0",
+                    "BridgeEID": 84,
+                    "Medium": "bridge",
+                    "PoolIndex": 0
+                },
+                "Type": "NvDevice"
+            }
+        ],
+        "Name": "HGX_Baseboard_Devices",
+        "Probe": "FOUND('Nvidia HGX-R HMC')",
+        "Type": "NvDevice"
     }
-  },
-  {
-    "Name": "system0",
-    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 37, 'ADDRESS': 83})",
-    "Type": "System",
-    "xyz.openbmc_project.Inventory.Decorator.Asset": {
-      "Manufacturer": "$BOARD_MANUFACTURER",
-      "Model": "$BOARD_PRODUCT_NAME"
-    }
-  },
-  {
-    "Name": "BOARD_FRU_ASSEMBLY",
-    "Probe": "xyz.openbmc_project.FruDevice({'ADDRESS': 83, 'BUS': 37})",
-    "Type": "Assembly",
-    "AssemblyID": 0,
-    "xyz.openbmc_project.Association.Definitions": {
-      "Associations": [
-        [
-          "write_protected_by",
-          "write_protects",
-          "/xyz/openbmc_project/state/Domain_1_Baseboard_FRU_WriteProtect"
-        ]
-      ]
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Area": {
-      "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.GPUSubsystem"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Asset": {
-      "BuildDate": "$BOARD_MANUFACTURE_DATE",
-      "Manufacturer": "$BOARD_MANUFACTURER",
-      "Model": "$BOARD_PRODUCT_NAME",
-      "Name": "Board FRU Assembly",
-      "PartNumber": "$BOARD_PART_NUMBER",
-      "SerialNumber": "$BOARD_SERIAL_NUMBER"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Location": {
-      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
-    },
-    "xyz.openbmc_project.Inventory.Item.Panel": {},
-    "xyz.openbmc_project.State.Decorator.Health": {
-      "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
-    }
-  },
-  {
-    "Name": "PRODUCT_FRU_ASSEMBLY",
-    "Probe": "xyz.openbmc_project.FruDevice({'ADDRESS': 83, 'BUS': 37})",
-    "Type": "Assembly",
-    "AssemblyID": 1,
-    "xyz.openbmc_project.Inventory.Decorator.Area": {
-      "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.GPUSubsystem"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Asset": {
-      "Manufacturer": "$PRODUCT_MANUFACTURER",
-      "Model": "$PRODUCT_PRODUCT_NAME",
-      "Name": "Product FRU Assembly",
-      "PartNumber": "$PRODUCT_PART_NUMBER",
-      "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Location": {
-      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Revision": {
-      "Version": "$PRODUCT_VERSION"
-    },
-    "xyz.openbmc_project.Inventory.Item.Panel": {},
-    "xyz.openbmc_project.State.Decorator.Health": {
-      "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
-    }
-  },
-  {
-    "Name": "CHASSIS_FRU_ASSEMBLY",
-    "Probe": "xyz.openbmc_project.FruDevice({'ADDRESS': 83, 'BUS': 37})",
-    "Type": "Assembly",
-    "AssemblyID": 2,
-    "xyz.openbmc_project.Inventory.Decorator.Area": {
-      "PhysicalContext": "xyz.openbmc_project.Inventory.Decorator.Area.PhysicalContextType.GPUSubsystem"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Asset": {
-      "Name": "Chassis FRU Assembly",
-      "PartNumber": "$CHASSIS_PART_NUMBER",
-      "SerialNumber": "$CHASSIS_SERIAL_NUMBER"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Location": {
-      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
-    },
-    "xyz.openbmc_project.Inventory.Item.Panel": {},
-    "xyz.openbmc_project.State.Decorator.Health": {
-      "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
-    }
-  },
-  {
-    "Name": "HGX_CPLD_0",
-    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 37, 'ADDRESS': 83})",
-    "Type": "Component",
-    "Associations": {
-      "parent_chassis": "chassis/HGX_Chassis_0"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Asset": {
-      "Manufacturer": "Lattice",
-      "Model": "LCMXO3",
-      "PartNumber": "LCMXO3LF-9400C-5BG400I"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Location": {
-      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-      "LocationCode": "U1083"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
-      "FieldReplaceable": false
-    },
-    "xyz.openbmc_project.Inventory.Item.Chassis": {
-      "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
-    }
-  },
-  {
-    "Name": "HGX_SXM_Devices_$Instance",
-    "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^HGX_Baseboard_HGXR$', 'Site': '^SXM$'})",
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "HGX_SXM_SMA_$Instance",
-        "Type": "NvDevice",
-        "Kind": "gpu_sma",
-        "Generation": "vera-rubin",
-        "Instance": "$Instance",
-        "BridgedProcessors": [
-          "HGX_GPU_$Instance"
-        ],
-        "EID": "$Instance * 3 + 48",
-        "Transport": {
-          "Medium": "usb",
-          "Port": "$UsbPort",
-          "RootHubPath": "$Platform.UsbRootHubPath",
-          "PoolStartEID": "$Instance * 3 + 49",
-          "PoolEndEID": "$Instance * 3 + 49"
-        },
-        "IgnoreEIDs": "$IgnoreEIDs",
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "SXM_$SxmIndex_MCU_RECOV_L-O",
-          "ResetGpio": "SXM_$SxmIndex_MCU_RESET_L-O",
-          "Target": "SXM",
-          "SoftwareName": "HGX_FW_SXM_SMA_$Instance"
-        }
-      },
-      {
-        "Name": "HGX_GPU_$Instance",
-        "Type": "NvDevice",
-        "Kind": "gpu",
-        "Generation": "vera-rubin",
-        "Instance": "$Instance",
-        "EID": "$Instance * 3 + 49",
-        "ParentChassis": "HGX_GPU_SXM_$SxmIndex",
-        "LocationCode": "GPU$Instance",
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_SXM_SMA_$Instance",
-          "BridgeEID": "$Instance * 3 + 48",
-          "BridgePort": "$UsbPort",
-          "PoolIndex": 0
-        },
-        "Recovery": {
-          "RecoveryType": "OCP",
-          "OcpRecoveryI2cAddress": 105,
-          "SoftwareName": "HGX_FW_GPU_$Instance",
-          "ChassisName": "HGX_IRoT_GPU_$Instance",
-          "OcpInfoRom": false,
-          "OcpSmaEid": false
-        }
-      }
-    ]
-  },
-  {
-    "Name": "HGX_Baseboard_Devices",
-    "Probe": "FOUND('Nvidia HGX-R HMC')",
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "HGX_Baseboard_SMA_0",
-        "Type": "NvDevice",
-        "Kind": "hmc_hpm_sma",
-        "Generation": "vera-rubin",
-        "Instance": 0,
-        "EID": 84,
-        "ParentChassis": "HGX_Chassis_0",
-        "Transport": {
-          "Medium": "usb",
-          "Port": "1.4.3",
-          "RootHubPath": "$Platform.UsbRootHubPath",
-          "PoolStartEID": "85",
-          "PoolEndEID": "86"
-        },
-        "IgnoreEIDs": "86,87",
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "BB_MCU_RECOV_L-O",
-          "ResetGpio": "BB_MCU_RESET_L-O",
-          "Target": "SMA",
-          "SoftwareName": "HGX_FW_Baseboard_SMA_0"
-        }
-      },
-      {
-        "Name": "HGX_FW_CPLD_0",
-        "Type": "CPLDGPIOMonitor",
-        "DeviceId": "CPLD_0",
-        "SMAEID": 84
-      },
-      {
-        "Name": "HGX_NVSwitch_SMA_0",
-        "Type": "NvDevice",
-        "Kind": "nvswitch_sma",
-        "Generation": "vera-rubin",
-        "Instance": 0,
-        "EID": 72,
-        "Transport": {
-          "Medium": "usb",
-          "Port": "1.4.1",
-          "RootHubPath": "$Platform.UsbRootHubPath",
-          "PoolStartEID": "73",
-          "PoolEndEID": "76"
-        },
-        "IgnoreEIDs": "74,76,77",
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "QM4_32_MCU_RECOV_L-O",
-          "ResetGpio": "QM4_32_MCU_RESET_L-O",
-          "Target": "QM4",
-          "SoftwareName": "HGX_FW_NVSwitch_SMA_0"
-        }
-      },
-      {
-        "Name": "HGX_NVSwitch_SMA_1",
-        "Type": "NvDevice",
-        "Kind": "nvswitch_sma",
-        "Generation": "vera-rubin",
-        "Instance": 1,
-        "EID": 78,
-        "Transport": {
-          "Medium": "usb",
-          "Port": "1.4.2",
-          "RootHubPath": "$Platform.UsbRootHubPath",
-          "PoolStartEID": "79",
-          "PoolEndEID": "82"
-        },
-        "IgnoreEIDs": "80,82,83",
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "QM4_14_MCU_RECOV_L-O",
-          "ResetGpio": "QM4_14_MCU_RESET_L-O",
-          "Target": "QM4",
-          "SoftwareName": "HGX_FW_NVSwitch_SMA_1"
-        }
-      },
-      {
-        "Name": "HGX_NVSwitch_0",
-        "Type": "NvDevice",
-        "Kind": "nvswitch",
-        "Generation": "vera-rubin",
-        "Instance": 0,
-        "EID": 79,
-        "ParentChassis": "HGX_Chassis_0",
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_NVSwitch_SMA_1",
-          "BridgeEID": 78,
-          "PoolIndex": 0
-        },
-        "Recovery": {
-          "RecoveryType": "NVSwitch",
-          "FlashNotPresentGpio": "QM4_1_FNP_L-O",
-          "I2CAddress": 72,
-          "I2CBus": 3,
-          "ResetGpio": "QM4_1_RESET_L-O",
-          "SoftwareName": "HGX_FW_NVSwitch_0",
-          "ChassisName": "HGX_IRoT_NVSwitch_0"
-        }
-      },
-      {
-        "Name": "HGX_NVSwitch_1",
-        "Type": "NvDevice",
-        "Kind": "nvswitch",
-        "Generation": "vera-rubin",
-        "Instance": 1,
-        "EID": 75,
-        "ParentChassis": "HGX_Chassis_0",
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_NVSwitch_SMA_0",
-          "BridgeEID": 72,
-          "PoolIndex": 2
-        },
-        "Recovery": {
-          "RecoveryType": "NVSwitch",
-          "FlashNotPresentGpio": "QM4_2_FNP_L-O",
-          "I2CAddress": 72,
-          "I2CBus": 7,
-          "ResetGpio": "QM4_2_RESET_L-O",
-          "SoftwareName": "HGX_FW_NVSwitch_1",
-          "ChassisName": "HGX_IRoT_NVSwitch_1"
-        }
-      },
-      {
-        "Name": "HGX_NVSwitch_2",
-        "Type": "NvDevice",
-        "Kind": "nvswitch",
-        "Generation": "vera-rubin",
-        "Instance": 2,
-        "EID": 73,
-        "ParentChassis": "HGX_Chassis_0",
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_NVSwitch_SMA_0",
-          "BridgeEID": 72,
-          "PoolIndex": 0
-        },
-        "Recovery": {
-          "RecoveryType": "NVSwitch",
-          "FlashNotPresentGpio": "QM4_3_FNP_L-O",
-          "I2CAddress": 72,
-          "I2CBus": 8,
-          "ResetGpio": "QM4_3_RESET_L-O",
-          "SoftwareName": "HGX_FW_NVSwitch_2",
-          "ChassisName": "HGX_IRoT_NVSwitch_2"
-        }
-      },
-      {
-        "Name": "HGX_NVSwitch_3",
-        "Type": "NvDevice",
-        "Kind": "nvswitch",
-        "Generation": "vera-rubin",
-        "Instance": 3,
-        "EID": 81,
-        "ParentChassis": "HGX_Chassis_0",
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_NVSwitch_SMA_1",
-          "BridgeEID": 78,
-          "PoolIndex": 2
-        },
-        "Recovery": {
-          "RecoveryType": "NVSwitch",
-          "FlashNotPresentGpio": "QM4_4_FNP_L-O",
-          "I2CAddress": 72,
-          "I2CBus": 10,
-          "ResetGpio": "QM4_4_RESET_L-O",
-          "SoftwareName": "HGX_FW_NVSwitch_3",
-          "ChassisName": "HGX_IRoT_NVSwitch_3"
-        }
-      },
-      {
-        "Name": "HGX_NVLinkManagementNIC_0",
-        "Type": "NvDevice",
-        "Kind": "nvlink_mgmt_nic",
-        "Generation": "vera-rubin",
-        "Instance": 0,
-        "EID": 85,
-        "ParentChassis": "HGX_Chassis_0",
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_Baseboard_SMA_0",
-          "BridgeEID": 84,
-          "PoolIndex": 0
-        },
-        "Recovery": {
-          "RecoveryType": "NVLinkManagementNIC",
-          "FlashNotPresentGpio": "CX9_FNM_FNP_L-O",
-          "I2CAddress": 72,
-          "I2CBus": 118,
-          "ResetGpio": "CX9_FNM_RESET_L-O",
-          "SoftwareName": "HGX_FW_NVLinkManagementNIC_0",
-          "ChassisName": "HGX_IRoT_NVLinkManagementNIC_0"
-        }
-      }
-    ]
-  }
 ]

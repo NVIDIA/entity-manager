@@ -1,33 +1,33 @@
 [
-  {
-    "Name": "Nvidia VR-NVL144 Switch BMC",
-    "Probe": "TRUE",
-    "Type": "Platform",
-    "NamePrefix": "MGX_",
-    "BmcName": "MGX_BMC_0",
-    "UsbRootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
-    "PlatformExposes": [
-      {
-        "Name": "DevicePrefix",
-        "Type": "DevicePrefix",
-        "Prefix": "MGX_"
-      },
-      {
-        "Name": "MGX_SWB_Site_0",
-        "Type": "NvBoard",
-        "Board": "SWB_QM4",
-        "Instance": 0,
-        "McuNumber": 1,
-        "UsbPort": "1.2"
-      },
-      {
-        "Name": "MGX_SWB_Site_1",
-        "Type": "NvBoard",
-        "Board": "SWB_QM4",
-        "Instance": 1,
-        "McuNumber": 2,
-        "UsbPort": "1.3"
-      }
-    ]
-  }
+    {
+        "BmcName": "MGX_BMC_0",
+        "Name": "Nvidia VR-NVL144 Switch BMC",
+        "NamePrefix": "MGX_",
+        "PlatformExposes": [
+            {
+                "Name": "DevicePrefix",
+                "Prefix": "MGX_",
+                "Type": "DevicePrefix"
+            },
+            {
+                "Board": "SWB_QM4",
+                "Instance": 0,
+                "McuNumber": 1,
+                "Name": "MGX_SWB_Site_0",
+                "Type": "NvBoard",
+                "UsbPort": "1.2"
+            },
+            {
+                "Board": "SWB_QM4",
+                "Instance": 1,
+                "McuNumber": 2,
+                "Name": "MGX_SWB_Site_1",
+                "Type": "NvBoard",
+                "UsbPort": "1.3"
+            }
+        ],
+        "Probe": "TRUE",
+        "Type": "Platform",
+        "UsbRootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb"
+    }
 ]

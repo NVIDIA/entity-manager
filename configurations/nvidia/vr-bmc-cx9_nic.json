@@ -1,105 +1,105 @@
 [
-  {
-    "Name": "$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_nic$', 'Generation': 'vera-rubin'})",
-    "Type": "chassis",
-    "Exposes": [
-      {
-        "Name": "NSM_Telemetry",
-        "Type": "NSM_Telemetry",
-        "Kind": "cx9_nic",
-        "InstanceNumber": "$Instance",
-        "EID": "$EID",
-        "LocationContext": "$LocationContext",
-        "SwitchName": "$SwitchName",
-        "BridgeName": "$Bridge",
-        "PortLocationReference": "$PortLocationReference",
-        "ParameterOverrides": {}
-      },
-      {
-        "BridgeName": "$Bridge",
-        "Name": "BF4_1",
-        "PoolIndex": 1,
-        "Type": "MCTPBridgePoolDevice"
-      }
-    ],
-    "Associations": {
-      "parent_chassis": "chassis/$Platform.TopChassis"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Instance": {
-      "InstanceNumber": 0
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Location": {
-      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Bay"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-      "LocationCode": "Bay-C-Middle"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-      "LocationContext": "$Platform.TopChassis"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal": {
-      "LocationOrdinalValue": 0,
-      "Orientation": "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal.Orientations.BottomToTop"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationReference": {
-      "LocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Middle"
-    },
-    "xyz.openbmc_project.Inventory.Item.Board": {},
-    "xyz.openbmc_project.State.Decorator.Health": {
-      "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
-    }
-  },
-  {
-    "Name": "$Name_Platform",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_nic$', 'Generation': 'vera-rubin'})",
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "$Name_PLDM",
-        "Type": "PLDMDevice",
-        "NetworkAdapter": "Bay_C_CX_NIC_$Instance",
-        "SensorAuxNames": {
-          "$Name": 5,
-          "Bay_C_CX_NIC_$Instance": 60,
-          "Port_0": 200,
-          "$Name_Temp_0": 300,
-          "Bay_C_CX_NIC_$Instance_Port_0_Voltage_0": 400,
-          "Bay_C_CX_NIC_$Instance_Port_1_Voltage_0": 401,
-          "$Name_Power_0": 50,
-          "Bay_C_CX_NIC_$Instance_Port_0_Temp_0": 500
+    {
+        "Associations": {
+            "parent_chassis": "chassis/$Platform.TopChassis"
         },
-        "Ports": {
-          "200": "Port_0"
+        "Exposes": [
+            {
+                "BridgeName": "$Bridge",
+                "Name": "BF4_1",
+                "PoolIndex": 1,
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "BridgeName": "$Bridge",
+                "EID": "$EID",
+                "InstanceNumber": "$Instance",
+                "Kind": "cx9_nic",
+                "LocationContext": "$LocationContext",
+                "Name": "NSM_Telemetry",
+                "ParameterOverrides": {},
+                "PortLocationReference": "$PortLocationReference",
+                "SwitchName": "$SwitchName",
+                "Type": "NSM_Telemetry"
+            }
+        ],
+        "Name": "$Name",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_nic$', 'Generation': 'vera-rubin'})",
+        "Type": "chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 0
         },
-        "PortMaxSpeedMBps": 50000,
-        "FirmwareName": "BF4_1"
-      }
-    ]
-  },
-  {
-    "Name": "$Name_Platform",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_nic_i2c$', 'Generation': 'vera-rubin'})",
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "$Name_PLDM",
-        "Type": "PLDMDevice",
-        "SensorAuxNames": {
-          "$Name_Temp_0": 300,
-          "CX_NIC_$Instance_Port_0_Temp_0": 500,
-          "Port_0": 200,
-          "$Name_Power_0": 50
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Bay"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "Bay-C-Middle"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "$Platform.TopChassis"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal": {
+            "LocationOrdinalValue": 0,
+            "Orientation": "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal.Orientations.BottomToTop"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationReference": {
+            "LocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Middle"
+        },
+        "xyz.openbmc_project.Inventory.Item.Board": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
         }
-      },
-      {
-        "Address": "$Address",
-        "Bus": "$Bus",
-        "Name": "MCTPI2C_$Bus",
-        "PollingInterval": "5",
-        "StaticEndpointID": "$EID",
-        "Type": "MCTPI2CTarget"
-      }
-    ]
-  }
+    },
+    {
+        "Exposes": [
+            {
+                "FirmwareName": "BF4_1",
+                "Name": "$Name_PLDM",
+                "NetworkAdapter": "Bay_C_CX_NIC_$Instance",
+                "PortMaxSpeedMBps": 50000,
+                "Ports": {
+                    "200": "Port_0"
+                },
+                "SensorAuxNames": {
+                    "$Name": 5,
+                    "$Name_Power_0": 50,
+                    "$Name_Temp_0": 300,
+                    "Bay_C_CX_NIC_$Instance": 60,
+                    "Bay_C_CX_NIC_$Instance_Port_0_Temp_0": 500,
+                    "Bay_C_CX_NIC_$Instance_Port_0_Voltage_0": 400,
+                    "Bay_C_CX_NIC_$Instance_Port_1_Voltage_0": 401,
+                    "Port_0": 200
+                },
+                "Type": "PLDMDevice"
+            }
+        ],
+        "Name": "$Name_Platform",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_nic$', 'Generation': 'vera-rubin'})",
+        "Type": "NvDevice"
+    },
+    {
+        "Exposes": [
+            {
+                "Address": "$Address",
+                "Bus": "$Bus",
+                "Name": "MCTPI2C_$Bus",
+                "PollingInterval": "5",
+                "StaticEndpointID": "$EID",
+                "Type": "MCTPI2CTarget"
+            },
+            {
+                "Name": "$Name_PLDM",
+                "SensorAuxNames": {
+                    "$Name_Power_0": 50,
+                    "$Name_Temp_0": 300,
+                    "CX_NIC_$Instance_Port_0_Temp_0": 500,
+                    "Port_0": 200
+                },
+                "Type": "PLDMDevice"
+            }
+        ],
+        "Name": "$Name_Platform",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_nic_i2c$', 'Generation': 'vera-rubin'})",
+        "Type": "NvDevice"
+    }
 ]

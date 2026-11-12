@@ -1,71 +1,71 @@
 [
-  {
-    "Name": "$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^hmc_hpm_sma$', 'Generation': 'vera-rubin'})",
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "NSM_Telemetry",
-        "Type": "NSM_Telemetry",
-        "Kind": "hmc_hpm_sma",
-        "InstanceNumber": "$Instance",
-        "EID": "$EID",
-        "LocationContext": "$LocationContext",
-        "LocationCode": "$LocationCode",
-        "ProcessorModuleName": "$ParentChassis",
-        "ParentChassis": "$ParentChassis",
-        "ZoneChassisName": "$ZoneChassis",
-        "ParameterOverrides": {}
-      },
-      {
-        "ConnectsToName": "$Platform.BmcName",
-        "DeviceAddress": "MCTP:$EID",
-        "DeviceType": "MCTPBridge",
-        "Name": "$Name",
-        "Type": "PlatformDevice"
-      },
-      {
-        "Name": "$Name",
-        "Pages": [
-          {
-            "Bus": "$Bus",
-            "Idx": "Page1",
-            "RegAddr": "0x00",
-            "Size": 256,
-            "SlaveAddr": "0x0b"
-          },
-          {
-            "Bus": "$Bus",
-            "Idx": "Page1",
-            "Page": "0x00",
-            "RegAddr": "0x00",
-            "Size": 256,
-            "SlaveAddr": "0x11"
-          }
+    {
+        "Exposes": [
+            {
+                "Name": "$Name",
+                "Pages": [
+                    {
+                        "Bus": "$Bus",
+                        "Idx": "Page1",
+                        "RegAddr": "0x00",
+                        "Size": 256,
+                        "SlaveAddr": "0x0b"
+                    },
+                    {
+                        "Bus": "$Bus",
+                        "Idx": "Page1",
+                        "Page": "0x00",
+                        "RegAddr": "0x00",
+                        "Size": 256,
+                        "SlaveAddr": "0x11"
+                    }
+                ],
+                "SupportedDumps": [
+                    "RoT",
+                    "SMA",
+                    "CPLD"
+                ],
+                "Type": "Dump"
+            },
+            {
+                "Address": "$Address",
+                "Bus": "$Bus",
+                "Name": "$Name",
+                "PollingInterval": "1",
+                "StaticEndpointID": "$EID",
+                "Type": "MCTPI2CTarget"
+            },
+            {
+                "EID": "$EID",
+                "InstanceNumber": "$Instance",
+                "Kind": "hmc_hpm_sma",
+                "LocationCode": "$LocationCode",
+                "LocationContext": "$LocationContext",
+                "Name": "NSM_Telemetry",
+                "ParameterOverrides": {},
+                "ParentChassis": "$ParentChassis",
+                "ProcessorModuleName": "$ParentChassis",
+                "Type": "NSM_Telemetry",
+                "ZoneChassisName": "$ZoneChassis"
+            },
+            {
+                "Name": "$Name_PLDM",
+                "Type": "PLDMDevice",
+                "UpdateableComponents": {
+                    "$Platform.NamePrefixFW_CPLD_$Instance": 65283,
+                    "$Platform.NamePrefixFW_ProcessorModule_SMA_$Instance": 65282
+                }
+            },
+            {
+                "ConnectsToName": "$Platform.BmcName",
+                "DeviceAddress": "MCTP:$EID",
+                "DeviceType": "MCTPBridge",
+                "Name": "$Name",
+                "Type": "PlatformDevice"
+            }
         ],
-        "SupportedDumps": [
-          "RoT",
-          "SMA",
-          "CPLD"
-        ],
-        "Type": "Dump"
-      },
-      {
-        "Name": "$Name_PLDM",
-        "Type": "PLDMDevice",
-        "UpdateableComponents": {
-          "$Platform.NamePrefixFW_ProcessorModule_SMA_$Instance": 65282,
-          "$Platform.NamePrefixFW_CPLD_$Instance": 65283
-        }
-      },
-      {
-        "Address": "$Address",
-        "Bus": "$Bus",
         "Name": "$Name",
-        "PollingInterval": "1",
-        "StaticEndpointID": "$EID",
-        "Type": "MCTPI2CTarget"
-      }
-    ]
-  }
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^hmc_hpm_sma$', 'Generation': 'vera-rubin'})",
+        "Type": "NvDevice"
+    }
 ]

@@ -1,52 +1,52 @@
 [
-  {
-    "Name": "$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^irot$', 'Generation': 'vera-rubin'})",
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "NSM_Telemetry",
-        "Type": "NSM_Telemetry",
-        "Kind": "bmc_irot",
-        "InstanceNumber": "$Instance",
-        "EID": "$EID",
-        "ParentChassis": "$ParentChassis",
-        "PlatformPrefix": "$Platform.NamePrefix",
-        "LocationContext": "$LocationContext",
-        "LocationCode": "$LocationCode",
-        "ParameterOverrides": {}
-      },
-      {
-        "ConnectsToName": "$Platform.BmcName",
-        "DeviceAddress": "MCTP:$EID",
-        "DeviceType": "IROT",
-        "Name": "IROT_$Platform.BmcName",
-        "Type": "PlatformDevice"
-      },
-      {
-        "Name": "$Name_PLDM",
-        "Type": "PLDMDevice",
-        "UpdateableComponents": {
-          "$Platform.NamePrefixFW_IRoT_BMC_$Instance": 11,
-          "$Platform.NamePrefixFW_BMC_$Instance": 10
-        }
-      },
-      {
-        "Name": "$Name",
-        "SupportedDumps": [
-          "RoT",
-          "FwAttrs",
-          "HwCheckout"
+    {
+        "Exposes": [
+            {
+                "Name": "$Name",
+                "SupportedDumps": [
+                    "RoT",
+                    "FwAttrs",
+                    "HwCheckout"
+                ],
+                "Type": "Dump"
+            },
+            {
+                "Interface": "$Interface",
+                "Name": "$Name",
+                "PollingInterval": "15",
+                "StaticEndpointID": "$EID",
+                "Type": "MCTPXROTTarget"
+            },
+            {
+                "EID": "$EID",
+                "InstanceNumber": "$Instance",
+                "Kind": "bmc_irot",
+                "LocationCode": "$LocationCode",
+                "LocationContext": "$LocationContext",
+                "Name": "NSM_Telemetry",
+                "ParameterOverrides": {},
+                "ParentChassis": "$ParentChassis",
+                "PlatformPrefix": "$Platform.NamePrefix",
+                "Type": "NSM_Telemetry"
+            },
+            {
+                "Name": "$Name_PLDM",
+                "Type": "PLDMDevice",
+                "UpdateableComponents": {
+                    "$Platform.NamePrefixFW_BMC_$Instance": 10,
+                    "$Platform.NamePrefixFW_IRoT_BMC_$Instance": 11
+                }
+            },
+            {
+                "ConnectsToName": "$Platform.BmcName",
+                "DeviceAddress": "MCTP:$EID",
+                "DeviceType": "IROT",
+                "Name": "IROT_$Platform.BmcName",
+                "Type": "PlatformDevice"
+            }
         ],
-        "Type": "Dump"
-      },
-      {
-        "Interface": "$Interface",
         "Name": "$Name",
-        "PollingInterval": "15",
-        "StaticEndpointID": "$EID",
-        "Type": "MCTPXROTTarget"
-      }
-    ]
-  }
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^irot$', 'Generation': 'vera-rubin'})",
+        "Type": "NvDevice"
+    }
 ]

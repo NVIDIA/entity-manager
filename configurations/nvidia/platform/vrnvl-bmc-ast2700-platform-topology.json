@@ -1,103 +1,103 @@
 [
-  {
-    "Name": "Nvidia VR-NVL72 BMC AST2700",
-    "Probe": "TRUE",
-    "Type": "Platform",
-    "BmcName": "BMC_0",
-    "NamePrefix": "",
-    "TopChassis": "Chassis_0",
-    "SmmParent": "board/SMM_Interposer_0",
-    "SmmLocationContext": "Chassis_0/SMM_Interposer_0",
-    "PlatformExposes": [
-      {
-        "Name": "TopChassis",
-        "Type": "TopChassis",
-        "Chassis": "Chassis_0"
-      },
-      {
-        "Name": "ProcessorModule_0",
-        "Type": "NvBoard",
-        "Board": "HPM_BMC_PG558",
-        "Instance": 0,
-        "UsbHubPath": "1.1",
-        "SmaEid": 45
-      },
-      {
-        "Name": "ProcessorModule_1",
-        "Type": "NvBoard",
-        "Board": "HPM_BMC_PG558",
-        "Instance": 1,
-        "UsbHubPath": "1.2",
-        "SmaEid": 40
-      },
-      {
-        "Name": "IO_Board_Instance_0",
-        "Type": "NvBoard",
-        "Board": "IO_Board_CX9",
-        "Instance": 0,
-        "UsbHubPath": "1.1.4",
-        "Bay": "Left-Bottom",
-        "Side": "Left",
-        "CxPortA": "C3",
-        "CxPortB": "C4",
-        "IgnoreEIDs": "62,64",
-        "SsdIndex": 1
-      },
-      {
-        "Name": "IO_Board_Instance_1",
-        "Type": "NvBoard",
-        "Board": "IO_Board_CX9",
-        "Instance": 1,
-        "UsbHubPath": "1.1.3",
-        "Bay": "Left-Top",
-        "Side": "Left",
-        "CxPortA": "C1",
-        "CxPortB": "C2",
-        "IgnoreEIDs": "72,74",
-        "SsdIndex": 0
-      },
-      {
-        "Name": "IO_Board_Instance_2",
-        "Type": "NvBoard",
-        "Board": "IO_Board_CX9",
-        "Instance": 2,
-        "UsbHubPath": "1.2.3",
-        "Bay": "Right-Bottom",
-        "Side": "Right",
-        "CxPortA": "C7",
-        "CxPortB": "C8",
-        "IgnoreEIDs": "82,84",
-        "SsdIndex": 3
-      },
-      {
-        "Name": "IO_Board_Instance_3",
-        "Type": "NvBoard",
-        "Board": "IO_Board_CX9",
-        "Instance": 3,
-        "UsbHubPath": "1.2.4",
-        "Bay": "Right-Top",
-        "Side": "Right",
-        "CxPortA": "C5",
-        "CxPortB": "C6",
-        "IgnoreEIDs": "92,94",
-        "SsdIndex": 2
-      },
-      {
-        "Name": "NVMe_E1S_SMM",
-        "Type": "NvDevice",
-        "Kind": "nvme_smm",
-        "Generation": "vera-rubin",
-        "Instance": 0,
-        "LocationContext": "Chassis_0/SMM_Interposer_0",
-        "EID": 210,
-        "Transport": {
-          "Medium": "i2c",
-          "Bus": 7,
-          "Address": 29
-        }
-      }
-    ],
-    "UsbRootHubPath": "/sys/devices/platform/soc@14000000/14121000.usb",
-    "CxPoolBase": 1
-  }
+    {
+        "BmcName": "BMC_0",
+        "CxPoolBase": 1,
+        "Name": "Nvidia VR-NVL72 BMC AST2700",
+        "NamePrefix": "",
+        "PlatformExposes": [
+            {
+                "Board": "HPM_BMC_PG558",
+                "Instance": 0,
+                "Name": "ProcessorModule_0",
+                "SmaEid": 45,
+                "Type": "NvBoard",
+                "UsbHubPath": "1.1"
+            },
+            {
+                "Board": "HPM_BMC_PG558",
+                "Instance": 1,
+                "Name": "ProcessorModule_1",
+                "SmaEid": 40,
+                "Type": "NvBoard",
+                "UsbHubPath": "1.2"
+            },
+            {
+                "Bay": "Left-Bottom",
+                "Board": "IO_Board_CX9",
+                "CxPortA": "C3",
+                "CxPortB": "C4",
+                "IgnoreEIDs": "62,64",
+                "Instance": 0,
+                "Name": "IO_Board_Instance_0",
+                "Side": "Left",
+                "SsdIndex": 1,
+                "Type": "NvBoard",
+                "UsbHubPath": "1.1.4"
+            },
+            {
+                "Bay": "Left-Top",
+                "Board": "IO_Board_CX9",
+                "CxPortA": "C1",
+                "CxPortB": "C2",
+                "IgnoreEIDs": "72,74",
+                "Instance": 1,
+                "Name": "IO_Board_Instance_1",
+                "Side": "Left",
+                "SsdIndex": 0,
+                "Type": "NvBoard",
+                "UsbHubPath": "1.1.3"
+            },
+            {
+                "Bay": "Right-Bottom",
+                "Board": "IO_Board_CX9",
+                "CxPortA": "C7",
+                "CxPortB": "C8",
+                "IgnoreEIDs": "82,84",
+                "Instance": 2,
+                "Name": "IO_Board_Instance_2",
+                "Side": "Right",
+                "SsdIndex": 3,
+                "Type": "NvBoard",
+                "UsbHubPath": "1.2.3"
+            },
+            {
+                "Bay": "Right-Top",
+                "Board": "IO_Board_CX9",
+                "CxPortA": "C5",
+                "CxPortB": "C6",
+                "IgnoreEIDs": "92,94",
+                "Instance": 3,
+                "Name": "IO_Board_Instance_3",
+                "Side": "Right",
+                "SsdIndex": 2,
+                "Type": "NvBoard",
+                "UsbHubPath": "1.2.4"
+            },
+            {
+                "EID": 210,
+                "Generation": "vera-rubin",
+                "Instance": 0,
+                "Kind": "nvme_smm",
+                "LocationContext": "Chassis_0/SMM_Interposer_0",
+                "Name": "NVMe_E1S_SMM",
+                "Transport": {
+                    "Address": 29,
+                    "Bus": 7,
+                    "Medium": "i2c"
+                },
+                "Type": "NvDevice"
+            },
+            {
+                "Chassis": "Chassis_0",
+                "Name": "TopChassis",
+                "Type": "TopChassis"
+            }
+        ],
+        "Probe": "TRUE",
+        "SmmLocationContext": "Chassis_0/SMM_Interposer_0",
+        "SmmParent": "board/SMM_Interposer_0",
+        "TopChassis": "Chassis_0",
+        "Type": "Platform",
+        "UsbRootHubPath": "/sys/devices/platform/soc@14000000/14121000.usb"
+    }
 ]

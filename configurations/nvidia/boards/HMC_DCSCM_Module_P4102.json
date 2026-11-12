@@ -1,284 +1,284 @@
 [
-  {
-    "Name": "HGX_Chassis_0",
-    "Probe": [
-      "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
-      "OR",
-      "xyz.openbmc_project.FruDevice({'BUS': 4, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})"
-    ],
-    "Type": "Chassis",
-    "Associations": {
-      "all_managers": "bmc/HGX_BMC_0",
-      "computer_system": "system/HGX_Baseboard_0"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Asset": {
-      "Manufacturer": "NVIDIA",
-      "Model": "VR NVL72",
-      "PartNumber": "NOT_SUPPORTED",
-      "SerialNumber": "NOT_SUPPORTED"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Location": {
-      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Backplane"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-      "LocationCode": "HGX_Chassis_0"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-      "LocationContext": ""
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
-      "FieldReplaceable": false
-    },
-    "xyz.openbmc_project.Inventory.Decorator.SKU": {
-      "SKU": "NOT_SUPPORTED"
-    },
-    "xyz.openbmc_project.Inventory.Item.Chassis": {
-      "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Zone"
-    }
-  },
-  {
-    "Name": "HGX_SMM_0",
-    "Associations": {
-      "parent_chassis": "chassis/HGX_Chassis_0",
-      "all_managers": "bmc/HGX_BMC_0"
-    },
-    "Probe": [
-      "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
-      "OR",
-      "xyz.openbmc_project.FruDevice({'BUS': 4, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})"
-    ],
-    "Type": "Module",
-    "xyz.openbmc_project.Inventory.Decorator.Asset": {
-      "Manufacturer": "NVIDIA",
-      "Model": "VR NVL72",
-      "PartNumber": "NOT_SUPPORTED",
-      "SerialNumber": "NOT_SUPPORTED"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Location": {
-      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-      "LocationCode": "SMM_0"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-      "LocationContext": "HGX_Chassis_0"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
-      "FieldReplaceable": true
-    },
-    "xyz.openbmc_project.Inventory.Decorator.SKU": {
-      "SKU": ""
-    },
-    "xyz.openbmc_project.Inventory.Item.Chassis": {
-      "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Zone"
-    }
-  },
-  {
-    "Exposes": [
-      {
-        "Address": "$address",
-        "Bus": "$bus",
-        "Name": "HMC_FRU",
-        "Type": "EEPROM_24C02"
-      },
-      {
-        "Address": "0x48",
-        "Bus": "$bus",
-        "Name": "HGX_BMC_0_Temp_0",
-        "PhysicalContext": "Manager",
-        "Type": "TMP75C",
-        "Thresholds": [
-          {
-            "Direction": "greater than",
-            "Name": "upper non recoverable",
-            "Severity": 4,
-            "Value": 100.0
-          },
-          {
-            "Direction": "greater than",
-            "Name": "upper critical",
-            "Severity": 1,
-            "Value": 98.0
-          },
-          {
-            "Direction": "greater than",
-            "Name": "upper non critical",
-            "Severity": 0,
-            "Value": 95.0
-          },
-          {
-            "Direction": "less than",
-            "Name": "lower non critical",
-            "Severity": 0,
-            "Value": 5
-          }
-        ]
-      },
-      {
-        "FlashProtectedComponents": [
-          "HGX_FW_BMC_0"
-        ],
-        "Name": "HMC_WriteProtect",
-        "Sources": [
-          "HMC_Global_WriteProtect"
-        ],
-        "Type": "HardwareWriteProtectedControl"
-      },
-      {
-        "ActiveLow": false,
-        "LineName": "GLOBAL_WP_BUF-I",
-        "Name": "HMC_Global_WriteProtect",
-        "PollInterval": 5000,
-        "Type": "WriteProtectInput"
-      }
-    ],
-    "Name": "HGX_BMC_0",
-    "Associations": {
-      "parent_chassis": "module/HGX_SMM_0"
-    },
-    "Probe": [
-      "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
-      "OR",
-      "xyz.openbmc_project.FruDevice({'BUS': 4, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})"
-    ],
-    "Type": "BMC",
-    "xyz.openbmc_project.Control.Power.Mode": {
-      "AllowedPowerModes": [
-        "xyz.openbmc_project.Control.Power.Mode.PowerMode.OEM"
-      ],
-      "PowerMode": "xyz.openbmc_project.Control.Power.Mode.PowerMode.OEM",
-      "SafeMode": false
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Asset": {
-      "Manufacturer": "$BOARD_MANUFACTURER",
-      "Model": "VR NVL72",
-      "Name": "HGX Baseboard",
-      "PartNumber": "$BOARD_PART_NUMBER",
-      "SerialNumber": "$BOARD_SERIAL_NUMBER"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-      "Address": "$address",
-      "Bus": "$bus",
-      "Name": "HMC_FRU"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Location": {
-      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-      "LocationCode": "HMC_0"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-      "LocationContext": "HGX_Chassis_0/SMM_0"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
-      "FieldReplaceable": true
-    },
-    "xyz.openbmc_project.Inventory.Decorator.SKU": {
-      "SKU": ""
-    },
-    "xyz.openbmc_project.Inventory.Item.Chassis": {
-      "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
-    },
-    "xyz.openbmc_project.Inventory.Item.ManagementService": {},
-    "xyz.openbmc_project.State.Decorator.Health": {
-      "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
-    }
-  },
-  {
-    "Name": "HMC",
-    "Probe": [
-      "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
-      "OR",
-      "xyz.openbmc_project.FruDevice({'BUS': 4, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})"
-    ],
-    "Type": "Assembly",
-    "Board": "BMC/HGX_BMC_0",
-    "LocationType": "Slot",
-    "PhysicalContext": "GPUSubsystem",
-    "LocationCode": "HMC_0",
-    "LocationContext": "HGX_Chassis_0/SMM_0"
-  },
-  {
-    "Name": "HGX_HMC_ERoT",
-    "Probe": "FOUND('Nvidia VR-NVL144 HMC AST2600')",
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "HGX_ERoT_BMC_0",
-        "Type": "NvDevice",
-        "Kind": "erot",
-        "Instance": 0,
-        "Generation": "vera-rubin",
-        "ParentChassis": "HGX_BMC_0",
-        "LocationContext": "HGX_Chassis_0/SMM_0/HMC_0",
-        "LocationCode": "ERoT_HMC_0",
-        "EID": 9,
-        "Transport": {
-          "Medium": "spi",
-          "Bus": 0,
-          "ChipSelect": 2
+    {
+        "Associations": {
+            "all_managers": "bmc/HGX_BMC_0",
+            "computer_system": "system/HGX_Baseboard_0"
         },
-        "Recovery": {
-          "RecoveryType": "GlacierCrisis",
-          "SoftwareName": "HGX_FW_ERoT_BMC_0"
+        "Name": "HGX_Chassis_0",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
+            "OR",
+            "xyz.openbmc_project.FruDevice({'BUS': 4, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})"
+        ],
+        "Type": "Chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "NVIDIA",
+            "Model": "VR NVL72",
+            "PartNumber": "NOT_SUPPORTED",
+            "SerialNumber": "NOT_SUPPORTED"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Backplane"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "HGX_Chassis_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": ""
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": false
+        },
+        "xyz.openbmc_project.Inventory.Decorator.SKU": {
+            "SKU": "NOT_SUPPORTED"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Zone"
         }
-      }
-    ]
-  },
-  {
-    "Name": "HGX_HMC_IRoT",
-    "Probe": "FOUND('Nvidia VR-NVL144 HMC AST2700')",
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "HGX_IRoT_BMC_0",
-        "Type": "NvDevice",
-        "Kind": "irot",
-        "Instance": 0,
-        "Generation": "vera-rubin",
-        "ParentChassis": "HGX_BMC_0",
-        "LocationContext": "HGX_Chassis_0/SMM_0/HMC_0",
-        "LocationCode": "IRoT_BMC_0",
-        "EID": 9,
-        "Transport": {
-          "Medium": "xrot",
-          "Interface": "mctpirot0"
+    },
+    {
+        "Associations": {
+            "all_managers": "bmc/HGX_BMC_0",
+            "parent_chassis": "chassis/HGX_Chassis_0"
+        },
+        "Name": "HGX_SMM_0",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
+            "OR",
+            "xyz.openbmc_project.FruDevice({'BUS': 4, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})"
+        ],
+        "Type": "Module",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "NVIDIA",
+            "Model": "VR NVL72",
+            "PartNumber": "NOT_SUPPORTED",
+            "SerialNumber": "NOT_SUPPORTED"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "SMM_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "HGX_Chassis_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": true
+        },
+        "xyz.openbmc_project.Inventory.Decorator.SKU": {
+            "SKU": ""
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Zone"
         }
-      }
-    ]
-  },
-  {
-    "Name": "HGX_HMC_USB_Gadget",
-    "Probe": [
-      "FOUND('Nvidia VR-NVL144 HMC AST2600')",
-      "OR",
-      "FOUND('Nvidia VR-NVL144 HMC AST2700')"
-    ],
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "HMC_USB_GADGET_0",
-        "Type": "MCTPUSBGadgetTarget",
-        "Interface": "mctpusbg0",
-        "LocalEID": "8"
-      }
-    ]
-  },
-  {
-    "Name": "HGX_HMC_BMC_Device",
-    "Probe": [
-      "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
-      "OR",
-      "xyz.openbmc_project.FruDevice({'BUS': 4, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})"
-    ],
-    "Type": "NvDevice",
-    "Exposes": [
-      {
+    },
+    {
+        "Associations": {
+            "parent_chassis": "module/HGX_SMM_0"
+        },
+        "Exposes": [
+            {
+                "Address": "$address",
+                "Bus": "$bus",
+                "Name": "HMC_FRU",
+                "Type": "EEPROM_24C02"
+            },
+            {
+                "FlashProtectedComponents": [
+                    "HGX_FW_BMC_0"
+                ],
+                "Name": "HMC_WriteProtect",
+                "Sources": [
+                    "HMC_Global_WriteProtect"
+                ],
+                "Type": "HardwareWriteProtectedControl"
+            },
+            {
+                "Address": "0x48",
+                "Bus": "$bus",
+                "Name": "HGX_BMC_0_Temp_0",
+                "PhysicalContext": "Manager",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non recoverable",
+                        "Severity": 4,
+                        "Value": 100.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 98.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 95.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    }
+                ],
+                "Type": "TMP75C"
+            },
+            {
+                "ActiveLow": false,
+                "LineName": "GLOBAL_WP_BUF-I",
+                "Name": "HMC_Global_WriteProtect",
+                "PollInterval": 5000,
+                "Type": "WriteProtectInput"
+            }
+        ],
         "Name": "HGX_BMC_0",
-        "Type": "PlatformDevice",
-        "DeviceAddress": "MCTP:9",
-        "DeviceType": "BMC"
-      }
-    ]
-  }
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
+            "OR",
+            "xyz.openbmc_project.FruDevice({'BUS': 4, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})"
+        ],
+        "Type": "BMC",
+        "xyz.openbmc_project.Control.Power.Mode": {
+            "AllowedPowerModes": [
+                "xyz.openbmc_project.Control.Power.Mode.PowerMode.OEM"
+            ],
+            "PowerMode": "xyz.openbmc_project.Control.Power.Mode.PowerMode.OEM",
+            "SafeMode": false
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "VR NVL72",
+            "Name": "HGX Baseboard",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "$address",
+            "Bus": "$bus",
+            "Name": "HMC_FRU"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Slot"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "HMC_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "HGX_Chassis_0/SMM_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": true
+        },
+        "xyz.openbmc_project.Inventory.Decorator.SKU": {
+            "SKU": ""
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.Inventory.Item.ManagementService": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    },
+    {
+        "Board": "BMC/HGX_BMC_0",
+        "LocationCode": "HMC_0",
+        "LocationContext": "HGX_Chassis_0/SMM_0",
+        "LocationType": "Slot",
+        "Name": "HMC",
+        "PhysicalContext": "GPUSubsystem",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
+            "OR",
+            "xyz.openbmc_project.FruDevice({'BUS': 4, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})"
+        ],
+        "Type": "Assembly"
+    },
+    {
+        "Exposes": [
+            {
+                "EID": 9,
+                "Generation": "vera-rubin",
+                "Instance": 0,
+                "Kind": "erot",
+                "LocationCode": "ERoT_HMC_0",
+                "LocationContext": "HGX_Chassis_0/SMM_0/HMC_0",
+                "Name": "HGX_ERoT_BMC_0",
+                "ParentChassis": "HGX_BMC_0",
+                "Recovery": {
+                    "RecoveryType": "GlacierCrisis",
+                    "SoftwareName": "HGX_FW_ERoT_BMC_0"
+                },
+                "Transport": {
+                    "Bus": 0,
+                    "ChipSelect": 2,
+                    "Medium": "spi"
+                },
+                "Type": "NvDevice"
+            }
+        ],
+        "Name": "HGX_HMC_ERoT",
+        "Probe": "FOUND('Nvidia VR-NVL144 HMC AST2600')",
+        "Type": "NvDevice"
+    },
+    {
+        "Exposes": [
+            {
+                "EID": 9,
+                "Generation": "vera-rubin",
+                "Instance": 0,
+                "Kind": "irot",
+                "LocationCode": "IRoT_BMC_0",
+                "LocationContext": "HGX_Chassis_0/SMM_0/HMC_0",
+                "Name": "HGX_IRoT_BMC_0",
+                "ParentChassis": "HGX_BMC_0",
+                "Transport": {
+                    "Interface": "mctpirot0",
+                    "Medium": "xrot"
+                },
+                "Type": "NvDevice"
+            }
+        ],
+        "Name": "HGX_HMC_IRoT",
+        "Probe": "FOUND('Nvidia VR-NVL144 HMC AST2700')",
+        "Type": "NvDevice"
+    },
+    {
+        "Exposes": [
+            {
+                "Interface": "mctpusbg0",
+                "LocalEID": "8",
+                "Name": "HMC_USB_GADGET_0",
+                "Type": "MCTPUSBGadgetTarget"
+            }
+        ],
+        "Name": "HGX_HMC_USB_Gadget",
+        "Probe": [
+            "FOUND('Nvidia VR-NVL144 HMC AST2600')",
+            "OR",
+            "FOUND('Nvidia VR-NVL144 HMC AST2700')"
+        ],
+        "Type": "NvDevice"
+    },
+    {
+        "Exposes": [
+            {
+                "DeviceAddress": "MCTP:9",
+                "DeviceType": "BMC",
+                "Name": "HGX_BMC_0",
+                "Type": "PlatformDevice"
+            }
+        ],
+        "Name": "HGX_HMC_BMC_Device",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})",
+            "OR",
+            "xyz.openbmc_project.FruDevice({'BUS': 4, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})"
+        ],
+        "Type": "NvDevice"
+    }
 ]

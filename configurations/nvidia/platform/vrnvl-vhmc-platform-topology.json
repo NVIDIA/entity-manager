@@ -1,41 +1,41 @@
 [
-  {
-    "Name": "Nvidia VR-NVL72 vHMC on VR NVL BMC",
-    "Probe": "TRUE",
-    "Type": "Platform",
-    "NamePrefix": "HGX_",
-    "BmcName": "",
-    "UsbRootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
-    "PlatformExposes": [
-      {
-        "Name": "DevicePrefix",
-        "Type": "DevicePrefix",
-        "Prefix": "HGX_"
-      },
-      {
-        "Name": "TopChassis",
-        "Type": "TopChassis",
-        "Chassis": "HGX_Chassis_0"
-      },
-      {
-        "Name": "HGX_ProcessorModule_0",
-        "Type": "NvBoard",
-        "Board": "HPM_HMC_PG558",
-        "Instance": 0,
-        "UsbHubPath": "1.3.1",
-        "SmaI2cBus": 1,
-        "Side": "Left",
-        "ZoneChassis": "HGX_Chassis_0"
-      },
-      {
-        "Name": "HGX_ProcessorModule_1",
-        "Type": "NvBoard",
-        "Board": "HPM_HMC_PG558",
-        "Instance": 1,
-        "UsbHubPath": "1.3.2",
-        "SmaI2cBus": 3,
-        "Side": "Right"
-      }
-    ]
-  }
+    {
+        "BmcName": "",
+        "Name": "Nvidia VR-NVL72 vHMC on VR NVL BMC",
+        "NamePrefix": "HGX_",
+        "PlatformExposes": [
+            {
+                "Name": "DevicePrefix",
+                "Prefix": "HGX_",
+                "Type": "DevicePrefix"
+            },
+            {
+                "Board": "HPM_HMC_PG558",
+                "Instance": 0,
+                "Name": "HGX_ProcessorModule_0",
+                "Side": "Left",
+                "SmaI2cBus": 1,
+                "Type": "NvBoard",
+                "UsbHubPath": "1.3.1",
+                "ZoneChassis": "HGX_Chassis_0"
+            },
+            {
+                "Board": "HPM_HMC_PG558",
+                "Instance": 1,
+                "Name": "HGX_ProcessorModule_1",
+                "Side": "Right",
+                "SmaI2cBus": 3,
+                "Type": "NvBoard",
+                "UsbHubPath": "1.3.2"
+            },
+            {
+                "Chassis": "HGX_Chassis_0",
+                "Name": "TopChassis",
+                "Type": "TopChassis"
+            }
+        ],
+        "Probe": "TRUE",
+        "Type": "Platform",
+        "UsbRootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb"
+    }
 ]

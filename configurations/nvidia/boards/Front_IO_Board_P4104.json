@@ -1,10 +1,10 @@
 [
     {
-        "Exposes": [],
-        "Name": "FIO_Board_0",
         "Associations": {
             "parent_chassis": "chassis/Chassis_0"
         },
+        "Exposes": [],
+        "Name": "FIO_Board_0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 23, 'ADDRESS': 87, 'PRODUCT_PRODUCT_NAME': '.?FIO.?'})",
         "Type": "Board",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
@@ -23,9 +23,9 @@
         }
     },
     {
+        "Board": "Board/FIO_Board_0",
         "Name": "FIO_Board_0",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 23, 'ADDRESS': 87, 'PRODUCT_PRODUCT_NAME': '.?FIO.?'})",
-        "Type": "Assembly",
-        "Board": "Board/FIO_Board_0"
+        "Type": "Assembly"
     }
 ]

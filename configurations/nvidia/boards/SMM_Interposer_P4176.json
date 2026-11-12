@@ -1,5 +1,9 @@
 [
     {
+        "Associations": {
+            "all_managers": "board/SMM_Interposer_0",
+            "parent_chassis": "chassis/Chassis_0"
+        },
         "Exposes": [
             {
                 "Name": "SMM0Port",
@@ -13,10 +17,6 @@
             }
         ],
         "Name": "SMM_Interposer_0",
-        "Associations": {
-            "parent_chassis": "chassis/Chassis_0",
-            "all_managers": "board/SMM_Interposer_0"
-        },
         "Probe": [
             "xyz.openbmc_project.FruDevice({'BUS': 13, 'ADDRESS': 85})",
             "OR",
@@ -58,13 +58,13 @@
         }
     },
     {
+        "Board": "Board/SMM_Interposer_0",
         "Name": "SMM Interposer",
         "Probe": [
             "xyz.openbmc_project.FruDevice({'BUS': 13, 'ADDRESS': 85})",
             "OR",
             "xyz.openbmc_project.FruDevice({'BUS': 7, 'ADDRESS': 85})"
         ],
-        "Type": "Assembly",
-        "Board": "Board/SMM_Interposer_0"
+        "Type": "Assembly"
     }
 ]

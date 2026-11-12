@@ -1,16 +1,16 @@
 [
-  {
-    "Name": "Nvidia VR-C2 BMC Recovery Packages",
-    "Probe": "FOUND('Nvidia VR-C2 BMC')",
-    "Type": "Platform",
-    "PlatformExposes": [
-      {
-        "Name": "RecoveryPackages",
-        "Type": "RecoveryPackages",
-        "GlacierPackageUUID": "DBC2D178F70711EEBB65CFE7103AC1AC",
-        "MCUGPUPackageUUID": "30546141D0614097829DADD8E9466DCA",
-        "MCUHPMPackageUUID": "E7A31C9F48B2D075C3FE6A41B09D57E2"
-      }
-    ]
-  }
+    {
+        "Name": "Nvidia VR-C2 BMC Recovery Packages",
+        "PlatformExposes": [
+            {
+                "GlacierPackageUUID": "DBC2D178F70711EEBB65CFE7103AC1AC",
+                "MCUGPUPackageUUID": "30546141D0614097829DADD8E9466DCA",
+                "MCUHPMPackageUUID": "E7A31C9F48B2D075C3FE6A41B09D57E2",
+                "Name": "RecoveryPackages",
+                "Type": "RecoveryPackages"
+            }
+        ],
+        "Probe": "FOUND('Nvidia VR-C2 BMC')",
+        "Type": "Platform"
+    }
 ]

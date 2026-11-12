@@ -2,101 +2,12 @@
     {
         "Exposes": [
             {
-                "Address": "0x4f",
-                "Bus": 3,
-                "Name": "HMC_0_SMBus",
-                "Type": "SatelliteBus"
-            },
-            {
-                "Name": "GPU_X_Pwr",
-                "Type": "SatelliteGroup",
-                "SensorType": "Power",
-                "StaleOffset": 107,
-                "FirstStaleBit": 0,
-                "MaxValue": 2300,
-                "MinValue": 200,
-                "Sensors": {
-                    "GPU_0_Pwr": 75,
-                    "GPU_1_Pwr": 79,
-                    "GPU_2_Pwr": 83,
-                    "GPU_3_Pwr": 87
-                }
-            },
-            {
-                "Name": "GPU_X_Temp_1",
-                "Type": "SatelliteGroup",
-                "SensorType": "Temperature",
-                "StaleOffset": 140,
-                "FirstStaleBit": 0,
                 "MaxValue": 127,
                 "MinValue": -128,
-                "Thresholds": [
-                    {
-                        "Direction": "less than",
-                        "Severity": 4,
-                        "Value": -5.0
-                    },
-                    {
-                        "Direction": "less than",
-                        "Severity": 3,
-                        "Value": -4.0
-                    },
-                    {
-                        "Direction": "less than",
-                        "Severity": 1,
-                        "Value": -4.0
-                    },
-                    {
-                        "Direction": "less than",
-                        "Severity": 0,
-                        "Value": -2.0
-                    }
-                ],
-                "Sensors": {
-                    "GPU_0_Temp_1": 108,
-                    "GPU_1_Temp_1": 112,
-                    "GPU_2_Temp_1": 116,
-                    "GPU_3_Temp_1": 120
-                }
-            },
-            {
-                "Name": "GPU_X_Engy",
-                "Type": "SatelliteGroup",
-                "SensorType": "Energy",
-                "StaleOffset": 205,
-                "FirstStaleBit": 0,
-                "MaxValue": 4294970000.0,
-                "MinValue": 0,
-                "Sensors": {
-                    "GPU_0_Engy": 141,
-                    "GPU_1_Engy": 149,
-                    "GPU_2_Engy": 157,
-                    "GPU_3_Engy": 165
-                }
-            },
-            {
-                "Name": "GPU_X_DRAM_Pwr",
-                "Type": "SatelliteGroup",
-                "SensorType": "Power",
-                "StaleOffset": 238,
-                "FirstStaleBit": 0,
-                "MaxValue": 800,
-                "MinValue": 0,
-                "Sensors": {
-                    "GPU_0_DRAM_Pwr": 206,
-                    "GPU_1_DRAM_Pwr": 210,
-                    "GPU_2_DRAM_Pwr": 214,
-                    "GPU_3_DRAM_Pwr": 218
-                }
-            },
-            {
                 "Name": "HMC_0_Temp_0",
                 "OffsetValue": 240,
-                "SensorType": "Temperature",
-                "Type": "Satellite",
                 "PowerState": "Always",
-                "MaxValue": 127,
-                "MinValue": -128,
+                "SensorType": "Temperature",
                 "Thresholds": [
                     {
                         "Direction": "greater than",
@@ -123,16 +34,415 @@
                         "Severity": 0,
                         "Value": 5
                     }
-                ]
+                ],
+                "Type": "Satellite"
             },
             {
-                "Name": "GPU_X_Temp_0",
-                "Type": "SatelliteGroup",
+                "MaxValue": 100000,
+                "MinValue": 0,
+                "Name": "M0_CPU_Engy",
+                "OffsetValue": 640,
+                "SensorType": "Energy",
+                "StaleBit": 0,
+                "StaleOffset": 512,
+                "Type": "Satellite",
+                "ValueType": "PLDM"
+            },
+            {
+                "MaxValue": 900,
+                "MinValue": 50,
+                "Name": "M0_CPU_Pwr",
+                "OffsetValue": 648,
+                "SensorType": "Power",
+                "StaleBit": 1,
+                "StaleOffset": 512,
+                "Type": "Satellite",
+                "ValueType": "PLDM"
+            },
+            {
+                "Name": "M0_CPU_Temp_Avg",
+                "OffsetValue": 672,
                 "SensorType": "Temperature",
-                "StaleOffset": 256,
+                "StaleBit": 4,
+                "StaleOffset": 512,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Severity": 4,
+                        "Value": 95.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Severity": 3,
+                        "Value": 93.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Severity": 1,
+                        "Value": 93.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Severity": 0,
+                        "Value": 90.0
+                    }
+                ],
+                "Type": "Satellite",
+                "ValueType": "PLDM"
+            },
+            {
+                "Name": "M0_CPU_TLimit",
+                "OffsetValue": 680,
+                "SensorType": "Temperature",
+                "StaleBit": 5,
+                "StaleOffset": 512,
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Severity": 4,
+                        "Value": -5.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Severity": 3,
+                        "Value": -4.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Severity": 1,
+                        "Value": -4.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Severity": 0,
+                        "Value": -2.0
+                    }
+                ],
+                "Type": "Satellite",
+                "ValueType": "PLDM"
+            },
+            {
+                "MaxValue": 100000,
+                "MinValue": 0,
+                "Name": "M1_CPU_Engy",
+                "OffsetValue": 896,
+                "SensorType": "Energy",
+                "StaleBit": 0,
+                "StaleOffset": 544,
+                "Type": "Satellite",
+                "ValueType": "PLDM"
+            },
+            {
+                "MaxValue": 900,
+                "MinValue": 50,
+                "Name": "M1_CPU_Pwr",
+                "OffsetValue": 904,
+                "SensorType": "Power",
+                "StaleBit": 1,
+                "StaleOffset": 544,
+                "Type": "Satellite",
+                "ValueType": "PLDM"
+            },
+            {
+                "Name": "M1_CPU_Temp_Avg",
+                "OffsetValue": 928,
+                "SensorType": "Temperature",
+                "StaleBit": 4,
+                "StaleOffset": 544,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Severity": 4,
+                        "Value": 95.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Severity": 3,
+                        "Value": 93.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Severity": 1,
+                        "Value": 93.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Severity": 0,
+                        "Value": 90.0
+                    }
+                ],
+                "Type": "Satellite",
+                "ValueType": "PLDM"
+            },
+            {
+                "Name": "M1_CPU_TLimit",
+                "OffsetValue": 936,
+                "SensorType": "Temperature",
+                "StaleBit": 5,
+                "StaleOffset": 544,
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Severity": 4,
+                        "Value": -5.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Severity": 3,
+                        "Value": -4.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Severity": 1,
+                        "Value": -4.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Severity": 0,
+                        "Value": -2.0
+                    }
+                ],
+                "Type": "Satellite",
+                "ValueType": "PLDM"
+            },
+            {
+                "Name": "M0_GPU_VR_Temp",
+                "OffsetValue": 1208,
+                "PowerState": "Always",
+                "SensorType": "Temperature",
+                "StaleBit": 0,
+                "StaleOffset": 584,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Severity": 4,
+                        "Value": 135.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Severity": 3,
+                        "Value": 130.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Severity": 1,
+                        "Value": 130.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Severity": 0,
+                        "Value": 120.0
+                    }
+                ],
+                "Type": "Satellite"
+            },
+            {
+                "Name": "M1_GPU_VR_Temp",
+                "OffsetValue": 1216,
+                "PowerState": "Always",
+                "SensorType": "Temperature",
+                "StaleBit": 2,
+                "StaleOffset": 584,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Severity": 4,
+                        "Value": 135.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Severity": 3,
+                        "Value": 130.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Severity": 1,
+                        "Value": 130.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Severity": 0,
+                        "Value": 120.0
+                    }
+                ],
+                "Type": "Satellite"
+            },
+            {
+                "Name": "M1_BusBar_Temp",
+                "OffsetValue": 1220,
+                "PowerState": "Always",
+                "SensorType": "Temperature",
+                "StaleBit": 3,
+                "StaleOffset": 584,
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Severity": 4,
+                        "Value": 110.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Severity": 3,
+                        "Value": 107.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Severity": 1,
+                        "Value": 107.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Severity": 0,
+                        "Value": 105.0
+                    }
+                ],
+                "Type": "Satellite"
+            },
+            {
+                "MaxValue": 12125,
+                "MinValue": 0,
+                "Name": "M0_HSCC_Pwr",
+                "OffsetValue": 1184,
+                "PowerState": "Always",
+                "SensorType": "Power",
+                "StaleBit": 2,
+                "StaleOffset": 582,
+                "Type": "Satellite"
+            },
+            {
+                "MaxValue": 12500,
+                "MinValue": 0,
+                "Name": "M0_HSC_Pwr",
+                "OffsetValue": 1188,
+                "PowerState": "Always",
+                "SensorType": "Power",
+                "StaleBit": 3,
+                "StaleOffset": 582,
+                "Type": "Satellite"
+            },
+            {
+                "MaxValue": 12125,
+                "MinValue": 0,
+                "Name": "M1_HSCC_Pwr",
+                "OffsetValue": 1200,
+                "PowerState": "Always",
+                "SensorType": "Power",
+                "StaleBit": 2,
+                "StaleOffset": 583,
+                "Type": "Satellite"
+            },
+            {
+                "MaxValue": 12500,
+                "MinValue": 0,
+                "Name": "M1_HSC_Pwr",
+                "OffsetValue": 1204,
+                "PowerState": "Always",
+                "SensorType": "Power",
+                "StaleBit": 3,
+                "StaleOffset": 583,
+                "Type": "Satellite"
+            },
+            {
+                "Address": "0x4f",
+                "Bus": 3,
+                "Name": "HMC_0_SMBus",
+                "Type": "SatelliteBus"
+            },
+            {
+                "FirstStaleBit": 0,
+                "MaxValue": 2300,
+                "MinValue": 200,
+                "Name": "GPU_X_Pwr",
+                "SensorType": "Power",
+                "Sensors": {
+                    "GPU_0_Pwr": 75,
+                    "GPU_1_Pwr": 79,
+                    "GPU_2_Pwr": 83,
+                    "GPU_3_Pwr": 87
+                },
+                "StaleOffset": 107,
+                "Type": "SatelliteGroup"
+            },
+            {
                 "FirstStaleBit": 0,
                 "MaxValue": 127,
                 "MinValue": -128,
+                "Name": "GPU_X_Temp_1",
+                "SensorType": "Temperature",
+                "Sensors": {
+                    "GPU_0_Temp_1": 108,
+                    "GPU_1_Temp_1": 112,
+                    "GPU_2_Temp_1": 116,
+                    "GPU_3_Temp_1": 120
+                },
+                "StaleOffset": 140,
+                "Thresholds": [
+                    {
+                        "Direction": "less than",
+                        "Severity": 4,
+                        "Value": -5.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Severity": 3,
+                        "Value": -4.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Severity": 1,
+                        "Value": -4.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Severity": 0,
+                        "Value": -2.0
+                    }
+                ],
+                "Type": "SatelliteGroup"
+            },
+            {
+                "FirstStaleBit": 0,
+                "MaxValue": 4294970000.0,
+                "MinValue": 0,
+                "Name": "GPU_X_Engy",
+                "SensorType": "Energy",
+                "Sensors": {
+                    "GPU_0_Engy": 141,
+                    "GPU_1_Engy": 149,
+                    "GPU_2_Engy": 157,
+                    "GPU_3_Engy": 165
+                },
+                "StaleOffset": 205,
+                "Type": "SatelliteGroup"
+            },
+            {
+                "FirstStaleBit": 0,
+                "MaxValue": 800,
+                "MinValue": 0,
+                "Name": "GPU_X_DRAM_Pwr",
+                "SensorType": "Power",
+                "Sensors": {
+                    "GPU_0_DRAM_Pwr": 206,
+                    "GPU_1_DRAM_Pwr": 210,
+                    "GPU_2_DRAM_Pwr": 214,
+                    "GPU_3_DRAM_Pwr": 218
+                },
+                "StaleOffset": 238,
+                "Type": "SatelliteGroup"
+            },
+            {
+                "FirstStaleBit": 0,
+                "MaxValue": 127,
+                "MinValue": -128,
+                "Name": "GPU_X_Temp_0",
+                "SensorType": "Temperature",
+                "Sensors": {
+                    "GPU_0_Temp_0": 288,
+                    "GPU_1_Temp_0": 292,
+                    "GPU_2_Temp_0": 296,
+                    "GPU_3_Temp_0": 300
+                },
+                "StaleOffset": 256,
                 "Thresholds": [
                     {
                         "Direction": "greater than",
@@ -155,420 +465,107 @@
                         "Value": 90.0
                     }
                 ],
-                "Sensors": {
-                    "GPU_0_Temp_0": 288,
-                    "GPU_1_Temp_0": 292,
-                    "GPU_2_Temp_0": 296,
-                    "GPU_3_Temp_0": 300
-                }
+                "Type": "SatelliteGroup"
             },
             {
-                "Name": "M0_CPU_Engy",
-                "OffsetValue": 640,
-                "SensorType": "Energy",
-                "Type": "Satellite",
-                "ValueType": "PLDM",
-                "StaleOffset": 512,
-                "StaleBit": 0,
-                "MaxValue": 100000,
-                "MinValue": 0
-            },
-            {
-                "Name": "M0_CPU_Pwr",
-                "OffsetValue": 648,
-                "SensorType": "Power",
-                "Type": "Satellite",
-                "ValueType": "PLDM",
-                "StaleOffset": 512,
-                "StaleBit": 1,
-                "MaxValue": 900,
-                "MinValue": 50
-            },
-            {
-                "Name": "M0_Vreg_XXX_Pwr",
-                "Type": "SatelliteGroup",
-                "SensorType": "Power",
-                "StaleOffset": 512,
                 "FirstStaleBit": 2,
-                "ValueType": "PLDM",
                 "MaxValue": 900,
                 "MinValue": 0,
+                "Name": "M0_Vreg_XXX_Pwr",
+                "SensorType": "Power",
                 "Sensors": {
                     "M0_Vreg_CPU_Pwr": 656,
                     "M0_Vreg_Soc_Pwr": 664
-                }
-            },
-            {
-                "Name": "M0_CPU_Temp_Avg",
-                "OffsetValue": 672,
-                "SensorType": "Temperature",
-                "Type": "Satellite",
-                "ValueType": "PLDM",
+                },
                 "StaleOffset": 512,
-                "StaleBit": 4,
-                "Thresholds": [
-                    {
-                        "Direction": "greater than",
-                        "Severity": 4,
-                        "Value": 95.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Severity": 3,
-                        "Value": 93.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Severity": 1,
-                        "Value": 93.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Severity": 0,
-                        "Value": 90.0
-                    }
-                ]
-            },
-            {
-                "Name": "M0_CPU_TLimit",
-                "OffsetValue": 680,
-                "SensorType": "Temperature",
-                "Type": "Satellite",
-                "ValueType": "PLDM",
-                "StaleOffset": 512,
-                "StaleBit": 5,
-                "Thresholds": [
-                    {
-                        "Direction": "less than",
-                        "Severity": 4,
-                        "Value": -5.0
-                    },
-                    {
-                        "Direction": "less than",
-                        "Severity": 3,
-                        "Value": -4.0
-                    },
-                    {
-                        "Direction": "less than",
-                        "Severity": 1,
-                        "Value": -4.0
-                    },
-                    {
-                        "Direction": "less than",
-                        "Severity": 0,
-                        "Value": -2.0
-                    }
-                ]
-            },
-            {
-                "Name": "MX_VregXXX_Volt",
                 "Type": "SatelliteGroup",
-                "SensorType": "Voltage",
-                "ValueType": "PLDM",
+                "ValueType": "PLDM"
+            },
+            {
                 "MaxValue": 100,
                 "MinValue": 0,
+                "Name": "MX_VregXXX_Volt",
+                "SensorType": "Voltage",
                 "Sensors": {
                     "M0_VregCPU_Volt": 688,
                     "M0_VregSoc_Volt": 696,
                     "M1_VregCPU_Volt": 944,
                     "M1_VregSoc_Volt": 952
-                }
-            },
-            {
-                "Name": "M1_CPU_Engy",
-                "OffsetValue": 896,
-                "SensorType": "Energy",
-                "Type": "Satellite",
-                "ValueType": "PLDM",
-                "StaleOffset": 544,
-                "StaleBit": 0,
-                "MaxValue": 100000,
-                "MinValue": 0
-            },
-            {
-                "Name": "M1_CPU_Pwr",
-                "OffsetValue": 904,
-                "SensorType": "Power",
-                "Type": "Satellite",
-                "ValueType": "PLDM",
-                "StaleOffset": 544,
-                "StaleBit": 1,
-                "MaxValue": 900,
-                "MinValue": 50
-            },
-            {
-                "Name": "M1_Vreg_XXX_Pwr",
+                },
                 "Type": "SatelliteGroup",
-                "SensorType": "Power",
-                "StaleOffset": 544,
+                "ValueType": "PLDM"
+            },
+            {
                 "FirstStaleBit": 2,
-                "ValueType": "PLDM",
                 "MaxValue": 900,
                 "MinValue": 0,
+                "Name": "M1_Vreg_XXX_Pwr",
+                "SensorType": "Power",
                 "Sensors": {
                     "M1_Vreg_CPU_Pwr": 912,
                     "M1_Vreg_Soc_Pwr": 920
-                }
-            },
-            {
-                "Name": "M1_CPU_Temp_Avg",
-                "OffsetValue": 928,
-                "SensorType": "Temperature",
-                "Type": "Satellite",
-                "ValueType": "PLDM",
+                },
                 "StaleOffset": 544,
-                "StaleBit": 4,
-                "Thresholds": [
-                    {
-                        "Direction": "greater than",
-                        "Severity": 4,
-                        "Value": 95.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Severity": 3,
-                        "Value": 93.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Severity": 1,
-                        "Value": 93.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Severity": 0,
-                        "Value": 90.0
-                    }
-                ]
-            },
-            {
-                "Name": "M1_CPU_TLimit",
-                "OffsetValue": 936,
-                "SensorType": "Temperature",
-                "Type": "Satellite",
-                "ValueType": "PLDM",
-                "StaleOffset": 544,
-                "StaleBit": 5,
-                "Thresholds": [
-                    {
-                        "Direction": "less than",
-                        "Severity": 4,
-                        "Value": -5.0
-                    },
-                    {
-                        "Direction": "less than",
-                        "Severity": 3,
-                        "Value": -4.0
-                    },
-                    {
-                        "Direction": "less than",
-                        "Severity": 1,
-                        "Value": -4.0
-                    },
-                    {
-                        "Direction": "less than",
-                        "Severity": 0,
-                        "Value": -2.0
-                    }
-                ]
-            },
-            {
-                "Name": "GPU_SMA_X_Temp",
                 "Type": "SatelliteGroup",
-                "SensorType": "Temperature",
-                "StaleOffset": 576,
+                "ValueType": "PLDM"
+            },
+            {
                 "FirstStaleBit": 0,
+                "Name": "GPU_SMA_X_Temp",
                 "PowerState": "Always",
+                "SensorType": "Temperature",
                 "Sensors": {
                     "GPU_SMA_0_Temp": 1088,
                     "GPU_SMA_1_Temp": 1092
-                }
+                },
+                "StaleOffset": 576,
+                "Type": "SatelliteGroup"
             },
             {
-                "Name": "MX_HPM_SMA_Temp",
-                "Type": "SatelliteGroup",
-                "SensorType": "Temperature",
-                "StaleOffset": 576,
                 "FirstStaleBit": 2,
+                "Name": "MX_HPM_SMA_Temp",
+                "SensorType": "Temperature",
                 "Sensors": {
                     "M0_HPM_SMA_Temp": 1096,
                     "M1_HPM_SMA_Temp": 1100
-                }
+                },
+                "StaleOffset": 576,
+                "Type": "SatelliteGroup"
             },
             {
+                "FirstStaleBit": 0,
                 "Name": "M0_CPU_Soc_Temp_Group",
-                "Type": "SatelliteGroup",
-                "SensorType": "Temperature",
-                "StaleOffset": 577,
-                "FirstStaleBit": 0,
                 "PowerState": "Always",
+                "SensorType": "Temperature",
                 "Sensors": {
-                    "M0_CPU_Soc_Temp": 1104,
                     "M0_CPU_Die_Temp": 1108,
-                    "M0_SMA_Ext_Temp": 1112,
+                    "M0_CPU_Soc_Temp": 1104,
                     "M0_HSCC_Temp": 1116,
-                    "M0_HSC_Temp": 1120
-                }
+                    "M0_HSC_Temp": 1120,
+                    "M0_SMA_Ext_Temp": 1112
+                },
+                "StaleOffset": 577,
+                "Type": "SatelliteGroup"
             },
             {
-                "Name": "M0_GPU_VR_Temp",
-                "OffsetValue": 1208,
-                "SensorType": "Temperature",
-                "Type": "Satellite",
-                "StaleOffset": 584,
-                "StaleBit": 0,
-                "PowerState": "Always",
-                "Thresholds": [
-                    {
-                        "Direction": "greater than",
-                        "Severity": 4,
-                        "Value": 135.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Severity": 3,
-                        "Value": 130.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Severity": 1,
-                        "Value": 130.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Severity": 0,
-                        "Value": 120.0
-                    }
-                ]
-            },
-            {
-                "Name": "M1_GPU_VR_Temp",
-                "OffsetValue": 1216,
-                "SensorType": "Temperature",
-                "Type": "Satellite",
-                "StaleOffset": 584,
-                "StaleBit": 2,
-                "PowerState": "Always",
-                "Thresholds": [
-                    {
-                        "Direction": "greater than",
-                        "Severity": 4,
-                        "Value": 135.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Severity": 3,
-                        "Value": 130.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Severity": 1,
-                        "Value": 130.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Severity": 0,
-                        "Value": 120.0
-                    }
-                ]
-            },
-            {
+                "FirstStaleBit": 0,
                 "Name": "M1_CPU_Soc_Temp_Group",
-                "Type": "SatelliteGroup",
-                "SensorType": "Temperature",
-                "StaleOffset": 579,
-                "FirstStaleBit": 0,
                 "PowerState": "Always",
+                "SensorType": "Temperature",
                 "Sensors": {
-                    "M1_CPU_Soc_Temp": 1140,
                     "M1_CPU_Die_Temp": 1144,
-                    "M1_SMA_Ext_Temp": 1148,
+                    "M1_CPU_Soc_Temp": 1140,
                     "M1_HSCC_Temp": 1152,
-                    "M1_HSC_Temp": 1156
-                }
+                    "M1_HSC_Temp": 1156,
+                    "M1_SMA_Ext_Temp": 1148
+                },
+                "StaleOffset": 579,
+                "Type": "SatelliteGroup"
             },
             {
-                "Name": "M1_BusBar_Temp",
-                "OffsetValue": 1220,
-                "SensorType": "Temperature",
-                "Type": "Satellite",
-                "StaleOffset": 584,
-                "StaleBit": 3,
-                "PowerState": "Always",
-                "Thresholds": [
-                    {
-                        "Direction": "greater than",
-                        "Severity": 4,
-                        "Value": 110.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Severity": 3,
-                        "Value": 107.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Severity": 1,
-                        "Value": 107.0
-                    },
-                    {
-                        "Direction": "greater than",
-                        "Severity": 0,
-                        "Value": 105.0
-                    }
-                ]
-            },
-            {
-                "Name": "M0_HSCC_Pwr",
-                "OffsetValue": 1184,
-                "SensorType": "Power",
-                "Type": "Satellite",
-                "StaleOffset": 582,
-                "StaleBit": 2,
-                "PowerState": "Always",
-                "MaxValue": 12125,
-                "MinValue": 0
-            },
-            {
-                "Name": "M0_HSC_Pwr",
-                "OffsetValue": 1188,
-                "SensorType": "Power",
-                "Type": "Satellite",
-                "StaleOffset": 582,
-                "StaleBit": 3,
-                "PowerState": "Always",
-                "MaxValue": 12500,
-                "MinValue": 0
-            },
-            {
-                "Name": "M1_HSCC_Pwr",
-                "OffsetValue": 1200,
-                "SensorType": "Power",
-                "Type": "Satellite",
-                "StaleOffset": 583,
-                "StaleBit": 2,
-                "PowerState": "Always",
-                "MaxValue": 12125,
-                "MinValue": 0
-            },
-            {
-                "Name": "M1_HSC_Pwr",
-                "OffsetValue": 1204,
-                "SensorType": "Power",
-                "Type": "Satellite",
-                "StaleOffset": 583,
-                "StaleBit": 3,
-                "PowerState": "Always",
-                "MaxValue": 12500,
-                "MinValue": 0
-            },
-            {
-                "Name": "M0_Dram_Temp_X",
-                "Type": "SatelliteGroup",
-                "SensorType": "Temperature",
-                "StaleOffset": 585,
                 "FirstStaleBit": 0,
-                "ValueType": "PLDM",
+                "Name": "M0_Dram_Temp_X",
+                "SensorType": "Temperature",
                 "Sensors": {
                     "M0_Dram_Temp_0": 1224,
                     "M0_Dram_Temp_1": 1232,
@@ -578,15 +575,15 @@
                     "M0_Dram_Temp_5": 1264,
                     "M0_Dram_Temp_6": 1272,
                     "M0_Dram_Temp_7": 1280
-                }
+                },
+                "StaleOffset": 585,
+                "Type": "SatelliteGroup",
+                "ValueType": "PLDM"
             },
             {
-                "Name": "M1_Dram_Temp_X",
-                "Type": "SatelliteGroup",
-                "SensorType": "Temperature",
-                "StaleOffset": 587,
                 "FirstStaleBit": 0,
-                "ValueType": "PLDM",
+                "Name": "M1_Dram_Temp_X",
+                "SensorType": "Temperature",
                 "Sensors": {
                     "M1_Dram_Temp_0": 1352,
                     "M1_Dram_Temp_1": 1360,
@@ -596,7 +593,10 @@
                     "M1_Dram_Temp_5": 1392,
                     "M1_Dram_Temp_6": 1400,
                     "M1_Dram_Temp_7": 1408
-                }
+                },
+                "StaleOffset": 587,
+                "Type": "SatelliteGroup",
+                "ValueType": "PLDM"
             }
         ],
         "Name": "HMC_0",

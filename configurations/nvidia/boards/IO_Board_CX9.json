@@ -1,5 +1,8 @@
 [
     {
+        "Associations": {
+            "parent_chassis": "chassis/Chassis_0"
+        },
         "Exposes": [
             {
                 "Name": "BPNPort0",
@@ -13,9 +16,6 @@
             }
         ],
         "Name": "IO_Board_0",
-        "Associations": {
-            "parent_chassis": "chassis/Chassis_0"
-        },
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 73, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '(900-9X9BE).?'})",
         "Type": "Board",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
@@ -54,12 +54,15 @@
         }
     },
     {
+        "Board": "Board/IO_Board_$SlotNumber",
         "Name": "IO_Board_$SlotNumber",
         "Probe": "xyz.openbmc_project.FruDevice({'ADDRESS': 80, 'BOARD_PART_NUMBER': '(900-9X9BE).?'})",
-        "Type": "Assembly",
-        "Board": "Board/IO_Board_$SlotNumber"
+        "Type": "Assembly"
     },
     {
+        "Associations": {
+            "parent_chassis": "chassis/Chassis_0"
+        },
         "Exposes": [
             {
                 "Name": "BPNPort1",
@@ -73,9 +76,6 @@
             }
         ],
         "Name": "IO_Board_1",
-        "Associations": {
-            "parent_chassis": "chassis/Chassis_0"
-        },
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 74, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '(900-9X9BE).?'})",
         "Type": "Board",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
@@ -114,6 +114,9 @@
         }
     },
     {
+        "Associations": {
+            "parent_chassis": "chassis/Chassis_0"
+        },
         "Exposes": [
             {
                 "Name": "BPNPort2",
@@ -127,9 +130,6 @@
             }
         ],
         "Name": "IO_Board_2",
-        "Associations": {
-            "parent_chassis": "chassis/Chassis_0"
-        },
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 75, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '(900-9X9BE).?'})",
         "Type": "Board",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
@@ -168,6 +168,9 @@
         }
     },
     {
+        "Associations": {
+            "parent_chassis": "chassis/Chassis_0"
+        },
         "Exposes": [
             {
                 "Name": "BPNPort3",
@@ -181,9 +184,6 @@
             }
         ],
         "Name": "IO_Board_3",
-        "Associations": {
-            "parent_chassis": "chassis/Chassis_0"
-        },
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 76, 'ADDRESS': 80, 'BOARD_PART_NUMBER': '(900-9X9BE).?'})",
         "Type": "Board",
         "xyz.openbmc_project.Inventory.Decorator.Asset": {
@@ -222,109 +222,109 @@
         }
     },
     {
-        "Name": "IO_Board_Devices_$Instance",
-        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^IO_Board_CX9$'})",
-        "Type": "NvDevice",
         "Exposes": [
             {
-                "Name": "IO_Board_SMA_$Instance",
-                "Type": "NvDevice",
-                "Kind": "cx_sma",
-                "IgnoreEIDs": "$IgnoreEIDs",
-                "Generation": "vera-rubin",
-                "Instance": "$Instance",
-                "LocationContext": "Chassis_0/Bay-B-$Bay",
                 "EID": "$Instance * 10 + 60",
+                "Generation": "vera-rubin",
+                "IgnoreEIDs": "$IgnoreEIDs",
+                "Instance": "$Instance",
+                "Kind": "cx_sma",
+                "LocationContext": "Chassis_0/Bay-B-$Bay",
+                "Name": "IO_Board_SMA_$Instance",
                 "ParentChassis": "IO_Board_$Instance",
-                "Transport": {
-                    "Medium": "usb",
-                    "Port": "$UsbHubPath.1",
-                    "RootHubPath": "$Platform.UsbRootHubPath",
-                    "PoolStartEID": "$Instance * 10 + 61",
-                    "PoolEndEID": "$Instance * 10 + 65"
-                },
                 "Recovery": {
-                    "RecoveryType": "MCU",
                     "RecoveryGpio": "IOB$Instance_MCU_RECOVERY_L-O",
+                    "RecoveryType": "MCU",
                     "ResetGpio": "IOB$Instance_MCU_RST_L-O",
                     "Target": "CX9"
-                }
+                },
+                "Transport": {
+                    "Medium": "usb",
+                    "PoolEndEID": "$Instance * 10 + 65",
+                    "PoolStartEID": "$Instance * 10 + 61",
+                    "Port": "$UsbHubPath.1",
+                    "RootHubPath": "$Platform.UsbRootHubPath"
+                },
+                "Type": "NvDevice"
             },
             {
-                "Name": "CX_$Instance * 2",
-                "Type": "NvDevice",
-                "Kind": "cx9_io",
+                "EID": "$Instance * 10 + 61",
                 "Generation": "vera-rubin",
                 "Instance": "$Instance * 2",
+                "Kind": "cx9_io",
                 "LocationContext": "Chassis_0/Bay-B-$Bay",
-                "EID": "$Instance * 10 + 61",
+                "Name": "CX_$Instance * 2",
+                "NetworkAdapterName": "NIC_0",
                 "ParentChassis": "IO_Board_$Instance",
+                "PortLocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.$Side",
+                "PortMaxSpeedMBps": 100000,
                 "PortName0": "$CxPortA_1",
                 "PortName1": "$CxPortB_2",
-                "PortLocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.$Side",
-                "NetworkAdapterName": "NIC_0",
-                "PortMaxSpeedMBps": 100000,
-                "SwitchName": "CX_Switch_$Instance * 2",
-                "Transport": {
-                    "Medium": "bridge",
-                    "Bridge": "IO_Board_SMA_$Instance",
-                    "BridgeEID": "$Instance * 10 + 60",
-                    "PoolIndex": "$Platform.CxPoolBase"
-                },
                 "Recovery": {
-                    "RecoveryType": "ConnectX",
+                    "FlashNotPresentGpio": "IOB$Instance_CX0_FNP_L-O",
                     "I2CAddress": 72,
                     "I2CBus": "$Instance + 78",
-                    "ResetGpio": "IOB$Instance_CX0_RST_L-O",
-                    "FlashNotPresentGpio": "IOB$Instance_CX0_FNP_L-O"
-                }
+                    "RecoveryType": "ConnectX",
+                    "ResetGpio": "IOB$Instance_CX0_RST_L-O"
+                },
+                "SwitchName": "CX_Switch_$Instance * 2",
+                "Transport": {
+                    "Bridge": "IO_Board_SMA_$Instance",
+                    "BridgeEID": "$Instance * 10 + 60",
+                    "Medium": "bridge",
+                    "PoolIndex": "$Platform.CxPoolBase"
+                },
+                "Type": "NvDevice"
             },
             {
-                "Name": "CX_$Instance * 2 + 1",
-                "Type": "NvDevice",
-                "Kind": "cx9_io",
+                "EID": "$Instance * 10 + 63",
                 "Generation": "vera-rubin",
                 "Instance": "$Instance * 2 + 1",
+                "Kind": "cx9_io",
                 "LocationContext": "Chassis_0/Bay-B-$Bay",
-                "EID": "$Instance * 10 + 63",
+                "Name": "CX_$Instance * 2 + 1",
+                "NetworkAdapterName": "NIC_0",
                 "ParentChassis": "IO_Board_$Instance",
+                "PortLocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.$Side",
+                "PortMaxSpeedMBps": 100000,
                 "PortName0": "$CxPortA_2",
                 "PortName1": "$CxPortB_1",
-                "PortLocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.$Side",
-                "NetworkAdapterName": "NIC_0",
-                "PortMaxSpeedMBps": 100000,
-                "SwitchName": "CX_Switch_$Instance * 2 + 1",
-                "Transport": {
-                    "Medium": "bridge",
-                    "Bridge": "IO_Board_SMA_$Instance",
-                    "BridgeEID": "$Instance * 10 + 60",
-                    "PoolIndex": "$Platform.CxPoolBase + 2"
-                },
                 "Recovery": {
-                    "RecoveryType": "ConnectX",
+                    "FlashNotPresentGpio": "IOB$Instance_CX1_FNP_L-O",
                     "I2CAddress": 74,
                     "I2CBus": "$Instance + 78",
-                    "ResetGpio": "IOB$Instance_CX1_RST_L-O",
-                    "FlashNotPresentGpio": "IOB$Instance_CX1_FNP_L-O"
-                }
-            },
-            {
-                "Name": "NVMe_E1S_IO$Instance",
-                "Type": "NvDevice",
-                "Kind": "nvme_e1s",
-                "Generation": "vera-rubin",
-                "Instance": "$Instance",
-                "LocationCode": "NVMe E1.S Slot $Instance + 1",
-                "LocationContext": "Chassis_0/Bay-B-$Bay",
-                "EID": "$Instance * 10 + 65",
-                "SsdIndex": "$SsdIndex",
+                    "RecoveryType": "ConnectX",
+                    "ResetGpio": "IOB$Instance_CX1_RST_L-O"
+                },
+                "SwitchName": "CX_Switch_$Instance * 2 + 1",
                 "Transport": {
-                    "Medium": "bridge",
                     "Bridge": "IO_Board_SMA_$Instance",
                     "BridgeEID": "$Instance * 10 + 60",
+                    "Medium": "bridge",
+                    "PoolIndex": "$Platform.CxPoolBase + 2"
+                },
+                "Type": "NvDevice"
+            },
+            {
+                "EID": "$Instance * 10 + 65",
+                "Generation": "vera-rubin",
+                "Instance": "$Instance",
+                "Kind": "nvme_e1s",
+                "LocationCode": "NVMe E1.S Slot $Instance + 1",
+                "LocationContext": "Chassis_0/Bay-B-$Bay",
+                "Name": "NVMe_E1S_IO$Instance",
+                "SsdIndex": "$SsdIndex",
+                "Transport": {
+                    "Bridge": "IO_Board_SMA_$Instance",
+                    "BridgeEID": "$Instance * 10 + 60",
+                    "Medium": "bridge",
                     "PoolIndex": 4
-                }
+                },
+                "Type": "NvDevice"
             }
-        ]
+        ],
+        "Name": "IO_Board_Devices_$Instance",
+        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^IO_Board_CX9$'})",
+        "Type": "NvDevice"
     }
 ]

@@ -1,5 +1,12 @@
 [
     {
+        "Associations": {
+            "all_states": [
+                "/xyz/openbmc_project/state/PLDM_Sensor_4_105/Port_0",
+                "/xyz/openbmc_project/state/PLDM_Sensor_5_105/Port_1"
+            ],
+            "parent_chassis": "chassis/Chassis_0"
+        },
         "Exposes": [
             {
                 "Address": "50",
@@ -83,13 +90,6 @@
             }
         ],
         "Name": "Riser_Slot$PCIE_LABEL_BlueField_3_Card",
-        "Associations": {
-            "parent_chassis": "chassis/Chassis_0",
-            "all_states": [
-                "/xyz/openbmc_project/state/PLDM_Sensor_4_105/Port_0",
-                "/xyz/openbmc_project/state/PLDM_Sensor_5_105/Port_1"
-            ]
-        },
         "Probe": [
             "xyz.openbmc_project.FruDevice({'BUS': 3, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'BlueField-3.*'})",
             "OR",
@@ -117,6 +117,7 @@
         }
     },
     {
+        "Board": "Board/Riser_Slot$PCIE_LABEL_BlueField_3_Card",
         "Name": "Slot$PCIE_LABEL BlueField_3_Card",
         "Probe": [
             "xyz.openbmc_project.FruDevice({'BUS': 3, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'BlueField-3.*'})",
@@ -127,10 +128,16 @@
             "OR",
             "xyz.openbmc_project.FruDevice({'BUS': 15, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'BlueField-3.*'})"
         ],
-        "Type": "Assembly",
-        "Board": "Board/Riser_Slot$PCIE_LABEL_BlueField_3_Card"
+        "Type": "Assembly"
     },
     {
+        "Associations": {
+            "all_states": [
+                "/xyz/openbmc_project/state/PLDM_Sensor_4_106/Port_0",
+                "/xyz/openbmc_project/state/PLDM_Sensor_5_106/Port_1"
+            ],
+            "parent_chassis": "chassis/Chassis_0"
+        },
         "Exposes": [
             {
                 "Address": "50",
@@ -214,13 +221,6 @@
             }
         ],
         "Name": "Riser_Slot$PCIE_LABEL_BlueField_3_Card",
-        "Associations": {
-            "parent_chassis": "chassis/Chassis_0",
-            "all_states": [
-                "/xyz/openbmc_project/state/PLDM_Sensor_4_106/Port_0",
-                "/xyz/openbmc_project/state/PLDM_Sensor_5_106/Port_1"
-            ]
-        },
         "Probe": [
             "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'BlueField-3.*'})",
             "OR",

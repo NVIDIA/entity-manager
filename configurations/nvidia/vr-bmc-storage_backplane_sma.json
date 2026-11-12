@@ -1,28 +1,28 @@
 [
-  {
-    "Name": "$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^storage_backplane_sma$', 'Generation': 'vera-rubin'})",
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "NSM_Telemetry",
-        "Type": "NSM_Telemetry",
-        "Disable": [],
-        "ParameterOverrides": {},
-        "Kind": "storage_backplane_sma",
-        "InstanceNumber": "$Instance",
-        "EID": "$EID"
-      },
-      {
-        "Configuration": 1,
-        "InterfaceNum": 0,
-        "Name": "StorageSMA_$Instance",
-        "PollingInterval": "5",
-        "Port": "$Port",
-        "RootHubPath": "$RootHubPath",
-        "StaticEndpointID": "$EID",
-        "Type": "MCTPUSBDevice"
-      }
-    ]
-  }
+    {
+        "Exposes": [
+            {
+                "Configuration": 1,
+                "InterfaceNum": 0,
+                "Name": "StorageSMA_$Instance",
+                "PollingInterval": "5",
+                "Port": "$Port",
+                "RootHubPath": "$RootHubPath",
+                "StaticEndpointID": "$EID",
+                "Type": "MCTPUSBDevice"
+            },
+            {
+                "Disable": [],
+                "EID": "$EID",
+                "InstanceNumber": "$Instance",
+                "Kind": "storage_backplane_sma",
+                "Name": "NSM_Telemetry",
+                "ParameterOverrides": {},
+                "Type": "NSM_Telemetry"
+            }
+        ],
+        "Name": "$Name",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^storage_backplane_sma$', 'Generation': 'vera-rubin'})",
+        "Type": "NvDevice"
+    }
 ]

@@ -1,53 +1,53 @@
 [
-  {
-    "Exposes": [
-      {
-        "Address": "$address",
-        "Bus": "$bus",
+    {
+        "Associations": {
+            "downstream_chassis": "chassis/HGX_GPU_$SlotNumber"
+        },
+        "Exposes": [
+            {
+                "Address": "$address",
+                "Bus": "$bus",
+                "Name": "HGX_CBC_$SlotNumber",
+                "Type": "EEPROM_24C02"
+            }
+        ],
         "Name": "HGX_CBC_$SlotNumber",
-        "Type": "EEPROM_24C02"
-      }
-    ],
-    "Name": "HGX_CBC_$SlotNumber",
-    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_MANUFACTURER': 'Nvidia|NVIDIA', 'BOARD_PRODUCT_NAME': '.?CBC.?'})",
-    "Type": "CableCartridge",
-    "Associations": {
-      "downstream_chassis": "chassis/HGX_GPU_$SlotNumber"
+        "Probe": "xyz.openbmc_project.FruDevice({'BOARD_MANUFACTURER': 'Nvidia|NVIDIA', 'BOARD_PRODUCT_NAME': '.?CBC.?'})",
+        "Type": "CableCartridge",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "$address",
+            "Bus": "$bus",
+            "Name": "HGX_CBC_$SlotNumber"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.VendorInformation": {
+            "CustomField1": "$CHASSIS_INFO_AM1"
+        },
+        "xyz.openbmc_project.Inventory.Item.Cable": {
+            "CableClass": "xyz.openbmc_project.Inventory.Item.Cable.CableClass.General",
+            "CableTypeDescription": "Proprietary",
+            "DownstreamConnectorTypes": [
+                "xyz.openbmc_project.Inventory.Item.Connector.ConnectorType.Proprietary"
+            ],
+            "Length": 0.0,
+            "UpstreamConnectorTypes": [
+                "xyz.openbmc_project.Inventory.Item.Connector.ConnectorType.Proprietary"
+            ]
+        }
     },
-    "xyz.openbmc_project.Inventory.Decorator.Asset": {
-      "Manufacturer": "$BOARD_MANUFACTURER",
-      "Model": "$BOARD_PRODUCT_NAME",
-      "PartNumber": "$BOARD_PART_NUMBER",
-      "SerialNumber": "$BOARD_SERIAL_NUMBER"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-      "Address": "$address",
-      "Bus": "$bus",
-      "Name": "HGX_CBC_$SlotNumber"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.VendorInformation": {
-      "CustomField1": "$CHASSIS_INFO_AM1"
-    },
-    "xyz.openbmc_project.Inventory.Item.Cable": {
-      "CableClass": "xyz.openbmc_project.Inventory.Item.Cable.CableClass.General",
-      "CableTypeDescription": "Proprietary",
-      "DownstreamConnectorTypes": [
-        "xyz.openbmc_project.Inventory.Item.Connector.ConnectorType.Proprietary"
-      ],
-      "Length": 0.0,
-      "UpstreamConnectorTypes": [
-        "xyz.openbmc_project.Inventory.Item.Connector.ConnectorType.Proprietary"
-      ]
+    {
+        "Board": "CableCartridge/HGX_CBC_$SlotNumber",
+        "LocationCode": "CBC_$SlotNumber",
+        "LocationContext": "HGX_Chassis_0",
+        "LocationType": "Connector",
+        "Name": "HGX_CBC_$SlotNumber",
+        "PhysicalContext": "Back",
+        "Probe": "xyz.openbmc_project.FruDevice({'BOARD_MANUFACTURER': 'Nvidia|NVIDIA', 'BOARD_PRODUCT_NAME': '.?CBC.?'})",
+        "Type": "Assembly"
     }
-  },
-  {
-    "Name": "HGX_CBC_$SlotNumber",
-    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_MANUFACTURER': 'Nvidia|NVIDIA', 'BOARD_PRODUCT_NAME': '.?CBC.?'})",
-    "Type": "Assembly",
-    "Board": "CableCartridge/HGX_CBC_$SlotNumber",
-    "LocationType": "Connector",
-    "PhysicalContext": "Back",
-    "LocationCode": "CBC_$SlotNumber",
-    "LocationContext": "HGX_Chassis_0"
-  }
 ]

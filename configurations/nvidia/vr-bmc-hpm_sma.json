@@ -1,39 +1,39 @@
 [
-  {
-    "Name": "$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bmc_hpm_sma$', 'Generation': 'vera-rubin'})",
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "NSM_Telemetry",
-        "Type": "NSM_Telemetry",
-        "Kind": "bmc_hpm_sma",
-        "InstanceNumber": "$Instance",
-        "EID": "$EID",
-        "LeakDetectorChassis": "Chassis_0",
-        "Disable": [],
-        "ParameterOverrides": {}
-      },
-      {
-        "ConnectsToName": "$Platform.BmcName",
-        "DeviceAddress": "MCTP:$EID",
-        "DeviceType": "MCTPBridge",
+    {
+        "Exposes": [
+            {
+                "BridgePoolStartEID": "$PoolStartEID",
+                "Configuration": 1,
+                "IgnoreMessageTypes": "1,5",
+                "InterfaceNum": 0,
+                "Name": "SMA_$Instance",
+                "PollingInterval": "5",
+                "Port": "$Port",
+                "RootHubPath": "$RootHubPath",
+                "StaticEndpointID": "$EID",
+                "Type": "MCTPUSBDevice"
+            },
+            {
+                "Disable": [],
+                "EID": "$EID",
+                "InstanceNumber": "$Instance",
+                "Kind": "bmc_hpm_sma",
+                "LeakDetectorChassis": "Chassis_0",
+                "Name": "NSM_Telemetry",
+                "ParameterOverrides": {},
+                "Type": "NSM_Telemetry"
+            },
+            {
+                "ConnectsToName": "$Platform.BmcName",
+                "DeviceAddress": "MCTP:$EID",
+                "DeviceType": "MCTPBridge",
+                "Name": "$Name",
+                "PhysicalInterface": "usb1:0x0955:0xcf11:$Port",
+                "Type": "PlatformDevice"
+            }
+        ],
         "Name": "$Name",
-        "PhysicalInterface": "usb1:0x0955:0xcf11:$Port",
-        "Type": "PlatformDevice"
-      },
-      {
-        "BridgePoolStartEID": "$PoolStartEID",
-        "Configuration": 1,
-        "IgnoreMessageTypes": "1,5",
-        "InterfaceNum": 0,
-        "Name": "SMA_$Instance",
-        "PollingInterval": "5",
-        "Port": "$Port",
-        "RootHubPath": "$RootHubPath",
-        "StaticEndpointID": "$EID",
-        "Type": "MCTPUSBDevice"
-      }
-    ]
-  }
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bmc_hpm_sma$', 'Generation': 'vera-rubin'})",
+        "Type": "NvDevice"
+    }
 ]

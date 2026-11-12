@@ -1,77 +1,77 @@
 [
-  {
-    "Name": "$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield_sma$', 'Generation': 'vera-rubin'})",
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "NSM_Telemetry",
-        "Type": "NSM_Telemetry",
-        "Kind": "bluefield_sma",
-        "InstanceNumber": "$Instance",
-        "EID": "$EID",
-        "ParentChassis": "$ParentChassis",
-        "LocationCode": "SMA_0",
-        "LocationContext": "$LocationContext",
-        "LeakDetectorChassis": "$ParentChassis",
-        "Disable": [],
-        "ParameterOverrides": {}
-      },
-      {
-        "ConnectsToName": "$Platform.BmcName",
-        "DeviceAddress": "MCTP:$EID",
-        "DeviceType": "MCTPBridge",
-        "Name": "$Name",
-        "PhysicalInterface": "usb1:0x0955:0xcf11:$Port",
-        "Type": "PlatformDevice"
-      },
-      {
-        "DeviceType": "$Name",
-        "Name": "$Name",
-        "SupportedDumps": [
-          "SMA",
-          "GPUDiag",
-          "NetIR=BlueField_NIC_0"
+    {
+        "Exposes": [
+            {
+                "DeviceType": "$Name",
+                "Name": "$Name",
+                "SupportedDumps": [
+                    "SMA",
+                    "GPUDiag",
+                    "NetIR=BlueField_NIC_0"
+                ],
+                "Type": "Dump"
+            },
+            {
+                "BridgeName": "$Name",
+                "Name": "BF4_2",
+                "PoolIndex": 2,
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "BridgeName": "$Name",
+                "Name": "BF4_3",
+                "PoolIndex": 3,
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "BridgePoolEndEID": "$PoolEndEID",
+                "BridgePoolStartEID": "$PoolStartEID",
+                "BridgedEndpoints": [
+                    "BF4_0",
+                    "BF4_1",
+                    "BF4_2",
+                    "BF4_3"
+                ],
+                "Configuration": 1,
+                "InterfaceNum": 0,
+                "Name": "$Name",
+                "PollingInterval": "5",
+                "Port": "$Port",
+                "RootHubPath": "$RootHubPath",
+                "StaticEndpointID": "$EID",
+                "Type": "MCTPUSBDevice"
+            },
+            {
+                "Disable": [],
+                "EID": "$EID",
+                "InstanceNumber": "$Instance",
+                "Kind": "bluefield_sma",
+                "LeakDetectorChassis": "$ParentChassis",
+                "LocationCode": "SMA_0",
+                "LocationContext": "$LocationContext",
+                "Name": "NSM_Telemetry",
+                "ParameterOverrides": {},
+                "ParentChassis": "$ParentChassis",
+                "Type": "NSM_Telemetry"
+            },
+            {
+                "Name": "$Name_PLDM",
+                "Type": "PLDMDevice",
+                "UpdateableComponents": {
+                    "FW_$Name": 65282
+                }
+            },
+            {
+                "ConnectsToName": "$Platform.BmcName",
+                "DeviceAddress": "MCTP:$EID",
+                "DeviceType": "MCTPBridge",
+                "Name": "$Name",
+                "PhysicalInterface": "usb1:0x0955:0xcf11:$Port",
+                "Type": "PlatformDevice"
+            }
         ],
-        "Type": "Dump"
-      },
-      {
-        "BridgeName": "$Name",
-        "Name": "BF4_2",
-        "PoolIndex": 2,
-        "Type": "MCTPBridgePoolDevice"
-      },
-      {
-        "BridgeName": "$Name",
-        "Name": "BF4_3",
-        "PoolIndex": 3,
-        "Type": "MCTPBridgePoolDevice"
-      },
-      {
-        "Name": "$Name_PLDM",
-        "Type": "PLDMDevice",
-        "UpdateableComponents": {
-          "FW_$Name": 65282
-        }
-      },
-      {
-        "BridgePoolEndEID": "$PoolEndEID",
-        "BridgePoolStartEID": "$PoolStartEID",
-        "BridgedEndpoints": [
-          "BF4_0",
-          "BF4_1",
-          "BF4_2",
-          "BF4_3"
-        ],
-        "Configuration": 1,
-        "InterfaceNum": 0,
         "Name": "$Name",
-        "PollingInterval": "5",
-        "Port": "$Port",
-        "RootHubPath": "$RootHubPath",
-        "StaticEndpointID": "$EID",
-        "Type": "MCTPUSBDevice"
-      }
-    ]
-  }
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield_sma$', 'Generation': 'vera-rubin'})",
+        "Type": "NvDevice"
+    }
 ]

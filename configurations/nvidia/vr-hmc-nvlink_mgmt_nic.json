@@ -1,112 +1,112 @@
 [
-  {
-    "Name": "$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^nvlink_mgmt_nic$', 'Generation': 'vera-rubin'})",
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "NSM_Telemetry",
-        "Type": "NSM_Telemetry",
-        "Disable": [],
-        "ParameterOverrides": {},
-        "Kind": "nvlink_mgmt_nic",
-        "InstanceNumber": "$Instance",
-        "EID": "$EID"
-      },
-      {
-        "DeviceType": "NVLinkManagementNIC_$Instance",
+    {
+        "Exposes": [
+            {
+                "DeviceType": "NVLinkManagementNIC_$Instance",
+                "Name": "$Name",
+                "SupportedDumps": [
+                    "NetIR"
+                ],
+                "Type": "Dump"
+            },
+            {
+                "BridgeName": "$Bridge",
+                "Name": "$Name",
+                "PoolIndex": "$PoolIndex",
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "Disable": [],
+                "EID": "$EID",
+                "InstanceNumber": "$Instance",
+                "Kind": "nvlink_mgmt_nic",
+                "Name": "NSM_Telemetry",
+                "ParameterOverrides": {},
+                "Type": "NSM_Telemetry"
+            },
+            {
+                "EventIds": {
+                    "$Name_Temp_0": [
+                        "PLDM_SENSOR_UPPERWARNING",
+                        "CX9_Temperature_UPPER_NON_CRITICAL-EVENT",
+                        "PLDM_SENSOR_UPPERCRITICAL",
+                        "CX9_Temperature_UPPER_CRITICAL-EVENT",
+                        "PLDM_SENSOR_UPPERFATAL",
+                        "CX9_Temperature_UPPER_FATAL-EVENT"
+                    ],
+                    "Port_0": [
+                        "LinkDown",
+                        "CX9_NVLINK_Link_Down_Event"
+                    ],
+                    "Port_1": [
+                        "LinkDown",
+                        "CX9_NVLINK_Link_Down_Event"
+                    ]
+                },
+                "FWInventoryOnlyComponent": {
+                    "$Platform.NamePrefixConfig_0_NVLinkManagementNIC_$Instance": 3,
+                    "$Platform.NamePrefixConfig_1_NVLinkManagementNIC_$Instance": 4
+                },
+                "ImpactedComponent": "CX9",
+                "Name": "$Name_PLDM",
+                "NetworkAdapter": "NVLinkManagementNIC_$Instance",
+                "PortMaxSpeedMBps": 50000,
+                "Ports": {
+                    "200": "NVLinkManagement_0",
+                    "201": "NVLinkManagement_1"
+                },
+                "SensorAuxNames": {
+                    "$Name": 5,
+                    "$Name_Power_0": 50,
+                    "$Name_Temp_0": 300,
+                    "NVLinkManagementNIC_$Instance": 60,
+                    "NVLinkManagement_0": 200,
+                    "NVLinkManagement_1": 201,
+                    "Port_0": 200,
+                    "Port_1": 201
+                },
+                "Type": "PLDMDevice",
+                "UpdateableComponents": {
+                    "$Platform.NamePrefixFW_NVLinkManagementNIC_$Instance": 1
+                }
+            },
+            {
+                "EventIds": [
+                    "PLDM_SENSOR_UPPERWARNING",
+                    "CX9_Temperature_UPPER_NON_CRITICAL-EVENT",
+                    "PLDM_SENSOR_UPPERCRITICAL",
+                    "CX9_Temperature_UPPER_CRITICAL-EVENT",
+                    "PLDM_SENSOR_UPPERFATAL",
+                    "CX9_Temperature_UPPER_FATAL-EVENT"
+                ],
+                "ImpactedComponent": "CX9",
+                "Name": "$Name_Temp_0_EVENT_INFO",
+                "SensorId": 300,
+                "Type": "SensorEventInfo"
+            },
+            {
+                "EventIds": [
+                    "LinkDown",
+                    "CX9_NVLINK_Link_Down_Event"
+                ],
+                "ImpactedComponent": "CX9",
+                "Name": "NVLinkManagementNIC_$Instance_Port_0_EVENT_INFO",
+                "SensorId": 200,
+                "Type": "SensorEventInfo"
+            },
+            {
+                "EventIds": [
+                    "LinkDown",
+                    "CX9_NVLINK_Link_Down_Event"
+                ],
+                "ImpactedComponent": "CX9",
+                "Name": "NVLinkManagementNIC_$Instance_Port_1_EVENT_INFO",
+                "SensorId": 201,
+                "Type": "SensorEventInfo"
+            }
+        ],
         "Name": "$Name",
-        "SupportedDumps": [
-          "NetIR"
-        ],
-        "Type": "Dump"
-      },
-      {
-        "Name": "$Name_PLDM",
-        "Type": "PLDMDevice",
-        "UpdateableComponents": {
-          "$Platform.NamePrefixFW_NVLinkManagementNIC_$Instance": 1
-        },
-        "FWInventoryOnlyComponent": {
-          "$Platform.NamePrefixConfig_0_NVLinkManagementNIC_$Instance": 3,
-          "$Platform.NamePrefixConfig_1_NVLinkManagementNIC_$Instance": 4
-        },
-        "NetworkAdapter": "NVLinkManagementNIC_$Instance",
-        "SensorAuxNames": {
-          "$Name": 5,
-          "NVLinkManagementNIC_$Instance": 60,
-          "$Name_Temp_0": 300,
-          "$Name_Power_0": 50,
-          "NVLinkManagement_0": 200,
-          "NVLinkManagement_1": 201,
-          "Port_0": 200,
-          "Port_1": 201
-        },
-        "Ports": {
-          "200": "NVLinkManagement_0",
-          "201": "NVLinkManagement_1"
-        },
-        "PortMaxSpeedMBps": 50000,
-        "EventIds": {
-          "$Name_Temp_0": [
-            "PLDM_SENSOR_UPPERWARNING",
-            "CX9_Temperature_UPPER_NON_CRITICAL-EVENT",
-            "PLDM_SENSOR_UPPERCRITICAL",
-            "CX9_Temperature_UPPER_CRITICAL-EVENT",
-            "PLDM_SENSOR_UPPERFATAL",
-            "CX9_Temperature_UPPER_FATAL-EVENT"
-          ],
-          "Port_0": [
-            "LinkDown",
-            "CX9_NVLINK_Link_Down_Event"
-          ],
-          "Port_1": [
-            "LinkDown",
-            "CX9_NVLINK_Link_Down_Event"
-          ]
-        },
-        "ImpactedComponent": "CX9"
-      },
-      {
-        "BridgeName": "$Bridge",
-        "Name": "$Name",
-        "PoolIndex": "$PoolIndex",
-        "Type": "MCTPBridgePoolDevice"
-      },
-      {
-        "EventIds": [
-          "PLDM_SENSOR_UPPERWARNING",
-          "CX9_Temperature_UPPER_NON_CRITICAL-EVENT",
-          "PLDM_SENSOR_UPPERCRITICAL",
-          "CX9_Temperature_UPPER_CRITICAL-EVENT",
-          "PLDM_SENSOR_UPPERFATAL",
-          "CX9_Temperature_UPPER_FATAL-EVENT"
-        ],
-        "ImpactedComponent": "CX9",
-        "Name": "$Name_Temp_0_EVENT_INFO",
-        "SensorId": 300,
-        "Type": "SensorEventInfo"
-      },
-      {
-        "EventIds": [
-          "LinkDown",
-          "CX9_NVLINK_Link_Down_Event"
-        ],
-        "ImpactedComponent": "CX9",
-        "Name": "NVLinkManagementNIC_$Instance_Port_0_EVENT_INFO",
-        "SensorId": 200,
-        "Type": "SensorEventInfo"
-      },
-      {
-        "EventIds": [
-          "LinkDown",
-          "CX9_NVLINK_Link_Down_Event"
-        ],
-        "ImpactedComponent": "CX9",
-        "Name": "NVLinkManagementNIC_$Instance_Port_1_EVENT_INFO",
-        "SensorId": 201,
-        "Type": "SensorEventInfo"
-      }
-    ]
-  }
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^nvlink_mgmt_nic$', 'Generation': 'vera-rubin'})",
+        "Type": "NvDevice"
+    }
 ]

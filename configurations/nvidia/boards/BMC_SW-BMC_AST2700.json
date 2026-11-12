@@ -1,148 +1,148 @@
 [
-  {
-    "Name": "BMC_0",
-    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 4, 'ADDRESS': 80})",
-    "Type": "BMC",
-    "Associations": {
-      "parent_chassis": "chassis/Chassis_0"
-    },
-    "Exposes": [
-      {
-        "Address": "0x48",
-        "Bus": 4,
-        "Name": "BMC_TEMP",
-        "Thresholds": [
-          {
-            "Direction": "greater than",
-            "Name": "upper critical",
-            "Severity": 1,
-            "Value": 108.0
-          },
-          {
-            "Direction": "greater than",
-            "Name": "upper non critical",
-            "Severity": 0,
-            "Value": 105.0
-          },
-          {
-            "Direction": "less than",
-            "Name": "lower non critical",
-            "Severity": 0,
-            "Value": 5
-          }
+    {
+        "Associations": {
+            "parent_chassis": "chassis/Chassis_0"
+        },
+        "Exposes": [
+            {
+                "Address": "0x48",
+                "Bus": 4,
+                "Name": "BMC_TEMP",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 108.0
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 105.0
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    }
+                ],
+                "Type": "TMP75"
+            },
+            {
+                "Address": 31,
+                "Bus": 14,
+                "DetectorType": "Moisture",
+                "Driver": "mlxreg-hotplug",
+                "Name": "LeakageSensor",
+                "PollRate": 0.5,
+                "Type": "leakage"
+            }
         ],
-        "Type": "TMP75"
-      },
-      {
-        "Address": 31,
-        "Bus": 14,
-        "DetectorType": "Moisture",
-        "Driver": "mlxreg-hotplug",
-        "Name": "LeakageSensor",
-        "PollRate": 0.5,
-        "Type": "leakage"
-      }
-    ],
-    "xyz.openbmc_project.Inventory.Decorator.Asset": {
-      "Manufacturer": "$BOARD_MANUFACTURER",
-      "Model": "$BOARD_PRODUCT_NAME",
-      "Name": "Baseboard",
-      "PartNumber": "$BOARD_PART_NUMBER",
-      "SerialNumber": "$BOARD_SERIAL_NUMBER",
-      "SKU": ""
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Location": {
-      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
-    },
-    "xyz.openbmc_project.Inventory.Item.Chassis": {
-      "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
-    },
-    "xyz.openbmc_project.State.Decorator.Health": {
-      "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
-    }
-  },
-  {
-    "Name": "BMC_eeprom",
-    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 4, 'ADDRESS': 80})",
-    "Type": "BMC",
-    "Associations": {
-      "parent_chassis": "chassis/Chassis_0"
-    },
-    "Exposes": [
-      {
-        "Address": "$address",
-        "Bus": "$bus",
-        "Name": "$bus BMC_FRU",
-        "Type": "EEPROM_24C02"
-      }
-    ],
-    "xyz.openbmc_project.Inventory.Decorator.Asset": {
-      "Manufacturer": "$BOARD_MANUFACTURER",
-      "Model": "$BOARD_PRODUCT_NAME",
-      "PartNumber": "$BOARD_PART_NUMBER",
-      "SerialNumber": "$BOARD_SERIAL_NUMBER"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-      "Address": "$address",
-      "Bus": "$bus",
-      "Name": "BMC_FRU"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Location": {
-      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
-    },
-    "xyz.openbmc_project.Inventory.Item.Chassis": {
-      "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Module"
-    },
-    "xyz.openbmc_project.State.Decorator.Health": {
-      "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
-    }
-  },
-  {
-    "Name": "BMC_SW_AST2700_Devices",
-    "Probe": "FOUND('Nvidia NVL144 AST2700 Switch BMC')",
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "IRoT_BMC_0",
-        "Type": "NvDevice",
-        "Kind": "irot",
-        "ParentChassis": "BMC_0",
-        "Generation": "vera-rubin",
-        "Instance": 0,
-        "EID": 9,
-        "Transport": {
-          "Medium": "xrot",
-          "Interface": "mctpirot0"
-        },
-        "Recovery": {
-          "RecoveryType": "GlacierCrisis",
-          "SoftwareName": "FW_IRoT_BMC_0"
-        }
-      },
-      {
-        "Name": "ERoT_CPU_0",
-        "Type": "NvDevice",
-        "Kind": "cpu_erot_i2c",
-        "ParentChassis": "CPU_0",
-        "Generation": "vera-rubin",
-        "Instance": 2,
-        "EID": 16,
-        "Transport": {
-          "Medium": "i2c",
-          "Bus": 0,
-          "Address": 88
-        },
-        "Recovery": {
-          "RecoveryType": "GlacierCrisis",
-          "SoftwareName": "FW_ERoT_CPU_0"
-        }
-      },
-      {
         "Name": "BMC_0",
-        "Type": "PlatformDevice",
-        "DeviceAddress": "MCTP:9",
-        "DeviceType": "BMC"
-      }
-    ]
-  }
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 4, 'ADDRESS': 80})",
+        "Type": "BMC",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "Name": "Baseboard",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SKU": "",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        },
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    },
+    {
+        "Associations": {
+            "parent_chassis": "chassis/Chassis_0"
+        },
+        "Exposes": [
+            {
+                "Address": "$address",
+                "Bus": "$bus",
+                "Name": "$bus BMC_FRU",
+                "Type": "EEPROM_24C02"
+            }
+        ],
+        "Name": "BMC_eeprom",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 4, 'ADDRESS': 80})",
+        "Type": "BMC",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "$address",
+            "Bus": "$bus",
+            "Name": "BMC_FRU"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Module"
+        },
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "EID": 9,
+                "Generation": "vera-rubin",
+                "Instance": 0,
+                "Kind": "irot",
+                "Name": "IRoT_BMC_0",
+                "ParentChassis": "BMC_0",
+                "Recovery": {
+                    "RecoveryType": "GlacierCrisis",
+                    "SoftwareName": "FW_IRoT_BMC_0"
+                },
+                "Transport": {
+                    "Interface": "mctpirot0",
+                    "Medium": "xrot"
+                },
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 16,
+                "Generation": "vera-rubin",
+                "Instance": 2,
+                "Kind": "cpu_erot_i2c",
+                "Name": "ERoT_CPU_0",
+                "ParentChassis": "CPU_0",
+                "Recovery": {
+                    "RecoveryType": "GlacierCrisis",
+                    "SoftwareName": "FW_ERoT_CPU_0"
+                },
+                "Transport": {
+                    "Address": 88,
+                    "Bus": 0,
+                    "Medium": "i2c"
+                },
+                "Type": "NvDevice"
+            },
+            {
+                "DeviceAddress": "MCTP:9",
+                "DeviceType": "BMC",
+                "Name": "BMC_0",
+                "Type": "PlatformDevice"
+            }
+        ],
+        "Name": "BMC_SW_AST2700_Devices",
+        "Probe": "FOUND('Nvidia NVL144 AST2700 Switch BMC')",
+        "Type": "NvDevice"
+    }
 ]

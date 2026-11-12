@@ -1,203 +1,203 @@
 [
-  {
-    "Name": "Nvidia VR-NVL72 BMC AST2600 Policy",
-    "Probe": [
-      "FOUND('Nvidia VR-NVL72 BMC AST2600')",
-      "OR",
-      "FOUND('Nvidia VR-NVL72 BMC AST2700')"
-    ],
-    "Type": "Platform",
-    "PlatformExposes": [
-      {
-        "Name": "Platform_FwUpdate_Exclusion",
-        "Type": "PLDMExclusion",
-        "ExcludedInventory": [
-          "BF4_0"
-        ]
-      },
-      {
-        "Name": "NSM_Policy_CX_SMA",
-        "Type": "NSM_Policy",
-        "Kind": "cx_sma",
-        "Policy": [
-          {
-            "Devices": [
-              "IO_Board_SMA_0",
-              "IO_Board_SMA_2"
-            ],
-            "LeakDetection": {
-              "Enabled": false
-            }
-          }
-        ]
-      },
-      {
-        "Name": "NSM_Policy_CX9_IO",
-        "Type": "NSM_Policy",
-        "Kind": "cx9_io",
-        "Policy": [
-          {
-            "Devices": [],
-            "TemplateValues": {
-              "NetworkAdapterName": "NIC_0",
-              "PortCount": 2
+    {
+        "Name": "Nvidia VR-NVL72 BMC AST2600 Policy",
+        "PlatformExposes": [
+            {
+                "Kind": "cx_sma",
+                "Name": "NSM_Policy_CX_SMA",
+                "Policy": [
+                    {
+                        "Devices": [
+                            "IO_Board_SMA_0",
+                            "IO_Board_SMA_2"
+                        ],
+                        "LeakDetection": {
+                            "Enabled": false
+                        }
+                    }
+                ],
+                "Type": "NSM_Policy"
             },
-            "OpticalModuleReset": {
-              "Enabled": false
+            {
+                "Kind": "cx9_io",
+                "Name": "NSM_Policy_CX9_IO",
+                "Policy": [
+                    {
+                        "Devices": [],
+                        "OpticalModuleReset": {
+                            "Enabled": false
+                        },
+                        "TemplateValues": {
+                            "NetworkAdapterName": "NIC_0",
+                            "PortCount": 2
+                        }
+                    }
+                ],
+                "Type": "NSM_Policy"
+            },
+            {
+                "Kind": "bluefield_nic",
+                "Name": "NSM_Policy_BlueField_NIC",
+                "Policy": [
+                    {
+                        "Devices": [],
+                        "TemplateValues": {
+                            "NetworkAdapterName": "BlueField_NIC_0",
+                            "PortCount": 2,
+                            "SwitchName": "BlueField_Switch_0"
+                        }
+                    }
+                ],
+                "Type": "NSM_Policy"
+            },
+            {
+                "ExcludedInventory": [
+                    "BF4_0"
+                ],
+                "Name": "Platform_FwUpdate_Exclusion",
+                "Type": "PLDMExclusion"
             }
-          }
-        ]
-      },
-      {
-        "Name": "NSM_Policy_BlueField_NIC",
-        "Type": "NSM_Policy",
-        "Kind": "bluefield_nic",
-        "Policy": [
-          {
-            "Devices": [],
-            "TemplateValues": {
-              "NetworkAdapterName": "BlueField_NIC_0",
-              "PortCount": 2,
-              "SwitchName": "BlueField_Switch_0"
+        ],
+        "Probe": [
+            "FOUND('Nvidia VR-NVL72 BMC AST2600')",
+            "OR",
+            "FOUND('Nvidia VR-NVL72 BMC AST2700')"
+        ],
+        "Type": "Platform"
+    },
+    {
+        "Name": "Nvidia VR-NVL72 CX9 MST Recovery Policy",
+        "PlatformExposes": [
+            {
+                "DeviceType": "ConnectX",
+                "HealthyEvent": false,
+                "Name": "ConnectX_MST_Recovery_Policy",
+                "SMAPresenceCheck": false,
+                "Type": "MSTRecoveryPolicy"
             }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "Name": "Nvidia VR-NVL72 CX9 MST Recovery Policy",
-    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 90, 'ADDRESS': 81, 'PRODUCT_PRODUCT_NAME': 'NVL(72|144) 1CPU: ?2GPU .*'})",
-    "Type": "Platform",
-    "PlatformExposes": [
-      {
-        "DeviceType": "ConnectX",
-        "HealthyEvent": false,
-        "Name": "ConnectX_MST_Recovery_Policy",
-        "SMAPresenceCheck": false,
-        "Type": "MSTRecoveryPolicy"
-      }
-    ]
-  },
-  {
-    "Name": "Nvidia VR-NVL144 HMC Policy",
-    "Probe": [
-      "FOUND('Nvidia VR-NVL144 HMC AST2600')",
-      "OR",
-      "FOUND('Nvidia VR-NVL144 HMC AST2700')"
-    ],
-    "Type": "Platform",
-    "PlatformExposes": [
-      {
-        "Name": "NSM_Policy_GPU",
-        "Type": "NSM_Policy",
-        "Kind": "gpu",
-        "Policy": [
-          {
-            "Devices": [],
-            "ChassisPCIeDeviceLTSSMState": {
-              "Enabled": false
+        ],
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 90, 'ADDRESS': 81, 'PRODUCT_PRODUCT_NAME': 'NVL(72|144) 1CPU: ?2GPU .*'})",
+        "Type": "Platform"
+    },
+    {
+        "Name": "Nvidia VR-NVL144 HMC Policy",
+        "PlatformExposes": [
+            {
+                "Kind": "gpu",
+                "Name": "NSM_Policy_GPU",
+                "Policy": [
+                    {
+                        "ChassisPCIeDeviceLTSSMState": {
+                            "Enabled": false
+                        },
+                        "Devices": []
+                    }
+                ],
+                "Type": "NSM_Policy"
+            },
+            {
+                "Kind": "hmc_hpm_sma",
+                "Name": "NSM_Policy_HPM_SMA",
+                "Policy": [
+                    {
+                        "BusBarTemp_0": {
+                            "Enabled": false
+                        },
+                        "Devices": [
+                            "HGX_ProcessorModule_SMA_0"
+                        ]
+                    },
+                    {
+                        "Devices": [
+                            "HGX_ProcessorModule_SMA_1"
+                        ],
+                        "TotalGpuPower": {
+                            "Enabled": false
+                        }
+                    }
+                ],
+                "Type": "NSM_Policy"
             }
-          }
-        ]
-      },
-      {
-        "Name": "NSM_Policy_HPM_SMA",
-        "Type": "NSM_Policy",
-        "Kind": "hmc_hpm_sma",
-        "Policy": [
-          {
-            "Devices": [
-              "HGX_ProcessorModule_SMA_0"
-            ],
-            "BusBarTemp_0": {
-              "Enabled": false
+        ],
+        "Probe": [
+            "FOUND('Nvidia VR-NVL144 HMC AST2600')",
+            "OR",
+            "FOUND('Nvidia VR-NVL144 HMC AST2700')"
+        ],
+        "Type": "Platform"
+    },
+    {
+        "Name": "Nvidia VR-NVL72 BMC AST2600 Recovery Packages",
+        "PlatformExposes": [
+            {
+                "ConnectXPackageUUID": "C248ACFF10EA43C28793989C5C0FE840",
+                "GlacierPackageUUID": "F70650A20D174C8F8A9E7CFA5CE5BD94",
+                "MCUCX9PackageUUID": "8F6B4D3E2C2B4B39BC929C6C4DF7B8E1",
+                "Name": "RecoveryPackages",
+                "Type": "RecoveryPackages"
             }
-          },
-          {
-            "Devices": [
-              "HGX_ProcessorModule_SMA_1"
-            ],
-            "TotalGpuPower": {
-              "Enabled": false
+        ],
+        "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2600')",
+        "Type": "Platform"
+    },
+    {
+        "Name": "Nvidia VR-NVL72 BMC AST2700 Recovery Packages",
+        "PlatformExposes": [
+            {
+                "ConnectXPackageUUID": "C248ACFF10EA43C28793989C5C0FE840",
+                "GlacierPackageUUID": "F70650A20D174C8F8A9E7CFA5CE5BD94",
+                "MCUCX9PackageUUID": "8F6B4D3E2C2B4B39BC929C6C4DF7B8E1",
+                "Name": "RecoveryPackages",
+                "Type": "RecoveryPackages",
+                "USBDFUPackageUUID": "C7C67D84B064593A938C098DC5584669"
             }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "Name": "Nvidia VR-NVL72 BMC AST2600 Recovery Packages",
-    "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2600')",
-    "Type": "Platform",
-    "PlatformExposes": [
-      {
-        "Name": "RecoveryPackages",
-        "Type": "RecoveryPackages",
-        "ConnectXPackageUUID": "C248ACFF10EA43C28793989C5C0FE840",
-        "GlacierPackageUUID": "F70650A20D174C8F8A9E7CFA5CE5BD94",
-        "MCUCX9PackageUUID": "8F6B4D3E2C2B4B39BC929C6C4DF7B8E1"
-      }
-    ]
-  },
-  {
-    "Name": "Nvidia VR-NVL72 BMC AST2700 Recovery Packages",
-    "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2700')",
-    "Type": "Platform",
-    "PlatformExposes": [
-      {
-        "Name": "RecoveryPackages",
-        "Type": "RecoveryPackages",
-        "ConnectXPackageUUID": "C248ACFF10EA43C28793989C5C0FE840",
-        "GlacierPackageUUID": "F70650A20D174C8F8A9E7CFA5CE5BD94",
-        "MCUCX9PackageUUID": "8F6B4D3E2C2B4B39BC929C6C4DF7B8E1",
-        "USBDFUPackageUUID": "C7C67D84B064593A938C098DC5584669"
-      }
-    ]
-  },
-  {
-    "Name": "Nvidia VR-NVL144 HMC Recovery Packages",
-    "Probe": [
-      "FOUND('Nvidia VR-NVL144 HMC AST2600')",
-      "OR",
-      "FOUND('Nvidia VR-NVL144 HMC AST2700')"
-    ],
-    "Type": "Platform",
-    "PlatformExposes": [
-      {
-        "Name": "RecoveryPackages",
-        "Type": "RecoveryPackages",
-        "MCUGPUPackageUUID": "8F3A1C76B24E9D50C7AD93E1F42BC689",
-        "MCUHPMPackageUUID": "3E9B47D2A5F18C0E6BD9314FA72C58DE"
-      }
-    ]
-  },
-  {
-    "Name": "Nvidia BlueField-4 B4180V B4240V Recovery Package",
-    "Probe": [
-      "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'B4180V.*'})",
-      "OR",
-      "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'B4240V.*'})"
-    ],
-    "Type": "Platform",
-    "PlatformExposes": [
-      {
-        "Name": "BF4_RecoveryPackage",
-        "Type": "RecoveryPackages",
-        "MCUBF4PackageUUID": "C8E5F4F05A2E4C6B91512E4D7C3CE4C6"
-      }
-    ]
-  },
-  {
-    "Name": "Nvidia BlueField-4 ConnectX-9 Recovery Package",
-    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'ConnectX-9.*'})",
-    "Type": "Platform",
-    "PlatformExposes": [
-      {
-        "Name": "BF4_RecoveryPackage",
-        "Type": "RecoveryPackages",
-        "MCUBF4PackageUUID": "668BD433B9F8473DBA1EC32B99772679"
-      }
-    ]
-  }
+        ],
+        "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2700')",
+        "Type": "Platform"
+    },
+    {
+        "Name": "Nvidia VR-NVL144 HMC Recovery Packages",
+        "PlatformExposes": [
+            {
+                "MCUGPUPackageUUID": "8F3A1C76B24E9D50C7AD93E1F42BC689",
+                "MCUHPMPackageUUID": "3E9B47D2A5F18C0E6BD9314FA72C58DE",
+                "Name": "RecoveryPackages",
+                "Type": "RecoveryPackages"
+            }
+        ],
+        "Probe": [
+            "FOUND('Nvidia VR-NVL144 HMC AST2600')",
+            "OR",
+            "FOUND('Nvidia VR-NVL144 HMC AST2700')"
+        ],
+        "Type": "Platform"
+    },
+    {
+        "Name": "Nvidia BlueField-4 B4180V B4240V Recovery Package",
+        "PlatformExposes": [
+            {
+                "MCUBF4PackageUUID": "C8E5F4F05A2E4C6B91512E4D7C3CE4C6",
+                "Name": "BF4_RecoveryPackage",
+                "Type": "RecoveryPackages"
+            }
+        ],
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'B4180V.*'})",
+            "OR",
+            "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'B4240V.*'})"
+        ],
+        "Type": "Platform"
+    },
+    {
+        "Name": "Nvidia BlueField-4 ConnectX-9 Recovery Package",
+        "PlatformExposes": [
+            {
+                "MCUBF4PackageUUID": "668BD433B9F8473DBA1EC32B99772679",
+                "Name": "BF4_RecoveryPackage",
+                "Type": "RecoveryPackages"
+            }
+        ],
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'ConnectX-9.*'})",
+        "Type": "Platform"
+    }
 ]

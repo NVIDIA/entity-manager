@@ -1,5 +1,10 @@
 [
     {
+        "Associations": {
+            "all_chassis": "chassis/ERoT_BMC_0",
+            "all_managers": "bmc/BMC_0",
+            "parent_chassis": "board/SMM_0"
+        },
         "Exposes": [
             {
                 "Address": "$address",
@@ -53,11 +58,6 @@
             }
         ],
         "Name": "BMC_0",
-        "Associations": {
-            "parent_chassis": "board/SMM_0",
-            "all_chassis": "chassis/ERoT_BMC_0",
-            "all_managers": "bmc/BMC_0"
-        },
         "Probe": [
             "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80})",
             "OR",
@@ -102,14 +102,14 @@
         }
     },
     {
+        "Board": "BMC/BMC_0",
         "Name": "BMC",
         "Probe": [
             "xyz.openbmc_project.FruDevice({'BUS': 10, 'ADDRESS': 80})",
             "OR",
             "xyz.openbmc_project.FruDevice({'BUS': 4, 'ADDRESS': 80})"
         ],
-        "Type": "Assembly",
-        "Board": "BMC/BMC_0"
+        "Type": "Assembly"
     },
     {
         "Exposes": [
@@ -184,6 +184,9 @@
         }
     },
     {
+        "Associations": {
+            "parent_chassis": "chassis/Baseboard_0"
+        },
         "Exposes": [
             {
                 "Address": "0x52",
@@ -193,9 +196,6 @@
             }
         ],
         "Name": "HMC_FRU",
-        "Associations": {
-            "parent_chassis": "chassis/Baseboard_0"
-        },
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 90, 'ADDRESS': 82})",
         "Type": "FRU_EEPROM",
         "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
@@ -205,67 +205,64 @@
         }
     },
     {
+        "Exposes": [
+            {
+                "EID": 50,
+                "Generation": "vera-rubin",
+                "Instance": 0,
+                "Kind": "erot",
+                "LocationCode": "ERoT_BMC_0",
+                "LocationContext": "Chassis_0/SMM_Interposer_0/SMM_0/BMC_0",
+                "Name": "ERoT_BMC_0",
+                "ParentChassis": "BMC_0",
+                "Recovery": {
+                    "RecoveryType": "GlacierCrisis"
+                },
+                "Transport": {
+                    "Bus": 0,
+                    "ChipSelect": 2,
+                    "Medium": "spi"
+                },
+                "Type": "NvDevice"
+            }
+        ],
         "Name": "BMC_ERoT",
         "Probe": [
             "FOUND('Nvidia VR-NVL72 BMC AST2600')",
             "OR",
             "FOUND('Nvidia VR-NVL72 BMC AST2600 vHMC host')"
         ],
-        "Type": "NvDevice",
-        "Exposes": [
-            {
-                "Name": "ERoT_BMC_0",
-                "Type": "NvDevice",
-                "Kind": "erot",
-                "ParentChassis": "BMC_0",
-                "Generation": "vera-rubin",
-                "Instance": 0,
-                "LocationCode": "ERoT_BMC_0",
-                "LocationContext": "Chassis_0/SMM_Interposer_0/SMM_0/BMC_0",
-                "EID": 50,
-                "Transport": {
-                    "Medium": "spi",
-                    "Bus": 0,
-                    "ChipSelect": 2
-                },
-                "Recovery": {
-                    "RecoveryType": "GlacierCrisis"
-                }
-            }
-        ]
+        "Type": "NvDevice"
     },
     {
-        "Name": "BMC_HMC_ERoT",
-        "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2600')",
-        "Type": "NvDevice",
         "Exposes": [
             {
-                "Name": "HMC_ERoT_BMC_0",
-                "Type": "NvDevice",
-                "Kind": "hmc_erot",
                 "EID": 51,
-                "Transport": {
-                    "Medium": "spi",
-                    "Bus": 2,
-                    "ChipSelect": 0
-                },
+                "Kind": "hmc_erot",
+                "Name": "HMC_ERoT_BMC_0",
                 "Recovery": {
-                    "RecoveryType": "GPIOERoT",
                     "ApName": "FW_RECOVERY_HGX_FW_BMC_0",
                     "FatalErrorGpio": "HMC_EROT_FATAL_ERROR_L-I",
                     "FatalErrorPolarity": "ActiveLow",
                     "I2CAddress": 82,
                     "I2CBus": 6,
                     "MctpInterface": "mctpspi2_0",
+                    "RecoveryType": "GPIOERoT",
                     "SoftwareName": "FW_RECOVERY_HGX_FW_ERoT_BMC_0"
-                }
+                },
+                "Transport": {
+                    "Bus": 2,
+                    "ChipSelect": 0,
+                    "Medium": "spi"
+                },
+                "Type": "NvDevice"
             }
-        ]
+        ],
+        "Name": "BMC_HMC_ERoT",
+        "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2600')",
+        "Type": "NvDevice"
     },
     {
-        "Name": "BMC_HMC_MCTP_Bridge",
-        "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2600')",
-        "Type": "NvDevice",
         "Exposes": [
             {
                 "Configuration": 1,
@@ -277,12 +274,12 @@
                 "StaticEndpointID": "8",
                 "Type": "MCTPUSBDevice"
             }
-        ]
+        ],
+        "Name": "BMC_HMC_MCTP_Bridge",
+        "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2600')",
+        "Type": "NvDevice"
     },
     {
-        "Name": "BMC_HMC_Mailbox_AST2600",
-        "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2600')",
-        "Type": "NvDevice",
         "Exposes": [
             {
                 "ControlAddress": "0x45",
@@ -292,9 +289,102 @@
                 "Name": "HMC_0_Mailbox",
                 "Type": "HmcMailbox"
             }
-        ]
+        ],
+        "Name": "BMC_HMC_Mailbox_AST2600",
+        "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2600')",
+        "Type": "NvDevice"
     },
     {
+        "Exposes": [
+            {
+                "EID": 9,
+                "Generation": "vera-rubin",
+                "Instance": 0,
+                "Kind": "hmc_bridge_erot",
+                "Name": "HMC_BRIDGE_EROT_0",
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 10,
+                "Generation": "vera-rubin",
+                "Instance": 0,
+                "Kind": "hmc_bridge_gpu_sma",
+                "Name": "HMC_BRIDGE_GPU_SMA_0",
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 11,
+                "Generation": "vera-rubin",
+                "Instance": 0,
+                "Kind": "hmc_bridge_gpu",
+                "Name": "HMC_BRIDGE_IRoT_GPU_0",
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 12,
+                "Generation": "vera-rubin",
+                "Instance": 1,
+                "Kind": "hmc_bridge_gpu",
+                "Name": "HMC_BRIDGE_IRoT_GPU_1",
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 20,
+                "Generation": "vera-rubin",
+                "Instance": 1,
+                "Kind": "hmc_bridge_gpu_sma",
+                "Name": "HMC_BRIDGE_GPU_SMA_1",
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 21,
+                "Generation": "vera-rubin",
+                "Instance": 2,
+                "Kind": "hmc_bridge_gpu",
+                "Name": "HMC_BRIDGE_IRoT_GPU_2",
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 22,
+                "Generation": "vera-rubin",
+                "Instance": 3,
+                "Kind": "hmc_bridge_gpu",
+                "Name": "HMC_BRIDGE_IRoT_GPU_3",
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 14,
+                "Generation": "vera-rubin",
+                "Instance": 0,
+                "Kind": "hmc_bridge_cpu",
+                "Name": "HMC_BRIDGE_CPU_0",
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 24,
+                "Generation": "vera-rubin",
+                "Instance": 1,
+                "Kind": "hmc_bridge_cpu",
+                "Name": "HMC_BRIDGE_CPU_1",
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 13,
+                "Generation": "vera-rubin",
+                "Instance": 0,
+                "Kind": "hmc_bridge_hpm_sma",
+                "Name": "HMC_BRIDGE_IRoT_ProcessorModule_SMA_0",
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 23,
+                "Generation": "vera-rubin",
+                "Instance": 1,
+                "Kind": "hmc_bridge_hpm_sma",
+                "Name": "HMC_BRIDGE_IRoT_ProcessorModule_SMA_1",
+                "Type": "NvDevice"
+            }
+        ],
         "Name": "HMC_BRIDGE",
         "Probe": [
             "FOUND('Nvidia VR-NVL72 BMC AST2600')",
@@ -303,159 +393,66 @@
             "AND",
             "xyz.openbmc_project.State.FeatureReady({'FeatureType': 'xyz.openbmc_project.State.FeatureReady.FeatureTypes.MC', 'State': 'xyz.openbmc_project.State.FeatureReady.States.Enabled'})"
         ],
-        "Type": "HMCBridge",
-        "Exposes": [
-            {
-                "Name": "HMC_BRIDGE_EROT_0",
-                "Type": "NvDevice",
-                "Kind": "hmc_bridge_erot",
-                "Generation": "vera-rubin",
-                "Instance": 0,
-                "EID": 9
-            },
-            {
-                "Name": "HMC_BRIDGE_GPU_SMA_0",
-                "Type": "NvDevice",
-                "Kind": "hmc_bridge_gpu_sma",
-                "Generation": "vera-rubin",
-                "Instance": 0,
-                "EID": 10
-            },
-            {
-                "Name": "HMC_BRIDGE_IRoT_GPU_0",
-                "Type": "NvDevice",
-                "Kind": "hmc_bridge_gpu",
-                "Generation": "vera-rubin",
-                "Instance": 0,
-                "EID": 11
-            },
-            {
-                "Name": "HMC_BRIDGE_IRoT_GPU_1",
-                "Type": "NvDevice",
-                "Kind": "hmc_bridge_gpu",
-                "Generation": "vera-rubin",
-                "Instance": 1,
-                "EID": 12
-            },
-            {
-                "Name": "HMC_BRIDGE_GPU_SMA_1",
-                "Type": "NvDevice",
-                "Kind": "hmc_bridge_gpu_sma",
-                "Generation": "vera-rubin",
-                "Instance": 1,
-                "EID": 20
-            },
-            {
-                "Name": "HMC_BRIDGE_IRoT_GPU_2",
-                "Type": "NvDevice",
-                "Kind": "hmc_bridge_gpu",
-                "Generation": "vera-rubin",
-                "Instance": 2,
-                "EID": 21
-            },
-            {
-                "Name": "HMC_BRIDGE_IRoT_GPU_3",
-                "Type": "NvDevice",
-                "Kind": "hmc_bridge_gpu",
-                "Generation": "vera-rubin",
-                "Instance": 3,
-                "EID": 22
-            },
-            {
-                "Name": "HMC_BRIDGE_CPU_0",
-                "Type": "NvDevice",
-                "Kind": "hmc_bridge_cpu",
-                "Generation": "vera-rubin",
-                "Instance": 0,
-                "EID": 14
-            },
-            {
-                "Name": "HMC_BRIDGE_CPU_1",
-                "Type": "NvDevice",
-                "Kind": "hmc_bridge_cpu",
-                "Generation": "vera-rubin",
-                "Instance": 1,
-                "EID": 24
-            },
-            {
-                "Name": "HMC_BRIDGE_IRoT_ProcessorModule_SMA_0",
-                "Type": "NvDevice",
-                "Kind": "hmc_bridge_hpm_sma",
-                "Generation": "vera-rubin",
-                "Instance": 0,
-                "EID": 13
-            },
-            {
-                "Name": "HMC_BRIDGE_IRoT_ProcessorModule_SMA_1",
-                "Type": "NvDevice",
-                "Kind": "hmc_bridge_hpm_sma",
-                "Generation": "vera-rubin",
-                "Instance": 1,
-                "EID": 23
-            }
-        ]
+        "Type": "HMCBridge"
     },
     {
+        "Exposes": [
+            {
+                "EID": 9,
+                "Generation": "vera-rubin",
+                "Instance": 0,
+                "Kind": "irot",
+                "Name": "IRoT_BMC_0",
+                "ParentChassis": "BMC_0",
+                "Transport": {
+                    "Interface": "mctpirot0",
+                    "Medium": "xrot"
+                },
+                "Type": "NvDevice"
+            }
+        ],
         "Name": "BMC_IRoT",
         "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2700')",
-        "Type": "NvDevice",
-        "Exposes": [
-            {
-                "Name": "IRoT_BMC_0",
-                "Type": "NvDevice",
-                "Kind": "irot",
-                "ParentChassis": "BMC_0",
-                "Generation": "vera-rubin",
-                "Instance": 0,
-                "EID": 9,
-                "Transport": {
-                    "Medium": "xrot",
-                    "Interface": "mctpirot0"
-                }
-            }
-        ]
+        "Type": "NvDevice"
     },
     {
+        "Exposes": [
+            {
+                "DeviceAddress": "MCTP:30",
+                "DeviceType": "BMC",
+                "Name": "BMC_0",
+                "Type": "PlatformDevice"
+            },
+            {
+                "AuthType": "None",
+                "Hostname": "172.31.13.251",
+                "Name": "sat0",
+                "Port": "80",
+                "Type": "SatelliteController"
+            }
+        ],
         "Name": "BMC_Device",
         "Probe": [
             "FOUND('Nvidia VR-NVL72 BMC AST2600')",
             "OR",
             "FOUND('Nvidia VR-NVL72 BMC AST2700')"
         ],
-        "Type": "NvDevice",
-        "Exposes": [
-            {
-                "Name": "BMC_0",
-                "Type": "PlatformDevice",
-                "DeviceAddress": "MCTP:30",
-                "DeviceType": "BMC"
-            },
-            {
-                "Name": "sat0",
-                "Type": "SatelliteController",
-                "AuthType": "None",
-                "Hostname": "172.31.13.251",
-                "Port": "80"
-            }
-        ]
+        "Type": "NvDevice"
     },
     {
+        "Exposes": [
+            {
+                "DeviceAddress": "MCTP:30",
+                "DeviceType": "BMC",
+                "Name": "BMC_0",
+                "Type": "PlatformDevice"
+            }
+        ],
         "Name": "BMC_Device_vHMC",
         "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2600 vHMC host')",
-        "Type": "NvDevice",
-        "Exposes": [
-            {
-                "Name": "BMC_0",
-                "Type": "PlatformDevice",
-                "DeviceAddress": "MCTP:30",
-                "DeviceType": "BMC"
-            }
-        ]
+        "Type": "NvDevice"
     },
     {
-        "Name": "BMC_HMC_Mailbox_AST2700",
-        "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2700')",
-        "Type": "NvDevice",
         "Exposes": [
             {
                 "ControlAddress": "0x45",
@@ -465,12 +462,12 @@
                 "Name": "HMC_0_Mailbox",
                 "Type": "HmcMailbox"
             }
-        ]
+        ],
+        "Name": "BMC_HMC_Mailbox_AST2700",
+        "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2700')",
+        "Type": "NvDevice"
     },
     {
-        "Name": "BMC_HMC_Recovery",
-        "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2700')",
-        "Type": "NvDevice",
         "Exposes": [
             {
                 "FunctionalUsbId": "0525:a4a2",
@@ -480,110 +477,113 @@
                 "SpiMuxGpioName": "HMC_SPI_MUX_R_SEL-O",
                 "Type": "USBDFURecovery"
             }
-        ]
+        ],
+        "Name": "BMC_HMC_Recovery",
+        "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2700')",
+        "Type": "NvDevice"
     },
     {
-        "Name": "BMC_VROT",
-        "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2700')",
-        "Type": "NvDevice",
         "Exposes": [
             {
-                "Name": "MCTPVROT_0",
-                "Type": "MCTPXROTTarget",
                 "Interface": "mctpvrot0",
-                "StaticEndpointID": "100"
+                "Name": "MCTPVROT_0",
+                "StaticEndpointID": "100",
+                "Type": "MCTPXROTTarget"
             }
-        ]
+        ],
+        "Name": "BMC_VROT",
+        "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2700')",
+        "Type": "NvDevice"
     },
     {
+        "Exposes": [
+            {
+                "EID": 10,
+                "Generation": "vera-rubin",
+                "Instance": 0,
+                "Kind": "hmc_bridge_gpu_sma",
+                "Name": "HMC_BRIDGE_GPU_SMA_0",
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 11,
+                "Generation": "vera-rubin",
+                "Instance": 0,
+                "Kind": "hmc_bridge_gpu",
+                "Name": "HMC_BRIDGE_IRoT_GPU_0",
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 12,
+                "Generation": "vera-rubin",
+                "Instance": 1,
+                "Kind": "hmc_bridge_gpu",
+                "Name": "HMC_BRIDGE_IRoT_GPU_1",
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 20,
+                "Generation": "vera-rubin",
+                "Instance": 1,
+                "Kind": "hmc_bridge_gpu_sma",
+                "Name": "HMC_BRIDGE_GPU_SMA_1",
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 21,
+                "Generation": "vera-rubin",
+                "Instance": 2,
+                "Kind": "hmc_bridge_gpu",
+                "Name": "HMC_BRIDGE_IRoT_GPU_2",
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 22,
+                "Generation": "vera-rubin",
+                "Instance": 3,
+                "Kind": "hmc_bridge_gpu",
+                "Name": "HMC_BRIDGE_IRoT_GPU_3",
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 14,
+                "Generation": "vera-rubin",
+                "Instance": 0,
+                "Kind": "hmc_bridge_cpu",
+                "Name": "HMC_BRIDGE_CPU_0",
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 24,
+                "Generation": "vera-rubin",
+                "Instance": 1,
+                "Kind": "hmc_bridge_cpu",
+                "Name": "HMC_BRIDGE_CPU_1",
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 13,
+                "Generation": "vera-rubin",
+                "Instance": 0,
+                "Kind": "hmc_bridge_hpm_sma",
+                "Name": "HMC_BRIDGE_IRoT_ProcessorModule_SMA_0",
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 23,
+                "Generation": "vera-rubin",
+                "Instance": 1,
+                "Kind": "hmc_bridge_hpm_sma",
+                "Name": "HMC_BRIDGE_IRoT_ProcessorModule_SMA_1",
+                "Type": "NvDevice"
+            }
+        ],
         "Name": "HMC_BRIDGE",
         "Probe": [
             "FOUND('Nvidia VR-NVL72 BMC AST2700')",
             "AND",
             "xyz.openbmc_project.State.FeatureReady({'FeatureType': 'xyz.openbmc_project.State.FeatureReady.FeatureTypes.MC', 'State': 'xyz.openbmc_project.State.FeatureReady.States.Enabled'})"
         ],
-        "Type": "HMCBridge",
-        "Exposes": [
-            {
-                "Name": "HMC_BRIDGE_GPU_SMA_0",
-                "Type": "NvDevice",
-                "Kind": "hmc_bridge_gpu_sma",
-                "Generation": "vera-rubin",
-                "Instance": 0,
-                "EID": 10
-            },
-            {
-                "Name": "HMC_BRIDGE_IRoT_GPU_0",
-                "Type": "NvDevice",
-                "Kind": "hmc_bridge_gpu",
-                "Generation": "vera-rubin",
-                "Instance": 0,
-                "EID": 11
-            },
-            {
-                "Name": "HMC_BRIDGE_IRoT_GPU_1",
-                "Type": "NvDevice",
-                "Kind": "hmc_bridge_gpu",
-                "Generation": "vera-rubin",
-                "Instance": 1,
-                "EID": 12
-            },
-            {
-                "Name": "HMC_BRIDGE_GPU_SMA_1",
-                "Type": "NvDevice",
-                "Kind": "hmc_bridge_gpu_sma",
-                "Generation": "vera-rubin",
-                "Instance": 1,
-                "EID": 20
-            },
-            {
-                "Name": "HMC_BRIDGE_IRoT_GPU_2",
-                "Type": "NvDevice",
-                "Kind": "hmc_bridge_gpu",
-                "Generation": "vera-rubin",
-                "Instance": 2,
-                "EID": 21
-            },
-            {
-                "Name": "HMC_BRIDGE_IRoT_GPU_3",
-                "Type": "NvDevice",
-                "Kind": "hmc_bridge_gpu",
-                "Generation": "vera-rubin",
-                "Instance": 3,
-                "EID": 22
-            },
-            {
-                "Name": "HMC_BRIDGE_CPU_0",
-                "Type": "NvDevice",
-                "Kind": "hmc_bridge_cpu",
-                "Generation": "vera-rubin",
-                "Instance": 0,
-                "EID": 14
-            },
-            {
-                "Name": "HMC_BRIDGE_CPU_1",
-                "Type": "NvDevice",
-                "Kind": "hmc_bridge_cpu",
-                "Generation": "vera-rubin",
-                "Instance": 1,
-                "EID": 24
-            },
-            {
-                "Name": "HMC_BRIDGE_IRoT_ProcessorModule_SMA_0",
-                "Type": "NvDevice",
-                "Kind": "hmc_bridge_hpm_sma",
-                "Generation": "vera-rubin",
-                "Instance": 0,
-                "EID": 13
-            },
-            {
-                "Name": "HMC_BRIDGE_IRoT_ProcessorModule_SMA_1",
-                "Type": "NvDevice",
-                "Kind": "hmc_bridge_hpm_sma",
-                "Generation": "vera-rubin",
-                "Instance": 1,
-                "EID": 23
-            }
-        ]
+        "Type": "HMCBridge"
     }
 ]

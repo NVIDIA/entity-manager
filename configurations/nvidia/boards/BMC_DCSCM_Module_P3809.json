@@ -95,40 +95,40 @@
         "Type": "Assembly"
     },
     {
-        "Name": "BMC_ERoT",
-        "Probe": "FOUND('Nvidia VR-C2 BMC')",
-        "Type": "NvDevice",
         "Exposes": [
             {
-                "Name": "ERoT_BMC_0",
-                "Type": "NvDevice",
-                "Kind": "erot",
-                "ParentChassis": "BMC_0",
+                "EID": 10,
                 "Generation": "vera-rubin",
                 "Instance": 0,
-                "EID": 10,
-                "Transport": {
-                    "Medium": "spi",
-                    "Bus": 0,
-                    "ChipSelect": 2
-                },
+                "Kind": "erot",
+                "Name": "ERoT_BMC_0",
+                "ParentChassis": "BMC_0",
                 "Recovery": {
                     "RecoveryType": "GlacierCrisis"
-                }
+                },
+                "Transport": {
+                    "Bus": 0,
+                    "ChipSelect": 2,
+                    "Medium": "spi"
+                },
+                "Type": "NvDevice"
             }
-        ]
+        ],
+        "Name": "BMC_ERoT",
+        "Probe": "FOUND('Nvidia VR-C2 BMC')",
+        "Type": "NvDevice"
     },
     {
-        "Name": "BMC_Device",
-        "Probe": "FOUND('Nvidia VR-C2 BMC')",
-        "Type": "NvDevice",
         "Exposes": [
             {
-                "Name": "BMC_0",
-                "Type": "PlatformDevice",
                 "DeviceAddress": "MCTP:30",
-                "DeviceType": "BMC"
+                "DeviceType": "BMC",
+                "Name": "BMC_0",
+                "Type": "PlatformDevice"
             }
-        ]
+        ],
+        "Name": "BMC_Device",
+        "Probe": "FOUND('Nvidia VR-C2 BMC')",
+        "Type": "NvDevice"
     }
 ]

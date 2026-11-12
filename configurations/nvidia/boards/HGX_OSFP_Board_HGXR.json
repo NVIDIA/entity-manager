@@ -1,288 +1,288 @@
 [
-  {
-    "Name": "HGX_OSFP_Board_0",
-    "Probe": "TRUE",
-    "Type": "Chassis",
-    "Associations": {
-      "parent_chassis": "chassis/HGX_Chassis_0",
-      "all_sensors": [
-        "/xyz/openbmc_project/sensors/temperature/HGX_OSFP_Board_0_OSFP_0_Temp_0",
-        "/xyz/openbmc_project/sensors/temperature/HGX_OSFP_Board_0_OSFP_1_Temp_0",
-        "/xyz/openbmc_project/sensors/temperature/HGX_OSFP_Board_0_OSFP_2_Temp_0",
-        "/xyz/openbmc_project/sensors/temperature/HGX_OSFP_Board_0_OSFP_3_Temp_0",
-        "/xyz/openbmc_project/sensors/temperature/HGX_OSFP_Board_0_OSFP_4_Temp_0",
-        "/xyz/openbmc_project/sensors/temperature/HGX_OSFP_Board_0_OSFP_5_Temp_0",
-        "/xyz/openbmc_project/sensors/temperature/HGX_OSFP_Board_0_OSFP_6_Temp_0",
-        "/xyz/openbmc_project/sensors/temperature/HGX_OSFP_Board_0_OSFP_7_Temp_0"
-      ]
+    {
+        "Associations": {
+            "all_sensors": [
+                "/xyz/openbmc_project/sensors/temperature/HGX_OSFP_Board_0_OSFP_0_Temp_0",
+                "/xyz/openbmc_project/sensors/temperature/HGX_OSFP_Board_0_OSFP_1_Temp_0",
+                "/xyz/openbmc_project/sensors/temperature/HGX_OSFP_Board_0_OSFP_2_Temp_0",
+                "/xyz/openbmc_project/sensors/temperature/HGX_OSFP_Board_0_OSFP_3_Temp_0",
+                "/xyz/openbmc_project/sensors/temperature/HGX_OSFP_Board_0_OSFP_4_Temp_0",
+                "/xyz/openbmc_project/sensors/temperature/HGX_OSFP_Board_0_OSFP_5_Temp_0",
+                "/xyz/openbmc_project/sensors/temperature/HGX_OSFP_Board_0_OSFP_6_Temp_0",
+                "/xyz/openbmc_project/sensors/temperature/HGX_OSFP_Board_0_OSFP_7_Temp_0"
+            ],
+            "parent_chassis": "chassis/HGX_Chassis_0"
+        },
+        "Name": "HGX_OSFP_Board_0",
+        "Probe": "TRUE",
+        "Type": "Chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "HGX_OSFP_Board_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": false
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Zone"
+        },
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+        }
     },
-    "xyz.openbmc_project.Inventory.Decorator.Location": {
-      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+    {
+        "Exposes": [
+            {
+                "EID": "$Instance * 8 + 16",
+                "Generation": "vera-rubin",
+                "IgnoreEIDs": "$IgnoreEIDs",
+                "Instance": "$Instance",
+                "Kind": "cx_sma",
+                "Name": "HGX_ConnectX_SMA_$Instance",
+                "Recovery": {
+                    "RecoveryGpio": "CX9_$CxNumber_MCU_RECOV_L-O",
+                    "RecoveryType": "MCU",
+                    "ResetGpio": "CX9_$CxNumber_MCU_RESET_L-O",
+                    "SoftwareName": "HGX_FW_ConnectX_SMA_$Instance",
+                    "Target": "CX9"
+                },
+                "Transport": {
+                    "Medium": "usb",
+                    "PoolEndEID": "$Instance * 8 + 20",
+                    "PoolStartEID": "$Instance * 8 + 17",
+                    "Port": "$UsbPort",
+                    "RootHubPath": "$Platform.UsbRootHubPath"
+                },
+                "Type": "NvDevice"
+            }
+        ],
+        "Name": "HGX_ConnectX_SMA_Devices_$Instance",
+        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^HGX_OSFP_Board_HGXR$', 'Site': '^ConnectX_SMA$'})",
+        "Type": "NvDevice"
     },
-    "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-      "LocationCode": "HGX_OSFP_Board_0"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
-      "FieldReplaceable": false
-    },
-    "xyz.openbmc_project.Inventory.Item.Chassis": {
-      "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Zone"
-    },
-    "xyz.openbmc_project.State.Decorator.Health": {
-      "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
+    {
+        "Exposes": [
+            {
+                "EID": 17,
+                "Generation": "vera-rubin",
+                "Instance": 0,
+                "Kind": "cx9_io",
+                "Name": "HGX_ConnectX_0",
+                "NetworkAdapterName": "ConnectX_NIC_0",
+                "ParentChassis": "HGX_Chassis_0",
+                "PortMaxSpeedMBps": 50000,
+                "PortName0": "Port_0",
+                "Recovery": {
+                    "ChassisName": "HGX_IRoT_ConnectX_0",
+                    "FlashNotPresentGpio": "CX9_1_FNP_L-O",
+                    "I2CAddress": 72,
+                    "I2CBus": 110,
+                    "RecoveryType": "ConnectX",
+                    "ResetGpio": "CX9_1_RESET_L-O",
+                    "SoftwareName": "HGX_FW_ConnectX_0"
+                },
+                "Transport": {
+                    "Bridge": "HGX_ConnectX_SMA_0",
+                    "BridgeEID": 16,
+                    "Medium": "bridge",
+                    "PoolIndex": 0
+                },
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 27,
+                "Generation": "vera-rubin",
+                "Instance": 1,
+                "Kind": "cx9_io",
+                "Name": "HGX_ConnectX_1",
+                "NetworkAdapterName": "ConnectX_NIC_1",
+                "ParentChassis": "HGX_Chassis_0",
+                "PortMaxSpeedMBps": 50000,
+                "PortName0": "Port_0",
+                "Recovery": {
+                    "ChassisName": "HGX_IRoT_ConnectX_1",
+                    "FlashNotPresentGpio": "CX9_2_FNP_L-O",
+                    "I2CAddress": 72,
+                    "I2CBus": 111,
+                    "RecoveryType": "ConnectX",
+                    "ResetGpio": "CX9_2_RESET_L-O",
+                    "SoftwareName": "HGX_FW_ConnectX_1"
+                },
+                "Transport": {
+                    "Bridge": "HGX_ConnectX_SMA_1",
+                    "BridgeEID": 24,
+                    "Medium": "bridge",
+                    "PoolIndex": 2
+                },
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 19,
+                "Generation": "vera-rubin",
+                "Instance": 2,
+                "Kind": "cx9_io",
+                "Name": "HGX_ConnectX_2",
+                "NetworkAdapterName": "ConnectX_NIC_2",
+                "ParentChassis": "HGX_Chassis_0",
+                "PortMaxSpeedMBps": 50000,
+                "PortName0": "Port_0",
+                "Recovery": {
+                    "ChassisName": "HGX_IRoT_ConnectX_2",
+                    "FlashNotPresentGpio": "CX9_3_FNP_L-O",
+                    "I2CAddress": 72,
+                    "I2CBus": 112,
+                    "RecoveryType": "ConnectX",
+                    "ResetGpio": "CX9_3_RESET_L-O",
+                    "SoftwareName": "HGX_FW_ConnectX_2"
+                },
+                "Transport": {
+                    "Bridge": "HGX_ConnectX_SMA_0",
+                    "BridgeEID": 16,
+                    "Medium": "bridge",
+                    "PoolIndex": 2
+                },
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 25,
+                "Generation": "vera-rubin",
+                "Instance": 3,
+                "Kind": "cx9_io",
+                "Name": "HGX_ConnectX_3",
+                "NetworkAdapterName": "ConnectX_NIC_3",
+                "ParentChassis": "HGX_Chassis_0",
+                "PortMaxSpeedMBps": 50000,
+                "PortName0": "Port_0",
+                "Recovery": {
+                    "ChassisName": "HGX_IRoT_ConnectX_3",
+                    "FlashNotPresentGpio": "CX9_4_FNP_L-O",
+                    "I2CAddress": 72,
+                    "I2CBus": 113,
+                    "RecoveryType": "ConnectX",
+                    "ResetGpio": "CX9_4_RESET_L-O",
+                    "SoftwareName": "HGX_FW_ConnectX_3"
+                },
+                "Transport": {
+                    "Bridge": "HGX_ConnectX_SMA_1",
+                    "BridgeEID": 24,
+                    "Medium": "bridge",
+                    "PoolIndex": 0
+                },
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 43,
+                "Generation": "vera-rubin",
+                "Instance": 4,
+                "Kind": "cx9_io",
+                "Name": "HGX_ConnectX_4",
+                "NetworkAdapterName": "ConnectX_NIC_4",
+                "ParentChassis": "HGX_Chassis_0",
+                "PortMaxSpeedMBps": 50000,
+                "PortName0": "Port_0",
+                "Recovery": {
+                    "ChassisName": "HGX_IRoT_ConnectX_4",
+                    "FlashNotPresentGpio": "CX9_5_FNP_L-O",
+                    "I2CAddress": 72,
+                    "I2CBus": 114,
+                    "RecoveryType": "ConnectX",
+                    "ResetGpio": "CX9_5_RESET_L-O",
+                    "SoftwareName": "HGX_FW_ConnectX_4"
+                },
+                "Transport": {
+                    "Bridge": "HGX_ConnectX_SMA_3",
+                    "BridgeEID": 40,
+                    "Medium": "bridge",
+                    "PoolIndex": 2
+                },
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 35,
+                "Generation": "vera-rubin",
+                "Instance": 5,
+                "Kind": "cx9_io",
+                "Name": "HGX_ConnectX_5",
+                "NetworkAdapterName": "ConnectX_NIC_5",
+                "ParentChassis": "HGX_Chassis_0",
+                "PortMaxSpeedMBps": 50000,
+                "PortName0": "Port_0",
+                "Recovery": {
+                    "ChassisName": "HGX_IRoT_ConnectX_5",
+                    "FlashNotPresentGpio": "CX9_6_FNP_L-O",
+                    "I2CAddress": 72,
+                    "I2CBus": 115,
+                    "RecoveryType": "ConnectX",
+                    "ResetGpio": "CX9_6_RESET_L-O",
+                    "SoftwareName": "HGX_FW_ConnectX_5"
+                },
+                "Transport": {
+                    "Bridge": "HGX_ConnectX_SMA_2",
+                    "BridgeEID": 32,
+                    "Medium": "bridge",
+                    "PoolIndex": 2
+                },
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 41,
+                "Generation": "vera-rubin",
+                "Instance": 6,
+                "Kind": "cx9_io",
+                "Name": "HGX_ConnectX_6",
+                "NetworkAdapterName": "ConnectX_NIC_6",
+                "ParentChassis": "HGX_Chassis_0",
+                "PortMaxSpeedMBps": 50000,
+                "PortName0": "Port_0",
+                "Recovery": {
+                    "ChassisName": "HGX_IRoT_ConnectX_6",
+                    "FlashNotPresentGpio": "CX9_7_FNP_L-O",
+                    "I2CAddress": 72,
+                    "I2CBus": 116,
+                    "RecoveryType": "ConnectX",
+                    "ResetGpio": "CX9_7_RESET_L-O",
+                    "SoftwareName": "HGX_FW_ConnectX_6"
+                },
+                "Transport": {
+                    "Bridge": "HGX_ConnectX_SMA_3",
+                    "BridgeEID": 40,
+                    "Medium": "bridge",
+                    "PoolIndex": 0
+                },
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 33,
+                "Generation": "vera-rubin",
+                "Instance": 7,
+                "Kind": "cx9_io",
+                "Name": "HGX_ConnectX_7",
+                "NetworkAdapterName": "ConnectX_NIC_7",
+                "ParentChassis": "HGX_Chassis_0",
+                "PortMaxSpeedMBps": 50000,
+                "PortName0": "Port_0",
+                "Recovery": {
+                    "ChassisName": "HGX_IRoT_ConnectX_7",
+                    "FlashNotPresentGpio": "CX9_8_FNP_L-O",
+                    "I2CAddress": 72,
+                    "I2CBus": 117,
+                    "RecoveryType": "ConnectX",
+                    "ResetGpio": "CX9_8_RESET_L-O",
+                    "SoftwareName": "HGX_FW_ConnectX_7"
+                },
+                "Transport": {
+                    "Bridge": "HGX_ConnectX_SMA_2",
+                    "BridgeEID": 32,
+                    "Medium": "bridge",
+                    "PoolIndex": 0
+                },
+                "Type": "NvDevice"
+            }
+        ],
+        "Name": "HGX_ConnectX_Devices",
+        "Probe": "FOUND('Nvidia HGX-R HMC')",
+        "Type": "NvDevice"
     }
-  },
-  {
-    "Name": "HGX_ConnectX_SMA_Devices_$Instance",
-    "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^HGX_OSFP_Board_HGXR$', 'Site': '^ConnectX_SMA$'})",
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "HGX_ConnectX_SMA_$Instance",
-        "Type": "NvDevice",
-        "Kind": "cx_sma",
-        "Generation": "vera-rubin",
-        "Instance": "$Instance",
-        "EID": "$Instance * 8 + 16",
-        "Transport": {
-          "Medium": "usb",
-          "Port": "$UsbPort",
-          "RootHubPath": "$Platform.UsbRootHubPath",
-          "PoolStartEID": "$Instance * 8 + 17",
-          "PoolEndEID": "$Instance * 8 + 20"
-        },
-        "IgnoreEIDs": "$IgnoreEIDs",
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "CX9_$CxNumber_MCU_RECOV_L-O",
-          "ResetGpio": "CX9_$CxNumber_MCU_RESET_L-O",
-          "SoftwareName": "HGX_FW_ConnectX_SMA_$Instance",
-          "Target": "CX9"
-        }
-      }
-    ]
-  },
-  {
-    "Name": "HGX_ConnectX_Devices",
-    "Probe": "FOUND('Nvidia HGX-R HMC')",
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "HGX_ConnectX_0",
-        "Type": "NvDevice",
-        "Kind": "cx9_io",
-        "Generation": "vera-rubin",
-        "Instance": 0,
-        "EID": 17,
-        "ParentChassis": "HGX_Chassis_0",
-        "NetworkAdapterName": "ConnectX_NIC_0",
-        "PortName0": "Port_0",
-        "PortMaxSpeedMBps": 50000,
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_ConnectX_SMA_0",
-          "BridgeEID": 16,
-          "PoolIndex": 0
-        },
-        "Recovery": {
-          "RecoveryType": "ConnectX",
-          "FlashNotPresentGpio": "CX9_1_FNP_L-O",
-          "I2CAddress": 72,
-          "I2CBus": 110,
-          "ResetGpio": "CX9_1_RESET_L-O",
-          "SoftwareName": "HGX_FW_ConnectX_0",
-          "ChassisName": "HGX_IRoT_ConnectX_0"
-        }
-      },
-      {
-        "Name": "HGX_ConnectX_1",
-        "Type": "NvDevice",
-        "Kind": "cx9_io",
-        "Generation": "vera-rubin",
-        "Instance": 1,
-        "EID": 27,
-        "ParentChassis": "HGX_Chassis_0",
-        "NetworkAdapterName": "ConnectX_NIC_1",
-        "PortName0": "Port_0",
-        "PortMaxSpeedMBps": 50000,
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_ConnectX_SMA_1",
-          "BridgeEID": 24,
-          "PoolIndex": 2
-        },
-        "Recovery": {
-          "RecoveryType": "ConnectX",
-          "FlashNotPresentGpio": "CX9_2_FNP_L-O",
-          "I2CAddress": 72,
-          "I2CBus": 111,
-          "ResetGpio": "CX9_2_RESET_L-O",
-          "SoftwareName": "HGX_FW_ConnectX_1",
-          "ChassisName": "HGX_IRoT_ConnectX_1"
-        }
-      },
-      {
-        "Name": "HGX_ConnectX_2",
-        "Type": "NvDevice",
-        "Kind": "cx9_io",
-        "Generation": "vera-rubin",
-        "Instance": 2,
-        "EID": 19,
-        "ParentChassis": "HGX_Chassis_0",
-        "NetworkAdapterName": "ConnectX_NIC_2",
-        "PortName0": "Port_0",
-        "PortMaxSpeedMBps": 50000,
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_ConnectX_SMA_0",
-          "BridgeEID": 16,
-          "PoolIndex": 2
-        },
-        "Recovery": {
-          "RecoveryType": "ConnectX",
-          "FlashNotPresentGpio": "CX9_3_FNP_L-O",
-          "I2CAddress": 72,
-          "I2CBus": 112,
-          "ResetGpio": "CX9_3_RESET_L-O",
-          "SoftwareName": "HGX_FW_ConnectX_2",
-          "ChassisName": "HGX_IRoT_ConnectX_2"
-        }
-      },
-      {
-        "Name": "HGX_ConnectX_3",
-        "Type": "NvDevice",
-        "Kind": "cx9_io",
-        "Generation": "vera-rubin",
-        "Instance": 3,
-        "EID": 25,
-        "ParentChassis": "HGX_Chassis_0",
-        "NetworkAdapterName": "ConnectX_NIC_3",
-        "PortName0": "Port_0",
-        "PortMaxSpeedMBps": 50000,
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_ConnectX_SMA_1",
-          "BridgeEID": 24,
-          "PoolIndex": 0
-        },
-        "Recovery": {
-          "RecoveryType": "ConnectX",
-          "FlashNotPresentGpio": "CX9_4_FNP_L-O",
-          "I2CAddress": 72,
-          "I2CBus": 113,
-          "ResetGpio": "CX9_4_RESET_L-O",
-          "SoftwareName": "HGX_FW_ConnectX_3",
-          "ChassisName": "HGX_IRoT_ConnectX_3"
-        }
-      },
-      {
-        "Name": "HGX_ConnectX_4",
-        "Type": "NvDevice",
-        "Kind": "cx9_io",
-        "Generation": "vera-rubin",
-        "Instance": 4,
-        "EID": 43,
-        "ParentChassis": "HGX_Chassis_0",
-        "NetworkAdapterName": "ConnectX_NIC_4",
-        "PortName0": "Port_0",
-        "PortMaxSpeedMBps": 50000,
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_ConnectX_SMA_3",
-          "BridgeEID": 40,
-          "PoolIndex": 2
-        },
-        "Recovery": {
-          "RecoveryType": "ConnectX",
-          "FlashNotPresentGpio": "CX9_5_FNP_L-O",
-          "I2CAddress": 72,
-          "I2CBus": 114,
-          "ResetGpio": "CX9_5_RESET_L-O",
-          "SoftwareName": "HGX_FW_ConnectX_4",
-          "ChassisName": "HGX_IRoT_ConnectX_4"
-        }
-      },
-      {
-        "Name": "HGX_ConnectX_5",
-        "Type": "NvDevice",
-        "Kind": "cx9_io",
-        "Generation": "vera-rubin",
-        "Instance": 5,
-        "EID": 35,
-        "ParentChassis": "HGX_Chassis_0",
-        "NetworkAdapterName": "ConnectX_NIC_5",
-        "PortName0": "Port_0",
-        "PortMaxSpeedMBps": 50000,
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_ConnectX_SMA_2",
-          "BridgeEID": 32,
-          "PoolIndex": 2
-        },
-        "Recovery": {
-          "RecoveryType": "ConnectX",
-          "FlashNotPresentGpio": "CX9_6_FNP_L-O",
-          "I2CAddress": 72,
-          "I2CBus": 115,
-          "ResetGpio": "CX9_6_RESET_L-O",
-          "SoftwareName": "HGX_FW_ConnectX_5",
-          "ChassisName": "HGX_IRoT_ConnectX_5"
-        }
-      },
-      {
-        "Name": "HGX_ConnectX_6",
-        "Type": "NvDevice",
-        "Kind": "cx9_io",
-        "Generation": "vera-rubin",
-        "Instance": 6,
-        "EID": 41,
-        "ParentChassis": "HGX_Chassis_0",
-        "NetworkAdapterName": "ConnectX_NIC_6",
-        "PortName0": "Port_0",
-        "PortMaxSpeedMBps": 50000,
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_ConnectX_SMA_3",
-          "BridgeEID": 40,
-          "PoolIndex": 0
-        },
-        "Recovery": {
-          "RecoveryType": "ConnectX",
-          "FlashNotPresentGpio": "CX9_7_FNP_L-O",
-          "I2CAddress": 72,
-          "I2CBus": 116,
-          "ResetGpio": "CX9_7_RESET_L-O",
-          "SoftwareName": "HGX_FW_ConnectX_6",
-          "ChassisName": "HGX_IRoT_ConnectX_6"
-        }
-      },
-      {
-        "Name": "HGX_ConnectX_7",
-        "Type": "NvDevice",
-        "Kind": "cx9_io",
-        "Generation": "vera-rubin",
-        "Instance": 7,
-        "EID": 33,
-        "ParentChassis": "HGX_Chassis_0",
-        "NetworkAdapterName": "ConnectX_NIC_7",
-        "PortName0": "Port_0",
-        "PortMaxSpeedMBps": 50000,
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_ConnectX_SMA_2",
-          "BridgeEID": 32,
-          "PoolIndex": 0
-        },
-        "Recovery": {
-          "RecoveryType": "ConnectX",
-          "FlashNotPresentGpio": "CX9_8_FNP_L-O",
-          "I2CAddress": 72,
-          "I2CBus": 117,
-          "ResetGpio": "CX9_8_RESET_L-O",
-          "SoftwareName": "HGX_FW_ConnectX_7",
-          "ChassisName": "HGX_IRoT_ConnectX_7"
-        }
-      }
-    ]
-  }
 ]

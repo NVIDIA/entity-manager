@@ -1,122 +1,128 @@
 [
-  {
-    "Name": "$Name",
-    "Type": "chassis",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vera-rubin'})",
-    "Exposes": [],
-    "Associations": {
-      "parent_chassis": "board/$ParentChassis"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Instance": {
-      "InstanceNumber": "$Instance"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Location": {
-      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-      "LocationContext": "$LocationContext"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
-      "FieldReplaceable": false
-    },
-    "xyz.openbmc_project.Inventory.Item.Board": {},
-    "xyz.openbmc_project.State.Decorator.Health": {
-      "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
-    }
-  },
-  {
-    "Name": "$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vera-rubin'})",
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "NSM_Telemetry",
-        "Type": "NSM_Telemetry",
-        "Kind": "cx9_io",
-        "InstanceNumber": "$Instance",
-        "EID": "$EID",
-        "LocationCode": "$Name",
-        "LocationContext": "$LocationContext",
-        "PortLocationContext": "$LocationContext",
-        "SwitchName": "$SwitchName",
-        "BridgeName": "$Bridge",
-        "PortLocationReference": "$PortLocationReference",
-        "PortNameMap": ["$PortName0", "$PortName1"],
-        "PortLocationCodeMap": ["$PortName0", "$PortName1"],
-        "ParameterOverrides": {}
-      },
-      {
-        "BridgeName": "$Bridge",
+    {
+        "Associations": {
+            "parent_chassis": "board/$ParentChassis"
+        },
+        "Exposes": [],
         "Name": "$Name",
-        "PoolIndex": "$PoolIndex",
-        "Type": "MCTPBridgePoolDevice"
-      },
-      {
-        "DeviceType": "CX_NIC_$Instance",
-        "Name": "$Name",
-        "SupportedDumps": [
-          "NetIR"
-        ],
-        "Type": "Dump"
-      },
-      {
-        "ConnectsToName": "$Bridge",
-        "DeviceAddress": "MCTP:$EID",
-        "DeviceType": "MCTPEndpoint",
-        "Name": "$Name",
-        "Type": "PlatformDevice",
-        "poweredInStandby": false
-      },
-      {
-        "Name": "$Name_PLDM",
-        "Type": "PLDMDevice",
-        "UpdateableComponents": {
-          "FW_$Name": 1
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vera-rubin'})",
+        "Type": "chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": "$Instance"
         },
-        "FWInventoryOnlyComponent": {
-          "CX_NVConfig_MLNX_$Instance": 4,
-          "CX_NVConfig_OEM_$Instance": 3
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
         },
-        "NetworkAdapter": "$NetworkAdapterName",
-        "SensorAuxNames": {
-          "$Name": 5,
-          "$NetworkAdapterName": 60,
-          "Port_0": 200,
-          "Port_1": 201,
-          "Port_2": 202,
-          "Port_3": 203,
-          "CX_NIC_$Instance_Port_0_Speed_0": 100,
-          "CX_NIC_$Instance_Port_1_Speed_0": 101,
-          "$Name_Power_0": 50,
-          "CX_NIC_$Instance_Port_0_Voltage_0": 400,
-          "CX_NIC_$Instance_Port_1_Voltage_0": 401,
-          "$Name_Temp_0": 300,
-          "CX_NIC_$Instance_Port_0_Temp_0": 500,
-          "CX_NIC_$Instance_Port_1_Temp_0": 501,
-          "CX_NIC_$Instance_Port_0_Plug": 700,
-          "CX_NIC_$Instance_Port_1_Plug": 701
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "$LocationContext"
         },
-        "Ports": {
-          "200": "$PortName0",
-          "201": "$PortName1"
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": false
         },
-        "PortMaxSpeedMBps": "$PortMaxSpeedMBps",
-        "UpperFatal": {
-          "$Name_Temp_0": 105.0,
-          "CX_NIC_$Instance_Port_0_Temp_0": 72.0,
-          "CX_NIC_$Instance_Port_1_Temp_0": 72.0
-        },
-        "UpperCritical": {
-          "$Name_Temp_0": 103.0,
-          "CX_NIC_$Instance_Port_0_Temp_0": 70.0,
-          "CX_NIC_$Instance_Port_1_Temp_0": 70.0
-        },
-        "UpperCaution": {
-          "$Name_Temp_0": 100.0,
-          "CX_NIC_$Instance_Port_0_Temp_0": 67.0,
-          "CX_NIC_$Instance_Port_1_Temp_0": 67.0
+        "xyz.openbmc_project.Inventory.Item.Board": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
         }
-      }
-    ]
-  }
+    },
+    {
+        "Exposes": [
+            {
+                "DeviceType": "CX_NIC_$Instance",
+                "Name": "$Name",
+                "SupportedDumps": [
+                    "NetIR"
+                ],
+                "Type": "Dump"
+            },
+            {
+                "BridgeName": "$Bridge",
+                "Name": "$Name",
+                "PoolIndex": "$PoolIndex",
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "BridgeName": "$Bridge",
+                "EID": "$EID",
+                "InstanceNumber": "$Instance",
+                "Kind": "cx9_io",
+                "LocationCode": "$Name",
+                "LocationContext": "$LocationContext",
+                "Name": "NSM_Telemetry",
+                "ParameterOverrides": {},
+                "PortLocationCodeMap": [
+                    "$PortName0",
+                    "$PortName1"
+                ],
+                "PortLocationContext": "$LocationContext",
+                "PortLocationReference": "$PortLocationReference",
+                "PortNameMap": [
+                    "$PortName0",
+                    "$PortName1"
+                ],
+                "SwitchName": "$SwitchName",
+                "Type": "NSM_Telemetry"
+            },
+            {
+                "FWInventoryOnlyComponent": {
+                    "CX_NVConfig_MLNX_$Instance": 4,
+                    "CX_NVConfig_OEM_$Instance": 3
+                },
+                "Name": "$Name_PLDM",
+                "NetworkAdapter": "$NetworkAdapterName",
+                "PortMaxSpeedMBps": "$PortMaxSpeedMBps",
+                "Ports": {
+                    "200": "$PortName0",
+                    "201": "$PortName1"
+                },
+                "SensorAuxNames": {
+                    "$Name": 5,
+                    "$Name_Power_0": 50,
+                    "$Name_Temp_0": 300,
+                    "$NetworkAdapterName": 60,
+                    "CX_NIC_$Instance_Port_0_Plug": 700,
+                    "CX_NIC_$Instance_Port_0_Speed_0": 100,
+                    "CX_NIC_$Instance_Port_0_Temp_0": 500,
+                    "CX_NIC_$Instance_Port_0_Voltage_0": 400,
+                    "CX_NIC_$Instance_Port_1_Plug": 701,
+                    "CX_NIC_$Instance_Port_1_Speed_0": 101,
+                    "CX_NIC_$Instance_Port_1_Temp_0": 501,
+                    "CX_NIC_$Instance_Port_1_Voltage_0": 401,
+                    "Port_0": 200,
+                    "Port_1": 201,
+                    "Port_2": 202,
+                    "Port_3": 203
+                },
+                "Type": "PLDMDevice",
+                "UpdateableComponents": {
+                    "FW_$Name": 1
+                },
+                "UpperCaution": {
+                    "$Name_Temp_0": 100.0,
+                    "CX_NIC_$Instance_Port_0_Temp_0": 67.0,
+                    "CX_NIC_$Instance_Port_1_Temp_0": 67.0
+                },
+                "UpperCritical": {
+                    "$Name_Temp_0": 103.0,
+                    "CX_NIC_$Instance_Port_0_Temp_0": 70.0,
+                    "CX_NIC_$Instance_Port_1_Temp_0": 70.0
+                },
+                "UpperFatal": {
+                    "$Name_Temp_0": 105.0,
+                    "CX_NIC_$Instance_Port_0_Temp_0": 72.0,
+                    "CX_NIC_$Instance_Port_1_Temp_0": 72.0
+                }
+            },
+            {
+                "ConnectsToName": "$Bridge",
+                "DeviceAddress": "MCTP:$EID",
+                "DeviceType": "MCTPEndpoint",
+                "Name": "$Name",
+                "Type": "PlatformDevice",
+                "poweredInStandby": false
+            }
+        ],
+        "Name": "$Name",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vera-rubin'})",
+        "Type": "NvDevice"
+    }
 ]

@@ -288,10 +288,10 @@
         }
     },
     {
+        "Exposes": [],
         "Name": "MGX_C1",
         "Probe": "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.*MGX C1.*'})",
-        "Type": "NvDevice",
-        "Exposes": []
+        "Type": "NvDevice"
     },
     {
         "Associations": {
@@ -399,56 +399,7 @@
         }
     },
     {
-        "Name": "ProcessorModule_Devices_$Instance",
-        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^BMC_HPM_P5032$'})",
-        "Type": "NvDevice",
         "Exposes": [
-            {
-                "Name": "ProcessorModule_SMA_0",
-                "Type": "NvDevice",
-                "Kind": "bmc_hpm_sma",
-                "Generation": "vera-rubin",
-                "Instance": 0,
-                "EID": 20,
-                "ParentChassis": "ProcessorModule_0",
-                "Transport": {
-                    "Medium": "usb",
-                    "Port": "$SmaPort",
-                    "RootHubPath": "$Platform.UsbRootHubPath",
-                    "PoolStartEID": "21"
-                },
-                "Recovery": {
-                    "RecoveryType": "MCU",
-                    "RecoveryGpio": "B0_M1_MCU_RECOVERY_L-O",
-                    "ResetGpio": "B0_M1_MCU_RESET_L-O",
-                    "Target": "HPM"
-                }
-            },
-            {
-                "Name": "CPU_0",
-                "Type": "NvDevice",
-                "Kind": "cpu",
-                "Generation": "vera-rubin",
-                "Instance": 0,
-                "EID": 16,
-                "ParentChassis": "ProcessorModule_0",
-                "Transport": {
-                    "Medium": "usb",
-                    "Port": "$Cpu0Port",
-                    "RootHubPath": "$Platform.UsbRootHubPath"
-                },
-                "Recovery": {
-                    "RecoveryType": "USBRCM",
-                    "ActionRedfishChassis": "BMC_0",
-                    "SystemResetGpio": "B0_M1_IST_SYS_RST_L-O",
-                    "ForcedRecoveryGpio": "B0_M1_CPU_FORCED_RECOVERY_L-O",
-                    "BootDevSel0Gpio": "B0_M1_CPU_BOOT_DEV_SEL0-O",
-                    "BootDevSel1Gpio": "B0_M1_CPU_BOOT_DEV_SEL1-O",
-                    "BootDevSel2Gpio": "B0_M1_CPU_BOOT_DEV_SEL2-O",
-                    "RecoveryType0Gpio": "B0_M1_CPU_RECOVERY_TYPE0-O",
-                    "RecoveryType1Gpio": "B0_M1_CPU_RECOVERY_TYPE1-O"
-                }
-            },
             {
                 "BootGpio": "B0_M1_CPU_IST_BOOT_HMC-O",
                 "Cpus": [
@@ -461,43 +412,92 @@
                 "ShutdownOkGpio": "B0_M1_CPU_SHDN_OK_L_3V3-I",
                 "SysResetGpio": "B0_M1_IST_SYS_RST_L-O",
                 "Type": "ISTDomain"
+            },
+            {
+                "EID": 20,
+                "Generation": "vera-rubin",
+                "Instance": 0,
+                "Kind": "bmc_hpm_sma",
+                "Name": "ProcessorModule_SMA_0",
+                "ParentChassis": "ProcessorModule_0",
+                "Recovery": {
+                    "RecoveryGpio": "B0_M1_MCU_RECOVERY_L-O",
+                    "RecoveryType": "MCU",
+                    "ResetGpio": "B0_M1_MCU_RESET_L-O",
+                    "Target": "HPM"
+                },
+                "Transport": {
+                    "Medium": "usb",
+                    "PoolStartEID": "21",
+                    "Port": "$SmaPort",
+                    "RootHubPath": "$Platform.UsbRootHubPath"
+                },
+                "Type": "NvDevice"
+            },
+            {
+                "EID": 16,
+                "Generation": "vera-rubin",
+                "Instance": 0,
+                "Kind": "cpu",
+                "Name": "CPU_0",
+                "ParentChassis": "ProcessorModule_0",
+                "Recovery": {
+                    "ActionRedfishChassis": "BMC_0",
+                    "BootDevSel0Gpio": "B0_M1_CPU_BOOT_DEV_SEL0-O",
+                    "BootDevSel1Gpio": "B0_M1_CPU_BOOT_DEV_SEL1-O",
+                    "BootDevSel2Gpio": "B0_M1_CPU_BOOT_DEV_SEL2-O",
+                    "ForcedRecoveryGpio": "B0_M1_CPU_FORCED_RECOVERY_L-O",
+                    "RecoveryType": "USBRCM",
+                    "RecoveryType0Gpio": "B0_M1_CPU_RECOVERY_TYPE0-O",
+                    "RecoveryType1Gpio": "B0_M1_CPU_RECOVERY_TYPE1-O",
+                    "SystemResetGpio": "B0_M1_IST_SYS_RST_L-O"
+                },
+                "Transport": {
+                    "Medium": "usb",
+                    "Port": "$Cpu0Port",
+                    "RootHubPath": "$Platform.UsbRootHubPath"
+                },
+                "Type": "NvDevice"
             }
-        ]
+        ],
+        "Name": "ProcessorModule_Devices_$Instance",
+        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^BMC_HPM_P5032$'})",
+        "Type": "NvDevice"
     },
     {
+        "Exposes": [
+            {
+                "EID": 17,
+                "Generation": "vera-rubin",
+                "Instance": 1,
+                "Kind": "cpu",
+                "Name": "CPU_1",
+                "ParentChassis": "ProcessorModule_0",
+                "Recovery": {
+                    "ActionRedfishChassis": "BMC_0",
+                    "BootDevSel0Gpio": "B0_M1_CPU_BOOT_DEV_SEL0-O",
+                    "BootDevSel1Gpio": "B0_M1_CPU_BOOT_DEV_SEL1-O",
+                    "BootDevSel2Gpio": "B0_M1_CPU_BOOT_DEV_SEL2-O",
+                    "ForcedRecoveryGpio": "B0_M1_CPU_FORCED_RECOVERY_L-O",
+                    "RecoveryType": "USBRCM",
+                    "RecoveryType0Gpio": "B0_M1_CPU_RECOVERY_TYPE0-O",
+                    "RecoveryType1Gpio": "B0_M1_CPU_RECOVERY_TYPE1-O",
+                    "SystemResetGpio": "B0_M1_IST_SYS_RST_L-O"
+                },
+                "Transport": {
+                    "Medium": "usb",
+                    "Port": "$Cpu1Port",
+                    "RootHubPath": "$Platform.UsbRootHubPath"
+                },
+                "Type": "NvDevice"
+            }
+        ],
         "Name": "ProcessorModule_CPU_1_Devices_$Instance",
         "Probe": [
             "xyz.openbmc_project.Configuration.NvBoard({'Board': '^BMC_HPM_P5032$'})",
             "AND",
             "FOUND('CPU_1')"
         ],
-        "Type": "NvDevice",
-        "Exposes": [
-            {
-                "Name": "CPU_1",
-                "Type": "NvDevice",
-                "Kind": "cpu",
-                "Generation": "vera-rubin",
-                "Instance": 1,
-                "EID": 17,
-                "ParentChassis": "ProcessorModule_0",
-                "Transport": {
-                    "Medium": "usb",
-                    "Port": "$Cpu1Port",
-                    "RootHubPath": "$Platform.UsbRootHubPath"
-                },
-                "Recovery": {
-                    "RecoveryType": "USBRCM",
-                    "ActionRedfishChassis": "BMC_0",
-                    "SystemResetGpio": "B0_M1_IST_SYS_RST_L-O",
-                    "ForcedRecoveryGpio": "B0_M1_CPU_FORCED_RECOVERY_L-O",
-                    "BootDevSel0Gpio": "B0_M1_CPU_BOOT_DEV_SEL0-O",
-                    "BootDevSel1Gpio": "B0_M1_CPU_BOOT_DEV_SEL1-O",
-                    "BootDevSel2Gpio": "B0_M1_CPU_BOOT_DEV_SEL2-O",
-                    "RecoveryType0Gpio": "B0_M1_CPU_RECOVERY_TYPE0-O",
-                    "RecoveryType1Gpio": "B0_M1_CPU_RECOVERY_TYPE1-O"
-                }
-            }
-        ]
+        "Type": "NvDevice"
     }
 ]

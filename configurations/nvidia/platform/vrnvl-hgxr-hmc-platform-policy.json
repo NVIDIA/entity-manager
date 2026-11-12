@@ -1,102 +1,111 @@
 [
-  {
-    "Name": "Nvidia HGX-R HMC Policy",
-    "Probe": "FOUND('Nvidia HGX-R HMC')",
-    "Type": "Platform",
-    "PlatformExposes": [
-      {
-        "Name": "NSM_Policy_GPU",
-        "Type": "NSM_Policy",
-        "Kind": "gpu",
-        "Policy": [
-          {
-            "Devices": [],
-            "GPMMetrics": { "AggregatedMetricsBitfield": [255, 255, 223, 15]}
-          },
-          {
-            "Devices": [],
-            "ChassisParentAssociation": {
-              "ParentChassisAssociationPath": "chassis/{parentChassis}"
+    {
+        "Name": "Nvidia HGX-R HMC Policy",
+        "PlatformExposes": [
+            {
+                "DeviceType": "ConnectX",
+                "Name": "ConnectX_MST_Recovery_Policy",
+                "Type": "MSTRecoveryPolicy"
             },
-            "IRoTSPDMResponder": {
-              "MctpUuidEnabled": false
-            }
-          }
-        ]
-      },
-      {
-        "Name": "NSM_Policy_HPM_SMA",
-        "Type": "NSM_Policy",
-        "Kind": "hmc_hpm_sma",
-        "Policy": [
-          {
-            "Devices": [],
-            "TotalGpuPower": {
-              "ChassisName": "HGX_Chassis_0"
+            {
+                "DeviceType": "NVSwitch",
+                "Name": "NVSwitch_MST_Recovery_Policy",
+                "Type": "MSTRecoveryPolicy"
             },
-            "BusBarTemp_0": {
-              "Enabled": false
-            }
-          },
-          {
-            "Devices": ["HGX_Baseboard_SMA_0"],
-            "ChassisParentAssociation": {
-              "ParentChassisAssociationPath": "chassis/{parentChassis}"
-            }
-          }
-        ]
-      },
-      {
-        "Name": "NSM_Policy_CX_SMA",
-        "Type": "NSM_Policy",
-        "Kind": "cx_sma",
-        "Policy": [
-          {
-            "Devices": [],
-            "ChassisIRoTResponder": {
-              "Enabled": false
+            {
+                "DeviceType": "NVLinkManagementNIC",
+                "Name": "NVLinkManagementNIC_MST_Recovery_Policy",
+                "Type": "MSTRecoveryPolicy"
             },
-            "LeakDetection": {
-              "Enabled": false
+            {
+                "Kind": "gpu",
+                "Name": "NSM_Policy_GPU",
+                "Policy": [
+                    {
+                        "Devices": [],
+                        "GPMMetrics": {
+                            "AggregatedMetricsBitfield": [
+                                255,
+                                255,
+                                223,
+                                15
+                            ]
+                        }
+                    },
+                    {
+                        "ChassisParentAssociation": {
+                            "ParentChassisAssociationPath": "chassis/{parentChassis}"
+                        },
+                        "Devices": [],
+                        "IRoTSPDMResponder": {
+                            "MctpUuidEnabled": false
+                        }
+                    }
+                ],
+                "Type": "NSM_Policy"
+            },
+            {
+                "Kind": "hmc_hpm_sma",
+                "Name": "NSM_Policy_HPM_SMA",
+                "Policy": [
+                    {
+                        "BusBarTemp_0": {
+                            "Enabled": false
+                        },
+                        "Devices": [],
+                        "TotalGpuPower": {
+                            "ChassisName": "HGX_Chassis_0"
+                        }
+                    },
+                    {
+                        "ChassisParentAssociation": {
+                            "ParentChassisAssociationPath": "chassis/{parentChassis}"
+                        },
+                        "Devices": [
+                            "HGX_Baseboard_SMA_0"
+                        ]
+                    }
+                ],
+                "Type": "NSM_Policy"
+            },
+            {
+                "Kind": "cx_sma",
+                "Name": "NSM_Policy_CX_SMA",
+                "Policy": [
+                    {
+                        "ChassisIRoTResponder": {
+                            "Enabled": false
+                        },
+                        "Devices": [],
+                        "LeakDetection": {
+                            "Enabled": false
+                        }
+                    }
+                ],
+                "Type": "NSM_Policy"
+            },
+            {
+                "Devices": [],
+                "Kind": "cx9_io",
+                "LinkStateOnNetworkAdapter": true,
+                "Name": "PLDM_Policy_CX9",
+                "PlugParent": "HGX_OSFP_Board_0",
+                "Type": "PLDM_Policy"
+            },
+            {
+                "ConnectXPackageUUID": "08E4F61E12EB42FAAC600953C4194564",
+                "GlacierPackageUUID": "DBC2D178F70711EEBB65CFE7103AC1AC",
+                "MCUCX9PackageUUID": "4E7A1BC95F203D8EA6C1B94E2F78D3C1",
+                "MCUQM4PackageUUID": "9B5E32AF10C7D4E8F3A2619CB8D4E0F2",
+                "MCUSMAPackageUUID": "A3C9F21B7D8045E6F2B19C4DE87A3F5B",
+                "MCUSXMPackageUUID": "F1C47A3E9D205B6C8A3F1E7B4C9628D0",
+                "NVLinkManagementNICPackageUUID": "2FA2B61D1B914C0EAC17AFE8C7C4F8FE",
+                "NVSwitchPackageUUID": "1BECFD7BF9C14746A2756FB89A90CEC8",
+                "Name": "RecoveryPackages",
+                "Type": "RecoveryPackages"
             }
-          }
-        ]
-      },
-      {
-        "Name": "PLDM_Policy_CX9",
-        "Type": "PLDM_Policy",
-        "Kind": "cx9_io",
-        "Devices": [],
-        "LinkStateOnNetworkAdapter": true,
-        "PlugParent": "HGX_OSFP_Board_0"
-      },
-      {
-        "DeviceType": "ConnectX",
-        "Name": "ConnectX_MST_Recovery_Policy",
-        "Type": "MSTRecoveryPolicy"
-      },
-      {
-        "DeviceType": "NVSwitch",
-        "Name": "NVSwitch_MST_Recovery_Policy",
-        "Type": "MSTRecoveryPolicy"
-      },
-      {
-        "DeviceType": "NVLinkManagementNIC",
-        "Name": "NVLinkManagementNIC_MST_Recovery_Policy",
-        "Type": "MSTRecoveryPolicy"
-      },
-      {
-        "Name": "RecoveryPackages",
-        "Type": "RecoveryPackages",
-        "ConnectXPackageUUID": "08E4F61E12EB42FAAC600953C4194564",
-        "GlacierPackageUUID": "DBC2D178F70711EEBB65CFE7103AC1AC",
-        "MCUCX9PackageUUID": "4E7A1BC95F203D8EA6C1B94E2F78D3C1",
-        "MCUQM4PackageUUID": "9B5E32AF10C7D4E8F3A2619CB8D4E0F2",
-        "MCUSMAPackageUUID": "A3C9F21B7D8045E6F2B19C4DE87A3F5B",
-        "MCUSXMPackageUUID": "F1C47A3E9D205B6C8A3F1E7B4C9628D0",
-        "NVLinkManagementNICPackageUUID": "2FA2B61D1B914C0EAC17AFE8C7C4F8FE",
-        "NVSwitchPackageUUID": "1BECFD7BF9C14746A2756FB89A90CEC8"
-      }
-    ]
-  }
+        ],
+        "Probe": "FOUND('Nvidia HGX-R HMC')",
+        "Type": "Platform"
+    }
 ]

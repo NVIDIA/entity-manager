@@ -1,51 +1,51 @@
 [
-  {
-    "Name": "$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^erot$', 'Generation': 'vera-rubin'})",
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "NSM_Telemetry",
-        "Type": "NSM_Telemetry",
-        "Kind": "bmc_erot",
-        "InstanceNumber": "$Instance",
-        "EID": "$EID",
-        "LocationContext": "$LocationContext",
-        "LocationCode": "$LocationCode",
-        "ParentChassis": "$ParentChassis",
-        "ParameterOverrides": {}
-      },
-      {
-        "ConnectsToName": "$Platform.BmcName",
-        "DeviceAddress": "MCTP:$EID",
-        "DeviceType": "EROT",
-        "Name": "EROT_$Platform.BmcName",
-        "Type": "PlatformDevice"
-      },
-      {
-        "Name": "$Name",
-        "SupportedDumps": [
-          "RoT",
-          "FwAttrs",
-          "HwCheckout"
+    {
+        "Exposes": [
+            {
+                "Name": "$Name",
+                "SupportedDumps": [
+                    "RoT",
+                    "FwAttrs",
+                    "HwCheckout"
+                ],
+                "Type": "Dump"
+            },
+            {
+                "Bus": "$Bus",
+                "ChipSelect": "$ChipSelect",
+                "Name": "$Name",
+                "StaticEndpointID": "$EID",
+                "Type": "MCTPSPIDevice"
+            },
+            {
+                "EID": "$EID",
+                "InstanceNumber": "$Instance",
+                "Kind": "bmc_erot",
+                "LocationCode": "$LocationCode",
+                "LocationContext": "$LocationContext",
+                "Name": "NSM_Telemetry",
+                "ParameterOverrides": {},
+                "ParentChassis": "$ParentChassis",
+                "Type": "NSM_Telemetry"
+            },
+            {
+                "Name": "$Name_PLDM",
+                "Type": "PLDMDevice",
+                "UpdateableComponents": {
+                    "$Platform.NamePrefixFW_BMC_$Instance": 16,
+                    "$Platform.NamePrefixFW_ERoT_BMC_$Instance": 65280
+                }
+            },
+            {
+                "ConnectsToName": "$Platform.BmcName",
+                "DeviceAddress": "MCTP:$EID",
+                "DeviceType": "EROT",
+                "Name": "EROT_$Platform.BmcName",
+                "Type": "PlatformDevice"
+            }
         ],
-        "Type": "Dump"
-      },
-      {
-        "Name": "$Name_PLDM",
-        "Type": "PLDMDevice",
-        "UpdateableComponents": {
-          "$Platform.NamePrefixFW_ERoT_BMC_$Instance": 65280,
-          "$Platform.NamePrefixFW_BMC_$Instance": 16
-        }
-      },
-      {
-        "Bus": "$Bus",
-        "ChipSelect": "$ChipSelect",
         "Name": "$Name",
-        "StaticEndpointID": "$EID",
-        "Type": "MCTPSPIDevice"
-      }
-    ]
-  }
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^erot$', 'Generation': 'vera-rubin'})",
+        "Type": "NvDevice"
+    }
 ]

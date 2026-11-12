@@ -1,57 +1,57 @@
 [
-  {
-    "Name": "$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^gpu$', 'Generation': 'vera-rubin'})",
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "NSM_Telemetry",
-        "Type": "NSM_Telemetry",
-        "Kind": "gpu",
-        "InstanceNumber": "$Instance",
-        "EID": "$EID",
-        "ParentChassis": "$ParentChassis",
-        "NvLinkCount": 36,
-        "LocationCode": "$LocationCode",
-        "MemoryLocationCode": "$LocationCode_DRAM_0",
-        "LocationContext": "$LocationContext",
-        "BridgeName": "$Bridge",
-        "ParameterOverrides": {}
-      },
-      {
-        "ConnectsToName": "$Bridge",
-        "DeviceAddress": "MCTP:$EID",
-        "DeviceType": "GPU",
-        "Name": "$Name",
-        "Type": "PlatformDevice",
-        "poweredInStandby": false
-      },
-      {
-        "DeviceType": "GPU_$Instance",
-        "Name": "$Name",
-        "SupportedDumps": [
-          "RoT",
-          "GPUDiag",
-          "NetIR"
+    {
+        "Exposes": [
+            {
+                "DeviceType": "GPU_$Instance",
+                "Name": "$Name",
+                "SupportedDumps": [
+                    "RoT",
+                    "GPUDiag",
+                    "NetIR"
+                ],
+                "Type": "Dump"
+            },
+            {
+                "BridgeName": "$Bridge",
+                "Name": "$Name",
+                "PoolIndex": "$PoolIndex",
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "BridgeName": "$Bridge",
+                "EID": "$EID",
+                "InstanceNumber": "$Instance",
+                "Kind": "gpu",
+                "LocationCode": "$LocationCode",
+                "LocationContext": "$LocationContext",
+                "MemoryLocationCode": "$LocationCode_DRAM_0",
+                "Name": "NSM_Telemetry",
+                "NvLinkCount": 36,
+                "ParameterOverrides": {},
+                "ParentChassis": "$ParentChassis",
+                "Type": "NSM_Telemetry"
+            },
+            {
+                "FWInventoryOnlyComponent": {
+                    "$Platform.NamePrefixInfoROM_GPU_$Instance": 49168
+                },
+                "Name": "$Name_PLDM",
+                "Type": "PLDMDevice",
+                "UpdateableComponents": {
+                    "$Platform.NamePrefixFW_GPU_$Instance": 49152
+                }
+            },
+            {
+                "ConnectsToName": "$Bridge",
+                "DeviceAddress": "MCTP:$EID",
+                "DeviceType": "GPU",
+                "Name": "$Name",
+                "Type": "PlatformDevice",
+                "poweredInStandby": false
+            }
         ],
-        "Type": "Dump"
-      },
-      {
-        "Name": "$Name_PLDM",
-        "Type": "PLDMDevice",
-        "UpdateableComponents": {
-          "$Platform.NamePrefixFW_GPU_$Instance": 49152
-        },
-        "FWInventoryOnlyComponent": {
-          "$Platform.NamePrefixInfoROM_GPU_$Instance": 49168
-        }
-      },
-      {
-        "BridgeName": "$Bridge",
         "Name": "$Name",
-        "PoolIndex": "$PoolIndex",
-        "Type": "MCTPBridgePoolDevice"
-      }
-    ]
-  }
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^gpu$', 'Generation': 'vera-rubin'})",
+        "Type": "NvDevice"
+    }
 ]

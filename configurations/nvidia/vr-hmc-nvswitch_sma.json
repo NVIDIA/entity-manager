@@ -1,59 +1,59 @@
 [
-  {
-    "Name": "$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^nvswitch_sma$', 'Generation': 'vera-rubin'})",
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "NSM_Telemetry",
-        "Type": "NSM_Telemetry",
-        "Disable": [],
-        "ParameterOverrides": {},
-        "Kind": "nvswitch_sma",
-        "InstanceNumber": "$Instance",
-        "EID": "$EID"
-      },
-      {
-        "ConnectsToName": "$Platform.BmcName",
-        "DeviceAddress": "MCTP:$EID",
-        "DeviceType": "MCTPBridge",
-        "Name": "$Name",
-        "PhysicalInterface": "usb1:0x0955:0xcf11:$Port",
-        "Type": "PlatformDevice"
-      },
-      {
-        "DeviceType": "$Name",
-        "Name": "$Name",
-        "SupportedDumps": [
-          "RoT",
-          "SMA",
-          "GPUDiag"
+    {
+        "Exposes": [
+            {
+                "DeviceType": "$Name",
+                "Name": "$Name",
+                "SupportedDumps": [
+                    "RoT",
+                    "SMA",
+                    "GPUDiag"
+                ],
+                "Type": "Dump"
+            },
+            {
+                "BridgePoolEndEID": "$PoolEndEID",
+                "BridgePoolStartEID": "$PoolStartEID",
+                "Configuration": 1,
+                "IgnoreEIDs": "$IgnoreEIDs",
+                "InterfaceNum": 0,
+                "Name": "$Name",
+                "PollingInterval": "5",
+                "Port": "$Port",
+                "RootHubPath": "$RootHubPath",
+                "StaticEndpointID": "$EID",
+                "Type": "MCTPUSBDevice"
+            },
+            {
+                "Disable": [],
+                "EID": "$EID",
+                "InstanceNumber": "$Instance",
+                "Kind": "nvswitch_sma",
+                "Name": "NSM_Telemetry",
+                "ParameterOverrides": {},
+                "Type": "NSM_Telemetry"
+            },
+            {
+                "Name": "$Name_PLDM",
+                "SensorAuxNames": {
+                    "$Name_Temp_0": 17
+                },
+                "Type": "PLDMDevice",
+                "UpdateableComponents": {
+                    "$Platform.NamePrefixFW_NVSwitch_SMA_$Instance": 65282
+                }
+            },
+            {
+                "ConnectsToName": "$Platform.BmcName",
+                "DeviceAddress": "MCTP:$EID",
+                "DeviceType": "MCTPBridge",
+                "Name": "$Name",
+                "PhysicalInterface": "usb1:0x0955:0xcf11:$Port",
+                "Type": "PlatformDevice"
+            }
         ],
-        "Type": "Dump"
-      },
-      {
-        "Name": "$Name_PLDM",
-        "Type": "PLDMDevice",
-        "UpdateableComponents": {
-          "$Platform.NamePrefixFW_NVSwitch_SMA_$Instance": 65282
-        },
-        "SensorAuxNames": {
-          "$Name_Temp_0": 17
-        }
-      },
-      {
-        "BridgePoolEndEID": "$PoolEndEID",
-        "BridgePoolStartEID": "$PoolStartEID",
-        "Configuration": 1,
-        "IgnoreEIDs": "$IgnoreEIDs",
-        "InterfaceNum": 0,
         "Name": "$Name",
-        "PollingInterval": "5",
-        "Port": "$Port",
-        "RootHubPath": "$RootHubPath",
-        "StaticEndpointID": "$EID",
-        "Type": "MCTPUSBDevice"
-      }
-    ]
-  }
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^nvswitch_sma$', 'Generation': 'vera-rubin'})",
+        "Type": "NvDevice"
+    }
 ]

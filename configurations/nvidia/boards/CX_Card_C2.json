@@ -134,23 +134,23 @@
         "xyz.openbmc_project.Inventory.Item.NetworkInterface": {}
     },
     {
-        "Name": "CX_Card_Devices_$Instance",
-        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^CX_Card_C2$'})",
-        "Type": "NvDevice",
         "Exposes": [
             {
-                "Name": "CX_$Instance",
-                "Type": "NvDevice",
-                "Kind": "cx9_nic_i2c",
+                "EID": "$Instance + 101",
                 "Generation": "vera-rubin",
                 "Instance": "$Instance",
-                "EID": "$Instance + 101",
+                "Kind": "cx9_nic_i2c",
+                "Name": "CX_$Instance",
                 "Transport": {
-                    "Medium": "i2c",
+                    "Address": 50,
                     "Bus": "$I2cBus",
-                    "Address": 50
-                }
+                    "Medium": "i2c"
+                },
+                "Type": "NvDevice"
             }
-        ]
+        ],
+        "Name": "CX_Card_Devices_$Instance",
+        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^CX_Card_C2$'})",
+        "Type": "NvDevice"
     }
 ]

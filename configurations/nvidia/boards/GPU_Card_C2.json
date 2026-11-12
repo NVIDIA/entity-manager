@@ -1,88 +1,88 @@
 [
-  {
-    "Name": "GPU_Card_Devices_$Instance",
-    "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^GPU_Card_C2$', 'Sku': '^All$'})",
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "GPU_SMA_$Instance",
-        "Type": "NvDevice",
-        "Kind": "gpu_sma",
-        "Generation": "vera-rubin",
-        "Instance": "$Instance",
-        "EID": "$SmaEid",
-        "Transport": {
-          "Medium": "usb",
-          "Port": "$SmaPort",
-          "RootHubPath": "$Platform.UsbRootHubPath"
-        },
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "GPU$Instance_MCU_RECOVERY_N-O",
-          "ResetGpio": "GPU$Instance_MCU_RST_N-O",
-          "Target": "GPU"
-        }
-      }
-    ]
-  },
-  {
-    "Name": "GPU_Card_C2_Devices_$Instance",
-    "Probe": [
-      "xyz.openbmc_project.Configuration.NvBoard({'Board': '^GPU_Card_C2$', 'Sku': '^C2$'})",
-      "AND",
-      "FOUND('CPU_1')"
-    ],
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "GPU_SMA_$Instance",
-        "Type": "NvDevice",
-        "Kind": "gpu_sma",
-        "Generation": "vera-rubin",
-        "Instance": "$Instance",
-        "EID": "$SmaEid",
-        "Transport": {
-          "Medium": "usb",
-          "Port": "$SmaPort",
-          "RootHubPath": "$Platform.UsbRootHubPath"
-        },
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "GPU$Instance_MCU_RECOVERY_N-O",
-          "ResetGpio": "GPU$Instance_MCU_RST_N-O",
-          "Target": "GPU"
-        }
-      }
-    ]
-  },
-  {
-    "Name": "GPU_Card_C1_Devices_$Instance",
-    "Probe": [
-      "xyz.openbmc_project.Configuration.NvBoard({'Board': '^GPU_Card_C2$', 'Sku': '^C1$'})",
-      "AND",
-      "FOUND('MGX_C1')"
-    ],
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "GPU_SMA_$Instance",
-        "Type": "NvDevice",
-        "Kind": "gpu_sma",
-        "Generation": "vera-rubin",
-        "Instance": "$Instance",
-        "EID": "$SmaEid",
-        "Transport": {
-          "Medium": "usb",
-          "Port": "$SmaPort",
-          "RootHubPath": "$Platform.UsbRootHubPath"
-        },
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "GPU$Instance_MCU_RECOVERY_N-O",
-          "ResetGpio": "GPU$Instance_MCU_RST_N-O",
-          "Target": "GPU"
-        }
-      }
-    ]
-  }
+    {
+        "Exposes": [
+            {
+                "EID": "$SmaEid",
+                "Generation": "vera-rubin",
+                "Instance": "$Instance",
+                "Kind": "gpu_sma",
+                "Name": "GPU_SMA_$Instance",
+                "Recovery": {
+                    "RecoveryGpio": "GPU$Instance_MCU_RECOVERY_N-O",
+                    "RecoveryType": "MCU",
+                    "ResetGpio": "GPU$Instance_MCU_RST_N-O",
+                    "Target": "GPU"
+                },
+                "Transport": {
+                    "Medium": "usb",
+                    "Port": "$SmaPort",
+                    "RootHubPath": "$Platform.UsbRootHubPath"
+                },
+                "Type": "NvDevice"
+            }
+        ],
+        "Name": "GPU_Card_Devices_$Instance",
+        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^GPU_Card_C2$', 'Sku': '^All$'})",
+        "Type": "NvDevice"
+    },
+    {
+        "Exposes": [
+            {
+                "EID": "$SmaEid",
+                "Generation": "vera-rubin",
+                "Instance": "$Instance",
+                "Kind": "gpu_sma",
+                "Name": "GPU_SMA_$Instance",
+                "Recovery": {
+                    "RecoveryGpio": "GPU$Instance_MCU_RECOVERY_N-O",
+                    "RecoveryType": "MCU",
+                    "ResetGpio": "GPU$Instance_MCU_RST_N-O",
+                    "Target": "GPU"
+                },
+                "Transport": {
+                    "Medium": "usb",
+                    "Port": "$SmaPort",
+                    "RootHubPath": "$Platform.UsbRootHubPath"
+                },
+                "Type": "NvDevice"
+            }
+        ],
+        "Name": "GPU_Card_C2_Devices_$Instance",
+        "Probe": [
+            "xyz.openbmc_project.Configuration.NvBoard({'Board': '^GPU_Card_C2$', 'Sku': '^C2$'})",
+            "AND",
+            "FOUND('CPU_1')"
+        ],
+        "Type": "NvDevice"
+    },
+    {
+        "Exposes": [
+            {
+                "EID": "$SmaEid",
+                "Generation": "vera-rubin",
+                "Instance": "$Instance",
+                "Kind": "gpu_sma",
+                "Name": "GPU_SMA_$Instance",
+                "Recovery": {
+                    "RecoveryGpio": "GPU$Instance_MCU_RECOVERY_N-O",
+                    "RecoveryType": "MCU",
+                    "ResetGpio": "GPU$Instance_MCU_RST_N-O",
+                    "Target": "GPU"
+                },
+                "Transport": {
+                    "Medium": "usb",
+                    "Port": "$SmaPort",
+                    "RootHubPath": "$Platform.UsbRootHubPath"
+                },
+                "Type": "NvDevice"
+            }
+        ],
+        "Name": "GPU_Card_C1_Devices_$Instance",
+        "Probe": [
+            "xyz.openbmc_project.Configuration.NvBoard({'Board': '^GPU_Card_C2$', 'Sku': '^C1$'})",
+            "AND",
+            "FOUND('MGX_C1')"
+        ],
+        "Type": "NvDevice"
+    }
 ]

@@ -57,96 +57,96 @@
         "Type": "Assembly"
     },
     {
-        "Name": "StorageBackplane_Devices_$Instance",
-        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^Storage_Backplane_P4546$'})",
-        "Type": "NvDevice",
         "Exposes": [
             {
-                "Name": "StorageBackplane_SMA_0",
-                "Type": "NvDevice",
-                "Kind": "storage_backplane_sma",
+                "EID": 60,
                 "Generation": "vera-rubin",
                 "Instance": 0,
-                "EID": 60,
+                "Kind": "storage_backplane_sma",
+                "Name": "StorageBackplane_SMA_0",
                 "ParentChassis": "StorageBackplane_0",
                 "Transport": {
                     "Medium": "usb",
                     "Port": "$SmaPort",
                     "RootHubPath": "$Platform.UsbRootHubPath"
-                }
+                },
+                "Type": "NvDevice"
             },
             {
-                "Name": "NVMe_E1S_SSD0",
-                "Type": "NvDevice",
-                "Kind": "nvme_e1s_backplane",
+                "EID": 62,
                 "Generation": "vera-rubin",
                 "Instance": 0,
+                "Kind": "nvme_e1s_backplane",
                 "LocationCode": "NVMe E1.S Slot 0",
-                "EID": 62
+                "Name": "NVMe_E1S_SSD0",
+                "Type": "NvDevice"
             },
             {
-                "Name": "NVMe_E1S_SSD1",
-                "Type": "NvDevice",
-                "Kind": "nvme_e1s_backplane",
+                "EID": 61,
                 "Generation": "vera-rubin",
                 "Instance": 1,
+                "Kind": "nvme_e1s_backplane",
                 "LocationCode": "NVMe E1.S Slot 1",
-                "EID": 61
+                "Name": "NVMe_E1S_SSD1",
+                "Type": "NvDevice"
             },
             {
-                "Name": "NVMe_E1S_SSD2",
-                "Type": "NvDevice",
-                "Kind": "nvme_e1s_backplane",
+                "EID": 64,
                 "Generation": "vera-rubin",
                 "Instance": 2,
+                "Kind": "nvme_e1s_backplane",
                 "LocationCode": "NVMe E1.S Slot 2",
-                "EID": 64
+                "Name": "NVMe_E1S_SSD2",
+                "Type": "NvDevice"
             },
             {
-                "Name": "NVMe_E1S_SSD3",
-                "Type": "NvDevice",
-                "Kind": "nvme_e1s_backplane",
+                "EID": 63,
                 "Generation": "vera-rubin",
                 "Instance": 3,
+                "Kind": "nvme_e1s_backplane",
                 "LocationCode": "NVMe E1.S Slot 3",
-                "EID": 63
+                "Name": "NVMe_E1S_SSD3",
+                "Type": "NvDevice"
             },
             {
-                "Name": "NVMe_E1S_SSD4",
-                "Type": "NvDevice",
-                "Kind": "nvme_e1s_backplane",
+                "EID": 66,
                 "Generation": "vera-rubin",
                 "Instance": 4,
+                "Kind": "nvme_e1s_backplane",
                 "LocationCode": "NVMe E1.S Slot 4",
-                "EID": 66
+                "Name": "NVMe_E1S_SSD4",
+                "Type": "NvDevice"
             },
             {
-                "Name": "NVMe_E1S_SSD5",
-                "Type": "NvDevice",
-                "Kind": "nvme_e1s_backplane",
+                "EID": 65,
                 "Generation": "vera-rubin",
                 "Instance": 5,
+                "Kind": "nvme_e1s_backplane",
                 "LocationCode": "NVMe E1.S Slot 5",
-                "EID": 65
+                "Name": "NVMe_E1S_SSD5",
+                "Type": "NvDevice"
             },
             {
-                "Name": "NVMe_E1S_SSD6",
-                "Type": "NvDevice",
-                "Kind": "nvme_e1s_backplane",
+                "EID": 68,
                 "Generation": "vera-rubin",
                 "Instance": 6,
+                "Kind": "nvme_e1s_backplane",
                 "LocationCode": "NVMe E1.S Slot 6",
-                "EID": 68
+                "Name": "NVMe_E1S_SSD6",
+                "Type": "NvDevice"
             },
             {
-                "Name": "NVMe_E1S_SSD7",
-                "Type": "NvDevice",
-                "Kind": "nvme_e1s_backplane",
+                "EID": 67,
                 "Generation": "vera-rubin",
                 "Instance": 7,
+                "Kind": "nvme_e1s_backplane",
                 "LocationCode": "NVMe E1.S Slot 7",
-                "EID": 67
+                "Name": "NVMe_E1S_SSD7",
+                "Type": "NvDevice"
             }
-        ]
+        ],
+        "Name": "StorageBackplane_Devices_$Instance",
+        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^Storage_Backplane_P4546$'})",
+        "Type": "NvDevice"
     }
 ]

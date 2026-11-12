@@ -1,82 +1,82 @@
 [
-  {
-    "Name": "$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vera-rubin'})",
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "NSM_Telemetry",
-        "Type": "NSM_Telemetry",
-        "Kind": "cx_sma",
-        "InstanceNumber": "$Instance",
-        "EID": "$EID",
-        "ParentChassis": "$ParentChassis",
-        "LocationContext": "$LocationContext",
-        "LocationCode": "SMA_0",
-        "LeakDetectorChassis": "$ParentChassis",
-        "ParameterOverrides": {}
-      },
-      {
-        "DeviceType": "$Name",
-        "Name": "$Name",
-        "SupportedDumps": [
-          "RoT",
-          "SMA",
-          "GPUDiag"
+    {
+        "Exposes": [
+            {
+                "DeviceType": "$Name",
+                "Name": "$Name",
+                "SupportedDumps": [
+                    "RoT",
+                    "SMA",
+                    "GPUDiag"
+                ],
+                "Type": "Dump"
+            },
+            {
+                "BridgePoolEndEID": "$PoolEndEID",
+                "BridgePoolStartEID": "$PoolStartEID",
+                "BridgedEndpoints": [
+                    "CX_$Instance * 2",
+                    "CX_$Instance * 2 + 1",
+                    "NVMe_E1S_IO$Instance"
+                ],
+                "Configuration": 1,
+                "IgnoreEIDs": "$IgnoreEIDs",
+                "InterfaceNum": 0,
+                "Name": "$Name",
+                "PollingInterval": "5",
+                "Port": "$Port",
+                "RootHubPath": "$RootHubPath",
+                "StaticEndpointID": "$EID",
+                "Type": "MCTPUSBDevice"
+            },
+            {
+                "EID": "$EID",
+                "InstanceNumber": "$Instance",
+                "Kind": "cx_sma",
+                "LeakDetectorChassis": "$ParentChassis",
+                "LocationCode": "SMA_0",
+                "LocationContext": "$LocationContext",
+                "Name": "NSM_Telemetry",
+                "ParameterOverrides": {},
+                "ParentChassis": "$ParentChassis",
+                "Type": "NSM_Telemetry"
+            },
+            {
+                "Name": "$Name_PLDM",
+                "Type": "PLDMDevice",
+                "UpdateableComponents": {
+                    "FW_$Name": 65282
+                }
+            },
+            {
+                "ConnectsToName": "$Platform.BmcName",
+                "DeviceAddress": "MCTP:$EID",
+                "DeviceType": "MCTPBridge",
+                "Name": "$Name",
+                "PhysicalInterface": "usb1:0x0955:0xcf11:$Port",
+                "Type": "PlatformDevice"
+            }
         ],
-        "Type": "Dump"
-      },
-      {
-        "ConnectsToName": "$Platform.BmcName",
-        "DeviceAddress": "MCTP:$EID",
-        "DeviceType": "MCTPBridge",
         "Name": "$Name",
-        "PhysicalInterface": "usb1:0x0955:0xcf11:$Port",
-        "Type": "PlatformDevice"
-      },
-      {
-        "Name": "$Name_PLDM",
-        "Type": "PLDMDevice",
-        "UpdateableComponents": {
-          "FW_$Name": 65282
-        }
-      },
-      {
-        "BridgePoolEndEID": "$PoolEndEID",
-        "BridgePoolStartEID": "$PoolStartEID",
-        "BridgedEndpoints": [
-          "CX_$Instance * 2",
-          "CX_$Instance * 2 + 1",
-          "NVMe_E1S_IO$Instance"
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vera-rubin'})",
+        "Type": "NvDevice"
+    },
+    {
+        "Exposes": [
+            {
+                "CriticalReactionType": "None",
+                "LeakDetectorName": "$ParentChassis_LeakDetector_0",
+                "Name": "$ParentChassis_LeakDetector_0_Policy",
+                "ReactionDelaySeconds": 0,
+                "Type": "LeakDetectionPolicy"
+            }
         ],
-        "Configuration": 1,
-        "IgnoreEIDs": "$IgnoreEIDs",
-        "InterfaceNum": 0,
-        "Name": "$Name",
-        "PollingInterval": "5",
-        "Port": "$Port",
-        "RootHubPath": "$RootHubPath",
-        "StaticEndpointID": "$EID",
-        "Type": "MCTPUSBDevice"
-      }
-    ]
-  },
-  {
-    "Name": "$Name_LeakDetection",
-    "Probe": [
-      "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vera-rubin', 'ParentChassis': '.', 'Instance': 1})",
-      "OR",
-      "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vera-rubin', 'ParentChassis': '.', 'Instance': 3})"
-    ],
-    "Exposes": [
-      {
-        "CriticalReactionType": "None",
-        "LeakDetectorName": "$ParentChassis_LeakDetector_0",
-        "Name": "$ParentChassis_LeakDetector_0_Policy",
-        "ReactionDelaySeconds": 0,
-        "Type": "LeakDetectionPolicy"
-      }
-    ],
-    "Type": "LeakDetection"
-  }
+        "Name": "$Name_LeakDetection",
+        "Probe": [
+            "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vera-rubin', 'ParentChassis': '.', 'Instance': 1})",
+            "OR",
+            "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vera-rubin', 'ParentChassis': '.', 'Instance': 3})"
+        ],
+        "Type": "LeakDetection"
+    }
 ]

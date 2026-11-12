@@ -1,44 +1,44 @@
 [
-  {
-    "Name": "Nvidia VR-NVL72 BMC AST2600 vHMC host Recovery Packages",
-    "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2600 vHMC host')",
-    "Type": "Platform",
-    "PlatformExposes": [
-      {
-        "Name": "RecoveryPackages",
-        "Type": "RecoveryPackages",
-        "ConnectXPackageUUID": "C248ACFF10EA43C28793989C5C0FE840",
-        "GlacierPackageUUID": "F70650A20D174C8F8A9E7CFA5CE5BD94",
-        "MCUCX9PackageUUID": "8F6B4D3E2C2B4B39BC929C6C4DF7B8E1"
-      }
-    ]
-  },
-  {
-    "Name": "Nvidia BlueField-4 B4180V B4240V Recovery Package",
-    "Probe": [
-      "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'B4180V.*'})",
-      "OR",
-      "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'B4240V.*'})"
-    ],
-    "Type": "Platform",
-    "PlatformExposes": [
-      {
-        "Name": "BF4_RecoveryPackage",
-        "Type": "RecoveryPackages",
-        "MCUBF4PackageUUID": "C8E5F4F05A2E4C6B91512E4D7C3CE4C6"
-      }
-    ]
-  },
-  {
-    "Name": "Nvidia BlueField-4 ConnectX-9 Recovery Package",
-    "Probe": "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'ConnectX-9.*'})",
-    "Type": "Platform",
-    "PlatformExposes": [
-      {
-        "Name": "BF4_RecoveryPackage",
-        "Type": "RecoveryPackages",
-        "MCUBF4PackageUUID": "668BD433B9F8473DBA1EC32B99772679"
-      }
-    ]
-  }
+    {
+        "Name": "Nvidia VR-NVL72 BMC AST2600 vHMC host Recovery Packages",
+        "PlatformExposes": [
+            {
+                "ConnectXPackageUUID": "C248ACFF10EA43C28793989C5C0FE840",
+                "GlacierPackageUUID": "F70650A20D174C8F8A9E7CFA5CE5BD94",
+                "MCUCX9PackageUUID": "8F6B4D3E2C2B4B39BC929C6C4DF7B8E1",
+                "Name": "RecoveryPackages",
+                "Type": "RecoveryPackages"
+            }
+        ],
+        "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2600 vHMC host')",
+        "Type": "Platform"
+    },
+    {
+        "Name": "Nvidia BlueField-4 B4180V B4240V Recovery Package",
+        "PlatformExposes": [
+            {
+                "MCUBF4PackageUUID": "C8E5F4F05A2E4C6B91512E4D7C3CE4C6",
+                "Name": "BF4_RecoveryPackage",
+                "Type": "RecoveryPackages"
+            }
+        ],
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'B4180V.*'})",
+            "OR",
+            "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'B4240V.*'})"
+        ],
+        "Type": "Platform"
+    },
+    {
+        "Name": "Nvidia BlueField-4 ConnectX-9 Recovery Package",
+        "PlatformExposes": [
+            {
+                "MCUBF4PackageUUID": "668BD433B9F8473DBA1EC32B99772679",
+                "Name": "BF4_RecoveryPackage",
+                "Type": "RecoveryPackages"
+            }
+        ],
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'ConnectX-9.*'})",
+        "Type": "Platform"
+    }
 ]

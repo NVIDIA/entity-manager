@@ -1,142 +1,142 @@
 [
-  {
-    "Name": "Nvidia HGX-R HMC",
-    "Probe": "TRUE",
-    "Type": "Platform",
-    "NamePrefix": "HGX_",
-    "BmcName": "HGX_BMC_0",
-    "UsbRootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
-    "PlatformExposes": [
-      {
-        "Name": "DevicePrefix",
-        "Type": "DevicePrefix",
-        "Prefix": "HGX_"
-      },
-      {
-        "Name": "TopChassis",
-        "Type": "TopChassis",
-        "Chassis": "HGX_Chassis_0"
-      },
-      {
-        "Name": "HGX_SXM_Board_0",
-        "Type": "NvBoard",
-        "Board": "HGX_Baseboard_HGXR",
-        "Site": "SXM",
-        "Instance": 0,
-        "SxmIndex": 1,
-        "UsbPort": "1.2.1",
-        "IgnoreEIDs": "50"
-      },
-      {
-        "Name": "HGX_SXM_Board_1",
-        "Type": "NvBoard",
-        "Board": "HGX_Baseboard_HGXR",
-        "Site": "SXM",
-        "Instance": 1,
-        "SxmIndex": 2,
-        "UsbPort": "1.2.2",
-        "IgnoreEIDs": "53"
-      },
-      {
-        "Name": "HGX_SXM_Board_2",
-        "Type": "NvBoard",
-        "Board": "HGX_Baseboard_HGXR",
-        "Site": "SXM",
-        "Instance": 2,
-        "SxmIndex": 3,
-        "UsbPort": "1.2.3",
-        "IgnoreEIDs": "56"
-      },
-      {
-        "Name": "HGX_SXM_Board_3",
-        "Type": "NvBoard",
-        "Board": "HGX_Baseboard_HGXR",
-        "Site": "SXM",
-        "Instance": 3,
-        "SxmIndex": 4,
-        "UsbPort": "1.2.4",
-        "IgnoreEIDs": "59"
-      },
-      {
-        "Name": "HGX_SXM_Board_4",
-        "Type": "NvBoard",
-        "Board": "HGX_Baseboard_HGXR",
-        "Site": "SXM",
-        "Instance": 4,
-        "SxmIndex": 5,
-        "UsbPort": "1.3.1",
-        "IgnoreEIDs": "62"
-      },
-      {
-        "Name": "HGX_SXM_Board_5",
-        "Type": "NvBoard",
-        "Board": "HGX_Baseboard_HGXR",
-        "Site": "SXM",
-        "Instance": 5,
-        "SxmIndex": 6,
-        "UsbPort": "1.3.2",
-        "IgnoreEIDs": "65"
-      },
-      {
-        "Name": "HGX_SXM_Board_6",
-        "Type": "NvBoard",
-        "Board": "HGX_Baseboard_HGXR",
-        "Site": "SXM",
-        "Instance": 6,
-        "SxmIndex": 7,
-        "UsbPort": "1.3.3",
-        "IgnoreEIDs": "68"
-      },
-      {
-        "Name": "HGX_SXM_Board_7",
-        "Type": "NvBoard",
-        "Board": "HGX_Baseboard_HGXR",
-        "Site": "SXM",
-        "Instance": 7,
-        "SxmIndex": 8,
-        "UsbPort": "1.3.4",
-        "IgnoreEIDs": "71"
-      },
-      {
-        "Name": "HGX_ConnectX_Board_0",
-        "Type": "NvBoard",
-        "Board": "HGX_OSFP_Board_HGXR",
-        "Site": "ConnectX_SMA",
-        "Instance": 0,
-        "CxNumber": 13,
-        "UsbPort": "1.1.1",
-        "IgnoreEIDs": "18,20,21,22,23"
-      },
-      {
-        "Name": "HGX_ConnectX_Board_1",
-        "Type": "NvBoard",
-        "Board": "HGX_OSFP_Board_HGXR",
-        "Site": "ConnectX_SMA",
-        "Instance": 1,
-        "CxNumber": 42,
-        "UsbPort": "1.1.2",
-        "IgnoreEIDs": "26,28,29,30,31"
-      },
-      {
-        "Name": "HGX_ConnectX_Board_2",
-        "Type": "NvBoard",
-        "Board": "HGX_OSFP_Board_HGXR",
-        "Site": "ConnectX_SMA",
-        "Instance": 2,
-        "CxNumber": 86,
-        "UsbPort": "1.1.3",
-        "IgnoreEIDs": "34,36,37,38,39"
-      },
-      {
-        "Name": "HGX_ConnectX_Board_3",
-        "Type": "NvBoard",
-        "Board": "HGX_OSFP_Board_HGXR",
-        "Site": "ConnectX_SMA",
-        "Instance": 3,
-        "CxNumber": 75,
-        "UsbPort": "1.1.4",
-        "IgnoreEIDs": "42,44,45,46,47"
-      }
-    ]
-  }
+    {
+        "BmcName": "HGX_BMC_0",
+        "Name": "Nvidia HGX-R HMC",
+        "NamePrefix": "HGX_",
+        "PlatformExposes": [
+            {
+                "Name": "DevicePrefix",
+                "Prefix": "HGX_",
+                "Type": "DevicePrefix"
+            },
+            {
+                "Board": "HGX_Baseboard_HGXR",
+                "IgnoreEIDs": "50",
+                "Instance": 0,
+                "Name": "HGX_SXM_Board_0",
+                "Site": "SXM",
+                "SxmIndex": 1,
+                "Type": "NvBoard",
+                "UsbPort": "1.2.1"
+            },
+            {
+                "Board": "HGX_Baseboard_HGXR",
+                "IgnoreEIDs": "53",
+                "Instance": 1,
+                "Name": "HGX_SXM_Board_1",
+                "Site": "SXM",
+                "SxmIndex": 2,
+                "Type": "NvBoard",
+                "UsbPort": "1.2.2"
+            },
+            {
+                "Board": "HGX_Baseboard_HGXR",
+                "IgnoreEIDs": "56",
+                "Instance": 2,
+                "Name": "HGX_SXM_Board_2",
+                "Site": "SXM",
+                "SxmIndex": 3,
+                "Type": "NvBoard",
+                "UsbPort": "1.2.3"
+            },
+            {
+                "Board": "HGX_Baseboard_HGXR",
+                "IgnoreEIDs": "59",
+                "Instance": 3,
+                "Name": "HGX_SXM_Board_3",
+                "Site": "SXM",
+                "SxmIndex": 4,
+                "Type": "NvBoard",
+                "UsbPort": "1.2.4"
+            },
+            {
+                "Board": "HGX_Baseboard_HGXR",
+                "IgnoreEIDs": "62",
+                "Instance": 4,
+                "Name": "HGX_SXM_Board_4",
+                "Site": "SXM",
+                "SxmIndex": 5,
+                "Type": "NvBoard",
+                "UsbPort": "1.3.1"
+            },
+            {
+                "Board": "HGX_Baseboard_HGXR",
+                "IgnoreEIDs": "65",
+                "Instance": 5,
+                "Name": "HGX_SXM_Board_5",
+                "Site": "SXM",
+                "SxmIndex": 6,
+                "Type": "NvBoard",
+                "UsbPort": "1.3.2"
+            },
+            {
+                "Board": "HGX_Baseboard_HGXR",
+                "IgnoreEIDs": "68",
+                "Instance": 6,
+                "Name": "HGX_SXM_Board_6",
+                "Site": "SXM",
+                "SxmIndex": 7,
+                "Type": "NvBoard",
+                "UsbPort": "1.3.3"
+            },
+            {
+                "Board": "HGX_Baseboard_HGXR",
+                "IgnoreEIDs": "71",
+                "Instance": 7,
+                "Name": "HGX_SXM_Board_7",
+                "Site": "SXM",
+                "SxmIndex": 8,
+                "Type": "NvBoard",
+                "UsbPort": "1.3.4"
+            },
+            {
+                "Board": "HGX_OSFP_Board_HGXR",
+                "CxNumber": 13,
+                "IgnoreEIDs": "18,20,21,22,23",
+                "Instance": 0,
+                "Name": "HGX_ConnectX_Board_0",
+                "Site": "ConnectX_SMA",
+                "Type": "NvBoard",
+                "UsbPort": "1.1.1"
+            },
+            {
+                "Board": "HGX_OSFP_Board_HGXR",
+                "CxNumber": 42,
+                "IgnoreEIDs": "26,28,29,30,31",
+                "Instance": 1,
+                "Name": "HGX_ConnectX_Board_1",
+                "Site": "ConnectX_SMA",
+                "Type": "NvBoard",
+                "UsbPort": "1.1.2"
+            },
+            {
+                "Board": "HGX_OSFP_Board_HGXR",
+                "CxNumber": 86,
+                "IgnoreEIDs": "34,36,37,38,39",
+                "Instance": 2,
+                "Name": "HGX_ConnectX_Board_2",
+                "Site": "ConnectX_SMA",
+                "Type": "NvBoard",
+                "UsbPort": "1.1.3"
+            },
+            {
+                "Board": "HGX_OSFP_Board_HGXR",
+                "CxNumber": 75,
+                "IgnoreEIDs": "42,44,45,46,47",
+                "Instance": 3,
+                "Name": "HGX_ConnectX_Board_3",
+                "Site": "ConnectX_SMA",
+                "Type": "NvBoard",
+                "UsbPort": "1.1.4"
+            },
+            {
+                "Chassis": "HGX_Chassis_0",
+                "Name": "TopChassis",
+                "Type": "TopChassis"
+            }
+        ],
+        "Probe": "TRUE",
+        "Type": "Platform",
+        "UsbRootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb"
+    }
 ]

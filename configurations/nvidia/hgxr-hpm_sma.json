@@ -1,73 +1,73 @@
 [
-  {
-    "Name": "$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^hmc_hpm_sma$', 'Generation': 'vera-rubin'})",
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "NSM_Telemetry",
-        "Type": "NSM_Telemetry",
-        "Disable": [],
-        "ParameterOverrides": {},
-        "Kind": "hmc_hpm_sma",
-        "InstanceNumber": "$Instance",
-        "EID": "$EID"
-      },
-      {
-        "DeviceType": "$Name",
-        "Name": "$Name",
-        "SupportedDumps": [
-          "RoT",
-          "SMA",
-          "CPLD",
-          "GPUDiag"
+    {
+        "Exposes": [
+            {
+                "DeviceType": "$Name",
+                "Name": "$Name",
+                "SupportedDumps": [
+                    "RoT",
+                    "SMA",
+                    "CPLD",
+                    "GPUDiag"
+                ],
+                "Type": "Dump"
+            },
+            {
+                "BridgePoolEndEID": "$PoolEndEID",
+                "BridgePoolStartEID": "$PoolStartEID",
+                "Configuration": 1,
+                "IgnoreEIDs": "$IgnoreEIDs",
+                "InterfaceNum": 0,
+                "Name": "$Name",
+                "PollingInterval": "5",
+                "Port": "$Port",
+                "RootHubPath": "$RootHubPath",
+                "StaticEndpointID": "$EID",
+                "Type": "MCTPUSBDevice"
+            },
+            {
+                "Disable": [],
+                "EID": "$EID",
+                "InstanceNumber": "$Instance",
+                "Kind": "hmc_hpm_sma",
+                "Name": "NSM_Telemetry",
+                "ParameterOverrides": {},
+                "Type": "NSM_Telemetry"
+            },
+            {
+                "Name": "$Name_PLDM",
+                "Type": "PLDMDevice",
+                "UpdateableComponents": {
+                    "$Platform.NamePrefixFW_Baseboard_SMA_$Instance": 65282,
+                    "$Platform.NamePrefixFW_CPLD_$Instance": 65283
+                }
+            }
         ],
-        "Type": "Dump"
-      },
-      {
-        "Name": "$Name_PLDM",
-        "Type": "PLDMDevice",
-        "UpdateableComponents": {
-          "$Platform.NamePrefixFW_Baseboard_SMA_$Instance": 65282,
-          "$Platform.NamePrefixFW_CPLD_$Instance": 65283
-        }
-      },
-      {
-        "BridgePoolEndEID": "$PoolEndEID",
-        "BridgePoolStartEID": "$PoolStartEID",
-        "Configuration": 1,
-        "IgnoreEIDs": "$IgnoreEIDs",
-        "InterfaceNum": 0,
         "Name": "$Name",
-        "PollingInterval": "5",
-        "Port": "$Port",
-        "RootHubPath": "$RootHubPath",
-        "StaticEndpointID": "$EID",
-        "Type": "MCTPUSBDevice"
-      }
-    ]
-  },
-  {
-    "Name": "$Name_LeakDetection",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^hmc_hpm_sma$', 'Generation': 'vera-rubin'})",
-    "Type": "LeakDetection",
-    "Exposes": [
-      {
-        "CriticalReactionType": "None",
-        "LeakDetectorName": "$ParentChassis_LeakDetector_0",
-        "Name": "$ParentChassis_LeakDetector_0_Policy",
-        "ReactionDelaySeconds": 0,
-        "Type": "LeakDetectionPolicy",
-        "WarningReactionType": "None"
-      },
-      {
-        "CriticalReactionType": "None",
-        "LeakDetectorName": "$ParentChassis_LeakDetector_1",
-        "Name": "$ParentChassis_LeakDetector_1_Policy",
-        "ReactionDelaySeconds": 0,
-        "Type": "LeakDetectionPolicy",
-        "WarningReactionType": "None"
-      }
-    ]
-  }
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^hmc_hpm_sma$', 'Generation': 'vera-rubin'})",
+        "Type": "NvDevice"
+    },
+    {
+        "Exposes": [
+            {
+                "CriticalReactionType": "None",
+                "LeakDetectorName": "$ParentChassis_LeakDetector_0",
+                "Name": "$ParentChassis_LeakDetector_0_Policy",
+                "ReactionDelaySeconds": 0,
+                "Type": "LeakDetectionPolicy",
+                "WarningReactionType": "None"
+            },
+            {
+                "CriticalReactionType": "None",
+                "LeakDetectorName": "$ParentChassis_LeakDetector_1",
+                "Name": "$ParentChassis_LeakDetector_1_Policy",
+                "ReactionDelaySeconds": 0,
+                "Type": "LeakDetectionPolicy",
+                "WarningReactionType": "None"
+            }
+        ],
+        "Name": "$Name_LeakDetection",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^hmc_hpm_sma$', 'Generation': 'vera-rubin'})",
+        "Type": "LeakDetection"
+    }
 ]

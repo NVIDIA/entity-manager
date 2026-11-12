@@ -1,244 +1,244 @@
 [
-  {
-    "Name": "$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin'})",
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "NSM_Telemetry",
-        "Type": "NSM_Telemetry",
-        "Kind": "cpu",
-        "InstanceNumber": "$Instance",
-        "EID": "$EID",
-        "LocationContext": "$LocationContext",
-        "LocationCode": "$LocationCode",
-        "ParameterOverrides": {}
-      },
-      {
-        "ConnectsToName": "$Platform.BmcName",
-        "DeviceAddress": "MCTP:$EID",
-        "DeviceType": "CPU",
-        "Name": "$Name",
-        "PhysicalInterface": "usb1:0x0955:0x7410:$Port",
-        "Type": "PlatformDevice",
-        "poweredInStandby": false
-      },
-      {
-        "DeviceType": "CPU_$Instance",
-        "Name": "$Name",
-        "SupportedDumps": [
-          "CPUDiag"
+    {
+        "Exposes": [
+            {
+                "DeviceType": "CPU_$Instance",
+                "Name": "$Name",
+                "SupportedDumps": [
+                    "CPUDiag"
+                ],
+                "Type": "Dump"
+            },
+            {
+                "Configuration": 1,
+                "InterfaceNum": 2,
+                "Name": "$Name",
+                "PollingInterval": "5",
+                "Port": "$Port",
+                "RecoveryThreshold": "5",
+                "RootHubPath": "$RootHubPath",
+                "StaticEndpointID": "$EID",
+                "Type": "MCTPUSBDevice"
+            },
+            {
+                "EID": "$EID",
+                "InstanceNumber": "$Instance",
+                "Kind": "cpu",
+                "LocationCode": "$LocationCode",
+                "LocationContext": "$LocationContext",
+                "Name": "NSM_Telemetry",
+                "ParameterOverrides": {},
+                "Type": "NSM_Telemetry"
+            },
+            {
+                "Name": "$Name_PLDM",
+                "SensorRoles": {
+                    "primary_cpupower_sensor": "CpuPower_0",
+                    "primary_power_control": "TDPPowerNonvolatile_0",
+                    "primary_power_sensor": "EnforcedEDPc_0",
+                    "primary_temperature_sensor": "TempLimit_0"
+                },
+                "Type": "PLDMDevice",
+                "UpdateableComponents": {
+                    "$Platform.NamePrefixSBIOS_FMC_$Instance": 2,
+                    "$Platform.NamePrefixSBIOS_FW_$Instance": 513
+                }
+            },
+            {
+                "ConnectsToName": "$Platform.BmcName",
+                "DeviceAddress": "MCTP:$EID",
+                "DeviceType": "CPU",
+                "Name": "$Name",
+                "PhysicalInterface": "usb1:0x0955:0x7410:$Port",
+                "Type": "PlatformDevice",
+                "poweredInStandby": false
+            }
         ],
-        "Type": "Dump"
-      },
-      {
-        "Name": "$Name_PLDM",
-        "Type": "PLDMDevice",
-        "UpdateableComponents": {
-          "$Platform.NamePrefixSBIOS_FMC_$Instance": 2,
-          "$Platform.NamePrefixSBIOS_FW_$Instance": 513
-        },
-        "SensorRoles": {
-          "primary_temperature_sensor": "TempLimit_0",
-          "primary_power_control": "TDPPowerNonvolatile_0",
-          "primary_power_sensor": "EnforcedEDPc_0",
-          "primary_cpupower_sensor": "CpuPower_0"
-        }
-      },
-      {
-        "Configuration": 1,
-        "InterfaceNum": 2,
         "Name": "$Name",
-        "PollingInterval": "5",
-        "Port": "$Port",
-        "RecoveryThreshold": "5",
-        "RootHubPath": "$RootHubPath",
-        "StaticEndpointID": "$EID",
-        "Type": "MCTPUSBDevice"
-      }
-    ]
-  },
-  {
-    "Name": "ProcessorModule_$Instance_Memory_0",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
-    "Type": "Dimm",
-    "Associations": {
-      "parent_chassis": "board/$ParentChassis",
-      "parent_processor": "cpu/CPU_$Instance"
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin'})",
+        "Type": "NvDevice"
     },
-    "xyz.openbmc_project.Inventory.Decorator.Location": {
-      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
+    {
+        "Associations": {
+            "parent_chassis": "board/$ParentChassis",
+            "parent_processor": "cpu/CPU_$Instance"
+        },
+        "Name": "ProcessorModule_$Instance_Memory_0",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
+        "Type": "Dimm",
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "$LocationContext"
+        }
     },
-    "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-      "LocationContext": "$LocationContext"
+    {
+        "Associations": {
+            "parent_chassis": "board/$ParentChassis",
+            "parent_processor": "cpu/CPU_$Instance"
+        },
+        "Name": "ProcessorModule_$Instance_Memory_1",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
+        "Type": "Dimm",
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "$LocationContext"
+        }
+    },
+    {
+        "Associations": {
+            "parent_chassis": "board/$ParentChassis",
+            "parent_processor": "cpu/CPU_$Instance"
+        },
+        "Name": "ProcessorModule_$Instance_Memory_2",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
+        "Type": "Dimm",
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "$LocationContext"
+        }
+    },
+    {
+        "Associations": {
+            "parent_chassis": "board/$ParentChassis",
+            "parent_processor": "cpu/CPU_$Instance"
+        },
+        "Name": "ProcessorModule_$Instance_Memory_3",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
+        "Type": "Dimm",
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "$LocationContext"
+        }
+    },
+    {
+        "Associations": {
+            "parent_chassis": "board/$ParentChassis",
+            "parent_processor": "cpu/CPU_$Instance"
+        },
+        "Name": "ProcessorModule_$Instance_Memory_4",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
+        "Type": "Dimm",
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "$LocationContext"
+        }
+    },
+    {
+        "Associations": {
+            "parent_chassis": "board/$ParentChassis",
+            "parent_processor": "cpu/CPU_$Instance"
+        },
+        "Name": "ProcessorModule_$Instance_Memory_5",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
+        "Type": "Dimm",
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "$LocationContext"
+        }
+    },
+    {
+        "Associations": {
+            "parent_chassis": "board/$ParentChassis",
+            "parent_processor": "cpu/CPU_$Instance"
+        },
+        "Name": "ProcessorModule_$Instance_Memory_6",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
+        "Type": "Dimm",
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "$LocationContext"
+        }
+    },
+    {
+        "Associations": {
+            "parent_chassis": "board/$ParentChassis",
+            "parent_processor": "cpu/CPU_$Instance"
+        },
+        "Name": "ProcessorModule_$Instance_Memory_7",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
+        "Type": "Dimm",
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "$LocationContext"
+        }
+    },
+    {
+        "Associations": {
+            "parent_chassis": "board/HGX_ProcessorModule_$SlotNumber"
+        },
+        "Name": "HGX_CPU_$SlotNumber",
+        "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?'})",
+        "Type": "Component",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "NVIDIA",
+            "PartNumber": "$BOARD_PART_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.AssetTag": {
+            "AssetTag": "$PRODUCT_ASSET_TAG"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": "$SlotNumber"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "G1:$SlotNumber.0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "HGX_Chassis_0/ProcessorModule_$SlotNumber"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": false
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        }
+    },
+    {
+        "Associations": {
+            "chassis": "component/HGX_CPU_$SlotNumber"
+        },
+        "Name": "CPU_$SlotNumber",
+        "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?'})",
+        "Type": "Cpu",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "NVIDIA",
+            "PartNumber": "$BOARD_PART_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.AssetTag": {
+            "AssetTag": "$PRODUCT_ASSET_TAG"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": "$SlotNumber"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "G1:$SlotNumber.0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "HGX_Chassis_0/ProcessorModule_$SlotNumber"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": false
+        }
     }
-  },
-  {
-    "Name": "ProcessorModule_$Instance_Memory_1",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
-    "Type": "Dimm",
-    "Associations": {
-      "parent_chassis": "board/$ParentChassis",
-      "parent_processor": "cpu/CPU_$Instance"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Location": {
-      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-      "LocationContext": "$LocationContext"
-    }
-  },
-  {
-    "Name": "ProcessorModule_$Instance_Memory_2",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
-    "Type": "Dimm",
-    "Associations": {
-      "parent_chassis": "board/$ParentChassis",
-      "parent_processor": "cpu/CPU_$Instance"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Location": {
-      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-      "LocationContext": "$LocationContext"
-    }
-  },
-  {
-    "Name": "ProcessorModule_$Instance_Memory_3",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
-    "Type": "Dimm",
-    "Associations": {
-      "parent_chassis": "board/$ParentChassis",
-      "parent_processor": "cpu/CPU_$Instance"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Location": {
-      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-      "LocationContext": "$LocationContext"
-    }
-  },
-  {
-    "Name": "ProcessorModule_$Instance_Memory_4",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
-    "Type": "Dimm",
-    "Associations": {
-      "parent_chassis": "board/$ParentChassis",
-      "parent_processor": "cpu/CPU_$Instance"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Location": {
-      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-      "LocationContext": "$LocationContext"
-    }
-  },
-  {
-    "Name": "ProcessorModule_$Instance_Memory_5",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
-    "Type": "Dimm",
-    "Associations": {
-      "parent_chassis": "board/$ParentChassis",
-      "parent_processor": "cpu/CPU_$Instance"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Location": {
-      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-      "LocationContext": "$LocationContext"
-    }
-  },
-  {
-    "Name": "ProcessorModule_$Instance_Memory_6",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
-    "Type": "Dimm",
-    "Associations": {
-      "parent_chassis": "board/$ParentChassis",
-      "parent_processor": "cpu/CPU_$Instance"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Location": {
-      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-      "LocationContext": "$LocationContext"
-    }
-  },
-  {
-    "Name": "ProcessorModule_$Instance_Memory_7",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
-    "Type": "Dimm",
-    "Associations": {
-      "parent_chassis": "board/$ParentChassis",
-      "parent_processor": "cpu/CPU_$Instance"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Location": {
-      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-      "LocationContext": "$LocationContext"
-    }
-  },
-  {
-    "Name": "HGX_CPU_$SlotNumber",
-    "Associations": {
-      "parent_chassis": "board/HGX_ProcessorModule_$SlotNumber"
-    },
-    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?'})",
-    "Type": "Component",
-    "xyz.openbmc_project.Inventory.Decorator.Asset": {
-      "Manufacturer": "NVIDIA",
-      "PartNumber": "$BOARD_PART_NUMBER"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.AssetTag": {
-      "AssetTag": "$PRODUCT_ASSET_TAG"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Instance": {
-      "InstanceNumber": "$SlotNumber"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Location": {
-      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-      "LocationCode": "G1:$SlotNumber.0"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-      "LocationContext": "HGX_Chassis_0/ProcessorModule_$SlotNumber"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
-      "FieldReplaceable": false
-    },
-    "xyz.openbmc_project.Inventory.Item.Chassis": {
-      "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
-    }
-  },
-  {
-    "Name": "CPU_$SlotNumber",
-    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?'})",
-    "Type": "Cpu",
-    "Associations": {
-      "chassis": "component/HGX_CPU_$SlotNumber"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Asset": {
-      "Manufacturer": "NVIDIA",
-      "PartNumber": "$BOARD_PART_NUMBER"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.AssetTag": {
-      "AssetTag": "$PRODUCT_ASSET_TAG"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Instance": {
-      "InstanceNumber": "$SlotNumber"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Location": {
-      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-      "LocationCode": "G1:$SlotNumber.0"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-      "LocationContext": "HGX_Chassis_0/ProcessorModule_$SlotNumber"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
-      "FieldReplaceable": false
-    }
-  }
 ]

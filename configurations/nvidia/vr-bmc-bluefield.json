@@ -1,194 +1,194 @@
 [
-  {
-    "Name": "$Name",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vera-rubin'})",
-    "Type": "chassis",
-    "Exposes": [
-      {
-        "Name": "NSM_Telemetry",
-        "Type": "NSM_Telemetry",
-        "Kind": "bluefield_nic",
-        "InstanceNumber": "$Instance",
-        "EID": "$EID",
-        "ParentChassis": "$Platform.TopChassis",
-        "LocationCode": "$LocationCode",
-        "BridgeName": "$Bridge",
-        "PortCount": 2,
-        "Disable": [],
-        "ParameterOverrides": {}
-      },
-      {
-        "GpioLine": "BF4_GLOBAL_WP",
-        "Name": "BAY_C_GLOBAL_WP",
-        "Polarity": "active_high",
-        "Type": "WriteProtect"
-      },
-      {
-        "BridgeName": "$Bridge",
-        "Name": "BF4_0",
-        "PoolIndex": 0,
-        "Type": "MCTPBridgePoolDevice"
-      }
-    ],
-    "Associations": {
-      "parent_chassis": "chassis/$Platform.TopChassis"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Instance": {
-      "InstanceNumber": 0
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Location": {
-      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Bay"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-      "LocationCode": "Bay-C-Middle"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-      "LocationContext": "$Platform.TopChassis"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal": {
-      "LocationOrdinalValue": 0,
-      "Orientation": "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal.Orientations.BottomToTop"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationReference": {
-      "LocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Middle"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
-      "FieldReplaceable": true
-    },
-    "xyz.openbmc_project.Inventory.Item.Board": {},
-    "xyz.openbmc_project.State.Decorator.Health": {
-      "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
-    }
-  },
-  {
-    "Name": "$Name_Platform",
-    "Probe": [
-      "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vera-rubin'})",
-      "AND",
-      "FOUND('BlueField_4_B4240V_FRU')"
-    ],
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "$Name_PLDM",
-        "Type": "PLDMDevice",
-        "NetworkAdapter": "BlueField_NIC_$Instance",
-        "SensorAuxNames": {
-          "$Name": 4101,
-          "BlueField_NIC_$Instance": 4156,
-          "Port_0": 4296,
-          "Port_1": 4297,
-          "$Name_Temp_0": 4396,
-          "BlueField_NIC_$Instance_Port_0_Temp_0": 4596,
-          "BlueField_NIC_$Instance_Port_1_Temp_0": 4597,
-          "$Name_CPU_0_Temp_0": 7840,
-          "$Name_CPU_0_SSD_0_Temp_0": 7841,
-          "$Name_Core_Rail_Vdd_Power_0": 4103,
-          "$Name_Analog_Rail_Vddp_Power_0": 4104,
-          "$Name_Digital_Rail_Dvdd_Power_0": 4105,
-          "$Name_High_Voltage_Hvdd_Power_0": 4106,
-          "$Name_Power_0": 4146,
-          "$Name_CPU_0_Rail_Power_0": 7696,
-          "$Name_CPU_0_OsState_0": 7842,
-          "$Name_CPU_0_Power_0": 7728,
-          "$Name_Stby_Rail_Power_0": 7952,
-          "$Name_Total_Power_0": 7984,
-          "BlueField_NIC_$Instance_Port_0_Voltage_0": 4496,
-          "BlueField_NIC_$Instance_Port_1_Voltage_0": 4497
+    {
+        "Associations": {
+            "parent_chassis": "chassis/$Platform.TopChassis"
         },
-        "Ports": {
-          "4296": "Port_0",
-          "4297": "Port_1"
+        "Exposes": [
+            {
+                "BridgeName": "$Bridge",
+                "Name": "BF4_0",
+                "PoolIndex": 0,
+                "Type": "MCTPBridgePoolDevice"
+            },
+            {
+                "BridgeName": "$Bridge",
+                "Disable": [],
+                "EID": "$EID",
+                "InstanceNumber": "$Instance",
+                "Kind": "bluefield_nic",
+                "LocationCode": "$LocationCode",
+                "Name": "NSM_Telemetry",
+                "ParameterOverrides": {},
+                "ParentChassis": "$Platform.TopChassis",
+                "PortCount": 2,
+                "Type": "NSM_Telemetry"
+            },
+            {
+                "GpioLine": "BF4_GLOBAL_WP",
+                "Name": "BAY_C_GLOBAL_WP",
+                "Polarity": "active_high",
+                "Type": "WriteProtect"
+            }
+        ],
+        "Name": "$Name",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vera-rubin'})",
+        "Type": "chassis",
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": 0
         },
-        "PortMaxSpeedMBps": 50000,
-        "FirmwareName": "BF4_0"
-      }
-    ]
-  },
-  {
-    "Name": "$Name_Platform_B4180V",
-    "Probe": [
-      "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vera-rubin'})",
-      "AND",
-      "FOUND('BlueField_4_B4180V_FRU')"
-    ],
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "$Name_PLDM",
-        "Type": "PLDMDevice",
-        "NetworkAdapter": "BlueField_NIC_$Instance",
-        "SensorAuxNames": {
-          "$Name": 4101,
-          "BlueField_NIC_$Instance": 4156,
-          "Port_0": 4296,
-          "$Name_Temp_0": 4396,
-          "BlueField_NIC_$Instance_Port_0_Temp_0": 4596,
-          "$Name_CPU_0_Temp_0": 7840,
-          "$Name_CPU_0_SSD_0_Temp_0": 7841,
-          "$Name_Core_Rail_Vdd_Power_0": 4103,
-          "$Name_Analog_Rail_Vddp_Power_0": 4104,
-          "$Name_Digital_Rail_Dvdd_Power_0": 4105,
-          "$Name_High_Voltage_Hvdd_Power_0": 4106,
-          "$Name_Power_0": 4146,
-          "$Name_CPU_0_Rail_Power_0": 7696,
-          "$Name_CPU_0_OsState_0": 7842,
-          "$Name_CPU_0_Power_0": 7728,
-          "$Name_Stby_Rail_Power_0": 7952,
-          "$Name_Total_Power_0": 7984,
-          "BlueField_NIC_$Instance_Port_0_Voltage_0": 4496
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Bay"
         },
-        "Ports": {
-          "4296": "Port_0"
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "Bay-C-Middle"
         },
-        "PortMaxSpeedMBps": 100000,
-        "FirmwareName": "BF4_0"
-      }
-    ]
-  },
-  {
-    "Name": "$Name_LeakDetection",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vera-rubin'})",
-    "Exposes": [
-      {
-        "CriticalReactionType": "None",
-        "LeakDetectorName": "$Name_LeakDetector_0",
-        "Name": "$Name_LeakDetector_0_Policy",
-        "ReactionDelaySeconds": 0,
-        "Type": "LeakDetectionPolicy"
-      }
-    ],
-    "Type": "LeakDetection"
-  },
-  {
-    "Name": "$Name_Platform",
-    "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield_lily$', 'Generation': 'vera-rubin'})",
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "$Name_PLDM",
-        "Type": "PLDMDevice",
-        "NetworkAdapter": "BlueField_NIC_$Instance",
-        "SensorAuxNames": {
-          "$Name_Temp_0": 1,
-          "BlueField_NIC_$Instance_Port_0_Temp_0": 8,
-          "BlueField_NIC_$Instance_Port_1_Temp_0": 9,
-          "Port_0": 4,
-          "Port_1": 5
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "$Platform.TopChassis"
         },
-        "Ports": {
-          "4": "Port_0",
-          "5": "Port_1"
+        "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal": {
+            "LocationOrdinalValue": 0,
+            "Orientation": "xyz.openbmc_project.Inventory.Decorator.LocationOrdinal.Orientations.BottomToTop"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationReference": {
+            "LocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Middle"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": true
+        },
+        "xyz.openbmc_project.Inventory.Item.Board": {},
+        "xyz.openbmc_project.State.Decorator.Health": {
+            "Health": "xyz.openbmc_project.State.Decorator.Health.HealthType.OK"
         }
-      },
-      {
-        "Address": "$Address",
-        "Bus": "$Bus",
-        "Name": "MCTPI2C_$Bus",
-        "PollingInterval": "5",
-        "StaticEndpointID": "$EID",
-        "Type": "MCTPI2CTarget"
-      }
-    ]
-  }
+    },
+    {
+        "Exposes": [
+            {
+                "FirmwareName": "BF4_0",
+                "Name": "$Name_PLDM",
+                "NetworkAdapter": "BlueField_NIC_$Instance",
+                "PortMaxSpeedMBps": 50000,
+                "Ports": {
+                    "4296": "Port_0",
+                    "4297": "Port_1"
+                },
+                "SensorAuxNames": {
+                    "$Name": 4101,
+                    "$Name_Analog_Rail_Vddp_Power_0": 4104,
+                    "$Name_CPU_0_OsState_0": 7842,
+                    "$Name_CPU_0_Power_0": 7728,
+                    "$Name_CPU_0_Rail_Power_0": 7696,
+                    "$Name_CPU_0_SSD_0_Temp_0": 7841,
+                    "$Name_CPU_0_Temp_0": 7840,
+                    "$Name_Core_Rail_Vdd_Power_0": 4103,
+                    "$Name_Digital_Rail_Dvdd_Power_0": 4105,
+                    "$Name_High_Voltage_Hvdd_Power_0": 4106,
+                    "$Name_Power_0": 4146,
+                    "$Name_Stby_Rail_Power_0": 7952,
+                    "$Name_Temp_0": 4396,
+                    "$Name_Total_Power_0": 7984,
+                    "BlueField_NIC_$Instance": 4156,
+                    "BlueField_NIC_$Instance_Port_0_Temp_0": 4596,
+                    "BlueField_NIC_$Instance_Port_0_Voltage_0": 4496,
+                    "BlueField_NIC_$Instance_Port_1_Temp_0": 4597,
+                    "BlueField_NIC_$Instance_Port_1_Voltage_0": 4497,
+                    "Port_0": 4296,
+                    "Port_1": 4297
+                },
+                "Type": "PLDMDevice"
+            }
+        ],
+        "Name": "$Name_Platform",
+        "Probe": [
+            "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vera-rubin'})",
+            "AND",
+            "FOUND('BlueField_4_B4240V_FRU')"
+        ],
+        "Type": "NvDevice"
+    },
+    {
+        "Exposes": [
+            {
+                "FirmwareName": "BF4_0",
+                "Name": "$Name_PLDM",
+                "NetworkAdapter": "BlueField_NIC_$Instance",
+                "PortMaxSpeedMBps": 100000,
+                "Ports": {
+                    "4296": "Port_0"
+                },
+                "SensorAuxNames": {
+                    "$Name": 4101,
+                    "$Name_Analog_Rail_Vddp_Power_0": 4104,
+                    "$Name_CPU_0_OsState_0": 7842,
+                    "$Name_CPU_0_Power_0": 7728,
+                    "$Name_CPU_0_Rail_Power_0": 7696,
+                    "$Name_CPU_0_SSD_0_Temp_0": 7841,
+                    "$Name_CPU_0_Temp_0": 7840,
+                    "$Name_Core_Rail_Vdd_Power_0": 4103,
+                    "$Name_Digital_Rail_Dvdd_Power_0": 4105,
+                    "$Name_High_Voltage_Hvdd_Power_0": 4106,
+                    "$Name_Power_0": 4146,
+                    "$Name_Stby_Rail_Power_0": 7952,
+                    "$Name_Temp_0": 4396,
+                    "$Name_Total_Power_0": 7984,
+                    "BlueField_NIC_$Instance": 4156,
+                    "BlueField_NIC_$Instance_Port_0_Temp_0": 4596,
+                    "BlueField_NIC_$Instance_Port_0_Voltage_0": 4496,
+                    "Port_0": 4296
+                },
+                "Type": "PLDMDevice"
+            }
+        ],
+        "Name": "$Name_Platform_B4180V",
+        "Probe": [
+            "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vera-rubin'})",
+            "AND",
+            "FOUND('BlueField_4_B4180V_FRU')"
+        ],
+        "Type": "NvDevice"
+    },
+    {
+        "Exposes": [
+            {
+                "CriticalReactionType": "None",
+                "LeakDetectorName": "$Name_LeakDetector_0",
+                "Name": "$Name_LeakDetector_0_Policy",
+                "ReactionDelaySeconds": 0,
+                "Type": "LeakDetectionPolicy"
+            }
+        ],
+        "Name": "$Name_LeakDetection",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vera-rubin'})",
+        "Type": "LeakDetection"
+    },
+    {
+        "Exposes": [
+            {
+                "Address": "$Address",
+                "Bus": "$Bus",
+                "Name": "MCTPI2C_$Bus",
+                "PollingInterval": "5",
+                "StaticEndpointID": "$EID",
+                "Type": "MCTPI2CTarget"
+            },
+            {
+                "Name": "$Name_PLDM",
+                "NetworkAdapter": "BlueField_NIC_$Instance",
+                "Ports": {
+                    "4": "Port_0",
+                    "5": "Port_1"
+                },
+                "SensorAuxNames": {
+                    "$Name_Temp_0": 1,
+                    "BlueField_NIC_$Instance_Port_0_Temp_0": 8,
+                    "BlueField_NIC_$Instance_Port_1_Temp_0": 9,
+                    "Port_0": 4,
+                    "Port_1": 5
+                },
+                "Type": "PLDMDevice"
+            }
+        ],
+        "Name": "$Name_Platform",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield_lily$', 'Generation': 'vera-rubin'})",
+        "Type": "NvDevice"
+    }
 ]

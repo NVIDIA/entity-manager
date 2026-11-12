@@ -1,346 +1,346 @@
 [
-  {
-    "Name": "HGX_Baseboard_0",
-    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?', 'SLOT_NUMBER': 0})",
-    "Type": "System",
-    "xyz.openbmc_project.Inventory.Decorator.Asset": {
-      "Manufacturer": "$BOARD_MANUFACTURER",
-      "Model": "VR NVL",
-      "PartNumber": "$BOARD_PART_NUMBER",
-      "SerialNumber": "$BOARD_SERIAL_NUMBER"
+    {
+        "Name": "HGX_Baseboard_0",
+        "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?', 'SLOT_NUMBER': 0})",
+        "Type": "System",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "VR NVL",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "$address",
+            "Bus": "$bus",
+            "Name": "HGX_Baseboard_0"
+        }
     },
-    "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-      "Address": "$address",
-      "Bus": "$bus",
-      "Name": "HGX_Baseboard_0"
-    }
-  },
-  {
-    "Exposes": [
-      {
-        "Address": "$address",
-        "Bus": "$bus",
+    {
+        "Associations": {
+            "parent_chassis": "chassis/HGX_Chassis_0"
+        },
+        "Exposes": [
+            {
+                "Address": "$address",
+                "Bus": "$bus",
+                "Name": "ProcMod_$SlotNumber",
+                "Type": "EEPROM_24C64"
+            },
+            {
+                "FlashProtectedComponents": [
+                    "HGX_FW_GPU_$SlotNumber * 2",
+                    "HGX_FW_GPU_$SlotNumber * 2 + 1",
+                    "HGX_SBIOS_FMC_$SlotNumber",
+                    "HGX_SBIOS_FW_$SlotNumber"
+                ],
+                "Name": "HPM_$SlotNumber_WriteProtect",
+                "Sources": [
+                    "BRD$SlotNumber_Global_WriteProtect"
+                ],
+                "Type": "HardwareWriteProtectedControl"
+            },
+            {
+                "ActiveLow": false,
+                "LineName": "BRD$SlotNumber_GLOBAL_WP-I",
+                "Name": "BRD$SlotNumber_Global_WriteProtect",
+                "PollInterval": 5000,
+                "Type": "WriteProtectInput"
+            }
+        ],
+        "Name": "HGX ProcessorModule $SlotNumber",
+        "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?', 'SLOT_NUMBER': 0})",
+        "Type": "Board",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "$address",
+            "Bus": "$bus",
+            "Name": "ProcMod_$SlotNumber"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": "$SlotNumber"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Backplane"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "ProcessorModule_$SlotNumber-Left"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "HGX_Chassis_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationReference": {
+            "LocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Left"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": true
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Module"
+        },
+        "xyz.openbmc_project.Inventory.Item.ProcessorModule": {}
+    },
+    {
+        "Associations": {
+            "parent_chassis": "chassis/HGX_Chassis_0"
+        },
+        "Exposes": [
+            {
+                "Address": "$address",
+                "Bus": "$bus",
+                "Name": "ProcMod_$SlotNumber",
+                "Type": "EEPROM_24C64"
+            },
+            {
+                "FlashProtectedComponents": [
+                    "HGX_FW_GPU_$SlotNumber * 2",
+                    "HGX_FW_GPU_$SlotNumber * 2 + 1",
+                    "HGX_SBIOS_FMC_$SlotNumber",
+                    "HGX_SBIOS_FW_$SlotNumber"
+                ],
+                "Name": "HPM_$SlotNumber_WriteProtect",
+                "Sources": [
+                    "BRD$SlotNumber_Global_WriteProtect"
+                ],
+                "Type": "HardwareWriteProtectedControl"
+            },
+            {
+                "ActiveLow": false,
+                "LineName": "BRD$SlotNumber_GLOBAL_WP-I",
+                "Name": "BRD$SlotNumber_Global_WriteProtect",
+                "PollInterval": 5000,
+                "Type": "WriteProtectInput"
+            }
+        ],
+        "Name": "HGX ProcessorModule $SlotNumber",
+        "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?', 'SLOT_NUMBER': 1})",
+        "Type": "Board",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "$BOARD_MANUFACTURER",
+            "Model": "$BOARD_PRODUCT_NAME",
+            "PartNumber": "$BOARD_PART_NUMBER",
+            "SerialNumber": "$BOARD_SERIAL_NUMBER"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
+            "Address": "$address",
+            "Bus": "$bus",
+            "Name": "ProcMod_$SlotNumber"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Instance": {
+            "InstanceNumber": "$SlotNumber"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Backplane"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "ProcessorModule_$SlotNumber-Right"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "HGX_Chassis_0"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationReference": {
+            "LocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Right"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": true
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Module"
+        },
+        "xyz.openbmc_project.Inventory.Item.ProcessorModule": {}
+    },
+    {
+        "Board": "Board/HGX ProcessorModule $SlotNumber",
+        "LocationCode": "ProcessorModule_$SlotNumber",
+        "LocationContext": "HGX_Chassis_0",
+        "LocationType": "Backplane",
         "Name": "ProcMod_$SlotNumber",
-        "Type": "EEPROM_24C64"
-      },
-      {
-        "FlashProtectedComponents": [
-          "HGX_FW_GPU_$SlotNumber * 2",
-          "HGX_FW_GPU_$SlotNumber * 2 + 1",
-          "HGX_SBIOS_FMC_$SlotNumber",
-          "HGX_SBIOS_FW_$SlotNumber"
+        "PhysicalContext": "GPUSubsystem",
+        "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?'})",
+        "Type": "Assembly"
+    },
+    {
+        "Associations": {
+            "parent_chassis": "board/HGX_ProcessorModule_$SlotNumber"
+        },
+        "Name": "HGX_CPLD_$SlotNumber",
+        "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?'})",
+        "Type": "Component",
+        "xyz.openbmc_project.Inventory.Decorator.Asset": {
+            "Manufacturer": "Lattice",
+            "Model": "LCMX02",
+            "PartNumber": "115-4525-000"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Location": {
+            "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
+            "LocationCode": "CPLD_$SlotNumber / 2"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
+            "LocationContext": "HGX_Chassis_0/ProcessorModule_$SlotNumber"
+        },
+        "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
+            "FieldReplaceable": false
+        },
+        "xyz.openbmc_project.Inventory.Item.Chassis": {
+            "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        }
+    },
+    {
+        "Exposes": [
+            {
+                "BootGpio": "BRD$Instance_CPU_IST_BOOT_HMC-O",
+                "Cpus": [
+                    "$Instance"
+                ],
+                "Detect": true,
+                "Index": "$Instance",
+                "Name": "BRD$Instance",
+                "PreResetGpio": "BRD$Instance_HMC_IST_PRE_RST_L-O",
+                "ShutdownOkGpio": "BRD$Instance_CPU0_SHDN_OK_L_3V3-I",
+                "SysResetGpio": "BRD$Instance_IST_SYS_RST_L-O",
+                "Type": "ISTDomain"
+            },
+            {
+                "BridgedProcessors": [
+                    "HGX_GPU_$Instance * 2",
+                    "HGX_GPU_$Instance * 2 + 1"
+                ],
+                "EID": "$Instance * 10 + 10",
+                "Generation": "vera-rubin",
+                "Instance": "$Instance",
+                "Kind": "gpu_sma",
+                "LocationCode": "GPU_SMA_0",
+                "LocationContext": "HGX_Chassis_0/ProcessorModule_$Instance-$Side",
+                "Name": "HGX_GPU_SMA_$Instance",
+                "ParentChassis": "HGX_ProcessorModule_$Instance",
+                "Recovery": {
+                    "RecoveryGpio": "BRD$Instance_GPU_MCU_RECOVERY_L_3V3-O",
+                    "RecoveryType": "MCU",
+                    "ResetGpio": "BRD$Instance_GPU_MCU_RESET_L_3V3-O",
+                    "SoftwareName": "HGX_FW_GPU_SMA_$Instance",
+                    "Target": "GPU"
+                },
+                "Transport": {
+                    "Medium": "usb",
+                    "PoolEndEID": "$Instance * 10 + 12",
+                    "PoolStartEID": "$Instance * 10 + 11",
+                    "Port": "$UsbHubPath.1",
+                    "RootHubPath": "$Platform.UsbRootHubPath"
+                },
+                "Type": "NvDevice"
+            },
+            {
+                "EID": "$Instance * 10 + 11",
+                "Generation": "vera-rubin",
+                "Instance": "$Instance * 2",
+                "Kind": "gpu",
+                "LocationCode": "GPU_0",
+                "LocationContext": "HGX_Chassis_0/ProcessorModule_$Instance",
+                "Name": "HGX_GPU_$Instance * 2",
+                "ParentChassis": "HGX_ProcessorModule_$Instance",
+                "Recovery": {
+                    "ChassisName": "HGX_IRoT_GPU_$Instance * 2",
+                    "InfoRomName": "HGX_InfoROM_GPU_$Instance * 2",
+                    "OcpRecoveryI2cAddress": 105,
+                    "RecoveryType": "OCP",
+                    "SoftwareName": "HGX_FW_GPU_$Instance * 2"
+                },
+                "Transport": {
+                    "Bridge": "HGX_GPU_SMA_$Instance",
+                    "BridgeEID": "$Instance * 10 + 10",
+                    "BridgePort": "$UsbHubPath.1",
+                    "Medium": "bridge",
+                    "PoolIndex": 0
+                },
+                "Type": "NvDevice"
+            },
+            {
+                "EID": "$Instance * 10 + 12",
+                "Generation": "vera-rubin",
+                "Instance": "$Instance * 2 + 1",
+                "Kind": "gpu",
+                "LocationCode": "GPU_1",
+                "LocationContext": "HGX_Chassis_0/ProcessorModule_$Instance",
+                "Name": "HGX_GPU_$Instance * 2 + 1",
+                "ParentChassis": "HGX_ProcessorModule_$Instance",
+                "Recovery": {
+                    "ChassisName": "HGX_IRoT_GPU_$Instance * 2 + 1",
+                    "InfoRomName": "HGX_InfoROM_GPU_$Instance * 2 + 1",
+                    "OcpRecoveryI2cAddress": 106,
+                    "RecoveryType": "OCP",
+                    "SoftwareName": "HGX_FW_GPU_$Instance * 2 + 1"
+                },
+                "Transport": {
+                    "Bridge": "HGX_GPU_SMA_$Instance",
+                    "BridgeEID": "$Instance * 10 + 10",
+                    "BridgePort": "$UsbHubPath.1",
+                    "Medium": "bridge",
+                    "PoolIndex": 1
+                },
+                "Type": "NvDevice"
+            },
+            {
+                "EID": "$Instance * 10 + 14",
+                "Generation": "vera-rubin",
+                "Instance": "$Instance",
+                "Kind": "cpu",
+                "LocationContext": "HGX_Chassis_0/ProcessorModule_$Instance",
+                "Name": "HGX_CPU_$Instance",
+                "ParentChassis": "HGX_ProcessorModule_$Instance",
+                "Recovery": {
+                    "ActionRedfishChassis": "HGX_Chassis_0",
+                    "BootDevSel0Gpio": "BRD$Instance_CPU_BOOT_DEV_SEL0-O",
+                    "BootDevSel1Gpio": "BRD$Instance_CPU_BOOT_DEV_SEL1-O",
+                    "BootDevSel2Gpio": "BRD$Instance_CPU_BOOT_DEV_SEL2-O",
+                    "FMCComponentName": "HGX_SBIOS_FMC_$Instance",
+                    "FWSComponentName": "HGX_SBIOS_FW_$Instance",
+                    "ForcedRecoveryGpio": "BRD$Instance_CPU_FORCED_RECOVERY_L-O",
+                    "RecoveryType": "USBRCM",
+                    "RecoveryType0Gpio": "BRD$Instance_CPU_RECOVERY_TYPE0-O",
+                    "RecoveryType1Gpio": "BRD$Instance_CPU_RECOVERY_TYPE1-O",
+                    "SoftwareName": "HGX_FW_CPU_$Instance",
+                    "SystemResetGpio": "BRD$Instance_IST_SYS_RST_L-O"
+                },
+                "Transport": {
+                    "Medium": "usb",
+                    "Port": "$UsbHubPath.2",
+                    "RootHubPath": "$Platform.UsbRootHubPath"
+                },
+                "Type": "NvDevice"
+            },
+            {
+                "EID": "$Instance * 10 + 13",
+                "Generation": "vera-rubin",
+                "Instance": "$Instance",
+                "Kind": "hmc_hpm_sma",
+                "LocationCode": "HPM_SMA_0",
+                "LocationContext": "HGX_Chassis_0/ProcessorModule_$Instance",
+                "Name": "HGX_ProcessorModule_SMA_$Instance",
+                "ParentChassis": "HGX_ProcessorModule_$Instance",
+                "Recovery": {
+                    "RecoveryGpio": "BRD$Instance_MCU_RECOVERY_L-O",
+                    "RecoveryType": "MCU",
+                    "ResetGpio": "BRD$Instance_MCU_RESET_L-O",
+                    "SoftwareName": "HGX_FW_ProcessorModule_SMA_$Instance",
+                    "Target": "HPM"
+                },
+                "Transport": {
+                    "Address": 82,
+                    "Bus": "$SmaI2cBus",
+                    "Medium": "i2c"
+                },
+                "Type": "NvDevice",
+                "ZoneChassis": "$ZoneChassis"
+            }
         ],
-        "Name": "HPM_$SlotNumber_WriteProtect",
-        "Sources": [
-          "BRD$SlotNumber_Global_WriteProtect"
-        ],
-        "Type": "HardwareWriteProtectedControl"
-      },
-      {
-        "ActiveLow": false,
-        "LineName": "BRD$SlotNumber_GLOBAL_WP-I",
-        "Name": "BRD$SlotNumber_Global_WriteProtect",
-        "PollInterval": 5000,
-        "Type": "WriteProtectInput"
-      }
-    ],
-    "Name": "HGX ProcessorModule $SlotNumber",
-    "Associations": {
-      "parent_chassis": "chassis/HGX_Chassis_0"
-    },
-    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?', 'SLOT_NUMBER': 0})",
-    "Type": "Board",
-    "xyz.openbmc_project.Inventory.Decorator.Asset": {
-      "Manufacturer": "$BOARD_MANUFACTURER",
-      "Model": "$BOARD_PRODUCT_NAME",
-      "PartNumber": "$BOARD_PART_NUMBER",
-      "SerialNumber": "$BOARD_SERIAL_NUMBER"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-      "Address": "$address",
-      "Bus": "$bus",
-      "Name": "ProcMod_$SlotNumber"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Instance": {
-      "InstanceNumber": "$SlotNumber"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Location": {
-      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Backplane"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-      "LocationCode": "ProcessorModule_$SlotNumber-Left"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-      "LocationContext": "HGX_Chassis_0"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationReference": {
-      "LocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Left"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
-      "FieldReplaceable": true
-    },
-    "xyz.openbmc_project.Inventory.Item.Chassis": {
-      "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Module"
-    },
-    "xyz.openbmc_project.Inventory.Item.ProcessorModule": {}
-  },
-  {
-    "Exposes": [
-      {
-        "Address": "$address",
-        "Bus": "$bus",
-        "Name": "ProcMod_$SlotNumber",
-        "Type": "EEPROM_24C64"
-      },
-      {
-        "FlashProtectedComponents": [
-          "HGX_FW_GPU_$SlotNumber * 2",
-          "HGX_FW_GPU_$SlotNumber * 2 + 1",
-          "HGX_SBIOS_FMC_$SlotNumber",
-          "HGX_SBIOS_FW_$SlotNumber"
-        ],
-        "Name": "HPM_$SlotNumber_WriteProtect",
-        "Sources": [
-          "BRD$SlotNumber_Global_WriteProtect"
-        ],
-        "Type": "HardwareWriteProtectedControl"
-      },
-      {
-        "ActiveLow": false,
-        "LineName": "BRD$SlotNumber_GLOBAL_WP-I",
-        "Name": "BRD$SlotNumber_Global_WriteProtect",
-        "PollInterval": 5000,
-        "Type": "WriteProtectInput"
-      }
-    ],
-    "Name": "HGX ProcessorModule $SlotNumber",
-    "Associations": {
-      "parent_chassis": "chassis/HGX_Chassis_0"
-    },
-    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?', 'SLOT_NUMBER': 1})",
-    "Type": "Board",
-    "xyz.openbmc_project.Inventory.Decorator.Asset": {
-      "Manufacturer": "$BOARD_MANUFACTURER",
-      "Model": "$BOARD_PRODUCT_NAME",
-      "PartNumber": "$BOARD_PART_NUMBER",
-      "SerialNumber": "$BOARD_SERIAL_NUMBER"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-      "Address": "$address",
-      "Bus": "$bus",
-      "Name": "ProcMod_$SlotNumber"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Instance": {
-      "InstanceNumber": "$SlotNumber"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Location": {
-      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Backplane"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-      "LocationCode": "ProcessorModule_$SlotNumber-Right"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-      "LocationContext": "HGX_Chassis_0"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationReference": {
-      "LocationReference": "xyz.openbmc_project.Inventory.Decorator.LocationReference.ReferenceAreas.Right"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
-      "FieldReplaceable": true
-    },
-    "xyz.openbmc_project.Inventory.Item.Chassis": {
-      "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Module"
-    },
-    "xyz.openbmc_project.Inventory.Item.ProcessorModule": {}
-  },
-  {
-    "Name": "ProcMod_$SlotNumber",
-    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?'})",
-    "Type": "Assembly",
-    "Board": "Board/HGX ProcessorModule $SlotNumber",
-    "LocationType": "Backplane",
-    "PhysicalContext": "GPUSubsystem",
-    "LocationCode": "ProcessorModule_$SlotNumber",
-    "LocationContext": "HGX_Chassis_0"
-  },
-  {
-    "Name": "HGX_CPLD_$SlotNumber",
-    "Associations": {
-      "parent_chassis": "board/HGX_ProcessorModule_$SlotNumber"
-    },
-    "Probe": "xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': '.?E5580.?|.?PG558.?'})",
-    "Type": "Component",
-    "xyz.openbmc_project.Inventory.Decorator.Asset": {
-      "Manufacturer": "Lattice",
-      "Model": "LCMX02",
-      "PartNumber": "115-4525-000"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Location": {
-      "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Embedded"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationCode": {
-      "LocationCode": "CPLD_$SlotNumber / 2"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.LocationContext": {
-      "LocationContext": "HGX_Chassis_0/ProcessorModule_$SlotNumber"
-    },
-    "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
-      "FieldReplaceable": false
-    },
-    "xyz.openbmc_project.Inventory.Item.Chassis": {
-      "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
+        "Name": "HGX_ProcessorModule_Devices_$Instance",
+        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^HPM_HMC_PG558$'})",
+        "Type": "NvDevice"
     }
-  },
-  {
-    "Name": "HGX_ProcessorModule_Devices_$Instance",
-    "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^HPM_HMC_PG558$'})",
-    "Type": "NvDevice",
-    "Exposes": [
-      {
-        "Name": "HGX_GPU_SMA_$Instance",
-        "Type": "NvDevice",
-        "Kind": "gpu_sma",
-        "Instance": "$Instance",
-        "BridgedProcessors": [
-          "HGX_GPU_$Instance * 2",
-          "HGX_GPU_$Instance * 2 + 1"
-        ],
-        "Generation": "vera-rubin",
-        "ParentChassis": "HGX_ProcessorModule_$Instance",
-        "LocationContext": "HGX_Chassis_0/ProcessorModule_$Instance-$Side",
-        "EID": "$Instance * 10 + 10",
-        "Transport": {
-          "Medium": "usb",
-          "Port": "$UsbHubPath.1",
-          "RootHubPath": "$Platform.UsbRootHubPath",
-          "PoolStartEID": "$Instance * 10 + 11",
-          "PoolEndEID": "$Instance * 10 + 12"
-        },
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "BRD$Instance_GPU_MCU_RECOVERY_L_3V3-O",
-          "ResetGpio": "BRD$Instance_GPU_MCU_RESET_L_3V3-O",
-          "SoftwareName": "HGX_FW_GPU_SMA_$Instance",
-          "Target": "GPU"
-        },
-        "LocationCode": "GPU_SMA_0"
-      },
-      {
-        "Name": "HGX_GPU_$Instance * 2",
-        "Type": "NvDevice",
-        "Kind": "gpu",
-        "Instance": "$Instance * 2",
-        "Generation": "vera-rubin",
-        "ParentChassis": "HGX_ProcessorModule_$Instance",
-        "LocationContext": "HGX_Chassis_0/ProcessorModule_$Instance",
-        "LocationCode": "GPU_0",
-        "EID": "$Instance * 10 + 11",
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_GPU_SMA_$Instance",
-          "BridgeEID": "$Instance * 10 + 10",
-          "BridgePort": "$UsbHubPath.1",
-          "PoolIndex": 0
-        },
-        "Recovery": {
-          "RecoveryType": "OCP",
-          "OcpRecoveryI2cAddress": 105,
-          "SoftwareName": "HGX_FW_GPU_$Instance * 2",
-          "ChassisName": "HGX_IRoT_GPU_$Instance * 2",
-          "InfoRomName": "HGX_InfoROM_GPU_$Instance * 2"
-        }
-      },
-      {
-        "Name": "HGX_GPU_$Instance * 2 + 1",
-        "Type": "NvDevice",
-        "Kind": "gpu",
-        "Instance": "$Instance * 2 + 1",
-        "Generation": "vera-rubin",
-        "ParentChassis": "HGX_ProcessorModule_$Instance",
-        "LocationContext": "HGX_Chassis_0/ProcessorModule_$Instance",
-        "LocationCode": "GPU_1",
-        "EID": "$Instance * 10 + 12",
-        "Transport": {
-          "Medium": "bridge",
-          "Bridge": "HGX_GPU_SMA_$Instance",
-          "BridgeEID": "$Instance * 10 + 10",
-          "BridgePort": "$UsbHubPath.1",
-          "PoolIndex": 1
-        },
-        "Recovery": {
-          "RecoveryType": "OCP",
-          "OcpRecoveryI2cAddress": 106,
-          "SoftwareName": "HGX_FW_GPU_$Instance * 2 + 1",
-          "ChassisName": "HGX_IRoT_GPU_$Instance * 2 + 1",
-          "InfoRomName": "HGX_InfoROM_GPU_$Instance * 2 + 1"
-        }
-      },
-      {
-        "Name": "HGX_CPU_$Instance",
-        "Type": "NvDevice",
-        "Kind": "cpu",
-        "Instance": "$Instance",
-        "Generation": "vera-rubin",
-        "ParentChassis": "HGX_ProcessorModule_$Instance",
-        "LocationContext": "HGX_Chassis_0/ProcessorModule_$Instance",
-        "EID": "$Instance * 10 + 14",
-        "Transport": {
-          "Medium": "usb",
-          "Port": "$UsbHubPath.2",
-          "RootHubPath": "$Platform.UsbRootHubPath"
-        },
-        "Recovery": {
-          "RecoveryType": "USBRCM",
-          "ActionRedfishChassis": "HGX_Chassis_0",
-          "SystemResetGpio": "BRD$Instance_IST_SYS_RST_L-O",
-          "ForcedRecoveryGpio": "BRD$Instance_CPU_FORCED_RECOVERY_L-O",
-          "BootDevSel0Gpio": "BRD$Instance_CPU_BOOT_DEV_SEL0-O",
-          "BootDevSel1Gpio": "BRD$Instance_CPU_BOOT_DEV_SEL1-O",
-          "BootDevSel2Gpio": "BRD$Instance_CPU_BOOT_DEV_SEL2-O",
-          "RecoveryType0Gpio": "BRD$Instance_CPU_RECOVERY_TYPE0-O",
-          "RecoveryType1Gpio": "BRD$Instance_CPU_RECOVERY_TYPE1-O",
-          "SoftwareName": "HGX_FW_CPU_$Instance",
-          "FMCComponentName": "HGX_SBIOS_FMC_$Instance",
-          "FWSComponentName": "HGX_SBIOS_FW_$Instance"
-        }
-      },
-      {
-        "Name": "HGX_ProcessorModule_SMA_$Instance",
-        "Type": "NvDevice",
-        "Kind": "hmc_hpm_sma",
-        "Instance": "$Instance",
-        "Generation": "vera-rubin",
-        "ParentChassis": "HGX_ProcessorModule_$Instance",
-        "LocationContext": "HGX_Chassis_0/ProcessorModule_$Instance",
-        "ZoneChassis": "$ZoneChassis",
-        "EID": "$Instance * 10 + 13",
-        "Transport": {
-          "Medium": "i2c",
-          "Bus": "$SmaI2cBus",
-          "Address": 82
-        },
-        "Recovery": {
-          "RecoveryType": "MCU",
-          "RecoveryGpio": "BRD$Instance_MCU_RECOVERY_L-O",
-          "ResetGpio": "BRD$Instance_MCU_RESET_L-O",
-          "SoftwareName": "HGX_FW_ProcessorModule_SMA_$Instance",
-          "Target": "HPM"
-        },
-        "LocationCode": "HPM_SMA_0"
-      },
-      {
-        "Name": "BRD$Instance",
-        "Type": "ISTDomain",
-        "Index": "$Instance",
-        "Cpus": [
-          "$Instance"
-        ],
-        "Detect": true,
-        "BootGpio": "BRD$Instance_CPU_IST_BOOT_HMC-O",
-        "PreResetGpio": "BRD$Instance_HMC_IST_PRE_RST_L-O",
-        "ShutdownOkGpio": "BRD$Instance_CPU0_SHDN_OK_L_3V3-I",
-        "SysResetGpio": "BRD$Instance_IST_SYS_RST_L-O"
-      }
-    ]
-  }
 ]
