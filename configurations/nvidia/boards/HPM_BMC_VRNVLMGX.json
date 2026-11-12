@@ -409,7 +409,7 @@
             },
             {
                 "EID": 20,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 0,
                 "Kind": "bmc_hpm_sma",
                 "Name": "ProcessorModule_SMA_0",
@@ -430,7 +430,7 @@
             },
             {
                 "EID": 16,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 0,
                 "Kind": "cpu",
                 "Name": "CPU_0",
@@ -462,7 +462,7 @@
         "Exposes": [
             {
                 "EID": 17,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 1,
                 "Kind": "cpu",
                 "Name": "CPU_1",

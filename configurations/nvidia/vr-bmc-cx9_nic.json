@@ -24,7 +24,7 @@
             }
         ],
         "Name": "$Name",
-        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_nic$', 'Generation': 'vera-rubin'})",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_nic$', 'Generation': 'vr'})",
         "Type": "chassis",
         "xyz.openbmc_project.Inventory.Decorator.Instance": {
             "InstanceNumber": 0
@@ -74,7 +74,7 @@
             }
         ],
         "Name": "$Name_Platform",
-        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_nic$', 'Generation': 'vera-rubin'})",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_nic$', 'Generation': 'vr'})",
         "Type": "NvDevice"
     },
     {
@@ -99,7 +99,7 @@
             }
         ],
         "Name": "$Name_Platform",
-        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_nic_i2c$', 'Generation': 'vera-rubin'})",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_nic_i2c$', 'Generation': 'vr'})",
         "Type": "NvDevice"
     }
 ]

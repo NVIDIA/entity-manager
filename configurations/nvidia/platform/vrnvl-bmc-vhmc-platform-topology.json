@@ -75,7 +75,7 @@
             },
             {
                 "EID": 210,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 0,
                 "Kind": "nvme_smm",
                 "LocationContext": "Chassis_0/SMM_Interposer_0",

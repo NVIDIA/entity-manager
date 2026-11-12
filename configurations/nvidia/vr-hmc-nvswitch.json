@@ -190,7 +190,7 @@
             }
         ],
         "Name": "$Name",
-        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^nvswitch$', 'Generation': 'vera-rubin'})",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^nvswitch$', 'Generation': 'vr'})",
         "Type": "NvDevice"
     }
 ]

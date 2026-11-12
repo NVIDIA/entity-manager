@@ -3,7 +3,7 @@
         "Exposes": [
             {
                 "EID": "$SmaEid",
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": "$Instance",
                 "Kind": "gpu_sma",
                 "LocationCode": "GPU_SMA_$Instance",
@@ -27,7 +27,7 @@
             },
             {
                 "EID": "$SmaEid + 1",
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": "$Instance",
                 "Kind": "gpu",
                 "LocationCode": "GPU_$Instance",

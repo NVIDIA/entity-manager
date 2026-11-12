@@ -118,7 +118,7 @@
         "Exposes": [
             {
                 "EID": 10,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 0,
                 "Kind": "erot",
                 "Name": "MGX_ERoT_BMC_0",
@@ -136,7 +136,7 @@
             },
             {
                 "EID": 16,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 2,
                 "Kind": "cpu_erot",
                 "Name": "MGX_ERoT_CPU_0",

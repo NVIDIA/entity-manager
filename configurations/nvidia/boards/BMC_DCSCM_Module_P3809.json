@@ -98,7 +98,7 @@
         "Exposes": [
             {
                 "EID": 10,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 0,
                 "Kind": "erot",
                 "Name": "ERoT_BMC_0",

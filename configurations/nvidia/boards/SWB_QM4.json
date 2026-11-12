@@ -3,7 +3,7 @@
         "Exposes": [
             {
                 "EID": "$Instance + 69",
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": "$Instance",
                 "Kind": "nvswitch_sma",
                 "Name": "MGX_NVSwitch_SMA_$Instance",
@@ -25,7 +25,7 @@
             },
             {
                 "EID": "$Instance * 4 + 53",
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": "$Instance * 2",
                 "Kind": "nvswitch",
                 "Name": "MGX_NVSwitch_$Instance * 2",
@@ -40,7 +40,7 @@
             },
             {
                 "EID": "$Instance * 4 + 54",
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": "$Instance * 2 + 1",
                 "Kind": "nvswitch",
                 "Name": "MGX_NVSwitch_$Instance * 2 + 1",

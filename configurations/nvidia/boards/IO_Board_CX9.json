@@ -225,7 +225,7 @@
         "Exposes": [
             {
                 "EID": "$Instance * 10 + 60",
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "IgnoreEIDs": "$IgnoreEIDs",
                 "Instance": "$Instance",
                 "Kind": "cx_sma",
@@ -249,7 +249,7 @@
             },
             {
                 "EID": "$Instance * 10 + 61",
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": "$Instance * 2",
                 "Kind": "cx9_io",
                 "LocationContext": "Chassis_0/Bay-B-$Bay",
@@ -278,7 +278,7 @@
             },
             {
                 "EID": "$Instance * 10 + 63",
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": "$Instance * 2 + 1",
                 "Kind": "cx9_io",
                 "LocationContext": "Chassis_0/Bay-B-$Bay",
@@ -307,7 +307,7 @@
             },
             {
                 "EID": "$Instance * 10 + 65",
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": "$Instance",
                 "Kind": "nvme_e1s",
                 "LocationCode": "NVMe E1.S Slot $Instance + 1",

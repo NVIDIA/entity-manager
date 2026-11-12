@@ -55,7 +55,7 @@
             }
         ],
         "Name": "$Name",
-        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin'})",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vr'})",
         "Type": "NvDevice"
     },
     {
@@ -64,7 +64,7 @@
             "parent_processor": "cpu/CPU_$Instance"
         },
         "Name": "ProcessorModule_$Instance_Memory_0",
-        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vr', 'LocationContext': '.'})",
         "Type": "Dimm",
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
@@ -79,7 +79,7 @@
             "parent_processor": "cpu/CPU_$Instance"
         },
         "Name": "ProcessorModule_$Instance_Memory_1",
-        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vr', 'LocationContext': '.'})",
         "Type": "Dimm",
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
@@ -94,7 +94,7 @@
             "parent_processor": "cpu/CPU_$Instance"
         },
         "Name": "ProcessorModule_$Instance_Memory_2",
-        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vr', 'LocationContext': '.'})",
         "Type": "Dimm",
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
@@ -109,7 +109,7 @@
             "parent_processor": "cpu/CPU_$Instance"
         },
         "Name": "ProcessorModule_$Instance_Memory_3",
-        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vr', 'LocationContext': '.'})",
         "Type": "Dimm",
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
@@ -124,7 +124,7 @@
             "parent_processor": "cpu/CPU_$Instance"
         },
         "Name": "ProcessorModule_$Instance_Memory_4",
-        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vr', 'LocationContext': '.'})",
         "Type": "Dimm",
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
@@ -139,7 +139,7 @@
             "parent_processor": "cpu/CPU_$Instance"
         },
         "Name": "ProcessorModule_$Instance_Memory_5",
-        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vr', 'LocationContext': '.'})",
         "Type": "Dimm",
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
@@ -154,7 +154,7 @@
             "parent_processor": "cpu/CPU_$Instance"
         },
         "Name": "ProcessorModule_$Instance_Memory_6",
-        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vr', 'LocationContext': '.'})",
         "Type": "Dimm",
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"
@@ -169,7 +169,7 @@
             "parent_processor": "cpu/CPU_$Instance"
         },
         "Name": "ProcessorModule_$Instance_Memory_7",
-        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vera-rubin', 'LocationContext': '.'})",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu$', 'Generation': 'vr', 'LocationContext': '.'})",
         "Type": "Dimm",
         "xyz.openbmc_project.Inventory.Decorator.Location": {
             "LocationType": "xyz.openbmc_project.Inventory.Decorator.Location.LocationTypes.Socket"

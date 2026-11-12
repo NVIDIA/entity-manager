@@ -22,7 +22,7 @@
             }
         ],
         "Name": "$Name",
-        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^storage_backplane_sma$', 'Generation': 'vera-rubin'})",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^storage_backplane_sma$', 'Generation': 'vr'})",
         "Type": "NvDevice"
     }
 ]

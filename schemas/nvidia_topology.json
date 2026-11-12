@@ -426,7 +426,7 @@
                 },
                 "Generation": {
                     "description": "Product generation; entity files probe on it.",
-                    "enum": ["vera-rubin"]
+                    "enum": ["vr"]
                 },
                 "Instance": {
                     "description": "Index of the device among the devices of its kind.",

@@ -36,7 +36,7 @@
         "Exposes": [
             {
                 "EID": "$Instance * 8 + 16",
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "IgnoreEIDs": "$IgnoreEIDs",
                 "Instance": "$Instance",
                 "Kind": "cx_sma",
@@ -66,7 +66,7 @@
         "Exposes": [
             {
                 "EID": 17,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 0,
                 "Kind": "cx9_io",
                 "Name": "HGX_ConnectX_0",
@@ -93,7 +93,7 @@
             },
             {
                 "EID": 27,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 1,
                 "Kind": "cx9_io",
                 "Name": "HGX_ConnectX_1",
@@ -120,7 +120,7 @@
             },
             {
                 "EID": 19,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 2,
                 "Kind": "cx9_io",
                 "Name": "HGX_ConnectX_2",
@@ -147,7 +147,7 @@
             },
             {
                 "EID": 25,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 3,
                 "Kind": "cx9_io",
                 "Name": "HGX_ConnectX_3",
@@ -174,7 +174,7 @@
             },
             {
                 "EID": 43,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 4,
                 "Kind": "cx9_io",
                 "Name": "HGX_ConnectX_4",
@@ -201,7 +201,7 @@
             },
             {
                 "EID": 35,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 5,
                 "Kind": "cx9_io",
                 "Name": "HGX_ConnectX_5",
@@ -228,7 +228,7 @@
             },
             {
                 "EID": 41,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 6,
                 "Kind": "cx9_io",
                 "Name": "HGX_ConnectX_6",
@@ -255,7 +255,7 @@
             },
             {
                 "EID": 33,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 7,
                 "Kind": "cx9_io",
                 "Name": "HGX_ConnectX_7",

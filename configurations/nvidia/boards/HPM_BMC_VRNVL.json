@@ -163,7 +163,7 @@
         "Exposes": [
             {
                 "EID": "$SmaEid",
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": "$Instance",
                 "Kind": "bmc_hpm_sma",
                 "Name": "ProcessorModule_SMA_$Instance",

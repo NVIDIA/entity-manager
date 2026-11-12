@@ -202,7 +202,7 @@
         "Exposes": [
             {
                 "EID": 9,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 0,
                 "Kind": "erot",
                 "LocationCode": "ERoT_HMC_0",
@@ -229,7 +229,7 @@
         "Exposes": [
             {
                 "EID": 9,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 0,
                 "Kind": "irot",
                 "LocationCode": "IRoT_BMC_0",

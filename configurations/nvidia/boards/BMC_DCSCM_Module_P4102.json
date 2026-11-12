@@ -208,7 +208,7 @@
         "Exposes": [
             {
                 "EID": 50,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 0,
                 "Kind": "erot",
                 "LocationCode": "ERoT_BMC_0",
@@ -298,7 +298,7 @@
         "Exposes": [
             {
                 "EID": 9,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 0,
                 "Kind": "hmc_bridge_erot",
                 "Name": "HMC_BRIDGE_EROT_0",
@@ -306,7 +306,7 @@
             },
             {
                 "EID": 10,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 0,
                 "Kind": "hmc_bridge_gpu_sma",
                 "Name": "HMC_BRIDGE_GPU_SMA_0",
@@ -314,7 +314,7 @@
             },
             {
                 "EID": 11,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 0,
                 "Kind": "hmc_bridge_gpu",
                 "Name": "HMC_BRIDGE_IRoT_GPU_0",
@@ -322,7 +322,7 @@
             },
             {
                 "EID": 12,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 1,
                 "Kind": "hmc_bridge_gpu",
                 "Name": "HMC_BRIDGE_IRoT_GPU_1",
@@ -330,7 +330,7 @@
             },
             {
                 "EID": 20,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 1,
                 "Kind": "hmc_bridge_gpu_sma",
                 "Name": "HMC_BRIDGE_GPU_SMA_1",
@@ -338,7 +338,7 @@
             },
             {
                 "EID": 21,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 2,
                 "Kind": "hmc_bridge_gpu",
                 "Name": "HMC_BRIDGE_IRoT_GPU_2",
@@ -346,7 +346,7 @@
             },
             {
                 "EID": 22,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 3,
                 "Kind": "hmc_bridge_gpu",
                 "Name": "HMC_BRIDGE_IRoT_GPU_3",
@@ -354,7 +354,7 @@
             },
             {
                 "EID": 14,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 0,
                 "Kind": "hmc_bridge_cpu",
                 "Name": "HMC_BRIDGE_CPU_0",
@@ -362,7 +362,7 @@
             },
             {
                 "EID": 24,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 1,
                 "Kind": "hmc_bridge_cpu",
                 "Name": "HMC_BRIDGE_CPU_1",
@@ -370,7 +370,7 @@
             },
             {
                 "EID": 13,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 0,
                 "Kind": "hmc_bridge_hpm_sma",
                 "Name": "HMC_BRIDGE_IRoT_ProcessorModule_SMA_0",
@@ -378,7 +378,7 @@
             },
             {
                 "EID": 23,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 1,
                 "Kind": "hmc_bridge_hpm_sma",
                 "Name": "HMC_BRIDGE_IRoT_ProcessorModule_SMA_1",
@@ -399,7 +399,7 @@
         "Exposes": [
             {
                 "EID": 9,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 0,
                 "Kind": "irot",
                 "Name": "IRoT_BMC_0",
@@ -499,7 +499,7 @@
         "Exposes": [
             {
                 "EID": 10,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 0,
                 "Kind": "hmc_bridge_gpu_sma",
                 "Name": "HMC_BRIDGE_GPU_SMA_0",
@@ -507,7 +507,7 @@
             },
             {
                 "EID": 11,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 0,
                 "Kind": "hmc_bridge_gpu",
                 "Name": "HMC_BRIDGE_IRoT_GPU_0",
@@ -515,7 +515,7 @@
             },
             {
                 "EID": 12,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 1,
                 "Kind": "hmc_bridge_gpu",
                 "Name": "HMC_BRIDGE_IRoT_GPU_1",
@@ -523,7 +523,7 @@
             },
             {
                 "EID": 20,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 1,
                 "Kind": "hmc_bridge_gpu_sma",
                 "Name": "HMC_BRIDGE_GPU_SMA_1",
@@ -531,7 +531,7 @@
             },
             {
                 "EID": 21,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 2,
                 "Kind": "hmc_bridge_gpu",
                 "Name": "HMC_BRIDGE_IRoT_GPU_2",
@@ -539,7 +539,7 @@
             },
             {
                 "EID": 22,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 3,
                 "Kind": "hmc_bridge_gpu",
                 "Name": "HMC_BRIDGE_IRoT_GPU_3",
@@ -547,7 +547,7 @@
             },
             {
                 "EID": 14,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 0,
                 "Kind": "hmc_bridge_cpu",
                 "Name": "HMC_BRIDGE_CPU_0",
@@ -555,7 +555,7 @@
             },
             {
                 "EID": 24,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 1,
                 "Kind": "hmc_bridge_cpu",
                 "Name": "HMC_BRIDGE_CPU_1",
@@ -563,7 +563,7 @@
             },
             {
                 "EID": 13,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 0,
                 "Kind": "hmc_bridge_hpm_sma",
                 "Name": "HMC_BRIDGE_IRoT_ProcessorModule_SMA_0",
@@ -571,7 +571,7 @@
             },
             {
                 "EID": 23,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 1,
                 "Kind": "hmc_bridge_hpm_sma",
                 "Name": "HMC_BRIDGE_IRoT_ProcessorModule_SMA_1",

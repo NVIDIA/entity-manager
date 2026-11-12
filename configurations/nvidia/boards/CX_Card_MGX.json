@@ -137,7 +137,7 @@
         "Exposes": [
             {
                 "EID": "$Instance + 101",
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": "$Instance",
                 "Kind": "cx9_nic_i2c",
                 "Name": "CX_$Instance",

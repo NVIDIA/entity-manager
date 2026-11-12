@@ -390,7 +390,7 @@ configs = [
     'nvidia/platform/vrnvl-vhmc-platform-policy.json',
     'nvidia/platform/vrnvl-vhmc-platform-topology.json',
     'nvidia/rtx6000_pro.json',
-    'nvidia/rubin-gpu.json',
+    'nvidia/vr-gpu.json',
     'nvidia/vera-cpu.json',
     'nvidia/vr-bmc-bluefield.json',
     'nvidia/vr-bmc-bluefield_sma.json',

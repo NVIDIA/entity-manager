@@ -56,7 +56,7 @@
             }
         ],
         "Name": "$Name",
-        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^gpu_sma$', 'Generation': 'vera-rubin'})",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^gpu_sma$', 'Generation': 'vr'})",
         "Type": "NvDevice"
     }
 ]

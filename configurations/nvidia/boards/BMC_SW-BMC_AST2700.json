@@ -101,7 +101,7 @@
         "Exposes": [
             {
                 "EID": 9,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 0,
                 "Kind": "irot",
                 "Name": "IRoT_BMC_0",
@@ -118,7 +118,7 @@
             },
             {
                 "EID": 16,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 2,
                 "Kind": "cpu_erot_i2c",
                 "Name": "ERoT_CPU_0",

@@ -41,7 +41,7 @@
             }
         ],
         "Name": "$Name",
-        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu_erot$', 'Generation': 'vera-rubin'})",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cpu_erot$', 'Generation': 'vr'})",
         "Type": "NvDevice"
     }
 ]

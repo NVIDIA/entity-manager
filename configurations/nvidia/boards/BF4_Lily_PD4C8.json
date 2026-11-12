@@ -115,7 +115,7 @@
         "Exposes": [
             {
                 "EID": 56,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "IdentityInstance": 0,
                 "Instance": 0,
                 "Kind": "bluefield",
@@ -131,7 +131,7 @@
             },
             {
                 "EID": 55,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 0,
                 "Kind": "bluefield_sma",
                 "LocationContext": "Chassis_0/Bay-C-Middle",
@@ -185,7 +185,7 @@
         "Exposes": [
             {
                 "EID": 105,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 0,
                 "Kind": "bluefield_lily",
                 "Name": "BlueField_0",

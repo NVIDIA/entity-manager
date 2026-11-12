@@ -5,7 +5,7 @@
         },
         "Exposes": [],
         "Name": "$Name",
-        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vera-rubin'})",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vr'})",
         "Type": "chassis",
         "xyz.openbmc_project.Inventory.Decorator.Instance": {
             "InstanceNumber": "$Instance"
@@ -122,7 +122,7 @@
             }
         ],
         "Name": "$Name",
-        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vera-rubin'})",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx9_io$', 'Generation': 'vr'})",
         "Type": "NvDevice"
     }
 ]

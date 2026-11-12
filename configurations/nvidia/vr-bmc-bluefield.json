@@ -31,7 +31,7 @@
             }
         ],
         "Name": "$Name",
-        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vera-rubin'})",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vr'})",
         "Type": "chassis",
         "xyz.openbmc_project.Inventory.Decorator.Instance": {
             "InstanceNumber": 0
@@ -99,7 +99,7 @@
         ],
         "Name": "$Name_Platform",
         "Probe": [
-            "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vera-rubin'})",
+            "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vr'})",
             "AND",
             "FOUND('BlueField_4_B4240V_FRU')"
         ],
@@ -140,7 +140,7 @@
         ],
         "Name": "$Name_Platform_B4180V",
         "Probe": [
-            "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vera-rubin'})",
+            "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vr'})",
             "AND",
             "FOUND('BlueField_4_B4180V_FRU')"
         ],
@@ -157,7 +157,7 @@
             }
         ],
         "Name": "$Name_LeakDetection",
-        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vera-rubin'})",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield$', 'Generation': 'vr'})",
         "Type": "LeakDetection"
     },
     {
@@ -188,7 +188,7 @@
             }
         ],
         "Name": "$Name_Platform",
-        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield_lily$', 'Generation': 'vera-rubin'})",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^bluefield_lily$', 'Generation': 'vr'})",
         "Type": "NvDevice"
     }
 ]

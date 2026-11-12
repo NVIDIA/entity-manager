@@ -286,7 +286,7 @@
                     "HGX_GPU_$Instance"
                 ],
                 "EID": "$Instance * 3 + 48",
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "IgnoreEIDs": "$IgnoreEIDs",
                 "Instance": "$Instance",
                 "Kind": "gpu_sma",
@@ -309,7 +309,7 @@
             },
             {
                 "EID": "$Instance * 3 + 49",
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": "$Instance",
                 "Kind": "gpu",
                 "LocationCode": "GPU$Instance",
@@ -347,7 +347,7 @@
             },
             {
                 "EID": 84,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "IgnoreEIDs": "86,87",
                 "Instance": 0,
                 "Kind": "hmc_hpm_sma",
@@ -371,7 +371,7 @@
             },
             {
                 "EID": 72,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "IgnoreEIDs": "74,76,77",
                 "Instance": 0,
                 "Kind": "nvswitch_sma",
@@ -394,7 +394,7 @@
             },
             {
                 "EID": 78,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "IgnoreEIDs": "80,82,83",
                 "Instance": 1,
                 "Kind": "nvswitch_sma",
@@ -417,7 +417,7 @@
             },
             {
                 "EID": 79,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 0,
                 "Kind": "nvswitch",
                 "Name": "HGX_NVSwitch_0",
@@ -441,7 +441,7 @@
             },
             {
                 "EID": 75,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 1,
                 "Kind": "nvswitch",
                 "Name": "HGX_NVSwitch_1",
@@ -465,7 +465,7 @@
             },
             {
                 "EID": 73,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 2,
                 "Kind": "nvswitch",
                 "Name": "HGX_NVSwitch_2",
@@ -489,7 +489,7 @@
             },
             {
                 "EID": 81,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 3,
                 "Kind": "nvswitch",
                 "Name": "HGX_NVSwitch_3",
@@ -513,7 +513,7 @@
             },
             {
                 "EID": 85,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 0,
                 "Kind": "nvlink_mgmt_nic",
                 "Name": "HGX_NVLinkManagementNIC_0",

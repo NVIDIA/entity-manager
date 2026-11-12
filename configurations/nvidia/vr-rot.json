@@ -46,7 +46,7 @@
             }
         ],
         "Name": "$Name",
-        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^irot$', 'Generation': 'vera-rubin'})",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^irot$', 'Generation': 'vr'})",
         "Type": "NvDevice"
     }
 ]

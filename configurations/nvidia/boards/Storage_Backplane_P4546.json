@@ -60,7 +60,7 @@
         "Exposes": [
             {
                 "EID": 60,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 0,
                 "Kind": "storage_backplane_sma",
                 "Name": "StorageBackplane_SMA_0",
@@ -74,7 +74,7 @@
             },
             {
                 "EID": 62,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 0,
                 "Kind": "nvme_e1s_backplane",
                 "LocationCode": "NVMe E1.S Slot 0",
@@ -83,7 +83,7 @@
             },
             {
                 "EID": 61,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 1,
                 "Kind": "nvme_e1s_backplane",
                 "LocationCode": "NVMe E1.S Slot 1",
@@ -92,7 +92,7 @@
             },
             {
                 "EID": 64,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 2,
                 "Kind": "nvme_e1s_backplane",
                 "LocationCode": "NVMe E1.S Slot 2",
@@ -101,7 +101,7 @@
             },
             {
                 "EID": 63,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 3,
                 "Kind": "nvme_e1s_backplane",
                 "LocationCode": "NVMe E1.S Slot 3",
@@ -110,7 +110,7 @@
             },
             {
                 "EID": 66,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 4,
                 "Kind": "nvme_e1s_backplane",
                 "LocationCode": "NVMe E1.S Slot 4",
@@ -119,7 +119,7 @@
             },
             {
                 "EID": 65,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 5,
                 "Kind": "nvme_e1s_backplane",
                 "LocationCode": "NVMe E1.S Slot 5",
@@ -128,7 +128,7 @@
             },
             {
                 "EID": 68,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 6,
                 "Kind": "nvme_e1s_backplane",
                 "LocationCode": "NVMe E1.S Slot 6",
@@ -137,7 +137,7 @@
             },
             {
                 "EID": 67,
-                "Generation": "vera-rubin",
+                "Generation": "vr",
                 "Instance": 7,
                 "Kind": "nvme_e1s_backplane",
                 "LocationCode": "NVMe E1.S Slot 7",
