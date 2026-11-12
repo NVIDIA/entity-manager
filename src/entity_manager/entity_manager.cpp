@@ -242,8 +242,8 @@ static std::optional<std::string_view> associationBackward(
 static std::string resolveAssociationTarget(const std::string& target)
 {
     const size_t slash = target.find('/');
-    if (target.empty() || target.front() == '/' ||
-        slash == std::string::npos || slash + 1 == target.size())
+    if (target.empty() || target.front() == '/' || slash == std::string::npos ||
+        slash + 1 == target.size())
     {
         return target;
     }

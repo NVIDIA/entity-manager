@@ -113,8 +113,7 @@ class EntityManager
         std::shared_ptr<sdbusplus::asio::dbus_interface> iface;
         std::set<Association> assocs;
     };
-    std::map<sdbusplus::object_path, TopologyAssociations>
-        topologyAssociations;
+    std::map<sdbusplus::object_path, TopologyAssociations> topologyAssociations;
 
     bool propertiesChangedInProgress = false;
     boost::asio::steady_timer propertiesChangedTimer;

@@ -55,16 +55,16 @@ T2 configuration uses three layers:
 
 `PLDMDevice` requires `Name` and `Type: PLDMDevice`. Its monitoring keys are:
 
-| Key | Purpose |
-| --- | --- |
-| `SensorAuxNames`, `EffecterAuxNames` | Auxiliary name to integer ID maps for sensors and effecters the device leaves unnamed. |
-| `NetworkAdapter` | Inventory object name bound to the device's `NetworkController` entity. |
-| `Ports` | Sensor ID to port-name fallback used only when there are no Port entity PDRs. |
-| `PortMaxSpeedMBps`, `PortType` | Port metadata; `PortType` defaults to `BidirectionalPort`. |
-| `SensorRoles` | Role name to sensor or effecter auxiliary name map, such as `primary_temperature_sensor` to `TempLimit_0`. Each role names one sensor. |
-| `EventIds` | Sensor name as used in `SensorAuxNames` to event ID array map, preserving the order and semantics of `SensorEventInfo.EventIds`. |
-| `ImpactedComponent`, `LoggingNamespace` | Device-wide event component and optional logging namespace, copied from `SensorEventInfo`. |
-| `UpperFatal`, `UpperCritical`, `UpperCaution` | Threshold overrides by sensor auxiliary name. |
+| Key                                           | Purpose                                                                                                                                |
+| --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `SensorAuxNames`, `EffecterAuxNames`          | Auxiliary name to integer ID maps for sensors and effecters the device leaves unnamed.                                                 |
+| `NetworkAdapter`                              | Inventory object name bound to the device's `NetworkController` entity.                                                                |
+| `Ports`                                       | Sensor ID to port-name fallback used only when there are no Port entity PDRs.                                                          |
+| `PortMaxSpeedMBps`, `PortType`                | Port metadata; `PortType` defaults to `BidirectionalPort`.                                                                             |
+| `SensorRoles`                                 | Role name to sensor or effecter auxiliary name map, such as `primary_temperature_sensor` to `TempLimit_0`. Each role names one sensor. |
+| `EventIds`                                    | Sensor name as used in `SensorAuxNames` to event ID array map, preserving the order and semantics of `SensorEventInfo.EventIds`.       |
+| `ImpactedComponent`, `LoggingNamespace`       | Device-wide event component and optional logging namespace, copied from `SensorEventInfo`.                                             |
+| `UpperFatal`, `UpperCritical`, `UpperCaution` | Threshold overrides by sensor auxiliary name.                                                                                          |
 
 Existing `UpdateableComponents`, `FWInventoryOnlyComponent` and `FirmwareName`
 firmware mappings remain on the record. The schema for both `PLDMDevice` and
@@ -73,29 +73,29 @@ firmware mappings remain on the record. The schema for both `PLDMDevice` and
 The `Kind` to device PDR entity mapping is a compiled table in pldmd, not an
 entity-file override. Relevant entries are:
 
-| Topology `Kind` | Device PDR entity |
-| --- | --- |
-| `cpu` | `Processor` |
-| `cx9_io`, `cx9_nic`, `nvlink_mgmt_nic` | `AddInCard` |
+| Topology `Kind`                        | Device PDR entity |
+| -------------------------------------- | ----------------- |
+| `cpu`                                  | `Processor`       |
+| `cx9_io`, `cx9_nic`, `nvlink_mgmt_nic` | `AddInCard`       |
 
-PDR entities above the device bind to `ParentChassis`. The MemoryController
-to parent-chassis binding is also a compiled default in pldmd.
+PDR entities above the device bind to `ParentChassis`. The MemoryController to
+parent-chassis binding is also a compiled default in pldmd.
 
 `SensorRoles` (keyed by role) and `EventIds` (keyed by sensor name) are flat
-maps because EM flattens only one level. Their values are strings and arrays
-of strings respectively, never nested objects. CPU roles mirror the four
-`cpu-primary-*` meson defaults.
-For events, match each legacy `SensorEventInfo.SensorId` to a `SensorAuxNames`
-name and copy its `EventIds` array verbatim. Resolve event names through the
-name-to-ID map, not an inverted ID-to-name map: legacy names and new event
-aliases may share an ID. Set `ImpactedComponent` once per device; include
-`LoggingNamespace` only when present in the legacy records.
+maps because EM flattens only one level. Their values are strings and arrays of
+strings respectively, never nested objects. CPU roles mirror the four
+`cpu-primary-*` meson defaults. For events, match each legacy
+`SensorEventInfo.SensorId` to a `SensorAuxNames` name and copy its `EventIds`
+array verbatim. Resolve event names through the name-to-ID map, not an inverted
+ID-to-name map: legacy names and new event aliases may share an ID. Set
+`ImpactedComponent` once per device; include `LoggingNamespace` only when
+present in the legacy records.
 
-T2 precedence is device Auxiliary Names PDR > `SensorAuxNames` (and likewise
-for effecters) and Port entity PDR > `Ports`. Policy link-state and plug/cable
-placement overrides the normal port binding. Keep `Ports`, existing
-sensor-name mappings and `SensorEventInfo` records until the matching pldmd
-migration removes the legacy readers.
+T2 precedence is device Auxiliary Names PDR > `SensorAuxNames` (and likewise for
+effecters) and Port entity PDR > `Ports`. Policy link-state and plug/cable
+placement overrides the normal port binding. Keep `Ports`, existing sensor-name
+mappings and `SensorEventInfo` records until the matching pldmd migration
+removes the legacy readers.
 
 The CPU index is derived from the device's rank among `Kind: cpu` siblings under
 the same `ParentChassis`, ordered by `Instance`; there is no `CpuIndex` key.

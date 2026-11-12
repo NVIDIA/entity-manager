@@ -12,15 +12,15 @@ device.
 
 ## Who creates what
 
-| Piece | Created by | Input |
-|---|---|---|
-| Topology record (device names, EIDs, parent chassis) | Entity Manager | Platform topology file, published when its probe matches |
-| Board inventory (processor module, its assemblies) | Entity Manager | Board file, published when the board FRU is found |
-| MCTP endpoint, bridge pool endpoints | MCTP daemon | Discovery on the transport |
-| PLDM device terminus, its sensors, its Redfish names | pldmd † | Topology (`Name`, `EID`) plus the PDRs of the terminus |
-| NSM device chassis, processor, memory, sensors, RoT objects | nsmd † | Topology (`Kind`, `Generation`, `Instance`, `EID`), the base profile in the code and the entity file (`Disable`, `ParameterOverrides`) |
-| Sensor-to-device and device-to-parent associations | pldmd † or nsmd † | Topology (`Name`, `ParentChassis`) and the standard object paths |
-| Redfish chassis, processor and sensor resources | bmcweb | D-Bus inventory and associations |
+| Piece                                                       | Created by        | Input                                                                                                                                  |
+| ----------------------------------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| Topology record (device names, EIDs, parent chassis)        | Entity Manager    | Platform topology file, published when its probe matches                                                                               |
+| Board inventory (processor module, its assemblies)          | Entity Manager    | Board file, published when the board FRU is found                                                                                      |
+| MCTP endpoint, bridge pool endpoints                        | MCTP daemon       | Discovery on the transport                                                                                                             |
+| PLDM device terminus, its sensors, its Redfish names        | pldmd †           | Topology (`Name`, `EID`) plus the PDRs of the terminus                                                                                 |
+| NSM device chassis, processor, memory, sensors, RoT objects | nsmd †            | Topology (`Kind`, `Generation`, `Instance`, `EID`), the base profile in the code and the entity file (`Disable`, `ParameterOverrides`) |
+| Sensor-to-device and device-to-parent associations          | pldmd † or nsmd † | Topology (`Name`, `ParentChassis`) and the standard object paths                                                                       |
+| Redfish chassis, processor and sensor resources             | bmcweb            | D-Bus inventory and associations                                                                                                       |
 
 Entity Manager owns inventory only for boards found by FRU. A device found over
 a protocol, such as a CPU or a GPU, gets its inventory from its daemon
@@ -101,8 +101,8 @@ USB, so its endpoint comes from the SMA's bridge pool.
    USB and allocates its bridge pool. The GPU endpoint EID 11 appears in that
    pool.
 3. **nsmd matches the topology to the endpoint.** nsmd reads the `NvDevice`
-   items, finds the NSM device that answers on EID 11 and ties it to
-   `HGX_GPU_0` by `Kind` and `Instance`. †
+   items, finds the NSM device that answers on EID 11 and ties it to `HGX_GPU_0`
+   by `Kind` and `Instance`. †
 4. **The object set comes from the base profile.** nsmd selects the base profile
    for `gpu` and `vera-rubin`, which holds every feature of the device switched
    on. It applies `Disable` and `ParameterOverrides` from the entity file, then

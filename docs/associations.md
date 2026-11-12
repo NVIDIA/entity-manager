@@ -171,27 +171,28 @@ A target is one of:
 ### How the backward name is chosen
 
 EM looks up the backward name from two inputs: the relation name (the key) and
-the `Type` of the record that holds `Associations`. The type of the target is not
-used. The lookup is a constant table in `entity_manager.cpp`
-(`associationRelations`). A row with a record type wins over the row without one.
+the `Type` of the record that holds `Associations`. The type of the target is
+not used. The lookup is a constant table in `entity_manager.cpp`
+(`associationRelations`). A row with a record type wins over the row without
+one.
 
-| Relation (forward) | Record `Type` | Backward |
-| ------------------ | ------------- | -------- |
-| `parent_chassis` | `Dimm` | `all_memory` |
-| `parent_chassis` | any other | `all_chassis` |
-| `parent_processor` | `Dimm` | `all_memory` |
-| `parent_processor` | any other | `all_processors` |
-| `chassis` | `NVMe` | `drive` |
-| `chassis` | `Cpu` | `all_processors` |
-| `all_managers` | any | `chassis` |
-| `all_chassis` | any | `parent_chassis` |
-| `computer_system` | any | `chassis` |
-| `assembly` | any | `parent_chassis` |
-| `associated_fru` | any | `associated_chassis` |
-| `downstream_chassis` | any | `upstream_cable` |
-| `activation` | any | `inventory` |
-| `all_states` | any | `parent_device` |
-| `host_management_network_access` | any | `chassis` |
+| Relation (forward)               | Record `Type` | Backward             |
+| -------------------------------- | ------------- | -------------------- |
+| `parent_chassis`                 | `Dimm`        | `all_memory`         |
+| `parent_chassis`                 | any other     | `all_chassis`        |
+| `parent_processor`               | `Dimm`        | `all_memory`         |
+| `parent_processor`               | any other     | `all_processors`     |
+| `chassis`                        | `NVMe`        | `drive`              |
+| `chassis`                        | `Cpu`         | `all_processors`     |
+| `all_managers`                   | any           | `chassis`            |
+| `all_chassis`                    | any           | `parent_chassis`     |
+| `computer_system`                | any           | `chassis`            |
+| `assembly`                       | any           | `parent_chassis`     |
+| `associated_fru`                 | any           | `associated_chassis` |
+| `downstream_chassis`             | any           | `upstream_cable`     |
+| `activation`                     | any           | `inventory`          |
+| `all_states`                     | any           | `parent_device`      |
+| `host_management_network_access` | any           | `chassis`            |
 
 A relation that is not in the table is logged as an error and skipped.
 
@@ -201,10 +202,10 @@ A relation that is not in the table is logged as an error and skipped.
 "Parent_Chassis": "/xyz/openbmc_project/inventory/system/chassis/Chassis_0"
 ```
 
-is the same as `"Associations": {"parent_chassis": "chassis/Chassis_0"}`. Records
-written with it before keep publishing the same associations. The value is also
-published as a string property of the record's `Item` interface, as before;
-`Associations` does not publish a property.
+is the same as `"Associations": {"parent_chassis": "chassis/Chassis_0"}`.
+Records written with it before keep publishing the same associations. The value
+is also published as a string property of the record's `Item` interface, as
+before; `Associations` does not publish a property.
 
 ### Unique cases: the raw tuple
 
@@ -229,12 +230,12 @@ what is needed:
 }
 ```
 
-The tuple is published as written. Targets in a raw tuple are not expanded: write
-the full path. Raw tuples and `Associations` can be used in the same record; the
-associations of all three forms are published together.
+The tuple is published as written. Targets in a raw tuple are not expanded:
+write the full path. Raw tuples and `Associations` can be used in the same
+record; the associations of all three forms are published together.
 
-If a case needs a relation often, add a row to `associationRelations` instead
-of repeating the raw tuple.
+If a case needs a relation often, add a row to `associationRelations` instead of
+repeating the raw tuple.
 
 ### Adding a relation
 
