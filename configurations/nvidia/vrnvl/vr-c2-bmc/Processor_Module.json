@@ -198,7 +198,7 @@
             "FieldReplaceable": false
         },
         "xyz.openbmc_project.Inventory.Decorator.SKU": {
-            "SKU": "$BOARD_SKU"
+            "SKU": ""
         },
         "xyz.openbmc_project.Inventory.Item.Chassis": {
             "Type": "xyz.openbmc_project.Inventory.Item.Chassis.ChassisType.Component"
