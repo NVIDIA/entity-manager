@@ -437,6 +437,11 @@
                         "Dynamic": false,
                         "Name": "UpperCaution",
                         "Value": 100.0
+                    },
+                    {
+                        "Dynamic": false,
+                        "Name": "UpperSoftShutdown",
+                        "Value": 125.0
                     }
                 ],
                 "Type": "NSM_Temp",
