@@ -92,8 +92,8 @@ Example: a GPU of an HGX baseboard. `HGX_GPU_0` is reached through a GPU SMA on
 USB, so its endpoint comes from the SMA's bridge pool.
 
 1. **Topology is published.** The topology record carries the `NvDevice` item
-   for `HGX_GPU_0`: `Kind: gpu`, `Generation: vr`, `Instance: 0`,
-   `EID: 11`, `ParentChassis: HGX_ProcessorModule_0` and a bridge transport
+   for `HGX_GPU_0`: `Kind: gpu`, `Generation: vr`, `Instance: 0`, `EID: 11`,
+   `ParentChassis: HGX_ProcessorModule_0` and a bridge transport
    (`HGX_GPU_SMA_0`, pool index 0). The entity file for the `gpu` kind is
    published for every matching `NvDevice`. Its `NSM_Telemetry` item lists only
    what differs from the base profile (`Disable`, `ParameterOverrides`).
@@ -104,11 +104,10 @@ USB, so its endpoint comes from the SMA's bridge pool.
    items, finds the NSM device that answers on EID 11 and ties it to `HGX_GPU_0`
    by `Kind` and `Instance`. †
 4. **The object set comes from the base profile.** nsmd selects the base profile
-   for `gpu` and `vr`, which holds every feature of the device switched
-   on. It applies `Disable` and `ParameterOverrides` from the entity file, then
-   creates what remains: the GPU chassis, the processor, the PCIe device, the
-   memory, the RoT objects and the sensors (temperature, power, energy,
-   voltage). †
+   for `gpu` and `vr`, which holds every feature of the device switched on. It
+   applies `Disable` and `ParameterOverrides` from the entity file, then creates
+   what remains: the GPU chassis, the processor, the PCIe device, the memory,
+   the RoT objects and the sensors (temperature, power, energy, voltage). †
 5. **Associations inside the device are derived.** nsmd links each sensor to the
    GPU chassis and to the processor, and the processor to the chassis, using the
    standard object paths for the kind and instance (`chassis/HGX_GPU_0`,
