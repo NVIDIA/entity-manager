@@ -50,6 +50,7 @@
         "Type": "NvBoard",
         "Board": "GPU_Card_C2",
         "Instance": 0,
+        "Sku": "All",
         "SmaPort": "1.2.1.3.1",
         "SmaEid": 70
       },
@@ -58,7 +59,17 @@
         "Type": "NvBoard",
         "Board": "GPU_Card_C2",
         "Instance": 1,
+        "Sku": "C2",
         "SmaPort": "1.3.1.3.1",
+        "SmaEid": 80
+      },
+      {
+        "Name": "GPU_Card_1_C1",
+        "Type": "NvBoard",
+        "Board": "GPU_Card_C2",
+        "Instance": 1,
+        "Sku": "C1",
+        "SmaPort": "1.2.1.3.4",
         "SmaEid": 80
       },
       {

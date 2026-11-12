@@ -610,6 +610,10 @@
                     "description": "USB port path of the board's USB device below the root hub.",
                     "$ref": "#/$defs/UsbPortPath"
                 },
+                "Sku": {
+                    "description": "SKU this slot entry applies to: All, or a SKU whose board records gate on its marker with FOUND().",
+                    "type": "string"
+                },
                 "SmaPort": {
                     "description": "USB port path of the board's SMA below the root hub.",
                     "$ref": "#/$defs/UsbPortPath"

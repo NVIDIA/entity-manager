@@ -288,6 +288,12 @@
         }
     },
     {
+        "Name": "MGX_C1",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 1, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.*MGX C1.*'})",
+        "Type": "NvDevice",
+        "Exposes": []
+    },
+    {
         "Associations": {
             "parent_chassis": "board/ProcessorModule_0"
         },
@@ -444,6 +450,30 @@
                 }
             },
             {
+                "BootGpio": "B0_M1_CPU_IST_BOOT_HMC-O",
+                "Cpus": [
+                    0,
+                    1
+                ],
+                "Index": 0,
+                "Name": "B0_M1",
+                "PreResetGpio": "B0_M1_HMC_IST_PRE_RST_L-O",
+                "ShutdownOkGpio": "B0_M1_CPU_SHDN_OK_L_3V3-I",
+                "SysResetGpio": "B0_M1_IST_SYS_RST_L-O",
+                "Type": "ISTDomain"
+            }
+        ]
+    },
+    {
+        "Name": "ProcessorModule_CPU_1_Devices_$Instance",
+        "Probe": [
+            "xyz.openbmc_project.Configuration.NvBoard({'Board': '^BMC_HPM_P5032$'})",
+            "AND",
+            "FOUND('CPU_1')"
+        ],
+        "Type": "NvDevice",
+        "Exposes": [
+            {
                 "Name": "CPU_1",
                 "Type": "NvDevice",
                 "Kind": "cpu",
@@ -467,19 +497,6 @@
                     "RecoveryType0Gpio": "B0_M1_CPU_RECOVERY_TYPE0-O",
                     "RecoveryType1Gpio": "B0_M1_CPU_RECOVERY_TYPE1-O"
                 }
-            },
-            {
-                "BootGpio": "B0_M1_CPU_IST_BOOT_HMC-O",
-                "Cpus": [
-                    0,
-                    1
-                ],
-                "Index": 0,
-                "Name": "B0_M1",
-                "PreResetGpio": "B0_M1_HMC_IST_PRE_RST_L-O",
-                "ShutdownOkGpio": "B0_M1_CPU_SHDN_OK_L_3V3-I",
-                "SysResetGpio": "B0_M1_IST_SYS_RST_L-O",
-                "Type": "ISTDomain"
             }
         ]
     }
