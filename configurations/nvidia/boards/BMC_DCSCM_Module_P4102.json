@@ -265,23 +265,6 @@
     {
         "Exposes": [
             {
-                "Configuration": 1,
-                "IgnoreMessageTypes": "1,2,3,4,6,126,127",
-                "InterfaceNum": 0,
-                "Name": "HMC_MCTP_BRIDGE",
-                "Port": "1.3.2",
-                "RootHubPath": "$Platform.UsbRootHubPath",
-                "StaticEndpointID": "8",
-                "Type": "MCTPUSBDevice"
-            }
-        ],
-        "Name": "BMC_HMC_MCTP_Bridge",
-        "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2600')",
-        "Type": "NvDevice"
-    },
-    {
-        "Exposes": [
-            {
                 "ControlAddress": "0x45",
                 "ControlBus": 1,
                 "DataAddress": "0x4f",

@@ -148,7 +148,7 @@
                     "PoolEndEID": "59",
                     "PoolStartEID": "56",
                     "Port": "1.1.4.1",
-                    "RootHubPath": "$Platform.UsbRootHubPath"
+                    "RootHubPath": "$UsbRootHubPath"
                 },
                 "Type": "NvDevice"
             },
@@ -174,11 +174,7 @@
             }
         ],
         "Name": "BF4_BayC",
-        "Probe": [
-            "FOUND('Nvidia VR-NVL72 BMC AST2600')",
-            "OR",
-            "FOUND('Nvidia VR-NVL72 BMC AST2600 vHMC host')"
-        ],
+        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^BF4_Lily_PD4C8$'})",
         "Type": "NvDevice"
     },
     {

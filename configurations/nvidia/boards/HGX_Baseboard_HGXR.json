@@ -365,7 +365,7 @@
                     "PoolEndEID": "86",
                     "PoolStartEID": "85",
                     "Port": "1.4.3",
-                    "RootHubPath": "$Platform.UsbRootHubPath"
+                    "RootHubPath": "$UsbRootHubPath"
                 },
                 "Type": "NvDevice"
             },
@@ -388,7 +388,7 @@
                     "PoolEndEID": "76",
                     "PoolStartEID": "73",
                     "Port": "1.4.1",
-                    "RootHubPath": "$Platform.UsbRootHubPath"
+                    "RootHubPath": "$UsbRootHubPath"
                 },
                 "Type": "NvDevice"
             },
@@ -411,7 +411,7 @@
                     "PoolEndEID": "82",
                     "PoolStartEID": "79",
                     "Port": "1.4.2",
-                    "RootHubPath": "$Platform.UsbRootHubPath"
+                    "RootHubPath": "$UsbRootHubPath"
                 },
                 "Type": "NvDevice"
             },
@@ -537,7 +537,7 @@
             }
         ],
         "Name": "HGX_Baseboard_Devices",
-        "Probe": "FOUND('Nvidia HGX-R HMC')",
+        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^HGX_Baseboard_HGXR$', 'Site': '^Baseboard$'})",
         "Type": "NvDevice"
     }
 ]

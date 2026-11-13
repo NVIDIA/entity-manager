@@ -391,11 +391,6 @@
                     "description": "$Platform.TopChassis: name of the platform's top chassis.",
                     "type": "string"
                 },
-                "UsbRootHubPath": {
-                    "description": "$Platform.UsbRootHubPath: sysfs path of the USB root hub controller of the devices that are not on a board instance (fixed-port devices probed on the platform). A board names its controller with UsbRootHubPath on its NvBoard item.",
-                    "type": "string",
-                    "pattern": "^/sys/devices/"
-                },
                 "Type": {
                     "title": "Configuration Type",
                     "description": "The type property identifies this as a platform configuration.",

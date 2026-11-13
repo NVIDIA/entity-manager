@@ -533,6 +533,7 @@
                 "Board": {
                     "description": "Board file that instantiates this board.",
                     "enum": [
+                        "BF4_Lily_PD4C8",
                         "CX_Card_MGX",
                         "GPU_PG153",
                         "HGX_Baseboard_HGXR",
@@ -548,7 +549,7 @@
                 },
                 "Site": {
                     "description": "Which part of a multi-site board this record instantiates.",
-                    "enum": ["ConnectX_SMA", "SXM"]
+                    "enum": ["Baseboard", "ConnectX_SMA", "SXM"]
                 },
                 "Instance": {
                     "description": "Index of the board among the boards of its type.",
@@ -615,7 +616,7 @@
                     "maximum": 255
                 },
                 "UsbRootHubPath": {
-                    "description": "Sysfs path of the USB root hub controller the board's USB ports (UsbHubPath, UsbPort, SmaPort, Cpu0Port, Cpu1Port) are below. A board of a platform with more than one USB controller names its own.",
+                    "description": "Sysfs path of the USB root hub controller the board's USB ports (UsbHubPath, UsbPort, SmaPort, Cpu0Port, Cpu1Port) are below. Every board that has USB devices names its own; there is no platform-level value.",
                     "$ref": "#/$defs/UsbRootHubPath"
                 },
                 "UsbHubPath": {

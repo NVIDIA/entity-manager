@@ -6,6 +6,13 @@
         "NamePrefix": "",
         "PlatformExposes": [
             {
+                "Board": "BF4_Lily_PD4C8",
+                "Instance": 0,
+                "Name": "BF4_BayC_Board",
+                "Type": "NvBoard",
+                "UsbRootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb"
+            },
+            {
                 "Board": "HPM_BMC_VRNVL",
                 "Instance": 0,
                 "Name": "ProcessorModule_0",
@@ -80,6 +87,16 @@
                 "UsbRootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb"
             },
             {
+                "Configuration": 1,
+                "IgnoreMessageTypes": "1,2,3,4,6,126,127",
+                "InterfaceNum": 0,
+                "Name": "HMC_MCTP_BRIDGE",
+                "Port": "1.3.2",
+                "RootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
+                "StaticEndpointID": "8",
+                "Type": "MCTPUSBDevice"
+            },
+            {
                 "EID": 210,
                 "Generation": "vr",
                 "Instance": 0,
@@ -103,7 +120,6 @@
         "SmmLocationContext": "Chassis_0/SMM_Interposer_0",
         "SmmParent": "board/SMM_Interposer_0",
         "TopChassis": "Chassis_0",
-        "Type": "Platform",
-        "UsbRootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb"
+        "Type": "Platform"
     }
 ]

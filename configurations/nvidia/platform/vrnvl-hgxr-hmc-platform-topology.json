@@ -11,6 +11,14 @@
             },
             {
                 "Board": "HGX_Baseboard_HGXR",
+                "Instance": 0,
+                "Name": "HGX_Baseboard_Board",
+                "Site": "Baseboard",
+                "Type": "NvBoard",
+                "UsbRootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb"
+            },
+            {
+                "Board": "HGX_Baseboard_HGXR",
                 "IgnoreEIDs": "50",
                 "Instance": 0,
                 "Name": "HGX_SXM_Board_0",
@@ -148,7 +156,6 @@
             }
         ],
         "Probe": "TRUE",
-        "Type": "Platform",
-        "UsbRootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb"
+        "Type": "Platform"
     }
 ]
