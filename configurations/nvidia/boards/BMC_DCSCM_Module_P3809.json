@@ -138,5 +138,23 @@
             "FOUND('Nvidia VR-C1 BMC')"
         ],
         "Type": "NvDevice"
+    },
+    {
+        "Exposes": [
+            {
+                "GlacierPackageUUID": "DBC2D178F70711EEBB65CFE7103AC1AC",
+                "MCUGPUPackageUUID": "30546141D0614097829DADD8E9466DCA",
+                "MCUHPMPackageUUID": "E7A31C9F48B2D075C3FE6A41B09D57E2",
+                "Name": "RecoveryPackages",
+                "Type": "RecoveryPackages"
+            }
+        ],
+        "Name": "BMC_RecoveryPackages",
+        "Probe": [
+            "FOUND('Nvidia VR-C2 BMC')",
+            "OR",
+            "FOUND('Nvidia VR-C1 BMC')"
+        ],
+        "Type": "NvDevice"
     }
 ]

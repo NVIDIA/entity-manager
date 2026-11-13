@@ -568,5 +568,65 @@
             "xyz.openbmc_project.State.FeatureReady({'FeatureType': 'xyz.openbmc_project.State.FeatureReady.FeatureTypes.MC', 'State': 'xyz.openbmc_project.State.FeatureReady.States.Enabled'})"
         ],
         "Type": "HMCBridge"
+    },
+    {
+        "Exposes": [
+            {
+                "ConnectXPackageUUID": "C248ACFF10EA43C28793989C5C0FE840",
+                "GlacierPackageUUID": "F70650A20D174C8F8A9E7CFA5CE5BD94",
+                "MCUCX9PackageUUID": "8F6B4D3E2C2B4B39BC929C6C4DF7B8E1",
+                "Name": "RecoveryPackages",
+                "Type": "RecoveryPackages"
+            }
+        ],
+        "Name": "BMC_RecoveryPackages",
+        "Probe": [
+            "FOUND('Nvidia VR-NVL72 BMC AST2600')",
+            "OR",
+            "FOUND('Nvidia VR-NVL72 BMC AST2600 vHMC host')",
+            "OR",
+            "FOUND('Nvidia VR-NVL72 BMC AST2700')"
+        ],
+        "Type": "NvDevice"
+    },
+    {
+        "Exposes": [
+            {
+                "Name": "RecoveryPackages",
+                "Type": "RecoveryPackages",
+                "USBDFUPackageUUID": "C7C67D84B064593A938C098DC5584669"
+            }
+        ],
+        "Name": "BMC_RecoveryPackages_USBDFU",
+        "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2700')",
+        "Type": "NvDevice"
+    },
+    {
+        "Exposes": [
+            {
+                "MCUBF4PackageUUID": "C8E5F4F05A2E4C6B91512E4D7C3CE4C6",
+                "Name": "BF4_RecoveryPackage",
+                "Type": "RecoveryPackages"
+            }
+        ],
+        "Name": "BF4_RecoveryPackage_B4xxxV",
+        "Probe": [
+            "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'B4180V.*'})",
+            "OR",
+            "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'B4240V.*'})"
+        ],
+        "Type": "NvDevice"
+    },
+    {
+        "Exposes": [
+            {
+                "MCUBF4PackageUUID": "668BD433B9F8473DBA1EC32B99772679",
+                "Name": "BF4_RecoveryPackage",
+                "Type": "RecoveryPackages"
+            }
+        ],
+        "Name": "BF4_RecoveryPackage_ConnectX9",
+        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'ConnectX-9.*'})",
+        "Type": "NvDevice"
     }
 ]

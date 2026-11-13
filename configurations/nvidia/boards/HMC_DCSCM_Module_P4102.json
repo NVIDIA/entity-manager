@@ -280,5 +280,24 @@
             "xyz.openbmc_project.FruDevice({'BUS': 4, 'ADDRESS': 80, 'PRODUCT_PRODUCT_NAME': '.?HMC.?'})"
         ],
         "Type": "NvDevice"
+    },
+    {
+        "Exposes": [
+            {
+                "MCUGPUPackageUUID": "8F3A1C76B24E9D50C7AD93E1F42BC689",
+                "MCUHPMPackageUUID": "3E9B47D2A5F18C0E6BD9314FA72C58DE",
+                "Name": "RecoveryPackages",
+                "Type": "RecoveryPackages"
+            }
+        ],
+        "Name": "HMC_RecoveryPackages",
+        "Probe": [
+            "FOUND('Nvidia VR-NVL144 HMC AST2600')",
+            "OR",
+            "FOUND('Nvidia VR-NVL144 HMC AST2700')",
+            "OR",
+            "FOUND('Nvidia VR-NVL72 vHMC on VR NVL BMC')"
+        ],
+        "Type": "NvDevice"
     }
 ]
