@@ -514,6 +514,14 @@ static int getBusFRUsCallback(int file, int first, int last, int bus,
 
     // Scan for i2c eeproms loaded on this bus.
     std::set<size_t> skipList = findI2CEeproms(bus, devices);
+    int rootBus = getRootBus(bus);
+    if (rootBus >= 0)
+    {
+        // Insert the parent before taking references into the flat maps.
+        fruAddresses.try_emplace(rootBus);
+        failedAddresses.try_emplace(rootBus);
+    }
+
     std::flat_set<size_t>& failedItems = failedAddresses[bus];
     std::flat_set<size_t>& foundItems = fruAddresses[bus];
     foundItems.clear();
@@ -534,8 +542,6 @@ static int getBusFRUsCallback(int file, int first, int last, int bus,
     }
 
     std::flat_set<size_t>* rootFailures = nullptr;
-    int rootBus = getRootBus(bus);
-
     for (const auto& pair : addressBlacklist)
     {
         int busP = pair.first;
