@@ -17,6 +17,7 @@
                 "SmaI2cBus": 1,
                 "Type": "NvBoard",
                 "UsbHubPath": "1.3.1",
+                "UsbRootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb",
                 "ZoneChassis": "HGX_Chassis_0"
             },
             {
@@ -26,7 +27,8 @@
                 "Side": "Right",
                 "SmaI2cBus": 3,
                 "Type": "NvBoard",
-                "UsbHubPath": "1.3.2"
+                "UsbHubPath": "1.3.2",
+                "UsbRootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb"
             },
             {
                 "Chassis": "HGX_Chassis_0",
@@ -35,7 +37,6 @@
             }
         ],
         "Probe": "TRUE",
-        "Type": "Platform",
-        "UsbRootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb"
+        "Type": "Platform"
     }
 ]

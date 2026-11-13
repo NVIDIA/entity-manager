@@ -231,7 +231,7 @@
                     "PoolEndEID": "$Instance * 10 + 12",
                     "PoolStartEID": "$Instance * 10 + 11",
                     "Port": "$UsbHubPath.1",
-                    "RootHubPath": "$Platform.UsbRootHubPath"
+                    "RootHubPath": "$UsbRootHubPath"
                 },
                 "Type": "NvDevice"
             },
@@ -310,7 +310,7 @@
                 "Transport": {
                     "Medium": "usb",
                     "Port": "$UsbHubPath.2",
-                    "RootHubPath": "$Platform.UsbRootHubPath"
+                    "RootHubPath": "$UsbRootHubPath"
                 },
                 "Type": "NvDevice"
             },

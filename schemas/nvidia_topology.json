@@ -57,6 +57,18 @@
                 }
             ]
         },
+        "UsbRootHubPath": {
+            "description": "Sysfs path of a USB root hub controller (e.g. /sys/devices/platform/ahb/1e6a3000.usb), or a template expression that resolves to one.",
+            "oneOf": [
+                {
+                    "type": "string",
+                    "pattern": "^/sys/devices/"
+                },
+                {
+                    "$ref": "#/$defs/Template"
+                }
+            ]
+        },
         "UsbPortPath": {
             "description": "A USB port path below the root hub (e.g. 1.2.1.4), or a template expression that resolves to one.",
             "oneOf": [
@@ -601,6 +613,10 @@
                     "type": "integer",
                     "minimum": 0,
                     "maximum": 255
+                },
+                "UsbRootHubPath": {
+                    "description": "Sysfs path of the USB root hub controller the board's USB ports (UsbHubPath, UsbPort, SmaPort, Cpu0Port, Cpu1Port) are below. A board of a platform with more than one USB controller names its own.",
+                    "$ref": "#/$defs/UsbRootHubPath"
                 },
                 "UsbHubPath": {
                     "description": "USB port path of the board's hub below the root hub.",

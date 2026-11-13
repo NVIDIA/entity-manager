@@ -11,7 +11,7 @@
             }
         ],
         "Name": "ProcessorModule_0_SBIOS_BootFlash_0",
-        "Probe": "TRUE",
+        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^HPM_BMC_VRNVL$', 'Instance': 0})",
         "Type": "Module"
     },
     {
@@ -26,7 +26,7 @@
             }
         ],
         "Name": "ProcessorModule_1_SBIOS_BootFlash_0",
-        "Probe": "TRUE",
+        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^HPM_BMC_VRNVL$', 'Instance': 1})",
         "Type": "Module"
     },
     {
@@ -40,7 +40,7 @@
             }
         ],
         "Name": "ProcessorModule_0_SBIOS_RWFlash_0",
-        "Probe": "TRUE",
+        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^HPM_BMC_VRNVL$', 'Instance': 0})",
         "Type": "Chassis",
         "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
             "FieldReplaceable": false
@@ -60,7 +60,7 @@
             }
         ],
         "Name": "ProcessorModule_1_SBIOS_RWFlash_0",
-        "Probe": "TRUE",
+        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^HPM_BMC_VRNVL$', 'Instance': 1})",
         "Type": "Chassis",
         "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
             "FieldReplaceable": false
@@ -172,7 +172,7 @@
                     "Medium": "usb",
                     "PoolStartEID": "$SmaEid + 1",
                     "Port": "$UsbHubPath.1",
-                    "RootHubPath": "$Platform.UsbRootHubPath"
+                    "RootHubPath": "$UsbRootHubPath"
                 },
                 "Type": "NvDevice"
             }

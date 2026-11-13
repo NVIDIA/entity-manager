@@ -68,7 +68,7 @@
                 "Transport": {
                     "Medium": "usb",
                     "Port": "$SmaPort",
-                    "RootHubPath": "$Platform.UsbRootHubPath"
+                    "RootHubPath": "$UsbRootHubPath"
                 },
                 "Type": "NvDevice"
             },

@@ -303,7 +303,7 @@
                     "PoolEndEID": "$Instance * 3 + 49",
                     "PoolStartEID": "$Instance * 3 + 49",
                     "Port": "$UsbPort",
-                    "RootHubPath": "$Platform.UsbRootHubPath"
+                    "RootHubPath": "$UsbRootHubPath"
                 },
                 "Type": "NvDevice"
             },

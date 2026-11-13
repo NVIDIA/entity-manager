@@ -15,7 +15,8 @@
                 "McuNumber": 1,
                 "Name": "MGX_SWB_Site_0",
                 "Type": "NvBoard",
-                "UsbPort": "1.2"
+                "UsbPort": "1.2",
+                "UsbRootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb"
             },
             {
                 "Board": "SWB_QM4",
@@ -23,11 +24,11 @@
                 "McuNumber": 2,
                 "Name": "MGX_SWB_Site_1",
                 "Type": "NvBoard",
-                "UsbPort": "1.3"
+                "UsbPort": "1.3",
+                "UsbRootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb"
             }
         ],
         "Probe": "TRUE",
-        "Type": "Platform",
-        "UsbRootHubPath": "/sys/devices/platform/ahb/1e6a3000.usb"
+        "Type": "Platform"
     }
 ]

@@ -17,6 +17,7 @@
                 "SmaI2cBus": 10,
                 "Type": "NvBoard",
                 "UsbHubPath": "1.1",
+                "UsbRootHubPath": "/sys/devices/platform/soc@10000000/12063000.usb",
                 "ZoneChassis": "HGX_Chassis_0"
             },
             {
@@ -26,7 +27,8 @@
                 "Side": "Right",
                 "SmaI2cBus": 8,
                 "Type": "NvBoard",
-                "UsbHubPath": "1.2"
+                "UsbHubPath": "1.2",
+                "UsbRootHubPath": "/sys/devices/platform/soc@10000000/12063000.usb"
             },
             {
                 "Chassis": "HGX_Chassis_0",
@@ -35,7 +37,6 @@
             }
         ],
         "Probe": "TRUE",
-        "Type": "Platform",
-        "UsbRootHubPath": "/sys/devices/platform/soc@10000000/12063000.usb"
+        "Type": "Platform"
     }
 ]

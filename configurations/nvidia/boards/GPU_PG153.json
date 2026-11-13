@@ -21,7 +21,7 @@
                     "PoolEndEID": "$SmaEid + 1",
                     "PoolStartEID": "$SmaEid + 1",
                     "Port": "$UsbPort",
-                    "RootHubPath": "$Platform.UsbRootHubPath"
+                    "RootHubPath": "$UsbRootHubPath"
                 },
                 "Type": "NvDevice"
             },

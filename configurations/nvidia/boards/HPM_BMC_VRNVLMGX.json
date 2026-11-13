@@ -345,7 +345,7 @@
             }
         ],
         "Name": "ProcessorModule_0_SBIOS_RWFlash_0",
-        "Probe": "TRUE",
+        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^HPM_BMC_VRNVLMGX$'})",
         "Type": "Chassis",
         "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
             "FieldReplaceable": false
@@ -383,7 +383,7 @@
             }
         ],
         "Name": "ProcessorModule_0_SBIOS_RWFlash_1",
-        "Probe": "TRUE",
+        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^HPM_BMC_VRNVLMGX$', 'Cpu1Port': '.+'})",
         "Type": "Chassis",
         "xyz.openbmc_project.Inventory.Decorator.Replaceable": {
             "FieldReplaceable": false
@@ -424,7 +424,7 @@
                     "Medium": "usb",
                     "PoolStartEID": "21",
                     "Port": "$SmaPort",
-                    "RootHubPath": "$Platform.UsbRootHubPath"
+                    "RootHubPath": "$UsbRootHubPath"
                 },
                 "Type": "NvDevice"
             },
@@ -449,7 +449,7 @@
                 "Transport": {
                     "Medium": "usb",
                     "Port": "$Cpu0Port",
-                    "RootHubPath": "$Platform.UsbRootHubPath"
+                    "RootHubPath": "$UsbRootHubPath"
                 },
                 "Type": "NvDevice"
             }
@@ -481,7 +481,7 @@
                 "Transport": {
                     "Medium": "usb",
                     "Port": "$Cpu1Port",
-                    "RootHubPath": "$Platform.UsbRootHubPath"
+                    "RootHubPath": "$UsbRootHubPath"
                 },
                 "Type": "NvDevice"
             }

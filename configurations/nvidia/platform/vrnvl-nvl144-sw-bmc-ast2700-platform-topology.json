@@ -9,18 +9,19 @@
                 "Instance": 0,
                 "Name": "SWB_Site_0",
                 "Type": "NvBoard",
-                "UsbPort": "1.2"
+                "UsbPort": "1.2",
+                "UsbRootHubPath": "/sys/devices/platform/soc@10000000/12063000.usb"
             },
             {
                 "Board": "SWB_QM4_AST2700",
                 "Instance": 1,
                 "Name": "SWB_Site_1",
                 "Type": "NvBoard",
-                "UsbPort": "1.3"
+                "UsbPort": "1.3",
+                "UsbRootHubPath": "/sys/devices/platform/soc@10000000/12063000.usb"
             }
         ],
         "Probe": "TRUE",
-        "Type": "Platform",
-        "UsbRootHubPath": "/sys/devices/platform/soc@10000000/12063000.usb"
+        "Type": "Platform"
     }
 ]

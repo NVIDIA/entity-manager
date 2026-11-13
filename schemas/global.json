@@ -392,7 +392,7 @@
                     "type": "string"
                 },
                 "UsbRootHubPath": {
-                    "description": "$Platform.UsbRootHubPath: sysfs path of the USB root hub controller the platform's USB devices hang off.",
+                    "description": "$Platform.UsbRootHubPath: sysfs path of the USB root hub controller of the devices that are not on a board instance (fixed-port devices probed on the platform). A board names its controller with UsbRootHubPath on its NvBoard item.",
                     "type": "string",
                     "pattern": "^/sys/devices/"
                 },
