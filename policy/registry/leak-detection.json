@@ -1,0 +1,30 @@
+{
+    "policies": {
+        "LeakDetectionPolicy": {
+            "what": "Choose how the system reacts to a critical leak of one leak detector.",
+            "ifAbsent": "No reaction.",
+            "options": {
+                "LeakDetectorName": {
+                    "type": "string",
+                    "description": "Leak detector the policy belongs to.",
+                    "required": true
+                },
+                "CriticalReactionType": {
+                    "type": "string",
+                    "enum": ["None", "ForceOff", "GracefulShutdown"],
+                    "default": "None"
+                },
+                "ReactionDelaySeconds": {
+                    "type": "number",
+                    "minimum": 0,
+                    "default": 0
+                },
+                "WarningReactionType": {
+                    "type": "string",
+                    "default": "None",
+                    "description": "Has no effect today."
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "policies": {
+        "MSTRecoveryPolicy": {
+            "what": "Turn on MST recovery for a device type and tune how it runs.",
+            "ifAbsent": "The device type is not recovered.",
+            "options": {
+                "DeviceType": {
+                    "type": "string",
+                    "enum": ["ConnectX", "NVSwitch", "NVLinkManagementNIC"],
+                    "description": "Device type to recover (one record per type).",
+                    "required": true
+                },
+                "RecoveryFlow": {
+                    "type": "string",
+                    "enum": ["Mst", "Legacy", "Hold"],
+                    "default": "Mst"
+                },
+                "RecoveryGroups": {
+                    "type": "string[]",
+                    "description": "Devices recovered together. Default: derived from their I2C bus."
+                },
+                "I2CForce": {
+                    "type": "bool",
+                    "description": "Force the I2C access. Default: only where a kernel driver owns the address."
+                },
+                "SMAPresenceCheck": { "type": "bool", "default": true },
+                "HealthyEvent": { "type": "bool", "default": true }
+            },
+            "onePerSystem": "DeviceType"
+        }
+    }
+}

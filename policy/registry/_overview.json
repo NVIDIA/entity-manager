@@ -1,0 +1,8 @@
+{
+    "_comment": "Menu of what a platform policy file can tweak. A policy changes a behaviour every device already has by default; list a record only to change that default. Wiring, names, ports and UUIDs are not policy: they belong in the topology, board and entity files.",
+    "notPolicy": {
+        "RecoveryPackages": "Lives in the BMC or HMC module board file.",
+        "NvBoard": "Lives in the platform topology file.",
+        "NvDevice": "Lives in the board and entity files."
+    }
+}

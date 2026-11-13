@@ -1,0 +1,33 @@
+{
+    "policies": {
+        "PLDMExclusion": {
+            "what": "Leave devices out of PLDM firmware update.",
+            "ifAbsent": "Every PLDM device is updated.",
+            "options": {
+                "ExcludedInventory": {
+                    "type": "string[]",
+                    "description": "Name of each device to leave out of firmware update.",
+                    "required": true
+                }
+            }
+        },
+        "PLDM_Policy": {
+            "what": "Tune how PLDM treats a device kind.",
+            "ifAbsent": "PLDM defaults apply.",
+            "options": {
+                "Kind": {
+                    "type": "string",
+                    "description": "Device kind to tweak.",
+                    "required": true
+                },
+                "Devices": {
+                    "type": "string[]",
+                    "description": "Devices the record applies to."
+                },
+                "LinkStateOnNetworkAdapter": { "type": "bool" },
+                "PlugParent": { "type": "string" }
+            },
+            "onePerSystem": "Kind"
+        }
+    }
+}

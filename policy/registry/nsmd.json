@@ -1,0 +1,2159 @@
+{
+    "policies": {
+        "NSM_Policy": {
+            "what": "Turn features of a device kind on or off, or set their parameters.",
+            "ifAbsent": "Every device of the kind runs all its features that are on by default.",
+            "options": {
+                "Kind": {
+                    "type": "string",
+                    "description": "Device kind to tweak (one record per kind); the kinds with features to tweak are listed under 'kinds' below.",
+                    "required": true
+                },
+                "Policy": {
+                    "type": "list",
+                    "description": "One entry per group of devices: Devices (names; empty means all devices of the kind), then {\"<Feature>\": {\"Enabled\": false}} to switch a feature off or {\"<Feature>\": {\"<Parameter>\": value}} to set a parameter, and TemplateValues for the names under the kind's templateValues. A kind file lists its features as \"Feature\": [\"Parameter:type\", ...]; all are on by default except those under offByDefault.",
+                    "required": true
+                }
+            },
+            "onePerSystem": "Kind",
+            "kinds": {
+                "bluefield_nic": {
+                    "templateValues": {
+                        "NetworkAdapterName": "required",
+                        "PortCount": "required",
+                        "SwitchName": "required",
+                        "BridgeName": "optional",
+                        "LocationCode": "optional"
+                    },
+                    "features": {
+                        "ChassisBridgingAssociation": {
+                            "does": "Links this chassis to the SMA chassis that bridges it (bridged and bridging chassis), so Redfish shows which management device reaches it. Does nothing when no bridge name is set.",
+                            "params": [
+                                "BridgingChassisName:string",
+                                "Name:string"
+                            ]
+                        },
+                        "ChassisPCIeDeviceAERErrorStatus": {
+                            "does": "Publishes PCIe Advanced Error Reporting status for a retimer or NIC PCIe device, visible under the chassis PCIeDevice in Redfish.",
+                            "params": ["Name:string"]
+                        },
+                        "ChassisPCIeDeviceAsset": {
+                            "does": "Publishes manufacturer, part number, serial number and model for the chassis PCIeDevice, read from the device.",
+                            "params": ["Name:string"]
+                        },
+                        "ChassisPCIeDeviceAssociations": {
+                            "does": "Links the chassis PCIeDevice to its owning chassis so Redfish lists it under that chassis. Controlled by SelfChassisAssociationsEnabled.",
+                            "params": [
+                                "Name:string",
+                                "SelfChassisAssociationsEnabled:bool"
+                            ]
+                        },
+                        "ChassisPCIeDeviceHealth": {
+                            "does": "Adds a Health status (OK) to the chassis PCIeDevice so Redfish shows its health.",
+                            "params": ["Name:string"]
+                        },
+                        "ChassisPCIeDeviceMultiPortPCIeDevice": {
+                            "does": "Publishes a multi-port PCIe device (NIC or retimer) with link speed, functions and bus numbers, visible as a Redfish PCIeDevice.",
+                            "params": ["Name:string"]
+                        },
+                        "ChassisPCIeDeviceUUID": {
+                            "does": "Publishes the PCIeDevice's UUID, read from the device over MCTP, for Redfish and for matching devices.",
+                            "params": ["Name:string"]
+                        },
+                        "DebugToken": {
+                            "does": "Enables debug-token handling for the device: install and status for a unified token, or a token object for NICs. Only built when the debug-token compile option is on.",
+                            "params": [
+                                "ChassisName:string",
+                                "DebugTokenDeviceType:string",
+                                "DebugTokenType:string[]"
+                            ]
+                        },
+                        "FWComponentType": {
+                            "does": "Placeholder: records the firmware component type but creates nothing; no nsmd consumer exists (code says open question).",
+                            "params": ["ComponentType:string", "Name:string"]
+                        },
+                        "IRoTAsset": {
+                            "does": "Publishes the IRoT's asset data (manufacturer, part and serial number, optional display name) on its chassis.",
+                            "params": ["AssetName:string", "Name:string"]
+                        },
+                        "IRoTAssociations": {
+                            "does": "Builds the IRoT's links: parent chassis, the components it protects (RoT inventory) and its chassis. Which links exist is set by the Enabled flags and path params.",
+                            "params": [
+                                "Name:string",
+                                "ParentChassisAssociationsEnabled:bool",
+                                "RoTInventoryAssociationPath:string"
+                            ]
+                        },
+                        "IRoTChassisType": {
+                            "does": "Sets the IRoT chassis type (for example Component) shown in Redfish. Skipped if no ChassisType param is given.",
+                            "params": ["ChassisType:string", "Name:string"]
+                        },
+                        "IRoTFieldReplaceable": {
+                            "does": "Marks the IRoT as field replaceable or not in inventory. Skipped if the param is absent.",
+                            "params": ["FieldReplaceable:bool", "Name:string"]
+                        },
+                        "IRoTHealth": {
+                            "does": "Adds a Health status to the IRoT chassis in Redfish.",
+                            "params": ["Name:string"]
+                        },
+                        "IRoTLocationCode": {
+                            "does": "Sets the IRoT's location code (for example IRoT_0) in inventory. Skipped if no LocationCode param.",
+                            "params": ["LocationCode:string", "Name:string"]
+                        },
+                        "IRoTLocationContext": {
+                            "does": "Sets the IRoT's location context path (where it sits in the chassis hierarchy) in inventory. Skipped if absent.",
+                            "params": ["LocationContext:string", "Name:string"]
+                        },
+                        "IRoTLocationType": {
+                            "does": "Sets the IRoT's location type (for example Embedded) in inventory. Skipped if absent.",
+                            "params": ["LocationType:string", "Name:string"]
+                        },
+                        "IRoTSPDMResponder": {
+                            "does": "Publishes the IRoT's UUID (and optionally MCTP UUID) so the SPDM service can find and attest it. MctpUuidEnabled adds the MCTP UUID; HGXR disables it.",
+                            "params": ["Name:string"]
+                        },
+                        "MultiPCIeLink": {
+                            "does": "Discovers and publishes the PCIe ports (upstream and downstream) of a retimer switch under its fabric in Redfish.",
+                            "params": [
+                                "DownstreamPortName:string",
+                                "FabricName:string",
+                                "Name:string",
+                                "ParentDeviceAssociationsEnabled:bool",
+                                "SwitchName:string",
+                                "UpstreamPortName:string"
+                            ]
+                        },
+                        "MultiPortPCIeSwitchDevice": {
+                            "does": "Publishes the PCIe retimer as a switch on the PCIe fabric in Redfish, linked to its chassis and fabric, with periodic refresh.",
+                            "params": [
+                                "DeviceInstance:uint64",
+                                "FabricAssociationsEnabled:bool",
+                                "FabricName:string",
+                                "Name:string",
+                                "ParentChassisAssociationsEnabled:bool"
+                            ]
+                        },
+                        "NVLinkMgmtNicChassis": {
+                            "does": "Creates the chassis identity (UUID) for an NVLink management NIC, and device-reset objects when reset is supported.",
+                            "params": ["Name:string"]
+                        },
+                        "NVLinkMgmtNicChassisAssembly": {
+                            "does": "Adds a chassis Assembly entry for a NVLink management NIC, numbered with the device's other assemblies.",
+                            "params": [
+                                "LocationType:string",
+                                "Name:string",
+                                "PhysicalContext:string"
+                            ]
+                        },
+                        "NVLinkMgmtNicChassisAttributes": {
+                            "does": "Fills in the NVLink management NIC chassis properties: asset data, location, chassis type, field-replaceable, health.",
+                            "params": [
+                                "ChassisType:string",
+                                "FieldReplaceable:bool",
+                                "LocationCode:string",
+                                "LocationContext:string",
+                                "LocationType:string",
+                                "Name:string"
+                            ]
+                        },
+                        "NetworkAdapter": {
+                            "does": "Publishes the NIC as a Redfish network adapter with PCIe device info, plus mode controls (DPU, PCIe mode, protection options) per DeviceModesSupported. Debug, wipe and reset objects depend on build options.",
+                            "params": [
+                                "DeviceModesSupported:int64[]",
+                                "Name:string",
+                                "ParentChassisAssociationsEnabled:bool"
+                            ]
+                        },
+                        "PCIeRetimerFabrics": {
+                            "does": "Publishes the PCIe fabric object (for example PCIeTopology_<device>) in Redfish that retimer switches and ports sit under.",
+                            "params": [
+                                "FabricType:string",
+                                "Name:string",
+                                "SelfChassisAssociationsEnabled:bool"
+                            ]
+                        },
+                        "Port": {
+                            "does": "Creates the network ports of a NIC (count from params) with port metrics, MAC and GUID addresses, optional optical module telemetry, reset and FEC histograms.",
+                            "params": [
+                                "Count:uint64",
+                                "Name:string",
+                                "NetworkPortAddressesEnabled:bool",
+                                "OpticalModuleTelemetrySupported:bool",
+                                "ParentObjPath:string",
+                                "Priority:bool",
+                                "SupportFECHistogram:bool"
+                            ]
+                        },
+                        "RoT": {
+                            "does": "Creates the Root of Trust firmware model: slots (active and inactive AP and EC), key management, minimum security version, build type, optional image copy, update and failover policies. Slot arrays in params define it.",
+                            "params": [
+                                "Name:string",
+                                "SlotChassisName:string[]",
+                                "SlotComponentClassification:uint64[]",
+                                "SlotComponentIdentifier:uint64[]",
+                                "SlotComponentIndex:uint64[]",
+                                "SlotFirmwareType:string[]",
+                                "SlotSoftwareName:string[]",
+                                "SlotType:string[]"
+                            ]
+                        }
+                    }
+                },
+                "bluefield_sma": {
+                    "templateValues": {
+                        "LeakDetectorChassis": "required",
+                        "LocationCode": "optional",
+                        "LocationContext": "optional"
+                    },
+                    "features": {
+                        "Chassis": {
+                            "does": "Creates the device's chassis identity: its UUID and MCTP UUID, used by Redfish and by other services to match the device. Needed for every device that has a chassis.",
+                            "params": ["Name:string"]
+                        },
+                        "ChassisAttributes": {
+                            "does": "Fills in the chassis inventory properties (asset info, location, field-replaceable, chassis type, SKU, health) and optional chassis functions such as power limit, dimensions, write protect and reset metrics. Each optional function is a Supported flag param.",
+                            "params": [
+                                "AssetInformationAvailable:bool",
+                                "ChassisType:string",
+                                "DeviceDiagnosticsSupported:bool",
+                                "ErrorInjectionSupported:bool",
+                                "FieldReplaceable:bool",
+                                "LocationCode:string",
+                                "LocationContext:string",
+                                "LocationType:string",
+                                "Name:string",
+                                "ResetMetricsSupported:bool"
+                            ]
+                        },
+                        "ChassisParentAssociation": {
+                            "does": "Links this device's chassis to its parent board or chassis (parent_chassis) so Redfish shows the containment. The ParentChassisAssociationPath param picks board/ or chassis/ as the parent category.",
+                            "params": [
+                                "Name:string",
+                                "ParentChassisAssociationPath:string"
+                            ]
+                        },
+                        "DebugToken": {
+                            "does": "Enables debug-token handling for the device: install and status for a unified token, or a token object for NICs. Only built when the debug-token compile option is on.",
+                            "params": [
+                                "ChassisName:string",
+                                "DebugTokenDeviceType:string",
+                                "DebugTokenType:string[]"
+                            ]
+                        },
+                        "FWComponentType": {
+                            "does": "Placeholder: records the firmware component type but creates nothing; no nsmd consumer exists (code says open question).",
+                            "params": ["ComponentType:string", "Name:string"]
+                        },
+                        "IRoTAsset": {
+                            "does": "Publishes the IRoT's asset data (manufacturer, part and serial number, optional display name) on its chassis.",
+                            "params": ["AssetName:string", "Name:string"]
+                        },
+                        "IRoTAssociations": {
+                            "does": "Builds the IRoT's links: parent chassis, the components it protects (RoT inventory) and its chassis. Which links exist is set by the Enabled flags and path params.",
+                            "params": [
+                                "InventoryChassisAssociationsEnabled:bool",
+                                "Name:string",
+                                "ParentChassisAssociationsEnabled:bool",
+                                "RoTInventoryAssociationsEnabled:bool"
+                            ]
+                        },
+                        "IRoTChassisType": {
+                            "does": "Sets the IRoT chassis type (for example Component) shown in Redfish. Skipped if no ChassisType param is given.",
+                            "params": ["ChassisType:string", "Name:string"]
+                        },
+                        "IRoTFieldReplaceable": {
+                            "does": "Marks the IRoT as field replaceable or not in inventory. Skipped if the param is absent.",
+                            "params": ["FieldReplaceable:bool", "Name:string"]
+                        },
+                        "IRoTHealth": {
+                            "does": "Adds a Health status to the IRoT chassis in Redfish.",
+                            "params": ["Name:string"]
+                        },
+                        "IRoTLocationCode": {
+                            "does": "Sets the IRoT's location code (for example IRoT_0) in inventory. Skipped if no LocationCode param.",
+                            "params": ["LocationCode:string", "Name:string"]
+                        },
+                        "IRoTLocationContext": {
+                            "does": "Sets the IRoT's location context path (where it sits in the chassis hierarchy) in inventory. Skipped if absent.",
+                            "params": ["LocationContext:string", "Name:string"]
+                        },
+                        "IRoTLocationType": {
+                            "does": "Sets the IRoT's location type (for example Embedded) in inventory. Skipped if absent.",
+                            "params": ["LocationType:string", "Name:string"]
+                        },
+                        "IRoTSPDMResponder": {
+                            "does": "Publishes the IRoT's UUID (and optionally MCTP UUID) so the SPDM service can find and attest it. MctpUuidEnabled adds the MCTP UUID; HGXR disables it.",
+                            "params": ["Name:string"]
+                        },
+                        "LeakDetection": {
+                            "does": "Publishes leak detector sensors read through the SMA, with optional settable thresholds, under a board or chassis in Redfish. Sensor ids, names and limits come from params.",
+                            "params": [
+                                "ChassisName:string",
+                                "MaxValue:double",
+                                "MinValue:double",
+                                "Name:string",
+                                "SensorIdMap:uint64[]",
+                                "SensorNameMap:string[]"
+                            ]
+                        },
+                        "RoT": {
+                            "does": "Creates the Root of Trust firmware model: slots (active and inactive AP and EC), key management, minimum security version, build type, optional image copy, update and failover policies. Slot arrays in params define it.",
+                            "params": [
+                                "ImageCopyEnabled:bool",
+                                "Name:string",
+                                "SlotChassisName:string[]",
+                                "SlotComponentClassification:uint64[]",
+                                "SlotComponentIdentifier:uint64[]",
+                                "SlotComponentIndex:uint64[]",
+                                "SlotFirmwareType:string[]",
+                                "SlotSoftwareName:string[]",
+                                "SlotType:string[]"
+                            ]
+                        },
+                        "Temp_0": {
+                            "does": "Publishes the main temperature sensor of the device (GPU, SMA or board) in Redfish thermal metrics. Name, sensor id and thresholds differ per kind.",
+                            "params": [
+                                "Aggregated:bool",
+                                "Description:string",
+                                "MaxValue:double",
+                                "MinValue:unknown",
+                                "Name:string",
+                                "PhysicalContext:string",
+                                "Priority:bool",
+                                "SelfChassisAssociationsEnabled:bool",
+                                "SensorId:uint64",
+                                "ThresholdsEnabled:bool",
+                                "UpperFatal:double"
+                            ]
+                        }
+                    }
+                },
+                "bmc_erot": {
+                    "templateValues": {
+                        "LocationCode": "optional",
+                        "LocationContext": "optional"
+                    },
+                    "features": {
+                        "DebugToken": {
+                            "does": "Enables debug-token handling for the device: install and status for a unified token, or a token object for NICs. Only built when the debug-token compile option is on.",
+                            "params": [
+                                "ChassisName:string",
+                                "DebugTokenDeviceType:string",
+                                "DebugTokenType:string[]"
+                            ]
+                        },
+                        "FWComponentTypeAP": {
+                            "does": "Placeholder for the AP firmware component type; logs only and creates nothing visible.",
+                            "params": ["ComponentType:string", "Name:string"]
+                        },
+                        "FWComponentTypeEC": {
+                            "does": "Placeholder for the EC firmware component type; logs only and creates nothing visible.",
+                            "params": ["ComponentType:string", "Name:string"]
+                        },
+                        "IRoTAsset": {
+                            "does": "Publishes the IRoT's asset data (manufacturer, part and serial number, optional display name) on its chassis.",
+                            "params": ["Name:string"]
+                        },
+                        "IRoTAssociations": {
+                            "does": "Builds the IRoT's links: parent chassis, the components it protects (RoT inventory) and its chassis. Which links exist is set by the Enabled flags and path params.",
+                            "params": [
+                                "InventoryChassisAssociationPath:string",
+                                "Name:string",
+                                "ParentChassisAssociationPath:string",
+                                "RoTInventoryAssociationPath:string"
+                            ]
+                        },
+                        "IRoTChassisType": {
+                            "does": "Sets the IRoT chassis type (for example Component) shown in Redfish. Skipped if no ChassisType param is given.",
+                            "params": ["ChassisType:string", "Name:string"]
+                        },
+                        "IRoTFieldReplaceable": {
+                            "does": "Marks the IRoT as field replaceable or not in inventory. Skipped if the param is absent.",
+                            "params": ["FieldReplaceable:bool", "Name:string"]
+                        },
+                        "IRoTHealth": {
+                            "does": "Adds a Health status to the IRoT chassis in Redfish.",
+                            "params": ["Name:string"]
+                        },
+                        "IRoTLocationCode": {
+                            "does": "Sets the IRoT's location code (for example IRoT_0) in inventory. Skipped if no LocationCode param.",
+                            "params": ["LocationCode:string", "Name:string"]
+                        },
+                        "IRoTLocationContext": {
+                            "does": "Sets the IRoT's location context path (where it sits in the chassis hierarchy) in inventory. Skipped if absent.",
+                            "params": ["LocationContext:string", "Name:string"]
+                        },
+                        "IRoTLocationType": {
+                            "does": "Sets the IRoT's location type (for example Embedded) in inventory. Skipped if absent.",
+                            "params": ["LocationType:string", "Name:string"]
+                        },
+                        "IRoTSKU": {
+                            "does": "Creates the IRoT's SKU property empty; another service (pldm for EC SKU) fills it in. Meaning differs little per kind, only who fills it.",
+                            "params": ["Name:string"]
+                        },
+                        "IRoTSPDMResponder": {
+                            "does": "Publishes the IRoT's UUID (and optionally MCTP UUID) so the SPDM service can find and attest it. MctpUuidEnabled adds the MCTP UUID; HGXR disables it.",
+                            "params": ["Name:string"]
+                        },
+                        "RoT": {
+                            "does": "Creates the Root of Trust firmware model: slots (active and inactive AP and EC), key management, minimum security version, build type, optional image copy, update and failover policies. Slot arrays in params define it.",
+                            "params": [
+                                "ImageCopyEnabled:bool",
+                                "ImageCopyPolicyEnabled:bool",
+                                "Name:string",
+                                "PlatformPrefix:string",
+                                "SlotChassisName:string[]",
+                                "SlotComponentClassification:uint64[]",
+                                "SlotComponentIdentifier:uint64[]",
+                                "SlotComponentIndex:uint64[]",
+                                "SlotFirmwareType:string[]",
+                                "SlotSoftwareNameFromChassis:bool",
+                                "SlotType:string[]"
+                            ]
+                        }
+                    }
+                },
+                "bmc_hpm_sma": {
+                    "templateValues": {
+                        "LeakDetectorChassis": "required"
+                    },
+                    "features": {
+                        "LeakDetection": {
+                            "does": "Publishes leak detector sensors read through the SMA, with optional settable thresholds, under a board or chassis in Redfish. Sensor ids, names and limits come from params.",
+                            "params": [
+                                "ChassisName:string",
+                                "MaxValue:double",
+                                "MinValue:double",
+                                "Name:string",
+                                "SensorIdMap:uint64[]",
+                                "SensorNameMap:string[]"
+                            ]
+                        }
+                    }
+                },
+                "bmc_irot": {
+                    "templateValues": {
+                        "LocationContext": "optional",
+                        "PlatformPrefix": "optional"
+                    },
+                    "features": {
+                        "DebugToken": {
+                            "does": "Enables debug-token handling for the device: install and status for a unified token, or a token object for NICs. Only built when the debug-token compile option is on.",
+                            "params": [
+                                "ChassisName:string",
+                                "DebugTokenDeviceType:string",
+                                "DebugTokenType:string[]"
+                            ]
+                        },
+                        "FWComponentTypeAP": {
+                            "does": "Placeholder for the AP firmware component type; logs only and creates nothing visible.",
+                            "params": ["ComponentType:string", "Name:string"]
+                        },
+                        "FWComponentTypeEC": {
+                            "does": "Placeholder for the EC firmware component type; logs only and creates nothing visible.",
+                            "params": ["ComponentType:string", "Name:string"]
+                        },
+                        "IRoTAsset": {
+                            "does": "Publishes the IRoT's asset data (manufacturer, part and serial number, optional display name) on its chassis.",
+                            "params": ["AssetName:string", "Name:string"]
+                        },
+                        "IRoTAssociations": {
+                            "does": "Builds the IRoT's links: parent chassis, the components it protects (RoT inventory) and its chassis. Which links exist is set by the Enabled flags and path params.",
+                            "params": [
+                                "InventoryChassisAssociationPath:string",
+                                "Name:string",
+                                "ParentChassisAssociationPath:string",
+                                "RoTInventoryAssociationPath:string"
+                            ]
+                        },
+                        "IRoTChassisType": {
+                            "does": "Sets the IRoT chassis type (for example Component) shown in Redfish. Skipped if no ChassisType param is given.",
+                            "params": ["ChassisType:string", "Name:string"]
+                        },
+                        "IRoTFieldReplaceable": {
+                            "does": "Marks the IRoT as field replaceable or not in inventory. Skipped if the param is absent.",
+                            "params": ["FieldReplaceable:bool", "Name:string"]
+                        },
+                        "IRoTHealth": {
+                            "does": "Adds a Health status to the IRoT chassis in Redfish.",
+                            "params": ["Name:string"]
+                        },
+                        "IRoTLocationCode": {
+                            "does": "Sets the IRoT's location code (for example IRoT_0) in inventory. Skipped if no LocationCode param.",
+                            "params": ["LocationCode:string", "Name:string"]
+                        },
+                        "IRoTLocationContext": {
+                            "does": "Sets the IRoT's location context path (where it sits in the chassis hierarchy) in inventory. Skipped if absent.",
+                            "params": ["LocationContext:string", "Name:string"]
+                        },
+                        "IRoTLocationType": {
+                            "does": "Sets the IRoT's location type (for example Embedded) in inventory. Skipped if absent.",
+                            "params": ["LocationType:string", "Name:string"]
+                        },
+                        "IRoTSPDMResponder": {
+                            "does": "Publishes the IRoT's UUID (and optionally MCTP UUID) so the SPDM service can find and attest it. MctpUuidEnabled adds the MCTP UUID; HGXR disables it.",
+                            "params": ["Name:string"]
+                        },
+                        "RoT": {
+                            "does": "Creates the Root of Trust firmware model: slots (active and inactive AP and EC), key management, minimum security version, build type, optional image copy, update and failover policies. Slot arrays in params define it.",
+                            "params": [
+                                "FailoverPolicyEnabled:bool",
+                                "ImageCopyEnabled:bool",
+                                "ImageCopyPolicyEnabled:bool",
+                                "Name:string",
+                                "PlatformPrefix:string",
+                                "SlotChassisName:string[]",
+                                "SlotComponentClassification:uint64[]",
+                                "SlotComponentIdentifier:uint64[]",
+                                "SlotComponentIndex:uint64[]",
+                                "SlotFirmwareType:string[]",
+                                "SlotIsRoT:uint64[]",
+                                "SlotSkuInventoryPath:string[]",
+                                "SlotSoftwareNameFromChassis:bool",
+                                "SlotType:string[]",
+                                "SlotUpdateSkuEnabled:uint64[]"
+                            ]
+                        }
+                    }
+                },
+                "cpu": {
+                    "features": {
+                        "DOT": {
+                            "does": "Exposes DOT (Device Ownership Transfer) actions on the CPU's IRoT chassis: install key, lock and disable, and its status. BlobPathName names the stored blob.",
+                            "params": [
+                                "BlobPathName:string",
+                                "ChassisName:string"
+                            ]
+                        },
+                        "DOTBlob": {
+                            "does": "Exposes the stored DOT blob file for the CPU through a GetBlob method so tools can retrieve it. PathName names the blob.",
+                            "params": ["PathName:string"]
+                        },
+                        "DebugToken": {
+                            "does": "Enables debug-token handling for the device: install and status for a unified token, or a token object for NICs. Only built when the debug-token compile option is on.",
+                            "params": [
+                                "ChassisName:string",
+                                "DebugTokenDeviceType:string",
+                                "DebugTokenType:string[]"
+                            ]
+                        },
+                        "IRoTAsset": {
+                            "does": "Publishes the IRoT's asset data (manufacturer, part and serial number, optional display name) on its chassis.",
+                            "params": ["AssetName:string", "Name:string"]
+                        },
+                        "IRoTAssociations": {
+                            "does": "Builds the IRoT's links: parent chassis, the components it protects (RoT inventory) and its chassis. Which links exist is set by the Enabled flags and path params.",
+                            "params": [
+                                "InventoryChassisAssociationPath:string",
+                                "Name:string",
+                                "ParentChassisAssociationPath:string",
+                                "RoTInventoryAssociationPath:string"
+                            ]
+                        },
+                        "IRoTChassisType": {
+                            "does": "Sets the IRoT chassis type (for example Component) shown in Redfish. Skipped if no ChassisType param is given.",
+                            "params": ["ChassisType:string", "Name:string"]
+                        },
+                        "IRoTFieldReplaceable": {
+                            "does": "Marks the IRoT as field replaceable or not in inventory. Skipped if the param is absent.",
+                            "params": ["FieldReplaceable:bool", "Name:string"]
+                        },
+                        "IRoTHealth": {
+                            "does": "Adds a Health status to the IRoT chassis in Redfish.",
+                            "params": ["Name:string"]
+                        },
+                        "IRoTLocationCode": {
+                            "does": "Sets the IRoT's location code (for example IRoT_0) in inventory. Skipped if no LocationCode param.",
+                            "params": ["LocationCode:string", "Name:string"]
+                        },
+                        "IRoTLocationContext": {
+                            "does": "Sets the IRoT's location context path (where it sits in the chassis hierarchy) in inventory. Skipped if absent.",
+                            "params": ["LocationContext:string", "Name:string"]
+                        },
+                        "IRoTLocationType": {
+                            "does": "Sets the IRoT's location type (for example Embedded) in inventory. Skipped if absent.",
+                            "params": ["LocationType:string", "Name:string"]
+                        },
+                        "IRoTSPDMResponder": {
+                            "does": "Publishes the IRoT's UUID (and optionally MCTP UUID) so the SPDM service can find and attest it. MctpUuidEnabled adds the MCTP UUID; HGXR disables it.",
+                            "params": ["Name:string"]
+                        },
+                        "RoT": {
+                            "does": "Creates the Root of Trust firmware model: slots (active and inactive AP and EC), key management, minimum security version, build type, optional image copy, update and failover policies. Slot arrays in params define it.",
+                            "params": [
+                                "ImageCopyEnabled:bool",
+                                "Name:string",
+                                "SlotChassisName:string[]",
+                                "SlotComponentClassification:uint64[]",
+                                "SlotComponentIdentifier:uint64[]",
+                                "SlotComponentIndex:uint64[]",
+                                "SlotFirmwareType:string[]",
+                                "SlotIsRoT:uint64[]",
+                                "SlotReportSkuWithNsm:uint64[]",
+                                "SlotSkuInventoryPath:string[]",
+                                "SlotSoftwareName:string[]",
+                                "SlotType:string[]",
+                                "SlotUpdateSkuEnabled:uint64[]"
+                            ]
+                        }
+                    }
+                },
+                "cx9_io": {
+                    "templateValues": {
+                        "NetworkAdapterName": "required",
+                        "PortCount": "required",
+                        "SwitchName": "required",
+                        "BridgeName": "optional",
+                        "IRoTLocationCode": "optional",
+                        "IRoTLocationContext": "optional",
+                        "LocationCode": "optional",
+                        "LocationContext": "optional",
+                        "PortLocationContext": "optional",
+                        "PortLocationReference": "optional"
+                    },
+                    "features": {
+                        "ChassisBridgingAssociation": {
+                            "does": "Links this chassis to the SMA chassis that bridges it (bridged and bridging chassis), so Redfish shows which management device reaches it. Does nothing when no bridge name is set.",
+                            "params": [
+                                "BridgingChassisName:string",
+                                "Name:string"
+                            ]
+                        },
+                        "ChassisPCIeDeviceAERErrorStatus": {
+                            "does": "Publishes PCIe Advanced Error Reporting status for a retimer or NIC PCIe device, visible under the chassis PCIeDevice in Redfish.",
+                            "params": ["Name:string"]
+                        },
+                        "ChassisPCIeDeviceAsset": {
+                            "does": "Publishes manufacturer, part number, serial number and model for the chassis PCIeDevice, read from the device.",
+                            "params": ["Name:string"]
+                        },
+                        "ChassisPCIeDeviceAssociations": {
+                            "does": "Links the chassis PCIeDevice to its owning chassis so Redfish lists it under that chassis. Controlled by SelfChassisAssociationsEnabled.",
+                            "params": [
+                                "Name:string",
+                                "SelfChassisAssociationsEnabled:bool"
+                            ]
+                        },
+                        "ChassisPCIeDeviceHealth": {
+                            "does": "Adds a Health status (OK) to the chassis PCIeDevice so Redfish shows its health.",
+                            "params": ["Name:string"]
+                        },
+                        "ChassisPCIeDeviceMultiPortPCIeDevice": {
+                            "does": "Publishes a multi-port PCIe device (NIC or retimer) with link speed, functions and bus numbers, visible as a Redfish PCIeDevice.",
+                            "params": ["Name:string"]
+                        },
+                        "ChassisPCIeDeviceUUID": {
+                            "does": "Publishes the PCIeDevice's UUID, read from the device over MCTP, for Redfish and for matching devices.",
+                            "params": ["Name:string"]
+                        },
+                        "DebugToken": {
+                            "does": "Enables debug-token handling for the device: install and status for a unified token, or a token object for NICs. Only built when the debug-token compile option is on.",
+                            "params": [
+                                "ChassisName:string",
+                                "DebugTokenDeviceType:string",
+                                "DebugTokenType:string[]"
+                            ]
+                        },
+                        "FWComponentType": {
+                            "does": "Placeholder: records the firmware component type but creates nothing; no nsmd consumer exists (code says open question).",
+                            "params": ["ComponentType:string", "Name:string"]
+                        },
+                        "FabricsZone": {
+                            "does": "Creates a default routing zone (zone 0, routing enabled) on the PCIe fabric in Redfish. Off by default; a platform enables it through feature overrides.",
+                            "params": [
+                                "FabricName:string",
+                                "Name:string",
+                                "ZoneType:string"
+                            ]
+                        },
+                        "IRoTAsset": {
+                            "does": "Publishes the IRoT's asset data (manufacturer, part and serial number, optional display name) on its chassis.",
+                            "params": ["AssetName:string", "Name:string"]
+                        },
+                        "IRoTAssociations": {
+                            "does": "Builds the IRoT's links: parent chassis, the components it protects (RoT inventory) and its chassis. Which links exist is set by the Enabled flags and path params.",
+                            "params": [
+                                "InventoryChassisAssociationsEnabled:bool",
+                                "Name:string",
+                                "ParentChassisAssociationsEnabled:bool",
+                                "RoTInventoryAssociationPath:string"
+                            ]
+                        },
+                        "IRoTChassisType": {
+                            "does": "Sets the IRoT chassis type (for example Component) shown in Redfish. Skipped if no ChassisType param is given.",
+                            "params": ["ChassisType:string", "Name:string"]
+                        },
+                        "IRoTFieldReplaceable": {
+                            "does": "Marks the IRoT as field replaceable or not in inventory. Skipped if the param is absent.",
+                            "params": ["FieldReplaceable:bool", "Name:string"]
+                        },
+                        "IRoTHealth": {
+                            "does": "Adds a Health status to the IRoT chassis in Redfish.",
+                            "params": ["Name:string"]
+                        },
+                        "IRoTLocationCode": {
+                            "does": "Sets the IRoT's location code (for example IRoT_0) in inventory. Skipped if no LocationCode param.",
+                            "params": ["LocationCode:string", "Name:string"]
+                        },
+                        "IRoTLocationContext": {
+                            "does": "Sets the IRoT's location context path (where it sits in the chassis hierarchy) in inventory. Skipped if absent.",
+                            "params": ["LocationContext:string", "Name:string"]
+                        },
+                        "IRoTLocationType": {
+                            "does": "Sets the IRoT's location type (for example Embedded) in inventory. Skipped if absent.",
+                            "params": ["LocationType:string", "Name:string"]
+                        },
+                        "IRoTSPDMResponder": {
+                            "does": "Publishes the IRoT's UUID (and optionally MCTP UUID) so the SPDM service can find and attest it. MctpUuidEnabled adds the MCTP UUID; HGXR disables it.",
+                            "params": ["Name:string"]
+                        },
+                        "MultiPCIeLink": {
+                            "does": "Discovers and publishes the PCIe ports (upstream and downstream) of a retimer switch under its fabric in Redfish.",
+                            "params": [
+                                "DownstreamPortName:string",
+                                "FabricName:string",
+                                "Name:string",
+                                "ParentDeviceAssociationsEnabled:bool",
+                                "SwitchName:string",
+                                "UpstreamPortName:string"
+                            ]
+                        },
+                        "MultiPortPCIeSwitchDevice": {
+                            "does": "Publishes the PCIe retimer as a switch on the PCIe fabric in Redfish, linked to its chassis and fabric, with periodic refresh.",
+                            "params": [
+                                "DeviceInstance:uint64",
+                                "FabricAssociationsEnabled:bool",
+                                "FabricName:string",
+                                "Name:string",
+                                "ParentChassisAssociationsEnabled:bool"
+                            ]
+                        },
+                        "NVLinkMgmtNicChassis": {
+                            "does": "Creates the chassis identity (UUID) for an NVLink management NIC, and device-reset objects when reset is supported.",
+                            "params": ["Name:string"]
+                        },
+                        "NVLinkMgmtNicChassisAssembly": {
+                            "does": "Adds a chassis Assembly entry for a NVLink management NIC, numbered with the device's other assemblies.",
+                            "params": [
+                                "LocationType:string",
+                                "Name:string",
+                                "PhysicalContext:string"
+                            ]
+                        },
+                        "NVLinkMgmtNicChassisAttributes": {
+                            "does": "Fills in the NVLink management NIC chassis properties: asset data, location, chassis type, field-replaceable, health.",
+                            "params": [
+                                "ChassisType:string",
+                                "FieldReplaceable:bool",
+                                "LocationCode:string",
+                                "LocationContext:string",
+                                "LocationType:string",
+                                "Name:string"
+                            ]
+                        },
+                        "NetworkAdapter": {
+                            "does": "Publishes the NIC as a Redfish network adapter with PCIe device info, plus mode controls (DPU, PCIe mode, protection options) per DeviceModesSupported. Debug, wipe and reset objects depend on build options.",
+                            "params": [
+                                "DeviceModesSupported:int64[]",
+                                "Name:string",
+                                "ParentChassisAssociationsEnabled:bool"
+                            ]
+                        },
+                        "OpticalModuleReset": {
+                            "does": "Code in development: reset control for the optical modules of the device's ports."
+                        },
+                        "PCIeRetimerFabrics": {
+                            "does": "Publishes the PCIe fabric object (for example PCIeTopology_<device>) in Redfish that retimer switches and ports sit under.",
+                            "params": [
+                                "FabricType:string",
+                                "Name:string",
+                                "SelfChassisAssociationsEnabled:bool"
+                            ]
+                        },
+                        "Port": {
+                            "does": "Creates the network ports of a NIC (count from params) with port metrics, MAC and GUID addresses, optional optical module telemetry, reset and FEC histograms.",
+                            "params": [
+                                "Count:uint64",
+                                "Name:string",
+                                "NetworkPortAddressesEnabled:bool",
+                                "OpticalModuleResetSupported:bool",
+                                "OpticalModuleTelemetrySupported:bool",
+                                "ParentObjPath:string",
+                                "PortLocationCodeMap:unknown",
+                                "PortLocationContext:string",
+                                "PortLocationReference:string",
+                                "PortNameMap:unknown",
+                                "Priority:bool",
+                                "SupportFECHistogram:bool"
+                            ]
+                        },
+                        "RoT": {
+                            "does": "Creates the Root of Trust firmware model: slots (active and inactive AP and EC), key management, minimum security version, build type, optional image copy, update and failover policies. Slot arrays in params define it.",
+                            "params": [
+                                "Name:string",
+                                "SlotChassisName:string[]",
+                                "SlotComponentClassification:uint64[]",
+                                "SlotComponentIdentifier:uint64[]",
+                                "SlotComponentIndex:uint64[]",
+                                "SlotFirmwareType:string[]",
+                                "SlotSoftwareName:string[]",
+                                "SlotType:string[]"
+                            ]
+                        }
+                    },
+                    "offByDefault": ["FabricsZone"]
+                },
+                "cx9_nic": {
+                    "templateValues": {
+                        "NetworkAdapterName": "required",
+                        "SwitchName": "required",
+                        "BridgeName": "optional",
+                        "IRoTLocationCode": "optional",
+                        "IRoTLocationContext": "optional",
+                        "LocationCode": "optional",
+                        "LocationContext": "optional"
+                    },
+                    "features": {
+                        "ChassisBridgingAssociation": {
+                            "does": "Links this chassis to the SMA chassis that bridges it (bridged and bridging chassis), so Redfish shows which management device reaches it. Does nothing when no bridge name is set.",
+                            "params": [
+                                "BridgingChassisName:string",
+                                "Name:string"
+                            ]
+                        },
+                        "ChassisPCIeDeviceAERErrorStatus": {
+                            "does": "Publishes PCIe Advanced Error Reporting status for a retimer or NIC PCIe device, visible under the chassis PCIeDevice in Redfish.",
+                            "params": ["Name:string"]
+                        },
+                        "ChassisPCIeDeviceAsset": {
+                            "does": "Publishes manufacturer, part number, serial number and model for the chassis PCIeDevice, read from the device.",
+                            "params": ["Name:string"]
+                        },
+                        "ChassisPCIeDeviceAssociations": {
+                            "does": "Links the chassis PCIeDevice to its owning chassis so Redfish lists it under that chassis. Controlled by SelfChassisAssociationsEnabled.",
+                            "params": [
+                                "Name:string",
+                                "SelfChassisAssociationsEnabled:bool"
+                            ]
+                        },
+                        "ChassisPCIeDeviceHealth": {
+                            "does": "Adds a Health status (OK) to the chassis PCIeDevice so Redfish shows its health.",
+                            "params": ["Name:string"]
+                        },
+                        "ChassisPCIeDeviceMultiPortPCIeDevice": {
+                            "does": "Publishes a multi-port PCIe device (NIC or retimer) with link speed, functions and bus numbers, visible as a Redfish PCIeDevice.",
+                            "params": ["Name:string"]
+                        },
+                        "ChassisPCIeDeviceUUID": {
+                            "does": "Publishes the PCIeDevice's UUID, read from the device over MCTP, for Redfish and for matching devices.",
+                            "params": ["Name:string"]
+                        },
+                        "DebugToken": {
+                            "does": "Enables debug-token handling for the device: install and status for a unified token, or a token object for NICs. Only built when the debug-token compile option is on.",
+                            "params": [
+                                "ChassisName:string",
+                                "DebugTokenDeviceType:string",
+                                "DebugTokenType:string[]"
+                            ]
+                        },
+                        "FWComponentType": {
+                            "does": "Placeholder: records the firmware component type but creates nothing; no nsmd consumer exists (code says open question).",
+                            "params": ["ComponentType:string", "Name:string"]
+                        },
+                        "IRoTAsset": {
+                            "does": "Publishes the IRoT's asset data (manufacturer, part and serial number, optional display name) on its chassis.",
+                            "params": ["AssetName:string", "Name:string"]
+                        },
+                        "IRoTAssociations": {
+                            "does": "Builds the IRoT's links: parent chassis, the components it protects (RoT inventory) and its chassis. Which links exist is set by the Enabled flags and path params.",
+                            "params": [
+                                "InventoryChassisAssociationsEnabled:bool",
+                                "Name:string",
+                                "ParentChassisAssociationsEnabled:bool",
+                                "RoTInventoryAssociationPath:string"
+                            ]
+                        },
+                        "IRoTChassisType": {
+                            "does": "Sets the IRoT chassis type (for example Component) shown in Redfish. Skipped if no ChassisType param is given.",
+                            "params": ["ChassisType:string", "Name:string"]
+                        },
+                        "IRoTFieldReplaceable": {
+                            "does": "Marks the IRoT as field replaceable or not in inventory. Skipped if the param is absent.",
+                            "params": ["FieldReplaceable:bool", "Name:string"]
+                        },
+                        "IRoTHealth": {
+                            "does": "Adds a Health status to the IRoT chassis in Redfish.",
+                            "params": ["Name:string"]
+                        },
+                        "IRoTLocationCode": {
+                            "does": "Sets the IRoT's location code (for example IRoT_0) in inventory. Skipped if no LocationCode param.",
+                            "params": ["LocationCode:string", "Name:string"]
+                        },
+                        "IRoTLocationContext": {
+                            "does": "Sets the IRoT's location context path (where it sits in the chassis hierarchy) in inventory. Skipped if absent.",
+                            "params": ["LocationContext:string", "Name:string"]
+                        },
+                        "IRoTLocationType": {
+                            "does": "Sets the IRoT's location type (for example Embedded) in inventory. Skipped if absent.",
+                            "params": ["LocationType:string", "Name:string"]
+                        },
+                        "IRoTSPDMResponder": {
+                            "does": "Publishes the IRoT's UUID (and optionally MCTP UUID) so the SPDM service can find and attest it. MctpUuidEnabled adds the MCTP UUID; HGXR disables it.",
+                            "params": ["Name:string"]
+                        },
+                        "MultiPCIeLink": {
+                            "does": "Discovers and publishes the PCIe ports (upstream and downstream) of a retimer switch under its fabric in Redfish.",
+                            "params": [
+                                "DownstreamPortName:string",
+                                "FabricName:string",
+                                "Name:string",
+                                "ParentDeviceAssociationsEnabled:bool",
+                                "SwitchName:string",
+                                "UpstreamPortName:string"
+                            ]
+                        },
+                        "MultiPortPCIeSwitchDevice": {
+                            "does": "Publishes the PCIe retimer as a switch on the PCIe fabric in Redfish, linked to its chassis and fabric, with periodic refresh.",
+                            "params": [
+                                "DeviceInstance:uint64",
+                                "FabricAssociationsEnabled:bool",
+                                "FabricName:string",
+                                "Name:string",
+                                "ParentChassisAssociationsEnabled:bool"
+                            ]
+                        },
+                        "NVLinkMgmtNicChassis": {
+                            "does": "Creates the chassis identity (UUID) for an NVLink management NIC, and device-reset objects when reset is supported.",
+                            "params": ["Name:string"]
+                        },
+                        "NVLinkMgmtNicChassisAssembly": {
+                            "does": "Adds a chassis Assembly entry for a NVLink management NIC, numbered with the device's other assemblies.",
+                            "params": [
+                                "LocationType:string",
+                                "Name:string",
+                                "PhysicalContext:string"
+                            ]
+                        },
+                        "NVLinkMgmtNicChassisAttributes": {
+                            "does": "Fills in the NVLink management NIC chassis properties: asset data, location, chassis type, field-replaceable, health.",
+                            "params": [
+                                "ChassisType:string",
+                                "LocationCode:string",
+                                "LocationContext:string",
+                                "LocationType:string",
+                                "Name:string"
+                            ]
+                        },
+                        "NetworkAdapter": {
+                            "does": "Publishes the NIC as a Redfish network adapter with PCIe device info, plus mode controls (DPU, PCIe mode, protection options) per DeviceModesSupported. Debug, wipe and reset objects depend on build options.",
+                            "params": [
+                                "DeviceModesSupported:int64[]",
+                                "Name:string",
+                                "ParentChassisAssociationsEnabled:bool"
+                            ]
+                        },
+                        "PCIeRetimerFabrics": {
+                            "does": "Publishes the PCIe fabric object (for example PCIeTopology_<device>) in Redfish that retimer switches and ports sit under.",
+                            "params": [
+                                "FabricType:string",
+                                "Name:string",
+                                "SelfChassisAssociationsEnabled:bool"
+                            ]
+                        },
+                        "RoT": {
+                            "does": "Creates the Root of Trust firmware model: slots (active and inactive AP and EC), key management, minimum security version, build type, optional image copy, update and failover policies. Slot arrays in params define it.",
+                            "params": [
+                                "Name:string",
+                                "SlotChassisName:string[]",
+                                "SlotComponentClassification:uint64[]",
+                                "SlotComponentIdentifier:uint64[]",
+                                "SlotComponentIndex:uint64[]",
+                                "SlotFirmwareType:string[]",
+                                "SlotSoftwareName:string[]",
+                                "SlotType:string[]"
+                            ]
+                        }
+                    }
+                },
+                "cx_sma": {
+                    "templateValues": {
+                        "LeakDetectorChassis": "required",
+                        "LocationCode": "optional",
+                        "LocationContext": "optional"
+                    },
+                    "features": {
+                        "Chassis": {
+                            "does": "Creates the device's chassis identity: its UUID and MCTP UUID, used by Redfish and by other services to match the device. Needed for every device that has a chassis.",
+                            "params": ["Name:string"]
+                        },
+                        "ChassisAttributes": {
+                            "does": "Fills in the chassis inventory properties (asset info, location, field-replaceable, chassis type, SKU, health) and optional chassis functions such as power limit, dimensions, write protect and reset metrics. Each optional function is a Supported flag param.",
+                            "params": [
+                                "AssetInformationAvailable:bool",
+                                "ChassisType:string",
+                                "DeviceDiagnosticsSupported:bool",
+                                "ErrorInjectionSupported:bool",
+                                "FieldReplaceable:bool",
+                                "LocationCode:string",
+                                "LocationContext:string",
+                                "LocationType:string",
+                                "Name:string",
+                                "ResetMetricsSupported:bool"
+                            ]
+                        },
+                        "ChassisIRoTResponder": {
+                            "does": "Code in development: the IRoT responder (SPDM) object of the device's chassis."
+                        },
+                        "ChassisParentAssociation": {
+                            "does": "Links this device's chassis to its parent board or chassis (parent_chassis) so Redfish shows the containment. The ParentChassisAssociationPath param picks board/ or chassis/ as the parent category.",
+                            "params": [
+                                "Name:string",
+                                "ParentChassisAssociationPath:string"
+                            ]
+                        },
+                        "DebugToken": {
+                            "does": "Enables debug-token handling for the device: install and status for a unified token, or a token object for NICs. Only built when the debug-token compile option is on.",
+                            "params": [
+                                "ChassisName:string",
+                                "DebugTokenDeviceType:string",
+                                "DebugTokenType:string[]"
+                            ]
+                        },
+                        "FWComponentType": {
+                            "does": "Placeholder: records the firmware component type but creates nothing; no nsmd consumer exists (code says open question).",
+                            "params": ["ComponentType:string", "Name:string"]
+                        },
+                        "IRoTAsset": {
+                            "does": "Publishes the IRoT's asset data (manufacturer, part and serial number, optional display name) on its chassis.",
+                            "params": ["AssetName:string", "Name:string"]
+                        },
+                        "IRoTAssociations": {
+                            "does": "Builds the IRoT's links: parent chassis, the components it protects (RoT inventory) and its chassis. Which links exist is set by the Enabled flags and path params.",
+                            "params": [
+                                "InventoryChassisAssociationsEnabled:bool",
+                                "Name:string",
+                                "ParentChassisAssociationsEnabled:bool",
+                                "RoTInventoryAssociationsEnabled:bool"
+                            ]
+                        },
+                        "IRoTChassisType": {
+                            "does": "Sets the IRoT chassis type (for example Component) shown in Redfish. Skipped if no ChassisType param is given.",
+                            "params": ["ChassisType:string", "Name:string"]
+                        },
+                        "IRoTFieldReplaceable": {
+                            "does": "Marks the IRoT as field replaceable or not in inventory. Skipped if the param is absent.",
+                            "params": ["FieldReplaceable:bool", "Name:string"]
+                        },
+                        "IRoTHealth": {
+                            "does": "Adds a Health status to the IRoT chassis in Redfish.",
+                            "params": ["Name:string"]
+                        },
+                        "IRoTLocationCode": {
+                            "does": "Sets the IRoT's location code (for example IRoT_0) in inventory. Skipped if no LocationCode param.",
+                            "params": ["LocationCode:string", "Name:string"]
+                        },
+                        "IRoTLocationContext": {
+                            "does": "Sets the IRoT's location context path (where it sits in the chassis hierarchy) in inventory. Skipped if absent.",
+                            "params": ["LocationContext:string", "Name:string"]
+                        },
+                        "IRoTLocationType": {
+                            "does": "Sets the IRoT's location type (for example Embedded) in inventory. Skipped if absent.",
+                            "params": ["LocationType:string", "Name:string"]
+                        },
+                        "IRoTSPDMResponder": {
+                            "does": "Publishes the IRoT's UUID (and optionally MCTP UUID) so the SPDM service can find and attest it. MctpUuidEnabled adds the MCTP UUID; HGXR disables it.",
+                            "params": ["Name:string"]
+                        },
+                        "LeakDetection": {
+                            "does": "Publishes leak detector sensors read through the SMA, with optional settable thresholds, under a board or chassis in Redfish. Sensor ids, names and limits come from params.",
+                            "params": [
+                                "BoardName:string",
+                                "MaxValue:double",
+                                "MinValue:double",
+                                "Name:string",
+                                "SensorIdMap:uint64[]",
+                                "SensorNameMap:string[]"
+                            ]
+                        },
+                        "RoT": {
+                            "does": "Creates the Root of Trust firmware model: slots (active and inactive AP and EC), key management, minimum security version, build type, optional image copy, update and failover policies. Slot arrays in params define it.",
+                            "params": [
+                                "ImageCopyEnabled:bool",
+                                "Name:string",
+                                "SlotChassisName:string[]",
+                                "SlotComponentClassification:uint64[]",
+                                "SlotComponentIdentifier:uint64[]",
+                                "SlotComponentIndex:uint64[]",
+                                "SlotFirmwareType:string[]",
+                                "SlotSoftwareName:string[]",
+                                "SlotType:string[]"
+                            ]
+                        },
+                        "Temp_0": {
+                            "does": "Publishes the main temperature sensor of the device (GPU, SMA or board) in Redfish thermal metrics. Name, sensor id and thresholds differ per kind.",
+                            "params": [
+                                "Aggregated:bool",
+                                "Description:string",
+                                "MaxValue:double",
+                                "MinValue:unknown",
+                                "Name:string",
+                                "PhysicalContext:string",
+                                "Priority:bool",
+                                "SelfChassisAssociationsEnabled:bool",
+                                "SensorId:uint64"
+                            ]
+                        }
+                    }
+                },
+                "gpu": {
+                    "templateValues": {
+                        "BridgeName": "optional",
+                        "LocationCode": "optional",
+                        "LocationContext": "optional",
+                        "MemoryLocationCode": "optional"
+                    },
+                    "features": {
+                        "Chassis": {
+                            "does": "Creates the device's chassis identity: its UUID and MCTP UUID, used by Redfish and by other services to match the device. Needed for every device that has a chassis.",
+                            "params": ["Name:string"]
+                        },
+                        "ChassisAssemblyBoard": {
+                            "does": "Adds a Redfish chassis Assembly entry for the GPU board, with its asset data, health, physical context and location type. Entries are numbered Assembly0, Assembly1 in order.",
+                            "params": [
+                                "AssemblyType:string",
+                                "LocationType:string",
+                                "Name:string",
+                                "PhysicalContext:string"
+                            ]
+                        },
+                        "ChassisAssemblyDevice": {
+                            "does": "Adds a Redfish chassis Assembly entry for the GPU device itself, with its asset data, health, physical context and location type. Entries are numbered Assembly0, Assembly1 in order.",
+                            "params": [
+                                "AssemblyType:string",
+                                "LocationType:string",
+                                "Name:string",
+                                "PhysicalContext:string"
+                            ]
+                        },
+                        "ChassisAttributes": {
+                            "does": "Fills in the chassis inventory properties (asset info, location, field-replaceable, chassis type, SKU, health) and optional chassis functions such as power limit, dimensions, write protect and reset metrics. Each optional function is a Supported flag param.",
+                            "params": [
+                                "AssetInformationAvailable:bool",
+                                "ChassisType:string",
+                                "DimensionSupported:bool",
+                                "FieldReplaceable:bool",
+                                "LocationCode:string",
+                                "LocationContext:string",
+                                "LocationType:string",
+                                "Manufacturer:string",
+                                "Name:string",
+                                "PowerLimitSupported:bool",
+                                "PrettyNameForChassis:string",
+                                "Priority:bool"
+                            ]
+                        },
+                        "ChassisPCIeDeviceAsset": {
+                            "does": "Publishes manufacturer, part number, serial number and model for the chassis PCIeDevice, read from the device.",
+                            "params": ["Name:string"]
+                        },
+                        "ChassisPCIeDeviceAssociations": {
+                            "does": "Links the chassis PCIeDevice to its owning chassis so Redfish lists it under that chassis. Controlled by SelfChassisAssociationsEnabled.",
+                            "params": [
+                                "Name:string",
+                                "SelfChassisAssociationsEnabled:bool"
+                            ]
+                        },
+                        "ChassisPCIeDeviceClockOutputEnableState": {
+                            "does": "Reports whether the PCIe reference clock (and, on GPUs, the NVLink reference clock) output is enabled. Only built when the clock-output-state compile option is on.",
+                            "params": ["Name:string"]
+                        },
+                        "ChassisPCIeDeviceHealth": {
+                            "does": "Adds a Health status (OK) to the chassis PCIeDevice so Redfish shows its health.",
+                            "params": ["Name:string"]
+                        },
+                        "ChassisPCIeDeviceLTSSMState": {
+                            "does": "Code in development: publishes the PCIe link training state (LTSSM) of the device."
+                        },
+                        "ChassisPCIeDevicePCIeDevice": {
+                            "does": "Publishes the GPU as a Redfish PCIeDevice with live link speed and its PCIe functions, plus AER error status if enabled at build time.",
+                            "params": ["Name:string"]
+                        },
+                        "ChassisPCIeDeviceUUID": {
+                            "does": "Publishes the PCIeDevice's UUID, read from the device over MCTP, for Redfish and for matching devices.",
+                            "params": ["Name:string"]
+                        },
+                        "ChassisParentAssociation": {
+                            "does": "Links this device's chassis to its parent board or chassis (parent_chassis) so Redfish shows the containment. The ParentChassisAssociationPath param picks board/ or chassis/ as the parent category.",
+                            "params": [
+                                "Name:string",
+                                "ParentChassisAssociationPath:string"
+                            ]
+                        },
+                        "ClockLimit_0": {
+                            "does": "Exposes the GPU's graphics clock limit control: min and max clocks, a settable requested range and clear-limit action, plus the clock mode. A platform may switch it off if it does not expose clock control.",
+                            "params": [
+                                "ClockMode:string",
+                                "Name:string",
+                                "PhysicalContext:string",
+                                "Priority:bool",
+                                "SelfChassisAssociationsEnabled:bool"
+                            ]
+                        },
+                        "DRAM_0_Power_0": {
+                            "does": "Publishes the GPU memory (DRAM) power sensor, associated with the GPU, its chassis and its memory in Redfish.",
+                            "params": [
+                                "Aggregated:bool",
+                                "AveragingInterval:uint64",
+                                "MemoryAssociationsEnabled:bool",
+                                "Name:string",
+                                "PhysicalContext:string",
+                                "Priority:bool",
+                                "ProcessorAssociationsEnabled:bool",
+                                "SelfChassisAssociationsEnabled:bool",
+                                "SensorId:uint64"
+                            ]
+                        },
+                        "DebugToken": {
+                            "does": "Enables debug-token handling for the device: install and status for a unified token, or a token object for NICs. Only built when the debug-token compile option is on.",
+                            "params": [
+                                "ChassisName:string",
+                                "DebugTokenDeviceType:string",
+                                "DebugTokenType:string[]"
+                            ]
+                        },
+                        "Energy_0": {
+                            "does": "Publishes the GPU's accumulated energy counter as a sensor associated with the GPU and its chassis.",
+                            "params": [
+                                "Aggregated:bool",
+                                "Name:string",
+                                "PhysicalContext:string",
+                                "Priority:bool",
+                                "ProcessorAssociationsEnabled:bool",
+                                "SelfChassisAssociationsEnabled:bool",
+                                "SensorId:uint64"
+                            ]
+                        },
+                        "EventConfigDeviceCapabilityDiscovery": {
+                            "does": "Subscribes the GPU to its device-capability-discovery events (message type 0, events 1 and 2) so rediscovery notifications reach nsmd.",
+                            "params": [
+                                "MessageType:uint64",
+                                "Name:string",
+                                "SubscribedEventIDs:uint64[]"
+                            ]
+                        },
+                        "EventConfigDiagnostics": {
+                            "does": "Subscribes the GPU to diagnostic events (message type 4, event 4), needed for runtime in-system-test completion events.",
+                            "params": [
+                                "MessageType:uint64",
+                                "Name:string",
+                                "SubscribedEventIDs:uint64[]"
+                            ]
+                        },
+                        "EventConfigNetworkPort": {
+                            "does": "Subscribes the GPU to network-port events (message type 1, event 0), the source of threshold events.",
+                            "params": [
+                                "MessageType:uint64",
+                                "Name:string",
+                                "SubscribedEventIDs:uint64[]"
+                            ]
+                        },
+                        "EventConfigPlatformEnvironment": {
+                            "does": "Subscribes the GPU to platform-environment events (message type 3, events 0 to 2), the source of XID and reset-required events.",
+                            "params": [
+                                "MessageType:uint64",
+                                "Name:string",
+                                "SubscribedEventIDs:uint64[]"
+                            ]
+                        },
+                        "EventSetting": {
+                            "does": "Sets how the device generates events (global event generation setting, for example push) and reads it back. Needed for any event feature to work.",
+                            "params": [
+                                "EventGenerationSetting:uint64",
+                                "Name:string"
+                            ]
+                        },
+                        "FWComponentType": {
+                            "does": "Placeholder: records the firmware component type but creates nothing; no nsmd consumer exists (code says open question).",
+                            "params": ["ComponentType:string", "Name:string"]
+                        },
+                        "GPMMetrics": {
+                            "does": "Publishes GPU performance monitoring (GPM) metrics: aggregated utilisation, NVLink and memory bandwidth, plus per-instance NVDEC, NVJPG and NVENC sets. Each per-instance set has an Enabled flag.",
+                            "params": [
+                                "AggregatedComputeInstance:uint64",
+                                "AggregatedGpuInstance:uint64",
+                                "AggregatedMemoryBandwidth:bool",
+                                "AggregatedMetricsBitfield:uint64[]",
+                                "AggregatedRetrievalSource:uint64",
+                                "NVDECPerInstanceBitfield:uint64[]",
+                                "NVDECPerInstanceComputeInstance:uint64",
+                                "NVDECPerInstanceEnabled:bool",
+                                "NVDECPerInstanceGpuInstance:uint64",
+                                "NVDECPerInstanceName:string",
+                                "NVDECPerInstanceRetrievalSource:uint64",
+                                "NVENCPerInstanceBitfield:uint64[]",
+                                "NVENCPerInstanceComputeInstance:uint64",
+                                "NVENCPerInstanceEnabled:bool",
+                                "NVENCPerInstanceGpuInstance:uint64",
+                                "NVENCPerInstanceName:string",
+                                "NVENCPerInstanceRetrievalSource:uint64",
+                                "NVJPGPerInstanceBitfield:uint64[]",
+                                "NVJPGPerInstanceComputeInstance:uint64",
+                                "NVJPGPerInstanceEnabled:bool",
+                                "NVJPGPerInstanceGpuInstance:uint64",
+                                "NVJPGPerInstanceName:string",
+                                "NVJPGPerInstanceRetrievalSource:uint64",
+                                "Name:string"
+                            ]
+                        },
+                        "GPMPortMetrics": {
+                            "does": "Publishes per-NVLink-port bandwidth metrics (raw and data, Tx and Rx) from GPU performance monitoring. Metrics and NVLinkCount params choose what is shown.",
+                            "params": [
+                                "ComputeInstance:uint64",
+                                "GpuInstance:uint64",
+                                "InstanceBitfield:uint64[]",
+                                "Metrics:string[]",
+                                "NVLinkCount:uint64",
+                                "Name:string",
+                                "ParentObjPath:string",
+                                "RetrievalSource:uint64"
+                            ]
+                        },
+                        "GPUSWInventory": {
+                            "does": "Publishes the GPU driver software version and status in the Redfish firmware inventory, linked to the GPU.",
+                            "params": [
+                                "Manufacturer:string",
+                                "Name:string",
+                                "ProcessorAssociationsEnabled:bool",
+                                "SoftwareVersionAssociationsEnabled:bool"
+                            ]
+                        },
+                        "IRoTAsset": {
+                            "does": "Publishes the IRoT's asset data (manufacturer, part and serial number, optional display name) on its chassis.",
+                            "params": ["AssetName:string", "Name:string"]
+                        },
+                        "IRoTAssociations": {
+                            "does": "Builds the IRoT's links: parent chassis, the components it protects (RoT inventory) and its chassis. Which links exist is set by the Enabled flags and path params.",
+                            "params": [
+                                "InventoryChassisAssociationsEnabled:bool",
+                                "Name:string",
+                                "ParentChassisAssociationsEnabled:bool",
+                                "RoTInventoryAssociationPath:string"
+                            ]
+                        },
+                        "IRoTChassisType": {
+                            "does": "Sets the IRoT chassis type (for example Component) shown in Redfish. Skipped if no ChassisType param is given.",
+                            "params": ["ChassisType:string", "Name:string"]
+                        },
+                        "IRoTFieldReplaceable": {
+                            "does": "Marks the IRoT as field replaceable or not in inventory. Skipped if the param is absent.",
+                            "params": ["FieldReplaceable:bool", "Name:string"]
+                        },
+                        "IRoTHealth": {
+                            "does": "Adds a Health status to the IRoT chassis in Redfish.",
+                            "params": ["Name:string"]
+                        },
+                        "IRoTLocationCode": {
+                            "does": "Sets the IRoT's location code (for example IRoT_0) in inventory. Skipped if no LocationCode param.",
+                            "params": ["LocationCode:string", "Name:string"]
+                        },
+                        "IRoTLocationContext": {
+                            "does": "Sets the IRoT's location context path (where it sits in the chassis hierarchy) in inventory. Skipped if absent.",
+                            "params": ["LocationContext:string", "Name:string"]
+                        },
+                        "IRoTLocationType": {
+                            "does": "Sets the IRoT's location type (for example Embedded) in inventory. Skipped if absent.",
+                            "params": ["LocationType:string", "Name:string"]
+                        },
+                        "IRoTSKU": {
+                            "does": "Creates the IRoT's SKU property empty; another service (pldm for EC SKU) fills it in. Meaning differs little per kind, only who fills it.",
+                            "params": ["Name:string"]
+                        },
+                        "IRoTSPDMResponder": {
+                            "does": "Publishes the IRoT's UUID (and optionally MCTP UUID) so the SPDM service can find and attest it. MctpUuidEnabled adds the MCTP UUID; HGXR disables it.",
+                            "params": ["MctpUuidEnabled:bool", "Name:string"]
+                        },
+                        "Memory": {
+                            "does": "Publishes the GPU memory as a Redfish Memory/DIMM entry (HBM type, ECC mode) linked to the GPU and its chassis.",
+                            "params": [
+                                "DeviceType:string",
+                                "ErrorCorrection:string",
+                                "Name:string",
+                                "ProcessorAssociationsEnabled:bool",
+                                "SelfChassisAssociationsEnabled:bool"
+                            ]
+                        },
+                        "MemoryAttributes": {
+                            "does": "Adds GPU memory row remapping, ECC mode and capacity utilisation to the memory entry.",
+                            "params": ["Name:string"]
+                        },
+                        "MemoryLocation": {
+                            "does": "Sets the GPU memory's location code and location context in inventory. Skipped when both are empty.",
+                            "params": [
+                                "LocationCode:string",
+                                "LocationContext:string",
+                                "Name:string"
+                            ]
+                        },
+                        "NVLink": {
+                            "does": "Creates the device's NVLink ports (count from params) with per-port metrics, link health, optional FEC histograms, topology links and location. One port object per Count.",
+                            "params": [
+                                "Count:uint64",
+                                "Name:string",
+                                "ParentObjPath:string",
+                                "Priority:bool"
+                            ]
+                        },
+                        "PCIe_0": {
+                            "does": "Publishes the GPU's PCIe port with link speed, width, lane errors, ECC counters and clear-counter actions, linked to the GPU.",
+                            "params": [
+                                "AllStatesAssociationsEnabled:bool",
+                                "ChasisPowerState:string",
+                                "ClearableScalarGroup:uint64[]",
+                                "DeviceIndex:uint64",
+                                "Health:string",
+                                "Name:string"
+                            ]
+                        },
+                        "PCIe_0_PortInfo": {
+                            "does": "Adds port type and protocol info and link information for the GPU's PCIe port.",
+                            "params": [
+                                "DeviceIndex:uint64",
+                                "Name:string",
+                                "PortProtocol:string",
+                                "PortType:string",
+                                "Priority:bool"
+                            ]
+                        },
+                        "PowerCap": {
+                            "does": "Publishes the GPU power cap (limit and range) with settable controls.",
+                            "params": ["Name:string"]
+                        },
+                        "Power_0": {
+                            "does": "Publishes the GPU's total power sensor, with peak-value tracking and a link to the total GPU power sensor in Redfish.",
+                            "params": [
+                                "Aggregated:bool",
+                                "AveragingInterval:uint64",
+                                "CompositeNumericSensorsEnabled:bool",
+                                "MaxAllowableOperatingValue:double",
+                                "Name:string",
+                                "PeakValueAggregated:bool",
+                                "PeakValueAveragingInterval:uint64",
+                                "PeakValueEnabled:bool",
+                                "PeakValuePriority:bool",
+                                "PeakValueSensorId:uint64",
+                                "PhysicalContext:string",
+                                "Priority:bool",
+                                "ProcessorAssociationsEnabled:bool",
+                                "SelfChassisAssociationsEnabled:bool",
+                                "SensorId:uint64"
+                            ]
+                        },
+                        "Processor": {
+                            "does": "Publishes the GPU as a Redfish processor: health, UUID, revision, memory size, reset counters, confidential-compute mode and links to its chassis. The main GPU inventory object.",
+                            "params": [
+                                "BridgingChassisName:string",
+                                "Name:string",
+                                "SelfChassisAssociationsEnabled:bool",
+                                "TotalPowerAssociationEnabled:bool"
+                            ]
+                        },
+                        "ProcessorAttributes": {
+                            "does": "Adds GPU asset data, location and optional GPU controls (MIG, ECC, power smoothing, power limits, EGM, NVLink count, CPER events), each enabled by a Supported flag. Switch off flags the platform's GPU lacks.",
+                            "params": [
+                                "CPEREventSupported:bool",
+                                "CpuOperatingConfigSupported:bool",
+                                "ECCModeSupported:bool",
+                                "EDPpScalingFactorSupported:bool",
+                                "EGMModeSupported:bool",
+                                "FieldReplaceable:bool",
+                                "GPUBasePowerLimitSupported:bool",
+                                "GPUCopyCPUPowerLimitSupported:bool",
+                                "GPUCopySwitchPowerLimitSupported:bool",
+                                "LocationCode:string",
+                                "LocationContext:string",
+                                "LocationType:string",
+                                "MIGModeSupported:bool",
+                                "MNNVLTopologySupported:bool",
+                                "MctpNsmOperationalStatusSupported:bool",
+                                "MemCapacityUtilSupported:bool",
+                                "Name:string",
+                                "PortDisableFutureSupported:bool",
+                                "PowerSmoothingSupported:bool",
+                                "SoCPowerSmoothingSupported:bool",
+                                "TotalNvLinksCountSupported:bool"
+                            ]
+                        },
+                        "ProcessorPerformance": {
+                            "does": "Publishes GPU performance state and throttle reasons for the processor.",
+                            "params": ["DeviceId:uint64", "Name:string"]
+                        },
+                        "ReconfigPermissions": {
+                            "does": "Publishes which GPU configuration knobs (for example CC mode, ECC, clock limit) may be reconfigured. AvailableKnobs minus DisabledKnobs sets the list; a platform can disable knobs there.",
+                            "params": [
+                                "AvailableKnobs:string[]",
+                                "DisabledKnobs:string[]",
+                                "Name:string"
+                            ]
+                        },
+                        "RediscoveryEvent": {
+                            "does": "Turns the GPU's rediscovery event into a log entry and Redfish event, and triggers re-reading capabilities. Message, severity and namespace come from params.",
+                            "params": [
+                                "EventIds:string[]",
+                                "Logging:bool",
+                                "LoggingNamespace:string",
+                                "MessageArgs:string[]",
+                                "MessageId:string",
+                                "Name:string",
+                                "Resolution:string",
+                                "Severity:string"
+                            ]
+                        },
+                        "ResetRequiredEvent": {
+                            "does": "Turns the GPU's reset-required event into a Warning log entry and Redfish event telling the user to reset or power cycle.",
+                            "params": [
+                                "EventIds:string[]",
+                                "LoggingNamespace:string",
+                                "MessageArgs:string[]",
+                                "MessageId:string",
+                                "Name:string",
+                                "Resolution:string",
+                                "Severity:string"
+                            ]
+                        },
+                        "RoT": {
+                            "does": "Creates the Root of Trust firmware model: slots (active and inactive AP and EC), key management, minimum security version, build type, optional image copy, update and failover policies. Slot arrays in params define it.",
+                            "params": [
+                                "ImageCopyEnabled:bool",
+                                "ImageCopyStateEnabled:bool",
+                                "InbandUpdatePolicyEnabled:bool",
+                                "Name:string",
+                                "SlotChassisName:string[]",
+                                "SlotComponentClassification:uint64[]",
+                                "SlotComponentIdentifier:uint64[]",
+                                "SlotComponentIndex:uint64[]",
+                                "SlotFirmwareType:string[]",
+                                "SlotSoftwareAssociationsEnabled:uint64[]",
+                                "SlotType:string[]"
+                            ]
+                        },
+                        "RuntimeISTCompleteEvent": {
+                            "does": "Turns the GPU's runtime in-system-test completion event into a log entry with result and temperatures. Severity comes from the payload.",
+                            "params": [
+                                "EventIds:string[]",
+                                "LoggingNamespace:string",
+                                "MessageArgs:string[]",
+                                "MessageId:string",
+                                "Name:string",
+                                "Resolution:string"
+                            ]
+                        },
+                        "Temp_0": {
+                            "does": "Publishes the main temperature sensor of the device (GPU, SMA or board) in Redfish thermal metrics. Name, sensor id and thresholds differ per kind.",
+                            "params": [
+                                "Aggregated:bool",
+                                "Name:string",
+                                "PhysicalContext:string",
+                                "Priority:bool",
+                                "ProcessorAssociationsEnabled:bool",
+                                "SelfChassisAssociationsEnabled:bool",
+                                "SensorId:uint64",
+                                "ThresholdsEnabled:bool",
+                                "UpperCaution:double",
+                                "UpperCritical:double",
+                                "UpperFatal:double"
+                            ]
+                        },
+                        "Temp_1": {
+                            "does": "Publishes the GPU's thermal-limit headroom sensor (distance to first throttle point) with lower thresholds.",
+                            "params": [
+                                "Aggregated:bool",
+                                "Description:string",
+                                "Implementation:string",
+                                "LowerCaution:unknown",
+                                "LowerCritical:unknown",
+                                "LowerFatal:unknown",
+                                "Name:string",
+                                "PhysicalContext:string",
+                                "Priority:bool",
+                                "ProcessorAssociationsEnabled:bool",
+                                "ReadingBasis:string",
+                                "SelfChassisAssociationsEnabled:bool",
+                                "SensorId:uint64",
+                                "ThresholdsEnabled:bool"
+                            ]
+                        },
+                        "ThresholdEvent": {
+                            "does": "Turns the GPU's threshold event into a Critical log entry and Redfish event.",
+                            "params": [
+                                "EventIds:string[]",
+                                "LoggingNamespace:string",
+                                "MessageArgs:string[]",
+                                "MessageId:string",
+                                "Name:string",
+                                "Resolution:string",
+                                "Severity:string"
+                            ]
+                        },
+                        "Voltage_0": {
+                            "does": "Publishes the GPU's voltage sensor linked to the GPU and its chassis.",
+                            "params": [
+                                "Aggregated:bool",
+                                "Name:string",
+                                "PhysicalContext:string",
+                                "Priority:bool",
+                                "ProcessorAssociationsEnabled:bool",
+                                "SelfChassisAssociationsEnabled:bool",
+                                "SensorId:uint64"
+                            ]
+                        },
+                        "WorkloadPowerProfile": {
+                            "does": "Publishes the GPU's selectable workload power profiles (with profile ids) for reading and setting.",
+                            "params": ["Name:string"]
+                        },
+                        "XIDEvent": {
+                            "does": "Turns GPU XID driver error events into Critical log entries and Redfish events with the XID text and resolution link.",
+                            "params": [
+                                "EventIds:string[]",
+                                "LoggingNamespace:string",
+                                "MessageArgs:string[]",
+                                "MessageId:string",
+                                "Name:string",
+                                "Resolution:string",
+                                "Severity:string"
+                            ]
+                        }
+                    }
+                },
+                "gpu_sma": {
+                    "templateValues": {
+                        "LocationCode": "required",
+                        "LocationContext": "optional",
+                        "ProcessorModuleName": "optional"
+                    },
+                    "features": {
+                        "Chassis": {
+                            "does": "Creates the device's chassis identity: its UUID and MCTP UUID, used by Redfish and by other services to match the device. Needed for every device that has a chassis.",
+                            "params": ["Name:string"]
+                        },
+                        "ChassisAttributes": {
+                            "does": "Fills in the chassis inventory properties (asset info, location, field-replaceable, chassis type, SKU, health) and optional chassis functions such as power limit, dimensions, write protect and reset metrics. Each optional function is a Supported flag param.",
+                            "params": [
+                                "AssetInformationAvailable:bool",
+                                "ChassisType:string",
+                                "DeviceDiagnosticsSupported:bool",
+                                "ErrorInjectionSupported:bool",
+                                "FieldReplaceable:bool",
+                                "LocationCode:string",
+                                "LocationContext:string",
+                                "LocationType:string",
+                                "Name:string",
+                                "ResetMetricsSupported:bool",
+                                "SoCPowerSmoothingSupported:bool"
+                            ]
+                        },
+                        "ChassisParentAssociation": {
+                            "does": "Links this device's chassis to its parent board or chassis (parent_chassis) so Redfish shows the containment. The ParentChassisAssociationPath param picks board/ or chassis/ as the parent category.",
+                            "params": [
+                                "Name:string",
+                                "ParentChassisAssociationPath:string"
+                            ]
+                        },
+                        "DebugToken": {
+                            "does": "Enables debug-token handling for the device: install and status for a unified token, or a token object for NICs. Only built when the debug-token compile option is on.",
+                            "params": [
+                                "ChassisName:string",
+                                "DebugTokenDeviceType:string",
+                                "DebugTokenType:string[]"
+                            ]
+                        },
+                        "FWComponentType": {
+                            "does": "Placeholder: records the firmware component type but creates nothing; no nsmd consumer exists (code says open question).",
+                            "params": ["ComponentType:string", "Name:string"]
+                        },
+                        "HSCC_0_InputVoltage_0": {
+                            "does": "Publishes the input voltage of the GPU SMA's HSCC hot-swap controller as a voltage sensor in Redfish.",
+                            "params": [
+                                "Aggregated:bool",
+                                "BoardAssociationPath:string",
+                                "Name:string",
+                                "PhysicalContext:string",
+                                "Priority:bool",
+                                "SensorId:uint64"
+                            ]
+                        },
+                        "HSCC_0_OutputVoltage_0": {
+                            "does": "Publishes the output voltage of the GPU SMA's HSCC hot-swap controller as a voltage sensor in Redfish.",
+                            "params": [
+                                "Aggregated:bool",
+                                "BoardAssociationPath:string",
+                                "Name:string",
+                                "PhysicalContext:string",
+                                "Priority:bool",
+                                "SensorId:uint64"
+                            ]
+                        },
+                        "HSCC_0_Power_0": {
+                            "does": "Publishes the power drawn through the GPU SMA's HSCC hot-swap controller as a power sensor in Redfish.",
+                            "params": [
+                                "Aggregated:bool",
+                                "AveragingInterval:uint64",
+                                "BoardAssociationPath:string",
+                                "Name:string",
+                                "PhysicalContext:string",
+                                "Priority:bool",
+                                "SensorId:uint64"
+                            ]
+                        },
+                        "HSCC_0_Temp_0": {
+                            "does": "Publishes the temperature of the GPU SMA's HSCC hot-swap controller as a sensor in Redfish.",
+                            "params": [
+                                "Aggregated:bool",
+                                "BoardAssociationPath:string",
+                                "Name:string",
+                                "PhysicalContext:string",
+                                "Priority:bool",
+                                "SensorId:uint64"
+                            ]
+                        },
+                        "HSC_0_InputVoltage_0": {
+                            "does": "Publishes the input voltage of the GPU SMA's HSC hot-swap controller as a voltage sensor in Redfish.",
+                            "params": [
+                                "Aggregated:bool",
+                                "BoardAssociationPath:string",
+                                "Name:string",
+                                "PhysicalContext:string",
+                                "Priority:bool",
+                                "SensorId:uint64"
+                            ]
+                        },
+                        "HSC_0_OutputVoltage_0": {
+                            "does": "Publishes the output voltage of the GPU SMA's HSC hot-swap controller as a voltage sensor in Redfish.",
+                            "params": [
+                                "Aggregated:bool",
+                                "BoardAssociationPath:string",
+                                "Name:string",
+                                "PhysicalContext:string",
+                                "Priority:bool",
+                                "SensorId:uint64"
+                            ]
+                        },
+                        "HSC_0_Power_0": {
+                            "does": "Publishes the power drawn through the GPU SMA's HSC hot-swap controller as a power sensor in Redfish.",
+                            "params": [
+                                "Aggregated:bool",
+                                "AveragingInterval:uint64",
+                                "BoardAssociationPath:string",
+                                "Name:string",
+                                "PhysicalContext:string",
+                                "Priority:bool",
+                                "SensorId:uint64"
+                            ]
+                        },
+                        "HSC_0_Temp_0": {
+                            "does": "Publishes the temperature of the GPU SMA's HSC hot-swap controller as a sensor in Redfish.",
+                            "params": [
+                                "Aggregated:bool",
+                                "BoardAssociationPath:string",
+                                "Name:string",
+                                "PhysicalContext:string",
+                                "Priority:bool",
+                                "SensorId:uint64"
+                            ]
+                        },
+                        "IRoTAsset": {
+                            "does": "Publishes the IRoT's asset data (manufacturer, part and serial number, optional display name) on its chassis.",
+                            "params": ["AssetName:string", "Name:string"]
+                        },
+                        "IRoTAssociations": {
+                            "does": "Builds the IRoT's links: parent chassis, the components it protects (RoT inventory) and its chassis. Which links exist is set by the Enabled flags and path params.",
+                            "params": [
+                                "InventoryChassisAssociationsEnabled:bool",
+                                "Name:string",
+                                "ParentChassisAssociationsEnabled:bool",
+                                "RoTInventoryAssociationsEnabled:bool"
+                            ]
+                        },
+                        "IRoTChassisType": {
+                            "does": "Sets the IRoT chassis type (for example Component) shown in Redfish. Skipped if no ChassisType param is given.",
+                            "params": ["ChassisType:string", "Name:string"]
+                        },
+                        "IRoTFieldReplaceable": {
+                            "does": "Marks the IRoT as field replaceable or not in inventory. Skipped if the param is absent.",
+                            "params": ["FieldReplaceable:bool", "Name:string"]
+                        },
+                        "IRoTHealth": {
+                            "does": "Adds a Health status to the IRoT chassis in Redfish.",
+                            "params": ["Name:string"]
+                        },
+                        "IRoTLocationCode": {
+                            "does": "Sets the IRoT's location code (for example IRoT_0) in inventory. Skipped if no LocationCode param.",
+                            "params": ["LocationCode:string", "Name:string"]
+                        },
+                        "IRoTLocationContext": {
+                            "does": "Sets the IRoT's location context path (where it sits in the chassis hierarchy) in inventory. Skipped if absent.",
+                            "params": ["LocationContext:string", "Name:string"]
+                        },
+                        "IRoTLocationType": {
+                            "does": "Sets the IRoT's location type (for example Embedded) in inventory. Skipped if absent.",
+                            "params": ["LocationType:string", "Name:string"]
+                        },
+                        "IRoTSPDMResponder": {
+                            "does": "Publishes the IRoT's UUID (and optionally MCTP UUID) so the SPDM service can find and attest it. MctpUuidEnabled adds the MCTP UUID; HGXR disables it.",
+                            "params": ["Name:string"]
+                        },
+                        "RoT": {
+                            "does": "Creates the Root of Trust firmware model: slots (active and inactive AP and EC), key management, minimum security version, build type, optional image copy, update and failover policies. Slot arrays in params define it.",
+                            "params": [
+                                "ImageCopyEnabled:bool",
+                                "Name:string",
+                                "SlotChassisName:string[]",
+                                "SlotComponentClassification:uint64[]",
+                                "SlotComponentIdentifier:uint64[]",
+                                "SlotComponentIndex:uint64[]",
+                                "SlotFirmwareType:string[]",
+                                "SlotSoftwareAssociationsEnabled:uint64[]",
+                                "SlotType:string[]"
+                            ]
+                        },
+                        "Temp_0": {
+                            "does": "Publishes the main temperature sensor of the device (GPU, SMA or board) in Redfish thermal metrics. Name, sensor id and thresholds differ per kind.",
+                            "params": [
+                                "Aggregated:bool",
+                                "Description:string",
+                                "Name:string",
+                                "PhysicalContext:string",
+                                "Priority:bool",
+                                "SelfChassisAssociationsEnabled:bool",
+                                "SensorId:uint64"
+                            ]
+                        }
+                    }
+                },
+                "hmc_erot": {
+                    "features": {
+                        "DebugToken": {
+                            "does": "Enables debug-token handling for the device: install and status for a unified token, or a token object for NICs. Only built when the debug-token compile option is on.",
+                            "params": [
+                                "ChassisName:string",
+                                "DebugTokenDeviceType:string",
+                                "DebugTokenType:string[]"
+                            ]
+                        },
+                        "FWComponentTypeAP": {
+                            "does": "Placeholder for the AP firmware component type; logs only and creates nothing visible.",
+                            "params": ["ComponentType:string", "Name:string"]
+                        },
+                        "FWComponentTypeEC": {
+                            "does": "Placeholder for the EC firmware component type; logs only and creates nothing visible.",
+                            "params": ["ComponentType:string", "Name:string"]
+                        },
+                        "IRoTAsset": {
+                            "does": "Publishes the IRoT's asset data (manufacturer, part and serial number, optional display name) on its chassis.",
+                            "params": ["AssetName:string", "Name:string"]
+                        },
+                        "IRoTAssociations": {
+                            "does": "Builds the IRoT's links: parent chassis, the components it protects (RoT inventory) and its chassis. Which links exist is set by the Enabled flags and path params.",
+                            "params": [
+                                "InventoryChassisAssociationPath:string",
+                                "Name:string",
+                                "ParentChassisAssociationPath:string",
+                                "RoTInventoryAssociationPath:string"
+                            ]
+                        },
+                        "IRoTChassisType": {
+                            "does": "Sets the IRoT chassis type (for example Component) shown in Redfish. Skipped if no ChassisType param is given.",
+                            "params": ["ChassisType:string", "Name:string"]
+                        },
+                        "IRoTFieldReplaceable": {
+                            "does": "Marks the IRoT as field replaceable or not in inventory. Skipped if the param is absent.",
+                            "params": ["FieldReplaceable:bool", "Name:string"]
+                        },
+                        "IRoTHealth": {
+                            "does": "Adds a Health status to the IRoT chassis in Redfish.",
+                            "params": ["Name:string"]
+                        },
+                        "IRoTLocationCode": {
+                            "does": "Sets the IRoT's location code (for example IRoT_0) in inventory. Skipped if no LocationCode param.",
+                            "params": ["LocationCode:string", "Name:string"]
+                        },
+                        "IRoTLocationContext": {
+                            "does": "Sets the IRoT's location context path (where it sits in the chassis hierarchy) in inventory. Skipped if absent.",
+                            "params": ["LocationContext:string", "Name:string"]
+                        },
+                        "IRoTLocationType": {
+                            "does": "Sets the IRoT's location type (for example Embedded) in inventory. Skipped if absent.",
+                            "params": ["LocationType:string", "Name:string"]
+                        },
+                        "IRoTSKU": {
+                            "does": "Creates the IRoT's SKU property empty; another service (pldm for EC SKU) fills it in. Meaning differs little per kind, only who fills it.",
+                            "params": ["Name:string"]
+                        },
+                        "IRoTSPDMResponder": {
+                            "does": "Publishes the IRoT's UUID (and optionally MCTP UUID) so the SPDM service can find and attest it. MctpUuidEnabled adds the MCTP UUID; HGXR disables it.",
+                            "params": ["Name:string"]
+                        },
+                        "RoT": {
+                            "does": "Creates the Root of Trust firmware model: slots (active and inactive AP and EC), key management, minimum security version, build type, optional image copy, update and failover policies. Slot arrays in params define it.",
+                            "params": [
+                                "ImageCopyEnabled:bool",
+                                "ImageCopyPolicyEnabled:bool",
+                                "Name:string",
+                                "SlotChassisName:string[]",
+                                "SlotComponentClassification:uint64[]",
+                                "SlotComponentIdentifier:uint64[]",
+                                "SlotComponentIndex:uint64[]",
+                                "SlotFirmwareType:string[]",
+                                "SlotSoftwareName:string[]",
+                                "SlotType:string[]"
+                            ]
+                        }
+                    }
+                },
+                "hmc_hpm_sma": {
+                    "templateValues": {
+                        "ZoneChassisName": "required",
+                        "LocationCode": "optional",
+                        "ProcessorModuleName": "optional"
+                    },
+                    "features": {
+                        "BusBarTemp_0": {
+                            "does": "Publishes the processor module's DC bus-bar temperature sensor (read through the SMA) so it appears in Redfish thermal metrics. Thresholds are enabled.",
+                            "params": [
+                                "Aggregated:bool",
+                                "BoardAssociationPath:string",
+                                "Name:string",
+                                "PhysicalContext:string",
+                                "Priority:bool",
+                                "SensorId:uint64",
+                                "ThresholdsEnabled:bool",
+                                "UpperCaution:double",
+                                "UpperCritical:double",
+                                "UpperFatal:double"
+                            ]
+                        },
+                        "CPU_0_Die_0_Temp_0": {
+                            "does": "Publishes the CPU die temperature sensor read through the SMA on a processor module, attached to the module's board chassis in Redfish.",
+                            "params": [
+                                "Aggregated:bool",
+                                "BoardAssociationPath:string",
+                                "Name:string",
+                                "PhysicalContext:string",
+                                "Priority:bool",
+                                "SensorId:uint64",
+                                "ThresholdsEnabled:bool",
+                                "UpperCautionParameterId:uint64",
+                                "UpperCautionPeriodicUpdate:bool"
+                            ]
+                        },
+                        "CPU_0_SocTemp_0": {
+                            "does": "Publishes the CPU SoC temperature sensor read through the SMA on a processor module, attached to the module's board chassis in Redfish.",
+                            "params": [
+                                "Aggregated:bool",
+                                "BoardAssociationPath:string",
+                                "Name:string",
+                                "PhysicalContext:string",
+                                "Priority:bool",
+                                "SensorId:uint64",
+                                "ThresholdsEnabled:bool",
+                                "UpperCautionParameterId:uint64",
+                                "UpperCautionPeriodicUpdate:bool"
+                            ]
+                        },
+                        "Chassis": {
+                            "does": "Creates the device's chassis identity: its UUID and MCTP UUID, used by Redfish and by other services to match the device. Needed for every device that has a chassis.",
+                            "params": ["Name:string"]
+                        },
+                        "ChassisAttributes": {
+                            "does": "Fills in the chassis inventory properties (asset info, location, field-replaceable, chassis type, SKU, health) and optional chassis functions such as power limit, dimensions, write protect and reset metrics. Each optional function is a Supported flag param.",
+                            "params": [
+                                "AssetInformationAvailable:bool",
+                                "ChassisType:string",
+                                "DeviceDiagnosticsSupported:bool",
+                                "ErrorInjectionSupported:bool",
+                                "FieldReplaceable:bool",
+                                "GPIOStateSupported:bool",
+                                "LocationCode:string",
+                                "LocationContext:string",
+                                "LocationType:string",
+                                "Name:string",
+                                "ResetMetricsSupported:bool"
+                            ]
+                        },
+                        "ChassisParentAssociation": {
+                            "does": "Links this device's chassis to its parent board or chassis (parent_chassis) so Redfish shows the containment. The ParentChassisAssociationPath param picks board/ or chassis/ as the parent category.",
+                            "params": [
+                                "Name:string",
+                                "ParentChassisAssociationPath:string"
+                            ]
+                        },
+                        "DebugToken": {
+                            "does": "Enables debug-token handling for the device: install and status for a unified token, or a token object for NICs. Only built when the debug-token compile option is on.",
+                            "params": [
+                                "ChassisName:string",
+                                "DebugTokenDeviceType:string",
+                                "DebugTokenType:string[]"
+                            ]
+                        },
+                        "EventConfigGPIOState": {
+                            "does": "Subscribes the SMA to GPIO state-change events (message type 0, event 3) so GPIO changes are reported.",
+                            "params": [
+                                "MessageType:uint64",
+                                "Name:string",
+                                "SubscribedEventIDs:uint64[]"
+                            ]
+                        },
+                        "EventSetting": {
+                            "does": "Sets how the device generates events (global event generation setting, for example push) and reads it back. Needed for any event feature to work.",
+                            "params": [
+                                "EventGenerationSetting:uint64",
+                                "Name:string"
+                            ]
+                        },
+                        "External_SMA_0_Temp_0": {
+                            "does": "Publishes the external SMA temperature sensor of a processor module, with thresholds, attached to the module's board chassis.",
+                            "params": [
+                                "Aggregated:bool",
+                                "BoardAssociationPath:string",
+                                "Name:string",
+                                "PhysicalContext:string",
+                                "PrimaryTemperatureAssociationEnabled:bool",
+                                "Priority:bool",
+                                "SensorId:uint64",
+                                "ThresholdsEnabled:bool",
+                                "UpperCautionParameterId:uint64",
+                                "UpperCautionPeriodicUpdate:bool"
+                            ]
+                        },
+                        "GPU_VR_Temp_0": {
+                            "does": "Publishes the GPU voltage-regulator temperature of a processor module, with thresholds, attached to the module's board chassis.",
+                            "params": [
+                                "Aggregated:bool",
+                                "BoardAssociationPath:string",
+                                "Name:string",
+                                "PhysicalContext:string",
+                                "Priority:bool",
+                                "SensorId:uint64",
+                                "ThresholdsEnabled:bool",
+                                "UpperCaution:double",
+                                "UpperCritical:double",
+                                "UpperFatal:double"
+                            ]
+                        },
+                        "IRoTAsset": {
+                            "does": "Publishes the IRoT's asset data (manufacturer, part and serial number, optional display name) on its chassis.",
+                            "params": ["AssetName:string", "Name:string"]
+                        },
+                        "IRoTAssociations": {
+                            "does": "Builds the IRoT's links: parent chassis, the components it protects (RoT inventory) and its chassis. Which links exist is set by the Enabled flags and path params.",
+                            "params": [
+                                "InventoryChassisAssociationsEnabled:bool",
+                                "Name:string",
+                                "ParentChassisAssociationsEnabled:bool",
+                                "RoTInventoryAssociationPaths:string[]",
+                                "RoTInventoryAssociationsEnabled:bool"
+                            ]
+                        },
+                        "IRoTChassisType": {
+                            "does": "Sets the IRoT chassis type (for example Component) shown in Redfish. Skipped if no ChassisType param is given.",
+                            "params": ["ChassisType:string", "Name:string"]
+                        },
+                        "IRoTFieldReplaceable": {
+                            "does": "Marks the IRoT as field replaceable or not in inventory. Skipped if the param is absent.",
+                            "params": ["FieldReplaceable:bool", "Name:string"]
+                        },
+                        "IRoTHealth": {
+                            "does": "Adds a Health status to the IRoT chassis in Redfish.",
+                            "params": ["Name:string"]
+                        },
+                        "IRoTLocationCode": {
+                            "does": "Sets the IRoT's location code (for example IRoT_0) in inventory. Skipped if no LocationCode param.",
+                            "params": ["LocationCode:string", "Name:string"]
+                        },
+                        "IRoTLocationContext": {
+                            "does": "Sets the IRoT's location context path (where it sits in the chassis hierarchy) in inventory. Skipped if absent.",
+                            "params": ["LocationContext:string", "Name:string"]
+                        },
+                        "IRoTLocationType": {
+                            "does": "Sets the IRoT's location type (for example Embedded) in inventory. Skipped if absent.",
+                            "params": ["LocationType:string", "Name:string"]
+                        },
+                        "IRoTSPDMResponder": {
+                            "does": "Publishes the IRoT's UUID (and optionally MCTP UUID) so the SPDM service can find and attest it. MctpUuidEnabled adds the MCTP UUID; HGXR disables it.",
+                            "params": ["Name:string"]
+                        },
+                        "ProcessorModuleChassis": {
+                            "does": "Creates the processor module chassis identity (UUID and PCIe reference clock) on the SMA's module.",
+                            "params": [
+                                "Name:string",
+                                "PCIeRefClockEnabled:bool"
+                            ]
+                        },
+                        "ProcessorModuleChassisAttributes": {
+                            "does": "Fills in the processor module chassis properties (type Module, SKU, health, write-protect setting).",
+                            "params": [
+                                "AssetInformationAvailable:bool",
+                                "ChassisType:string",
+                                "Name:string",
+                                "WriteProtectSupported:bool"
+                            ]
+                        },
+                        "RoT": {
+                            "does": "Creates the Root of Trust firmware model: slots (active and inactive AP and EC), key management, minimum security version, build type, optional image copy, update and failover policies. Slot arrays in params define it.",
+                            "params": [
+                                "ImageCopyEnabled:bool",
+                                "Name:string",
+                                "SlotChassisName:string[]",
+                                "SlotComponentClassification:uint64[]",
+                                "SlotComponentIdentifier:uint64[]",
+                                "SlotComponentIndex:uint64[]",
+                                "SlotFirmwareType:string[]",
+                                "SlotIsRoT:uint64[]",
+                                "SlotReportSkuWithNsm:uint64[]",
+                                "SlotSkuInventoryPath:string[]",
+                                "SlotSoftwareName:string[]",
+                                "SlotType:string[]"
+                            ]
+                        },
+                        "Temp_0": {
+                            "does": "Publishes the main temperature sensor of the device (GPU, SMA or board) in Redfish thermal metrics. Name, sensor id and thresholds differ per kind.",
+                            "params": [
+                                "Aggregated:bool",
+                                "Description:string",
+                                "Name:string",
+                                "PhysicalContext:string",
+                                "Priority:bool",
+                                "SelfChassisAssociationsEnabled:bool",
+                                "SensorId:uint64"
+                            ]
+                        },
+                        "TotalGpuPower": {
+                            "does": "Publishes a synthesized sensor summing all GPU power readings on the zone chassis; GPUs link to it as total_power.",
+                            "params": [
+                                "ChassisName:string",
+                                "Implementation:string",
+                                "Name:unknown",
+                                "PhysicalContext:string",
+                                "SensorType:string"
+                            ]
+                        },
+                        "ZoneChassis": {
+                            "does": "Creates the logical zone chassis identity on the SMA, named by the ZoneChassisName variable, with UUID and PCIe reference clock.",
+                            "params": [
+                                "Name:string",
+                                "PCIeRefClockEnabled:bool"
+                            ]
+                        },
+                        "ZoneChassisAttributes": {
+                            "does": "Sets the zone chassis properties (type Zone, no asset info) in inventory.",
+                            "params": [
+                                "AssetInformationAvailable:bool",
+                                "ChassisType:string",
+                                "Name:string"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

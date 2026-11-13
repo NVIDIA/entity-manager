@@ -99,3 +99,13 @@ test(
         link_with: gpio_presence_lib,
     ),
 )
+
+python3 = find_program('python3', required: false)
+if python3.found()
+    test(
+        'check_policy_registry',
+        python3,
+        args: [files('../scripts/check_policy_registry.py')],
+        depends: [],
+    )
+endif
