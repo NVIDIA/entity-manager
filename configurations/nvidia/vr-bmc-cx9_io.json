@@ -64,6 +64,9 @@
                 "Type": "NSM_Telemetry"
             },
             {
+                "DownstreamDevices": {
+                    "Optical_Transceiver_$Instance": "$Instance % 2"
+                },
                 "FWInventoryOnlyComponent": {
                     "CX_NVConfig_MLNX_$Instance": 4,
                     "CX_NVConfig_OEM_$Instance": 3

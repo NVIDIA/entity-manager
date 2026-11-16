@@ -67,8 +67,11 @@ T2 configuration uses three layers:
 | `UpperFatal`, `UpperCritical`, `UpperCaution` | Threshold overrides by sensor auxiliary name.                                                                                          |
 
 Existing `UpdateableComponents`, `FWInventoryOnlyComponent` and `FirmwareName`
-firmware mappings remain on the record. The schema for both `PLDMDevice` and
-`PLDM_Policy` is `schemas/platform/pldm_device.json`.
+firmware mappings remain on the record. `DownstreamDevices` maps the name of
+each downstream device behind the firmware device (the optical transceiver of a
+CX9 IO board) to the index the device reports; pldmd associates it with the
+ports of the device (`PortName0`, `PortName1`). The schema for both `PLDMDevice`
+and `PLDM_Policy` is `schemas/platform/pldm_device.json`.
 
 The `Kind` to device PDR entity mapping is a compiled table in pldmd, not an
 entity-file override. Relevant entries are:
