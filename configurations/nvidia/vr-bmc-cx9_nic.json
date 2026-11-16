@@ -11,13 +11,14 @@
                 "Type": "MCTPBridgePoolDevice"
             },
             {
-                "BridgeName": "$Bridge",
+                "BridgeName": "chassis/$Bridge",
                 "EID": "$EID",
                 "InstanceNumber": "$Instance",
                 "Kind": "cx9_nic",
                 "LocationContext": "$LocationContext",
                 "Name": "NSM_Telemetry",
                 "ParameterOverrides": {},
+                "PlatformPrefix": "$Platform.NamePrefix",
                 "PortLocationReference": "$PortLocationReference",
                 "SwitchName": "$SwitchName",
                 "Type": "NSM_Telemetry"

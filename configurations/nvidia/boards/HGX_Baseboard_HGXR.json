@@ -351,8 +351,9 @@
                 "IgnoreEIDs": "86,87",
                 "Instance": 0,
                 "Kind": "hmc_hpm_sma",
+                "LeakDetectorChassis": "HGX_Chassis_0",
                 "Name": "HGX_Baseboard_SMA_0",
-                "ParentChassis": "HGX_Chassis_0",
+                "ParentChassis": "chassis/HGX_Chassis_0",
                 "Recovery": {
                     "RecoveryGpio": "BB_MCU_RECOV_L-O",
                     "RecoveryType": "MCU",
@@ -421,7 +422,7 @@
                 "Instance": 0,
                 "Kind": "nvswitch",
                 "Name": "HGX_NVSwitch_0",
-                "ParentChassis": "HGX_Chassis_0",
+                "ParentChassis": "chassis/HGX_Chassis_0",
                 "Recovery": {
                     "ChassisName": "HGX_IRoT_NVSwitch_0",
                     "FlashNotPresentGpio": "QM4_1_FNP_L-O",
@@ -445,7 +446,7 @@
                 "Instance": 1,
                 "Kind": "nvswitch",
                 "Name": "HGX_NVSwitch_1",
-                "ParentChassis": "HGX_Chassis_0",
+                "ParentChassis": "chassis/HGX_Chassis_0",
                 "Recovery": {
                     "ChassisName": "HGX_IRoT_NVSwitch_1",
                     "FlashNotPresentGpio": "QM4_2_FNP_L-O",
@@ -469,7 +470,7 @@
                 "Instance": 2,
                 "Kind": "nvswitch",
                 "Name": "HGX_NVSwitch_2",
-                "ParentChassis": "HGX_Chassis_0",
+                "ParentChassis": "chassis/HGX_Chassis_0",
                 "Recovery": {
                     "ChassisName": "HGX_IRoT_NVSwitch_2",
                     "FlashNotPresentGpio": "QM4_3_FNP_L-O",
@@ -493,7 +494,7 @@
                 "Instance": 3,
                 "Kind": "nvswitch",
                 "Name": "HGX_NVSwitch_3",
-                "ParentChassis": "HGX_Chassis_0",
+                "ParentChassis": "chassis/HGX_Chassis_0",
                 "Recovery": {
                     "ChassisName": "HGX_IRoT_NVSwitch_3",
                     "FlashNotPresentGpio": "QM4_4_FNP_L-O",
@@ -517,7 +518,7 @@
                 "Instance": 0,
                 "Kind": "nvlink_mgmt_nic",
                 "Name": "HGX_NVLinkManagementNIC_0",
-                "ParentChassis": "HGX_Chassis_0",
+                "ParentChassis": "chassis/HGX_Chassis_0",
                 "Recovery": {
                     "ChassisName": "HGX_IRoT_NVLinkManagementNIC_0",
                     "FlashNotPresentGpio": "CX9_FNM_FNP_L-O",

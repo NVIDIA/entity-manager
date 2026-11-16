@@ -22,6 +22,7 @@
                 "Kind": "cpu_erot",
                 "Name": "NSM_Telemetry",
                 "ParameterOverrides": {},
+                "PlatformPrefix": "$Platform.NamePrefix",
                 "Type": "NSM_Telemetry"
             },
             {

@@ -51,23 +51,23 @@
         "Exposes": [
             {
                 "CriticalReactionType": "None",
-                "LeakDetectorName": "$ParentChassis_LeakDetector_0",
-                "Name": "$ParentChassis_LeakDetector_0_Policy",
+                "LeakDetectorName": "$LeakDetectorChassis_LeakDetector_0",
+                "Name": "$LeakDetectorChassis_LeakDetector_0_Policy",
                 "ReactionDelaySeconds": 0,
                 "Type": "LeakDetectionPolicy",
                 "WarningReactionType": "None"
             },
             {
                 "CriticalReactionType": "None",
-                "LeakDetectorName": "$ParentChassis_LeakDetector_1",
-                "Name": "$ParentChassis_LeakDetector_1_Policy",
+                "LeakDetectorName": "$LeakDetectorChassis_LeakDetector_1",
+                "Name": "$LeakDetectorChassis_LeakDetector_1_Policy",
                 "ReactionDelaySeconds": 0,
                 "Type": "LeakDetectionPolicy",
                 "WarningReactionType": "None"
             }
         ],
         "Name": "$Name_LeakDetection",
-        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^hmc_hpm_sma$', 'Generation': 'vr'})",
+        "Probe": "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^hmc_hpm_sma$', 'Generation': 'vr', 'LeakDetectorChassis': '.'})",
         "Type": "LeakDetection"
     }
 ]

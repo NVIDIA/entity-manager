@@ -11,7 +11,7 @@
                 "Type": "MCTPBridgePoolDevice"
             },
             {
-                "BridgeName": "$Bridge",
+                "BridgeName": "chassis/$Bridge",
                 "Disable": [],
                 "EID": "$EID",
                 "InstanceNumber": "$Instance",
@@ -20,6 +20,7 @@
                 "Name": "NSM_Telemetry",
                 "ParameterOverrides": {},
                 "ParentChassis": "$Platform.TopChassis",
+                "PlatformPrefix": "$Platform.NamePrefix",
                 "PortCount": 2,
                 "Type": "NSM_Telemetry"
             },

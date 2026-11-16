@@ -18,7 +18,7 @@
                 "Type": "MCTPBridgePoolDevice"
             },
             {
-                "BridgeName": "$Bridge",
+                "BridgeName": "chassis/$Bridge",
                 "EID": "$EID",
                 "InstanceNumber": "$Instance",
                 "Kind": "gpu",
@@ -29,6 +29,7 @@
                 "NvLinkCount": 36,
                 "ParameterOverrides": {},
                 "ParentChassis": "$ParentChassis",
+                "PlatformPrefix": "$Platform.NamePrefix",
                 "Type": "NSM_Telemetry"
             },
             {

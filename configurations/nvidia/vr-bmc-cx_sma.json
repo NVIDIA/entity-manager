@@ -33,12 +33,13 @@
                 "EID": "$EID",
                 "InstanceNumber": "$Instance",
                 "Kind": "cx_sma",
-                "LeakDetectorChassis": "$ParentChassis",
+                "LeakDetectorChassis": "$LeakDetectorChassis",
                 "LocationCode": "SMA_0",
                 "LocationContext": "$LocationContext",
                 "Name": "NSM_Telemetry",
                 "ParameterOverrides": {},
                 "ParentChassis": "$ParentChassis",
+                "PlatformPrefix": "$Platform.NamePrefix",
                 "Type": "NSM_Telemetry"
             },
             {
@@ -65,17 +66,17 @@
         "Exposes": [
             {
                 "CriticalReactionType": "None",
-                "LeakDetectorName": "$ParentChassis_LeakDetector_0",
-                "Name": "$ParentChassis_LeakDetector_0_Policy",
+                "LeakDetectorName": "$LeakDetectorChassis_LeakDetector_0",
+                "Name": "$LeakDetectorChassis_LeakDetector_0_Policy",
                 "ReactionDelaySeconds": 0,
                 "Type": "LeakDetectionPolicy"
             }
         ],
         "Name": "$Name_LeakDetection",
         "Probe": [
-            "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vr', 'ParentChassis': '.', 'Instance': 1})",
+            "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vr', 'LeakDetectorChassis': '.', 'Instance': 1})",
             "OR",
-            "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vr', 'ParentChassis': '.', 'Instance': 3})"
+            "xyz.openbmc_project.Configuration.NvDevice({'Kind': '^cx_sma$', 'Generation': 'vr', 'LeakDetectorChassis': '.', 'Instance': 3})"
         ],
         "Type": "LeakDetection"
     }

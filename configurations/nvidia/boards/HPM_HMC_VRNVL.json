@@ -218,7 +218,7 @@
                 "LocationCode": "GPU_SMA_0",
                 "LocationContext": "HGX_Chassis_0/ProcessorModule_$Instance-$Side",
                 "Name": "HGX_GPU_SMA_$Instance",
-                "ParentChassis": "HGX_ProcessorModule_$Instance",
+                "ParentChassis": "board/HGX_ProcessorModule_$Instance",
                 "Recovery": {
                     "RecoveryGpio": "BRD$Instance_GPU_MCU_RECOVERY_L_3V3-O",
                     "RecoveryType": "MCU",
@@ -243,7 +243,7 @@
                 "LocationCode": "GPU_0",
                 "LocationContext": "HGX_Chassis_0/ProcessorModule_$Instance",
                 "Name": "HGX_GPU_$Instance * 2",
-                "ParentChassis": "HGX_ProcessorModule_$Instance",
+                "ParentChassis": "board/HGX_ProcessorModule_$Instance",
                 "Recovery": {
                     "ChassisName": "HGX_IRoT_GPU_$Instance * 2",
                     "InfoRomName": "HGX_InfoROM_GPU_$Instance * 2",
@@ -268,7 +268,7 @@
                 "LocationCode": "GPU_1",
                 "LocationContext": "HGX_Chassis_0/ProcessorModule_$Instance",
                 "Name": "HGX_GPU_$Instance * 2 + 1",
-                "ParentChassis": "HGX_ProcessorModule_$Instance",
+                "ParentChassis": "board/HGX_ProcessorModule_$Instance",
                 "Recovery": {
                     "ChassisName": "HGX_IRoT_GPU_$Instance * 2 + 1",
                     "InfoRomName": "HGX_InfoROM_GPU_$Instance * 2 + 1",
@@ -292,7 +292,7 @@
                 "Kind": "cpu",
                 "LocationContext": "HGX_Chassis_0/ProcessorModule_$Instance",
                 "Name": "HGX_CPU_$Instance",
-                "ParentChassis": "HGX_ProcessorModule_$Instance",
+                "ParentChassis": "board/HGX_ProcessorModule_$Instance",
                 "Recovery": {
                     "ActionRedfishChassis": "HGX_Chassis_0",
                     "BootDevSel0Gpio": "BRD$Instance_CPU_BOOT_DEV_SEL0-O",
@@ -319,10 +319,11 @@
                 "Generation": "vr",
                 "Instance": "$Instance",
                 "Kind": "hmc_hpm_sma",
+                "LeakDetectorChassis": "HGX_ProcessorModule_$Instance",
                 "LocationCode": "HPM_SMA_0",
                 "LocationContext": "HGX_Chassis_0/ProcessorModule_$Instance",
                 "Name": "HGX_ProcessorModule_SMA_$Instance",
-                "ParentChassis": "HGX_ProcessorModule_$Instance",
+                "ParentChassis": "board/HGX_ProcessorModule_$Instance",
                 "Recovery": {
                     "RecoveryGpio": "BRD$Instance_MCU_RECOVERY_L-O",
                     "RecoveryType": "MCU",

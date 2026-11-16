@@ -28,6 +28,7 @@
                 "LocationContext": "$LocationContext",
                 "Name": "NSM_Telemetry",
                 "ParameterOverrides": {},
+                "PlatformPrefix": "$Platform.NamePrefix",
                 "Type": "NSM_Telemetry"
             },
             {
@@ -60,7 +61,7 @@
     },
     {
         "Associations": {
-            "parent_chassis": "board/$ParentChassis",
+            "parent_chassis": "$ParentChassis",
             "parent_processor": "cpu/CPU_$Instance"
         },
         "Name": "ProcessorModule_$Instance_Memory_0",
@@ -75,7 +76,7 @@
     },
     {
         "Associations": {
-            "parent_chassis": "board/$ParentChassis",
+            "parent_chassis": "$ParentChassis",
             "parent_processor": "cpu/CPU_$Instance"
         },
         "Name": "ProcessorModule_$Instance_Memory_1",
@@ -90,7 +91,7 @@
     },
     {
         "Associations": {
-            "parent_chassis": "board/$ParentChassis",
+            "parent_chassis": "$ParentChassis",
             "parent_processor": "cpu/CPU_$Instance"
         },
         "Name": "ProcessorModule_$Instance_Memory_2",
@@ -105,7 +106,7 @@
     },
     {
         "Associations": {
-            "parent_chassis": "board/$ParentChassis",
+            "parent_chassis": "$ParentChassis",
             "parent_processor": "cpu/CPU_$Instance"
         },
         "Name": "ProcessorModule_$Instance_Memory_3",
@@ -120,7 +121,7 @@
     },
     {
         "Associations": {
-            "parent_chassis": "board/$ParentChassis",
+            "parent_chassis": "$ParentChassis",
             "parent_processor": "cpu/CPU_$Instance"
         },
         "Name": "ProcessorModule_$Instance_Memory_4",
@@ -135,7 +136,7 @@
     },
     {
         "Associations": {
-            "parent_chassis": "board/$ParentChassis",
+            "parent_chassis": "$ParentChassis",
             "parent_processor": "cpu/CPU_$Instance"
         },
         "Name": "ProcessorModule_$Instance_Memory_5",
@@ -150,7 +151,7 @@
     },
     {
         "Associations": {
-            "parent_chassis": "board/$ParentChassis",
+            "parent_chassis": "$ParentChassis",
             "parent_processor": "cpu/CPU_$Instance"
         },
         "Name": "ProcessorModule_$Instance_Memory_6",
@@ -165,7 +166,7 @@
     },
     {
         "Associations": {
-            "parent_chassis": "board/$ParentChassis",
+            "parent_chassis": "$ParentChassis",
             "parent_processor": "cpu/CPU_$Instance"
         },
         "Name": "ProcessorModule_$Instance_Memory_7",

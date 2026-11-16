@@ -214,7 +214,7 @@
                 "LocationCode": "ERoT_BMC_0",
                 "LocationContext": "Chassis_0/SMM_Interposer_0/SMM_0/BMC_0",
                 "Name": "ERoT_BMC_0",
-                "ParentChassis": "BMC_0",
+                "ParentChassis": "bmc/BMC_0",
                 "Recovery": {
                     "RecoveryType": "GlacierCrisis"
                 },
@@ -386,7 +386,7 @@
                 "Instance": 0,
                 "Kind": "irot",
                 "Name": "IRoT_BMC_0",
-                "ParentChassis": "BMC_0",
+                "ParentChassis": "bmc/BMC_0",
                 "Transport": {
                     "Interface": "mctpirot0",
                     "Medium": "xrot"

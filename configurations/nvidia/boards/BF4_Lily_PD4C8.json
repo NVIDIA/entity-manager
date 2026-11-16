@@ -134,9 +134,10 @@
                 "Generation": "vr",
                 "Instance": 0,
                 "Kind": "bluefield_sma",
+                "LeakDetectorChassis": "BlueField_0",
                 "LocationContext": "Chassis_0/Bay-C-Middle",
                 "Name": "Bay_C_SMA_0",
-                "ParentChassis": "BlueField_0",
+                "ParentChassis": "chassis/BlueField_0",
                 "Recovery": {
                     "RecoveryGpio": "BF4_USB_MCU_RECOVERY_L",
                     "RecoveryType": "MCU",

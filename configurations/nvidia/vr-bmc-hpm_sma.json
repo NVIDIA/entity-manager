@@ -21,6 +21,7 @@
                 "LeakDetectorChassis": "Chassis_0",
                 "Name": "NSM_Telemetry",
                 "ParameterOverrides": {},
+                "PlatformPrefix": "$Platform.NamePrefix",
                 "Type": "NSM_Telemetry"
             },
             {

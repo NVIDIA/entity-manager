@@ -167,7 +167,7 @@
                 "Instance": "$Instance",
                 "Kind": "bmc_hpm_sma",
                 "Name": "ProcessorModule_SMA_$Instance",
-                "ParentChassis": "ProcessorModule_$Instance",
+                "ParentChassis": "fru_eeprom/ProcessorModule_$Instance",
                 "Transport": {
                     "Medium": "usb",
                     "PoolStartEID": "$SmaEid + 1",

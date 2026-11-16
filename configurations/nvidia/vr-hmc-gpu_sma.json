@@ -33,6 +33,7 @@
                 "Name": "NSM_Telemetry",
                 "ParameterOverrides": {},
                 "ParentChassis": "$ParentChassis",
+                "PlatformPrefix": "$Platform.NamePrefix",
                 "ProcessorModuleName": "$ParentChassis",
                 "Type": "NSM_Telemetry"
             },

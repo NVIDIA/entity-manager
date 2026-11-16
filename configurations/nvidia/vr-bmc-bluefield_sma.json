@@ -46,12 +46,13 @@
                 "EID": "$EID",
                 "InstanceNumber": "$Instance",
                 "Kind": "bluefield_sma",
-                "LeakDetectorChassis": "$ParentChassis",
+                "LeakDetectorChassis": "$LeakDetectorChassis",
                 "LocationCode": "SMA_0",
                 "LocationContext": "$LocationContext",
                 "Name": "NSM_Telemetry",
                 "ParameterOverrides": {},
                 "ParentChassis": "$ParentChassis",
+                "PlatformPrefix": "$Platform.NamePrefix",
                 "Type": "NSM_Telemetry"
             },
             {

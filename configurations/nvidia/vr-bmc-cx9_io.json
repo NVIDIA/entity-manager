@@ -1,7 +1,7 @@
 [
     {
         "Associations": {
-            "parent_chassis": "board/$ParentChassis"
+            "parent_chassis": "$ParentChassis"
         },
         "Exposes": [],
         "Name": "$Name",
@@ -41,7 +41,7 @@
                 "Type": "MCTPBridgePoolDevice"
             },
             {
-                "BridgeName": "$Bridge",
+                "BridgeName": "chassis/$Bridge",
                 "EID": "$EID",
                 "InstanceNumber": "$Instance",
                 "Kind": "cx9_io",
@@ -49,6 +49,7 @@
                 "LocationContext": "$LocationContext",
                 "Name": "NSM_Telemetry",
                 "ParameterOverrides": {},
+                "PlatformPrefix": "$Platform.NamePrefix",
                 "PortLocationCodeMap": [
                     "$PortName0",
                     "$PortName1"
