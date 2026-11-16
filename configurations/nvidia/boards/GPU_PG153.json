@@ -42,6 +42,11 @@
                     "PoolIndex": 0
                 },
                 "Type": "NvDevice"
+            },
+            {
+                "MCUGPUPackageUUID": "30546141D0614097829DADD8E9466DCA",
+                "Name": "RecoveryPackages",
+                "Type": "RecoveryPackages"
             }
         ],
         "Name": "GPU_Devices_$Instance",

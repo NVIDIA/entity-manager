@@ -112,78 +112,6 @@
         "Type": "Assembly"
     },
     {
-        "Exposes": [
-            {
-                "Address": "0x53",
-                "Bus": "90",
-                "Name": "CBC00_FRU",
-                "Type": "EEPROM_24C02"
-            }
-        ],
-        "Name": "CBC00_FRU",
-        "Probe": "TRUE",
-        "Type": "FRU_EEPROM",
-        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-            "Address": "0x53",
-            "Bus": "90",
-            "Name": "CBC00_FRU"
-        }
-    },
-    {
-        "Exposes": [
-            {
-                "Address": "0x54",
-                "Bus": "90",
-                "Name": "CBC01_FRU",
-                "Type": "EEPROM_24C02"
-            }
-        ],
-        "Name": "CBC01_FRU",
-        "Probe": "TRUE",
-        "Type": "FRU_EEPROM",
-        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-            "Address": "0x54",
-            "Bus": "90",
-            "Name": "CBC01_FRU"
-        }
-    },
-    {
-        "Exposes": [
-            {
-                "Address": "0x55",
-                "Bus": "90",
-                "Name": "CBC10_FRU",
-                "Type": "EEPROM_24C02"
-            }
-        ],
-        "Name": "CBC10_FRU",
-        "Probe": "TRUE",
-        "Type": "FRU_EEPROM",
-        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-            "Address": "0x55",
-            "Bus": "90",
-            "Name": "CBC10_FRU"
-        }
-    },
-    {
-        "Exposes": [
-            {
-                "Address": "0x56",
-                "Bus": "90",
-                "Name": "CBC11_FRU",
-                "Type": "EEPROM_24C02"
-            }
-        ],
-        "Name": "CBC11_FRU",
-        "Probe": "TRUE",
-        "Type": "FRU_EEPROM",
-        "xyz.openbmc_project.Inventory.Decorator.I2CDevice": {
-            "Address": "0x56",
-            "Bus": "90",
-            "Name": "CBC11_FRU"
-        }
-    },
-    {
         "Associations": {
             "parent_chassis": "chassis/Baseboard_0"
         },
@@ -572,9 +500,7 @@
     {
         "Exposes": [
             {
-                "ConnectXPackageUUID": "C248ACFF10EA43C28793989C5C0FE840",
                 "GlacierPackageUUID": "F70650A20D174C8F8A9E7CFA5CE5BD94",
-                "MCUCX9PackageUUID": "8F6B4D3E2C2B4B39BC929C6C4DF7B8E1",
                 "Name": "RecoveryPackages",
                 "Type": "RecoveryPackages"
             }
@@ -599,34 +525,6 @@
         ],
         "Name": "BMC_RecoveryPackages_USBDFU",
         "Probe": "FOUND('Nvidia VR-NVL72 BMC AST2700')",
-        "Type": "NvDevice"
-    },
-    {
-        "Exposes": [
-            {
-                "MCUBF4PackageUUID": "C8E5F4F05A2E4C6B91512E4D7C3CE4C6",
-                "Name": "BF4_RecoveryPackage",
-                "Type": "RecoveryPackages"
-            }
-        ],
-        "Name": "BF4_RecoveryPackage_B4xxxV",
-        "Probe": [
-            "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'B4180V.*'})",
-            "OR",
-            "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'B4240V.*'})"
-        ],
-        "Type": "NvDevice"
-    },
-    {
-        "Exposes": [
-            {
-                "MCUBF4PackageUUID": "668BD433B9F8473DBA1EC32B99772679",
-                "Name": "BF4_RecoveryPackage",
-                "Type": "RecoveryPackages"
-            }
-        ],
-        "Name": "BF4_RecoveryPackage_ConnectX9",
-        "Probe": "xyz.openbmc_project.FruDevice({'BUS': 72, 'ADDRESS': 80, 'BOARD_PRODUCT_NAME': 'ConnectX-9.*'})",
         "Type": "NvDevice"
     }
 ]

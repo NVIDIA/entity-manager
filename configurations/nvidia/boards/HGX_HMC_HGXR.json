@@ -127,14 +127,7 @@
     {
         "Exposes": [
             {
-                "ConnectXPackageUUID": "08E4F61E12EB42FAAC600953C4194564",
                 "GlacierPackageUUID": "DBC2D178F70711EEBB65CFE7103AC1AC",
-                "MCUCX9PackageUUID": "4E7A1BC95F203D8EA6C1B94E2F78D3C1",
-                "MCUQM4PackageUUID": "9B5E32AF10C7D4E8F3A2619CB8D4E0F2",
-                "MCUSMAPackageUUID": "A3C9F21B7D8045E6F2B19C4DE87A3F5B",
-                "MCUSXMPackageUUID": "F1C47A3E9D205B6C8A3F1E7B4C9628D0",
-                "NVLinkManagementNICPackageUUID": "2FA2B61D1B914C0EAC17AFE8C7C4F8FE",
-                "NVSwitchPackageUUID": "1BECFD7BF9C14746A2756FB89A90CEC8",
                 "Name": "RecoveryPackages",
                 "Type": "RecoveryPackages"
             }

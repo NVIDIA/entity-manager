@@ -279,6 +279,12 @@
                     "PoolIndex": 0
                 },
                 "Type": "NvDevice"
+            },
+            {
+                "ConnectXPackageUUID": "08E4F61E12EB42FAAC600953C4194564",
+                "MCUCX9PackageUUID": "4E7A1BC95F203D8EA6C1B94E2F78D3C1",
+                "Name": "RecoveryPackages",
+                "Type": "RecoveryPackages"
             }
         ],
         "Name": "HGX_ConnectX_Devices",

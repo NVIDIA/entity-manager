@@ -452,6 +452,11 @@
                     "RootHubPath": "$UsbRootHubPath"
                 },
                 "Type": "NvDevice"
+            },
+            {
+                "MCUHPMPackageUUID": "E7A31C9F48B2D075C3FE6A41B09D57E2",
+                "Name": "RecoveryPackages",
+                "Type": "RecoveryPackages"
             }
         ],
         "Name": "ProcessorModule_Devices_$Instance",

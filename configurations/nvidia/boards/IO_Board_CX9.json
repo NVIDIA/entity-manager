@@ -322,6 +322,12 @@
                     "PoolIndex": 4
                 },
                 "Type": "NvDevice"
+            },
+            {
+                "ConnectXPackageUUID": "C248ACFF10EA43C28793989C5C0FE840",
+                "MCUCX9PackageUUID": "8F6B4D3E2C2B4B39BC929C6C4DF7B8E1",
+                "Name": "RecoveryPackages",
+                "Type": "RecoveryPackages"
             }
         ],
         "Name": "IO_Board_Devices_$Instance",

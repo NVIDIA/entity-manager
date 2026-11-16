@@ -574,7 +574,7 @@
             "required": ["Name", "Type", "DeviceType"]
         },
         "RecoveryPackages": {
-            "description": "Model IDs of the recovery PLDM packages of the machine, in a platform policy record; code-manager reads each <Device>PackageUUID as the Nvidia:<Device>Recovery:<UUID> supported model of that recovery updater when the build sets none, and MCU<Target>PackageUUID as the Nvidia:<Target>:<UUID> model of the MCU recovery updater of each MCU Recovery block Target. A package that depends on a FRU goes in a policy record probed on that FRU.",
+            "description": "Model IDs of the recovery PLDM packages of the devices on a board, in the board file of the device that is recovered; code-manager reads each <Device>PackageUUID as the Nvidia:<Device>Recovery:<UUID> supported model of that recovery updater when the build sets none, and MCU<Target>PackageUUID as the Nvidia:<Target>:<UUID> model of the MCU recovery updater of each MCU Recovery block Target. A package that depends on a FRU goes in a record probed on that FRU.",
             "type": "object",
             "additionalProperties": false,
             "patternProperties": {
