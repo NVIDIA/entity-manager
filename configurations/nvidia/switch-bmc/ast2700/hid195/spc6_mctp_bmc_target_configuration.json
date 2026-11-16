@@ -6,7 +6,7 @@
                 "Name": "SMA_0",
                 "PollingInterval": "5",
                 "StaticEndpointID": "69",
-                "Type": "MCTPUSBTarget",
+                "Type": "MCTPUSBDevice",
                 "USBPath": "swb"
             }
         ],
@@ -23,7 +23,7 @@
                 "Name": "SMA_1",
                 "PollingInterval": "5",
                 "StaticEndpointID": "70",
-                "Type": "MCTPUSBTarget",
+                "Type": "MCTPUSBDevice",
                 "USBPath": "mgmt"
             }
         ],
