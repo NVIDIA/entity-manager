@@ -436,6 +436,10 @@
                 "Kind": {
                     "$ref": "#/$defs/NvDeviceKind"
                 },
+                "LeakDetectorChassis": {
+                    "description": "Chassis name the leak detector features of the device use, without the type prefix of ParentChassis.",
+                    "type": "string"
+                },
                 "Generation": {
                     "description": "Product generation; entity files probe on it.",
                     "enum": ["vr"]
