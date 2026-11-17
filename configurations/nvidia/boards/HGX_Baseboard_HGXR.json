@@ -23,6 +23,48 @@
                 "Type": "HardwareWriteProtectedControl"
             },
             {
+                "Name": "HGX_Astra_0",
+                "NetworkAdapters": [
+                    {
+                        "Chassis": "HGX_ConnectX_0",
+                        "Name": "ConnectX_NIC_0"
+                    },
+                    {
+                        "Chassis": "HGX_ConnectX_1",
+                        "Name": "ConnectX_NIC_1"
+                    },
+                    {
+                        "Chassis": "HGX_ConnectX_2",
+                        "Name": "ConnectX_NIC_2"
+                    },
+                    {
+                        "Chassis": "HGX_ConnectX_3",
+                        "Name": "ConnectX_NIC_3"
+                    },
+                    {
+                        "Chassis": "HGX_ConnectX_4",
+                        "Name": "ConnectX_NIC_4"
+                    },
+                    {
+                        "Chassis": "HGX_ConnectX_5",
+                        "Name": "ConnectX_NIC_5"
+                    },
+                    {
+                        "Chassis": "HGX_ConnectX_6",
+                        "Name": "ConnectX_NIC_6"
+                    },
+                    {
+                        "Chassis": "HGX_ConnectX_7",
+                        "Name": "ConnectX_NIC_7"
+                    }
+                ],
+                "PCIeTopologies": [
+                    "HGX_PCIeTopology_8",
+                    "HGX_PCIeTopology_9"
+                ],
+                "Type": "NSM_Astra"
+            },
+            {
                 "DataIndex": 160,
                 "Name": "NSM_GPU_SPI_WriteProtect",
                 "Type": "NSM_WriteProtect",
