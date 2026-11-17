@@ -423,6 +423,8 @@
                 "Kind": "nvswitch",
                 "Name": "HGX_NVSwitch_0",
                 "ParentChassis": "chassis/HGX_Chassis_0",
+                "PortName0": "InterswitchPort_0",
+                "PortName1": "InterswitchPort_1",
                 "Recovery": {
                     "ChassisName": "HGX_IRoT_NVSwitch_0",
                     "FlashNotPresentGpio": "QM4_1_FNP_L-O",
@@ -447,6 +449,8 @@
                 "Kind": "nvswitch",
                 "Name": "HGX_NVSwitch_1",
                 "ParentChassis": "chassis/HGX_Chassis_0",
+                "PortName0": "InterswitchPort_0",
+                "PortName1": "InterswitchPort_1",
                 "Recovery": {
                     "ChassisName": "HGX_IRoT_NVSwitch_1",
                     "FlashNotPresentGpio": "QM4_2_FNP_L-O",
@@ -471,6 +475,8 @@
                 "Kind": "nvswitch",
                 "Name": "HGX_NVSwitch_2",
                 "ParentChassis": "chassis/HGX_Chassis_0",
+                "PortName0": "InterswitchPort_0",
+                "PortName1": "NVLinkManagement_0",
                 "Recovery": {
                     "ChassisName": "HGX_IRoT_NVSwitch_2",
                     "FlashNotPresentGpio": "QM4_3_FNP_L-O",
@@ -495,6 +501,8 @@
                 "Kind": "nvswitch",
                 "Name": "HGX_NVSwitch_3",
                 "ParentChassis": "chassis/HGX_Chassis_0",
+                "PortName0": "NVLinkManagement_0",
+                "PortName1": "InterswitchPort_0",
                 "Recovery": {
                     "ChassisName": "HGX_IRoT_NVSwitch_3",
                     "FlashNotPresentGpio": "QM4_4_FNP_L-O",
