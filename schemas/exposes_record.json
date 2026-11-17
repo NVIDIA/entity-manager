@@ -312,6 +312,9 @@
                     "$ref": "platform/pldm_device.json#/$defs/PLDMDevice"
                 },
                 {
+                    "$ref": "nvidia_nsm.json#/$defs/NSM_Astra"
+                },
+                {
                     "$ref": "nvidia_nsm.json#/$defs/NSM_Chassis"
                 },
                 {

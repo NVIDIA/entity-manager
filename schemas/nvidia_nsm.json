@@ -2,6 +2,44 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "NVIDIA nsm Exposes schemas",
     "$defs": {
+        "NSM_Astra": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "NetworkAdapters": {
+                    "description": "The group's network adapters, each named by the Name of its chassis record and of its NSM_NetworkAdapter record.",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Chassis": {
+                                "type": "string"
+                            },
+                            "Name": {
+                                "type": "string"
+                            }
+                        },
+                        "required": ["Chassis", "Name"]
+                    }
+                },
+                "PCIeTopologies": {
+                    "description": "Names of the PCIe fabrics the group's network adapters switch through.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Type": {
+                    "type": "string",
+                    "const": "NSM_Astra"
+                }
+            },
+            "required": ["Name", "Type"]
+        },
         "NSM_Chassis": {
             "type": "object",
             "additionalProperties": false,
