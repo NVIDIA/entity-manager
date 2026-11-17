@@ -107,7 +107,14 @@
                 "LocationCode": "NVMe E1.S Slot 3",
                 "Name": "NVMe_E1S_SSD3",
                 "Type": "NvDevice"
-            },
+            }
+        ],
+        "Name": "StorageBackplane_Devices_$Instance",
+        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^Storage_Backplane_P4546$'})",
+        "Type": "NvDevice"
+    },
+    {
+        "Exposes": [
             {
                 "EID": 66,
                 "Generation": "vr",
@@ -145,8 +152,12 @@
                 "Type": "NvDevice"
             }
         ],
-        "Name": "StorageBackplane_Devices_$Instance",
-        "Probe": "xyz.openbmc_project.Configuration.NvBoard({'Board': '^Storage_Backplane_P4546$'})",
+        "Name": "StorageBackplane_Devices_C2_$Instance",
+        "Probe": [
+            "xyz.openbmc_project.Configuration.NvBoard({'Board': '^Storage_Backplane_P4546$'})",
+            "AND",
+            "xyz.openbmc_project.FruDevice({'PRODUCT_PRODUCT_NAME': '.*MGX C2.*'})"
+        ],
         "Type": "NvDevice"
     }
 ]
