@@ -99,22 +99,6 @@
                     "minimum": 0,
                     "maximum": 255
                 },
-                "TerminusName": {
-                    "description": "Static PLDM terminus name of the endpoint named by MCTPTargetName. pldmd uses it as the sensor name prefix (<TerminusName>_CPU_<CpuIndex>_...) and as the OEM event staging directory name. Absent means the terminus has no static name.",
-                    "type": "string",
-                    "minLength": 1
-                },
-                "TerminusInstance": {
-                    "description": "Entity instance pldmd uses to match the terminus' CPU and processor IO module PDRs to inventory paths. Read only with TerminusName. Default 0.",
-                    "type": "integer",
-                    "minimum": 0
-                },
-                "CpuIndex": {
-                    "description": "CPU index in the sensor name prefix (<TerminusName>_CPU_<CpuIndex>_...). Read only with TerminusName. Default 0.",
-                    "type": "integer",
-                    "minimum": 0,
-                    "maximum": 65535
-                },
                 "Type": {
                     "type": "string",
                     "enum": ["PLDMFirmwareDevice"]

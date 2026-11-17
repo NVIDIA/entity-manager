@@ -100,15 +100,15 @@
                     "5569": "NVLink_69",
                     "5570": "NVLink_70",
                     "5571": "NVLink_71",
-                    "5572": "InterswitchPort_0",
-                    "5573": "InterswitchPort_1"
+                    "5572": "$PortName0",
+                    "5573": "$PortName1"
                 },
                 "SensorAuxNames": {
                     "$Name": 10,
                     "$Name_Power_0": 50,
                     "$Name_TEMP_0": 10700,
-                    "InterswitchPort_0": 5572,
-                    "InterswitchPort_1": 5573,
+                    "$PortName0": 5572,
+                    "$PortName1": 5573,
                     "NVLink_0": 5500,
                     "NVLink_1": 5501,
                     "NVLink_10": 5510,

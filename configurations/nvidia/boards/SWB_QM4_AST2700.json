@@ -23,6 +23,8 @@
                 "Kind": "nvswitch",
                 "Name": "$Platform.NamePrefixNVSwitch_$Instance * 2",
                 "ParentChassis": "Chassis_0",
+                "PortName0": "InterswitchPort_0",
+                "PortName1": "InterswitchPort_1",
                 "Transport": {
                     "Bridge": "$Platform.NamePrefixNVSwitch_SMA_$Instance",
                     "BridgeEID": "$Instance + 69",
@@ -38,6 +40,8 @@
                 "Kind": "nvswitch",
                 "Name": "$Platform.NamePrefixNVSwitch_$Instance * 2 + 1",
                 "ParentChassis": "Chassis_0",
+                "PortName0": "InterswitchPort_0",
+                "PortName1": "InterswitchPort_1",
                 "Transport": {
                     "Bridge": "$Platform.NamePrefixNVSwitch_SMA_$Instance",
                     "BridgeEID": "$Instance + 69",

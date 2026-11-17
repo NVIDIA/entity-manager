@@ -31,6 +31,15 @@
                         "maximum": 65535
                     }
                 },
+                "DownstreamDevices": {
+                    "description": "Names of the software objects of the downstream devices behind this firmware device, mapped to the downstream device index the device reports in QueryDownstreamIdentifiers. pldmd gives each one the ports of the device as its inventory association and takes its manufacturer from the IEEE company ID descriptor. A string is an expression of the device's topology values, such as $Instance % 2, that entity-manager replaces with the integer.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": ["string", "integer"],
+                        "minimum": 0,
+                        "maximum": 65535
+                    }
+                },
                 "FirmwareName": {
                     "description": "Name of the firmware device whose component inventory is shared by this device.",
                     "type": "string"
