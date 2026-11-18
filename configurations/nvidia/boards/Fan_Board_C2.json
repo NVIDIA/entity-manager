@@ -46,7 +46,7 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 2204.0
+                        "Value": 3000.0
                     }
                 ],
                 "Type": "I2CFan"
@@ -73,7 +73,7 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 2204.0
+                        "Value": 3000.0
                     }
                 ],
                 "Type": "I2CFan"
@@ -100,7 +100,7 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 2204.0
+                        "Value": 3000.0
                     }
                 ],
                 "Type": "I2CFan"
@@ -127,7 +127,7 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 2204.0
+                        "Value": 3000.0
                     }
                 ],
                 "Type": "I2CFan"
@@ -154,7 +154,7 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 2204.0
+                        "Value": 3000.0
                     }
                 ],
                 "Type": "I2CFan"
@@ -181,7 +181,7 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 2204.0
+                        "Value": 3000.0
                     }
                 ],
                 "Type": "I2CFan"
@@ -208,7 +208,7 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 2204.0
+                        "Value": 3000.0
                     }
                 ],
                 "Type": "I2CFan"
@@ -235,7 +235,7 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 2204.0
+                        "Value": 3000.0
                     }
                 ],
                 "Type": "I2CFan"
@@ -262,7 +262,7 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 2204.0
+                        "Value": 3000.0
                     }
                 ],
                 "Type": "I2CFan"
@@ -289,7 +289,7 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 2204.0
+                        "Value": 3000.0
                     }
                 ],
                 "Type": "I2CFan"
@@ -316,7 +316,7 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 2204.0
+                        "Value": 3000.0
                     }
                 ],
                 "Type": "I2CFan"
@@ -343,7 +343,7 @@
                         "Direction": "less than",
                         "Name": "lower critical",
                         "Severity": 1,
-                        "Value": 2204.0
+                        "Value": 3000.0
                     }
                 ],
                 "Type": "I2CFan"

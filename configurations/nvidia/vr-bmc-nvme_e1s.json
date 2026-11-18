@@ -109,25 +109,25 @@
                         "Direction": "greater than",
                         "Name": "upper non recoverable",
                         "Severity": 4,
-                        "Value": 80
+                        "Value": 85
                     },
                     {
                         "Direction": "greater than",
                         "Name": "soft shutdown",
                         "Severity": 3,
-                        "Value": 78
+                        "Value": 80
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper critical",
                         "Severity": 1,
-                        "Value": 78
+                        "Value": 80
                     },
                     {
                         "Direction": "greater than",
                         "Name": "upper non critical",
                         "Severity": 0,
-                        "Value": 75
+                        "Value": 77
                     },
                     {
                         "Direction": "less than",

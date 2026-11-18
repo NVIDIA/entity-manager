@@ -21,12 +21,68 @@
                 ],
                 "Name": "PDB_0_Ext_Ambient_Temp_0",
                 "Name1": "PDB_0_Ext_Ambient_Temp_1",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Index": 2,
+                        "Name": "upper non recoverable",
+                        "Severity": 4,
+                        "Value": 45
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Index": 2,
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 40
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Index": 2,
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 37
+                    },
+                    {
+                        "Direction": "less than",
+                        "Index": 2,
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    }
+                ],
                 "Type": "TMP411"
             },
             {
                 "Address": "0x4A",
                 "Bus": 59,
                 "Name": "PDB_0_Temp_0",
+                "Thresholds": [
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non recoverable",
+                        "Severity": 4,
+                        "Value": 105
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper critical",
+                        "Severity": 1,
+                        "Value": 103
+                    },
+                    {
+                        "Direction": "greater than",
+                        "Name": "upper non critical",
+                        "Severity": 0,
+                        "Value": 100
+                    },
+                    {
+                        "Direction": "less than",
+                        "Name": "lower non critical",
+                        "Severity": 0,
+                        "Value": 5
+                    }
+                ],
                 "Type": "TMP75"
             },
             {
